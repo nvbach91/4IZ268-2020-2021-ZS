@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--Cheatsheet ordered by https://www.w3schools.com/tags/ref_byfunc.asp-->
+<html>
+    <!--Basics-->
+    <head>
+        <title>Cheatsheet</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="cheatsheet.html" target="_blank">Cheatsheet</a> |
+            <a href="blog.html" target="_blank">Blog</a> |
+            <a href="resume.html" target="_blank">Resume</a>
+        </nav> <hr>
+        <h1> Heading 1</h1>
+        <h2> Heading 2</h2>
+        <h3> Heading 3</h3>
+        <h4> Heading 4</h4>
+        <h5> Heading 5</h5>
+        <h6> Heading 6 also break ahead</h6>
+        <br>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, optio inventore et iste illum, ipsum maxime consequatur quisquam sapiente aspernatur vero cupiditate earum beatae perspiciatis at qui consectetur error! Et?</p>
+        <hr>
+        
+        <!--Formatting-->
+        <b>Bold text is nice, </b>
+        <strong>but we like strong one more.</strong> <br>
+        <i>Italics are also nice, </i>
+        <em>but let's just emphasize about it.</em>
+
+        <blockquote> <q>It's true.</q> - The person I remember saying that (2019)</blockquote>
+        
+        <u>Underlined text</u> <ins>and inserted text</ins><br>
+
+        <s>Underlined text, but the line went bananas</s>
+        <del>Also known as deleted text</del> <br>
+
+        <mark>Marked text</mark> <br>
+
+        <small>Teeny tiny text, &lt;big&gt; not supported</small> <br>
+
+        <sub>lower bunk</sub>
+        <sup>upper bunk</sup> <br>
+
+        <bdo dir="rtl">Backwards</bdo> <br>
+
+        <span>Press <kbd>f5</kbd> for latest version of this madness</span> <br>
+
+        <label for="metr">Professionality of this document</label>
+        <meter id="metr" value="1" max="10">Barely acceptable</meter> <br>
+
+        <label for="hotovost">Homework completion</label>
+        <progress id="hotovost" value="18" max="100">18% ish</progress>
+        <!--The rest wasn't much fun-->
+        <hr>
+        <!--Forms and Imput-->
+        <form action="." method="POST">
+            <fieldset>
+                <legend>Form</legend>
+                <label for="word">Insert your favorite word: </label>
+                <input type="text" id="word"> <br>
+                <label for="date">Today's date: </label>
+                <input type="date" id="bday"> <br>
+                <label for="drpnum">Select a number: </label>
+                <select name="zerotonine" id="drpnum">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select> <br>
+                <label for="field">Explain why this particular number was chosen: </label> <br>
+                <textarea name="why" id="field" cols="50" rows="4">State your explanation here.</textarea> <br>
+                <label for="mood">Today's mood: </label>
+                <input list="list" name="mood" id="mood">
+                <datalist id="list">
+                    <option value=":)"></option>
+                    <option value=":|"></option>
+                    <option value=":("></option>
+                    <option value=":S"></option>
+                </datalist>
+            </fieldset>
+            <input type="checkbox" id="check">
+            <label for="check">Agree with ToC</label>
+            <br>
+            <button type="submit">Submit Form</button>
+        </form>
+        <hr>
+        <!--Images-->
+        <figure>
+            <img src="img/jezek.jpg" alt="I really really really like this image" usemap="#snoot" width="200px">
+            <figcaption><cite>Fig.1 - I really really really like this image</cite> meme</figcaption>
+        </figure>
+        <map name="snoot">
+            <area shape="circ" coords="140,75,15" href="https://vse.cz" alt="snoot">
+        </map>
+        <hr>
+        <!--Audio Video-->
+        <label for="mlem">Cat meowing underwater: </label> <br>
+        <audio controls id="mlem">
+            <source src="media/mlem.mp3" type="audio/mpeg">
+        </audio>
+        <hr>
+        <!--Links-->
+        <nav>
+            <a href="https://www.freecodecamp.org">Link1</a>
+            <a href="https://www.kosek.cz">Link2</a>
+            <a href="https://code.visualstudio.com/docs/?dv=win">Link3</a>
+        </nav>
+        <hr>
+        <!--Lists-->
+        <ul>
+            <li>l</li>
+            <li>li</li>
+            <li>lis</li>
+            <li>list</li>
+        </ul>
+        <ol>
+            <li>H</li>
+            <li>Ha</li>
+            <li>Ham</li>
+        </ol>
+        <ol start="7">
+            <li>Hamanth</li>
+            <li>Hamantha</li>
+        </ol>
+        <dl>
+            <dt>Liz</dt>
+            <dd>Short for Lizard</dd>
+            <dt>Bike</dt>
+            <dd>Short for Bikael</dd>
+            <dt>Elon Musk</dt>
+            <dd>Short for Elongated Muskrat</dd>
+        </dl>
+        <hr>
+        <!--Tables-->
+        <Table>
+            <caption>The Table</caption>
+            <thead>
+                <tr>
+                    <th>head</th>
+                    <th>head</th>
+                    <th>head</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>B</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>AA</td>
+                    <td>BB</td>
+                    <td>BB</td>
+                </tr>
+            </tfoot>
+        </Table>
+
+        <hr>
+        <!--Styles and Semantics-->
+        <div>
+            <div>Rise</div>
+            <div>divu</div>
+            <div>pod sebou</div>
+        </div>
+
+        <span>
+            <span>spany</span>
+            <span>jsou</span>
+            <span>vedle sebe</span>
+        </span>
+
+        <article>
+            <header>
+                <h1>The thing</h1>
+                <p>Review of the book <cite>The Thing</cite></p>
+                <time>12. 12. 1995</time>
+            </header>
+            <section>
+                <h2>Lorem</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga autem soluta repellat cupiditate error laudantium magni accusamus reprehenderit culpa commodi iste, illum quos atque, suscipit unde rem? Ratione, magni illum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, minus. Temporibus rem facilis unde odio molestias quas dolores? Dignissimos, voluptatum magnam. Architecto eum beatae mollitia eos nesciunt laudantium, sint tenetur?</p>
+                <details>
+                    <summary>Lorem ipsum</summary>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse vero totam iste? Consequuntur qui voluptatem iure, architecto natus et dolorum necessitatibus perspiciatis recusandae, adipisci reiciendis error ab debitis vitae perferendis.</p>
+                </details>
+            </section>
+            <section>
+                <h2>Impsum</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae similique rerum modi at nesciunt esse quam sed ea ducimus sequi minima quis facilis, laborum, odit unde officia earum veritatis sapiente.</p>
+            </section>
+            <footer>
+                <p>Author: That Guy</p>
+                <p><a href="mailto:guyt@example.com">guyt@example.com</a></p>
+              </footer> 
+        </article>
+
+    </body>
+</html>
