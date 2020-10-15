@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Lukas Frajt">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cheat sheet</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Cheat sheet</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./resume.html">Resume</a></li>
+            </ul>
+        </nav>
+        <h1>Cheatsheet</h1>
+    </header>
+    <main>
+        <section>
+            <header>
+                <h2>Nadpisy</h2>
+            </header>
+
+            <h1>Nadpis 1</h1> <!-- Neprojde validatorem stranka jiz ma jeden h1 -->
+            <h2>Nadpis 2</h2>
+            <h3>Nadpis 3</h3>
+            <h4>Nadpis 4</h4>
+            <h5>Nadpis 5</h5>
+            <h6>Nadpis 6</h6>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h2>Listy</h2>
+            </header>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ol>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h2>Tabulka</h2>
+            </header>
+            <table>
+                <caption>Fotbalove tymy</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Název</th>
+                    <th scope="col">Zapasy</th>
+                    <th scope="col">Vyhry</th>
+                    <th scope="col">Body</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Bayern</th>
+                    <td>34</td>
+                    <td>26</td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <th scope="row">Dortmund</th>
+                    <td>34</td>
+                    <td>21</td>
+                    <td>69</td>
+                </tr>
+                <tr>
+                    <th scope="row">RB Lipsko</th>
+                    <td>34</td>
+                    <td>18</td>
+                    <td>66</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mönchengladbach</th>
+                    <td>34</td>
+                    <td>20</td>
+                    <td>65</td>
+                </tr>
+                </tbody>
+            </table>
+            <p><em>Fully accessible table. <strong>Yay</strong></em></p>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h2>Formulář</h2>
+            </header>
+            <form action="GET">
+                <label for="text">Text:</label>
+                <input type="text" name="text" id="text"><br>
+
+                <label for="checkbox">Check box</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+
+                <fieldset>
+                    <legend>Radio buttons</legend>
+                    <div>
+                        <input type="radio" name="option1" id="option1" value="option1" checked>
+                        <label for="option1">Možnost 1</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="option2" id="option2" value="option2">
+                        <label for="option2">Možnost 2</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="option3" id="option3" value="option3">
+                        <label for="option3">Možnost 3</label>
+                    </div>
+                </fieldset>
+                <button type="submit">Odeslat</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

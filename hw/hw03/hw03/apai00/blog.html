@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+
+<body>
+    <h1>Different between HTTP and HTTPS</h1>
+    <h4>HTTP</h4>
+    <p>HTTP stands for Hypertext Transfer Protocol. When you enter http:// in your address bar in front of the domain,
+        it tells the browser to connect over HTTP. HTTP uses TCP (Transmission Control Protocol), generally over port
+        80, to send and receive data packets over the web. To put it simply it is a protocol that's used by a client and
+        server which allows you to communicate with other websites. The client sends a request message to an HTTP server
+        (after the TCP handshake) which hosts a website, the server then replies with the response message. The response
+        message contains completion status information, such as HTTP/1.1 200 OK.</p>
+    <br>
+    <h4>HTTPS</h4>
+    <p>HTTPS stands for Hypertext Transfer Protocol Secure (also referred to as HTTP over TLS or HTTP over SSL). When
+        you enter https:// in your address bar in front of the domain, it tells the browser to connect over HTTPS.
+        Generally sites running over HTTPS will have a redirect in place so even if you type in http:// it will redirect
+        to deliver over a secured connection. HTTPS also uses TCP (Transmission Control Protocol) to send and receive
+        data packets, but it does so over port 443, within a connection encrypted by Transport Layer Security (TLS).</p>
+
+    <br>
+    <h4>Different?</h4>
+    <p>HTTP URL in your browser's address bar is http:// and the HTTPS URL is https://.</p>
+    <p>HTTP is unsecured while HTTPS is secured.</p>
+    <p>HTTP sends data over port 80 while HTTPS uses port 443.</p>
+    <p>HTTP operates at application layer, while HTTPS operates at transport layer.</p>
+    <p>No SSL certificates are required for HTTP, with HTTPS it is required that you have an SSL certificate and it is
+        signed by a CA.</p>
+    <p>HTTP doesn't require domain validation, where as HTTPS requires at least domain validation and certain
+        certificates even require legal document validation.</p>
+    <p>No encryption in HTTP, with HTTPS the data is encrypted before sending</p>
+    <img width="400" src="HTTP_HTTPS.png" alt="Connection">
+    <footer>
+        <p>Copyright &copy; 2020 Ivan Apatenko</p>
+    </footer>
+</body>
+
+</html>

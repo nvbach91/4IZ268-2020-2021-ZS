@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cheat sheet</title>
+    </head>
+    <body>
+
+        <header>Ahoj, tohle je záhlaví</header>
+        <h1>Cheat sheet</h1>
+        <h1>Nadpis 1</h1>
+        <h2>Nadpis 2</h2>
+        <h3>Nadpis 3</h3>
+        <h4>Nadpis 4</h4>
+        <h5>Nadpis 5</h5>
+        <h6>Nadpis 6</h6>
+        <p>Víc jich není :(</p>
+
+        <h2>div a paragraph</h2>
+        <div>
+            <p>Div označuje část textu, je blokový</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quam deleniti fugit id veniam ullam ratione laudantium commodi asperiores suscipit modi iste vel, rerum itaque odio deserunt in. Dolore, vitae?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, modi id odit pariatur quasi, non quibusdam voluptatibus culpa eligendi dolorem vel! Laboriosam facilis at labore! Id aperiam eligendi voluptatibus harum.</p>
+            <p><b>Tučné</b></p>
+            <p><i>Kurzíva</i></p>
+            <p><u>Podtržené</u></p>
+            <p><strong>Zvýrazněné</strong></p>
+            <p><em>Zvýrazněné</em></p>
+        </div>
+
+        <h2>span</h2>
+        <p>Span se používá <span>stejně</span>, jen je řádkový.</p>
+
+        <h2>Neuspořádaný seznam</h2>
+        <ul>
+            <li>toto je neuspořádaný</li>
+            <li>toto je neuspořádaný</li>
+            <li>seznam</li>
+            <li>.</li>
+            <li>Tečka</li>
+        </ul>
+
+        <h2>Uspořádaný seznam</h2>
+        <ol>
+            <li>toto je uspořádaný</li>
+            <li>seznam</li>
+            <li>.</li>
+            <li>Tečka</li>
+        </ol>
+
+        <h1>Tabulka</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sloupec 1</th>
+                    <th>Sloupec 2</th>
+                    <th>Sloupec 3</th>
+                    <th>Sloupec 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bunka 1</td>
+                    <td>Bunka 2</td>
+                    <td>Bunka 3</td>
+                    <td>Bunka 4</td>
+                </tr>
+                <tr>
+                    <td>Bunka 5</td>
+                    <td>Bunka 6</td>
+                    <td>Bunka 7</td>
+                    <td>Bunka 8</td>
+                </tr>
+                <tr>
+                    <td>Bunka 9</td>
+                    <td>Bunka 10</td>
+                    <td>Bunka 11</td>
+                    <td>Bunka 12</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Citace</h2>
+        <blockquote cite="https://cs.wikipedia.org/wiki/Hypertext_Markup_Language">
+            Hypertext Markup Language (zkratka HTML) je v informatice název značkovacího jazyka používaného pro tvorbu webových stránek, které jsou propojeny hypertextovými odkazy. HTML je hlavním z jazyků pro vytváření stránek v systému World Wide Web, který umožňuje publikaci dokumentů na Internetu.
+        </blockquote>
+
+        <h2>Tag Pre</h2>
+        <p>Zachovává formátování textu tak, jak je do něj vložen</p>
+        <pre>
+            ahoj ahoj      ahoj
+            ahoj     ahoj ahoj 
+            ahoj  ahoj   ahoj  
+        </pre>
+        
+        <h2>Horizontální čára</h2>
+        <hr>
+        <h2>Zalomení řádku</h2>
+        <p>Pokud chceme zalomit řádek v textu, napíšeme br<br>a hodí nás to na další řádek.</p><br>
+
+        <h2>Article</h2>
+        <article>Tag article vytvoří blok textu. který je vzhledově nezávislý na zbytku dokumentu. Můžou se tu nastavit styly (css).</article>
+
+        <h2>cite</h2>
+        <p>toto vytváří jednořádkovou citaci, viz <cite>W3 schools</cite></p>
+
+        <h2>Abbreviation</h2>
+        <p>Pokud chceme použít zkratku, jako <abbr title="vysoká škola ekonomická">vše</abbr> s vysvětlivkou, použijeme tag abbr</p>
+        
+        <form action="." method="POST">
+            <table>
+                <tr>
+                    <td><label>Uživatelské jméno:</label></td>
+                    <td><input placeholder="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td><label>Heslo:</label></td>
+                    <td><input placeholder="**********" name="password" type="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="role">Druh účtu:</label></td>
+                    <td>
+                        <select name="role" id="role">
+                            <option value="admin">admin</option>
+                            <option value="student">student</option>
+                            <option value="učitel">učitel</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><span><button>Odeslat</button></span></td>
+                </tr>
+            </table>
+            
+            
+                
+            
+        </form>
+
+        <a href="https://www.w3schools.com/tags">Odkaz</a> <!-- Stejná záložka-->
+        <a href="https://www.w3schools.com/tags" target="_blank">Odkaz</a> <!-- Další záložka-->
+        <img src="https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SY1000_CR0,0,666,1000_AL_.jpg" alt="něco jsi nedal">
+        <img src="tenet.jpg" alt="ajem sorry, nezobrazil se obrázek">
+       
+        <footer>
+        <h2>Odkazy:</h2>
+            <ul>
+                <li>Hello world <a href="index.html">zde</a></li>
+                <li>Cheatsheet <a href="cheatSheet.html">zde</a></li>
+                <li>Blog <a href="blog.html">zde</a></li>
+                <li>Životopis <a href="resume.html">zde</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
