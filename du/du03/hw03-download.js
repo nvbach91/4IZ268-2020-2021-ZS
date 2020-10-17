@@ -59,7 +59,6 @@ const urls = [
     'https://eso.vse.cz/~sinj04/cv03/cheatsheet.html',
     'https://eso.vse.cz/~sinj04/cv03/blog.html',
     'https://eso.vse.cz/~sinj04/cv03/resume.html',
-    'hawrancz99 commented 4 days ago',
     'https://eso.vse.cz/~vavl03/cv03/index.html',
     'https://eso.vse.cz/~vavl03/cv03/cheatsheet.html',
     'https://eso.vse.cz/~vavl03/cv03/blog.html',
