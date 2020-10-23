@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 1024px) {
+    /* style declarations here */
+    header {
+        background-color: royalblue;
+        padding: 10px;
+    }
+
+    .container {
+
+    }
+
+    aside {
+        background-color: tomato;
+        float: left;
+        padding: 20px;
+        width: 30%;
+    }
+
+    main {
+        background-color: cadetblue;
+        float: right;
+        padding: 20px;
+        width: 70%;
+    }
+
+    footer {
+        padding: 10px;
+        background-color: seagreen;
+        clear: both;
+    }
+}
+
