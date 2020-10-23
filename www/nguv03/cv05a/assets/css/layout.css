@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: fantasy;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(127, 214, 255);
+    padding: 50px;
+}
+
+footer {
+    background-color: yellowgreen;
+    padding: 50px;
+    clear: both;
+}
+
+aside {
+    float: left;
+    width: 30%;
+    background-color: orange;
+    padding: 100px 20px;
+}
+.content {
+    float: right;
+    width: 60%;
+    background-color: gray;
+    padding: 100px 20px;
+}
+.blabla {
+    width: 10%;
+    float: right;
+    padding: 100px 20px;
+    background-color: purple;
+}

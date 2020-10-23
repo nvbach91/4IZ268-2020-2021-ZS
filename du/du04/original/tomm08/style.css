@@ -1,0 +1,112 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.div2 {
+    color: red;
+}
+.div3 {
+    color: rgb(0, 255 ,0);
+}
+.div4 {
+    color: #0000ff;
+    font-weight: bold;
+
+}
+.div5{
+    font-size: 18px;
+}
+.div6{
+    font-size: 24px;
+    font-style: italic;
+}
+.div7{
+    color:white;
+    background-color:brown;
+}
+.par1{
+    text-align: center;
+    line-height: 32px;
+}
+.par2{
+    text-align: justify;
+    text-transform: uppercase;
+}
+.box1{
+    width: 400px; 
+    height: 300px; 
+    border: 1px solid purple;
+    padding: 30px;
+}
+.box2{
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px 100px 100px 100px;
+}
+.invisibleText{
+ display: none;
+}
+.box3{
+    width:auto;
+    background-color: blue;
+    padding: 50px;
+    border: 10px solid yellow;
+    border-width: thick;
+}
+.gap{
+    visibility: hidden;
+}
+.box4{
+    color: white;
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    opacity: 0.5;
+}
+.box5{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+.box6{
+    font-size: 7px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:50px;
+    right:10px;
+    background-color: pink;
+}
+.box7{
+    width: 200px;
+    height:500px;
+    border: 20px solid brown;
+    border-radius: 10px;
+}
+.button1{
+    width: 300px;
+    height: 100px;
+    
+}
+.button1:active{
+    background: blue;
+}
+.button2{
+    width: 200px;   
+    height: 50px;
+}
+.button2:hover {
+    background-color: brown;
+}
+.box8{
+    width: 200px;
+    height: 500px;
+    background-color:rgb(95, 158 ,160);
+    margin-top:200px;
+
+}
+.box8:hover{
+    cursor: grab;
+}

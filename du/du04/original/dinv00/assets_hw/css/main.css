@@ -1,0 +1,132 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.red-ish {
+    color: firebrick;
+}
+
+.green-ish {
+    color:rgb(13, 187, 3);
+}
+
+.blue-ish {
+    color: #4682B4 ;
+    font-weight: bold;
+}
+
+.size1 {
+    font-size: 18px;
+}
+
+.size2{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.duocol{
+    color: white;
+    background-color: chocolate
+}
+
+.p1{
+    text-align: center;
+    line-height: 32px;
+}
+
+.p2 {
+    text-transform: capitalize;
+    text-align: justify;
+}
+
+.box1 {
+    width:400px;
+    height: 300px;
+    border: 1px solid;
+    padding: 30px;
+    border-color: purple;
+}
+
+.box2 {
+    width: 500px;
+    height: 200px;
+    background-color: rgb(128, 15, 15);
+    margin: 100px;
+}
+
+.invis {
+    display:none;
+}
+
+.box3 {
+    max-width: 100%;
+    border: 10px solid;
+    border-color: gold;
+    background-color: teal;
+    padding: 50px;
+}
+
+.invis1 {
+    visibility: hidden;
+}
+
+.box4 {
+    width: 500px;
+    height: 200px;
+    background-color: mediumseagreen;
+}
+
+.box5 {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.box5 > .box6{
+    height: 50px;
+    width: 50px;
+    top: 50px;
+    right: 10px;
+    position: absolute;
+    background-color: pink;
+    font-size: 8px;
+}
+
+.box7{
+    height: 400px;
+    width: 200px;
+    border-radius: 10px;
+    border: 20px solid brown;
+}
+
+.b1 {
+    width: 300px;
+    height: 100px;
+    
+}
+
+.b1:active {
+    color:blue
+}
+
+.b2 {
+    width: 200px;
+    height:50px; 
+}
+
+.b2:hover {
+    background-color: brown
+}
+
+.box8 {
+    width: 200px;
+    height: 500px;
+    background-color: rgb(22, 67, 78);
+    margin-top: 200px;
+}
+
+.box8:hover {
+    cursor:grab;
+}

@@ -1,0 +1,159 @@
+.notSerif {
+    font-family: arial;
+}
+
+.red-ish-namedColor {
+    color: red;
+}
+
+.green-ish-RGB {
+    color: rgb(0, 255, 0);
+}
+
+.blue-ish-bold {
+    font-weight: bold;
+    color: #0000ff;
+}
+
+.px18 {
+    font-size: 18px;
+}
+
+.px24 {
+    font-size: 24;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.white-brownbg {
+    color: white;
+    background-color: brown;
+}
+
+p.center-24line {
+    text-align: center;
+    line-height: 32px;
+}
+
+.justified {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.box1 {
+    /*This box is 400px in width and 300px in height total. It has a solid 1px purple border and the padding is 30px*/
+    width: 400px;
+    height: 300px;
+    border: solid;
+    border-color: purple;
+    border-width: 1px;
+    padding: 30px;
+}
+
+.box2 {
+    /*his box is 500px in width and 200px in height total. It has a red-ish background-color and the margin on every
+        side is 100px*/
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+.invisible {
+    display: none;
+}
+
+.box3 {
+    /*This box is 100% in width relative to the page. It has a blue-ish background-color, padding: 50px and a
+        yellow-ish 10px thick border. Pay attention to the width of this box, it hould not be wider than the page
+        itself!*/
+        width: fit-content;
+        background-color: blue;
+        padding: 50px;
+        border-style: solid;
+        border-width: 10px;
+        border-color: yellow;
+}
+
+.box4 {
+    /*This box is 200x500, its background color is green-ish and its opacity is 0.5*/
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    opacity: 0.5;
+}
+
+.relative {
+    /*This box is 400x300 and its position is relative, its background color is light blue*/
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.static {
+    /*This box is 50x50 and its position is absolute inside its parent: 50px from the top and 10px from the
+            right. Its background color is pink*/
+            /*position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-top: 50px;
+            margin-right: 10px solid;
+            background-color: pink;*/
+            background-color: pink;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            font-size: 8px;
+
+}
+
+.box5 {
+    /*This box is 200x400 and has a 20px brown border that is rounded by 10px radius*/
+    width: 200px;
+    height: 400px;
+    border-width: 20px;
+    border-color: brown;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.button1 {
+    /*This button is 300px wide and 100px high and whenever I click on it, its text's color turns blue*/
+    width: 300px;
+    height: 100px;
+    
+}
+
+.button1:active {
+    color: blue;
+}
+
+.button2 {
+    /*This button is 200px wide and 50px high and whenever hover my mouse on it, its background color turns brown*/
+    width: 200px;
+    height: 50px;
+}
+
+.button2:hover {
+    background-color: brown;
+}
+
+.box6 {
+    /*This box is 200x500, its background color is blue-ish and whenever I hover my mouse over it, the cursor turns
+        in to a hand. There is a 200px space above this box.*/
+    cursor: pointer;
+    width: 200px;
+    height: 500px;
+    background-color: blue;
+    margin-top: 200px;
+
+}
+

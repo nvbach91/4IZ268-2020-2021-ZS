@@ -1,0 +1,132 @@
+body {
+    font-family: Sans-serif;
+}
+
+.example2 {
+    color: red;
+}
+
+.example3 {
+    color: rgb(0, 255, 0);
+}
+
+.example4 {
+    color: #0000ff;
+    font-weight: bold;
+}
+
+.example5 {
+    font-size: 18px;
+}
+
+.example6 {
+    font-size: 24px;
+    font-style: oblique;
+}
+
+.example7 {
+    color: white;
+    background-color: brown;
+}
+
+.example8 {
+    text-align: center;
+    line-height: 32px;
+}
+
+.example9 {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    text-transform: uppercase;
+}
+
+.example10 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    text-align: left;
+    padding: 30px;
+}
+
+.example11 {
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+    background-color: red;
+}
+
+.example12 {
+    display:none;
+}
+
+.example13 {
+    width: auto;
+    background-color: royalblue;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.example14 {
+    color:transparent;
+}
+
+.example15 {
+    width: 500px;
+    height: 200px;
+    opacity: 0.5; /* Nastavi pruhlednost celeho boxu */
+    background-color: rgba(0, 255, 0, 1.0); /* Kdybych chtel nastavit pruhlednost jen u pozadi, snizim posledni hodnotu v rgba */
+}
+
+.example16 {
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+    position: relative;
+}
+
+.example17 {
+    width: 50px;
+    height: 50px;
+    font-size: 5px;
+    background-color: pink;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+.example18 {
+    width: 200px;
+    height: 400px;
+    border: 20px solid brown;
+    border-radius: 10px;
+}
+
+.example19 {
+    width: 300px;
+    height: 100px;
+}
+
+.example19:active {
+    color:blue;
+}
+
+.example20 {
+    width: 200px;
+    height: 50px;
+}
+
+.example20:hover {
+    background-color:brown;
+}
+
+.example21 {
+    width: 200px;
+    height: 500px;
+    background-color: darkcyan;
+    margin-top: 200px;
+}
+
+.example21:hover {
+    cursor:grab;
+}

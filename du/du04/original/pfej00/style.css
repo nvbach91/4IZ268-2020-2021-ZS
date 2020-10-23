@@ -1,0 +1,140 @@
+body {
+    padding: 5%;
+    padding-left: 13%;
+    padding-right: 13%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.red {
+    color: red;
+}
+
+div.rgb {
+    color: rgb(71, 244, 136);
+}
+
+div.hex {
+    color: #5348e9;
+    font-weight: bold;
+}
+
+div.font-size-one {
+    font-size: 18px;;
+}
+
+div.font-size-two {
+    font-size: 24px;
+    font-style: italic;
+}
+
+div.white-and-brown {
+    color: white;
+    background-color: brown;
+}
+
+div.first-box {
+    width: 340px;
+    height: 240px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+div.second-box {
+    margin: 100px;
+    background-color: #b22222;
+    width: 500px;
+    height: 200px;
+}
+
+div.none {
+    display: none;
+}
+
+div.third-box {
+    width: 100%;
+    background-color: #2d5d86;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+div.invisible-box {
+    opacity: 0;
+    visibility: hidden;
+}
+
+div.fourth-box {
+    opacity: 0.5;
+    color: white;
+    background-color: green;
+    width: 500px;
+    height: 200px;
+}
+
+div.radius-box {
+    width: 200px;
+    height: 400px;
+    border: 20px solid brown;
+    border-radius: 10px;
+}
+
+div.strange-box {
+    margin-top: 200px;
+    width: 200px;
+    height: 500px;
+    background-color: #5f9ea0;
+}
+
+div.strange-box:hover {
+    cursor: pointer;
+}
+
+div.parent-box {
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+div.parent-box p {
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+    position: relative;
+}
+
+div.parent-box div {
+    top: 50px;
+    right: 10px;
+    font-size: 0.7em;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: pink;
+}
+
+button.button-first {
+    width: 300px;
+    height: 100px;
+}
+
+button.button-first:active {
+    color: blue;
+}
+
+button.button-second {
+    width: 200px;
+    height: 50px;
+}
+
+button.button-second:hover {
+    background-color: brown;
+}
+
+p.centered {
+    text-align: center;
+    line-height: 32px;
+}
+
+p.capitalized {
+    text-transform: capitalize;
+    text-transform: uppercase;
+}
+

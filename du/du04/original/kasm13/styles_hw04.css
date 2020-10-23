@@ -1,0 +1,131 @@
+body 
+    {
+        font-family: "Arial"
+    }
+.text-red
+    {
+        color: red;
+    }
+.text-green
+    {
+        color: #00ff00
+    }
+.text-blue
+    {
+        font-weight: bold;
+        color:#0000ff
+
+    }
+.text-small
+    {
+        font-size: 18px;
+    }
+.text-big
+    {
+        font-size: 24px;
+        font-style: italic;
+    }
+.text-white-brown
+    {
+        color: white;
+        background-color: saddlebrown;
+    }
+.text-centered
+    {
+        text-align: center;
+        line-height: 32px;
+    }
+.text-caps
+    {
+        text-align: justify;
+        text-transform: uppercase;
+    }
+.box-1
+    {
+        width: 400px;
+        height: 300px;
+        border-width: 1px;
+        border-style: solid;
+        border-color:purple;
+        padding: 30px;
+    }
+.box-2
+    {
+        width: 500px;
+        height: 200px;
+        background-color: red;
+        margin: 100px;
+    }
+.text-ghost
+    {
+        visibility: hidden;
+    }
+.box-3
+    {
+        background-color: mediumblue;
+        padding: 50px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: yellow;
+    }
+.box-4
+    {
+        width: 500px;
+        height: 200px;
+        background-color: green;
+        opacity: 0.5;
+    }
+.box-5
+    {
+        width: 300px;
+        height: 400px;
+        position: relative;
+        background-color: lightblue;
+    }
+.box-6
+    {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: pink;
+    }
+.box-7
+    {
+        width: 200px;
+        height: 400px;
+        border-color: brown;
+        border-width: 20px;
+        border-style: solid;
+        border-radius: 10px;
+    }
+.button-1
+    {
+        width: 300px;
+        height: 100px;
+    }
+.button-1:focus
+    {
+        color: blue;
+    }
+.button-2
+    {
+        width: 200px;
+        height: 50px;
+    }
+.button-2:hover
+    {
+        background-color: brown;
+    }
+.box-8
+    {
+        width: 200px;
+        height: 500px;
+        background-color: blue;
+        margin-top: 200px;
+    }
+.box-8:hover
+    {
+        cursor: grab;
+    }

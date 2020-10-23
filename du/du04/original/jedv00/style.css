@@ -1,0 +1,137 @@
+body {
+    font-family: monospace;
+}
+
+.text-red {
+   color: red; 
+}
+
+.text-green {
+    color: #1aff1a;
+}
+
+.text-blue {
+    color: blue;
+}
+
+.size-18 {
+    font-size: 18px;
+}
+
+.size-24-italic {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.whitetxt-brownbcg {
+    color: white;
+    background-color: #805500;
+}
+
+.height-32-center {
+    line-height: 32px;
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.purple-box {
+    width: 400px;
+    height: 300px;
+    border-width: 1px;
+    border-color: purple;
+    border-style: solid;
+    padding: 30px;
+}
+
+.red-box {
+    width: 500px;
+    height: 200px;
+    background-color: rgb(158, 30, 30);
+    margin: 100px;
+}
+
+.none {
+    display: none;
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+.yellow-blue-box {
+    background-color: rgb(35, 111, 197);
+    padding: 50px;
+    border-width: 10px;
+    border-color: yellow;
+    border-style: solid;
+}
+
+.green-box {
+    width: 500px;
+    height: 200px; 
+    background-color: rgb(90, 112, 90);
+    opacity: 0.5;
+}
+
+.light-blue-box {
+    height: 400px;
+    width: 300px;
+    position: relative;
+    background-color: rgb(93, 186, 230);
+}
+
+div > div {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: pink;
+}
+
+/*pink-box {
+
+}
+*/
+
+.radius-box {
+    height: 400px;
+    width: 200px;
+    border-width: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: brown;
+}
+
+.blue-button {
+    width: 300px;
+    height: 100px;
+}
+
+.blue-button:active {
+    color:blue;
+}
+
+.brown-button {
+    width: 200px;
+    height: 50px;
+}
+
+.brown-button:hover {
+    background-color: brown;
+}
+
+.above-box {
+    height: 500px;
+    width: 200px;
+    background-color: rgb(23, 111, 184);
+    margin-top: 200px;
+}
+
+.above-box:hover {
+    cursor: pointer;
+}

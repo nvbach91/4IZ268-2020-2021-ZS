@@ -1,0 +1,165 @@
+body {
+    font-family: Open-sans, Helvetica;
+}
+
+.red-text {
+    color: green;
+}
+
+.green-text {
+    color: RGB(250, 0, 0);
+}
+
+.blue-text {
+    color: #0000FF
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.larger-text {
+    font-size: 18px;
+}
+
+.italic-text {
+    font-style: italic;
+
+}
+
+.white-text {
+    color: white;
+
+}
+
+.brown-background {
+    background-color: brown;
+
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.green-background {
+    background-color: green;
+
+}
+
+.red-background {
+    background-color: red;
+
+}
+
+.line-height-32 {
+    line-height: 32px;
+
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.justified-text {
+    text-align: justify;
+}
+
+.capital-text {
+    text-transform: uppercase;
+}
+
+.solid-border {
+    border-style: solid;
+}
+
+.first-box {
+    width: 400px;
+    height: 300px;
+
+    border-color: purple;
+    border-width: 1px;
+}
+
+.second-box {
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+}
+
+.not-displayed {
+    display: none;
+}
+
+.third-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px;
+    border-color: yellow;
+    border-width: 10px;
+
+}
+
+.fourth-box {
+    width: 500px;
+    height: 200px;
+    background-color: RGBA(0, 255, 0, 0.5);
+}
+
+.fifth-box-outer {
+    height: 400px;
+    width: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.fifth-box {
+    position: relative;
+
+}
+
+.fifth-box-2 {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: lightpink;
+}
+
+.sixth-box {
+    height: 200px;
+    width: 400px;
+    border-width: 20px;
+    border-color: brown;
+    border-radius: 10px;
+}
+
+.hidden {
+    visibility: hidden;
+
+}
+
+.first-button {
+    width: 300px;
+    height: 100px;
+}
+
+.second-button {
+    width: 200px;
+    height: 50px;
+}
+
+.first-button:focus {
+    color: blue;
+}
+
+.second-button:hover {
+    background-color: brown;
+}
+
+.last-box {
+    margin-top: 100px;
+    height: 200px;
+    width: 500px;
+    cursor: pointer;
+}

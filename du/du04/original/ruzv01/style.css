@@ -1,0 +1,131 @@
+body{
+    font-family: Arial;
+}
+
+.red-text{
+    color: red;
+}
+
+.green-rgb-text{
+    color: rgb(0, 184, 0)
+}
+
+.blue-hex-text{
+    color: 	#0000FF;
+    font-weight: bold;
+}
+.text18{
+    font-size: 18px;
+}
+
+.text24{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.brown-background{
+    color: white;
+    background-color: brown;
+}
+
+.center-text32{
+    text-align: center;
+    line-height: 32px;
+}
+
+.justcap-text{
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.purple-box{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    border: purple 1px solid;
+}
+
+.red-box{
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+    background-color:red;   
+}
+
+.invisible-text{
+    display: none;
+}
+
+
+.relative-box{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color:blue;
+    border: 10px yellow solid;
+}
+
+.invisible-text-gap{
+    visibility: none;
+}
+
+.green-box{
+    width: 200px;
+    height: 500px;
+    opacity: 0.5;
+    background-color:green;
+    color:white;
+}
+
+.lightblue-box{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.pink-box{
+    width: 50px;
+    height: 50px;
+    top:50px;
+    right: 10px;
+    font-size: 5px;
+    position: absolute;
+    background-color: pink;
+}
+
+.brown--box{
+    width: 200px;
+    height: 400px;
+    border-radius: 10px;
+    border: 20px brown solid;
+}
+
+.button1{
+    width: 300px;
+    height: 100px;
+}
+
+.button1:active{
+    color: blue;
+}
+
+.button2{
+    width: 200px;
+    height: 50px;
+}
+
+.button2:hover{
+    background-color: brown;
+}
+
+.blue-200x500-box{
+    width: 200px;
+    height: 500px;
+    margin-top: 200px;
+    background-color: blue;
+}
+
+.blue-200x500-box:hover{
+    cursor: pointer;
+}

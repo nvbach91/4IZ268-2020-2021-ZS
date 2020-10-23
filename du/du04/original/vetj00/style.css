@@ -1,0 +1,129 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.red-text{
+    color: red;
+}
+
+.green-text{
+    color: rgb(0,128,0);
+}
+
+.blue-bold-text{
+    color: #0000ff;
+    font-weight: bold;
+}
+
+.bigger-text{
+    font-size: 18px;
+}
+
+.biggest-italic-text{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.white-text-brown-bg{
+    color: white;
+    background-color: rgb(129, 74, 74);
+}
+
+.centered-bigger-line{
+    line-height: 32px;
+    text-align: center;
+}
+
+.justified-capitalized-text{
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.purple-border-box{
+    border: 1px solid purple;
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+}
+
+.red-background-box{
+    margin: 100px;
+    background-color: #cc0000;
+    width: 500px;
+    height: 200px;
+}
+
+.unvisible-text{
+    display: none;
+}
+
+.blue-wide-box{
+    width: 100%;
+    border: 10px solid yellow;
+    background-color: rgb(51, 51, 255);
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.gap-text{
+    visibility: hidden;
+}
+
+.half-green-box{
+    background-color: rgb(0, 182, 0);
+    opacity: 0.5;
+    width: 500px;
+    height: 200px;
+}
+
+.relative-blue-box{
+    position: relative;
+    background-color: lightblue;
+    width: 300px;
+    height: 400px;
+}
+
+.absolute-pink-box{
+    position: absolute;
+    background-color: pink;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    right: 10px;
+}
+
+.brown-rounded-box{
+    border: 20px solid brown;
+    border-radius: 10px;
+    width: 200px;
+    height: 400px;
+}
+
+.click-button{
+    width: 300px;
+    height: 100px;
+}
+
+.click-button:active{
+    color: blue;
+}
+
+.hover-button{
+    width: 200px;
+    height: 50px;
+}
+
+.hover-button:hover{
+    background-color: brown;
+}
+
+.hand-cursor-box{
+    background-color: rgb(0, 102, 255);
+    width: 200px;
+    height: 500px;
+    margin-top: 200px;
+}
+
+.hand-cursor-box:hover{
+    cursor: pointer;
+}

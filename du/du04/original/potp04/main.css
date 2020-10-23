@@ -1,0 +1,140 @@
+.button1 {
+    width: 300px;
+    height: 100px;
+}
+
+.button1:active {
+    width: 300px;
+    height: 100px;
+    color: blue;
+}
+
+.button2 {
+    width: 200px;
+    height: 50px;
+}
+
+.button2:hover {
+   
+    background-color: brown;
+}
+
+.cl1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cl2 {
+    color: red;
+}
+
+.cl3 {
+    color: rgb(100, 255, 100);
+}
+
+.cl4 {
+    color: #00A5FF;
+    font-weight: bold;
+}
+
+.cl5 {
+    font-size: 18px;
+}
+
+.cl6 {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.cl7 {
+    color: white;
+    background-color: brown;
+}
+
+.cl8 {
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    border: 4px solid purple;
+    padding: 30px;
+}
+
+.cl9 {
+    box-sizing: border-box;
+    width: 500px;
+    height: 200px;
+    background: red;
+    margin: 100px;
+}
+
+.cl10 {
+    visibility: hidden;
+}
+
+.cl11 {
+    box-sizing: border-box;
+    width: 100%;
+    background: cornflowerblue;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.cl12 {
+    visibility: hidden;
+}
+
+.cl13 {
+    box-sizing: border-box;
+    width: 500px;
+    height: 200px;
+    background: green;
+    opacity: 50%;
+}
+
+.cl14 {
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.cl14>div {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    font-size: 10px;
+    background-color: pink;
+}
+
+.cl15 {
+    box-sizing: border-box;
+    width: 200px;
+    height: 500px;
+    border: 20px solid brown;
+    border-radius: 10px;
+    
+}
+
+.cl16 {
+    box-sizing: border-box;
+    width: 200px;
+    height: 500px;
+    background:lightblue;
+    margin-top: 200px;
+}
+.cl16:hover {
+   cursor: pointer;
+}
+
+.pr1 {
+    text-align: center;
+    line-height: 30px;
+}
+
+.pr2 {
+    text-align: justify;
+    text-transform: uppercase;
+}

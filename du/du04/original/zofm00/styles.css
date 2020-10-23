@@ -1,0 +1,119 @@
+.jedna{
+    color:red;
+}
+.dva{
+    color:RGB(0,255,0);    
+}
+.tri{
+    color:#05B8CC;
+    font-weight:bold;
+}
+.ctyri{
+    font-size: 18px;
+}
+.pet{
+    font-size: 24px;
+    font:italic;
+}
+.sest{
+    background-color: brown;
+    color:white;
+}
+.sedm{
+    text-align: center;
+    line-height: 32px;
+}
+.osm{
+    text-transform: capitalize;
+    text-align: justify;
+}
+.devet{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    border: 1px solid purple;
+    box-sizing: border-box;
+}
+.deset{
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+    background-color: red;
+    box-sizing: border-box;
+}
+.jedenact{
+    visibility: hidden;
+}
+.dvanact{
+    width: 100%;
+    background-color: blue;
+    padding: 50px;
+    border: 10px solid yellow;
+    box-sizing: border-box;
+    
+}
+.trinact{
+    visibility: hidden;
+}
+.ctrnact{
+    width: 500px;
+    height: 200px;
+    background: green;
+    opacity: 0.5;
+}
+.patnact{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+.patnact .sestnact{
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+    position: absolute;
+    box-sizing: border-box;
+}
+.sedmnact{
+    width: 400px;
+    height: 200px;
+    border: 20px solid brown;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.osmnact{
+    width: 300px;
+    height: 100px;
+ }
+.osmnact:active{
+    width: 300px;
+    height: 100px;
+    color:blue;
+}
+.devatenact{
+    width: 200px;
+    height: 50px;
+}
+.devatenact:hover{
+    width: 200px;
+    height: 50px;
+    background-color: brown;
+}
+.dvacet{
+    width: 500px;
+    height: 200px;
+    background-color: blue;
+    margin-top: 200px;
+    box-sizing: border-box;
+}
+.dvacet:hover{
+    width: 500px;
+    height: 200px;
+    background-color: blue;
+    margin-top: 200px;
+    box-sizing: border-box;
+    cursor: pointer;
+}

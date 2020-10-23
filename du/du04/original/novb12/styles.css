@@ -1,0 +1,129 @@
+body{
+    font-family: sans-serif;
+}
+
+.line2{
+    color: red;
+}
+
+.line3{
+    color: rgb(102, 255, 102);
+}
+
+.line4{
+    color: #0200f1;
+    font-weight: bold;
+}
+
+.line5{
+    font-size: 18px;
+}
+
+.line6{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.line7{
+    color:white;
+    background-color: brown;
+}
+
+.notseenline{
+    display: none;
+}
+
+.paragraph1{
+    text-align: center;
+    line-height: 32px;  
+}
+
+.paragraph2{
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.box1{
+    width: 400px;
+    height: 300px;
+    border: purple;
+    border-style: solid;
+    border-width: 1px;
+    padding: 30px;
+}
+
+.box2{
+    width: 500px;
+    height: 200px;
+    background-color: rgb(189, 22, 22);
+    margin: 100px;
+}
+
+.box3{
+    background-color: steelblue;
+    padding: 50px;
+    border: yellow; 
+    border-style: solid;
+    border-width: 10px;
+}
+
+.box4{
+    width: 500px;
+    height: 200px;
+    background-color: rgb(81, 119, 81);
+    opacity: 0.5;
+}
+
+.box5{
+    width: 400px;
+    height: 300px ;
+    position: relative;
+    background-color: lightblue;
+}
+
+.box6{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+}
+
+.box7{
+    width: 200px;
+    height: 400px;
+    border: brown;
+    border-style: solid;
+    border-width: 20px;
+    border-radius: 10px;
+}
+
+.box8{
+    width: 200px;
+    height: 500px;
+    background-color: rgb(5, 127, 143);
+    margin-top: 200px
+}
+
+.box8:hover{
+    cursor: pointer;
+}
+
+.button1{
+    width: 300px;
+    height: 100px;
+}
+
+.button1:focus{
+    color: blue;
+}
+
+.button2{
+    width: 200px;
+    height: 50px;
+}
+
+.button2:hover{
+    background-color: brown;
+}

@@ -1,0 +1,139 @@
+body {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-family: Arial, Helvetica;
+}
+
+.first-text {
+   color: red; 
+}
+
+.second-text {
+    color: rgb(7, 216, 7); 
+ }
+
+.third-text {
+    color: #0000EE;
+    font-weight: bold;
+ }
+
+.fourth-text {
+     font-size: 18px;
+ }
+
+.fifth-text {
+    font-size: 24px;
+    font-style: italic;
+ }
+
+.sixth-text {
+    color: white;
+    background-color: brown; 
+}
+
+.first-paragraph {
+    line-height: 32px;
+    text-align: center;
+}
+
+.second-paragraph {
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.first-box {
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    border: purple;
+    border-style: solid;
+    border-width: 1px;
+    padding: 30px;
+}
+
+.second-box {
+    box-sizing: border-box;
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+.first-invisible-text {
+    display: none;
+}
+
+.third-box {
+    box-sizing: border-box;
+    width: 100%;
+    background-color:blue;
+    padding: 50px;
+    border: 10px solid yellow;
+ 
+}
+
+.second-invisible-text {
+    visibility: hidden;
+}
+
+.fourth-box {
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    color: white;
+    opacity: 0.5;
+}
+
+.fifth-box {
+    width:400px;
+    height:300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.inside-box {
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: pink;
+    
+}
+
+.sixth-box {
+    width: 200px;
+    height: 400px;
+    border: 20px solid brown;
+    border-radius: 10px;
+}
+
+.first-button {
+    width: 300px;
+    height: 100px;
+}
+
+.first-button:active {
+    color:blue
+}
+
+.second-button {
+    width: 200px;
+    height: 50px;
+}
+
+.second-button:hover {
+    background: brown;
+}
+
+.seventh-box {
+    width: 200px;
+    height: 500px;
+    background-color: cadetblue;
+    margin-top: 200px;
+}
+
+.seventh-box:hover {
+    cursor: pointer;
+}
