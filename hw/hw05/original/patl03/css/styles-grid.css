@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Courier New', Courier, monospace;    
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+.wrapper
+{
+    padding: 20px;
+    clear: both;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+h1 {
+    text-align: center;
+    padding: 50px 10px;
+    color: white;
+    background-color: rgb(78, 146, 179);
+}
+.colors>input {
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    width: 25%;
+    color: white;
+}
+.instructions {
+    max-width: 1280px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.flex-cont-1
+{
+    background-color: grey;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-cont-2
+{
+    background-color: grey;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-cont-3
+{
+    background-color: grey;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+}
+.flex-cont-4
+{
+    background-color: grey;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-basic
+{
+    color: white;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 50px;
+}
+.flex-cont-1 > .flex-basic
+{
+    width: 100%;
+}
+.flex-cont-2 > .flex-basic
+{
+    width: 50%;
+}
+.flex-cont-3 > .flex-basic
+{
+    width: 33.33%;
+}
+.flex-cont-4 > .flex-basic
+{
+    width: 25%;
+}
+.flex-basic:nth-child(1)
+{
+    background-color: rgb(255,125,78);
+}
+.flex-basic:nth-child(2)
+{
+    background-color: rgb(168,89,60);
+}
+.flex-basic:nth-child(3)
+{
+    background-color: rgb(33,165,121);
+}
+.flex-basic:nth-child(4)
+{
+    background-color: rgb(47,83,160);
+}
+.flex-basic:nth-child(5)
+{
+    background-color: rgb(197,56,56);
+}
+.flex-basic:nth-child(6)
+{
+    background-color: rgb(112,158,94);
+}
+.flex-basic:nth-child(7)
+{
+    background-color: rgb(182,109,197);
+}
+.flex-basic:nth-child(8)
+{
+    background-color: rgb(167,35,79);
+}
+.flex-basic:nth-child(9)
+{
+    background-color: rgb(38,189,189);
+}
