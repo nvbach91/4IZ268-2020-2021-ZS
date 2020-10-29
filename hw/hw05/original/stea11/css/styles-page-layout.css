@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: rgb(192, 50, 50);
+    padding: 50px 0px 10px 0px
+}
+
+.instructions {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin: 25px 0px 60px 0px;
+}
+
+.colors input {
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    padding: 5px;
+    width: 50%;
+}
+
+@media screen and (min-width: 720px) {
+    .instructions {
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+    h1 {
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+    .colors input {
+        width: 50%;
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .instructions {
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 90px;
+    }
+    h1 {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+    .colors input {
+        width: 20%;
+        padding: 20px;
+    }
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper div {
+        display: flex;
+        flex-direction: row;
+    }
+    main {
+        width: 70%;
+    }
+    aside {
+        width: 30%;
+    }
+}
+
+/*.wrapper * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+header {
+    background-color: rgb(223, 114, 75);
+    height: 238px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+nav {
+    background-color: rgb( 47, 108, 136);
+    height: 77px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+main {
+    background-color: rgb(192, 70, 94);
+    height: 1038px;
+    padding-top: 500px;
+    padding-bottom: 500px;
+}
+
+aside {
+    background-color: rgb( 53, 184, 155);
+    height: 1038px;
+    padding-top: 500px;
+    padding-bottom: 500px;
+}
+
+footer {
+    background-color: rgb( 39, 39, 39);
+    height: 138px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

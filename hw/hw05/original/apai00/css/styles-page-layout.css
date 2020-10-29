@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px 10px;
+    color: white;
+    background-color: rgb(192, 50, 50);
+}
+
+.instructions {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.colors>input {
+    width: 50%;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    color: white;
+}
+
+@media screen and (min-width: 720px) {
+    .colors>input {
+        padding: 20px;
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .colors>input {
+        width: 20%;
+    }
+    .wrapper * {
+        display: flex;
+    }
+}
+
+.wrapper {
+    max-width: 1280px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 300%;
+    color: white;
+}
+
+.wrapper * {
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper header {
+    background-color: rgb(223, 114, 75);
+    width: 100%;
+    height: 150px;
+}
+
+.wrapper nav {
+    background-color: rgb( 47, 108, 136);
+    width: 100%;
+    height: 50px;
+}
+
+.wrapper div main {
+    background-color: rgb(192, 70, 94);
+    width: 75%;
+    float: left;
+    height: 400px;
+}
+
+.wrapper div aside {
+    background-color: rgb( 53, 184, 155);
+    width: 25%;
+    float: right;
+    height: 400px;
+}
+
+.wrapper footer {
+    background-color: rgb( 39, 39, 39);
+    width: 100%;
+    height: 100px;
+    clear: both;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper nav,
+    .wrapper header,
+    .wrapper div main,
+    .wrapper footer,
+    .wrapper div aside {
+        width: 100%;
+        height: 100px;
+    }
+}

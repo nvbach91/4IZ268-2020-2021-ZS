@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*body>div {
+    max-width: 1240px;
+    margin: 0 auto;
+}*/
+
+.instructions {
+    max-width: 1240px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 110px;
+}
+
+input {
+    border: none;
+    color: white;
+    float: left;
+    width: 25%;
+    font-size: 18px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(56, 113, 141);
+    color: white;
+    padding: 48px 350px 6px 350px;
+    line-height: 42px;
+}
+
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+.float-box {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.container {
+    background-color: rgb(128, 128, 128);
+    margin-bottom: 50px;
+}
+
+.container div:nth-child(1) {
+    background-color: rgb(255, 125, 78);
+}
+
+.container div:nth-child(2) {
+    background-color: rgb(168, 89, 60);
+}
+
+.container div:nth-child(3) {
+    background-color: rgb( 33, 165, 121);
+}
+
+.container div:nth-child(4) {
+    background-color: rgb( 47, 83, 160);
+}
+
+.container div:nth-child(5) {
+    background-color: rgb(197, 56, 56);
+}
+
+.container div:nth-child(6) {
+    background-color: rgb(112, 158, 94);
+}
+
+.container div:nth-child(7) {
+    background-color: rgb(182, 109, 197);
+}
+
+.container div:nth-child(8) {
+    background-color: rgb(167, 35, 79);
+}
+
+.container div:nth-child(9) {
+    background-color: rgb( 38, 189, 189);
+}
+
+.clear {
+    clear: both;
+}
+
+.container-01>.float-box {
+    width: 100%;
+    padding: 125px;
+}
+
+.container-02>.float-box {
+    float: left;
+    width: 50%;
+    padding: 100px;
+}
+
+.container-03>.float-box {
+    float: left;
+    width: 33.3333333333333333333333333%;
+    padding: 85px;
+}
+
+.container-04>.float-box {
+    float: left;
+    width: 25%;
+    padding: 60px;
+}

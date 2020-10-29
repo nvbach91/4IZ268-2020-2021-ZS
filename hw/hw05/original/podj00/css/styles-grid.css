@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px 10px;
+    color: white;
+    background-color: rgb(78, 146, 179);
+}
+
+.colors>input {
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    width: 25%;
+    color: white;
+}
+
+.instructions {
+    max-width: 1280px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.clear{
+    clear: both;
+}
+
+.wrapper{
+    padding: 20px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.container{
+    display: grid;
+    font-size: 60px;
+    background-color: gray;
+    width: 100%
+}
+
+.float-box{
+    text-align: center;
+    color: white;
+    padding: 90px;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.container-01{
+    grid-template-columns: auto;
+}
+.container-02{
+    grid-template-columns: auto auto;
+}
+.container-03{
+    grid-template-columns: auto auto auto;
+}
+.container-04{
+    grid-template-columns: auto auto auto auto;
+}
+
+.container .float-box:nth-child(1) {
+    background-color: rgb(255, 125, 78);
+}
+
+.container .float-box:nth-child(2) {
+    background-color: rgb(168, 89, 60);
+}
+
+.container .float-box:nth-child(3) {
+    background-color: rgb( 33, 165, 121);
+}
+
+.container .float-box:nth-child(4) {
+    background-color: rgb( 47, 83, 160);
+}
+
+.container .float-box:nth-child(5) {
+    background-color: rgb(197, 56, 56);
+}
+
+.container .float-box:nth-child(6) {
+    background-color: rgb(112, 158, 94);
+}
+
+.container .float-box:nth-child(7) {
+    background-color: rgb(182, 109, 197);
+}
+
+.container .float-box:nth-child(8) {
+    background-color: rgb(167, 35, 79);
+}

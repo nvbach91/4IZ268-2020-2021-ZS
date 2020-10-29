@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px 10px;
+    color: white;
+    background-color: rgb(78, 146, 179);
+}
+
+.colors>input {
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    width: 25%;
+    color: white;
+}
+
+.body {
+    max-width: 1280px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.wrapper {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 50px;
+    flex-direction: column;
+}
+
+.container {
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    background-color: gray;
+}
+
+.float-box {
+    height: 15rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+}
+
+.container-2 .float-box {
+    width: 50%;
+}
+
+.container-3 .float-box {
+    width: 33.333333333333333333333333333333333%;
+}
+
+.container-4 .float-box {
+    width: 25%;
+}
+
+.container .float-box:nth-child(1) {
+    background-color: rgb(255, 125, 78)
+}
+
+.container .float-box:nth-child(2) {
+    background-color: rgb(168, 89, 60)
+}
+
+.container .float-box:nth-child(3) {
+    background-color: rgb( 33, 165, 121)
+}
+
+.container .float-box:nth-child(4) {
+    background-color: rgb( 47, 83, 160)
+}
+
+.container .float-box:nth-child(5) {
+    background-color: rgb(197, 56, 56)
+}
+
+.container .float-box:nth-child(6) {
+    background-color: rgb(112, 158, 94)
+}
+
+.container .float-box:nth-child(7) {
+    background-color: rgb(182, 109, 197)
+}
+
+.container .float-box:nth-child(8) {
+    background-color: rgb(167, 35, 79)
+}
