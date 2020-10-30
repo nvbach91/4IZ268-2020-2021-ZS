@@ -5,3 +5,126 @@
 body {
     font-family: "Open Sans", sans-serif;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-top: 5px solid rgb(63, 144, 168);
+}
+
+.logo {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cf/Bitcoin.com_logo.png);
+    background-size: contain;
+    padding: 10px;
+    /*background-position:*/
+    background-repeat: no-repeat;
+    text-indent: 60px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding: 20px 0;
+}
+
+nav li {
+    padding: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a.active, nav a:hover {
+    background-color: rgb(49, 151, 165);
+    color: white;
+}
+
+.jumbotron {
+    background-image: url(https://linkedinbackground.com/download/Business-HQ.jpg);
+    padding: 80px 0;
+}
+
+.jumbotron h1 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jumbotron h3 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    padding: 20px;
+    width: 70%;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.poster {
+    background-image: url(https://www.raconteur.net/wp-content/uploads/2016/11/increase-productivity.jpg);
+    background-size: cover;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.poster h2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0;
+}
+
+.products {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 25%;
+    height: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product p {
+    flex-grow: 1;
+}
+
+.product button {
+    border: none;
+    padding: 10px;
+    background-color: pink;
+    transition: background-color 0.5s ease;
+}
+.product button:hover {
+    background-color: red;
+}
+
+.product h2 {
+    border-bottom: 5px solid green;
+}
+
+.product:nth-child(1) h2 { border-bottom: 10px solid rgb(77, 161, 77); }
+.product:nth-child(2) h2 { border-bottom: 10px solid rgb(105, 128, 0); }
+.product:nth-child(3) h2 { border-bottom: 10px solid rgb(0, 70, 128); }
+.product:nth-child(4) h2 { border-bottom: 10px solid rgb(0, 13, 128); }
+.product:nth-child(5) h2 { border-bottom: 10px solid rgb(60, 0, 128); }
+.product:nth-child(6) h2 { border-bottom: 10px solid rgb(165, 47, 120); }
+.product:nth-child(7) h2 { border-bottom: 10px solid rgb(128, 0, 85); }
+.product:nth-child(8) h2 { border-bottom: 10px solid rgb(128, 73, 0); }

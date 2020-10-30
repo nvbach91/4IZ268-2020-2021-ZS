@@ -36,6 +36,67 @@ h1 {
     color: white;
 }
 
+.wrapper {
+    background-color: #ccc;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.wrapper header div {
+    padding: 50px;
+    background-color: rgb(223, 114,  75);
+}
+.wrapper nav {
+    padding: 50px;
+    background-color: rgb( 47, 108, 136);
+}
+.wrapper .row {
+    background-color: rgb(192,  70,  94);
+    display: flex;
+}
+
+.wrapper main {
+    padding: 50px;
+    background-color: rgb( 39,  39,  39);
+    width: 70%;
+
+}
+.wrapper aside {
+    padding: 50px;
+    background-color: rgb(219, 107, 129);
+    width: 30%;
+
+}
+.wrapper footer {
+    padding: 50px;
+    background-color: rgb( 53, 184, 155);
+}
+
+
+@media screen and (max-width: 720px) {
+    
+    .wrapper main {
+        width: 100%;
+    }
+    .wrapper aside {
+        width: 100%;
+    }
+    .wrapper .row {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 720px) {
     .colors>input {
         padding: 20px;

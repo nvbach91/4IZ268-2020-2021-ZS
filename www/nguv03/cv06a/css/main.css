@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+.loader {
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    border: 50px solid orange;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spinning 2s ease infinite;
+}
+
+@keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
