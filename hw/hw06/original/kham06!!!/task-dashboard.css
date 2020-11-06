@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    color :black;
+}
+.layout {
+    max-width: 1280px;
+    display: flex;
+    padding: 5px;
+    margin: 0 auto;
+}
+.menu-item, .mf-item, .main-header, .kpi-item, .card{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.menu {
+    min-width: 240px;
+    display:flex;
+    flex-direction: column;
+}
+.menu-item {
+    background-color: rgb(235, 106, 60);
+    padding: 15px 20px;
+}
+.menu-welcome {
+    padding:25px 20px;
+    background-color:  rgb(238, 90, 79) ;
+}
+.menu-profile{
+    padding:50px 20px;
+    background-color:  rgb(247, 168, 94);
+}
+.menu-active{
+    background-color: rgb(115, 247, 252);
+}
+.menu-item i {
+    width:50px;
+}
+.menu-footer {
+    background-color: transparent;
+    margin-top: auto;
+    display: flex;
+    padding: 0;
+  }
+  .mf-item {
+    width: calc(100%/3);
+    padding: 10px ;
+    text-align: center;
+  }
+  .mf-item:nth-child(odd){
+    background-color: rgb(247, 168, 94) ;
+  }
+  .mf-item:nth-child(even){
+    background-color: rgb(238, 90, 79) ;
+  }
+.main {
+    flex-grow:1;
+    width:100%;
+    text-align: center;
+}
+.main-header{
+    padding:70px;
+    background-color: rgb(247, 168, 94) ;
+}
+.kpis{
+    display:flex;
+}
+.kpi-item{
+    width:calc(100%/ 4);
+    padding:15px;
+    
+}
+.kpi-item:nth-child(odd){
+    background-color: rgb(247, 168, 94);
+}
+.kpi-item:nth-child(even){
+    background-color:rgb(238, 90, 79) ;
+}
+.cards{
+    display:flex;
+    flex-wrap: wrap;
+}
+.card{
+    padding:150px 15px;
+    background-color: rgb(235, 106, 60) ;
+}
+.card-video{
+    width:70%;
+}
+.card-performance{
+    width: 30%;
+}
+.card iframe{
+    border:none;
+    width: 100%;
+    height:100%;
+}
+.card-app, .card-usage, .card-settings{
+    width: calc(100%/3)
+}
+.card-app, .card-settings:nth-child(odd){
+    background-color: rgb(247, 168, 94) ;
+}
+.card-recent {
+    width: calc(100%/3);
+}
+.card-image{
+    width: calc(100%/1.5);
+    background-color:rgb(238, 90, 79);
+}
+.card-footer{
+    width:100%;
+    padding:50px;
+}
+.spinner{
+    position: relative;
+    border-radius: 50%;
+    width:150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 80px solid yellow;
+    border-top-color: red;
+    border-bottom-color: red;
+    animation-name: slide ;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.spinner:active{
+    animation-play-state: paused;
+}
+@keyframes slide{
+    0%{
+        left:0;
+        top:40px;
+    }
+    50%{
+        left:0px;
+        bottom:40px;
+    }
+    100%{
+        left:0px;
+        top:0px;
+    }
+}
+.spinner:hover{
+    border: 80px solid red;
+    border-top-color: yellow ;
+    border-bottom-color:yellow ;
+}

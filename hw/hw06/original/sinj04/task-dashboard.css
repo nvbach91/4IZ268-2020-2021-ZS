@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+    margin: 0;
+    padding: 0;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 30px solid transparent;
+    border-top-color: firebrick;
+    border-bottom-color: firebrick;
+    animation: spinning 2s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+.spinner:hover {
+    border-top-color: cadetblue;
+    border-bottom-color: cadetblue;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.layout {
+    display: flex;
+    padding: 5px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.menu {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    background-color: #194268;
+    padding: 15px 10px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    transition: background-color 0.6s ease;
+}
+
+.menu-welcome {
+    padding: 20px 20px;
+}
+
+.menu-profile {
+    padding: 40px 20px;
+    background-color: #588cbd;
+}
+
+.menu-item:hover, .menu-active {
+    background-color: rgb(37, 160, 12);
+    color: white;
+}
+
+.menu-footer {
+    background-color: transparent;
+    margin-top: auto;
+    display: flex;
+    padding: 0;
+}
+
+.mf-item {
+    width: calc(100% / 3);
+    padding: 10px 0;
+    text-align: center;
+    background-color: #20578b;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    color: white;
+}
+
+.main-header {
+    background-color: #588cbd;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 50px 10px;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 25%;
+    padding: 20px 10px;
+    background-color: #20578b;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 150px 0;
+    text-align: center;
+    background-color: #20578b;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.card-video {
+    width: 70%
+}
+
+.card-performance {
+    width: 30%;
+    background-color: #3a4c5e;
+}
+
+.card-app, .card-usage, .card-settings, .card-recent {
+    width: calc(100%/3);
+}
+
+.card-image {
+    width: calc(100% - 100% / 3);
+}
+
+.card-footer {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.mf-item:nth-child(odd), .kpi-item:nth-child(odd), .card:nth-of-type(odd) {
+    background-color: #072c7a;
+}

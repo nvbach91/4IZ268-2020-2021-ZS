@@ -1,0 +1,163 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans', sans-serif;
+	color: white;
+}
+
+.menu-item,
+.kpi-item,
+.mf-item,
+.main-header,
+.card {
+	background-color: darkgrey;
+	text-align: center;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+
+.kpi-item:nth-child(odd),
+.card:nth-of-type(odd) {
+	background-color: gray;
+}
+
+.mf-item:nth-child(odd) {
+	background-color: steelblue;
+}
+
+.mf-item:nth-child(even) {
+	background-color: slategray;
+}
+
+.main-header {
+	width: 100%;
+	padding: 50px 0;
+	background-color: teal;
+	font-weight: bold;
+	font-size: larger;
+}
+
+.menu-item {
+	text-align: left;
+	padding: 15px 0 15px 15px;
+	background-color: #1b2e41;
+}
+
+.menu-profile {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #182d4d;
+}
+
+.menu-item.menu-active {
+	background-color: #206f20;
+	font-weight: bold;
+}
+
+.menu-item:not(:last-child):hover {
+	background-color: darkblue;
+	font-weight: bold;
+}
+
+.menu-footer {
+	border: none;
+	background-color: transparent;
+	display: flex;
+	padding: 0;
+	margin-top: auto;
+}
+
+.mf-item {
+	padding: 15px 0;
+	width: calc(100%/3);
+}
+
+.layout {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.kpis {
+	display: flex;
+}
+
+.kpi-item {
+	width: 25%;
+	padding: 30px 0;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-video {
+	width: 75%;
+	padding: 200px 0;
+}
+
+.card-performance {
+	width: 25%;
+	padding: 200px 0;
+}
+
+.card-app,
+.card-usage,
+.card-settings,
+.card-recent {
+	width: calc(100%/3);
+	padding: 150px 0;
+}
+
+.card-image {
+	width: calc((100%/3)*2);
+	padding: 150px 0;
+}
+
+.card-footer {
+	width: 100%;
+	padding: 50px 0;
+}
+
+.spinner {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 25px solid transparent;
+	animation: spinning 2s linear infinite;
+	transition: border-color 0.5s ease;
+	border-top-color: tomato;
+	border-bottom-color: tomato;
+}
+
+.spinner:hover {
+	border-bottom-color: red;
+	border-top-color: red;
+}
+
+@keyframes spinning {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

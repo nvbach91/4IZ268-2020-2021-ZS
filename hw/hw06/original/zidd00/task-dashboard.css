@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.layout {
+    max-width: 1150px;
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex; /* main a menu budou mit stejnou vysku */
+}
+
+/*
+    Menu
+*/
+
+.menu {
+    /*background-color: gray;*/
+    width: 20%;
+    position: relative;
+}
+
+.menu-item {
+    background-color: cornflowerblue;
+    margin: 3px;
+    border-radius: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    color: white;
+}
+
+.menu-profile {
+    padding-top: 32px;
+    padding-bottom: 32px; 
+}
+
+.menu-active {
+    background-color: green;
+}
+
+/*
+    Footer v menu
+*/
+
+.menu-footer {
+    display:flex; /* l m r budou vedle sebe */
+
+    position:absolute; 
+    bottom: 0; 
+    left: 0;
+    right: 0;
+
+    background-color: transparent;
+    padding: 0;
+}
+
+.mf-item {
+    background-color: cornflowerblue;
+    width: calc(100% / 3);
+    text-align: center;
+    margin: 3px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Main */
+
+.main {
+    /*background-color: lightgray;*/
+    width: 80%;
+}
+
+.main-header {
+    text-align: center;
+    margin: 3px;
+    padding: 50px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.kpis {
+    display:flex;
+}
+
+.kpi-item {
+    flex:auto;
+    text-align: center;
+    margin: 3px;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: lightblue;
+}
+
+.card-group {
+    display:flex;
+}
+
+.card {
+    margin: 3px;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: lightblue;
+    text-align: center;
+
+    padding-bottom: 75px;
+    padding-top: 75px;
+}
+
+.card-video {
+    background-color: lightgray;
+    width: calc(100% - (100% / 3));
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.card-performance {
+    background-color: lightgray;
+    width: calc(100% / 3);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.card-app {
+    width: calc(100% / 3);
+}
+.card-settings {
+    width: calc(100% / 3);
+}
+.card-usage {
+    width: calc(100% / 3);
+}
+
+.card-recent {
+    width: calc(100% / 3);
+}
+.card-image {
+    width: calc(100% - (100% / 3));
+}
+
+.card-footer {
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 0;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}

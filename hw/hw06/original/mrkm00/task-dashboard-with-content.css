@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+.layout {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: rgb(135, 212, 132);
+}
+
+.menu {
+    flex: 1;
+    padding-top: 3.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    background-color: rgb(135, 212, 132);
+    border: 5px solid;
+    margin: 5%;
+    padding: 5%;
+    border-radius: 10%;
+    border-top-color: rgb(119, 116, 116);
+    border-left-color: rgb(95, 95, 95);
+    border-right-color: rgb(95, 95, 95);
+    border-bottom-color: rgb(119, 116, 116);
+}
+
+.menu-profile {
+    padding: 20px
+}
+
+.menu-active {
+    background-color: green;
+}
+
+.menu-item:not(:last-child):hover, .mf-item:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.menu-item:not(:last-child):active, .mf-item:active {
+    color: yellow;
+}
+
+.menu-footer {
+    display: flex;
+    background-color: transparent;
+    margin-top: auto;
+}
+
+.mf-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 7px;
+    background-color: rgb(135, 212, 132);
+    text-align: center;
+}
+
+.main {
+    flex: 4;
+    text-align: center;
+}
+
+.main-header {
+    background-color: rgb(135, 212, 132);
+    padding: 30px;
+    border: 7px solid;
+    border-top-color: rgb(119, 116, 116);
+    border-left-color: rgb(95, 95, 95);
+    border-right-color: rgb(95, 95, 95);
+    border-bottom-color: rgb(119, 116, 116);
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    width: calc(100%/3);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-video {
+    min-width: 50px;
+    height: 400px;
+    flex-basis: 70%;
+    border: 7px solid;
+    border-top-color: rgb(119, 116, 116);
+    border-left-color: rgb(95, 95, 95);
+    border-right-color: rgb(95, 95, 95);
+    border-bottom-color: rgb(119, 116, 116);
+}
+
+.card-performance {
+    min-width: 50px;
+    height: 400px;
+    flex-basis: 30%;
+}
+
+.spinner {
+    /*background-color:yellow;*/
+    height: 50px;
+    width: 50px;
+    border: 15px solid red;
+    border-radius: 50%;
+    border-left-color: white;
+    border-right-color: white;
+    animation: spinning 0.8s linear infinite;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card-image {
+    flex-basis: calc((100%/3)*2);
+    border: 7px solid;
+    border-top-color: rgb(119, 116, 116);
+    border-left-color: rgb(95, 95, 95);
+    border-right-color: rgb(95, 95, 95);
+    border-bottom-color: rgb(119, 116, 116);
+}
+
+.card-app, .card-usage, .card-settings, .card-recent {
+    height: 250px;
+}
+
+.card-footer {
+    flex-basis: 100%;
+    padding: 30px;
+}

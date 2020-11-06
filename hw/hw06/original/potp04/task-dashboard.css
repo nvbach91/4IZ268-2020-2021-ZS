@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sofia";
+  color:white;
+}
+
+.layout {
+  display: flex;
+  padding: 0px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  flex-grow: 1.5;
+}
+
+.menu-item {
+  background-color: darkslategray;
+  padding: 15px;
+  color: white;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid white;
+  
+}
+
+.menu-profile {
+  padding: 25px;
+  background-color: mediumaquamarine;
+}
+
+.menu-active {
+  background-color: mediumseagreen;
+}
+
+.menu-footer {
+   margin-top: auto;
+  background-color: white;
+}
+
+.mf-item {
+  background-color: teal;
+  width: 30%;
+  margin: calc(10/6);
+  text-align: center;
+  float: left;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.main {
+  margin: 0 auto;
+  background-color: white;
+  flex-grow: 4;
+
+  
+}
+.main-header, .kpi-item, .card{
+  border-radius: 10px;
+  border: 2px solid white;
+  text-align: center;
+ 
+
+}
+.main-header {
+  background-color: mediumaquamarine;
+  width: 100%;
+  padding: 75px;
+}
+
+.kpi-item {
+  display: flex;
+  float: left;
+  background-color: teal;
+  width: 25%;
+  padding: 10px;
+  font-family: "Sofia";
+}
+
+.kpi-item:nth-child(odd) {
+  background-color:mediumturquoise;
+}
+
+.cards {
+  border-radius: 10px;
+  border: 2px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 100%;
+}
+
+.card {
+  text-align: center;
+  background-color: #315da7;
+}
+
+.card-video {
+  width: 70%;
+  background-color: mediumaquamarine ;
+  padding-top: calc(30%);
+  padding-bottom: calc(30%);
+  
+}
+
+.card-performance {
+  width: 30%;
+  background-color: teal;
+  padding-top: calc(30%);
+  padding-bottom: calc(30%);
+ 
+}
+
+.spinner {
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  margin: 0 auto;
+  border: 30px solid transparent;
+  border-top-color: firebrick;
+  border-bottom-color: firebrick;
+  animation: spinning 2s linear infinite;
+  transition: border-color 0.5s ease;
+}
+.spinner:hover {
+  border-top-color: cadetblue;
+  border-bottom-color: cadetblue;
+}
+@keyframes spinning {
+  from { 
+    transform: rotate(0deg); 
+  }
+    to { 
+      transform: rotate(360deg); 
+  }
+}
+
+.card-app, .card-usage, .card-settings, .card-recent, .card-image {
+  width: 33.33333%;
+  padding-top: calc(15%);
+  padding-bottom: calc(15%);
+  background-color: mediumaquamarine;
+  text-align: center;
+}
+.card:nth-child(odd) {
+  background-color:teal;
+}
+
+.card-recent {
+  width: 40%;
+}
+
+.card-image {
+  width: 60%;
+}
+
+.card-footer {
+  width: 100%;
+  padding-top: calc(5%);
+  padding-bottom: calc(5%);
+  
+}
+

@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+.layout {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 5px;
+}
+
+.menu-item, .main-header, .card, .kpi-item, .mf-item {
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: cornflowerblue;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.menu-item {
+    background-color: rgb(57, 82, 105);
+    padding: 15px 20px;
+    transition: background-color 0.5s linear;
+}
+
+.menu-item i {
+    width: 40px;
+}
+
+.menu-welcome {
+    padding: 20px;
+    background-color: rgb(52, 70, 99);
+}
+
+.menu-profile {
+    background-color: rgb(83, 104, 138);
+    padding: 40px 20px;
+}
+
+.menu-active {
+    background-color: rgb(71, 124, 71);
+}
+
+.menu-footer {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin-top: auto;
+}
+
+.mf-item {
+    width: calc(100%/3);
+    padding: 10px;
+    background-color: rgb(60, 103, 145);
+    transition: background-color 0.5s linear;
+}
+
+.mf-item:nth-child(odd) {
+    background-color: rgb(43, 70, 101);
+}
+
+.menu-item:hover, .mf-item:hover {
+    background-color: rgb(71, 124, 71);
+}
+
+.menu-footer:hover {
+    background-color: transparent;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+}
+
+.main-header {
+    padding: 50px;
+    background-color: rgb(86, 116, 152);
+}
+
+.kpis {
+    display: flex;
+    flex-direction: row;
+}
+
+.kpi-item {
+    width: 25%;
+    padding: 20px;
+    background-color: rgb(38, 111, 177);
+}
+
+.kpi-item:nth-child(odd) {
+    background-color: rgb(54, 85, 136);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-video {
+    width: 70%;
+    padding: 215px 0;
+    background-color: rgb(54, 85, 136);
+}
+
+.card-performance {
+    width: 30%;
+    background-color: rgb(51, 73, 94);
+    padding: 215px 0;
+}
+
+.card-app, .card-usage, .card-settings, .card-recent {
+    width: calc(100%/3);
+    padding: 150px;
+}
+
+.card-app, .card-settings, .card-image {
+    background-color: rgb(54, 85, 136);
+}
+
+.card-usage, .card-recent, .card-footer {
+    background-color: rgb(49, 93, 167);
+}
+
+.card-image {
+    width: calc((100%/3)*2);
+    padding: 150px 0;
+}
+
+.card-footer {
+    width: 100%;
+    padding: 40px;
+}
+
+/*Prilis slozity ale velice cute loader*/
+
+.spinner {
+    position: relative;
+    margin: auto;
+}
+
+.spinner, .spinner:before, .spinner:after {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(71, 124, 71);
+    transform: rotateZ(45deg);
+}
+
+.spinner:before, .spinner:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.spinner:before {
+    transform: translateX(-50%);
+    animation: animX 3s infinite 0.75s;
+}
+
+.spinner:after {
+    transform: translateY(-50%);
+    animation: animY 3s infinite;
+}
+
+@-moz-keyframes animX {
+    0%, 25% {
+        transform: translateX(-50%);
+    }
+    50%, 75% {
+        transform: translateX(50%);
+    }
+}
+
+@-webkit-keyframes animX {
+    0%, 25% {
+        transform: translateX(-50%);
+    }
+    50%, 75% {
+        transform: translateX(50%);
+    }
+}
+
+@-o-keyframes animX {
+    0%, 25% {
+        transform: translateX(-50%);
+    }
+    50%, 75% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes animX {
+    0%, 25% {
+        transform: translateX(-50%);
+    }
+    50%, 75% {
+        transform: translateX(50%);
+    }
+}
+
+@-moz-keyframes animY {
+    0%, 25% {
+        transform: translateY(-50%);
+    }
+    50%, 75% {
+        transform: translateY(50%);
+    }
+}
+
+@-webkit-keyframes animY {
+    0%, 25% {
+        transform: translateY(-50%);
+    }
+    50%, 75% {
+        transform: translateY(50%);
+    }
+}
+
+@-o-keyframes animY {
+    0%, 25% {
+        transform: translateY(-50%);
+    }
+    50%, 75% {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes animY {
+    0%, 25% {
+        transform: translateY(-50%);
+    }
+    50%, 75% {
+        transform: translateY(50%);
+    }
+}
+
+/*konec*/

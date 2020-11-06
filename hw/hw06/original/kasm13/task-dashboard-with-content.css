@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Itim', cursive;
+}
+
+.paragraph {
+    text-align: justify;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 20px solid transparent;
+    border-top-color: red;
+    border-bottom-color: whitesmoke;
+    border-style: groove;
+    animation: spinning 1s linear infinite;
+    transition: border-color 1s ease;
+}
+
+.spinner:hover {
+    border-top-color: whitesmoke;
+    border-bottom-color: red;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.layout {
+    max-width: 1024px;
+    display: flex;
+    margin: 0 auto 0 auto;
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.menu-item {
+    background-color: white;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    margin: 3px;
+    border-color: white;
+    border-radius: 10px;
+}
+
+.menu-welcome {
+    padding: 20px 20px;
+}
+
+.menu-active {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.menu-item:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.menu-footer {
+    display: flex;
+    margin-top: auto;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.mf-item {
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(122, 11, 11);
+}
+
+.mf-item:nth-child(1), .mf-item:nth-child(3) {
+    background-color: rgb(255, 0, 0);
+}
+
+.mf-item:nth-child(2) {
+    background-color: rgb(255, 255, 255);
+}
+
+.main {
+    background-color: transparent;
+    width: 80%;
+    color: rgb(0, 0, 0);
+}
+
+.main-header {
+    background-color: rgba(255, 255, 255, 0.945);
+    border-bottom: 5px solid;
+    border-color: red;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    background-color: rgb(255, 255, 255);
+    flex: auto;
+    width: 25%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgb(253, 253, 253);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.card-video {
+    width: 70%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.774);
+}
+
+.card-performance {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.774);
+    padding-top: 80px;
+    padding-left: 80px;
+}
+
+.card-app {
+    width: calc(100%/3);
+    background-color: rgba(255, 255, 255, 0.774);
+}
+
+.card-usage {
+    width: calc(100%/3);
+}
+
+.card-settings {
+    width: calc(100%/3);
+    background-color: rgba(255, 255, 255, 0.774);
+}
+
+.card-recent {
+    width: calc(100%/3);
+    padding-top: 50px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.card-image {
+    width: calc(100%/3);
+    background-color: rgba(255, 255, 255, 0.774);
+    padding-top: 50px;
+}
+
+.card-footer {
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: large;
+    padding: 10px;
+}

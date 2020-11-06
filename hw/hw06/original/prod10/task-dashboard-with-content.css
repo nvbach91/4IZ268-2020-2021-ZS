@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    display: flex;
+    max-width: 1280px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-item{
+    padding: 15px;
+    margin: 2px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.menu-item i{
+    margin-right: 20px
+}
+
+.menu-welcome {
+    padding: 20px 15px;
+}
+
+.menu-welcome h3{
+    padding: 0;
+    margin: 0;
+}
+
+.menu-profile {
+    display: none;
+}
+
+.menu-active, .menu-item:not(.menu-welcome):not(.menu-profile):not(.menu-footer):hover {
+    background-color: rgb(216, 34, 33);
+    color: white;
+}
+
+.menu-footer {
+    display: flex;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+}
+
+.mf-item {
+    flex: 1;
+    padding: 15px;
+    margin: 2px;
+}
+
+.main {
+    flex: 4;
+}
+
+.main-header {
+    padding: 40px;
+    margin: 2px;
+    text-align: center;
+    border-bottom: 5px solid rgb(216, 34, 33);
+}
+
+.kpis {
+    display: flex;
+    margin: 40px 0;
+}
+
+.kpi-item {
+    flex: 1;
+}
+
+.kpi-item:not(:last-child){
+    margin-right: 50px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.card-video {
+    flex: 70%;
+}
+
+.card-performance {
+    flex: 30%;
+    padding: calc(315px / 2 - 50px) 0;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 20px solid transparent;
+    border-top-color: rgb(216, 34, 33);
+    border-bottom-color: rgb(216, 34, 33);
+    animation: spinning 3s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-app {
+    flex: calc(100%/3 - 50px);
+    margin-right: 50px;
+}
+
+.card-usage {
+    flex: calc(100%/3 - 50px);
+    margin-right: 50px;
+}
+
+.card-settings {
+    flex: calc(100%/3 - 50px);
+}
+
+.card-something {
+    flex: 100%;
+}
+
+.card-recent {
+    flex: calc(100%/3 - 40px);
+    padding: 80px 0;
+    margin-right: 40px;
+}
+
+.card-image {
+    flex: calc(100%/3*2 - 40px);
+    background-image: url(https://www.slantmagazine.com/wp-content/uploads/2020/09/nectar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-footer {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(216, 34, 33);
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}

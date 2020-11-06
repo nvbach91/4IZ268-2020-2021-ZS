@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+}
+
+.layout {
+    display: flex;
+    padding: 10px;
+}
+
+.menu {
+    float: left;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+}
+
+.menu-item {
+    color: white;
+    padding-left: 20px;
+    padding: 20 px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 2px;
+    border-radius: 8px;
+    background-color: rgb(0, 77, 128);
+}
+
+.fa {
+    padding-right: 15px;
+}
+
+.menu-profile {
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(0, 124, 128);
+}
+
+.menu-active, .menu-item:hover {
+    background-color: rgb(19, 95, 4);
+}
+
+.menu-footer {
+    background-color: transparent;
+    margin-top: auto;
+    display: flex;
+    padding: 0;
+}
+
+.mf-item {
+    border-radius: 8px;
+    width: 33.3333333333%;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.mf-item:nth-child(2) {
+    background-color: rgb(0, 124, 128);
+    margin: 0 2px;
+}
+
+.mf-item:nth-child(1), .mf-item:nth-child(3) {
+    background-color: rgb(0, 77, 128);
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+.main-header {
+    width: 100%;
+    float: right;
+    background-color: rgb(0, 124, 128);
+    text-align: center;
+    padding: 35px 10px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.kpis {
+    display: flex;
+    width: 100%;
+}
+
+.kpi-item {
+    width: 25%;
+    background-color: rgb(6, 88, 143);
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid white;
+}
+
+.kpi-item:nth-child(2), .kpi-item:nth-child(4) {
+    background-color: rgb(12, 115, 184);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgb(0, 77, 128);
+    border: 1px solid white;
+    text-align: center;
+    padding: 90px 0;
+    border-radius: 8px;
+}
+
+.card-video {
+    width: 75%;
+}
+.card-performance{
+width: 25%;
+}
+.spinner {
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgb(0, 77, 128);
+    width: 90px;
+    margin: 0 auto;
+    border: 15px solid transparent;
+    border-top-color: violet;
+    border-bottom-color: violet;
+    animation: spinning 2s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+.spinner:hover {
+    border-top-color: cadetblue;
+    border-bottom-color: cadetblue;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card-app, .card-settings, .card-usage {
+    width: calc(100%/3);
+}
+
+.card-usage {
+    background-color: rgb(12, 115, 184);
+}
+
+.card-recent {
+    width: calc(100%/3);
+    border: 1px solid white;
+    background-color: rgb(12, 115, 184);
+}
+
+.card-image {
+    width: calc(100%/3*2);
+}
+
+.card-footer {
+    width: 100%;
+    padding: 40px 0;
+    background-color: rgb(12, 115, 184);
+}

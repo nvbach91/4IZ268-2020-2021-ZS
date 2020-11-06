@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(243, 233, 243);
+}
+
+.layout {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.menu .menu-profile {
+    display: none;
+}
+
+.menu .menu-welcome {
+    font-weight: 900;
+}
+
+.menu-item {
+    display: flex;
+    height: 60px;
+    padding: 10px;
+    align-items: center;
+    border: 3px rgb(243, 233, 243) solid;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background-color: rgba(85, 72, 0, 0.774);
+}
+
+i {
+    padding-right: 10px;
+}
+
+.menu-active {
+    background-color: rgba(85, 72, 0, 0.774);
+}
+
+.menu-footer {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: auto;
+}
+
+.mf-item {
+    border: 3px rgb(243, 233, 243) solid;
+    background-color: rgba(85, 72, 0, 0.774);
+    width: calc(100% / 3);
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-footer:hover {
+    background-color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.main-header {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 48px;
+    font-weight: 600;
+    border: 3px rgb(243, 233, 243) solid;
+    border-bottom: 6px rgba(85, 72, 0, 0.774) solid;
+}
+
+.kpis {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kpi-item {
+    width: 25%;
+    padding: 20px;
+    border: 3px rgb(243, 233, 243) solid;
+    background-color: white;
+}
+
+.kpi-item p {
+    text-align: justify;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 3px rgb(243, 233, 243) solid;
+    background-color: white;
+    text-align: justify;
+    padding: 20px;
+}
+
+.card-video {
+    width: 70%;
+    height: 600px;
+    padding: 0;
+}
+
+iframe {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-performance {
+    width: 30%;
+    padding: 170px 0;
+}
+
+.card-app,
+.card-usage,
+.card-settings {
+    width: calc(100% / 3);
+}
+
+.card-recent {
+    width: calc(100% / 3);
+}
+
+.card-image {
+    width: calc(100% - 100% / 3);
+    padding: 0;
+}
+
+.card-image img {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-footer {
+    width: 100%;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: 20px solid transparent;
+    border-top-color: rgb(243, 233, 243);
+    border-bottom-color: rgb(243, 233, 243);
+    margin: auto;
+    animation: spinning 0.5s linear infinite;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  
+  .spinner {
+    border-radius: 35%;
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    border: 30px solid transparent;
+    border-top-color: rgb(203, 245, 14);
+    border-bottom-color: rgb(18, 175, 58);
+    animation: spinning 1s linear infinite;
+    transition: border-color 0.5s ease;
+  }
+  .spinner:hover {
+    border-top-color: rgb(225, 0, 255);
+    border-bottom-color: rgb(233, 35, 173);
+  }
+  @keyframes spinning {
+    from { 
+      transform: rotate(0deg); 
+    }
+      to { 
+        transform: rotate(360deg); 
+    }
+  }
+  
+  .menu-item, .kpi-item, .mf-item, .main-header, .card{
+    background-color: #7c2414;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 25px;
+  }
+  
+  .kpi-item:nth-child(odd), .card:nth-of-type(odd) {
+    background-color: #b34444;
+  }
+  
+  .mf-item:nth-child(odd) {
+    background-color: #c55d20;
+  }
+  .mf-item:nth-child(even) {
+    background-color: #f8a232;
+  }
+  
+  .menu-item{
+    text-align: left;
+    padding: 15px 0 15px 15px;
+    background-color: #b48f28;
+  }
+  
+  .menu-profile{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #dc480d;
+  }
+  
+  .menu-item.menu-active {
+    background-color: #dbdf0b;
+  }
+  
+  .menu-item:not(:last-child):hover {
+    background-color: #477c47;
+  }
+  
+  .menu-footer{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    padding: 0;
+    margin-top: auto;
+  }
+  
+  .mf-item{
+    width: calc(100%/3);
+    padding: 15px 0;
+  }
+  
+  .layout{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .menu{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  .kpis{
+    display: flex;
+  }
+  
+  .kpi-item{
+    width: 25%;
+    padding: 30px 0;
+  }
+  
+  .main-header{
+    padding: 50px 0;
+    width: 100%;
+    background-color: #9b462c;
+  }
+  
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card-video{
+    width: 75%;
+    padding: 200px 0;
+  }
+  
+  .card-performance{
+    width: 25%;
+    padding: 200px 0;
+  }
+  
+  .card-app, .card-usage, .card-settings, .card-recent {
+    width: calc(100%/3);
+    padding: 150px 0;
+  }
+  
+  .card-image{
+    width: calc((100%/3)*2);
+    padding: 150px 0;
+  }
+  
+  .card-footer{
+    width: 100%;
+    padding: 50px 0;
+  }

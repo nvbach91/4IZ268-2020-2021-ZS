@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+.layout {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.menu-item {
+    display: flex;
+    height: 60px;
+    background-color: rgba(33, 79, 148);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    border: 3px white solid;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 85, 0, 0.774);
+}
+
+i {
+    padding-right: 10px;
+}
+
+.menu-profile {
+    height: 100px;
+    background-color: rgba(33, 79, 148, 0.5);
+}
+
+.menu-active {
+    background-color: rgba(0, 85, 0, 0.774);
+}
+
+.menu-welcome {
+    height: 70px;
+    background-color: rgb(27, 68, 129);
+}
+
+.menu-footer {
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: auto;
+}
+
+.mf-item {
+    border: 3px white solid;
+    background-color: rgb(27, 68, 129);
+    width: calc(100% / 3);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mf-item:hover {
+    background-color: rgba(0, 85, 0, 0.774);
+}
+
+.menu-footer:hover {
+    background-color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.main-header {
+    color: white;
+    background-color: rgba(33, 79, 148);
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 0;
+    border: 3px white solid;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    border-radius: 10px;
+    background-color: rgb(33, 79, 148);
+    color: white;
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+    border: 3px white solid;
+}
+
+.kpi-item:nth-child(2),
+.kpi-item:nth-child(4) {
+    background-color: rgba(33, 79, 148, 0.7);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: rgb(33, 79, 148);
+    color: white;
+    text-align: center;
+    border: 3px white solid;
+}
+
+.card-video {
+    width: 70%;
+    padding: 170px 0;
+}
+
+.card-performance {
+    width: 30%;
+    padding: 170px 0;
+    background-color: rgb(15, 48, 99);
+}
+
+.card-app,
+.card-usage,
+.card-settings {
+    padding: 170px 0;
+    width: calc(100% / 3);
+}
+
+.card-recent {
+    width: calc(100% / 3);
+    padding: 170px 0;
+    background-color: rgba(33, 79, 148, 0.7);
+}
+
+.card-image {
+    width: calc(100% - 100% / 3);
+    padding: 170px 0;
+}
+
+.card-footer {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: 20px solid transparent;
+    border-top-color: red;
+    border-bottom-color: red;
+    margin: auto;
+    animation: spinning 3s linear infinite;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

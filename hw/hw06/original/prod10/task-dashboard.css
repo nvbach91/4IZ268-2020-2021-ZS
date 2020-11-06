@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    display: flex;
+    max-width: 1280px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item{
+    padding: 15px;
+    margin: 2px;
+    border-radius: 7px;
+    transition: background-color 0.5s ease;
+}
+
+.menu-item:not(.menu-welcome):not(.menu-profile):not(.menu-active):not(.menu-footer) {
+    background-color: rgb(57, 82, 105);
+}
+
+.menu-item i{
+    margin-right: 20px
+}
+
+.menu-welcome {
+    background-color: rgb(52, 70, 99);
+    padding: 20px 15px;
+}
+
+.menu-profile {
+    background-color: rgb(83, 104, 138);
+    padding: 35px 15px;
+}
+
+.menu-active, .menu-item:not(.menu-welcome):not(.menu-profile):not(.menu-footer):hover {
+    background-color: rgb(71, 124, 71);
+}
+
+.menu-footer {
+    display: flex;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+}
+
+.mf-item {
+    flex: 1;
+    padding: 15px;
+    margin: 2px;
+    border-radius: 7px;
+    background-color: rgb(43, 70, 101);
+    transition: background-color 0.5s ease;
+}
+
+.mf-item:nth-child(even), .mf-item:hover{
+    background-color: rgb(61, 103, 145);
+}
+
+.main {
+    flex: 4;
+    text-align: center;
+}
+
+.main-header {
+    background-color: rgb(86, 116, 152);
+    padding: 40px;
+    margin: 2px;
+    border-radius: 7px;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    flex: 1;
+    background-color: rgb(54, 85, 136);
+    padding: 20px;
+    margin: 2px;
+    border-radius: 7px;
+
+}
+
+.kpi-item:nth-child(even) {
+    background-color: rgb(38, 111, 177);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgb(54, 85, 136);
+    margin: 2px;
+    border-radius: 7px;
+}
+
+.card:nth-child(even):not(.card-performance) {
+    background-color: rgb(49, 94, 167);
+}
+
+.card-video {
+    flex: calc(70% - 4px);
+    padding: 220px 0;
+}
+
+.card-performance {
+    flex: calc(30% - 4px);
+    background-color: rgb(51, 73, 94);
+    padding: 170px 0;
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 20px solid transparent;
+    border-top-color: rgb(230, 118, 15);
+    border-bottom-color: rgb(230, 118, 15);
+    animation: spinning 3s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-app {
+    flex: calc(100%/3 - 4px);
+    padding: 150px 0;
+}
+
+.card-usage {
+    flex: calc(100%/3 - 4px);
+    padding: 150px 0;
+}
+
+.card-settings {
+    flex: calc(100%/3 - 4px);
+    padding: 150px 0;
+}
+
+.card-recent {
+    flex: calc(100%/3 - 4px);
+    padding: 150px 0;
+}
+
+.card-image {
+    flex: calc(100%/3*2 - 4px);
+    padding: 150px 0;
+}
+
+.card-footer {
+    flex: 1;
+    padding: 40px;
+}

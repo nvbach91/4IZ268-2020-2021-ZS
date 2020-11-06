@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, .menu{
+    text-align: center;
+}
+
+.layout {
+    display: flex;
+    max-width: 1280px;
+    height: 100%;
+    margin: auto
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-item {
+    background-color: rgb(59, 145, 214);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.menu-item:hover, .mf-item:hover {
+    background-color: rgb(26, 72, 172);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.menu-footer {
+    display: flex;
+    padding: 0px;
+    min-height: 100%;
+    background-color: rgb(255, 255, 255);
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;}
+
+.menu-footer:hover {
+    background-color: white;
+    cursor: default;
+}
+
+.menu-welcome {
+    text-align: left;
+    padding: 30px;
+}
+
+.menu-profile {
+    text-align: left;
+    padding: 40px;
+    background-color: rgb(99, 100, 196);
+}
+
+.mf-item {
+    background-color: rgb(59, 145, 214);
+    border-radius: 8px;
+    padding: 10px;
+    width: 0px;
+    flex-grow: 1;
+    border: 2px solid white;
+}
+
+.main {
+    display: flex;
+    flex-grow: 5;
+    height: 800px;
+    padding: 5px;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.main-header {
+    padding: 20px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid green;
+}
+
+.kpis {
+    display: flex;
+    flex-flow: row;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.kpi-item {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.034);
+    width: 100%;
+    border: 2px solid white;
+}
+
+.kpi-item:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 2px solid white;
+    border-radius: 8px;
+    flex: 1;
+}
+
+
+.card-video {
+    flex: calc(100%/3*2);
+    padding: 0;
+}
+
+.card-performance {
+    flex: calc(100%/3);
+    background-color: rgba(0, 0, 0, 0.13);
+    padding:0
+}
+
+.card-app, .card-usage, .card-settings {
+    flex-grow: 1;
+    padding: 70px;
+}
+
+.card-recent {
+    flex: calc(100%/3);
+    max-width: 310px;
+    margin-left: 20px;
+}
+
+.card-image {
+    flex: calc(100%/3*2);
+}
+
+.card-footer {
+    padding: 60px;
+    background-color: rgba(0, 0, 0, 0.13);
+    min-width: 100%;
+}
+
+.spinner {
+    position: relative;
+    margin: auto;
+    margin-top: 40%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 20px solid transparent;
+    border-top-color: rgb(36, 15, 230);
+    border-bottom-color: rgb(36, 15, 230);
+    animation: spinning 2s linear infinite;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}

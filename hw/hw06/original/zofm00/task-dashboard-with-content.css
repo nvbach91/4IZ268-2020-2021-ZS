@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+}
+
+.layout {
+    display: flex;
+    padding: 10px;
+}
+
+.menu {
+    float: left;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+}
+
+.menu-item {
+    color:black;
+    padding-left: 20px;
+    padding: 20 px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 2px;
+    transition: background-color 0.6s ease;
+}
+
+.fa {
+    padding-right: 15px;
+}
+
+.menu-profile {
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(0, 124, 128);
+}
+
+.menu-item:hover, .menu-active {
+    background-color: rgb(19, 95, 4);
+    color:white;
+}
+
+.menu-footer {
+    background-color: transparent;
+    margin-top: auto;
+    display: flex;
+    padding: 0;
+}
+
+.mf-item {
+    border-radius: 8px;
+    width: 33.3333333333%;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.main-header {
+    width: 100%;
+    float: right;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin: 0 auto;
+    border-bottom: 3px solid green;
+
+}
+
+.kpis {
+    display: flex;
+    width: 100%;
+}
+
+.kpi-item {
+    width: 25%;
+    padding: 15px
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 0;
+}
+.card-video{
+    width: 70%;
+}
+.card-video iframe {
+    height: 370px;
+    width: 100%;
+}
+.card-performance{
+    width:30%;
+}
+.spinner {
+    border-radius: 50%;
+    background-color:transparent;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 15px solid transparent;
+    border-top-color: pink;
+    border-bottom-color: pink;
+    animation: spinning 2s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+.spinner:hover {
+    border-top-color: cadetblue;
+    border-bottom-color: cadetblue;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card-app {
+    border-right: 10px solid transparent;
+    width: calc(100%/3);
+}
+.card-usage{
+    width: calc(100%/3);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.card-settings{
+    width: calc(100%/3);
+    border-left: 10px solid transparent;
+}
+
+.card-recent {
+    border-right: 20px solid transparent;
+    width: calc(100%/3);
+
+}
+.card-full{
+    width: 100%;
+}
+
+.card-image {
+    width: calc(100%/3*2);
+}
+
+.card-image img{
+    height: 370px;
+}
+
+.card-footer {
+    width: 100%;
+    padding: 10px 0;
+}

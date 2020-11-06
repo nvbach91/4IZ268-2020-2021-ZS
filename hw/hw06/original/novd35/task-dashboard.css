@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: 40px; */
+    text-align: center;
+}
+
+.main-header {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: rgb(73, 134, 149);
+
+}
+
+.kpis {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+.layout {
+    height: 1540px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kpis>.kpi-item {
+    background-color: rgb(20, 140, 170);
+    height: 100px;
+
+}
+
+
+
+.kpi-item {
+    padding: 0 10px;
+    width: 23%;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+.main {
+    width: 80%;
+    float: right;
+}
+
+.menu {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    float: left;
+    width: 20%;
+    padding-right: 10px;
+}
+
+.menu>.menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: rgb(20, 140, 170);
+    margin-bottom: 10px;
+    padding: 20px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background-color: green;
+}
+
+
+
+.spinner {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 30px solid transparent;
+    border-top-color: firebrick;
+    border-bottom-color: firebrick;
+    animation: spinning 2s linear infinite;
+    transition: border-color 0.5s ease;
+}
+
+.spinner:hover {
+    border-top-color: cadetblue;
+    border-bottom-color: cadetblue;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 10px;
+    width: calc((100% / 3) - 7px);
+    height: 400px;
+    background-color: rgb(20, 140, 170);
+    margin-bottom: 5px;
+}
+
+.card-video {
+    width: 70%;
+    /*   margin-right: 10px; */
+    height: 400px;
+    display: grid;
+    place-items: center;
+}
+
+.card-performance {
+    width: calc(30% - 10px);
+    display: grid;
+    place-items: center;
+
+}
+
+.card-footer {
+
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+
+.card-recent {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.card-image {
+    display: grid;
+    place-items: center;
+    width: calc(((100%/3)*2));
+}
+
+.menu-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}

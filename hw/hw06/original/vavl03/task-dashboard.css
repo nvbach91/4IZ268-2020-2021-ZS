@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+}
+
+.mf-item {
+    width: 33%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: coral;
+}
+
+.menu-item, .main-header, .card, .kpi-item, .mf-item {
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    color: aliceblue;
+}
+
+.main-header {
+    text-align: center;
+    background-color: #f1ee13;
+    padding: 50px 10px;
+    color: black;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+    width: 25%;
+    padding: 25px 15px;
+    text-align: center;
+    background-color: #f10f80;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 130px 0;
+    text-align: center;
+    background-color: #48b13f;
+}
+
+.card-video {
+    width: 60%;
+}
+
+.card iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.card-performance {
+    width: 40%;
+    background-color: #4b4d50;
+}
+
+.card-footer {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.card-app, .card-usage, .card-settings {
+    width: 33%;
+}
+
+.card-image {
+    width: calc(100% - 33%);
+}
+
+.card-recent {
+    width: 33%;
+}
+
+.card img {
+    width: 100%;
+}
+
+.menu {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    background-color: brown;
+    padding: 15px 10px;
+    color: white;
+}
+
+.menu-item i {
+    width: 40px;
+    padding: 0 10px;
+}
+
+.menu-active:hover {
+    background-color: green;
+}
+
+.menu-welcome {
+    padding: 20px 20px;
+    background-color: #070bf8;
+}
+
+.menu-profile {
+    padding: 40px 20px;
+    background-color: #0ccfc6;
+}
+
+.menu-footer {
+    background-color: transparent;
+    display: flex;
+    padding: 0;
+    margin-top: auto;
+}
+
+.spinner {
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 30;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 30px solid transparent;
+}
+
+@keyframes example {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 0px;
+        top: 50px;
+    }
+    50% {
+        background-color: blue;
+        left: 0px;
+        top: 0px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 70px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.layout {
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
+}

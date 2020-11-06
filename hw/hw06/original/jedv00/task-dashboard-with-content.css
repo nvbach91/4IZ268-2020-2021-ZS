@@ -1,0 +1,234 @@
+* { 
+    box-sizing: border-box; 
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url('https://eso.vse.cz/~jedv00/cv06/homework/Itim-Regular.ttf');
+  }
+body { 
+    font-family: 'myFirstFont';
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    color: whitesmoke;
+}
+.layout
+{
+    display: flex;
+    max-width: 1280px;
+    margin: auto;
+    padding:10px;
+}
+.menu
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 239, 241);
+    min-width: 250px;
+    border-radius: 20px;
+
+}
+.main
+{
+    flex: 1;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 20px;
+}
+.menu-item
+{
+    background-color: rgb(136, 26, 18);
+    padding: 20px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.menu-item:not(:last-child):hover {
+    transition: 700ms;
+    background-color:  rgb(231, 219, 52);
+  }
+.menu-welcome
+{
+    background-color: rgb(94, 19, 14) ;
+    padding: 25px;
+}
+.menu-item i 
+{
+    text-align: center;
+    padding: 0px 10px;
+}
+.menu-profile 
+{
+padding: 45px 20px;
+background-color:  rgb(175, 64, 57) ;
+}
+.menu-footer
+{
+    margin-top: auto;
+    display: flex;
+    background-color: transparent;
+    padding: 0;
+}
+.mf-item
+{
+    background-color:  rgb(214, 202, 29);
+    width: 33.33%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 15px;
+    margin-right: 4px;
+}
+
+.mf-item:nth-child(even) 
+{
+    background-color: rgb(136, 26, 18) ;
+}
+
+.main-header
+{
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 20px;
+    font-size: larger;
+    margin-bottom: 2px;
+    background:  rgb(204, 185, 17);
+    font-size: 35px;
+    font-weight: 800;
+    font-size: 80px;
+    color: rgb(31, 48, 26);
+    
+}
+.kpis
+{
+    display: flex;
+}
+.kpi-item
+{
+    width: 25%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    margin: 2px 3px;
+    color: blanchedalmond;
+}
+.kpi-item:nth-child(1)
+{
+    background-color:rgb(136, 26, 18);
+}
+.kpi-item:nth-child(2)
+{
+    background-color: rgb(39, 182, 110);
+}
+.kpi-item:nth-child(3)
+{
+    background-color: rgb(12, 91, 143);
+}
+.kpi-item:nth-child(4)
+{
+    background-color: rgb(165, 202, 32);
+}
+.cards
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card
+{
+    text-align: center;
+    border-radius: 20px;
+    background-color: green;
+    border: solid white;
+    color: rgb(31, 48, 26);
+    
+
+}
+.card:nth-child(even)
+{
+   background-color: rgb(136, 26, 18);
+   color: whitesmoke;
+}
+.card-video
+{
+    width: 70%;
+}
+.card-video, .spinner
+{
+    padding: 0;
+}
+.card-video iframe
+{
+    width: 90%;
+    height: 300px;
+    margin: 50px auto;
+    border-radius: 20px;
+
+}
+.card-performance
+{
+    width: 30%;
+    padding: 170px 0;
+}
+
+.card-app
+{
+    width: 33.33%;
+}
+.card-usage
+{
+    width: 33.33%;
+}
+.card-settings
+{
+    width: 33.33%;
+}
+.card-recent
+{
+    width: 33.33%;
+
+
+}
+h3{font-weight: lighter;}
+.card-recent p, .card-app p, .card-usage p, .card-settings p
+{
+    text-align: justify;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.card-image
+{
+    
+    width: 66.66%;
+}
+.card-image img
+{
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+.card-footer    
+{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}  
+.spinner 
+{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border: 15px solid transparent;
+    border-top-color: rgb(214, 202, 29);
+    border-bottom-color: rgb(214, 202, 29);
+    animation: spinning 5s linear infinite;
+    transition: border-color 1.5s ease;
+}
+@keyframes spinning {
+    from { 
+        transform: rotate(0deg); 
+    }
+        to { 
+        transform: rotate(360deg); 
+       }
+}

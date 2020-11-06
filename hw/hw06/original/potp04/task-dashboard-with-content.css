@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sofia";
+  color: white;
+}
+
+.layout {
+  display: flex;
+  padding: 0px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.menu-item {
+  background-color: white;
+  padding: 15px;
+  color: darkslategray;
+  margin: 5px;
+  width: 200px;
+}
+
+.menu-profile {
+  visibility: hidden;
+  padding: 0;
+}
+
+.menu-active {
+  background-color: mediumseagreen;
+}
+
+.menu-footer {
+  margin-top: auto;
+  background-color: white;
+}
+
+.mf-item {
+  background-color: white;
+  width: 30%;
+  margin: calc(10/6);
+  text-align: center;
+  float: left;
+  color: darkslategray;
+}
+
+.main {
+  margin: 0 auto;
+  background-color: white;
+  flex-grow: 1;
+}
+
+.h1 {
+  font-size: 36px;
+}
+
+.h2 {
+  font-size: 26px;
+}
+
+.main-header, .kpi-item, .card {
+  color: black;
+}
+
+.main-header {
+  background-color: white;
+  padding: 5px;
+  border-bottom: 10px solid mediumseagreen;
+  width: 100%;
+  padding: 75px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.kpi-item {
+  float: left;
+  background-color: white;
+  width: 25%;
+  padding: 10px;
+  text-align: left;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 100%;
+}
+
+.card {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-video {
+  width: 70%;
+  background-color: white;
+}
+
+.card-performance {
+  width: 30%;
+  background-color: white;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.spinner {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 30px solid transparent;
+  border-top-color: firebrick;
+  border-bottom-color: firebrick;
+  animation: spinning 2s linear infinite;
+  transition: border-color 0.5s ease;
+}
+
+.spinner:hover {
+  border-top-color: cadetblue;
+  border-bottom-color: cadetblue;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-app, .card-usage, .card-settings, .card-recent, .card-image {
+  width: 33.33333%;
+  padding-bottom: calc(15%);
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  text-align: left;
+}
+
+.card-recent {
+  width: 40%;
+}
+
+.card-image {
+  width: 60%;
+}
+
+img {
+  width: 100%;
+}
+
+.card-footer {
+  margin-top: 0;
+  width: 100%;
+  padding-top: calc(5%);
+  padding-bottom: calc(5%);
+  background-color: mediumseagreen;
+}

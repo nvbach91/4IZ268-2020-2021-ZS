@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #fcfcfc;
+  }
+  
+  .spinner {
+    border-radius: 15%;
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    border: 30px solid transparent;
+    border-top-color: #08eaf1;
+    border-bottom-color: #2d7c76;
+    animation: spinning 3s linear infinite;
+    transition: border-color 2s ease;
+  }
+  .spinner:hover {
+    border-top-color: rgb(0, 255, 34);
+    border-bottom-color: rgb(51, 255, 0);
+  }
+  @keyframes spinning {
+    from { 
+      transform: rotate(0deg); 
+    }
+      to { 
+        transform: rotate(360deg); 
+    }
+  }
+  
+  .menu-item, .kpi-item, .mf-item, .main-header, .card{
+    text-align: left;
+    border: 5px solid #f0f0f0;
+    border-radius: 5%;
+    background-color: rgb(31, 70, 129);
+  }
+.main-header{
+    font-size: 50px;
+    text-align: center;
+    text-decoration: #08eaf1;
+    text-transform: uppercase;
+    font-style: oblique;
+    font-weight: bold;
+}
+  h1, h3{
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .menu-item{
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    background-color: #2d3ae7;
+  }
+  
+  .menu-profile{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  
+  .menu-item.menu-active {
+    background-color: #1e106d;
+  }
+  
+  .menu-item:not(:last-child):hover {
+    background-color: #477c47;
+  }
+  
+  .menu-footer{
+    border: none;
+    background-color: #08eaf1;
+    display: flex;
+    padding: 0;
+    margin-top: auto;
+  }
+  
+  .mf-item{
+    width: calc(100%/3);
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .layout{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .menu{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  .kpis{
+    display: flex;
+  }
+  
+  .kpi-item{
+    width: 25%;
+    padding: 10px;
+  }
+  
+  .main-header{
+    padding: 50px 0;
+    width: 100%;
+    background-color: rgb(38, 12, 110);
+    border-bottom-color: #00eeff;
+    border-bottom-width: 5px;
+  }
+  
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card-video{
+    width: 75%;
+    padding: 10px;
+   
+  }
+  
+  .card iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card-performance{
+    width: 25%;
+    padding: 200px 0;
+  }
+  
+  .card-app, .card-usage, .card-settings, .card-recent {
+    width: calc(100%/3);
+    padding: 10px 10px;
+  }
+  
+  .card-image{
+    width: calc((100%/3)*2);
+    padding: 10px 10px;
+  }
+  
+  .card-footer{
+    text-align: center;
+    width: 100%;
+    padding: 50px 0;
+  }

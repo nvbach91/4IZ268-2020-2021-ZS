@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    color:black;
+    font-family: sans-serif;
+    border: 5px solid white;
+}
+
+.layout { 
+    max-width: 1280px;
+    display: flex;
+    margin: 0px auto;
+}
+
+.main {
+    text-align: center;
+    width: 80%;
+}
+
+.main-header {
+    border-radius: 10px;
+    border: 3px solid white;
+    padding: 50px;
+    font-size: 48px;
+    background-color: grey;
+}
+
+.kpis {
+    display: flex;
+}
+
+.kpi-item {
+   width: 25%;
+   padding:15px;
+   border: 3px solid white;
+   border-radius: 10px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap:wrap;
+    
+}
+
+.card{
+    border: 3px solid white;
+    border-radius: 10px;
+    
+}
+
+.card-video, .card-performance  {
+    padding: 0px;
+    height: 470px;
+    width: 70%;
+}
+
+.card-performance {
+  width: 30%;
+}
+
+.spinner {
+    position: relative; top: 100px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 40px solid rgb(54, 9, 9);
+    border-top-color:transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spinning 5s linear infinite;
+}
+
+@keyframes spinning {
+    from {transform: rotate(0deg) }
+    to {transform: rotate(360deg) }
+}
+
+.card-app, .card-usage, .card-settings, .card-recent {
+    padding: 0px;
+    width: calc(100%/3);
+}
+
+.card-image {
+    padding-top: 10px;
+    width: calc(100%/3*2);
+}
+
+.card-footer {
+    padding: 30px;
+    width: 100%;
+    padding: 0px auto;
+    font-size: 24px;
+    background-color: grey;
+}
+
+.menu {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item{
+    border: 3px solid rgb(194, 21, 21);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.menu-active {
+    background-color: rgb(49, 157, 49);
+}
+
+.menu-item:hover {
+    background-color: rgb(49, 157, 49);
+}
+
+.menu-profile {
+    padding: 35px 0px 35px 15px;
+}
+
+.fa, .fas, .far {
+    padding-right: 20px;
+}
+
+.menu-footer{
+display: flex;
+padding: 0px;
+background-color: white;
+margin-top:auto;
+}
+
+.mf-item {
+    padding: 10px;
+    text-align: center;
+    border: 3px solid white;
+    width: calc(100%/3);
+    border-radius: 10px;
+}

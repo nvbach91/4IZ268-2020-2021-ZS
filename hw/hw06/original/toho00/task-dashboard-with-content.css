@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0;
+}
+
+.layout {
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.menu {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    column-span: 50px;
+}
+
+.menu-item {
+    background-color: blue;
+    padding: 15px 10px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.menu-item i {
+    padding: 0 20px;
+}
+
+.menu-active,
+.menu-item:hover,
+.mf-item:hover {
+    background-color: green;
+    transition: background-color 0.5s ease
+}
+
+.menu-footer {
+    background-color: transparent;
+    display: flex;
+    padding: 0;
+    margin-top: auto;
+}
+
+.menu-footer:hover {
+    background-color: transparent;
+}
+
+.menu-welcome {
+    padding: 20px 20px;
+    background-color: blue;
+}
+
+.menu-profile {
+    padding: 30px 20px;
+    background-color: lightskyblue;
+}
+
+.mf-item {
+    width: 33%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: lightblue;
+    border-radius: 10px;
+    gap: 50px;
+    border: 2px solid white
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    color: aliceblue;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.main-header,
+.kpi-item,
+.card {
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.main-header {
+    text-align: center;
+    background-color: lightskyblue;
+    padding: 50px 10px;
+    color: white;
+}
+
+.kpis {
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+}
+
+.kpi-item {
+    width: 25%;
+    padding: 25px 15px;
+    text-align: left;
+    background-color: darkblue;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 30px 20px;
+    background-color: blue;
+    text-align: justify;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-video {
+    width: 60%;
+}
+
+.card-performance {
+    width: 40%;
+    background-color: grey;
+}
+
+.card-footer {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.card-app,
+.card-usage,
+.card-settings,
+.card-recent {
+    width: calc(100% / 3);
+}
+
+.card-image {
+    width: calc(200% /3);
+}
+
+.base {
+    width: 100%;
+    border-top: 5px solid black;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    padding: 0 0 30px;
+}
+
+.thread {
+    display: inline-block;
+    width: 2px;
+    height: 200px;
+    background: black;
+    border-radius: 5px;
+    position: relative;
+    transform-origin: 50% 0;
+    animation: pendulum 5s ease infinite;
+}
+
+.pendulum {
+    width: 20px;
+    height: 20px;
+    background: greenyellow;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: -9px;
+}
+
+@keyframes pendulum {
+    0%,
+    100% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+}
+
+img {
+    width: 100%;
+}

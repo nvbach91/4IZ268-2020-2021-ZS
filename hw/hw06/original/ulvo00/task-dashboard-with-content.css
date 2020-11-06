@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 18px;
+}
+
+.layout {
+    display: flex;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 5px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 50px;
+    padding: 15px 0 0 15px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.menu-item:not(:last-child):hover {
+    background-color: rgb(26, 153, 26);
+    cursor: pointer;
+}
+
+.menu-welcome {
+    height: 60px;
+    padding-top: 20px;
+}
+
+.menu-profile {
+    height: 90px;
+    padding-top: 35px;
+}
+
+.menu-active {
+    background-color: rgb(32, 133, 32);
+    height: 50px;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-left: 40px;
+}
+
+.mf-item {
+    border-radius: 10px;
+    width: calc(100%/3);
+    text-align: center;
+    height: 40px;
+    padding-top: 10px;
+    margin-left: 5px;
+}
+
+.mf-item:hover {
+    background-color: rgb(29, 97, 29);
+    cursor: pointer;
+}
+
+.main {
+    width: 75%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.main-header {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid rgb(32, 133, 32);
+}
+
+.kpis {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.kpi-item {
+    width: 25%;
+    border-radius: 5px;
+}
+
+.kpi-item p {
+    text-align: justify;
+}
+
+.kpi-item h2 {
+    text-transform: uppercase;
+}
+
+.kpi-item:not(:last-child) {
+    margin-right: 5px;
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.card-video {
+    width: 70%;
+    background-color: rgb(32, 133, 32);
+    height: 400px;
+    padding: 5px;
+}
+
+.youtube {
+    display: flex;
+    width: 100%;
+    border: none;
+}
+
+.card-performance {
+    width: calc(30% - 5px);
+    margin-left: 5px;
+}
+
+.card-app {
+    width: calc(100%/3);
+    text-align: left;
+}
+
+.card-usage {
+    width: calc(100%/3 - 5px);
+    margin-left: 5px;
+    background-color: rgb(32, 133, 32);
+    text-align: center;
+}
+
+.card-settings {
+    width: calc(100%/3 - 5px);
+    margin-left: 5px;
+    text-align: right;
+}
+
+.card-recent {
+    width: calc(100%/3);
+}
+
+.card-image {
+    width: calc(100%/3*2 - 5px);
+    margin-left: 5px;
+}
+
+.image {
+    display: flex;
+    width: 100%;
+}
+
+.card-footer {
+    width: 100%;
+    background-color: rgb(32, 133, 32);
+    height: 100px;
+    padding-top: 45px;
+}
+
+.spinner {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border: 25px solid rgba(211, 211, 211, 0.212);
+    border-top-color: red;
+    border-bottom-color: red;
+    border-radius: 50%;
+    animation: spinning 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    margin: 0 auto;
+    margin-top: 115px;
+    cursor: progress;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(720deg);
+    }
+}

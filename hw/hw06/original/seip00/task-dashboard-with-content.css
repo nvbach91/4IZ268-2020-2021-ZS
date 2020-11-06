@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 17px;
+  min-width: 800px;
+  background-color: rgb(239, 245, 255);
+}
+
+.loader {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-color: rgb(95, 95, 95);
+  left: 25%;
+  transform-origin: 50%;
+  animation: box .6s alternate infinite ease;
+  transition: background-color 0.5s ease;
+}
+
+@keyframes box {
+  0% {
+    top: 50px;
+    height: 9px;
+  }
+  30% {
+    height: 18px;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.box:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.box:nth-child(3) {
+  left: auto;
+  right: 25%;
+  animation-delay: 0.30s;
+  transition-delay: 0.30s;
+}
+
+.loader:hover .box {
+  background-color: skyblue;
+}
+
+.layout {
+  display: flex;
+  padding: 5px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.menu-item, .main-header, .card, .kpi-item, .mf-item {
+  border-radius: 10px;
+  border: solid 2px rgb(239, 245, 255);
+}
+
+.menu {
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  background-color: #dfdfdf;
+  padding: 15px 10px;
+  color: black;
+}
+
+.menu-item i {
+  width: 50px;
+  padding: 0 10px;
+}
+
+.menu-active {
+  background-color: rgb(209, 227, 255);
+}
+
+.menu-item:hover {
+  background-color: rgb(209, 227, 255);
+  transition: 0.3s ease;
+}
+
+.menu-welcome {
+  padding: 45px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.menu-welcome:hover {
+  background-color: transparent;
+}
+
+.menu-footer {
+  background-color: transparent;
+  margin-top: auto;
+  display: flex;
+  padding: 0;
+}
+
+.menu-footer:hover {
+  background-color: white;
+}
+
+.mf-item {
+  width: calc(100% / 3);
+  padding: 10px 0;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.mf-item:hover {
+  background-color: rgb(209, 227, 255);
+  border: 2px solid white;
+  transition: 0.5s linear;
+}
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.main-header {
+  background-color: white;
+  padding: 46px 10px;
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 5px solid rgb(194, 217, 255);
+  border-top: 5px solid rgb(194, 217, 255);
+}
+
+.kpis {
+  display: flex;
+}
+
+.kpi-item h3 {
+  border-bottom: solid 2px #dfdfdf;
+  margin-top: 0px;
+}
+
+.kpi-item {
+  width: 25%;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #dfdfdf;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 50px 0;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #dfdfdf;
+}
+
+.card-video {
+  width: 70%;
+  height: 420px;
+  padding: 0;
+  border: none;
+}
+
+.card-video .video {
+  width: 100%;
+  height: 100%;
+}
+
+.card iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.card-performance {
+  width: 30%;
+  background-color: white;
+  border: none;
+}
+
+.card-app {
+  width: 30%;
+}
+
+.card-settings {
+  width: 70%
+}
+
+.card-recent {
+  width: 100%;
+  border: solid 5px red;
+  padding: 0;
+}
+
+.card-image1 {
+  width: calc(100% / 3);
+  border: none;
+  padding: 5px 0;
+}
+
+.card-image2 {
+  width: calc(100% / 3);
+  border: none;
+  padding: 5px 0;
+}
+
+.card-image3 {
+  width: calc(100% / 3);
+  border: none;
+  padding: 5px 0;
+}
+
+.card img {
+  width: 100%;
+  height: 90%;
+}
+
+.card-footer {
+  flex: 100%;
+  padding: 20px;
+  align-content: center;
+  color: rgb(53, 53, 53);
+  background-color: #dfdfdf;
+}

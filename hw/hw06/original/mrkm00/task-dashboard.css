@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+.layout {
+    display: flex;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.menu {
+    flex:1;
+    padding-top: 3.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    margin-right: 7px;
+    background-color: rgb(52, 117, 160);
+}
+
+.menu-profile {
+    padding:20px
+}
+
+.menu-active {
+    background-color: green;
+}
+
+.menu-item:not(:last-child):hover, .mf-item:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.menu-item:not(:last-child):active {
+    color: yellow;
+}
+
+.menu-footer {
+    display: flex;
+    background-color: currentColor;
+    margin-top: auto;
+}
+
+.mf-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 7px;
+    background-color: rgb(53, 140, 199);
+    text-align: center;
+}
+
+.main {
+    flex:4;
+    text-align: center;
+}
+
+.main-header {
+    background-color: rgb(53, 140, 199);
+    padding: 30px;
+    border-radius: 7px;
+    border: 3.5px solid white;
+}
+
+.kpis {
+    display:flex;
+}
+
+.kpi-item {
+   flex:1;
+   background-color:rgb(53, 140, 199);
+   padding: 10px;
+   border-radius: 5px;
+   margin: 4px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    width: calc(100%/3);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(53, 140, 199);
+    border-radius: 7px;
+    border: 3.5px solid white;
+}
+
+.card-video {
+    min-width: 50px;
+    height: 400px;
+    flex-basis: 70%;
+}
+
+.card-performance {
+    min-width: 50px;
+    height: 400px;
+    flex-basis: 30%;
+}
+
+.spinner {
+    background-color:yellow;
+    height: 50px;
+    width: 50px;
+    border: 15px solid  rgb(53, 140, 199);
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: spinning 0.8s linear infinite;
+}
+
+@keyframes spinning {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.card-image {
+    flex-basis: calc((100%/3)*2);
+}
+
+.card-app, .card-usage, .card-settings, .card-recent {
+    height: 250px;
+}
+
+.card-footer {
+    flex-basis: 100%;
+    padding: 30px;
+}
