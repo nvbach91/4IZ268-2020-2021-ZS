@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: rgb(165, 70, 70);
+    background-color: rgb(46, 105, 173);
     padding: 10px;
     color: white;
 }
@@ -25,7 +25,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    background-color: #7e3434;
+    background-color: #46699e;
 }
 
 nav a {
@@ -58,7 +58,7 @@ article p {}
 }
 
 h3 {
-    background-color: #a54646;
+    background-color: #367497;
     color: white;
     padding: 10px;
     font-style: oblique;
@@ -66,14 +66,14 @@ h3 {
 
 footer {
     text-align: center;
-    background-color: #a54646;
+    background-color: #4875b8;
     color: white;
     padding: 10px;
     margin-top: 100px
 }
 
 aside {
-    background-color: #7e3434;
+    background-color: #347b7e;
     margin: 10px;
     color: white;
 }
@@ -91,4 +91,25 @@ aside h3 {
 aside li {
     width: 150px;
     padding: 5px;
+}
+
+
+/* this section is for homepage */
+
+
+/* this section is for homepage */
+
+
+@media print {
+    header, h3, nav ul, aside, footer {
+        background-color: white;
+        color: black;
+    }
+    aside, footer {
+        display: none;
+    }
+    .container {
+        margin: 0;
+        max-width: none;
+    }
 }
