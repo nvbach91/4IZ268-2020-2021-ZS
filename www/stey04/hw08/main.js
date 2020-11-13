@@ -6,7 +6,7 @@
  */
 console.log("Pepe's age");
 let year = 2000;
-console.log("Pepe's age is ", 2020 - year);
+console.log("Pepe is", (new Date()).getFullYear() - year);
 
 
 
@@ -22,7 +22,7 @@ let convertCtoF = function (c) {
 }
 
 let convertFtoC = function (f) {
-	return f - 32 * 5 / 9;
+	return (f - 32) * 5 / 9;
 }
 
 console.log(convertCtoF(20), '°F');
