@@ -29,7 +29,7 @@ var tempF1 = 68;
 var tempC1 = 20;
 
 function FtoC (F) {
-    C = (F - 32)/9*5;
+    var C = (F - 32)/9*5;
     console.log(F + "°F = " + C + "°C");
 }
 
@@ -37,7 +37,7 @@ FtoC(tempF1);
 
 
 function CtoF (C) {
-    F = C*9/5 + 32;
+    var F = C*9/5 + 32;
     console.log(C + "°C = " + F + "°F");
 }
 
@@ -53,8 +53,8 @@ CtoF(tempC1);
 // Solution here
 
 function pepesAge (year, birth) {
-    age = year - birth
-    pepe = "Pepe is " + age + " years old.";
+    var age = year - birth;
+    var pepe = "Pepe is " + age + " years old.";
     console.log(pepe);
 }
 
@@ -103,7 +103,7 @@ sth1(4153, 56486.555);
 function greater (a, b) {
 
     if (a === b) {
-        console.log("The numbers are equal.")
+        console.log("The numbers are equal.");
         return null;
     }
     
@@ -131,7 +131,7 @@ greater(5, 5);
 // Solution here
 
 function sth2 () {
-    for (i = 13; i <= 730; i = i + 13) {
+    for (var i = 13; i <= 730; i = i + 13) {
         console.log(i);
         
     }    
@@ -141,7 +141,7 @@ console.log("===============================");
 sth2();
 
 function altSth2 () {
-    for (i = 0; i <= 730; i++) {
+    for (var i = 0; i <= 730; i++) {
         if(i%13 === 0 && i > 0) {
             console.log(i);
         }
@@ -160,14 +160,14 @@ console.log("===============================");
  */
 // Solution here
 
-function area (r) {
+function circleArea (r) {
     return Math.PI*r*r;
 }
 
-console.log(area(51));
-console.log(area(5));
-console.log(area(15));
-console.log(area(1));
+console.log(circleArea(51));
+console.log(circleArea(5));
+console.log(circleArea(15));
+console.log(circleArea(1));
 console.log("===============================");
 
 
@@ -177,8 +177,8 @@ console.log("===============================");
 // Solution here
 
 function coneVolume (r, v) {
-    area = area(r);
-    return 1/3*area*v;
+    circleArea = circleArea(r);
+    return 1/3*circleArea*v;
 }
 
 
@@ -191,7 +191,7 @@ console.log(coneVolume(2,4));
 // Solution here
 
 
-function triangle (a, b, c) {
+function isTriangle (a, b, c) {
     if (a > b && a > c) {
         if (a < c+b) {
             return true;
@@ -213,11 +213,11 @@ function triangle (a, b, c) {
 
 
 
-console.log(triangle(1,1,1));
-console.log(triangle(1,3,5));
-console.log(triangle(5,8,4));
-console.log(triangle(5,6,7));
-console.log(triangle(7,6,5));
+console.log(isTriangle(1,1,1));
+console.log(isTriangle(1,3,5));
+console.log(isTriangle(5,8,4));
+console.log(isTriangle(5,6,7));
+console.log(isTriangle(7,6,5));
 
 
 
@@ -229,8 +229,8 @@ console.log(triangle(7,6,5));
 // Solution here
 
 function heron (a,b,c) {
-    if (triangle(a,b,c) === false) {
-        console.log("Not a triangle.")
+    if (isTriangle(a,b,c) === false) {
+        console.log("Not a triangle.");
         return false;
     }
     return 1/4*Math.sqrt((a+b+c)*(-a+b+c)*(a-b+c)*(a+b-c));
