@@ -35,11 +35,11 @@ console.log(fahr + "°F = " + fahrToCel + "°C");
  */
 // Solution here
 
-calcAge = (person) => {
+const calcAge = (person) => {
     const today = new Date();
     const age = today.getFullYear() - person.birthDate.getFullYear();
     return console.log(person.name + " tento rok oslaví " + age + ". " + "narozeniny!");
-};
+}
 
 const personA = {
     name: "Honza",
@@ -55,7 +55,7 @@ calcAge(person);
 calcAge(personA);
 calcAge(personB);
 
-temperature = (temperature) => {
+const temperature = (temperature) => {
     if (temperature.includes("°C")) {
         return console.log("Toto je teplota ve stupních Celsia");
     }
@@ -79,7 +79,7 @@ temperature(temp2);
  */
 // Solution here
 
-numbers = (a, b) => {
+const numbers = (a, b) => {
     if (a == 0 || b == 0) {
         return console.log("Jedno z čísel je rovno 0.")
     }
@@ -100,7 +100,7 @@ numbers(25, 0);
  */
 // Solution here
 
-higherNumber = (a, b) => {
+const higherNumber = (a, b) => {
     if (a == b) {
         return 'Čísla se rovnají.';
     }
@@ -124,7 +124,7 @@ const d = higherNumber(36.27, 7 / 23);
  */
 // Solution here
 
-pattern = () => {
+const pattern = () => {
     for (i = 13; i <= 730; i += 13) {
         console.log(i);
     }
@@ -136,7 +136,7 @@ pattern = () => {
  */
 // Solution here
 
-area = (r) => {
+const area = (r) => {
     return (r * r) * Math.PI;
 };
 
@@ -145,7 +145,7 @@ area = (r) => {
  */
 // Solution here
 
-dimension = (v, r) => {
+const dimension = (v, r) => {
     return (1 / 3) * (Math.PI * (r * r) * v);
 };
 
@@ -155,7 +155,7 @@ dimension = (v, r) => {
  */
 // Solution here
 
-triangle = (a, b, c) => {
+const triangle = (a, b, c) => {
     if ((a + b > c) && (a + c > b) && (c + b > a)) {
         console.log("True");
         return true;
@@ -171,7 +171,7 @@ triangle = (a, b, c) => {
  */
 // Solution here
 
-hero = (a, b, c) => {
+const hero = (a, b, c) => {
     if (!triangle(a, b, c)) {
         return console.log("Tohle není trojúhelník!.")
     }
