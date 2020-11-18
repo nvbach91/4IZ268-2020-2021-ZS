@@ -1,0 +1,24 @@
+nedostatky:
+- hodnoty atributu
+- relativni odkazy na soubory v ramci webu
+- html entity
+- odkazy na externi web by se mely otevirat jako nova zalozka
+- responzivita na 800x600 (navigace, about me)
+- optimalizace obrazku (resize)
+- web font (pouzit alespon neco z Google Fonts)
+- nazev fontu v css ("Times News Roman")
+- organizovani souboru do slozek podle jejich typu
+- nase skola se jmenuje Prague University of Economics and Business
+- nedostatecne vyrazne odkazy v textu
+
+doporuceni:
+- k tem skillum pridat klikatelny odkaz nebo strucny tooltip text
+- na male obrazovce: navigacni prvky umistit vedle sebe a celou navigaci pripnout k hornimu okraji stranky, a stranku posunout dolu o vysku kontejneru navigace pomoci paddingu
+- odstranit border u main a nav
+- zvazit jinou barvu pozadi, napr. b85252 a barvu navstevovanych odkazu
+
+jinak pekne vymyslena animace
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

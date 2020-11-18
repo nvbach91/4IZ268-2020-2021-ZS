@@ -1,0 +1,448 @@
+@charset "UTF-8";
+main {
+    justify-content: center
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+ol[class],
+ul[class] {
+    padding: 0
+}
+
+blockquote,
+body,
+dd,
+dl,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+li,
+ol[class],
+p,
+ul[class] {
+    margin: 0
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: calc(1em + 1vmin)
+}
+
+ol[class],
+ul[class] {
+    list-style: none
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+article>*+* {
+    margin-top: 1em
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        animation-duration: .01ms!important;
+        animation-iteration-count: 1!important;
+        transition-duration: .01ms!important;
+        scroll-behavior: auto!important
+    }
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+html {
+    height: 100%
+}
+
+main {
+    width: 100%
+}
+
+main,
+section {
+    display: flex;
+    flex-direction: column
+}
+
+section {
+    min-height: 70vh
+}
+
+section .header {
+    z-index: 100;
+    min-height: 10rem;
+    height: 15rem;
+    position: relative
+}
+
+section .header h1,
+section .header h2,
+section .header h3 {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem
+}
+
+section .content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+section h3 {
+    margin: 2rem 0
+}
+
+img,
+section p {
+    margin: 1rem 0
+}
+
+.round {
+    border-radius: 50%
+}
+
+.intro {
+    margin: 0;
+    background: url(https://eso.vse.cz/~duzm00/sp1/table.09cd8c1b.jpg) no-repeat top;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh
+}
+
+.intro .header {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 3rem;
+    width: 100%
+}
+
+.intro .header * {
+    position: absolute;
+    left: 2rem
+}
+
+.intro:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    opacity: .5
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    to {
+        background-position: 0 50%
+    }
+}
+
+a {
+    color: #fff;
+    padding: .2rem;
+    text-decoration: none;
+    border-bottom: 1px solid #fff
+}
+
+a:active,
+a:hover {
+    color: #000;
+    cursor: pointer;
+    background-color: #fff
+}
+
+a:visited {
+    color: #e73c7e
+}
+
+.about {
+    margin-top: 2rem
+}
+
+.about .header {
+    height: 2rem;
+    min-height: auto
+}
+
+.about .header h2 {
+    bottom: -2rem
+}
+
+.about .content {
+    margin-top: 2rem
+}
+
+.about .content img {
+    max-height: 10rem;
+    max-width: 10rem;
+    align-self: center
+}
+
+.shool .header {
+    background: url(https://eso.vse.cz/~duzm00/sp1/shool.64164979.jpg) no-repeat top;
+    background-size: cover
+}
+
+.shool table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse
+}
+
+.shool thead th:first-child {
+    width: 30%
+}
+
+.shool thead th:nth-child(2) {
+    width: 70%
+}
+
+.shool tbody tr {
+    padding: 2rem;
+    border-top: 1px solid #fff
+}
+
+.shool tbody tr td {
+    padding: 1rem 0
+}
+
+.tags ul {
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none
+}
+
+.tags ul li {
+    background-color: #155d77;
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    display: inline-block
+}
+
+.skills .header {
+    background: url(https://eso.vse.cz/~duzm00/sp1/programming.fbb14a25.jpg) no-repeat top;
+    background-size: cover
+}
+
+.softskills .header {
+    background: url(https://eso.vse.cz/~duzm00/sp1/softskills.5713209d.jpg) no-repeat top;
+    background-size: cover
+}
+
+.contact .header {
+    background: url(https://eso.vse.cz/~duzm00/sp1/phone.94f30c95.jpg) no-repeat top;
+    background-size: cover
+}
+
+.contact ul {
+    padding: 0;
+    list-style: none
+}
+
+.contact ul li {
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    display: inline-block
+}
+
+.arrow {
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg)
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+nav {
+    z-index: 110;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #000;
+    padding: 2rem;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 2rem
+}
+
+nav div {
+    display: inline-flex;
+    align-items: center
+}
+
+nav a {
+    margin-left: 1rem;
+    display: flex
+}
+
+body {
+    background: #000;
+    color: #fff
+}
+
+footer {
+    margin: 4rem;
+    text-align: center
+}
+
+@media (min-width:700px) {
+    body {
+        font-size: calc(.75em + 1vmin);
+        display: flex;
+        flex-direction: column
+    }
+    main {
+        width: 70%;
+        max-width: 70rem;
+        align-self: center;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff
+    }
+    section .content {
+        width: 100%;
+        align-self: center;
+        display: inline-flex;
+        flex-direction: row
+    }
+    section .content .column {
+        display: flex;
+        flex-direction: column
+    }
+    section .content .column:nth-child(2n) {
+        padding-left: 2rem
+    }
+    .about .content img {
+        max-height: 20rem;
+        max-width: 20rem
+    }
+}
+
+@media print {
+    * {
+        color: #000!important;
+        background: #fff!important
+    }
+    table,
+    td,
+    th {
+        font-size: 80%;
+        -webkit-print-color-adjust: exact;
+        border-collapse: collapse;
+        border: 1px solid #000;
+        width: 100%;
+        text-align: right
+    }
+    .intro {
+        min-height: unset
+    }
+    .intro .header,
+    .intro .header h1,
+    .intro .header p {
+        position: static
+    }
+    a[href]:after {
+        content: " (" attr(href) ")"
+    }
+    section {
+        background: none!important;
+        min-height: unset;
+        margin: 0;
+        padding-bottom: 2rem;
+        width: 100%
+    }
+    section .header {
+        background-image: none!important;
+        min-height: unset;
+        height: unset
+    }
+    section .header * {
+        position: static!important
+    }
+    body,
+    main,
+    section .content {
+        width: 100%;
+        padding: 0;
+        margin: 0
+    }
+    body {
+        font: 12pt Georgia, Times New Roman, Times, serif;
+        line-height: 1.3
+    }
+    body:after {
+        content: "Please see https://eso.vse.cz/~duzm00/sp1 for the latest version of this information."
+    }
+    img,
+    nav {
+        display: none
+    }
+    li {
+        content: "» "
+    }
+    @page :left {
+        margin-right: 200pt
+    }
+    @page :right {
+        margin-left: 200pt
+    }
+}
+
+
+/*# sourceMappingURL=https://eso.vse.cz/~duzm00/sp1/styles.f397968a.css.map */

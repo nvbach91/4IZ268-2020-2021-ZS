@@ -1,0 +1,9 @@
+- pro fonty pouzivejte spis <link> z duvodu konzistence, "vetsi" kompatibility i performance
+- chybi prizpusobeni pro tisk
+- atribut hid u meta tagu neni validni, vy jste to psal ve Vuejs?
+- pridejte vic meta tagu, alespon ty zakladni
+- zmensete uvodni obrazek na male obrazovce
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

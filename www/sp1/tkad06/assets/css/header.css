@@ -1,0 +1,34 @@
+.header__wrapper {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header__logo {
+  font-size: 24px;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 1024px) {
+  .header__logo {
+    font-size: 32px;
+  }
+}
+
+.header__nav {
+  margin: 8px;
+}
+
+.header__nav > a {
+  color: white;
+  margin-left: 16px;
+  transition: all;
+  transition-duration: var(--animation-duration);
+}

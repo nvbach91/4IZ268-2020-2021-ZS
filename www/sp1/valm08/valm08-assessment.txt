@@ -1,0 +1,19 @@
+nedostatky:
+
+img width attribut
+html entity
+web font
+optimalizace obrazku
+spatne rozdelene sloupce
+spatna orientace v informacich
+dlouhy text na sirku stranky
+nevhodne koncipovana a nastylovana navigace
+nepouzivani slozek a index.html
+nejasna identifikace webu na jednotlivych strankach
+nevhodne prizpusobeni pro tisk
+
+web neni vubec esteticky navrzeny ani neni uzivatelsky privetity, poslechnete si prednasku ohledne navrhu webu, a nechte se inspirovat od nejakeho moderniho webu
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

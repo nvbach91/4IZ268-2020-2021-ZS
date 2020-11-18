@@ -1,0 +1,28 @@
+.contact-social {
+  padding: 0 32px;
+}
+.contact-social .social-links {
+  justify-content: flex-start;
+}
+
+.contact-email-target {
+  flex-direction: row;
+  justify-content: space-between;
+  color: unset;
+}
+
+.contact-email-target:hover {
+  color: unset;
+}
+.contact-arrow {
+  width: 48px;
+  height: auto;
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: all;
+  transition-duration: var(--animation-duration);
+}
+.contact-email-target:hover .contact-arrow {
+  opacity: 1;
+  transform: translateX(-8px);
+}
