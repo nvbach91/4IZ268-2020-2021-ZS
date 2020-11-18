@@ -124,7 +124,7 @@ const pattern = () => {
     return result;
 };
 
-console.log(pattern);
+console.log(pattern());
 
 
 
