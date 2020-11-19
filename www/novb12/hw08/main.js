@@ -109,7 +109,7 @@ console.log(numCompare2 = numCompare(1 / 2, 2 / 3));
 // Solution here
 
 function multiples() {
-	for (i = 13; i <= 730; i += 13) {
+    for (i = 13; i <= 730; i += 13) {
         console.log(i);
     }
 }
