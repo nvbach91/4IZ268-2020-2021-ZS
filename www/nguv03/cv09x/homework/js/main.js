@@ -15,17 +15,17 @@
  * nastylujte.
  */
 //              0123456789...
-var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-var shiftChar = function (c, shift) {
+const shiftChar = (c, shift) => {
     // a helper function to shift one character inside the 
     // alphabet based on the shift value and return the result
 };
-var shiftString = function (str, shift) {
+const shiftString = (str, shift) => {
     // a helper function to shift one entire string inside the 
     // alphabet based on the shift value and return the result
 };
-var caesarDecipher = function (cipherText, usedKey) {
+const caesarDecipher = (cipherText, usedKey) => {
     // your implementation goes here
     // good to know: 
     //    str.indexOf(c) - returns the index of the specified character in the string
