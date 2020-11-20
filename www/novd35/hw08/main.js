@@ -20,7 +20,7 @@ console.log('1) ', 'Pepovi je ' + (year - date_of_birth) + ' let.');
 
 let cels = 20;
 let fahr = 68;
-console.log('2) ' + cels + '°C = ' + ((cels * 9) / 5 + 32) + '°F' + ' resp. ' + fahr + '°F = ' + (((fahr - 32) * 5) / 9) + '°C' );
+console.log('2) ' + cels + '°C = ' + ((cels * 9) / 5 + 32) + '°F' + ' resp. ' + fahr + '°F = ' + (((fahr - 32) * 5) / 9) + '°C');
 
 
 
@@ -34,9 +34,9 @@ console.log('2) ' + cels + '°C = ' + ((cels * 9) / 5 + 32) + '°F' + ' resp. ' 
 
 
 
-printAge = date_of_birth => console.log('3)' + 'Pepovi je ' + (year - date_of_birth) + ' let.');
+const printAge = date_of_birth => console.log('3)' + 'Pepovi je ' + (year - date_of_birth) + ' let.');
 toFahr = cels => console.log('3)' + cels + '°C = ' + ((cels * 9) / 5 + 32) + '°F');
-toCels = fahr => console.log('3)' + fahr + '°F = ' + (((fahr - 32) * 5) / 9) + '°C' );
+toCels = fahr => console.log('3)' + fahr + '°F = ' + (((fahr - 32) * 5) / 9) + '°C');
 
 printAge(1989);
 printAge(1945);
@@ -53,12 +53,12 @@ toCels(80);
 // Solution here
 
 
-division = (dividend, divisor) =>  {
-    if (dividend <= 0 || divisor <= 0) {
-        console.log('Stop trolling');
-    } else {
-        console.log('4)' + dividend + ' je ' + ((dividend / divisor) * 100).toFixed(2) + '% z ' + divisor);
-    }
+const division = (dividend, divisor) => {
+	if (dividend <= 0 || divisor <= 0) {
+		console.log('Stop trolling');
+	} else {
+		console.log('4)' + dividend + ' je ' + ((dividend / divisor) * 100).toFixed(2) + '% z ' + divisor);
+	}
 }
 division(20, 30);
 division(60, 60);
@@ -72,14 +72,14 @@ division(60, 60);
  */
 // Solution here
 
-whichIsHigher = (a, b) => {
-    if (a == b) {
-        return ('Equal­');
-    } else if (a > b) {
-        return a;
-    } else {
-        return b;
-    }
+const whichIsHigher = (a, b) => {
+	if (a == b) {
+		return ('Equal­');
+	} else if (a > b) {
+		return a;
+	} else {
+		return b;
+	}
 }
 console.log('5.', res = whichIsHigher(5.5, 10));
 console.log('5.', res = whichIsHigher(100000000, 10));
@@ -93,14 +93,14 @@ console.log('5.', res = whichIsHigher(1, 1));
  * nebo rovno 730, včetě nuly. Používejte for loop. 
  */
 // Solution here
-timesThirteen = () => {
-    var array = [];
-    for (let index = 0; index <= 730; index+=13) {
-        array.push(index);
-    
-        
-    }
-    console.log('6) ', array);
+const timesThirteen = () => {
+	var array = [];
+	for (let index = 0; index <= 730; index += 13) {
+		array.push(index);
+
+
+	}
+	console.log('6) ', array);
 }
 
 timesThirteen();
@@ -113,12 +113,12 @@ timesThirteen();
  */
 // Solution here
 
-contentOfCircle = (radius) =>{
-    if (radius <= 0) {
-        console.log('7) ','must be greater then 0');
-    } else {
-        console.log('7) ','Obsah kruznice = ' + ((radius * radius) * Math.PI));
-    }
+const contentOfCircle = (radius) => {
+	if (radius <= 0) {
+		console.log('7) ', 'must be greater then 0');
+	} else {
+		console.log('7) ', 'Obsah kruznice = ' + ((radius * radius) * Math.PI));
+	}
 }
 contentOfCircle(5);
 contentOfCircle(-5);
@@ -133,12 +133,12 @@ contentOfCircle(-5);
  */
 // Solution here
 
-coneVolume = (radius, height) => {
-    if (radius <= 0 || height <= 0) {
-        console.log('8) ','must be greater then 0, obv');
-    } else {
-        console.log( '8) ','Objem = ' + (((1 / 3) * (radius * radius) * Math.PI) * height));
-    }
+const coneVolume = (radius, height) => {
+	if (radius <= 0 || height <= 0) {
+		console.log('8) ', 'must be greater then 0, obv');
+	} else {
+		console.log('8) ', 'Objem = ' + (((1 / 3) * (radius * radius) * Math.PI) * height));
+	}
 }
 
 coneVolume(1, 10);
@@ -155,17 +155,17 @@ coneVolume(50, -80);
 // Solution here
 
 
-isItTriangle = (a, b, c) => {
-    if (a <= 0 || b <= 0 || c <= 0) {
-        console.log('9) ','Must be greater then 0');
-    } else if (a + b >= c && a + c >= b && b + c >= a) {
-        console.log('9) ','triangle');
-        return true;
-    } else {
-        console.log('9) ','not a triangle');
-        return false;
-        
-    }
+const isItTriangle = (a, b, c) => {
+	if (a <= 0 || b <= 0 || c <= 0) {
+		console.log('9) ', 'Must be greater then 0');
+	} else if (a + b >= c && a + c >= b && b + c >= a) {
+		console.log('9) ', 'triangle');
+		return true;
+	} else {
+		console.log('9) ', 'not a triangle');
+		return false;
+
+	}
 }
 isItTriangle(5, 8, 12);
 isItTriangle(10, 10, 10);
@@ -179,13 +179,13 @@ isItTriangle(-3, 8, -66);
  */
 // Solution here
 
-countTriangleContent = (a, b, c) => {
-    if (!isItTriangle(a, b, c)) {
-        console.log('10) ','Not a triangle, duh!');
-    } else {
-        let s = (a + b + c) / 2;
-        console.log('10) ','Obsah = ' + (Math.sqrt(s * (s - a) * (s - b) * (s - c))));
-    }
+const countTriangleContent = (a, b, c) => {
+	if (!isItTriangle(a, b, c)) {
+		console.log('10) ', 'Not a triangle, duh!');
+	} else {
+		let s = (a + b + c) / 2;
+		console.log('10) ', 'Obsah = ' + (Math.sqrt(s * (s - a) * (s - b) * (s - c))));
+	}
 
 
 }
