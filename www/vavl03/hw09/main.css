@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 10px solid green;
+}
+
+.text {
+    padding: 5px;
+    width: 100%;
+    height: 150px;
+}
+
+.key {
+    margin-top: 20px;
+    width: 100%;
+    height: 20px;
+}
+
+.button {
+    border: none;
+    color: white;
+    background-color: #6d0808;
+    margin-top: 30px;
+    height: 40px;
+    width: 80px;
+}
+
+.morphin-time {
+    margin: 20px auto;
+    text-align: center;
+    border-top: 4px dotted rgb(250, 8, 8);
+    border-bottom: 4px dotted rgb(250, 8, 8);
+    color: green;
+}
+
+.cipher-window {
+    max-width: 700px;
+    height: 450px;
+    margin: 0 auto;
+    background-color: rgba(18, 202, 18, 0.452);
+    padding: 20px;
+}
