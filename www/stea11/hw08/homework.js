@@ -34,7 +34,7 @@ console.log(cels + '°C = ' + fahrFromCels + '°F resp. ' + fahr + '°F = ' + ce
 // Solution here
 
 function ageByYear(birth) {
-    age = new Date().getFullYear() - birth;
+    let age = new Date().getFullYear() - birth;
     return age;
 }
 
@@ -104,37 +104,37 @@ console.log(returnGreater(2 / 4, 4 / 8))
  */
 // Solution here
 
-function whatIsEvenThat() {
+function printMultiplesOfThirteen() {
     for (let i = 0; i <= 730; i = i + 13) {
         console.log(i);
     }
 }
 
-whatIsEvenThat();
+printMultiplesOfThirteen();
 
 /**
  * 7) Around and about. Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru v argumentu.
  */
 // Solution here
 
-function circleArea(radius) {
+function calculateCircleArea(radius) {
     //Math.PI
     const area = Math.PI * Math.pow(radius, 2)
     return area;
 }
 
-console.log(circleArea(10));
+console.log(calculateCircleArea(10));
 
 /**
  * 8) Another dimension. Vytvořte funkci, která vypočte objem kuželu, pokud dostanete na argumentech výšku a poloměr.
  */
 // Solution here
 
-function trafficConeVol(height, radius) {
+function calculateConeVolume(height, radius) {
     return (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
 }
 
-console.log(trafficConeVol(5, 2))
+console.log(calculateConeVolume(5, 2))
 
 /**
  * 9) Not sure if triangle, or just some random values. Vytvořte funkci, která rozhodne, zda se z
@@ -142,7 +142,7 @@ console.log(trafficConeVol(5, 2))
  */
 // Solution here
 
-function doYouEvenTriangle(a, b, c) {
+function isTriangle(a, b, c) {
     if ((a + b > c) &&
         (b + c > a) &&
         (c + a > b)) {
@@ -152,9 +152,9 @@ function doYouEvenTriangle(a, b, c) {
     }
 }
 
-console.log(doYouEvenTriangle(1, 1, 1));
-console.log(doYouEvenTriangle(1, 1, 2));
-console.log(doYouEvenTriangle(10, 15, 20));
+console.log(isTriangle(1, 1, 1));
+console.log(isTriangle(1, 1, 2));
+console.log(isTriangle(10, 15, 20));
 
 /**
  * 10) Heroic performance. Vytvořte funkci, která vypočte obsah trojúhelníka podle Heronova vzorce,
@@ -163,8 +163,8 @@ console.log(doYouEvenTriangle(10, 15, 20));
  */
 // Solution here
 
-function whyHeron(a, b, c) {
-    if (doYouEvenTriangle(a, b, c)) {
+function calculateTriangleArea(a, b, c) {
+    if (isTriangle(a, b, c)) {
         const s = (a + b + c) / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     } else {
@@ -172,8 +172,8 @@ function whyHeron(a, b, c) {
     }
 }
 
-console.log(whyHeron(4, 13, 15));
-console.log(whyHeron(1, 1, 2));
-console.log(whyHeron(0, 0, 0));
-console.log(whyHeron(-1, -1, -1));
+console.log(calculateTriangleArea(4, 13, 15));
+console.log(calculateTriangleArea(1, 1, 2));
+console.log(calculateTriangleArea(0, 0, 0));
+console.log(calculateTriangleArea(-1, -1, -1));
 

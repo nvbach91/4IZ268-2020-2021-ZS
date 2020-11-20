@@ -25,8 +25,8 @@ console.log(age);
 
 const pi = 3.14; // Number - integer, double, float
 const message = 'Ahoj, jmenuji se Pepa a chci se naučit JavaScript!';
-             // "Ahoj, jmenuji se Pepa a chci se naučit JavaScript!";
-             // `Ahoj, jmenuji se Pepa a chci se naučit JavaScript!`;
+// "Ahoj, jmenuji se Pepa a chci se naučit JavaScript!";
+// `Ahoj, jmenuji se Pepa a chci se naučit JavaScript!`;
 
 console.log(message);
 
@@ -43,6 +43,8 @@ console.log(something, somethingElse);
 console.log(typeof isLive);
 console.log(typeof message);
 console.log(typeof pi);
+
+console.log(Symbol('Toto je Symbor, vsichni vidime.'));
 
 
 // Strings / retezce
@@ -95,6 +97,7 @@ while (i < fruits.length) {
 }
 
 fruits.push('orange');
+fruits.pop();
 console.log(fruits);
 fruits.shift();
 console.log(fruits);
@@ -135,9 +138,15 @@ for (let i = 0; i < people.length; i++) {
     console.log(people[i].name + ' ' + people[i].age);
 }
 
-people.forEach((person) => {
+/*people.forEach((person) => {
     console.log(person);
-});
+});*/
+
+
+console.log('-------')
+for (const person of people) {
+    console.log(person);
+}
 
 // conditionals, if else
 
@@ -145,6 +154,14 @@ if (isMarried) {
     console.log(123);
 } else {
     console.log(456);
+}
+
+function mojeFunkce(a, b) {
+    return a + b;
+}
+
+const tvojeFunkce = (a, b) => {
+    return a + b;
 }
 
 
@@ -157,3 +174,5 @@ const add = (a, b) => {
 };
 
 console.log(add(2, 3));
+
+
