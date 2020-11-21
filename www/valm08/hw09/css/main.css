@@ -1,0 +1,17 @@
+
+h1 {
+    text-align: center;
+}
+
+.my-form {
+    display: flex;
+    justify-content: center;
+}
+
+#shift {
+    width: 50px;
+}
+
+#input-text {
+    width: 600px;
+}
