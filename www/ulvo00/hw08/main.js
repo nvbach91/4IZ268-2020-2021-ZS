@@ -9,7 +9,7 @@
 const birthYear = 1972;
 const pepesAge = new Date().getFullYear() - birthYear;
 console.log('Pepe is ' + pepesAge + ' years old.');
-
+//console.log(`Pepe is ${pepesAge} years old.`);
 
 
 /**
@@ -41,14 +41,14 @@ console.log('Pepe is ' + countPepesAge(1970) + ' years old.');
 console.log('Pepe is ' + countPepesAge(1999) + ' years old.');
 
 const countCelsiusToFahrenheit = (celsius) => {
-    return celsius + '°C = ' + (celsius * 9 / 5 + 32)  + '°F';
+    return celsius + '°C = ' + (celsius * 9 / 5 + 32) + '°F';
 };
 
 console.log(countCelsiusToFahrenheit(20));
 console.log(countCelsiusToFahrenheit(30));
 
 const countFahrenheitToCelsius = (fahrenheit) => {
-    return fahrenheit + '°F = ' + ((fahrenheit - 32) * 5 / 9)  + '°C';
+    return fahrenheit + '°F = ' + ((fahrenheit - 32) * 5 / 9) + '°C';
 };
 
 console.log(countFahrenheitToCelsius(68));
@@ -61,15 +61,15 @@ console.log(countFahrenheitToCelsius(86));
  * míst použijte funkci .toFixed(n). Např. var pi = 3.1415926535; pi.toFixed(2); Pozor na dělení nulou!
  */
 // Solution here
-const percentageRate = (a, b) => {
+const getPercentageRate = (a, b) => {
     if (b === 0) {
         console.error('You can not divide by 0!!');
     } else {
-        console.log((a + ' je ' + ((a / b) * 100).toFixed(2) +  '% z ' + b));
+        console.log((a + ' je ' + ((a / b) * 100).toFixed(2) + '% z ' + b));
     }
 };
 
-percentageRate(48, 73);
+getPercentageRate(48, 73);
 
 
 
@@ -81,19 +81,19 @@ percentageRate(48, 73);
  */
 // Solution here
 
-const comparison = (x, y) => {
+const compare = (x, y) => {
     if (x === y) {
         console.log("Cisla se rovnaji!")
-    } else if ( x > y ) {
+    } else if (x > y) {
         console.log(x)
     } else {
         console.log(y)
     }
 };
 
-let pokus1 = comparison(45, 45);
-let pokus2 = comparison(47.84, 123.45);
-let pokus3 = comparison(1/2 , 1/3);
+let attempt1 = compare(45, 45);
+let attempt2 = compare(47.84, 123.45);
+let attempt3 = compare(1 / 2, 1 / 3);
 
 
 
@@ -109,6 +109,11 @@ const thirteen = () => {
         console.log(i * 13);
     }
 };
+/*const thirteen = () => {
+    for (let i = 0; i < 730; i += 13) {
+        console.log(i);
+    }
+};*/
 
 thirteen();
 
@@ -119,11 +124,11 @@ thirteen();
  */
 // Solution here
 
-const circleContent = (r) => {
-    console.log(Math.PI * Math.pow(r, 2));
+const getCircleArea = (radius) => {
+    console.log(Math.PI * Math.pow(radius, 2));
 };
 
-circleContent(5);
+getCircleArea(5);
 
 
 /**
@@ -131,11 +136,11 @@ circleContent(5);
  */
 // Solution here
 
-const coneVolume = (r, v) => {
-    console.log(1/3 * Math.PI * Math.pow(r, 2) * v);
+const getConeVolume = (radius, height) => {
+    console.log(1 / 3 * Math.PI * Math.pow(radius, 2) * height);
 };
 
-coneVolume(4, 5);
+getConeVolume(4, 5);
 
 
 /**
@@ -144,16 +149,16 @@ coneVolume(4, 5);
  */
 // Solution here
 
-const triangle = (x, y, z) => {
-    if (x + y > z && x + z > y && y + z > x ) {
-        console.log('true/yes'); 
+const isTriangle = (x, y, z) => {
+    if (x + y > z && x + z > y && y + z > x) {
+        console.log('true/yes');
     } else {
         console.log('false/no');
     }
 };
 
-triangle(2, 3, 4);
-triangle(2, 3, 44);
+isTriangle(2, 3, 4);
+isTriangle(2, 3, 44);
 
 
 /**
@@ -163,14 +168,14 @@ triangle(2, 3, 44);
  */
 // Solution here
 
-const triangleContent = (x, y, z) => {
-    if (x + y > z && x + z > y && y + z > x ) {
+const getTriangleArea = (x, y, z) => {
+    if (x + y > z && x + z > y && y + z > x) {
         let s = ((x + y + z) / 2)
-        console.log(Math.sqrt(s * (s - x) * (s - y) * (s - z))); 
+        console.log(Math.sqrt(s * (s - x) * (s - y) * (s - z)));
     } else {
-        console.error('Triangle content cannot be calculated! Incorrectly entered page lengths!');
+        console.error('Triangle content cannot be calculated! Incorrectly entered edge lengths!');
     }
 };
 
-triangleContent(2, 3, 4);
-triangleContent(2, 3, 44);
+getTriangleArea(2, 3, 4);
+getTriangleArea(2, 3, 44);
