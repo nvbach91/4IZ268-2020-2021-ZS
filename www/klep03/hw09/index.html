@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ceasarova šifra</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <h1>Ceasarova šifra</h1>
+        <h2>Zašifrování</h2>
+        <div class="form-bg">
+            <div class="form">
+                <p>Vložte text: </p>
+                <textarea id="clearText"></textarea>
+            </div>
+            <div class="form">
+                <p>Vložte klíč: </p>
+                <textarea id="clearTextKey"></textarea>
+            </div>
+            <div class="button">
+                <button id="encrypt">Zašifrovat</button>
+            </div>
+            <div class="form">
+                <p>Výstup: </p>
+                <textarea id="clearTextEncrypted"></textarea>
+            </div>
+        </div>
+        <div class="space"></div>
+
+        <h2>Dešifrování</h2>
+        <div class="form-bg">
+
+            <div class="form">
+                <p>Vložte text: </p>
+                <textarea id="encryptedText"></textarea>
+            </div>
+            <div class="form">
+                <p>Vložte klíč: </p>
+                <textarea id="encryptedTextKey"></textarea>
+            </div>
+            <div class="button">
+                <button id="decrypt">Dešifrovat</button>
+            </div>
+            <div class="form">
+                <p>Výstup: </p>
+                <textarea id="clearTextDecrypted"></textarea>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

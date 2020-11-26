@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.form {
+    margin: 0px auto;
+    max-width: 80%;
+    max-height: 90%;
+    display: flex;
+    padding-right: 20px;
+}
+
+p {
+    padding: 5px;
+    width: 100px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+textarea {
+    max-height: 20px;
+    margin: auto;
+    min-width: 300px;
+    resize: none;
+}
+
+.vystup {
+    max-height: 50px;
+}
+
+.button {
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+button {
+    margin-left: 85%;
+    width: 100px;
+    height: 30px;
+}
+
+.space {
+    height: 60px;
+}
+
+.form-bg {
+    background-color: rgba(216, 202, 187, 0.363);
+}
+
+h1, h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    ;
+}
