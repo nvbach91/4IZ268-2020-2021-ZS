@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Long live SPARTA!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <div class="decipher-wrapper">
+      <div class="instructions">
+        <h1>Caesar Cipher</h1>
+        <h2 class="subheader">How to use <a>Caesar decipher</a></h2>
+      
+        <ol>
+          <li>Enter the encrypted message</li>
+          <li>Enter the shift number</li>
+          <li>Press "Decrypt" button</li>
+        </ol>
+      </div>
+    
+      <form>
+        <div class="decrypt-form">
+          <label>Encrypted message</label>
+          <textarea id="encrypted-text" rows="5" cols="60" placeholder="Enter your encrypted text here..."></textarea>
+          <label>Shift value</label>
+          <input id="shift" placeholder="Enter shift here..." type="number" />
+          <div id="decrypt-button">Decrypt</div>
+        </div>
+      </form>
+        <h2 class="subheader">Decrypted message</h2>
+        <p id="decrypted-text"></p>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
