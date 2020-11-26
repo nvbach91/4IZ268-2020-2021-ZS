@@ -22,9 +22,9 @@ Používejte pouze Vanilla JavaScript, případně ES6. Pokud někdo chce použ�
 - **Naduplikujte tento seznam**, aby každé město tam bylo dvakrát, pomocí metody `array.concat(array)`. 
 - Aby hra byla zajímavější, **zamíchejte pořadí měst** pomocí array metody `array.sort()`, a to následovně:
 ```js
-var cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
+const cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
 cities = cities.concat(cities);
-cities.sort(function() { return 0.5 - Math.random(); });
+cities.sort(() => { return 0.5 - Math.random(); });
 ```
 - Vytvořte **pomocné proměnné**, abyste mohli sledovat stav hry, tj. **počet bodů**, **otočené karty**, **počet otočených karet**...
 - Vytvořte funkci, která bude mít na starost **vytvořit jednu kartu** pomocí DOM metod.
