@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    font-family: calibri;
+}
+
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 721px;
+    background-color: rgb(104, 230, 230);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-bottom: 20px;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(11, 77, 97);
+    margin-left: 35px;
+}
+h2 {
+    font-size: 20px;
+    width: 650px;
+    color: rgb(8, 111, 143);
+    align-self: center;
+}
+textarea {
+    height: 200px;
+    font-size: 15px;
+}
+input {
+    height: 35px;
+    color: rgb(8, 111, 143);
+    font-weight: bold;
+}
+textarea, input {
+    padding: 10px;
+    align-self: center;
+    width: 650px;
+    background-color: rgb(218, 246, 247);
+    border: solid white 1px;
+    resize: none;
+    font-size: 14px;
+    outline: none;
+}
+button {
+    width: 150px;
+    background: rgb(19,46,119);
+    background: linear-gradient(0deg, rgba(19,46,119,1) 0%, rgba(10,39,105,1) 23%, rgba(48,140,176,1) 50%, rgba(27,191,224,1) 76%, rgba(211,248,255,1) 99%);
+    padding: 10px;
+    margin: 10px;
+    margin-left: 35px;
+    color: white;
+    border: white solid 1px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    outline: none;
+    border-radius: 5px;
+}
+button:hover {
+    cursor: pointer;
+    color: rgb(193, 217, 233);
+    transition: 200ms;
+}
+.result {
+    margin: 0 auto;
+    width: 721px;
+    margin-top: 20px;
+    font-size: 18px;
+    border-top: solid rgb(19,46,119) 2px;
+    border-bottom: solid rgb(19,46,119) 2px;
+    background-color: rgb(218, 246, 247);
+    padding: 20px 0;
+    text-align: center;
+} 
