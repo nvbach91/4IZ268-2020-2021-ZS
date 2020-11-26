@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+.inputarea{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 10px;
+    border:none;
+    width:300px;
+    padding:10px;
+}
+.cipher{
+    line-height: 44px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.cipher::-webkit-input-placeholder{
+    text-transform: uppercase;
+    transform: scale(0.45);
+    transform-origin: 0% 50%;
+}
+.numberofcipher{
+    font-size:15px;
+    margin-top: 10px;
+    padding:10px;
+}
+div{
+    padding: 30px;
+    background-color: rgb(228, 224, 224);
+    margin: 5% 35%;
+
+}
+button{
+    padding: 10px;
+    background-color: rgb(11, 204, 194);
+    border:none;
+}
+button:hover{
+    cursor: pointer;
+}
+.outputtext{
+    font-size: 20px;
+    text-align: center;
+    background-color: black;
+    color:white;
+    padding:25px;
+}
+@media screen and (max-width:900px){
+    div{
+        margin: 0% 10%;
+    }
+}
