@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(235, 235, 233);
+    color: rgb(49, 54, 46);
+    margin: 0;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.wrapper {
+    background-color: rgb(49, 54, 46);
+    color: rgb(235, 235, 233);
+    padding: 50px 30px;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgb(49, 54, 46);
+}
+
+.title {
+    margin: 0;
+}
+
+.wrapper hr {
+    margin: 20px 0;
+    opacity: 0.3;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(235, 235, 233);
+    color: rgb(49, 54, 46);
+    border: none;
+    font-size: 18px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.input.error{
+    box-shadow: 0 0 0 2pt rgb(252, 85, 85);
+    background-color: rgb(252, 221, 221);
+}
+
+.button{
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    background-color: rgb(235, 235, 233);
+    color: rgb(49, 54, 46);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.5s ease;
+    border-radius: 4px;
+}
+
+.button:hover{
+    background-color: rgb(198, 201, 179);
+    cursor: pointer;
+}
+
+.error-message{
+    color: rgb(252, 85, 85);
+}
