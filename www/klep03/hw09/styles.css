@@ -1,12 +1,10 @@
-* {
+* {
     box-sizing: border-box;
-
 }
 
 main {
     max-width: 720px;
     margin: 0 auto;
-    
     min-height: 200px;
 }
 
@@ -14,7 +12,6 @@ main {
     margin: 0px auto;
     max-width: 80%;
     max-height: 90%;
-    
     display: flex;
     padding-right: 20px;
 }
@@ -56,5 +53,6 @@ button {
 }
 
 h1, h2 {
-    font-family: 'Noto Sans JP', sans-serif;;
+    font-family: 'Noto Sans JP', sans-serif;
+    ;
 }
