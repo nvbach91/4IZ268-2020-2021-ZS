@@ -21,13 +21,12 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const shiftChar = (c, shift) => {
     // a helper function to shift one character inside the 
     // alphabet based on the shift value and return the result
-    
+
     // Index písmenka v abecedě
-    let firstIndex = alphabet.indexOf(c);      
-    
+    let firstIndex = alphabet.indexOf(c);
+
     //Pokud je neznámé písmenko - vracíme prázdnou hodnotu
-    if (firstIndex == -1)
-    {
+    if (firstIndex == -1) {
         return '';
     }
 
@@ -37,8 +36,6 @@ const shiftChar = (c, shift) => {
         transcribedIndex = alphabet.length + transcribedIndex;
     }
     return alphabet.charAt(transcribedIndex);
-    
-    
 };
 
 
@@ -49,11 +46,11 @@ const shiftString = (str, shift) => {
     // alphabet based on the shift value and return the result
     console.log(str + shift);
     let encryptedMessage = '';
-        for (let i = 0; i < str.length; i++) {
-            encryptedMessage = encryptedMessage + shiftChar(str.charAt(i), shift);
-        };
-        return encryptedMessage;
-    
+    for (let i = 0; i < str.length; i++) {
+        encryptedMessage = encryptedMessage + shiftChar(str.charAt(i), shift);
+    };
+    return encryptedMessage;
+
 };
 
 const caesarDecipher = (cipherText, usedKey) => {
@@ -75,14 +72,7 @@ console.log(caesarDecipher("MPH MABGZL TKX BGYBGBMX: MAX NGBOXKLX TGW ANFTG LMNI
 console.log(caesarDecipher("YMJWJ NX ST QFB JCHJUY YMJ QFB YMFY YMJWJ NX ST QFB. - OTMS FWHMNGFQI BMJJQJW", 5));
 
 // charles darwin
-console.log(caesarDecipher("M YMZ ITA PMDQE FA IMEFQ AZQ TAGD AR FUYQ TME ZAF PUEOAHQDQP FTQ HMXGQ AR XURQ. ― OTMDXQE PMDIUZ", 12)); 
-
-const writer = () => {
-    document.getElementById('clearTextEncrypted').value = 'Ahoj';
-};
-
-
-
+console.log(caesarDecipher("M YMZ ITA PMDQE FA IMEFQ AZQ TAGD AR FUYQ TME ZAF PUEOAHQDQP FTQ HMXGQ AR XURQ. ― OTMDXQE PMDIUZ", 12));
 
 const encrypt = document.querySelector('#encrypt');
 
