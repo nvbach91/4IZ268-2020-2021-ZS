@@ -13,20 +13,11 @@
 
   <div class="wrapper">
     <div class="container">
-      <textarea rows="5" placeholder="Put your encrypted text here"></textarea>
+      <textarea id="ceasar" rows="5" placeholder="Put your encrypted text here"></textarea>
       <input type="text" id="key" placeholder="Key">
-      <button>Decipher</button>
+      <button id='submit'>Decipher</button>
     </div>
   </div>
-
-  <script>
-    let btn = document.getElementsByTagName('button')[0]
-    let textArea = document.getElementsByTagName('textarea')[0];
-    let inp = document.getElementsByTagName('input')[0];
-    btn.onclick = () => {
-      textArea.value = caesarDecipher(textArea.value, inp.value);
-    }
-  </script>
 
   <script src="js/main.js"></script>
 
