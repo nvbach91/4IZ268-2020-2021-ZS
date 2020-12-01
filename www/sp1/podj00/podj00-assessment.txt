@@ -1,0 +1,13 @@
+- misty spatne formatovany kod
+- nevhodny font
+- clenove tymu umistete take vedle sebe dokud je misto
+- nerozumim tomu logu od kauflandu, take kdyz na logo kliknu tak ocekavam ze se dostanu na domovskou stranku aktualniho webu
+- vsechny obrazky optimalizujte
+- z odkazu odstrante cast 'index.html'
+
+
+
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

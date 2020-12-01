@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="../css/styles.css" rel="stylesheet">
+
+    <title>Fotogalerie</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="../">
+            <span class="logo"></span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../jidelnilistek">Jídelní lístek</a></li>
+                <li><a href="../napojovylistek">Nápojový lístek</a></li>
+                <li class="active"><a href="../fotogalerie">Fotogalerie</a></li>
+                <li><a href="../onas">O nás</a></li>
+                <li><a href="#kontakt">Kontakt a rezervace</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Galerie</h1>
+        <div class="gallery">
+            <div class="images">
+
+                <img src="../src/rybi_talir.png" alt="rybi_talir">
+
+
+                <img src="../src/losos.png" alt="losos">
+                <img src="../src/restaurace.png" alt="restaurace">
+
+                <img src="../src/kapri_hranolky.png" alt="kapri_hranolky">
+
+            </div>
+        </div>
+    </main>
+    <section>
+        <div class="contactandreservation" id="kontakt">
+            <div class="contact">
+                <div class="info">
+                    <div class="adress">
+                        <h4>Restaurace V Podzámčí</h4>
+                        <h4>Bezručova 981</h4>
+                        <h4>Hluboká nad Vltavou</h4>
+                        <h4>373 41</h4>
+                        <h4>Telefonní číslo: 751384684</h4>
+                        <h4>Mail: restaurace@vpodzamci.cz</h4>
+                    </div>
+                    <div class="time">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Den</th>
+                                    <th>Čas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pondělí</td>
+                                    <td>Zavřeno</td>
+
+                                </tr>
+                                <tr>
+                                    <td>úterý</td>
+                                    <td>11-16</td>
+                                </tr>
+                                <tr>
+                                    <td>středa</td>
+                                    <td>11-16</td>
+                                </tr>
+                                <tr>
+                                    <td>čtvrtek</td>
+                                    <td>11-16</td>
+                                </tr>
+                                <tr>
+                                    <td>pátek</td>
+                                    <td>11-16</td>
+                                </tr>
+                                <tr>
+                                    <td>sobota</td>
+                                    <td>11-17</td>
+                                </tr>
+                                <tr>
+                                    <td>neděle</td>
+                                    <td>11-17</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <a href="https://goo.gl/maps/sKEWBJ3mvomX4Jw5A" target="_blank" class="map"></a>
+
+
+            </div>
+            <div class="reservation">
+                <h3>Rezervace</h3>
+                <form method="GET" action="./">
+
+                    <input placeholder="Datum a čas" name="date">
+
+
+                    <input placeholder="Jméno" name="full_name">
+
+
+                    <input placeholder="Email" name="email">
+
+
+                    <input placeholder="Telefon" name="phone">
+
+                    <textarea placeholder="Zpráva" name="text"></textarea>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>Copyright &copy; 2020 Restaurace V Podzámčí</div>
+    </footer>
+
+</body>
+
+</html>

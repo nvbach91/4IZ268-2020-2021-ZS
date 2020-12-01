@@ -1,0 +1,19 @@
+- chybi identifikace webu (nazev webu, logo, banner, atd.)
+- chybi import tucne verze fontu
+- vsechny obrazky optimalizujte
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- chybi prizpusobeni pro tisk
+- pro nazvy css trid a id pouzivejte anglictinu..
+- typograficka chyba - prilis dlouhy text na sirku stranky
+- pouzivejte html entity
+- img tagum pridejte atribut width
+- nevalidni html (v miste kde mate seznamy)
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky a odstrante 'index.html' z odkazu
+
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

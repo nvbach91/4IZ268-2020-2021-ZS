@@ -1,0 +1,108 @@
+header {
+  margin-top: 5px;
+  display: flex;
+  max-width: 1280px;
+  justify-content: center;
+}
+
+.image {
+  width: 15%;
+  height: 55px;
+  float: left;
+  margin: 3px;
+}
+
+nav {
+  width: 1000px;
+  float: right;
+}
+
+button a {
+  text-decoration: none;
+}
+
+nav a {
+  padding: 10px 0;
+}
+
+nav a, nav .dropdown {
+  float: left;
+  font-size: 18px;
+  color: black;
+  background-color: rgb(162, 241, 247);
+  text-decoration: none;
+  border-right: 2px solid rgb(89, 194, 255);
+  width: 200px;
+  text-align: center;
+}
+
+nav a {
+  padding: 20px 0;
+}
+
+.dropdown a {
+  border: none;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+nav a:hover, .dropbtn:hover, .dropdown-content a:hover {
+  background-color: rgb(89, 194, 255);
+}
+
+.active {
+  background-color: rgb(89, 194, 255);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 67px;
+  background-color: rgb(162, 241, 247);
+  width: 200px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: rgb(162, 241, 247);
+  border-bottom: 2px solid rgb(89, 194, 255)
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*
+@media screen and (max-width: 800 px) {
+  nav>image{
+    display: none;
+  }
+  .dropdown-content {
+    width: calc(800 px / 4);
+  }
+}
+*/
+
+@media print {
+  header {
+    display: none;
+  }
+  .image {
+    display: none;
+  }
+  a {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+}

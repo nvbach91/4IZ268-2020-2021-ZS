@@ -1,0 +1,28 @@
+main {
+    align-self: center;
+    max-width: 1200px;
+}
+
+ul.column {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    max-height: 200px;
+}
+
+.column>li {
+    max-width: 200px;
+}
+
+@media print {
+    .column {
+        display: block;
+    }
+    a {
+        display: none;
+        visibility: hidden;
+    }
+}

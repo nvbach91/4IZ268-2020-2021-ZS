@@ -1,0 +1,400 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Castoro', serif;
+  margin: 0;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  align-items: center;
+}
+
+nav ul {
+  padding: 0%;
+  margin: 0%;
+  list-style-type: none;
+  display: flex;
+  padding: 5px;
+  margin: 15px 0;
+  text-align: justify;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 22px;
+  font-family: 'Castoro';
+  font-weight: bold;
+  transition: background-color 1s linear;
+}
+
+nav a.active, nav .regions, nav .places, nav .things-to-know, nav a:hover {
+  background-color: #E04944;
+  color: white;
+}
+
+.herobanner {
+  background-image: url(forest.jpg);
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px black;
+}
+
+.herobanner2 {
+  background-image: url(banner3.jpg);
+  padding: 160px;
+  color: white;
+  text-align: center;
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-shadow: 2px 2px 10px black;
+}
+
+.herobanner3 {
+  background-image: url(baner4.jpg);
+  padding: 160px;
+  color: white;
+  text-align: center;
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-shadow: 2px 2px 10px black;
+}
+
+.herobanner4 {
+  background-image: url(banner5.jpg);
+  padding: 160px;
+  color: white;
+  text-align: center;
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-shadow: 2px 2px 10px black;
+}
+
+.herobanner5 {
+  background-image: url(banner2.jpg);
+  padding: 160px;
+  color: white;
+  text-align: center;
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-shadow: 2px 2px 10px black;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.herobanner h2 {
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+.herobanner h1, h2, h3 {
+  padding: 5px;
+  max-width: 1024 px;
+  margin: 0 auto 10px auto;
+}
+
+main {
+  max-width: 1440px;
+}
+
+.container-article {
+  padding: 64px;
+}
+
+.article h2 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.container-article2 {
+  padding: 64px;
+  background-color: #f1f1f1;
+  margin: 0px;
+}
+
+article p {
+  font-size: 22px;
+  text-align: justify;
+}
+
+.article:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-text {
+  float: left;
+  width: 60%;
+  padding: 20px;
+}
+
+.column-img {
+  float: left;
+  width: 40%;
+  padding: 40px;
+}
+
+.column-img img {
+  display: block;
+  max-width: 500px;
+}
+
+.regions h2 {
+  width: 1024;
+  text-align: center;
+  border-bottom: solid 5px black;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  margin: 15px 30px;
+}
+
+.regions {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.region {
+  width: 33.33%;
+  padding: 10px;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+}
+
+.region p {
+  flex-grow: 1;
+}
+
+.region img {
+  border-radius: 12px;
+  padding-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.must-visit {
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 0px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.box-Mir {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 2%;
+  width: 45%;
+  height: 300px;
+  text-align: center;
+  background-image: url(mirskij_zamok.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 648px 300px;
+  color: transparent;
+  border-radius: 12px;
+}
+
+.box-Minsk {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 2%;
+  width: 45%;
+  height: 300px;
+  text-align: center;
+  background-image: url(minsk1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 648px 300px;
+  color: transparent;
+  border-radius: 12px;
+}
+
+.box-Dududki {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 2%;
+  width: 45%;
+  height: 300px;
+  text-align: center;
+  background-image: url(dudutki.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 648px 300px;
+  color: transparent;
+  border-radius: 12px;
+}
+
+.box-Nesvizh {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 2%;
+  width: 45%;
+  height: 300px;
+  text-align: center;
+  background-image: url(nesvizh.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 648px 300px;
+  color: transparent;
+  border-radius: 12px;
+}
+
+.box-Puscha {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 2%;
+  height: 300px;
+  text-align: center;
+  background-image: url(puscha.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 648px 300px;
+  color: transparent;
+  border-radius: 12px;
+}
+
+.box-Mir h2, .box-Minsk h2, .box-Dududki h2, .box-Nesvizh h2, .box-Puscha h2 {
+  padding: 40px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+  text-align: center;
+}
+
+.box-Mir p, .box-Minsk p, .box-Dududki p, .box-Nesvizh p, .box-Puscha p {
+  font-size: 20px;
+  padding: 30px;
+  padding-top: 0px;
+  text-align: left;
+}
+
+.box-Mir:hover {
+  animation: fadeIn ease s;
+  transition: 0.6s;
+  background-color: #CFC1B3;
+  background-image: none;
+  color: black;
+}
+
+.box-Minsk:hover {
+  transition: 0.6s;
+  background-color: #CFC1B3;
+  background-image: none;
+  color: black;
+}
+
+.box-Dududki:hover {
+  transition: 0.6s;
+  background-color: #CFC1B3;
+  background-image: none;
+  color: black;
+}
+
+.box-Nesvizh:hover {
+  transition: 0.6s;
+  background-color: #CFC1B3;
+  background-image: none;
+  color: black;
+}
+
+.box-Puscha:hover {
+  transition: 0.6s;
+  background-color: #CFC1B3;
+  background-image: none;
+  color: black;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  height: 100px;
+  background-color: #545456;
+}
+
+footer p {
+  color: white;
+  font-size: 24px;
+  margin: 10px;
+  text-align: center;
+}
+
+@media print {
+  body {
+    color: black;
+    background-color: white;
+  }
+  .main {
+    margin: 0 30px;
+  }
+  .content {
+    border: 2px solid black;
+  }
+  .column-img {
+    display: none;
+  }
+  .container-article, .container-article2, .main {
+    background: none;
+    color: black;
+  }
+}
+
+@media screen and (max-width:1100px) {
+  body {
+    font-size: 20px;
+  }
+  .nav {
+    padding: 5px auto;
+  }
+  .main {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .main {
+    margin: 0 auto;
+  }
+  .main p {
+    size: 5px;
+  }
+}

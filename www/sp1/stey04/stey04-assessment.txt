@@ -1,0 +1,19 @@
+- zbavte se neexistujicich odkazu ve footeru
+- vsechny obrazky optimalizujte
+- chybi favicon
+- odkazy v navigaci rozsirte tak aby slo na ne lepe klikat
+- kdyz kliknu na logo, mel bych se dostat na hlavni stranku
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- odstrante 'index.html' z odkazu
+- typograficka chyba  - dlouhy text na sirku stranky
+- chybi meta informace
+- dodrzujte konzistentni zpusob zapisu html atributu
+- chybi h1
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- na verzi pro tisk se zbavte pozadi
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,18 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky odstrante 'index.html' z odkazu
+- krome souboru homepage.html, ten by mel byt index.html v korene webu
+- odstrante cast 'index.html' z odkazu
+- pouzivejte html entity
+- odstranil bych pozadi tech neaktivnich polozek v navigaci
+- pouzivejte relativni odkazy na stranky a zdroje
+- target="_self" se psat nemusi
+- do title pridejte i nazev webu, (nazev stranky | nazev webu)
+- opravte efekt pri hoveru na obrazek/video na strance svatby a covery
+- do nazvu webu pridejte asi tu profesi (photography nebo video guru...)
+
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

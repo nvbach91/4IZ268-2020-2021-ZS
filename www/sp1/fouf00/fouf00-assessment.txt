@@ -1,0 +1,22 @@
+- odkazy v navigaci rozsirte tak aby slo na ne lepe klikat
+- obrazky optimalizujte
+- jidelni menu by nemelo byt takhle siroke, pridejte tam max-width
+- misto toho odkazu s tou mapou pridejte iframe z google maps s vyznacenym mistem na mape
+- opravte footer
+- chybi meta informace
+- prizpusobeni pro tisk nefunguje
+- pouzivejte telefonni a emailove odkazy
+- pridejte padding tomu formulari
+- opravte pretekani obsahu stranky do sirky
+- vyraznejsim zpusobem zvyraznete aktivni polozku v navigaci
+- v navigaci pridejte odkaz na hlavni stranku
+- pouzijte nejaky web font, napr open sans nebo roboto pro cteni mimo jidelniho menu
+- k tem inputum ve formulari pridejte prislusny type (email, date)
+
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

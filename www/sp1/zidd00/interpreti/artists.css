@@ -1,0 +1,100 @@
+.alphabet {
+    background-image: url(../img/header_background.jpg);
+    background-size: cover;
+    background-position: top center;
+    align-self: flex-start;
+    padding-right: 27px;
+    padding-left: 27px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,0.5);
+}
+
+.artist {
+    background-color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.artist-bio {
+    padding: 20px;
+    width: 25%;
+    display:flex;
+    flex-direction: column;
+}
+
+.artist-description {
+    padding-right: 20px;
+    width: 75%;
+}
+
+.artist-picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.artist-media {
+    display:flex;
+    flex-direction: column;
+}
+
+.media-item {
+    font-size: 32px;
+    padding-top: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-bottom: -5px;
+    transition: color 0.2s ease;
+    color:rgb(82, 82, 82);
+}
+
+.media-item:hover {
+    cursor: pointer;
+    color:rgb(183, 0, 255);
+}
+
+@media screen and (min-width: 600px) {
+    .artist-media {
+        display:flex;
+        flex-direction: row;
+    }
+    
+    .media-item {
+        font-size: 28px;
+    }
+}
+
+/* Tisk */
+@media print { 
+    .alphabet {
+        
+        color:black;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .artist {
+        page-break-after: auto;
+        page-break-inside: avoid;
+    }
+
+    .artist-bio {
+        width: 15%;
+    }
+    
+    .artist-description {
+        width: 85%;
+    }
+
+    .artist-media {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+.column1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.menu-uvod {
+    border-bottom: 3px solid white;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+@media print {
+    * {
+        color: black;
+    }
+    header {
+        display: none;
+    }
+}

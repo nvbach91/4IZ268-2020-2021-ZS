@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt - Markéta Palkosková</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="contac form">
+  <meta name="author" content="Lukáš Vávra" />
+  <meta name="keywords" content="kontaky, email, skype" />
+  <link rel="stylesheet" href="../assets/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="navbar margin-auto">
+      <div class="logo-box">
+        <h1>Markéta Palkosková</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Co dělám?</a></li>
+          <li><a href="../about/index.html">O mně</a></li>
+          <li><a href="../reference/index.html">Reference</a></li>
+          <li><a href="../faq/index.html">FAQ</a></li>
+          <li><a class="active-page" href=".">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="wrapper">
+    <h1 class="contact-heading center"><span>Máte jakýkoliv dotaz?</span> Neváhejte mě kontaktovat.</h1>
+    <div class="container contact">
+      <div class="contact-form margin-auto">
+        <!--Jelikož bych tyto stránky rád nahrál na svůj webhosting a použil je v reálném světě, používám tuto jednoduchou Postmail
+           službu (https://postmail.invotes.com/), která zasílá tento vyplněný formulář na email, dle vygenerovaného access_tokenu.
+          Je zasláno maximálně 25 emailů za den.-->
+        <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+          <input type="text" name="subject" placeholder="Vaše jméno" required />
+          <input type="email" name="reply_to" placeholder="Váš email" required />
+          <textarea name="text" placeholder="Zpráva" rows="7" cols="50" required></textarea>
+          <input type="hidden" name="access_token" value="g2ue2avyqbv1dl1g5i90azzp" />
+          <div class="checkbox">
+            <input type="checkbox" required name="agree" value="0">
+            <label> Souhlasím se zpracováním jména a emailu. Vámi poskytnuté údaje slouží k zodpovězení dotazů a
+              zpracování objednávek.</label>
+          </div>
+          <input type="hidden" name="success_url" value="https://eso.vse.cz/~vavl03/sp1/postmail/succes.html" />
+          <input type="hidden" name="error_url" value="https://eso.vse.cz/~vavl03/sp1/postmail/error.html" />
+          <div class="contact-button margin-auto center">
+            <input id="submit_form" type="submit" value="Odeslat" />
+          </div>
+        </form>
+      </div>
+      <div class="contact-other margin-auto">
+        <h3>Pokud se mi nedovoláte, zašlete mi prosím sms:</h3>
+        <i class="fas fa-phone-alt fa-2x"></i> <a href="tel:+420604474354">+420 604 474 354</a>
+        <hr>
+        <h3>Také mi můžete zanechat zprávu na Skype:</h3>
+        <i class="fab fa-skype fa-2x"></i> <a href="https://join.skype.com/invite/mDhnFZiuurcS">Markéta Palkosková</a>
+        <h3>Můj email:</h3>
+        <a href="mailto:marketapalkoskova@seznam.cz">marketapalkoskova@seznam.cz</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <hr>
+    <p>2020 | Created by <a href="http://lukasvavra.wz.cz">Lukáš Vávra</a></p>
+  </footer>
+</body>
+
+</html>

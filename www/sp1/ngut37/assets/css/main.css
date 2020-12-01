@@ -1,0 +1,420 @@
+html {
+  font-family: Noto Sans, sans-serif;
+  font-size: 14px;
+  word-spacing: 1px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+* {
+  color: white;
+}
+
+body {
+  background: black;
+  margin: 0;
+}
+
+main {
+  min-height: 82vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+p { 
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* GLOBAL */
+.page-title {
+  font-size: 30px;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .page-title {
+    font-size: 55px;
+  }
+}
+
+.icon {
+  width: 20px;
+}
+
+
+.icon-with-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-with-text > .icon {
+  margin-right: 10px;
+}
+
+.button {
+  width: 200px;
+  margin: 30px 0;
+  padding: 12px;
+  align-self: center;
+  text-align: center;
+  border: 1px gray solid;
+  border-radius: 5px;
+  transition: 500ms;
+  box-shadow: 0 0 15px  rgba(255, 255, 255, 0.3);
+}
+
+.button:hover {
+  width: 205px;
+  margin: 29px 0;
+  padding: 13px;
+  border: 1px crimson solid;
+  box-shadow: 0 0 3px  crimson
+}
+
+.button> div {
+  transition: 300ms;
+  font-size: 18px;
+}
+
+
+.button:hover > div {
+  color: crimson;
+}
+
+/* HEADER */
+.header-container {
+  height: 8vh;
+  margin: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 17px;
+
+}
+
+@media screen and (min-width: 576px) {
+  .header-container {
+    margin: 3px 50px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+.header-container a {
+  transition-duration: 300ms;
+}
+
+.header-container a:hover {
+  color: crimson;
+}
+
+.header-logo {
+  width: 230px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.header-icon {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header-icon {
+    display: block;
+    width: 50px;
+  }
+}
+
+.header-navbar {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FOOTER */
+
+.footer-wrapper {
+  margin-top: 20px;
+  border-top: 1px rgb(104, 104, 104) solid;
+  box-shadow: 0 0 15px  rgba(255, 255, 255, 0.3);
+}
+
+.footer-container {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-icon-link {
+  width: 17px;
+  margin-left: 15px;
+  border-bottom: none !important;
+}
+
+/* INDEX PAGE */
+
+.landing-container {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .landing-container {
+    display: block;
+    position: relative;
+    color: white;
+  }
+}
+
+.landing-image {
+  width: 100%;
+  margin: 0;
+}
+
+.landing-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+}
+
+.promotion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 300px;
+  margin: 10px 50px;
+}
+
+@media screen and (min-width: 1200px) {
+  .promotion-container {
+    width: 80%;
+    margin: 10px 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .promotion-container > div {
+    width: 25%;
+  }
+}
+
+.promotion-icon {
+  width: 80px;
+  margin: 50px 0;
+}
+
+/* ABOUT PAGE */
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 60px;
+}
+
+.contact-container > h1 {
+  margin-bottom: 25px;
+}
+
+
+.contact-img {
+  justify-content: center !important;
+}
+
+@media screen and (min-width: 992px) {
+  .contact-container {
+    width: 50%;
+    height: 82vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-container > img {
+    object-fit: fill;
+  }
+
+  .contact-wrapper {
+    flex-direction: row;
+  }
+}
+
+.contact-about-us-text {
+  width: 50%;
+}
+
+.contact-contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-logo {
+  width: 50px;
+  margin: 0 5px;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 60px;
+  margin: 15px 0;
+}
+
+.social-media > a {
+  margin: 0 15px;
+}
+
+/* GALLERY */
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-column {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+.gallery-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .gallery-column {
+    flex: 40%;
+    max-width: 50%;
+  }
+
+  .gallery-row {
+    margin: 0 50px;
+  }
+}
+
+/* SERVICES */
+
+.service-container {
+  margin: 40px 0 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service {
+  width: 80%;
+  height: 360px;
+  padding: 5px 15px;
+  margin: 13px;
+  display: flex;
+  flex-direction: column;
+  border: 1px gray solid;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  transition-duration: 300ms;
+  box-shadow: 0 0 11px gray;
+}
+
+@media screen and (min-width: 768px) {
+  .service {
+    width: 300px;
+    padding: 5px 15px;
+    margin: 13px;
+    display: flex;
+    flex-direction: column;
+    border: 1px gray solid;
+    transition-duration: 300ms;
+  }
+}
+
+.service:hover {
+  border: 1px crimson solid;
+  box-shadow: 0 0 6px crimson;
+}
+
+.service:hover .service-info {
+  border-top: 1px crimson solid;
+}
+
+
+.service-info {
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 1px white solid;
+  transition-duration: 300ms;
+}
+
+.service-info p {
+  margin: 8px 0;
+}
+
+.service h2 {
+  text-align: center;
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.tattoo-note > p {
+  text-align: center;
+  font-size: 12px;
+}
+
+.service-contact {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (min-width: 576px) {
+  .service-contact {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 60px;
+}

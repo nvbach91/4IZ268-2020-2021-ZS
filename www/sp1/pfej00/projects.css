@@ -1,0 +1,68 @@
+section img {
+	max-height: 100vh;
+	min-width: 50vw;
+	object-fit: contain;
+}
+
+div.description {
+	display: grid;
+	padding: 20px;
+}
+
+div.description-child-article {
+	align-self: center;
+	height: max-content;
+	padding: 5px;
+}
+
+#project1 img {
+	animation-name: movement-left;
+	animation-duration: 4s;
+}
+
+#project2 img {
+	animation-name: movement-right;
+	animation-duration: 4s;
+}
+
+#project1 description {
+	margin-right: 0px;
+}
+
+@keyframes movement-left {
+	from {
+		margin-left: -100%;
+	}
+	to {
+		margin-left: 0%;
+	}
+}
+
+@keyframes movement-right {
+	from {
+		margin-right: -100%;
+	}
+	to {
+		margin-right: 0%;
+	}
+}
+
+#project2 {
+	color: white;
+	background-color: #24273e;
+}
+
+@media only screen and (min-width: 1100px) {
+	section {
+		display: flex;
+	}
+	section img {
+		margin: auto;
+		object-fit: contain;
+	}
+	div.description-child-article {
+		align-self: center;
+		height: max-content;
+		padding: 5px;
+	}
+}

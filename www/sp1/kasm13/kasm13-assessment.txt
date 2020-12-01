@@ -1,0 +1,12 @@
+- nevhodne zvoleny font pro cteni (spatny import verze fontu)
+- pozadi za textem zkuste snizit pruhlednost
+- do tite bych psal opacne (nazev stranky pak nazev webu)
+- pouzivejte relativni odkazy, jak v html tak i css
+- odstrante 'index.html' z odkazu
+- sjednotte vsechny css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

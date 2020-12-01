@@ -1,0 +1,20 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- odstrante efekt pri najeti mysi na obrazek v postrannim liste (obrazky se nemaji posouvat podle efektu)
+- pouzivejte emailove a telefonni odkazy
+- pridejte vice informaci do footeru
+- do atributu alt nepiseme pouze otaznik
+- pouzivejte relativni odkazy na interni zdroje (stranky, obrazky, css, atd)
+- chybi meta informace
+- odstrante inline css
+- k img tagum pridejte atribut width
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- odstrante pozadi vsech prvku na verzi pro tisk
+- na verzi pro tisk zmensete logo, schovejte navigaci
+- v title bych psal nejprve nazev stranky a pak nazev webu
+- pridejte odkaz na hlavni stranku do loga
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,162 @@
+/*--------*/
+/*hlavička*/
+/*--------*/
+.header_title {
+    float: left;
+    font-size: 30px;
+    color: #5371b6;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 0 ;
+    border-left: 5px solid #5371b6;
+    border-right: 5px solid #5371b6;
+    border-top: 5px solid #5371b6;
+    border-bottom: 5px solid #5371b6;
+}
+
+/*--------*/
+/*navigace*/
+/*--------*/
+nav {
+    width: 1000px;
+}
+
+button a {
+    text-decoration: none;  
+}
+
+nav a {
+    padding: 20px 0 ;
+}
+
+nav a, nav .rolldown {
+    float: left;
+    font-size: 16px;
+    color: white;
+    background-color: #5371b6;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 20%;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.rolldown a {
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0 ;
+}
+
+nav a:hover, .rolldown_button:hover, .rolldown_text a:hover {
+    background-color: #4C4C4C;
+}
+
+.rolldown_text {
+    display: none;
+    position: absolute;
+    margin-top: 58px;
+    background-color: #5371b6;
+    width: calc(1000px/5);
+    border-radius: 10px;
+    z-index: 1;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+  
+.rolldown_text div {
+    float: none;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    background-color: #5371b6 ;
+}
+  
+.rolldown:hover .rolldown_text {
+    display: block;
+}
+
+#index {
+    background-color: #4C4C4C;
+}
+
+#news {
+    background-color: #4C4C4C;
+}
+
+#teams {
+    background-color: #4C4C4C;
+}
+
+#for_you {
+    background-color: #4C4C4C;
+}
+
+#contact {
+    background-color: #4C4C4C;
+}
+
+/*-------*/
+/*patička*/
+/*-------*/
+
+.footer {
+    float: left;
+    font-size: 16px;
+    color: #4C4C4C;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 0 ;
+    border-left: 5px solid #5371b6;
+    border-right: 5px solid #5371b6;
+    border-top: 5px solid #5371b6;
+    border-bottom: 5px solid #5371b6;
+}
+
+/*--------------*/
+/*responsibilita*/
+/*--------------*/
+
+@media screen and (max-width: 800px) {
+    nav {
+      width: 800px;
+    }
+
+    .header_title {
+        width: 800px;
+      }
+  
+    .rolldown_text {
+      width: calc(800px / 5);
+    }
+
+    footer {
+        width: 800px;
+    }
+}
+
+/*----*/
+/*tisk*/
+/*----*/
+
+@media print {
+    header {
+      display: none;
+    }
+
+    footer {
+        display: none;
+      } 
+}
+  

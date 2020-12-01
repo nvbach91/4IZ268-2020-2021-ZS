@@ -1,0 +1,13 @@
+- vize omezte sirku radku textu, jedna se to typografickou chybu kdyz je tak dlouhy text na sirku - spatne se cte
+- opravte zdeformovane obrazky
+- font-family se dava spise do body
+- normalni font-weight pro cteni je 400, vy mate importovanou pouze verzi 100
+- velikost pisma pro cteni je prilis velke, byva to max 14px
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- kdyz dam tisk tak vidim cernou stranku papiru - odstrante cerne pozadi
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

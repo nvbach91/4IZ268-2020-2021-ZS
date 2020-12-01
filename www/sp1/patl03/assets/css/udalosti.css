@@ -1,0 +1,62 @@
+.events {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.event {
+    background-color: red;
+    position: relative;
+    margin: 10px;
+    width: 90%;
+    height: 250px;
+    border-color: rebeccapurple;
+    box-shadow: -1px -1px 5px rgb(0, 0, 0), -1px 1px 5px rgb(0, 0, 0), 1px 1px 5px rgb(0, 0, 0), 1px -1px 5px rgb(0, 0, 0);
+    padding: 3px;
+    background: linear-gradient(160deg, rgba(109, 175, 217, 1) 0%, rgba(9, 9, 121, 1) 100%);
+}
+
+.new {
+    background: linear-gradient(160deg, rgba(109, 175, 217, 1) 0%, rgba(9, 9, 121, 1) 100%);
+}
+
+.old {
+    background: linear-gradient(160deg, rgb(160, 76, 163) 0%, rgba(9, 9, 121, 1) 100%);
+}
+
+.news {
+    background: linear-gradient(160deg, rgb(109, 217, 145) 0%, rgba(9, 9, 121, 1) 100%);
+}
+
+.event:hover {
+    width: 100%;
+    height: 280px;
+    transition-duration: 2s;
+    transform: translateY(-10px);
+}
+
+.event p {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.picture {
+    background-color: yellow;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.event-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 280px;
+}
+
+.picture img {
+    height: 100%;
+}

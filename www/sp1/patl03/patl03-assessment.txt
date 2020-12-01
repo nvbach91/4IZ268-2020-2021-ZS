@@ -1,0 +1,20 @@
+- pouzivejte relativni odkazy na interni stranky a zdroje
+- zmente kombinaci pozadi a barvy pisma tak aby to slo precist
+- zbavte se efektu pri najeti mysi na ty novinky, udalosti a videa
+- chybi zvyrazneni aktivni polozky navigace
+- pouzivejte telefonni a emailovy odkaz
+- chybi prizpusobeni pro tisk
+- pridejte odkaz na hlavni stranku do loga
+- elementu main pridejte padding
+- polozkam v navigaci pridejte padding
+- chybi meta informace
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- do title pridejte nazev webu
+- opravte text u clenu
+- vycentrujte obsah v footeru
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

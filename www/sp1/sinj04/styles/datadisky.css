@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+.menu-datadisky {
+    border-bottom: 3px solid white;
+}
+
+body {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex: wrap;
+}
+
+.head {
+    text-align: center;
+    border-bottom: 2px solid grey;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.datadisk {
+    border-bottom: 2px solid grey;
+}
+
+.text-l {
+    padding-left: 10px;
+    float: left;
+    padding-right: 10px;
+    width: 80%;
+}
+
+.image-r {
+    padding-right: 20px;
+    float: right;
+    width: 20%;
+}
+
+.text-r {
+    padding-left: 10px;
+    padding-right: 10px;
+    float: right;
+    width: 80%;
+}
+
+.image-l {
+    padding-left: 20px;
+    float: left;
+    width: 20%;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+main {
+    width: 80%;
+    float: left;
+}
+
+aside {
+    margin-top: 20px;
+    padding: 20px;
+    width: 20%;
+    float: right;
+    border: 1px solid grey;
+}
+
+aside a {
+    color: white;
+}
+
+@media screen and (max-width: 720px) {
+    .text-l {
+        width: 100%;
+        float: none;
+    }
+    .text-r {
+        width: 100%;
+        float: none;
+    }
+    .image-r {
+        width: 100%;
+        float: none;
+    }
+    .image-l {
+        width: 100%;
+        float: none;
+        padding-left: 0px;
+    }
+    aside {
+        width: 100%;
+    }
+    main {
+        width: 100%;
+    }
+}
+
+@media print {
+    * {
+        color: black;
+    }
+    header {
+        display: none;
+    }
+    aside {
+        display: none;
+    }
+    main {
+        width: 100%;
+    }
+    .text-l .text-r {
+        padding: 0px;
+    }
+}

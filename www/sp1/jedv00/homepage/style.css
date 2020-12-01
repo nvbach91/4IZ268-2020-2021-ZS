@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.column1 {
+  flex-basis: 80%;
+  padding-right: 10px;
+  text-align: justify;
+}
+
+.column2 {
+  flex-basis: 20%;
+  background-image: url(../homepage/images/pravy_sloupec.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------EPIZODY-----------------------------------*/
+
+.clear {
+  clear: both;
+}
+
+img {
+  float: left;
+  padding-right: 10px;
+  width: 250px;
+  height: 200px;
+}
+
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*---------------------------TISK***-----------------------------------*/
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 800px;
+  }
+
+  .column2 {
+    display: none;
+  }
+
+  .column1 {
+    flex-basis: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

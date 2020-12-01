@@ -1,0 +1,9 @@
+- odstrante cast 'index.html' z odkazu na stranky
+- odstrante pozadi pismen alphabet u interpretu z verze pro tisk
+- ja bych do title psal v opacnem poradi tj, nazev stranky p[ak nazev webu
+- velikost fontu pro cteni v odstavci bych dal cca 14
+- pouzijte semanticke tagy, alespon ty zakladni
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

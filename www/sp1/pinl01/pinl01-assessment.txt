@@ -1,0 +1,14 @@
+- uvodni video je prilis male na male obrazovce
+- srovnejte ikony a text v navigaci
+- chybi identifikace webu na strankach, treba new york
+- na verzi pro tisk odstrante veskera ohraniceni
+- chybi import tucne verze fontu
+- pridejte nejaky aside sloupec vedle hlavniho obsahu
+- pridejte nejaky text a nejake odkazy na hlavni stranku, aby tam nebylo jen to video
+- odstrante 'index.html' z odkazu
+- opravte nazev css tridy napr. 'boroughX' aby byl konzistentni s ostatnimi nazvy tridy, doporucuje se zapis s pmlckou
+- do title dejte take nazev webu, napr 'Zajimava mista | New York City'
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

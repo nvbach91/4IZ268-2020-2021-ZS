@@ -1,0 +1,273 @@
+* {
+    font-family: 'Fira Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 25px;
+}
+h3 {
+    font-size: 22px;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    margin: 5px;
+}
+
+body {
+    background-color: rgba(82, 7, 51, 0.363);
+    background-image: url(https://eso.vse.cz/~kasm13/sp1/sources/background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    max-width: 1024px;
+    height: 50px;
+    margin: 0 auto 0 auto;
+    font-size: 25px;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 970px) {
+    .bar {
+        flex-direction: column;
+        font-size: 20px
+    }
+}
+
+.bar-item {
+    width: 250px;
+    padding: 10px 20px 10px 20px;
+    color: black;
+}
+
+@media screen and (max-width: 970px) {
+    .bar-item {
+        width: 100%;
+    }
+}
+
+.bar-item:hover {
+    background-color: rgb(86, 49, 180);
+    color: white;
+    transition: .5s;
+}
+
+.active {
+    width: 250px;
+    background-color: rgb(86, 49, 180);
+    color: white;
+}
+
+@media screen and (max-width: 970px) {
+    .active {
+        width: 100%;
+    }
+}
+
+.headline {
+    border-color: solid white;
+    height: 50px;
+    margin: 0 auto 0 auto;
+    max-width: 1024px;
+    margin-top: 50px;
+    font-size: 85px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 970px) {
+    .headline {
+        font-size: 45px;
+        margin-bottom: 0px;
+        height: 10px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .headline {
+        margin-top: 150px;
+    }
+}
+
+.title {
+    padding: 0px 20px 10px 20px;
+    margin-left: 20px;
+    width: max-content;
+    border-radius: 50px;
+    border-width: 50px;
+    height: 100px;
+}
+
+.layout {
+    display: flex;
+    width: 1024px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 970px) {
+    .layout {
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+.container {
+    background-image: linear-gradient(rgba(204, 196, 250, 0.76), rgba(86, 49, 180, 0.75));
+    border-radius: 50px;
+}
+
+.container1 {
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+.text {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    width: 75%;
+    padding-right: 30px;
+}
+
+@media screen and (max-width: 970px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.pictures {
+    width: 25%;
+    padding-top: 85px;
+}
+
+@media screen and (max-width: 970px) {
+    .pictures {
+        flex-direction: column;
+        margin-bottom: 10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.picture {
+    width: 85%;
+    padding-bottom: 0px;
+}
+.picture:hover {
+    cursor: grab;
+}
+@media screen and (max-width: 970px) {
+    .picture {
+        width: 100%;
+    }
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(228, 90, 210, 0.507);
+    border-radius: 50px;
+    padding: 15px;
+    margin: 5px;
+    font-size: 22px;
+}
+
+.button:hover {
+    background-color: rgb(86, 49, 180);
+    color: white;
+    transition: .5s;
+}
+
+.button1 {
+    color: black
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 5px;
+}
+
+@media print {
+    * {
+        background-color: white;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: justify;
+    }
+    li {
+        margin: 0;
+    }
+    ul {
+        margin: 0;
+    }
+    .title {
+        font-size: 50px;
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .bar {
+        display: none;
+    }
+    body {
+        background-image: none;
+    }
+    p {
+        margin: 5px;
+    }
+    .layout {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    h2 {
+        padding: 0;
+        margin: 0;
+    }
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .picture {
+        width: 60%;
+    }
+    footer {
+        display: none;
+    }
+    .button {
+        display: none;
+    }
+}

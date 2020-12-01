@@ -1,0 +1,468 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        body {
+            max-width: 1281px;
+            font-family: 'Raleway', monospace;
+            margin: 0 auto;
+            background-color: rgba(160, 30, 69, 0.322);
+            box-shadow: 10px 10px 5px rgba(192, 122, 157, 0.37);
+            border-radius: 20px;
+        }
+
+        .wrapper {
+            background-color: white;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 20px;
+        }
+
+        header {
+            margin: 0 auto;
+            max-width: 1281px;
+            font-family: 'Raleway', monospace;
+            text-align: center;
+            background-color: white;
+        }
+
+        h1 {
+            float: left;
+            font-size: 70px;
+            width: 100%;
+        }
+
+        .menu {
+            float: right;
+            font-size: 15px;
+            width: 100%;
+            font-size: 18px;
+            margin: 0 auto;
+        }
+
+        nav {
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            transform: scaleY(0);
+            transition: transform 0.1s ease-in 0.1s;
+            transform-origin: top;
+        }
+
+        nav>.menu-item {
+            float: left;
+            width: 50%;
+            text-decoration: none;
+            color: black;
+            padding: 5%;
+            text-align: center;
+            border: white solid;
+            border-radius: 10px;
+        }
+
+        nav a:nth-child(1) {
+            color: rgb(221, 218, 218)
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            float: right;
+            border: pink;
+        }
+
+        label img {
+            width: 30px;
+        }
+
+        label:hover {
+            border: solid rgb(243, 212, 217);
+            transition: 200ms;
+        }
+
+        nav a:not(:nth-child(1)):hover {
+            background-color: #ffebeb;
+            border: white solid;
+        }
+
+        input:checked~nav {
+            transform: scaleY(1);
+            transition: transform 0.1s ease-out;
+        }
+
+        input:checked~nav a {
+            opacity: 1;
+            transition: opacity 0.1s ease-out 0.1s;
+        }
+
+        /*STYLY K FOOTER*/
+
+        footer {
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            font-size: 15px;
+        }
+
+        /* STYLY K MAIN */
+
+        .wrapper-mid {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            background-color: white;
+        }
+
+        main {
+            font-size: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            float: left;
+            width: 100%;
+            background-color: white;
+        }
+
+        .question {
+            text-align: center;
+            background-color: rgba(245, 190, 204, 0.212);
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 30px;
+            color: rgb(122, 8, 52);
+        }
+
+        .question p {
+            padding: 25px;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 10px;
+            float: left;
+        }
+
+        .thought p {
+            padding: 25px;
+            border: solid white 10px;
+            text-align: center;
+            font-weight: bolder;
+            float: left;
+            width: 100%;
+            font-size: 15px;
+            color: rgb(117, 7, 49);
+        }
+
+        .thought p:nth-child(1) {
+            border-bottom: rgba(245, 170, 183, 0.699) solid 2px;
+        }
+
+        .thought p:nth-child(2) {
+            border-bottom: rgba(201, 74, 95, 0.534) solid 2px;
+        }
+
+        .thought p:nth-child(3) {
+            border-bottom: rgba(201, 66, 88, 0.774) solid 2px;
+        }
+
+        .thought p:nth-child(4) {
+            border-bottom: rgba(172, 64, 82, 0.801) solid 2px;
+        }
+
+        .thought p:nth-child(5) {
+            border-bottom: rgba(163, 20, 44, 0.767) solid 2px;
+        }
+
+        .thought p:nth-child(6) {
+            border-bottom: rgba(100, 9, 24, 0.925) solid 2px;
+        }
+
+        .thought p:nth-child(1):hover {
+            color: rgb(245, 170, 183);
+            transition: 900ms;
+        }
+
+        .thought p:nth-child(2):hover {
+            color: rgb(201, 74, 95);
+            transition: 900ms;
+        }
+
+        .thought p:nth-child(3):hover {
+            color: rgb(201, 66, 88);
+            transition: 900ms;
+        }
+
+        .thought p:nth-child(4):hover {
+            color: rgb(172, 64, 82);
+            transition: 900ms;
+        }
+
+        .thought p:nth-child(5):hover {
+            color: rgb(163, 20, 44);
+            transition: 900ms;
+        }
+
+        .thought p:nth-child(6):hover {
+            color: rgb(100, 9, 24);
+            transition: 900ms;
+        }
+
+        /* styly k aside*/
+
+        aside {
+            float: right;
+            width: 100%;
+            background-color: white;
+        }
+
+        .picture {
+            border: white solid;
+            border-radius: 20px;
+        }
+
+        .picture img, a {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .picture img:hover {
+            border: solid white;
+        }
+
+        .next-symbol {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+            filter: invert(50%);
+        }
+
+        .next-symbol-img {
+            height: 50px;
+            transform: rotateZ(90deg);
+        }
+
+        .next-symbol:hover {
+            filter: invert(0%);
+            transition: linear;
+        }
+
+        /*RESPONZIVNÍ DESIGN*/
+
+        @media screen and (min-width: 720px) {
+            .box {
+                width: 25%
+            }
+            header {
+                margin: 0 25px 0 25px;
+            }
+            h1, .menu {
+                width: 50%;
+            }
+            h1 {
+                text-align: justify;
+            }
+            .menu {
+                margin-top: 25px;
+            }
+            nav {
+                float: left;
+                width: 90%;
+            }
+            label {
+                float: right;
+                width: 10%;
+                padding: 0;
+                height: 130px;
+                padding-top: 52px;
+            }
+            .gallery>.gallery-item {
+                width: 50%;
+            }
+            /*styly k main*/
+            main {
+                width: 100%;
+                font-size: 22px;
+            }
+            aside {
+                width: 100%;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            .thought p {
+                width: 33.33%;
+                font-size: 18px;
+            }
+            .question {
+                display: flex;
+                justify-content: center;
+            }
+            .question p {
+                flex-grow: 1;
+                margin-right: 50px;
+                margin-left: 50px;
+                width: 25%;
+            }
+            .about {
+                text-align: justify;
+                line-height: 40px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .box {
+                width: 25%
+            }
+            header {
+                margin: 0 25px 0 25px;
+            }
+            h1 {
+                width: 30%;
+                font-size: 80px;
+            }
+            .menu {
+                width: 70%;
+            }
+            nav {
+                float: left;
+                width: 90%;
+                transform: scaleY(1);
+            }
+            label {
+                /*
+        float: right;
+        width: 10%;
+        padding: 0;
+        height: 130px;
+        line-height: 130px;
+        margin-top: 20px;
+        white-space: nowrap;
+        font-size: 30px;*/
+                visibility: hidden;
+            }
+            nav>.menu-item {
+                float: left;
+                width: 33.33%;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                font-size: 20px;
+            }
+            .gallery>.gallery-item {
+                width: 25%;
+            }
+            /*styly k main*/
+            main {
+                width: 85%;
+                font-size: 22px;
+            }
+            h2 {
+                font-size: 38px;
+            }
+            aside {
+                width: 15%;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            .thought {
+                display: flex;
+            }
+            .question {
+                display: flex;
+            }
+            .question p {
+                flex-grow: 1;
+                margin-right: 50px;
+                margin-left: 50px;
+                width: 25%;
+            }
+            .about {
+                text-align: justify;
+                line-height: 40px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                box-shadow: none;
+                font-size: 18px;
+            }
+            header {
+                margin: 0 25px 0 25px;
+            }
+            h1 {
+                width: 30%;
+                font-size: 50px;
+            }
+            .menu {
+                width: 70%;
+            }
+            nav {
+                float: left;
+                width: 90%;
+                transform: scaleY(1);
+            }
+            label {
+                visibility: hidden;
+            }
+            nav>.menu-item {
+                float: left;
+                width: 33.33%;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                font-size: 15px;
+            }
+            /*styly k main*/
+            main {
+                padding-left: 40px;
+                padding-right: 40px;
+                float: left;
+                width: 100%;
+            }
+            aside {
+                visibility: hidden;
+                width: 0%;
+            }
+            .question {
+                text-align: center;
+                display: flex;
+            }
+            .thought {
+                display: flex;
+            }
+            .question p {
+                padding: 25px;
+                font-weight: bold;
+                background-color: rgb(255, 241, 246);
+                border-radius: 10px;
+                background-color: white;
+                border: none;
+                flex-grow: 1;
+                margin-right: 50px;
+                margin-left: 50px;
+                width: 25%;
+            }
+            .thought p {
+                padding: 25px;
+                border: solid white 10px;
+                text-align: center;
+                font-weight: bolder;
+                border-radius: 15px;
+                float: left;
+                width: 100%;
+                font-size: 15px;
+            }
+            .thought p:nth-child(n) {
+                border-bottom: none;
+            }
+        }

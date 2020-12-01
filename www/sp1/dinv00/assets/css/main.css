@@ -1,0 +1,491 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    padding: 50px;
+    font-family: 'Fugaz One';
+    background-color: black;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    font-family: 'Fugaz One';
+}
+
+
+h1 {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: 'Fugaz One', cursive;
+}
+
+ul{
+    list-style-type:none;
+    padding: 0;
+}
+
+main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+article{
+    margin-bottom: 50px;
+}
+
+article>p{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+.logo {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo:hover {
+    opacity: 80%;
+}
+
+nav li {
+    text-align: center;
+}
+
+nav {
+    list-style-type: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+li{
+    float: left;;
+}
+
+li >a,.nav-text {
+    background-color: rgb(29, 28, 28);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    display: block;
+    float: none;
+}
+
+li a:hover {
+    background-color: rgb(173, 6, 6);
+    transition: 0.3s all;
+}
+
+.nav-text:hover{
+    background-color: rgb(173, 6, 6);
+    transition: 0.3s all;}
+
+/* Dropdown Button */
+
+.dropbtn {
+    background-color: rgb(29, 28, 28);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    float: left;
+}
+
+.btn02,.btn01 {
+    color: white;
+    padding: 0px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    display: block;
+    float: left;
+    z-index: 1;
+}
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    float: left;
+}
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    float: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+}
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    background-color: rgb(204, 194, 194);
+    float: none;
+}
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    text-decoration: underline;
+    text-decoration-color: rgb(173, 6, 6);
+}
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropbtn:hover, .btn02 {
+    background-color: rgb(173, 6, 6);
+}
+
+footer {
+    margin-top: 60px;
+    border-top: 2px white solid;
+    text-align: center;
+    text-decoration: none;
+}
+.copyright{
+    margin-top: 60px;
+    border-top: 2px white solid;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 0;
+    padding: 20px 0;
+    outline: none;
+    text-decoration: none;
+}
+
+.footer-links a {
+    margin-left: 5px;    
+    margin-right: 5px;
+}
+
+.banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.contact {
+    background-image: url(https://www.rollingstone.com/wp-content/uploads/2018/08/Halestorm-2-Jimmy-Fontaine.jpg);
+    background-position: 70% 20%;
+    padding: 150px;
+}
+
+.hpbanner {
+    padding: 100px;
+    background-position: 100% 20%;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/whWqiwE6PcAK9cMZeVpQEm.jpg);
+}
+
+.tour {
+    background-image: url(https://www.tokkoro.com/picsup/3090358-audience_band_concert_fans_live_music_rock-band.jpg);
+    padding: 120px;
+    background-position: 100% 50%;
+}
+
+.music {
+    background-image: url(https://wallpaperplay.com/walls/full/f/d/b/289860.jpg);
+    padding: 80px;
+    background-position: 100% 90%;
+}
+
+.music1 {
+    background-image: url(../../assets/img/music1\ banner.jpg);
+    padding: 80px;
+    background-position: 100% 60%;
+}
+
+.about {
+    background-image: url(https://img2.goodfon.com/wallpaper/nbig/0/87/lzzy-hale-halestorm.jpg);
+    padding: 100px;
+    background-position: 100% 5%;
+}
+
+.lzzy {
+    background-image: url(https://www.revolvermag.com/sites/default/files/styles/image_750_x_420/public/media/images/article/lzzyhale4_byjeremyryan.jpg?itok=oCy01xZe&timestamp=1563295787);
+    padding: 180px;
+    background-position: 100% 20%;
+}
+
+.banner h1, .banner h3 {
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 30px;
+    max-width: 600px;
+    margin-left: 100px;
+   
+}
+.hp-img{
+    display: flex;
+    justify-content: center;
+}
+
+.hp-iframe {
+    display: flex;
+    justify-content: center;
+}
+
+.shows>.shows-content {
+    width: 30%;
+    float: left;
+    height: 300px;
+    border: 5px solid white;
+    margin-right: 3%;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.shows-content>h2 {
+    color: rgb(173, 6, 6);
+}
+
+.tickets-link {
+    background-color: rgb(29, 28, 28);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+}
+
+.tickets-link:hover {
+    background-color: rgb(173, 6, 6);
+    transition: 0.3s ALL;
+}
+
+.albums {
+    border: 5px solid white;
+    padding: 10px;
+    height: 200px;
+    margin-top: 50px;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+.albums>.al-box1 {
+    float: left;
+}
+
+.albums>.al-box2 {
+    float: right;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.article-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.members {
+    border: 5px solid white;
+}
+
+.bio {
+    float: left;
+    width: 50%;
+}
+
+.bio-article {
+    float: left;
+    margin-top: 100px;
+    width: 40%;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.photos {
+    border: solid white;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+.photos {
+    margin-left: 4%;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.gallery>.photos :hover {
+    opacity: 60%;
+    transition: 0.5s all;
+}
+
+.footer-links>a:hover {
+    opacity: 50%;
+    transition: 0.5s all;
+}
+
+
+
+
+@media screen and (max-width: 1121px) {
+    .bio {
+        width: 100%;
+    }
+    .bio-article {
+        width: 100%;
+    }
+    .article-img {
+        width: 60%;
+    }
+    .albums {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .iframe {
+        width: 90%;
+    }
+    .logo {
+        width: 50%;
+    }
+    .article-img {
+        width: 80%;
+    }
+    .shows>.shows-content {
+        width: 40%;
+    }
+    .albums {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .banner h1, .banner h3 {
+        margin-left: 50px;
+       
+    }
+    .contact,.hpbanner,.about,.music,.music1,.tour{
+        padding: 90px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .shows>.shows-content {
+        width: 50%;
+        margin-left: 25%;
+    }
+    .article-img {
+        width: 100%;
+    }
+    
+    .albums {
+        height: 350px;
+    }
+    .albums>.al-box2 {
+        width: 100%;
+    }
+    .banner h1, .banner h3 {
+        margin-left: 0px;
+       
+    }
+    .contact,.hpbanner,.about,.music,.music1,.tour{
+        padding: 70px;
+    }
+   
+}
+
+@media print {
+    * {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: black;
+    }
+    h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 30px;
+    }
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h3 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .banner {
+        display: none;
+    }
+    .logo {
+        width: 50%;
+    }
+    iframe{
+        display: none;
+    }
+    .gallery{
+        display: block;
+    }
+
+    .bio {
+        display: none;
+    }
+    
+    .bio-article {
+        float: none;
+        margin-top: 0px;
+        width: 100%;
+    }
+    nav {
+        display: none;
+    }
+    .tickets-link {
+        display: none;
+    }
+    .albums {
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 70px;
+    }
+    .copyright{
+        margin-top: 60px;
+        border-top: 2px white solid;
+        text-align: center;
+        text-decoration: none;
+        
+    }
+    .footer-links{
+        display :none;
+    }
+    footer> p{
+        display :none;
+    }
+}

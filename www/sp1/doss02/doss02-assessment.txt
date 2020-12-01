@@ -1,0 +1,19 @@
+- z odkazu odstrante cast 'index.html'
+- opravte navigaci tak, aby pri najeti mysi zustaly polozky na svych mistech
+- v aktivni polozce navigace nechte text misto obrazku na pozadi
+- zmente hodnotu atributu lang
+- pouzijte vhodnejsi font, napr open sans nebo roboto
+- pouzivejte take telefonni odkaz
+- bloky textu na hlavni strance zarovnejte doleva a na kazdem radku nechte max. 3 sloupce
+- text-align center se nehodi takto vsude
+- do title piste nazev stranky a nazev webu
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- opravte verzi pro tisk stranky o nas, chci pomoci, potrebuji pomoc, akce, clanky (mensi pismo, zarovnani textu, apod)
+- doplnte meta informace
+
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

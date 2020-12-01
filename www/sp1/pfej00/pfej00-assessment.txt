@@ -1,0 +1,22 @@
+- chybi favicon
+- "vsechny dulezite informace nad prehybem"?
+- neschovavejte menu na vetsich obrazovkach, tam mate dost mista
+- stejne tak to zobrazovani navigace nefunguje tak jak ma
+- ten efekt pri hoveru na obrazek v galerii bych zrusil ..
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky odstrante 'index.html' z odkazu
+- odstrante cast 'index.html' z odkazu
+- vsechny obrazky optimalizujte
+- chybi meta informace
+- chybna syntaxe pri psani atributu - nevalidni html
+- pridejte do title i nazev webu
+- opravte pretekani obsahu stranky mimo okna
+- nevhodne prizpusobeni pro tisk
+- sjednotte css soubory do jednoho souboru a umistete ho do slozky css
+- odkazy na externi web by se mely otrevrit v nove zalozce
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

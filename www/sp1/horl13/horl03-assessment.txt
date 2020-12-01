@@ -1,0 +1,10 @@
+- pouzijte emailove a telefonni odkazy (stranka kontakt)
+- pouzivejte relativni odkazy na stranky a zdroje
+- pouzivejte html entity
+- vsechny obrazky optimalizujte
+- proc jsou v css tridy, ktere nepouzivate v html?
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

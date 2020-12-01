@@ -1,0 +1,15 @@
+div.img {
+    background-image: url(../assets/mortgage-house.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+@media print {
+    div.img{
+        display: none;
+    }
+}

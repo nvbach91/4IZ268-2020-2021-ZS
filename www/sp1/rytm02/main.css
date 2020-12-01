@@ -1,0 +1,121 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+nav {
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+#links > li {
+    margin: 1%;
+}
+
+#links {
+    display:flex;
+    margin-left: 50%;
+    font-size: 80%;
+}
+
+.jumbotron {
+    max-width: 100%;
+    height: auto;
+    background-size: 100% 100%;
+    background-image: url(IGLOO_4.jpg);
+}
+
+h1 {
+    color: white;
+    padding: 20%;
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(81, 84, 99);
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.floatbox {
+    text-align: center;
+    padding: 3%;
+}
+
+.container1 .floatbox {
+    width: 100%;
+    background-color: white;
+}
+
+
+.container2 {
+    display: flex;
+}
+
+.container2 .floatbox {
+    width: 100%;
+    background-color: rgba(234, 235, 247, 0.884);
+
+}
+
+.container4 .floatbox {
+    width: 50%;
+}
+
+.container4 {
+    display: flex;
+}
+button {
+    border-radius: 5px;
+    margin-top: 40%;
+    background-color: white;
+    position: relative;
+}
+
+.rental {
+    background-image: url(https://csg.com.tr/assets/img/homepage/slider/hero-slider_3.jpg);
+    background-size: 100% 100%;
+    height: auto;
+}
+
+.turnkey {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUXipXKllKfikkZLB2jhtc8VqZVxE4iquajg&usqp=CAU);
+    background-size: 100% 100%;
+    height: auto;
+}
+
+.container4 p {
+    background-color: white;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color:  rgba(234, 235, 247, 0.884);
+}
+
+.containerExplain .floatbox {
+    width: 17%;
+    margin: 1%;
+    background-color: rgba(234, 235, 247, 0.884);
+}
+
+h2 {
+    text-align: center;
+}
+
+.contact .floatbox {
+    width: 2fr;
+}
+
+.games .floatbox {
+    width: 2fr;
+}

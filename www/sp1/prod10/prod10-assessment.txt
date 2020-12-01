@@ -1,0 +1,8 @@
+- odkazy na externi web by se mely otevrit v nove zalozce
+- obrazky optimalizujte (zmensit, kompresovat)
+- pouzivejte relativni odkazy na stranky a zdroje
+ 
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

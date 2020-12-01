@@ -1,0 +1,29 @@
+.footer {
+  border-top: 1px solid var(--secondary-color);
+}
+
+.footer-main {
+  margin: 32px 0;
+}
+
+.footer__logo {
+  font-size: 16px;
+  color: var(--primary-dark-color);
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__logo {
+    font-size: 24px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__nav a {
+  margin-bottom: 8px;
+  width: fit-content;
+}

@@ -1,0 +1,134 @@
+* { 
+    box-sizing: border-box;
+    max-width: 1080px;
+    margin: 0 auto;  
+
+    
+}
+header {  
+    margin-top: 5px;
+    }
+
+.menu {
+    display: flex;
+    margin: 10px;
+    font-size: large;
+    
+}
+
+.menu-item {
+    padding:20px;
+    background-color: rgb(46, 64, 77);
+    width: 25%;
+    margin: 1px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+.menu-item:hover {
+    background-color:  rgb(85, 175, 194);
+    transition: background-color 0.5s ease;
+    width: 53%;  
+    transition: width 2s ease;
+    font-size: xx-large;
+    transition: font-size 0.5s ease;
+   
+}
+
+
+.menu-item-active {
+    padding:20px;
+    background-color: rgb(85, 175, 194);
+    width: 25%;
+    margin: 1px;
+    border-radius: 10px;
+    text-align: center;
+    background-image: url(../img/img4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    }
+
+
+
+.menu-item , .menu-item-active  {
+    text-decoration: none;
+    color:white;
+}
+
+
+
+
+.picture-main {
+    border-radius: 10px;
+    height: 300px;
+    background-image: url(../img/img1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.picture-main h1 {
+    
+    text-align: center;
+    padding: 123px;
+    background-color: rgba(255, 255, 255, 0.432);
+    font-size: 70px;
+    border-radius: 10px;
+
+}
+    
+footer {
+    padding: 20px;
+    background-color: rgb(85, 175, 194);
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .menu {
+        flex-direction: column;
+        }
+    .menu-item{
+        width: 100%;
+    }
+    .menu-item-active {
+        width: 100%;
+    }
+    .menu-item:hover {
+        background-color:  rgb(85, 175, 194);
+        transition: background-color 0.5s ease;
+        width: 100%;
+        font-size: xx-large;
+        transition: font-size 0.5s ease;
+    }
+
+    .picture-main h1 {
+        font-size: 50px;
+    }
+}
+
+@media print {
+    header {
+        display: none;
+        }
+    footer {
+        display: none;
+    }
+    .picture-main {
+        background-color: transparent;
+        background-image: none;
+        margin: 0;
+        padding: 0;
+        height: 50px;         
+    }
+    .picture-main h1 {
+        padding: 0;
+    }
+         
+}
+

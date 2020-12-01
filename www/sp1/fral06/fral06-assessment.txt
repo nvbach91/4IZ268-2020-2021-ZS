@@ -1,0 +1,15 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- pridejte odkaz na hlavni stranku do loga
+- opravte odkaz na HOME v navigaci (nejak jsem se pres nej dostal na eso.vse.cz)
+- zmente font-weight u textu pro cteni (stranka about) na normal
+- nedostatecne prizpusobeni pro tisk
+- opravdu jste sam napsal tech 1000 radku css nebo to byl nejaky framework?
+- chybi meta informace
+- pridejte odkazy na emaily a telefony na strance team
+
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

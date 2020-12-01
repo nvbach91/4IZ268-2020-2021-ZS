@@ -1,0 +1,18 @@
+- odkazy na interni web by se mely otevrit ve stejne zalozce
+- pouzivejte nejaky font vhodny pro cteni v pasazich textu
+- vyraznejsim zpusobem/barvou zvyraznete aktivni polozku v navigaci
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- css soubor premistete do slozky /css
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- chybi import tucne verze fontu
+- veskery kod naformatujte
+- opravte verze pro tisk
+- pouzivejte semanticke tagy
+- pouzivejte html entity
+- oprave pretekani textu z cointaineru na male obrazovce
+- web neni responzivni
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

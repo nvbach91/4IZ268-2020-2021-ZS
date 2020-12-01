@@ -1,0 +1,24 @@
+- chybi zvyrazneni aktivnich polozek v navigaci
+- nemichejte odkazy na sekce v strance s odkazy na jine stranky
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- sjednotte css soubory do jednoho souboru a odstrante duplicitni css pravidla
+- odstrante ten efekt navigace
+- obrazky optimalizujte
+- chybi favicon
+- produkty zobrazujte nekolik vedle sebe a zajistete aby bylo dost mista pro ne
+- pouzijte emailovy odkaz
+- zmensete leve menu
+- chybi prizpusobeni pro tisk
+- veskery kod css i html naformatujte
+- proc obcas vidim tabulator a obcas mezery u indentace kodu? - pouzijte pouze jeden z nich
+- chybi meta informace
+- chybi import pouziteho web fontu
+- na male obrazovce vidim pouze menu...
+- slozku SP1 prejmenujte na sp1
+- kod vubec neni konzistentni, mam pocit ze prace byla prevzata z hotoveho webu a doplnena o dalsi obsah
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

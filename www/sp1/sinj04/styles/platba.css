@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+.menu-platba {
+    border-bottom: 3px solid white;
+}
+
+body {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex: wrap;
+}
+
+main {
+    width: 70%;
+    float: left;
+}
+
+aside {
+    margin-top: 30px;
+    padding: 30px;
+    width: 30%;
+    float: right;
+    border: 1px solid grey;
+}
+
+.text {
+    width: 100%;
+}
+
+.imgprepaid {
+    height: 300px;
+    width: 200px;
+}
+
+.imgsub {
+    width: 400px;
+    height: 200px;
+}
+
+a {
+    color: white;
+}
+
+@media screen and (max-width: 720px) {
+    aside {
+        width: 100%;
+    }
+    main {
+        width: 100%;
+    }
+}
+
+@media print {
+    * {
+        color: black;
+    }
+    header {
+        display: none;
+    }
+}

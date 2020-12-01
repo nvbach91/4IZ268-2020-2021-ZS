@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    color: black;
+    background-color: white;
+}
+
+body {
+    font-family: "Poppins";
+    font-size: 13px;
+    margin: auto;
+    width: 1000px;
+}
+
+.container {
+    margin-left: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-item1 {
+    flex-basis: 15%;
+    background-image: url(../images/circuit.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-item2 {
+    flex-basis: 85%;
+}
+
+.item1, .item2, .item3 {
+    border: 3px ridge rgb(194, 194, 194);
+    height: 220px;
+    width: 800px;
+}
+
+.item1>h3, .item2>h3, .item3>h3 {
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.item1>p, .item2>p, .item3>p {
+    margin-top: 30px;
+    margin-left: 170px;
+}
+
+img {
+    margin-left: 15px;
+    float: left;
+    width: 150px;
+    height: 150px;
+}
+
+.butt1, .butt3 {
+    background-color: rgb(162, 241, 247);
+    border: ridge;
+    position: relative;
+    top: 19%;
+    left: 68%;
+    height: 40px;
+    width: 80px;
+}
+
+.butt2 {
+    background-color: rgb(162, 241, 247);
+    border: ridge;
+    position: relative;
+    top: 10%;
+    left: 68%;
+    height: 40px;
+    width: 80px;
+}
+
+.butt1:hover, .butt2:hover, .butt3:hover {
+    border: solid 2px black;
+    background-color: rgb(89, 194, 255);
+}
+
+footer>p {
+    background-color: rgb(162, 241, 247);
+    font-size: 12px;
+    margin-top: 0;
+    width: 950px;
+    margin-left: 5px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.clear {
+    clear: both;
+}
+@media print {
+    .item1, .item2, .item3{
+      border: none;
+    }
+    button{
+        display: none;
+    }
+  }

@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    float: left;
+    width: 100%;
+    min-height: 1000px;
+}
+
+aside {
+    float: right;
+    background-color: orange;
+    width: 20%;
+    height: 1000px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 17px;
+}
+
+.member {
+    text-transform: initial;
+    margin-top: 1%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+a img {
+    width: 50px;
+    height: 50px;
+}
+
+.picture {
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+}
+
+li {
+    margin: 1em 0;
+}
+
+.info {
+    position: absolute;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    color: cornsilk;
+}
+
+.info a {
+    text-transform: none;
+    font-size: 17px;
+}
+
+.info:hover {
+    opacity: 0.7;
+    transition: 2s;
+}

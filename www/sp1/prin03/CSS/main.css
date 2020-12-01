@@ -1,0 +1,497 @@
+/*Body*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-size:100%;
+    background-color: #bbbbbb;
+}
+
+/*Navigace*/
+a{
+    color: #403f3d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+}
+
+header .logo{
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-left: -2%;
+}
+
+header {
+    background-color: #d0d0cf;
+    width: 100%;
+    position: relative;
+}
+
+.Obsah{
+    width: 90%;
+    overflow: auto;
+    max-width:100%;
+    font-size: 20px;
+    margin:0 auto;
+    text-align: left;
+    justify-content: center;
+    padding: 30px 50px 30px 80px;
+}
+
+nav a:hover{
+    background-color: #2c2c2c;
+    cursor: pointer;
+    color: bisque!important;
+}
+
+nav{
+    display: flex;
+    align-items: flex-end;
+}
+
+nav a{
+    color:#b3b3b3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 20px;
+    padding-right: 55px;
+    margin: 0 5px;
+    transition: color 0.3s linear;
+}
+
+nav .navig{
+    margin-left: 1%;
+    color: #737373;
+}
+nav .soucasna{
+    color: #000000;
+}
+
+/*Line*/
+hr{
+    border:none;
+    border-top:20px dotted #000000;
+    height: 10%;
+    width:100%;
+    margin-top: 1%;
+}
+
+/*Hlavni foto*/
+.mainPhoto {
+    width: 60%;
+    height: 350px;
+    object-fit: fill;
+    border: 2px double #2c2c2c;
+    margin: auto;
+}
+
+/*Main*/
+main {
+    margin-left: 4%;
+}
+
+.Zakladni{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+}
+
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 60px;
+}
+
+
+main .text{
+    font-size: 20px;
+    margin: auto;
+}
+
+
+/*Footer*/
+footer {
+    width: 100%;
+    background-color: #2c2c2c;
+    bottom: 0;
+    height: 120px;
+    margin-top: 40px;
+}
+
+footer .copyright{
+    color: #ffffff;
+    font-size: 12pt;
+    text-align: left;
+    font-weight: 700;
+    padding: 20px 60px;
+}
+.logoVSE{
+    background-position: 100% 0;
+    height: 100px;
+    width: 280px;
+    background-repeat: no-repeat;
+    float: right;
+    padding: 10px;
+}
+
+/*Adresy*/
+.popis{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.seznamBanku{
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+
+.seznamBanku th,td{
+    padding: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+.mapa{
+    margin-top:20px;
+}
+.maps{
+    margin-top: 2%;
+    width: 70%;
+    height: 450px;
+    margin-left: 15%;
+}
+
+.mapa h3 {
+    font-size: 20pt;
+    margin: 40px 0 10px 0;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+/*Nazory*/
+section.boxy{
+    width: 100%;
+    overflow: auto;
+    margin: 20px 0;
+}
+.boxes > div{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.boxes .box{
+    width: 33%;
+    margin: 20px;
+    color: black;
+}
+.boxes .box .havligerova{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.novakova{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.zavoral{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.boxes .box h4{
+    margin: 10px 5px 3px 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.textCitace{
+    font-size: 25px;
+    margin-top: 80px;
+    margin-right: 20px;
+    color: #403f3d;
+}
+
+main .text{
+    font-size: 20px;
+    margin: auto;
+}
+
+
+.cologo{
+    height: 45px;
+    width: 120px;
+    padding: 10px;
+}
+
+.cologoBank{
+    height:60px;
+    width: 120px;
+    padding: 10px;
+}
+
+.cologoDeloitte{
+    height: 35px;
+    width: 110px;
+    padding: 10px;
+}
+
+.cologoEY{
+    height: 45px;
+    width: 80px;
+    padding: 10px;
+}
+
+.cologoPWC{
+    height: 65px;
+    width: 120px;
+    padding: 10px;
+}
+
+.cologoSberbank{
+    height: 45px;
+    width: 120px;
+    padding: 10px;
+}
+
+.companies{
+    border-collapse: initial;
+    border: 2px double #2c2c2c;
+}
+
+/*Ucty*/
+.podminky{
+    margin: 20px;
+    margin-top: 5%;
+}
+.Ucty{
+    font-family: "Open Sans";
+    font-size: 35px;
+    text-align: center;
+}
+.mainPhotoUcty{
+    width: 60%;
+    height: 350px;
+    object-fit: fill;
+    border: 2px double #2c2c2c;
+    margin: auto;
+    float: left;
+}
+.zjistit{
+    color: blue;
+    margin-right: 5%;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-align: right;
+}
+
+.banka{
+    text-decoration: underline;
+}
+
+/*Media*/
+@media print {
+    body{
+        background-color: #bbbbbb;
+    }
+    .footer{
+        display: none;
+    }
+    header{
+        background-color: #bbbbbb;
+    }
+    .Obsah{
+        width: 90%;
+        overflow: auto;
+        padding: 0;
+        max-width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    hr{
+        display: none;
+    }
+    table tr td {
+        padding: 0;
+    }
+    .text {
+        font-family: "Arial Black";
+        font-size: 10px;
+    }
+
+    .navig {
+        display: none;
+    }
+    .soucasna {
+        display: block;
+    }
+
+    header .logo {
+        float: left;
+        margin-left: 5%;
+        width: 40px;
+    }
+    .mapa iframe {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 749px) {
+    logo {
+        display: none;
+    }
+
+    nav.show-mobile-nav {
+        display: block;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    nav.show-mobile-nav a {
+        display: block;
+        text-align: left;
+        line-height: 20px;
+    }
+    @page {
+        margin: 10mm 10mm 10mm 10mm;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    header .logo{
+        display: none;
+    }
+    footer .logoVSE{
+        display:none;
+    }
+    .mainPhoto{
+        max-width: 100%;
+        height: auto;
+    }
+    .mainPhotoUcty{
+        max-width: 100%;
+        height: auto;
+    }
+    hr{
+        display: none;
+    }
+    .Obsah{
+        padding: 10px 8px 30px 10px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    body{
+        max-width: 100%;
+    }
+    main {
+        width: 100%;
+        padding: 0 10px;
+        max-width: 100%;
+        font-size: 10px;
+    }
+    h1 {
+        padding: 0 50px;
+        margin-bottom: 0;
+        font-size: 30px;
+    }
+    .Zakladni{
+        font-size: 20px;
+    }
+    .text{
+        font-size: 5px;
+    }
+    .Ucty{
+        font-size: 15px;
+    }
+    .zjistit{
+        font-size: 10px;
+    }
+    nav {
+        width: 100%;
+        line-height: 30px;
+        cursor: pointer;
+        font-size: 5px;
+    }
+    nav a{
+        padding: 2px;
+        padding-right: 10px;
+    }
+    .boxes > div {
+        width: 100%;
+    }
+    h1{
+        margin-bottom: 0;
+    }
+    footer{
+        max-width: 100%;
+    }
+    .seznamBanku{
+        margin: 5px 0 0 0;
+        max-width: 80%;
+    }
+    .seznamBanku td th{
+        font-size: 10px;
+    }
+    header{
+        width: 100%;
+    }
+    .cologo{
+        height: 15px;
+        width: 40px;
+        padding: 3px;
+    }
+
+    .cologoBank{
+        height:20px;
+        width: 40px;
+        padding: 3px;
+    }
+
+    .cologoDeloitte{
+        height: 12px;
+        width: 37px;
+        padding: 3px;
+    }
+
+    .cologoEY{
+        height: 15px;
+        width: 27px;
+        padding: 3px;
+    }
+
+    .cologoPWC{
+        height: 22px;
+        width: 40px;
+        padding: 3px;
+    }
+
+    .cologoSberbank{
+        height: 15px;
+        width: 40px;
+        padding: 3px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    main .text{
+        width: calc(100% - 50px);
+    }
+}
+
+@media screen and (max-width: 980px){
+    table tr td {
+        padding: 0;
+    }
+}

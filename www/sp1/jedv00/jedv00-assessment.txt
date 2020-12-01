@@ -1,0 +1,14 @@
+- responzivita spociva v nastaveni dynamickych css vlastnosti a hodnot pro width, ne pevnych. viz napr. homepage na 800px sirka okna
+- pouzijte nejaky web font jako Open Sans nebo Roboto z google font
+- sjednotte css soubory do jednoho souboru a zvabte se duplicitnich css pravidel
+- css umistete do slozky /css
+- obrazky umistete do slozky /img
+- pouzijte techniku slozka/index.html pro hezci odkazy
+- konzistentne pouzijte jeden zpusob pojmenovani css trid, doporucuji zapis s pomlckou
+- obrazky zoptimalizujte
+- do title bych dal spis naopak `nazev stranky | nazev webu`
+
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

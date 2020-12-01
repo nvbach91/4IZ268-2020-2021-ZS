@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1280px) {
+    .services,
+    .types {
+        flex-direction: row;
+        font-size: 10px;
+        margin: 5px 0 0 0;
+    }
+    .type {
+        padding: 0 0 0 0;
+    }
+    .tire,
+    .cover,
+    .tool {
+        background-image: none;
+    }
+    .layout .menu {
+        margin: 40px 0 0 0;
+    }
+    .sponsors {
+        flex-direction: column;
+    }
+    .sponsor {
+        margin: 0 auto 0 auto;
+    }
+    .product {
+        width: calc(49.5%);
+        margin: 5px 0 5px 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    img {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        padding: 20px 5px;
+        width: 200px;
+        font-size: 20px;
+        margin: 50px auto 0 auto;
+    }
+    .layout .menu {
+        flex-direction: column;
+        float: left;
+        margin: 20px 0 0 0;
+    }
+    .layout .menu .menu-item {
+        font-size: 20px;
+    }
+    .layout {
+        flex-direction: row;
+    }
+    .main {
+        padding: 0;
+    }
+    .layout .logo {
+        padding: 25px 55px;
+        font-size: 25px;
+        font-weight: normal;
+    }
+    .sponsor {
+        margin: 0;
+    }
+    .products {
+        flex-direction: column;
+    }
+    .product {
+        border: none;
+        margin: 0 0 0 0;
+    }
+    .text-product {
+        border: none;
+        margin: 0 0 50px 120px;
+    }
+    .information,
+    .form {
+        width: 400px;
+        margin: 5px 10px 0 0;
+    }
+    iframe {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    img {
+        width: 25%;
+    }
+}

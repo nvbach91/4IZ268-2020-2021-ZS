@@ -1,0 +1,15 @@
+- opravte pretekani stranky do sirky okna, proc nepouzivate box-sizing border-box?
+- zvetsete odkazy pomoci paddingu aby se na ne dalo lepe klikat
+- pridejte odkaz na hlavni stranku na to logo
+- "vsechny dulezite informace nad prehybem?"
+- psal bych do title opacne, tj nazev stranky pak nazev webu
+- rozhodne bych nechtel tisknout obrazek na celou stranku
+- pouzivejte html entity
+- k img tagum pridejte width atribut
+- u iframu se zbavte borderu
+- odkazy na externi web by se mely otevrit v nove zalozce
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

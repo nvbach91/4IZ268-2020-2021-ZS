@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*index*/
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+/*header*/
+
+.layout .logo {
+    background-image: url(../picture/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 50px 100px;
+    font-size: 32px;
+    text-indent: 100px;
+    font-weight: bold;
+}
+
+.layout .menu {
+    display: flex;
+    float: right;
+    margin: 0 50px;
+}
+
+.layout .menu .menu-item {
+    padding: 10px;
+    margin: 5px;
+    font-size: 25px;
+}
+
+.layout .menu .menu-item:hover {
+    border-radius: 15px;
+    background-color: red;
+    color: white;
+}
+
+.active {
+    border-radius: 15px;
+    background-color: rgb(206, 61, 61);
+    color: white;
+}
+
+
+/*/header*/
+
+
+/*main*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px 10px 50px;
+}
+
+h1 {
+    padding: 50px 20px;
+    background-color: slategray;
+    color: white;
+    width: 720px;
+    margin: 10px auto 10px auto;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.texts {
+    margin: 50px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    padding: 10px;
+    text-align: center;
+    border: 4px double red;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/*main-item-in-box*/
+
+.services,
+.types {
+    display: flex;
+}
+
+.service,
+.type,
+.service-text {
+    margin: 0.5px;
+    background-color: red;
+    border-radius: 7px;
+    font-weight: bold;
+    color: white;
+}
+
+.service,
+.type {
+    background-repeat: no-repeat;
+    width: calc(100%/3);
+}
+
+.service {
+    padding: 10px;
+    text-align: center;
+}
+
+.type {
+    padding: 0 0 0 calc(100%/6);
+}
+
+.service-text {
+    width: 100%;
+    text-align: center;
+}
+
+.layout .main .box .types .tire {
+    background-image: url(../picture/tire.png);
+}
+
+.layout .main .box .types .cover {
+    background-image: url(../picture/cover.png);
+}
+
+.layout .main .box .types .tool {
+    background-image: url(../picture/tool.png);
+}
+
+
+/*/main-item-in-box*/
+
+
+/*/main*/
+
+footer {
+    margin: 100px 0 0 0;
+    text-align: center;
+}
+
+
+/*index*/
+
+
+/*product*/
+
+.products {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(33%);
+    /*rozsah mezi sloupcy v produktu*/
+    border: 1px solid black;
+    margin: 10px 0 0 0;
+}
+
+.text-product {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.foto {
+    max-height: 500px;
+    max-width: 500px;
+    width: 400px;
+    margin: 0 10px 0 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.go-top {
+    font-size: 30px;
+}
+
+
+/*/product*/
+
+
+/*sponzor*/
+
+.sponsors {
+    display: flex;
+    width: 100%;
+    margin: 0 0 0 70px;
+}
+
+.foto-sponsor {
+    max-height: 600px;
+    max-width: 600px;
+    width: 200px;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100%/4);
+    margin: 100px 0 100px 0;
+    /*rozsah mezi sloupcy v spponzor*/
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*/sponzor*/
+
+
+/*kontakt*/
+
+.information,
+.form {
+    padding: 10px 20px;
+    width: 720px;
+    border-radius: 7px;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.information {
+    text-align: center;
+}
+
+.form {
+    text-align: left;
+    margin: 10px auto 10px auto;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    border: 1px solid black;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+button {
+    background-color: rgb(72, 192, 72);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+iframe {
+    width: 600px;
+    height: 500px;
+    border: none;
+    border-radius: 2px;
+}
+
+
+/*/kontakt*/
+
+
+/*autor*/
+
+img {
+    text-align: center;
+}
+
+
+/*/autor*/

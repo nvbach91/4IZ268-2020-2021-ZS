@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.body-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.page-heading {
+    margin: auto 10% auto 11%;
+    font-size: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.767);
+    font-family: 'Work Sans', sans-serif;
+}
+
+header {
+    background-color: rgb(65, 75, 78);
+    height: 120px;
+    width: 100%;
+    display: flex;
+    position: fixed
+}
+
+aside {
+    background-color: rgba(126, 90, 90, 0.925);
+    margin-top: 120px;
+    width: 15%;
+    min-height: 630px;
+}
+
+main {
+    background-color: rgba(106, 126, 133, 0.116);
+    width: 85%;
+    margin-top: 120px;
+    min-height: 630px;
+}
+
+.menu-item {
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    background-color: rgba(255, 177, 177, 0.171);
+    margin: 10px auto;
+    padding: 11px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.active {
+    color: rgba(255, 255, 255, 0.767);
+    background-color: rgba(155, 155, 155, 0.267);
+}
+
+.menu-item:hover {
+    background-color: rgba(155, 155, 155, 0.267);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.music-video {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    padding: 1%;
+}
+
+.youtube-iframe-homepage {
+    width: 100%;
+    height: 550px;
+    border: 0px;
+}
+
+.text-container {
+    margin: auto 10px;
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-bottom: 10px;
+}
+
+.video {
+    max-height: 100%;
+}
+
+.item-tag {
+    padding: 6px 0px 8px 5px;
+}
+
+.social-logo {
+    width: 30px;
+}
+
+.ig-logo {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.event {
+    width: 100%;
+    display: flex;
+}
+
+.event-picture {
+    width: 75%;
+    margin-top: 12px;
+}
+
+.event-text {
+    margin: auto;
+    text-align: center;
+}
+
+.post {
+    display: flex;
+}
+
+.post-video {
+    width: 60%;
+    margin-left: 10%;
+}
+
+.refs-song {
+    margin: auto auto auto 0px;
+}
+
+.heading-picture {
+    max-width: 100%;
+}
+
+.band-member {
+    max-width: 100%;
+    display: flex;
+}
+
+.band-member-photo {
+    max-width: 70%;
+    margin-top: 10px;
+}
+
+.band-member-text {
+    text-align: center;
+    margin: auto;
+}
+
+.band-member-describtion {
+    margin: auto;
+}
+
+.item-ref {
+    display: flex;
+    margin: auto 10px;
+}
+
+.youtube-iframe {
+    width: 100%;
+    min-height: 350px;
+    border: 0;
+}
+
+footer {
+    background-color: rgb(65, 75, 78);
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    bottom: 0px;
+}
+
+.footer-refs {
+    color: rgba(255, 255, 255, 0.767);
+    display: block;
+    width: 450px;
+    margin-left: 2%;
+}
+
+.footer-ref {
+    display: flex;
+    width: 50%;
+    height: 33.33%;
+}
+
+.footer-ref-logo {
+    height: 40px;
+    margin: auto 0px;
+}
+
+.footer-ref-title {
+    margin: auto 10px;
+}
+
+.copyright {
+    margin: auto 10px auto auto;
+    color: rgba(255, 255, 255, 0.767);
+}
+
+.clickable {
+    color: rgb(99, 95, 95);
+}
+
+@media screen and (max-width: 1000px) {
+    aside {
+        background-color: rgba(126, 90, 90, 0.925);
+        width: 15%;
+    }
+    .menu-item {
+        height: 30px;
+        margin: 5px auto;
+        padding: 5px;
+        font-size: 15px;
+    }
+    .post {
+        display: block;
+    }
+    .refs-song {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        padding: 0 28%;
+    }
+    .ref-song {
+        width: 33.33%;
+    }
+    .item-ref {
+        margin: auto;
+        align-content: center;
+        padding: 0px 30%;
+    }
+    .post-video {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 984px) {
+    .refs-song {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .body-content {
+        display: block;
+    }
+    header {
+        position: relative;
+    }
+    aside {
+        width: 100%;
+        min-height: fit-content;
+        margin: 0px;
+    }
+    main {
+        width: 100%;
+        margin: 0px;
+    }
+    .menu-item {
+        width: 100%;
+        height: 50px;
+        font-size: 21px;
+        padding: 11px;
+        margin: 0px;
+    }
+    .page-heading {
+        font-size: 20px;
+    }
+    h1 {
+        margin: 0px;
+        padding-top: 14px;
+    }
+}

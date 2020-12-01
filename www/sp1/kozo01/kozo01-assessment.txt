@@ -1,0 +1,22 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- nevalidni html
+- neparovy tag piseme bez s '>' a ne s '/>' na konci
+- pouzivejte html entity
+- chybi meta informace 
+- odstrante importovane fonty, ktere nejsou pouzite
+- fonty importujte v html pomoci <link>
+- na nekterych strankach nejsou pouzity fonty
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- veskery kod naformatujte
+- nerozumim proc se stranky oteviraji pokazde v nove zalozce
+- chybi favicon na strance about
+- opravte pretekani obsahu stranky na male obrazovce
+- opravte zdeformovane obrazky
+- pridejte odkaz na hlavni stranku do loga
+- odstrante pozadi na verzi pro tisk
+- nekonzistentni zapati
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

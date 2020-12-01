@@ -1,0 +1,89 @@
+.row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+main {
+    width: 100%;
+}
+
+.text {
+    width: 10%;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+iframe {
+    width: 300px;
+    height: 300px;
+}
+
+.pictures {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.picture {
+    height: 300px;
+    width: 300px;
+    white-space: nowrap;
+    margin: 1em 0;
+}
+
+.text {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    text-transform: initial;
+    font-weight: normal;
+    position: relative;
+    top: -20px;
+    font-size: 20px;
+}
+
+.picture:hover {
+    box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+    transition: 1s;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.picture iframe {
+    position: relative;
+    left: -10px;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.red {
+    background-color: red;
+}
+
+.grey {
+    background-color: grey;
+}

@@ -1,0 +1,23 @@
+- opravte odkazy na stranky - bez casti 'index.html'
+- navigacni prvky zvetsete aby se na ne dalo lepe klikat
+- pouzivejte nejaky vhodnejsi font
+- odstrante podtzeni odkazu v navigaci
+- vyraznejsi zpusobem zvyraznete aktivni polozku v navigaci
+- zmensete sirku textoveho odstavce - typograficka chyba
+- pouzivejte emailovy a telefonni odkaz
+- na verzi pro tisk opravte umisteni loga
+- na verzi pro tisk schovejte pozadi (stranka kontakt)
+- na verzi pro tisk upravte layout produktu na max 3 produkty na jendom radku
+- parametry produktu zarovnejte doleva a na to pouzivejte <div> a ne <table>
+- zarovnejte popis produktu na stred
+- do title bych psal nejprve nazev stranky a pak nazev webu
+- pridejte padding do footeru
+- pouzivejte semanticky tag <main>
+- pouzivejte pouze jeden zpusob pojmenovani atributu class a id - nejlepe zapis s malymi pismeny a s pomlckou 
+- odkazy na externi web by se mely otevrit v nove zalozce
+- 
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

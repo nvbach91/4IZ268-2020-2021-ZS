@@ -1,0 +1,88 @@
+.merch-section {
+    background-color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.merch-container {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right: -10px;
+}
+
+.merch {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.merch-picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.merch-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.merch-price {
+    text-align: center;
+}
+
+.merch-buy {
+    background-color: rgb(212, 103, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.merch-buy:hover {
+    cursor: pointer;
+    background-color: rgb(183, 0, 255);
+    color:white;
+}
+
+@media screen and (min-width: 800px) {
+    .merch {
+        width: calc(100% / 3);
+    }
+}
+
+/* Tisk */
+@media print { 
+    .merch {
+        width: 20%;
+    }
+
+    .merch-section {
+        page-break-after: auto;
+        page-break-inside: avoid;
+        margin: 0;
+    }
+
+    .merch-container {
+        margin: 0;
+    }
+
+    .merch-buy {
+        display: none;
+    }
+}

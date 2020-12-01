@@ -1,0 +1,24 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- chybi identifikace webu (logo, nadpis, ...)
+- pouzivejte telefonni a emailovy odkaz
+- opravte zdeformovane obrazky
+- aktivni odkaz v navigaci ma byt videt na kazde strance
+- chybi zvyrazneni aktivni polozky navigace
+- chybi favicon
+- obrazky optimalizujte
+- uvodni obrazek zmensete aby se tam vesly i ty dulezite informace
+- html tagy se pisou s malymi pismeny
+- nevalidni html
+- chybi meta informace
+- prazdny footer
+- pouzivejte nejaky web font
+- chybi prizpusobeni pro tisk
+- web neni responsivni
+
+
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,200 @@
+* { 
+    box-sizing: border-box; 
+}
+body { 
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 10px;
+  color: black;
+}
+.layout {
+  display: flex;
+  padding: 15px;
+  max-width: 1280px;
+  margin: 0 auto;
+}  
+ul {
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+} 
+ul#navigation > li{
+  float: left;
+}
+.active {
+  background-color: rgb(184, 118, 168);
+} 
+li {
+  position: relative;
+  padding: 0px;
+}
+li a {
+  display: block;
+  padding: 20px 10px;
+  background-color:rgb(211, 137, 194);
+  color: white;
+  margin-right: 0px;
+  text-decoration: none;
+  white-space: nowrap;
+}  
+li ul {
+  display: none;
+  position: absolute;  
+}
+li:hover > ul {
+  display: block;
+} 
+.lvl1 {
+  top: 0;
+  left: 100%;
+} 
+li:hover > a {
+  background-color:rgb(184, 118, 168);
+  color: white;
+}
+li a, .main-header, .card, .kpi-item {
+  border-radius: 10px;
+  border: 3px solid white;
+}
+.main {
+  flex-grow: 1;
+  width: 100%;
+}
+.main-header {
+  background-image: url("https://cdn.shopify.com/s/files/1/0409/7320/5669/articles/Krissy-Cela-Header-Desktop_455x300@2x.jpg?v=1592236585");
+  background-color: rgb(133, 42, 133);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 162px 10px;
+}
+.title {
+  text-align: center;
+  position: absolute;
+  top: 27%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  color: rgb(211, 137, 194);
+}
+.title h1 {
+  font-size: 100px;
+}
+.kpis {
+  display: flex;
+}
+.kpi-item {
+  background-color: rgb(138, 74, 138);
+  width: 100%;
+  padding: 20px 20px;
+  text-align: justify;
+  font-size: 130% ;
+}
+h2 {
+  text-align: center;
+}
+.kpi-item:nth-child(odd), .card:nth-of-type(odd) {
+  background-color: rgb(243, 212, 236);
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: rgb(211, 137, 194);
+  padding: 150px 0;
+  text-align: center;
+}
+.card-image1 {
+  width: 45%;
+  background-image: url("https://celebslifereel.com/wp-content/uploads/2019/02/Krissy-Cela-photo-courtesy.jpg");
+  background-color: rgb(133, 42, 133);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 210px 10px;
+}
+.card-image1:hover {
+  opacity: 0.8;
+}
+.card-performance {
+  width: 55%;
+  background-color: rgb(211, 137, 194);
+  padding: 10px 20px;
+  text-align: justify;
+  font-size: 120% ;
+}
+.card-box{
+  width: calc(100% / 3);
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 110% ;
+}
+.card-box:hover {
+  opacity: 0.8;
+}
+.card-recent {
+  width: 60%;
+  background-color: rgb(211, 137, 194);
+  padding: 30px 20px;
+  text-align: justify;
+  font-size: 120% ;
+}
+.card-image2 {
+  width: 40%;
+  background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/120038034_148729093586970_2393834978257195920_o.jpg?_nc_cat=111&ccb=2&_nc_sid=9267fe&_nc_ohc=h0PSoFXDgvwAX8Qc06T&_nc_ht=scontent-frx5-1.xx&oh=0e7c132ed45285d07ec4b8403e79f9f8&oe=5FE123CA");
+  background-color: rgb(133, 42, 133);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 210px 10px;
+}
+.card-image2:hover {
+  opacity: 0.8;
+}
+.card-footer {
+  width: 100%;
+  padding: 1px 0;
+  background-color: rgb(243, 212, 236);
+}
+@media screen and (max-width: 1024px) {
+  main{
+      width: 100%;
+  }
+  .title h1 {
+    font-size: 100px;
+  }
+}
+@media screen and (max-width: 720px) {
+  main{
+      width: 100%;
+  }
+  .title h1 {
+      font-size: 70px;
+  }
+ nav a {
+     padding:0px
+ }
+}
+@media print {
+  *{
+      background-color: white !important;
+      color: black;
+  }
+  .title h1 {
+    font-size: 50px;
+}
+  nav {
+      display: none;
+  }
+ .links {
+  display: none;
+}
+
+img {
+  width: 200px;
+  margin: 0;
+}
+}

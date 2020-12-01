@@ -1,0 +1,18 @@
+- pridejte padding do .mainIndex
+- pouzivejte telefonni odkazy
+- opravte obsah meta tagu (problem s kodovanim)
+- k img tagum pridejte atribut width
+- obrazky davejte do jedne slozky, napr /img
+- emailove odkazy jednotlivych osob odsunte doprava aby byly v jenom sloupci (jako u tech telefonnich cisel)
+- proc stranka vyjezdy 2020 nema zahlavi a proc se otevira v nove zalozce?
+- dobudoucna nepouzivejte camelCase pro pojmenovani CSS trid
+- chybi import tucne verze fontu
+- font-family se dava spise do body a ne do *
+- ve verzi pro tisk zruste veskere pozadi
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.layout {
+    padding: 5px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: rgb(112, 86, 14);
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 25%;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: white;
+    color: black;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+    display: table;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+}

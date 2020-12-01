@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    color: black;
+    background-color:white;
+  }
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+    margin: auto;
+  } 
+  
+  .podnadpis{
+      padding-left: 5%;
+  }
+
+  h1,h2,h3{
+    color: rgb(26, 148, 49);
+    text-align: left;
+  }
+
+  .menu {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .menu a {
+    float: left;
+    padding: 14px 16px;
+    background-color: black;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+  .menu a:hover {
+    background-color: rgb(133, 196, 120);
+    color: black;
+  }
+  
+  .menu a.active {
+    background-color: rgb(26, 148, 49);
+    color: white;
+  }
+
+  .menu-vpravo a {
+    float: right;
+  }
+
+
+  .řádek {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-decoration: none;
+  }
+ 
+  .sloupec1, .sloupec3{
+    flex-basis: 50%;
+    padding-left: 5%;
+    padding-right: 2.5%;
+    text-align: left;
+  }
+    .sloupec2, .sloupec4  {
+    flex-basis: 50%;
+    padding-right: 2.5%;
+    padding-top: 2%;
+  }
+
+  .sloupec2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .sloupec4 iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+	
+  .sloupec3 a {
+	text-decoration: none;
+  }	
+
+  a[href^="mail"]::before {
+    content: "🖂 ";
+  }
+
+  a[href^="tel"]::before {
+    content: "☎ ";
+  }
+
+  footer{
+    background-color: black;
+    overflow: hidden;
+  }
+
+  footer p{
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+
+
+
+
+
+

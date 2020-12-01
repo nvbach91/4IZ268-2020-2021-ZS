@@ -1,0 +1,27 @@
+img {
+    display: none;
+}
+
+nav {
+    display: none;
+}
+
+a {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+h1 {
+    font-size: 21px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 12px;
+}

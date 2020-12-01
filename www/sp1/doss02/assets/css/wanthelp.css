@@ -1,0 +1,57 @@
+* { 
+    box-sizing: border-box;
+}
+
+main {
+    font-size: x-large;
+    text-align: center;
+    margin: 30px;
+}
+
+h2{
+    border-bottom: rgb(46, 64, 77) solid;
+    padding: 15px;
+}
+
+main div {
+    margin:40px ;
+}
+
+div ul li {
+    list-style-type: none;
+    padding: 10px;
+    border: rgb(46, 64, 77) solid;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+@media screen and (max-width:700px){
+    div ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    div {
+        text-align: justify;
+    }
+}
+@media print {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    main div {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h2{
+        margin: 0;
+        padding: 0;
+    }
+
+    div ul li {
+        padding: 0px;
+    }
+}

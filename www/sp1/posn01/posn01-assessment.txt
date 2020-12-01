@@ -1,0 +1,24 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- hlavni stranka nema zadnou uvodni informaci, treba nazev webu, nebo o cem je web?
+- web nesplnuje podminku smysluplneho obsahu
+- na velke obrazovce by mela byt videt navigace
+- obrazky optimalizujte (zmensit a kompresovat)
+- pro navigace v ramci dane stranky se pouziva id
+- opravte responzivitu stranek
+- opravte hodnotu atributu lang
+- externi obrazkove zdroje stahnete k sobe a nechte projit optimalizaci
+- font naimportujte pomoci <link> v html
+- veskery kod naformatujte
+- odstrante veskery inline css
+- pridejte meta informace
+- nespravna syntaxe psani html atributu
+- chybi prizpusobeni pro tisk
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- opravte efekt schovani navigace pri nacteni stranky
+
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

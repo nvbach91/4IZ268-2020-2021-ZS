@@ -1,0 +1,56 @@
+.small {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 200px;
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+}
+
+.small a {
+    padding-top: 6px;
+    border-right-style: solid;
+    border-width: 1px;
+}
+
+.half-w {
+    height: 50%;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+    position: relative;
+    bottom: 0px;
+}
+
+.game-logo {
+    width: 200px;
+    float: left;
+    position: relative;
+    top: -100%;
+}
+
+.game-logo img {
+    width: 200px;
+}
+
+main {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 5px;
+}

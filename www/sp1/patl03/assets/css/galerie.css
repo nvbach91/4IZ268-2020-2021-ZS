@@ -1,0 +1,59 @@
+.pictures {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.picture {
+    height: 300px;
+    width: 300px;
+    white-space: nowrap;
+    margin: 1em 0;
+}
+
+.text {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    text-transform: initial;
+    font-weight: normal;
+    position: relative;
+    top: -20px;
+    font-size: 20px;
+}
+
+.picture:hover {
+    box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+    transition: 1s;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.picture img {
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
+    left: -10px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.red {
+    background-color: red;
+}
+
+.grey {
+    background-color: grey;
+}
+
+main {
+    width: 100%;
+}

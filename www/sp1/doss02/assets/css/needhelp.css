@@ -1,0 +1,35 @@
+* { 
+    box-sizing: border-box;
+}
+
+main {
+    font-size: x-large;
+    text-align: center;
+    margin: 30px;
+}
+
+h2{
+    border-bottom: rgb(46, 64, 77) solid;
+    padding: 15px;
+}
+
+main ul li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+@media print {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    h2{
+        margin: 0;
+        padding: 0;
+    }
+
+    main ul li {
+        padding: 0px;
+    }
+}

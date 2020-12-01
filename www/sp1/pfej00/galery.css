@@ -1,0 +1,41 @@
+#galery {
+	position: relative;
+	width: 100%;
+	height: max-content;
+}
+
+#galery .row {
+	position: relative;
+	height: max-content;
+}
+
+#galery .row img {
+	width: calc(100%/3);
+	object-fit: cover;
+	margin: auto;
+	border-radius: 2px;
+}
+
+#galery .row img:hover {
+	border: 4px solid rgb(0, 0, 0);
+	margin: auto;
+	z-index: 2;
+	height: max-content;
+	align-self: center;
+}
+
+@media only screen and (min-width: 1000px) {
+	#galery .row {
+		display: flex;
+		height: calc(100vh/3);
+	}
+	#galery {
+		height: 100vh;
+	}
+	#galery .row img {
+		width: calc(100%/3);
+		object-fit: cover;
+		margin: 7px;
+		border-radius: 2px;
+	}
+}

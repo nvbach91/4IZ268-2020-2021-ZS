@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media print {
+  * {
+    font-family: 'Times New Roman';
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*-------NAVIGATION BAR ON TOP----------*/
+
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav-item {
+  float: left;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-item {
+    float: none;
+  }
+}
+
+.nav-item a {
+  font-family: 'Kaushan Script', cursive;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.selected {
+  background-color: #999;
+}
+
+.nav-item a:hover {
+  transition: 0.3s;
+  background-color: white;
+  color: black;
+}
+
+/*-------CONTENT OF PAGE----------*/
+
+h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 80px;
+}
+
+h2 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+}
+
+.top-info {
+  margin: 30px;
+  width: 100%;
+  animation: fadeIn ease 1s;
+}
+
+.content-box-normal {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 1.66%;
+  width: 30%;
+  height: 400px;
+  background-color: lightgray;
+}
+
+.content-box-normal:hover {
+  transition: 0.4s;
+  background-color: #333;
+  color: white;
+}
+
+.content-box-wide {
+  animation: fadeIn ease 2s;
+  float: left;
+  margin: 1.66%;
+  width: calc(60% + 2*1.66%);
+  height: 400px;
+  background-color: lightgray;
+  /* background-color: red; */
+}
+
+.content-box-wide:hover {
+  transition: 0.4s;
+  background-color: #333;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .content-box-normal {
+    margin: 5%;
+    width: 90%;
+  }
+  .content-box-wide {
+    margin: 5%;
+    width: 90%;
+  }
+}
+
+.content-box-normal h2 {
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.content-box-normal p {
+  font-size: 20px;
+  padding: 15px;
+  padding-top: 0px;
+  text-align: center;
+}
+
+.content-box-wide h2 {
+  padding: 40px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.content-box-wide p {
+  font-size: 20px;
+  padding: 30px;
+  padding-top: 0px;
+  text-align: left;
+}
+
+.img-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*animation of fading in*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  float: left;
+  margin-top: 100px;
+  width: 100%;
+  height: 100px;
+  animation: fadeIn ease 5s;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+p a {
+  color: white;
+}

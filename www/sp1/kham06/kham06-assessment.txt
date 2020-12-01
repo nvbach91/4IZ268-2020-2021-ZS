@@ -1,0 +1,19 @@
+- nevhodne zvoleny typ pisma pro cteni
+- nevhodny efekt pro navigaci
+- chybi zvyrazneni aktivni polozky navigace
+- nevhodna kombinace pozadi a textu
+- kdyz kliknu na logo mel bych se dostat na hlavni stranku
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- na nekterych strankach chybi footer
+- odstrante 'index.html' z odkazu
+- pouzivejte html entity v footeru ma byt copyright a ne zavinac
+- sjednotte css soubory do jednoho souboru a zvabte se duplicitnich css pravidel
+- chybi prizpusobeni pro tisk
+- navigace na urovni univerzit dejte nahoru pod hlavni navigaci
+- opravte deformaci obrazku
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,165 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero-images/waterman.jpg");
+    height: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-text {
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.container-nav {
+    float: right;
+    position: relative;
+    margin: 20px;
+    width: auto;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: rgb(20, 0, 109);
+}
+
+.nav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 13px 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav a:hover {
+    background-color: #ddd;
+    color: blue;
+}
+
+.nav .current {
+    background-color: rgb(99, 97, 245);
+}
+
+.button-container {
+    text-align: center;
+    position: relative;
+}
+
+.button {
+    color: white;
+    padding: 60px 60px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 35px;
+    cursor: pointer;
+    background-color: green;
+    border-radius: 25px;
+}
+
+.button-container :hover {
+    background-color: brown;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container-article {
+    padding: 64px;
+}
+
+.container-article-grey {
+    padding: 64px;
+    background-color: #f1f1f1;
+}
+
+article p {
+    font-size: 22px;
+    text-align: justify;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+}
+
+.column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    height: 100px;
+    background-color: black;
+}
+
+footer p {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .column-66, .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+    img {
+        margin: auto;
+    }
+    .banner-text {
+        font-size: 22px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .button {
+        color: white;
+        padding: 30px 30px;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 30px;
+        cursor: pointer;
+        background-color: green;
+        border-radius: 25px;
+    }
+}

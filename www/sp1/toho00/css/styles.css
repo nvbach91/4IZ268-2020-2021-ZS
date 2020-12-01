@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainhead {
+    color: black;
+    text-align: left;
+    padding: 30px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    background-image: url(https://eso.vse.cz/~toho00/sp1/images/logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 80px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.layout {
+    max-width: 1480px;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
+    overflow: auto;
+}
+
+.menu {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: background-color .5s ease;
+}
+
+.menu-item {
+    background-color: rgb(71, 71, 71);
+    padding: 15px 10px;
+    color: white;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+.menu-active,
+.menu-item:hover {
+    background-color: Black;
+    transition: background-color 0.5s ease
+}
+
+.main {
+    border-radius: 10px;
+    flex-grow: 1;
+    width: 100%;
+    font-size: large;
+}
+
+.main-header {
+    text-align: center;
+    padding: 30px 10px;
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contactpage,
+.box-homepage,
+.box-gear {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.box {
+    text-align: left;
+    width: 100%;
+}
+
+.box-bio {
+    padding: 25px 60px;
+    text-align: left;
+    width: 100%;
+    line-height: 150%;
+}
+
+.box-contact,
+.box-welcome,
+.wedding-text {
+    padding: 25px 60px;
+    text-align: left;
+    line-height: 150%;
+}
+
+.box-gear1,
+.box-gear2,
+.box-gear3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 60px;
+    text-align: left;
+    line-height: 150%;
+}
+
+.box-image {
+    text-align: center;
+    padding: 10px;
+}
+
+.box-party,
+.box-wedding {
+    text-align: center;
+    padding: 10px;
+}
+
+div.box-party img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+div.box-wedding img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.box-surikata,
+.box-profile,
+.box-gear1-img img,
+.box-gear2-img img,
+.box-gear3-img img {
+    width: 100%;
+    padding: 20px;
+}
+
+div.box-surikata img,
+div.box-profile img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.boxes-cover {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.cover1,
+.cover2,
+.cover3,
+.box-wedding {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.cover1 img,
+.cover2 img,
+.cover3 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cover1:hover,
+.cover2:hover,
+.cover3:hover,
+.box-wedding:hover {
+    opacity: 50%;
+    transition: opacity 1s ease-out;
+    zoom: 1.5;
+}
+
+.middle {
+    transition: opacity 1s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cover1:hover .middle,
+.cover2:hover .middle,
+.cover3:hover .middle,
+.box-wedding:hover .middle {
+    opacity: 1;
+}
+
+.cover1:hover,
+.cover2:hover,
+.cover3:hover {
+    transition: opacity 1s ease-out;
+    opacity: 60%;
+}
+
+.video-text {
+    background-color: red;
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h2 {
+    padding-bottom: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    bottom: 0;
+}
+
+.copyright {
+    padding: 25px 10px;
+    text-align: left;
+}
+
+.instagram {
+    padding-right: 20px;
+}
+
+
+.instagram img {
+    width: 80px;
+}
+
+.facebook img {
+    width: 60px;
+}
+
+.email a,
+.facebookPage a,
+.instagram a,
+.youtube a,
+.vimeo a {
+    color: blue;
+}
+
+@media screen and (max-width: 800px) {
+    .layout {
+        display: block;
+    }
+    .menu {
+        width: 100%;
+        flex-direction: row;
+        padding-bottom: 10px;
+    }
+    .menu-item {
+        text-align: center;
+        border: none;
+        width: 100%;
+        padding: 15px;
+        margin-left: 10px;
+    }
+    .box-bio {
+        width: 100%;
+        text-align: left;
+        width: 100%;
+    }
+    .box-homepage,
+    .contactpage {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .cover1,
+    .cover2,
+    .cover3 {
+        text-align: left;
+        width: 100%;
+    }
+    .box-gear,
+    .box-gear1,
+    .box-gear2,
+    .box-gear3 {
+        display: block;
+        line-height: 150%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .menu-item {
+        border-radius: 10px;
+    }
+    .main-header {
+        text-align: center;
+        padding: 30px 10px;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+    }
+}
+
+@media print {
+    * {
+        background-color: white;
+        color: black;
+    }
+    .menu {
+        display: none;
+    }
+    .boxes {
+        display: block;
+    }
+    .main-header {
+        background-color: white;
+        text-align: left;
+        font-size: 15px;
+    }
+    footer {
+        display: none;
+    }
+    .box-surikata,
+    .box-profile,
+    .cover1 img,
+    .cover2 img,
+    .cover3 img,
+    .box-gear1-img img,
+    .box-gear2-img img,
+    .box-gear3-img img {
+        width: 300px;
+    }
+    .logo {
+        font-size: 30px;
+    }
+    .mainhead {
+        padding: 0;
+        text-align: left;
+    }
+}

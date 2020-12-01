@@ -1,0 +1,17 @@
+- typograficka chyba  - dlouhy text na sirku stranky, zkuste to jeste vice omezit
+- vsechny obrazky optimalizujte
+- mozna bych zvolil jinou barvu pro zvyrazneni aktivni polozky navigace
+- html soubory prejmenujte na index.html a odstrante 'index.html' z odkazu
+- odkazy na externi web by se mely otevrit v nove zalozce
+- na nekterych strankach chybi meta informace
+- sjednotte css soubory do jednoho souboru a zbavte se duplicitnich css pravidel
+- dejte css do vlastni slozky /css
+- font-family, color, background-color se dava spise do body a ne *
+
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

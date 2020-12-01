@@ -1,0 +1,10 @@
+- typograficka chyba - dlouhy text na sirku stranky, zkuste zmensit sirku stranky na max cca 1280px a vycentrovat
+- zvetsete odkazy v navigaci (padding)
+- odkazy na externi web by se mely otevrit v nove zalozce
+- chyba struktura table
+- pouzivejte <strong> misto <b>
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

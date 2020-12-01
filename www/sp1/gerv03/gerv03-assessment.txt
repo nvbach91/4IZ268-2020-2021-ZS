@@ -1,0 +1,11 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- chybi import tucne verze fontu
+- znak copyright, ne zavinac
+- typograficka chyba - dlouhy text na sirku stranky, zkuste zmensit sirku stranky na max cca 1280px a vycentrovat
+- u img tagu odstrante atribut height nebo tam dejte hodnotu ktera odpovida rozmeru obrazku
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

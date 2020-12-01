@@ -1,0 +1,12 @@
+main {
+    width: 100%;
+}
+
+main img {
+    width: 200px;
+}
+
+p {
+    text-transform: initial;
+    font-weight: initial;
+}

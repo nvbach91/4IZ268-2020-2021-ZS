@@ -1,0 +1,10 @@
+- kdyz kliknu na logo, mel bych se dostat na domovskou stranku
+- mozna bych tu animaci toho pozadi zpomalil nebo odstranil, protoze to muze vyvolat pocit zavrate
+- na verzi pro tisk schovejte to pozadi
+- pouzijte pouze jeden zpusob pojmenovani css trid, doporucuji zapis s pomlckou 
+- z odkazu odstrante cast 'index.html'
+
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,13 @@
+- to zahlavi jak je tak velky neni vhodny davat jako fixed prvek, tak bud to zmensete nebo nechte normalne do scrollovani
+- neimportovany font
+- pouzivejte telefonni odkaz
+- pouzivejte html entity
+- zmensete obrazky na verzi pro tisk
+- sjednotte soubory css a zbavte se duplicitninch css pravidel
+
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

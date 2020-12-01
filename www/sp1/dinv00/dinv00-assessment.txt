@@ -1,0 +1,19 @@
+- na verzi tisku vidim cernou stranku
+- chybi zvyrazneni aktivni polozky menu
+- vsechny obrazky optimalizujte
+- pouzivejte emailove a telefonni odkazy
+- chybi import tucne verze fontu
+- chybi import pouziteho fontu
+- zarovnejte galerii na stred stranky
+- odkaz na externi web by mel otevrit novou zalozku
+- pouzivejte html entity
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1
+
+
+
+

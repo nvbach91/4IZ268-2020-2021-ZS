@@ -1,0 +1,14 @@
+
+- hlavni sloupec na strance o nas bych udelal jeste uzsi, aby nebyl text tak dlouhy do sirky stranky
+- pouzivejte emailovy a telefonni odkaz
+- misto te staticke mapy pridejte iframe na google maps se znackou v dane adrese
+- font-family se dava spise do body a ne do *
+- na verzi pro tisk jsou obrazky prilis velke, take odstrante obrazek na pozadi
+- vyraznejsim zpusobem zvyraznete aktivni polozku navigace
+- presunul bych stranky info, cenik, vyprodej a kontakt na uroven hlavni stranky
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

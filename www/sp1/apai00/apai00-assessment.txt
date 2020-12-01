@@ -1,0 +1,16 @@
+- nespravne pouziti fontu
+- typograficka chyba - dlouhy text na sirku stranky
+- nefunguje tisk
+- ostrante podtrzeni a barvu navstevovanych navigacnich textu
+- pouzijte emailovy a telefonni odkaz
+- pouzijte jeden zpusob pojmenovani atributu class a id, nejlepe malymi pismeny s pmlckou
+- sjednotte css soubory do jednoho souboru a zvabte se duplicitnich css pravidel
+- spatna responzivita, obsah stranky preteka mimo viewport
+- navigacni prvky nejsou srovnane
+- do title dejte take nazev webu, napr 'nazev stranky | nazev webu'
+- kdyz kliknu na logo webu, mel bych se dostat na domovskou stranku
+- pouzijte tag <main>
+
+body najdete v attendance
+
+termin opravy viz pokyny sp1

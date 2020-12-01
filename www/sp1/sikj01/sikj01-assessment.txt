@@ -1,0 +1,15 @@
+- vsechny obrazky optimalizujte
+- navigaci prestylujte tak aby tam nebylo to podtrzeni a zmena barev navstevovanych odkazu, a take se zbavte tech border-right
+- chybi import web fontu
+- chybi meta informace
+- pridejte nazev stranky do title
+- chybi prizpusobeni pro tisk
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- odstrante 'index.html' z odkazu
+- misty spatne formatovani kodu
+- nevalidni html
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

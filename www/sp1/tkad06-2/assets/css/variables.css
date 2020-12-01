@@ -1,0 +1,8 @@
+:root {
+  --primary-color: #dfff00;
+  --primary-light-color: #ffff59;
+  --primary-dark-color: #a9cc00;
+  --secondary-color: #3d4346;
+
+  --animation-duration: 200ms;
+}

@@ -1,0 +1,17 @@
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- hlavni stranka ma byt index.html a ne main-page.html
+- chybi zvyrazneni aktivni polozky navigace
+- opravte pretekani obsahu stranky z okna na male obrazovce
+- schovejte navigaci, pozadi na verzi pro tisk
+- prizpusobeni pro tisk nespociva v pouze schovani obrazku
+- na kazde strance pridejte logo hry pro identifikaci webu
+- pouzivejte nejaky vhodny font, napr roboto, open sans, a text typograficky vhodne opravte
+- typograficka chyba - prilis dlouhy text na sirku stranky
+- pridejte <footer>, <header>
+- chybi favicon
+- zarovnejte obrazky na strance povolani
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

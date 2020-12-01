@@ -1,0 +1,27 @@
+- pozdni odevzdani 4 dny
+- chybi favicon
+- chybi zvyrazneni aktivni polozky navigace
+- nevhodny font pro web
+- nevhodna kombinace pozadi a textu
+- pridejte odkaz na hlavni stranku do loga webu
+- vsechny obrazky zoptimalizujte
+- do title pridejte nazev webu
+- stranka about us nema zadnou dalsi informaci
+- web neni responzivni
+- chybi prizpusobeni pro tisk
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky bez casti 'index.html'
+- vsechny nazvy souboru maji byt malymi pismeny
+- nevalidni html
+- atribut alt nema mit prazdnou hodnotu
+- pouzivejte html entity
+- chybi meta informace
+- veskery kod naformatujte
+
+
+
+
+
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

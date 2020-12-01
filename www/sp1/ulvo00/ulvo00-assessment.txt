@@ -1,0 +1,7 @@
+- pro nazvy trid pouzijte zapis s pomlckou
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky
+- soubor main.css dejte do slozky /css
+
+body naleznete v attendance
+
+termin opravy viz pokyny sp1

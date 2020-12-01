@@ -1,0 +1,15 @@
+- tlacitko zjistete vic nic nedela?
+- navigacni odkazy co umime a jak to funguje nevedou k spravnemu mistu na strance
+- dodrzujte konzistentni syntaxi psani atributu html
+- ve formulari kontaktujte nas byste mel pouzit textarea pro komentar
+- pouzivejte vhodny type pro inputy ve formulari
+- pouzivejte telefonni odkaz
+- odkazy na externi web by se mely otevrit v nove zalozce
+- css soubory premistete do slozky /css
+- proc kdyz kliknu na logo webu tak se dostanu na server eso.vse.cz?
+- chybi prizpusobeni pro tisk
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

@@ -1,0 +1,13 @@
+- prostor vyhrazeny pro nazev webu je zbytecne velky
+- chybi import tucne verze fontu
+- html soubory prejmenujte na index.html a dejte je do slozek s nazvy ktere odpovidaji nazvu stranky, podle toho take opravte odkazy na stranky odstrante 'index.html' z odkazu
+- odstrante cast 'index.html' z odkazu
+- vsechny obrazky optimalizujte
+- misto te staticke mapy v podobe obrazu muzete dat google maps s vyznacenou adresou sidla
+- pouzivejte telefonni i emailovy odkaz
+
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1

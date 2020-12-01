@@ -1,0 +1,16 @@
+.project-images .image {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.project-images-margin .image {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.more-title {
+    text-align: center;
+    font-size: 22px;
+}

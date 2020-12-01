@@ -1,0 +1,12 @@
+- v odkazech by nemely byt znaky s diakritikou
+- odstrante cast 'index.html' z odkazu 
+- chybi import tucne verze fontu
+- nevhodna kombinace barvy pozady a barvy textu (kondicni jizdy)
+- odkazum v navigaci pridejte padding tak aby se na ne dale lepe klikat
+- chybna hodnota atributu href emailu
+- nevalidni html (vozovy park)
+
+body najdete v attendance
+
+
+termin opravy viz pokyny sp1
