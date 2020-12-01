@@ -22,7 +22,7 @@ Používejte pouze Vanilla JavaScript, případně ES6. Pokud někdo chce použ�
 - **Naduplikujte tento seznam**, aby každé město tam bylo dvakrát, pomocí metody `array.concat(array)`. 
 - Aby hra byla zajímavější, **zamíchejte pořadí měst** pomocí array metody `array.sort()`, a to následovně:
 ```js
-const cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
+let cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
 cities = cities.concat(cities);
 cities.sort(() => { return 0.5 - Math.random(); });
 ```
