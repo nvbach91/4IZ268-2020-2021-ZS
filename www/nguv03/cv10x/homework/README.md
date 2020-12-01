@@ -45,4 +45,4 @@ cities.sort(() => { return 0.5 - Math.random(); });
 Rozhraní také **vhodně nastylujte**.
 ![image](https://user-images.githubusercontent.com/20724910/48949139-3e2a4f00-ef37-11e8-8b8e-138c87e47704.png)
 
-[Demo](https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/nguv03/homework-07/solution/index.html)
+[Demo](https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/nguv03/homework-07/solution/index.html) - zákaz copy paste ^.^
