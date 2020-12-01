@@ -26,7 +26,7 @@ let cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
 cities = cities.concat(cities);
 cities.sort(() => { return 0.5 - Math.random(); });
 ```
-- Vytvořte **pomocné proměnné**, abyste mohli sledovat stav hry, tj. **počet bodů**, **otočené karty**, **počet otočených karet**...
+- Vytvořte **pomocné proměnné**, abyste mohli sledovat stav hry, tj. **počet bodů**, **první otočená karta**, **druhá otočená karta**, **počet správně otočených karet**...
 - Vytvořte funkci, která bude mít na starost **vytvořit jednu kartu** pomocí DOM metod.
   - `document.createElement(...);`
   - `element.classList.add(...);`
