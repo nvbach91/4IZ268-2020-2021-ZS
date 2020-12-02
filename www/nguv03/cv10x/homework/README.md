@@ -39,7 +39,7 @@ cities.sort(() => { return 0.5 - Math.random(); });
     - pomocí vnořeného elementu, který by měl display none, atd.
   - Pro **porovnání obsahu karet** můžete použít **dvě globální proměnné**, které se budou měnit dle stavu hry v závislosti na právě otevřených kartách. Např. když kliknete na první kartu tak se přiřadí do první proměnné. Když kliknete na druhou kartu, tak se přiřadí do druhé proměnné a pak budete porovnávat jejich obsahy. **Po skončení tahu** se obě proměnné **resetují** po cca dvou sekundách a začne nový tah.
   - Uživatel může při jednom tahu **otočit maximálně dvě karty**, tj. během těch 2 sekund nesmí uživatel otáčet další karty. Používejte funkci [setTimeout()](https://www.w3schools.com/jsref/met_win_settimeout.asp) pro povolení nového tahu. Stav zamrznutí hry lze poznat tak, že v obou proměnných jsou uložené dvě karty. Po skončení těch 2 sekund do nich dosadíte třeba null a tehdy může hráč provést další tah.
-- Pomocí této funkce budete vytvářet 20+ karet v cyklu podle seznamu měst a pak je budete vkládat do hrací plochy **všechny najednou** - aby se stránka zbytečně nepřekreslovala
+- Pomocí této funkce budete vytvářet 20+ karet v cyklu podle seznamu měst a pak je budete vkládat do hrací plochy **všechny najednou** - aby se stránka zbytečně nepřekreslovala v cyklu
 - Vhodným způsobem se pokuste o prevenci podvádění hráčů.
 
 Rozhraní také **vhodně nastylujte**.
