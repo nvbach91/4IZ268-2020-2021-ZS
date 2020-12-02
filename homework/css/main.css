@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.card { 
+    float: left;
+    margin: 2.5%;
+    width: 15%;
+    height: 100px;
+    padding-top: 40px;
+    background-color: #F0EBD8;
+    color: #F0EBD8;
+    text-align: center;  
+}
+
+.card:hover {
+    transition: 0.3s;
+    background-color:#D7C998;
+    color:#D7C998;
+}
+
+.chosen{
+    background-color: #584C22;
+    color: #F0EBD8;
+}
+
+.chosen:hover{
+    transition: 0.1s;
+    background-color: #584C22;
+    color: #F0EBD8;
+}
+.revealed {
+    background-color: lightgreen;
+    color: black;
+}
+
