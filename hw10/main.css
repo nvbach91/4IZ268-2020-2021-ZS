@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;  
+    
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background-image: url("https://cdn.pixabay.com/photo/2017/10/26/19/45/christmas-2892235__340.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: transparent;
+    cursor: pointer;
+    border:5px solid white ;
+    width: 20%;
+    height: 150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: scale(.97);
+}
+
+.card.revealed {
+    background-image: none;
+    background-color: rgb(41, 28, 28);
+    color: white;
+    font-size: 20px;
+}
