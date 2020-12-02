@@ -10,7 +10,7 @@ Na herní plochu umístěte **alespoň 20 karet** (tj. do 5 sloupců a 4 řádky
 
 Po **kliknutí** se karta otočí (tj. stačí aby byl vidět obsah karty, tj. název města, nemusíte dělat animace). Hra skončí ve chvíli, kdy jsou všechny karty odhaleny a uživateli se **zobrazí celkový počet bodů**. 
 
-Používejte pouze Vanilla JavaScript, případně ES6. Pokud někdo chce používat jQuery, tak ať mi předem napíše do mailu.
+Používejte pouze Vanilla JavaScript, případně ES6, tj. bez knihovny
 
 
 
