@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 721px;
+    margin: 0 auto;
+}
+#game-field {
+    display: flex;
+    width: 1024px;
+    height: 721px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    perspective:  1000px;
+
+}
+.card {
+    width: 20%;
+    height: 25%;
+    background-color: darkcyan;
+    border: white solid 8px;
+    position: relative;
+    font-size: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-in 0.1s;
+}
+.unflipped, .flipped{
+    text-align: center;
+    margin-top: 65px;
+    position: absolute;
+    width: 100%;
+}
+.unflipped{ visibility: hidden;}
+.flipped{ transform:rotateY(180deg);}
+
+.card:hover {
+    background-color: rgb(3, 107, 107);
+}
+.card.flip {
+    background-color: rgb(52, 180, 142);
+    transform:rotateY(180deg)
+}
+
+
