@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(235, 235, 233);
+    color: rgb(49, 54, 46);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: rgb(88, 96, 80);
+    flex: 20%;
+    min-width: 200px;
+    height: 180px;
+    border: 10px solid rgb(235, 235, 233);
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.5s ease;
+}
+
+.card:hover {
+    background-color: rgb(49, 54, 46);
+}
+
+
+.card.revealed {
+    cursor: default;
+}
+
+.card.revealed.prague {
+    background: url("../img/prague.jpg");
+    background-size: cover;
+}
+
+.card.revealed.madrid {
+    background: url("../img/madrid.jpg");
+    background-size: cover;
+}
+
+.card.revealed.helsinki {
+    background: url("../img/helsinki.jpg");
+    background-size: cover;
+}
+
+.card.revealed.hanoi {
+    background: url("../img/hanoi.jpg");
+    background-size: cover;
+}
+
+.card.revealed.peking {
+    background: url("../img/peking.jpg");
+    background-size: cover;
+}
+
+.card.revealed.havana {
+    background: url("../img/havana.jpg");
+    background-size: cover;
+}
+
+.card.revealed.moscow {
+    background: url("../img/moscow.jpg");
+    background-size: cover;
+}
+
+.card.revealed.hamburg {
+    background: url("../img/hamburg.jpg");
+    background-size: cover;
+}
+
+.card.revealed.paris {
+    background: url("../img/paris.jpg");
+    background-size: cover;
+}
+
+.card.revealed.ottawa {
+    background: url("../img/ottawa.jpg");
+    background-size: cover;
+}
