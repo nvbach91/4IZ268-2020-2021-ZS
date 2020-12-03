@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.card {
+    flex: 1 1 20%;
+    background-color: #2457bf;
+    height: 100px;
+    border-radius: 15px;
+    border: 10px solid white;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    background-color: #2457f6;
+}
+
+.selected {
+    background-color: #245750;
+}
+
+.selected:hover {
+    background-color: #245750;
+}
+
+.cards_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 800px;
+}
