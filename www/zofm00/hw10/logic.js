@@ -1,17 +1,17 @@
 const game = document.querySelector('#game');
 const result = document.querySelector('#points');
 
-let dog = ['Rotvajler', 'Ovčák', 'Kolie', 'Čivava', 'Jezevčík', 'Labrador',
+let dogs = ['Rotvajler', 'Ovčák', 'Kolie', 'Čivava', 'Jezevčík', 'Labrador',
     'Kavkaz', 'Malamut', 'Pitbul', 'Terier'];
-dog = dog.concat(dog);
-dog.sort(function () { return 0.5 - Math.random(); });
+dogs = dogs.concat(dogs);
+dogs.sort(function () { return 0.5 - Math.random(); });
 
 let firstCard, secondCard;
-let resultNo = 0;
-let openedCards = 0;
+let nResult = 0;
+let nOpenedCards = 0;
 let isTurned= false;
 
-var gamePlay = function (card) {
+const bindCard = function (card) {
     card.addEventListener('click', function () {
         if (card.classList.contains('turned')) {
             return false;
@@ -30,18 +30,18 @@ var gamePlay = function (card) {
 
             if (firstCard.innerText == secondCard.innerText) {
                 resultNo++;
-                openedCards += 2;
+                nOpenedCards += 2;
                 firstCard = null;
                 secondCard = null;
-                if (openedCards == dog.length) {
-                    setTimeout(function () {
-                        alert('Vítězství! Dosažené skóre: ' + resultNo)
+                if (nOpenedCards === dogs.length) {
+                    setTimeout(() => {
+                        alert('Vítězství! Dosažené skóre: ' + nResult)
                     }, 100);
                 }
             } else {
-                resultNo--;
-                if (resultNo < 0) {
-                    resultNo = 0
+                nResult--;
+                if (nResult < 0) {
+                    nResult = 0
                 }
 
                 setTimeout(function () {
@@ -53,20 +53,20 @@ var gamePlay = function (card) {
                 }, 1000);
             }
         }
-        result.innerText = resultNo;
+        result.innerText = nResult;
     });
 };
 
 const createCard = function (name) {
-    var card = document.createElement('div');
+    const card = document.createElement('div');
     card.classList.add('card');
     card.innerText = name;
     game.appendChild(card);
 
-    gamePlay(card);
+    bindCard(card);
 }
 
-for (let i = 0; i < dog.length; i++) {
+for (let i = 0; i < dogs.length; i++) {
     createCard(dog[i]);
 }
 
