@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;  
+    
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.card {
+    background-image: url("https://cdn.pixabay.com/photo/2019/08/27/18/39/dog-4434901_960_720.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: transparent;
+    cursor: pointer;
+    border:5px solid white ;
+    width: 20%;
+    height: 180px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: transform .3s;
+}
+
+.card.turned {
+    background-image: none;
+    background-color: rgb(196, 196, 196);
+    color: black;
+    font-size: 20px;
+}
