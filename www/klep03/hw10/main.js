@@ -39,7 +39,9 @@ for (let i = 0; i < 4; i++) {
             if (lockTale == false) {
                 tales[5 * i + j].innerText = values[5 * i + j];
                 tales[5 * i + j].classList.add('turned');
-                turnedCards.push(5 * i + j);
+                if (turnedCards[0] != (5 * i + j)) {
+                    turnedCards.push(5 * i + j);
+                }
                 if (turnedCards.length >= 2) {
                     lockTale = true;
                     setTimeout(() => {
