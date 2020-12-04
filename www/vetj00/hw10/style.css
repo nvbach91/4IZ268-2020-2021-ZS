@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.points-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.points {
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.pexeso-cards {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.pexeso-card {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: aqua;
+    margin: 10px;
+    font-size: 0;
+}
+
+.pexeso-card:hover {
+    cursor: pointer;
+}
+
+.turned-card {
+    background-color: rgb(255, 181, 85);
+    font-size: inherit;
+    font-weight: bold;
+}
+
+@media (max-width: 1500px) {
+    .pexeso-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 1000px) {
+    .pexeso-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .pexeso-cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        font-size: 13px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .pexeso-cards {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        font-size: 10.5px;
+    }
+}
