@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+.topLevelContainer {
+    background-color: rgb(92, 165, 230);
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 750px;
+    border: 2px;
+    border-color: black;
+}
+
+h1 {
+    margin: 10px auto 0px auto;
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.gameContainer {
+    background-color: grey;
+    margin: 10px;
+    height: 595px;
+    bottom: 0px;
+}
+
+.row {
+    height: 25%;
+    background-color: white;
+    display: flex;
+}
+
+.column {
+    width: 20%;
+}
+
+.tale {
+    background-color: rgb(202, 54, 54);
+    margin: 1%;
+    height: 97%;
+    text-align: center;
+    padding: 11%;
+    font-size: 400%
+}
+
+.top {
+    margin-top: 2%;
+}
+
+.right {
+    margin-right: 2%;
+}
+
+.left {
+    margin-left: 2%;
+}
+
+.bottom {
+    margin-bottom: 2%;
+}
+
+.turned {
+    font-size: 170%;
+    padding: 25%;
+    background-color: rgb(255, 107, 107);;
+}
