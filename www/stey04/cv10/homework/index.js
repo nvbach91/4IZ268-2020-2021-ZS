@@ -10,7 +10,7 @@ const createCard = (name) => {
             if (selectionAllowed) {
                 card.classList.add('selected');
                 card.innerText = name;
-                check = check(card);
+                flip(card);
             }
         }
     };
@@ -25,15 +25,21 @@ const flipCard = (card) => {
     selectionAllowed = true;
 }
 
-let check = function doubleCheck(c1) {
-    function second(c2) {
-        if(c1 == c2) return second;
-        selectionAllowed = false;
-        match(c1, c2)
-        return doubleCheck;
+let flip = (() => {
+    let check = function doubleCheck(c1) {
+        function second(c2) {
+            if (c1 == c2) return second;
+            selectionAllowed = false;
+            match(c1, c2)
+            return doubleCheck;
+        }
+        return second;
     }
-    return second;
-}
+    let curry = (card) => {
+        check = check(card);
+    }
+    return curry;
+})();
 
 function match(c1, c2) {
     if (c1.innerText == c2.innerText) {
@@ -77,3 +83,4 @@ const scramble = (l) => {
     }
     cardsContainer.append(...cards);
 })()
+
