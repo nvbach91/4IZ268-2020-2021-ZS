@@ -1,0 +1,217 @@
+/* obecné styly */
+* {
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.column1 {
+  flex-basis: 80%;
+  padding-right: 10px;
+  text-align: justify;
+}
+
+.column2 {
+  flex-basis: 20%;
+  background-image: url(../img/obecne/pravy_sloupec.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*---------------------------------------------------------------------*/
+/*---------------------------EPIZODY-----------------------------------*/
+
+.clear {
+  clear: both;
+}
+
+img {
+  float: left;
+  padding-right: 10px;
+  max-width: 250px;
+  height: 200px;
+}
+
+/*---------------------------------------------------------------------*/
+/*---------------------------POSTAVY-----------------------------------*/
+
+.column3 {
+  flex-basis: 70%;
+  padding-right: 10px;
+  text-align: justify;
+}
+
+.column4 {
+  flex-basis: 30%;
+  font-size: 12px;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.img-postava {
+  float: none;
+  margin-top: 20px;
+  max-width: 50%;
+}
+
+/* header */
+.header-image {
+  background-image: url(../img/obecne/team1.png);
+  max-width: 1000px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+nav {
+  max-width: 1000px;
+}
+
+button a {
+  text-decoration: none;
+}
+
+nav a {
+  padding: 10px 0;
+}
+
+nav a,
+nav .dropdown {
+  float: left;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  text-decoration: none;
+  border-right: 1px solid #bbb;
+  width: 20%;
+}
+
+.dropdown a {
+  border: none;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+nav a:hover,
+.dropbtn:hover,
+.dropdown-content a:hover {
+  background-color: red !important;
+}
+
+#index {
+  background-color: red;
+}
+
+#sledovani {
+  background-color: red;
+}
+
+#postavy {
+  background-color: red;
+}
+
+#extra {
+  background-color: red;
+}
+
+#epizody {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 38px;
+  background-color: #f9f9f9;
+  width: calc(1000px / 5);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* responsive */
+@media screen and (max-width: 800px) {
+  .header-image, nav, body {
+    max-width: 100%;
+  }
+
+  .header-image {
+    background-image: url(../img/obecne/team1_800.png);
+    height: 100px;
+  }
+  
+
+  .column2 {
+    display: none;
+  }
+
+  .column1 {
+    flex-basis: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .column4 {
+    flex-basis: 20%;
+  }
+
+  .column3 {
+    flex-basis: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* tisk */
+@media print {
+  *{
+    background-color: white;
+
+    color: black;
+  }
+  
+  header, img, a, footer {
+    display: none;
+  }
+
+  .column2 {
+    display: none;
+  }
+
+  .column1 {
+    flex-basis: 100%;
+  }
+}

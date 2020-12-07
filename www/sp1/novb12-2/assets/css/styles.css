@@ -1,0 +1,595 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/*Hlavička*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid rgb(10, 10, 96);
+    padding: 25px;
+    margin: 2%;
+}
+
+.title-web {
+    width: 80%;
+    float: left;
+}
+
+.club-logo {
+    width: 15%;
+    margin-right: 2%;
+    float: left;
+}
+
+.town-logo {
+    width: 10%;
+    float: right;
+}
+
+/*Navigace na webové stránce*/
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(10, 10, 96);
+    color: white;
+    font-weight: bold;
+    padding: 50px;
+    list-style-type: none;
+    font-size: 25px;
+}
+
+nav ul li {
+    margin: 0 80px;
+    text-align: center;
+}
+
+nav ul li:hover {
+    color: rgb(198, 198, 228);
+    cursor: pointer;
+}
+
+nav ul li a {
+    padding: 10px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.current {
+    background-color: white;
+    color: rgb(10, 10, 96);
+    padding: 1.5px;
+    border-radius: 4%;
+}
+
+/*Patička*/
+
+footer {
+    background-color: rgb(10, 10, 96);
+    color: white;
+    padding: 70px;
+}
+
+.footer-club-informations {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.social-sites {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+.pages {
+    width: 50%;
+    float: left;
+}
+
+.author {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 14px;
+}
+
+.author a {
+    text-transform: lowercase;
+}
+
+/*Obecné odkazy na webové stránce*/
+
+a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: rgb(162, 164, 190);
+}
+
+/*Nadpisy a jiné úpravy textu*/
+
+.title-web {
+    color: rgb(10, 10, 96);
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: 40px;
+}
+
+.add-informations-title {
+    font-size: 20px;
+    color: rgb(70, 70, 70);
+}
+
+h1 {
+    color: rgb(221, 24, 24);
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-left: 15%;
+    padding-top: 20px;
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+p {
+    text-align: justify;
+    max-width: 1100px;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 1.5%;
+}
+
+article {
+    border: 2px solid rgb(223, 190, 187);
+    border-radius: 7.5px;
+    max-width: 1280px;
+    margin: auto;
+    margin-bottom: 2%;
+    padding: 10px;
+}
+
+/*Tabulka*/
+
+table {
+    background-color: rgb(0, 5, 46);
+    color: white;
+    border: 1px solid rgb(0, 5, 46);
+    border-radius: 0.5%;
+    margin: 10px auto 30px auto;
+}
+
+table thead {
+    background-color: rgb(237, 241, 245);
+    color: rgb(0, 5, 46);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+table tbody {
+    background-color: white;
+    color: rgb(0, 5, 46);
+    font-size: 20px;
+}
+
+table tbody tr:hover td, table tbody tr:hover th {
+    background-color: rgb(221, 238, 250)
+}
+
+/*Fotky*/
+
+.images {
+    display: flex;
+    flex-direction: row;
+}
+
+/*CSS pro Úvod - /sp1/index.html*/
+
+.text-home-image {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: calc(100%/3);
+}
+
+/*CSS pro Historii - /sp1/historie/index.html*/
+
+.card-add-information {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-name {
+    width: 50%;
+    float: left;
+}
+
+.article-years {
+    width: 50%;
+    float: right;
+    text-align: right;
+    font-size: 20px;
+    color: rgb(211, 130, 123);
+    font-weight: bold;
+    margin-top: 1.5%;
+    margin-right: 2%;
+}
+
+.author-of-text {
+    text-align: right;
+    font-style: italic;
+    margin-top: 0.5%;
+    margin-right: 8%;
+}
+
+/*CSS pro Kontakty - /sp1/kontakty/index.html*/
+
+a.location {
+    color: rgb(221, 24, 24);
+    margin-left: 5%;
+}
+
+a.location:hover {
+    color: rgb(126, 12, 8);
+}
+
+a.contacts {
+    color: rgb(221, 24, 24);
+    text-transform: lowercase;
+}
+
+a.contacts:hover {
+    color: rgb(126, 12, 8);
+}
+
+.address-flexbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.club-address {
+    width: 50%;
+    float: left;
+    margin-left: 2%;
+}
+
+.club-address h2 {
+    margin-left: 0;
+}
+
+.map {
+    width: 50%;
+    float: right;
+}
+
+.map iframe {
+    text-align: right;
+    width: 90%;
+}
+
+/*CSS pro Závody - /sp1/zavody/index.html*/
+
+.table-races {
+    width: 75%;
+}
+
+.note-table {
+    color: rgb(221, 24, 24);
+    text-align: center;
+    font-weight: bold;
+}
+
+/*CSS pro Oblečení - /sp1/obleceni/index.html*/
+
+.price {
+    text-align: center;
+}
+
+.clothes-image {
+    width: 25%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.table-of-prices {
+    width: 50%;
+}
+
+/*TISK*/
+
+@media print {
+    body {
+        font-family: "Times New Roman", Times, serif;
+    }
+    header {
+        padding: 0;
+        border: none;
+        margin: 0;
+    }
+    .title-web {
+        font-size: 18px;
+        margin: 0;
+        color: black;
+    }
+    .add-informations-title {
+        font-size: 14px;
+    }
+    .club-logo {
+        width: 5%;
+    }
+    .town-logo {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    iframe {
+        display: none;
+    }
+    table {
+        color: white;
+        border: 0.2px solid black;
+        margin-bottom: 1%;
+    }
+    table thead {
+        background-color: white;
+        font-size: 12px;
+    }
+    table tbody {
+        background-color: white;
+        font-size: 10px;
+    }
+    a.contacts {
+        color: black;
+        font-size: 12px;
+    }
+    a.location {
+        color: black;
+        font-size: 12px;
+    }
+    .article-years {
+        font-size: 13px;
+        color: black;
+    }
+    .author-of-text {
+        text-align: right;
+        font-style: italic;
+        margin-right: 8%;
+        font-size: 10px;
+    }
+    .card-add-information {
+        padding: 0;
+    }
+    article {
+        margin-left: 0;
+        margin-right: 0;
+        border: none;
+        margin-bottom: 1.75%;
+        padding: 0;
+    }
+    h1 {
+        margin-left: 0;
+        font-size: 14px;
+        color: black;
+        margin-bottom: 0.5%;
+    }
+    h2 {
+        margin: 0;
+        font-size: 13px;
+    }
+    p {
+        margin-bottom: 0.5%;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    footer {
+        display: none;
+    }
+    .table-races {
+        width: 90%;
+    }
+    .table-of-prices {
+        width: 50%;
+    }
+    .note-table {
+        color: black;
+    }
+}
+
+/*ROZLIŠENÍ*/
+
+@media screen and (max-width: 1390px) {
+    body {
+        max-width: 100%;
+    }
+    .title-web {
+        font-size: 30px;
+        margin-top: 1%;
+    }
+    .town-logo {
+        margin-right: 12%;
+        margin-top: 1%;
+        width: 0.1%;
+        text-align: right;
+    }
+    a.town-logo img {
+        width: 80px;
+    }
+    nav ul {
+        padding: 28px;
+        font-size: 20px;
+    }
+    nav ul li {
+        margin: auto;
+        margin-right: 25px;
+    }
+    nav ul li a {
+        padding: 5px;
+    }
+    article p {
+        max-width: 550px;
+        margin: auto;
+        font-size: 15px;
+    }
+    article {
+        max-width: 700px;
+        margin: auto;
+        margin-bottom: 2%;
+        padding: 10px;
+    }
+    h1 {
+        margin-left: 5%;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .article-years {
+        font-size: 18px;
+    }
+    footer {
+        padding: 10px;
+    }
+    .pages {
+        font-size: 15px;
+    }
+    .social-sites {
+        font-size: 15px;
+    }
+    .map iframe {
+        width: 90%;
+    }
+    .table-races {
+        width: 90%;
+    }
+    .table-of-prices {
+        width: 70%;
+    }
+    table thead {
+        font-size: 19px;
+    }
+    table tbody {
+        font-size: 15px;
+    }
+    .club-address {
+        margin-right: 0.5%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    body {
+        max-width: 100%;
+    }
+    .title-web {
+        font-size: 20px;
+        margin-top: 2%;
+        text-align: center;
+    }
+    .add-informations-title {
+        font-size: 15px;
+    }
+    .club-logo {
+        width: 30%;
+    }
+    .town-logo {
+        display: none;
+    }
+    a.town-logo img {
+        width: 80px;
+    }
+    nav {
+        display: flex;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+    nav ul li {
+        margin: auto;
+    }
+    nav ul li a {
+        margin: auto;
+        font-size: 14px;
+        padding: 5px;
+    }
+    h1 {
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 15px;
+    }
+    .article-years {
+        font-size: 18px;
+    }
+    footer {
+        padding: 12px;
+        width: 100%;
+    }
+    .pages {
+        font-size: 13px;
+    }
+    .social-sites {
+        font-size: 13px;
+    }
+    .author {
+        font-size: 9px;
+    }
+    .map iframe {
+        width: 90%;
+    }
+    .table-races {
+        width: 90%;
+    }
+    table {
+        border: none;
+    }
+    .table-of-prices {
+        width: 90%;
+    }
+    table thead {
+        font-size: 12px;
+    }
+    table tbody {
+        font-size: 10px;
+    }
+    article {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    article p {
+        text-align: left;
+        font-size: 12px;
+    }
+    .center-text {
+        text-align: center;
+        margin-bottom: 2%;
+        font-size: 9px;
+    }
+}

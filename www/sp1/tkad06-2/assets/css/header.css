@@ -32,3 +32,6 @@
   transition: all;
   transition-duration: var(--animation-duration);
 }
+.header__nav > a.active {
+  color: var(--primary-color);
+}

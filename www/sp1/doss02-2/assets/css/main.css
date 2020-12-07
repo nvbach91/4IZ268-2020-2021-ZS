@@ -1,0 +1,262 @@
+/*pro všechno*/
+* { 
+    box-sizing: border-box;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;  
+
+    
+}
+header {  
+    margin-top: 5px;
+    }
+
+.menu {
+    display: flex;
+    margin: 10px;
+    font-size: large;
+    
+}
+
+.menu-item, .menu-item-active {
+    padding:20px;
+    background-color: rgb(46, 64, 77);
+    width: 25%;
+    margin: 1px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-large;
+    }
+
+.menu-item:hover {
+    background-color:  rgb(85, 175, 194);
+    transition: background-color 0.5s ease;
+    transform: scale(1.2);
+}
+
+.menu-item-active {
+       background-color: rgb(85, 175, 194);   
+    }
+
+.picture-main {
+    border-radius: 10px;
+    height: 300px;
+    background-image: url(../img/img1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.picture-main h1 {
+    text-align: center;
+    padding: 123px;
+    background-color: rgba(255, 255, 255, 0.432);
+    font-size: 70px;
+    border-radius: 10px;
+
+}
+    
+footer {
+    padding: 20px;
+    background-color: rgb(85, 175, 194);
+    border-radius: 10px;
+    text-align: center;
+}
+/*Chci pomoci, Potřebuji pomoc, Akce, Články, Kontakty, O nás*/
+main {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2, h3{
+    border-bottom: rgb(46, 64, 77) solid;
+    padding: 15px;
+    width: 100%;
+   
+}
+
+h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 65%; 
+}
+
+h4 {
+    padding: 15px 0px 15px 0px;
+    border: rgb(46, 64, 77) solid;
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+ 
+}
+
+main ul li {
+    list-style-type: none;
+    padding: 20px 0 20px 0;
+}
+
+.mail {
+    color: black;
+}
+.tel {
+    color: black;
+}
+article {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+
+/*Články*/
+
+.box{
+    margin: 80px;
+ box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+p {
+    margin: 20px;  
+}
+
+/*O nás*/
+
+.main-item {
+    width: 49%;
+    border-radius: 30px; 
+    margin-bottom: 50px;
+    float: right;
+}
+
+.photo1 {
+    background-image: url(../img/img5-min.jpg);
+    background-position: center;
+    background-size: 650px;
+    background-repeat: no-repeat;
+    float: left;
+    height: 250px;
+}
+.main-item:nth-child(1) {
+    width: 100%;
+}
+
+/*Hlavní stránka*/
+.mainpage {
+    display: flex;
+    flex-direction: unset;
+    flex-wrap: wrap;
+}
+
+.mainpage-article {
+    width: calc(100%/3);
+    margin: 0;
+    text-align: left;
+
+}
+/*Pro tablety*/
+@media screen and (max-width: 900px){
+    .menu-item, .menu-item-active {
+        font-size: large;
+    }
+    .picture-main h1 {
+        font-size: 55px;
+    }
+
+}
+
+/*Pro mobil*/
+@media screen and (max-width: 700px) {
+    .menu, .mainpage {
+        flex-direction: column;
+        }
+    .menu-item, .menu-item-active, .menu-item:hover, .main-item, .mainpage-article, article{
+        width: 100%;
+    }
+    
+    main div, .mainpage-article, article, .box {
+        text-align: left;
+        margin: 0;
+        box-shadow: none;
+
+    }
+    .picture-main h1 {
+        font-size: 45px;
+    }
+
+
+    h3, h4 {
+        width: 90%;
+    }
+
+    main ul li {
+        text-align: left;
+    }   
+}
+
+/*Pro tisk*/
+@media print {
+    * {
+        text-align: left;
+        font-size: small;
+        
+    }
+    header {
+        display: none;
+        }
+
+    footer {
+        display: none;
+    }
+    .picture-main {
+        background-color: transparent;
+        background-image: none;
+        margin: 0;
+        padding: 0;
+        height: 1px;
+    }
+    .photo1{
+        display: none;
+    }
+
+    .main-item, article, .mainpage-article, p, .box, h2, h3, h4 {
+        width: 100%;
+        margin: 0;
+        border: none;
+        padding: 0;
+       
+    }
+    .box {
+         box-shadow: none;
+    }
+    .picture-main h1 {
+        padding: 0;
+        font-size: large;
+        
+        
+    }
+     
+    div, ul, main ul li {
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+   
+    
+         
+}
+
+
+
+
+
