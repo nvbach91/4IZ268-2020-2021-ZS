@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box;
 }
 
@@ -11,8 +11,8 @@ body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
+    
 }
-
 .card {
     background-image: url("../images/lacasa.jpg");
     display: flex;
@@ -26,19 +26,18 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.card.revealed {
-    background-color: rgb(150, 16, 16);
-    color: white;
-    background-image: none;
-}
-
 .card:hover {
     background-color: rgb(199, 53, 53);
     transition: 0.2s ease-in;
 }
 
-.game {
+.turned {
+    background-color: rgb(150, 16, 16);
+    color: white;
+    background-image: none;
+}
+
+.playground {
     max-width: 1080px;
     margin: 0 auto;
     display: flex;

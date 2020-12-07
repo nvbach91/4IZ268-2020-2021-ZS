@@ -1,68 +1,62 @@
 /**
  * Memorama, Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs
- */
-
+*/
 let cities = ['Prague', 'Tokyo', 'Moscow', 'Denver', 'Berlin',
   'Nairobi', 'Rio', 'Helsinki', 'Oslo', 'Madrid'];
 cities = cities.concat(cities);
-cities.sort(() => {
-  return 0.5 - Math.random();
-});
+cities.sort(() => { return 0.5 - Math.random(); });
 
-const board = document.querySelector('#game-field');
 const points = document.querySelector('#points');
+const playground = document.querySelector('#game');
 
-let turnedCards = 0;
-let pairsGuessed = 0;
-const delay = 900;
-let currentPoints = 0;
-let cardsTurned = [];
 
-let play = (text) => {
-  let card = document.createElement('div');
+const cards = [];
+let turnedCards = [];
+let endPoints = 0;
+
+const createCard = (t) => {
+  const card = document.createElement('div');
   card.classList.add('card');
-  card.innerText = text;
-  board.appendChild(card);
-  card.addEventListener('click', function () {
-    if (turnedCards == 2) {
+  card.innerText = t.toUpperCase();
+
+  card.addEventListener('click', () => {
+
+    if (turnedCards.length == 2) {
       return false;
     }
-    if (card.classList.contains('revealed')) {
+    if (card.classList.contains('turned')) {
       return false;
     }
-    if (cardsTurned[0] && cardsTurned[1]) {
-      return false;
-    }
-    card.classList.add('revealed');
-    cardsTurned[turnedCards] = this;
-    turnedCards++;
-    if (turnedCards == 2 && cardsTurned[0].innerText == cardsTurned[1].innerText) {
+    card.classList.add('turned')
+    turnedCards.push(card);
+
+    if (turnedCards.length > 1 && (turnedCards[0].innerText === turnedCards[1].innerText)) {
       points.innerText++;
-      turnedCards = 0;
-      pairsGuessed += 2;
-      cardsTurned[0] = null;
-      cardsTurned[1] = null;
-      if (pairsGuessed == cities.length) {
-        setTimeout(function () {
-          alert('Congratulations !!! Your result is: ' + points.innerText + ' points');
-        }, delay);
+      endPoints += 2;
+      if (endPoints === 20) {
+        setTimeout(() => {
+          alert('Congratulations! You won!');
+        }, 500)
       }
-    }
-    if ((turnedCards == 2) && (cardsTurned[0].innerText != cardsTurned[1].innerText)) {
-      if (points.innerText != 0) {
+      turnedCards = [];
+
+    } else if (turnedCards.length > 1) {
+      if (points.innerText > 0) {
         points.innerText--;
       }
-      turnedCards = 0;
-      setTimeout(function () {
-        cardsTurned[0].classList.remove('revealed');
-        cardsTurned[1].classList.remove('revealed');
-        cardsTurned[0] = null;
-        cardsTurned[1] = null;
-      }, delay)
+      setTimeout(() => {
+        turnedCards[0].classList.remove('turned');
+        turnedCards[1].classList.remove('turned');
+        turnedCards = [];
+      }, 1000)
     }
-  });
-};
-
-for (let i = 0; i < cities.length; i++) {
-  play(cities[i]);
+  })
+  return card;
 }
+//začátek hry
+cities.forEach(t => {
+  const card = createCard(t);
+  cards.push(card);
+});
+
+playground.append(...cards);
