@@ -7,12 +7,12 @@ const points = document.querySelector('#points');
 
 let turnedCards = []; //karty, které jsou zrovna otečeny
 let endPoints = 0; //když 20 (10x2), tak výhra
+const cards = []; //postupně vytvářené karty
 
-const playGame = (t) => {
+const createCard = (t) => {
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerText = t.toUpperCase();
-    playground.appendChild(card);
 
     card.addEventListener('click', () => {
 
@@ -31,7 +31,7 @@ const playGame = (t) => {
             points.innerText++;
             endPoints += 2;
             if (endPoints === 20) {
-                setTimeout(function () {
+                setTimeout(() => {
                     alert('You won the game but what about real life?');
                 }, 500)
             }
@@ -41,16 +41,20 @@ const playGame = (t) => {
             if (points.innerText > 0) {
                 points.innerText--;
             }
-            setTimeout(function () {
+            setTimeout(() => {
                 turnedCards[0].classList.remove('turned');
                 turnedCards[1].classList.remove('turned');
                 turnedCards = [];
             }, 1000)
         }
     })
-
-
+    return card;
 }
 
 //začátek hry
-transformers.forEach(t => playGame(t));
+transformers.forEach(t => {
+    const card = createCard(t);
+    cards.push(card);
+});
+
+playground.append(...cards);
