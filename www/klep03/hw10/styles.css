@@ -47,7 +47,7 @@ h2 {
     margin: 1%;
     height: 97%;
     text-align: center;
-    padding: 11%;
+    padding: 11% 0%;
     font-size: 400%
 }
 
@@ -69,6 +69,6 @@ h2 {
 
 .turned {
     font-size: 170%;
-    padding: 25%;
+    padding: 25% 0%;
     background-color: rgb(255, 107, 107);;
 }
