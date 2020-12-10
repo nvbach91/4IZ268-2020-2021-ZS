@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(166deg, rgba(2, 0, 36, 1) 0%, rgba(219, 219, 255, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    border: 10px solid white;
+    width: 20%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair;
+    border-radius: 20px;
+    transition: background-color 0.7s linear;
+}
+
+.card img {
+    display: none;
+}
+
+.card:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(166deg, rgba(2, 0, 36, 1) 0%, rgba(200, 177, 255, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.card.selected img {
+    border-radius: 10px;
+    display: inline;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid #00FF33;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.orange {
+    color: orange;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
