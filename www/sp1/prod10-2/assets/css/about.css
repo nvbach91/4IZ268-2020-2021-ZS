@@ -1,0 +1,75 @@
+.flexbox {
+    display: flex;
+}
+
+.flexbox .left {
+    flex: 1;
+    position: relative;
+    margin-right: 20px;
+}
+
+.flexbox .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.my-photo {
+    width: 100%;
+    object-fit: cover;
+}
+
+.line {
+    width: 100%;
+    height: 50px;
+    background: rgb(152, 161, 138);
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .flexbox {
+        display: block;
+    }
+
+    .flexbox .left {
+        max-width: 400px;
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+
+    .flexbox .right {
+        display: contents;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flexbox .left {
+        max-width: 60%;
+        float: none;
+        margin: 20px auto 0;
+        text-align: center;
+        order: 2;
+    }
+
+    .flexbox .right {
+        display: block;
+        order: 1;
+    }
+
+    .my-photo {
+        width: 80%;
+    }
+
+    .line {
+        height: 30px;
+    }
+}

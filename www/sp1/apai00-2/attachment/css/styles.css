@@ -1,0 +1,512 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+}
+
+i.fa {
+    width: 25px;
+    text-align: center;
+}
+
+
+/*index*/
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+/*header*/
+
+.layout .logo-picture {
+    width: 200px;
+    margin: 10px 0 0 0;
+}
+
+.layout .menu {
+    display: flex;
+    float: right;
+    margin: 0 50px;
+}
+
+.layout .menu .menu-item {
+    padding: 10px;
+    margin: 25px;
+    font-size: 25px;
+    list-style-type: none;
+}
+
+.layout .menu .menu-item:hover {
+    border-radius: 15px;
+    background-color: red;
+    color: white;
+    list-style-type: none;
+}
+
+.active a,
+.active {
+    color: white;
+}
+
+.active {
+    border-radius: 15px;
+    background-color: rgb(206, 61, 61);
+}
+
+
+/*/header*/
+
+
+/*main*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px 10px 50px;
+}
+
+h1 {
+    padding: 50px 20px;
+    background-color: slategray;
+    color: white;
+    width: 720px;
+    margin: 10px auto 10px auto;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.texts {
+    margin: 50px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+.text {
+    padding: 10px;
+    text-align: center;
+    border: 4px double red;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/*main-item-in-box*/
+
+.services,
+.types {
+    display: flex;
+}
+
+.service,
+.type,
+.service-text {
+    margin: 0.5px;
+    background-color: red;
+    border-radius: 7px;
+    font-weight: bold;
+    color: white;
+}
+
+.service,
+.type {
+    background-repeat: no-repeat;
+    width: calc(100%/3);
+}
+
+.service {
+    padding: 10px;
+    text-align: center;
+}
+
+.type {
+    padding: 0 0 0 calc(100%/6);
+}
+
+.service-text {
+    width: 100%;
+    text-align: center;
+}
+
+.layout .main .box .types .tire {
+    background-image: url(../picture/tire.png);
+}
+
+.layout .main .box .types .cover {
+    background-image: url(../picture/cover.png);
+}
+
+.layout .main .box .types .tool {
+    background-image: url(../picture/tool.png);
+}
+
+
+/*/main-item-in-box*/
+
+
+/*/main*/
+
+footer {
+    margin: 100px 0 0 0;
+    text-align: center;
+}
+
+
+/*index*/
+
+
+/*product*/
+
+.products {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(33%);
+    /*rozsah mezi sloupcy v produktu*/
+    border: 1px solid black;
+    margin: 10px 0 0 0;
+}
+
+.text-product {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.foto {
+    max-height: 500px;
+    max-width: 500px;
+    width: 400px;
+    margin: 0 10px 0 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.go-top {
+    font-size: 30px;
+}
+
+
+/*/product*/
+
+
+/*sponzor*/
+
+.sponsors {
+    display: flex;
+    width: 100%;
+    margin: 0 0 0 70px;
+}
+
+.foto-sponsor {
+    max-height: 600px;
+    max-width: 600px;
+    width: 200px;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100%/4);
+    margin: 100px 0 100px 0;
+    /*rozsah mezi sloupcy v spponzor*/
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*/sponzor*/
+
+
+/*kontakt*/
+
+.information,
+.form {
+    padding: 10px 20px;
+    width: 720px;
+    border-radius: 7px;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.information {
+    text-align: center;
+}
+
+.form {
+    text-align: left;
+    margin: 10px auto 10px auto;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    border: 1px solid black;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+button {
+    background-color: rgb(72, 192, 72);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+iframe {
+    width: 600px;
+    height: 500px;
+    border: none;
+    border-radius: 2px;
+}
+
+
+/*/kontakt*/
+
+
+/*autor*/
+
+.author {
+    width: 400px;
+    text-align: center;
+}
+
+
+/*/autor*/
+
+
+/*querries*/
+
+@media screen and (max-width: 1280px) {
+    .services,
+    .types {
+        flex-direction: row;
+        font-size: 10px;
+        margin: 5px 0 0 0;
+    }
+    .type {
+        padding: 0 0 0 0;
+    }
+    .layout .main .box .types .tire,
+    .layout .main .box .types .cover,
+    .layout .main .box .types .tool {
+        background-image: none;
+    }
+    .layout .menu {
+        margin: 5px 0 0 0;
+    }
+    .sponsors {
+        flex-direction: column;
+    }
+    .sponsor {
+        margin: 0 auto 0 auto;
+    }
+    .product {
+        width: calc(49.5%);
+        margin: 5px 0 5px 0;
+    }
+    .texts {
+        width: 700px;
+    }
+    .sponsors,
+    h1 {
+        margin: 0 0 0 5px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sponsor {
+        margin: 0 0 0 50px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    img {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        width: 200px;
+        font-size: 20px;
+    }
+    .sponsors,
+    h1 {
+        margin: 0 0 0 5px;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    header {
+        width: 100px;
+    }
+    .layout .menu {
+        flex-direction: column;
+        float: left;
+        margin: 15px 5px 0 0;
+        width: 125px;
+    }
+    i.fa {
+        width: 12px;
+    }
+    .logo-picture {
+        margin: 0 0 0 0;
+    }
+    .layout .menu .menu-item {
+        font-size: 11px;
+        margin: 5px;
+    }
+    .layout {
+        flex-direction: row;
+    }
+    .texts {
+        width: 350px;
+    }
+    .main {
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 0 0 10px;
+    }
+    .sponsor {
+        margin: 0;
+    }
+    .products {
+        flex-direction: column;
+    }
+    .product {
+        border: none;
+        margin: 0 0 0 0;
+    }
+    .text-product {
+        border: none;
+        margin: 0 0 50px 120px;
+    }
+    .information,
+    .form {
+        width: 300px;
+        margin: 5px 10px 0 0;
+    }
+    iframe {
+        width: 250px;
+        height: 150px;
+    }
+    .author {
+        width: 75%;
+    }
+    .layout .main .box .types .tire,
+    .layout .main .box .types .cover,
+    .layout .main .box .types .tool {
+        background-image: none;
+    }
+    .layout .logo-picture {
+        width: 100px;
+    }
+}
+
+
+/*/querries*/
+
+
+/*print*/
+
+@media print {
+    /*ALL*/
+    body {
+        background-color: white;
+    }
+    /*/ALL*/
+    /*MAIN*/
+    .box,
+    .services {
+        border: 1px solid black;
+        text-align: left;
+    }
+    /*/MAIN*/
+    /*product*/
+    .layout .main .texts .text {
+        text-align: left;
+        border: none;
+        /*padding: 0;
+        margin: 0;*/
+    }
+    .layout .main .products .product {
+        width: 100%;
+        text-align: center;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        border: none;
+    }
+    .layout .main .products .foto {
+        width: 200px;
+    }
+    .text-product {
+        border: none;
+    }
+    .type {
+        padding: 0 0 0 calc(100%/10);
+    }
+    /*/product*/
+    /*contact*/
+    .gmap-canvas,
+    .foto-sponsor,
+    .author,
+    a,
+    .form,
+    .menu .menu-item {
+        display: none;
+    }
+    .main {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /*/contact*/
+    /*sponsor*/
+    .hidden {
+        display: flex;
+    }
+    /*/sponsor*/
+}
+
+
+/*/print*/

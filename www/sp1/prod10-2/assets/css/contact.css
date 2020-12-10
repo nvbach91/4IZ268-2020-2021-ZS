@@ -1,0 +1,73 @@
+.form .form-row {
+    display: flex;
+}
+
+.form .form-row .form-group {
+    flex: 1;
+}
+
+.form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form .form-group label {
+    font-family: 'Glegoo', serif;
+    flex: 1;
+    margin: 5px 10px;
+}
+
+.form .form-group .form-input {
+    font-family: 'Glegoo', serif;
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid rgb(198, 201, 179);
+    background-color: rgb(235, 235, 233);
+    color: rgb(49, 54, 46);
+}
+
+.form .form-group .form-input:focus {
+    outline-color: rgb(198, 201, 179);
+}
+
+.form .form-group .form-input::-webkit-input-placeholder {
+    /* Edge */
+    color: rgb(152, 161, 138);
+}
+
+.form .form-group .form-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(152, 161, 138);
+}
+
+.form .form-group .form-input::placeholder {
+    color: rgb(152, 161, 138);
+}
+
+.form .button {
+    margin-right: 5px;
+}
+
+.form .align-right {
+    width: 100%;
+    text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+    .form .form-row {
+        flex-direction: column;
+    }
+
+    .form .form-group .form-input, .form .form-group label {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .form .button {
+        width: 100%
+    }
+}

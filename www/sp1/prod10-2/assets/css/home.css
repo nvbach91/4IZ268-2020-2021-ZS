@@ -1,0 +1,132 @@
+.jumbotron {
+    padding: 200px 40px;
+    text-align: center;
+    color: rgb(235, 235, 233);
+}
+
+.jumbotron .title {
+    font-size: 70px;
+    font-weight: normal;
+    margin: 0 0 50px;
+}
+
+.jumbotron .title .title-2 {
+    font-weight: bold;
+}
+
+.jumbotron .subtitle {
+    font-size: 20px;
+    color: rgb(198, 201, 179);
+    margin-bottom: 45px;
+}
+
+.jumbotron .subtitle .highlight {
+    margin: 0 10px;
+}
+
+.jumbotron .subtitle .highlight::after {
+    background: rgb(88, 96, 80);
+}
+
+.jumbotron .scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: updown 0.5s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+}
+
+@keyframes updown {
+    0% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: 30px;
+    }
+}
+
+.jumbotron .scroll-down a {
+    color: rgb(198, 201, 179);
+    font-size: 35px;
+    padding: 10px;
+}
+
+.line {
+    width: 500px;
+    height: 50px;
+    background: rgb(152, 161, 138);
+    position: absolute;
+    bottom: -25px;
+}
+
+.section {
+    text-align: center;
+    padding-top: 35px;
+}
+
+.section .heading {
+    font-size: 40px;
+}
+
+.section .text {
+    text-align: left;
+    font-size: 20px;
+    line-height: 38px;
+}
+
+@media screen and (max-width: 1024px) {
+    .jumbotron {
+        padding: 120px 40px;
+    }
+
+    .jumbotron .title {
+        font-size: 50px;
+        line-height: 75px;
+    }
+
+    .jumbotron .subtitle {
+        font-size: 18px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .section .heading {
+        font-size: 30px;
+    }
+
+    .section .text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .jumbotron {
+        padding: 100px 40px;
+    }
+
+    .jumbotron .title {
+        font-size: 40px;
+        line-height: 65px;
+    }
+
+    .jumbotron .subtitle {
+        font-size: 14px;
+    }
+
+    .jumbotron .scroll-down a {
+        font-size: 20px;
+    }
+
+    .section .heading {
+        font-size: 24px;
+    }
+
+    .section .text {
+        font-size: 14px;
+    }
+}

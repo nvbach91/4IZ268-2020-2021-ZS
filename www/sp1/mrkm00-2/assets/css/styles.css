@@ -1,0 +1,345 @@
+/*společné stylování*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.layout {
+    background-color: rgb(255, 242, 223);
+    margin: auto;
+    max-width: 1024px;
+    min-width: 300px;
+}
+
+.header {
+    background-color: rgb(255, 242, 223);
+}
+
+.logo-header {
+    flex-basis: 100%;
+    padding: 120px;
+    background-image: url("../../assets/images/header.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 450px;
+}
+
+.text-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation-item {
+    flex: 1;
+    text-align: center;
+    margin: 5px;
+    background-color: transparent;
+}
+
+.mainpage {
+    border-bottom: 5px solid rgb(216, 17, 17);
+}
+
+.cenik {
+    border-bottom: 5px solid rgb(216, 17, 17);
+}
+
+.vozovy-park {
+    border-bottom: 5px solid rgb(216, 17, 17);
+}
+
+.o-nas {
+    border-bottom: 5px solid rgb(216, 17, 17);
+}
+
+.kontakt {
+    border-bottom: 5px solid rgb(216, 17, 17);
+}
+
+.navigation-item:nth-child(1):active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.navigation-item:nth-child(2):active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.navigation-item:nth-child(3):active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.navigation-item:nth-child(4):active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.navigation-item:nth-child(5):active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+}
+
+.active {
+    border-bottom: 15px solid rgb(216, 17, 17);
+}
+
+.footer {
+    flex-basis: 100%;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+/* mainpage */
+
+.container-mainpage {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.container-mainpage a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+}
+
+.container-mainpage {
+    text-align: center;
+}
+
+.box-mainpage {
+    flex-basis: 50%;
+}
+
+.box-mainpage i {
+    border: white solid 3px;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.opravneni {
+    background-color: rgb(216, 17, 17, 0.8);
+    border-top-left-radius: 10px;
+}
+
+.kondicni-jizdy {
+    background-color: rgba(255, 102, 0, 0.8);
+    border-top-right-radius: 10px;
+}
+
+.skoleni {
+    background-color: rgb(37, 173, 10, 0.8);
+    border-bottom-left-radius: 10px;
+}
+
+.vraceni {
+    background-color: rgb(10, 75, 173, 0.8);
+    border-bottom-right-radius: 10px;
+}
+
+.opravneni:hover {
+    background-color: rgb(216, 17, 17);
+}
+
+.kondicni-jizdy:hover {
+    background-color: rgb(255, 102, 0);
+}
+
+.skoleni:hover {
+    background-color: rgb(37, 173, 10);
+}
+
+.vraceni:hover {
+    background-color: rgb(10, 75, 173);
+}
+
+/*ceník*/
+
+.container-cenik {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-cenik {
+    flex-basis: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 5%;
+    border-bottom: 2px black solid;
+    text-align: justify;
+}
+
+div span {
+    color: rgb(216, 17, 17);
+    font-weight: bold;
+    float: right;
+}
+
+.tabulka {
+    width: 80%;
+    margin: 10%;
+    border: 1px black solid;
+}
+
+th {
+    text-align: left;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+th, td {
+    padding: 5px;
+}
+
+/*vozový park*/
+
+.container-park {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-park {
+    flex-basis: 40%;
+    justify-self: center;
+    max-width: 300px;
+}
+
+.obrazek {
+    display: flex;
+    justify-content: center;
+}
+
+/*o nás*/
+
+.text-o-nas {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    text-align: justify;
+}
+
+/*kontakt*/
+
+.container-kontakty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.box-kontakty {
+    flex-basis: 40%;
+    padding: 30px;
+    margin: 10px;
+    background-color: rgba(116, 107, 107, 0.3);
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+/*responzivita*/
+
+@media screen and (max-width: 800px) {
+    .box-mainpage {
+        flex-basis: 50%;
+    }
+    .footer {
+        flex-basis: 100%;
+    }
+    .container-park {
+        flex-direction: column;
+    }
+    .box-park {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navigation-item {
+        flex-basis: 25%;
+    }
+    .box-mainpage {
+        flex-basis: 100%;
+    }
+    .logo-header {
+        padding: 70px;
+        background-size: 250px;
+    }
+    .opravneni {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .kondicni-jizdy {
+        border-top-right-radius: 0px;
+    }
+    .skoleni {
+        border-bottom-left-radius: 0px;
+    }
+    .vraceni {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+/*verze pro tisk*/
+
+@media print {
+    .logo-header {
+        display: none;
+    }
+    .header {
+        background-color: transparent;
+    }
+    .layout {
+        background-color: transparent;
+    }
+    .navigation-item {
+        border-bottom: transparent;
+    }
+    .active {
+        border-bottom: 1px solid black;
+    }
+    .box-mainpage {
+        background-color: transparent;
+    }
+    .box-mainpage a {
+        color: black;
+    }
+    .material-icons {
+        color: transparent;
+    }
+    div span {
+        color: black;
+    }
+    img {
+        display: none;
+    }
+    .box-kontakty {
+        background-color: transparent;
+    }
+}

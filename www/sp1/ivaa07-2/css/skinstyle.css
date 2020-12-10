@@ -1,0 +1,32 @@
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	overflow-x: hidden;
+}
+
+.horiz-menu {
+	list-style: none; 
+	margin-top: 25px;
+	margin-right: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px; 
+	padding-left: 0; 
+	margin-top: 25px; 
+}
+.ahm {
+  text-decoration: none; 
+  background:#F17902; 
+  color:#fff; 
+  padding:10px; 
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+  border-radius:4px; 
+}
+.ahm:hover {
+  background:#85490C;
+}
+.lihm {
+  float:left; 
+  margin-right:5px; 
+  
+}

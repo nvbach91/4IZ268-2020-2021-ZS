@@ -1,0 +1,471 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-image: url(images/pozadi_pole.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(109, 6, 6, 0.75);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+nav a {
+    font-size: 35px;
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px;
+    transition: background-color 0.6s ease;
+}
+
+nav a.active, nav a:hover, .headerVyjezdy a.active, .headerVyjezdy a:hover {
+    background-color: white;
+    color: rgb(109, 6, 6);
+}
+
+.headerIndex {
+    color: black;
+    background-image: url(images/pozadi_pole.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.headerIndex>h1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 45px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.headerIndex>h2 {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainIndex {
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    width: 69%;
+    float: left;
+    margin-bottom: 5px;
+    padding: 0 15px;
+}
+
+.paragraphIndex {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 3px;
+}
+
+.mainIndex h3:hover {
+    transform: scale(.93);
+}
+
+.lastCall {
+    text-decoration: none;
+    color: white;
+}
+
+.lastAction {
+    text-align: justify;
+    padding: 10px 3px;
+}
+
+.asideIndex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    width: 30%;
+    float: right;
+    text-align: center;
+    margin-bottom: 5px;
+    background-color: rgba(109, 6, 6, 0.65);
+    border-radius: 5px;
+    color: white;
+}
+
+aside p {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+.nadpisBok {
+    width: 50%;
+    padding: 22px 0;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.phone {
+    width: 25%;
+    height: 50px;
+    width: 80px;
+    flex-direction: row;
+}
+
+.cislo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    float: right;
+    width: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+.cislo a {
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+}
+
+.div1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80%;
+}
+
+.div1 a, .cislo a {
+    margin: 16px 0;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.mainTechnika {
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.mainTechnika p {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.uvodTechnika {
+    justify-content: center;
+}
+
+.poduvodTechnika {
+    justify-content: center;
+}
+
+.mainTechnika img {
+    width: 90%;
+    height: auto;
+    border-top: 5px solid transparent;
+}
+
+.mainTechnika div {
+    width: 20%;
+    height: 320px;
+    border-radius: 5px;
+}
+
+.mainTechnika div:hover {
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
+.mainTechnika h2 {
+    position: relative;
+    bottom: 0;
+}
+
+.rokDvacet {
+    text-align: center;
+    background-image: url(images/vyjezdy_pozadi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    height: 320px;
+    margin: auto 0;
+}
+
+.rokDvacet p, .rokDevet p, .rokOsm p {
+    line-height: 320px;
+    margin: 5px 0;
+    color: white;
+    font-size: 45px;
+}
+
+.year2020 {
+    text-decoration: none;
+}
+
+.rokDevet, .rokOsm {
+    background-color: rgba(185, 18, 18, 0.25);
+    text-align: center;
+    border-radius: 5px;
+    height: 320px;
+    margin-bottom: 5px;
+}
+
+.rokDevet p:hover, .rokOsm p:hover, .rokDvacet p:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.60);
+    cursor: pointer;
+}
+
+.callPlace {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    float: right;
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 5px 0;
+    padding-bottom: auto;
+}
+
+.callName {
+    width: 74%;
+}
+
+.callNo {
+    width: 26%;
+}
+
+.callNo a {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 16px 0;
+}
+
+.callName, .callNo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.callPlace h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.adress, .contactPersone {
+    margin-top: 5px;
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    width: 44%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.contactPersone {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.adress h2, .contactPersone h2 {
+    margin: 0;
+}
+
+.email, .callNo a, .cislo a, .div1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.email{
+    padding-top: 10px;
+}
+
+.email:hover, .callNo a:hover, .cislo a:hover, .div1 a:hover {
+    font-weight: bold;
+}
+
+.headerVyjezdy {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 15px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(109, 6, 6, 0.75);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.headerVyjezdy a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px;
+    transition: background-color 0.6s ease;
+}
+
+.asideVyjezdy, .mainVyjezdy {
+    text-align: justify;
+}
+
+.mainVyjezdy {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(109, 6, 6, 0.75);
+    width: 69%;
+    padding: 15px 15px;
+    padding-top: 0;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.asideVyjezdy {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    float: right;
+    margin: 15px 0;
+}
+
+.callNumbers {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.callType {
+    width: 70%;
+}
+
+.numberOfCalls {
+    width: 19%;
+    float: right;
+    text-align: center;
+}
+
+.imageVyjezdy {
+    background-color: rgba(109, 6, 6, 0.75);
+    border-radius: 5px;
+}
+
+.imageVyjezdy img {
+    display: flex;
+    margin: 5px auto;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+@media (max-width: 1024px) {
+    .mainIndex {
+        width: 100%;
+    }
+    .asideIndex {
+        width: 100%;
+    }
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+    nav a {
+        width: 100%;
+        margin-left: 0;
+    }
+    .callPlace {
+        width: 100%;
+    }
+    .callPlace h2 {
+        width: 100%;
+    }
+    .adress {
+        width: 100%;
+	text-align: center;
+    }
+    .contactPersone {
+        width: 100%;
+	text-align: center;
+    }
+    .called, .callNo{
+    	font-size: 13.9px;
+    }	
+    .callNo a{
+	margin: 13.9px 0;
+    }
+    .mainTechnika div {
+        width: calc(100%/3);
+    }
+    .mainTechnika {
+        margin-bottom: 5px;
+    }
+    .mainKontakt {
+        width: 100%;
+        float: left;
+    }
+    .mainVyjezdy {
+        width: 100%;
+    }
+    .asideVyjezdy {
+        width: 100%;
+    }
+    .asideVyjezdy img {
+        float: right;
+    }
+}
+
+@media print {
+    * {
+        background: none;
+    }
+    nav {
+        display: none;
+    }
+    header {
+        border-top: none;
+    }
+    body, .asideIndex, .mainVyjezdy, .rokDvacet p, .rokDevet p, .rokOsm p {
+        color: black;
+    }
+    .callInfo {
+        text-align: justify;
+    }
+    .imageVyjezdy {
+        display: none;
+    }
+}

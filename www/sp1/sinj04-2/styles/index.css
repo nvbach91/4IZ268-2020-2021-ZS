@@ -1,0 +1,406 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.layout {
+    padding: 5px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: rgb(112, 86, 14);
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 25%;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: white;
+    color: black;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+    display: table;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+}
+
+.active {
+    border-bottom: 3px solid white;
+}
+
+/* Uvod */
+
+.intro {
+    width: 100%;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.column1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* Datadisky */
+
+body {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex: wrap;
+}
+
+.datadisk-head {
+    text-align: center;
+    border-bottom: 2px solid grey;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.datadisk {
+    border-bottom: 2px solid grey;
+}
+
+.text-l {
+    float: left;
+    width: 80%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.image-r {
+    padding-right: 20px;
+    float: right;
+    width: 20%;
+}
+
+.text-r {
+    padding-left: 50px;
+    padding-right: 50px;
+    float: right;
+    width: 80%;
+}
+
+.image-l {
+    padding-left: 20px;
+    float: left;
+    width: 20%;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.datadisk-main {
+    width: 80%;
+    float: left;
+}
+
+.datadisk-aside {
+    margin-top: 20px;
+    padding: 20px;
+    width: 20%;
+    float: right;
+    border: 1px solid grey;
+}
+
+.datadisk-aside a {
+    color: white;
+}
+
+/* Svět */
+
+.text-world {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.imgr {
+    float: right;
+    width: 40%;
+    margin-bottom: 50px;
+    margin-right: 70px;
+}
+
+.imgl {
+    margin-left: 70px;
+    width: 35%;
+    float: left;
+    margin-bottom: 50px;
+}
+
+.img-world {
+    width: 100%;
+    height: auto;
+}
+
+.body-world-faction {
+    display: flex;
+    text-align: center;
+    margin-top: 50px;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.body-world-faction a {
+    color: white;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+.body-world-faction a:hover {
+    background-color: white;
+    color: black;
+}
+
+.text-world-faction {
+    text-align: center;
+    width: 50%;
+}
+
+.img-horde {
+    float: left;
+    width: 25%;
+}
+
+.img-ali {
+    float: right;
+    width: 25%;
+}
+
+/* frakce */
+
+.head-faction {
+    text-align: left;
+    border-bottom: 1px solid gray;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.text {
+    float: left;
+    width: 70%;
+    padding-left: 200px;
+    padding-right: 130px;
+}
+
+.horde {
+    width: 30%;
+    float: right;
+}
+
+.text2 {
+    text-align: justify;
+    float: right;
+    width: 70%;
+    padding-left: 130px;
+    padding-right: 200px;
+}
+
+.ali {
+    width: 30%;
+    float: left;
+}
+
+.back {
+    color: white;
+    text-decoration: none;
+    padding-right: 5px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.frakce {
+    border-bottom: 2px solid grey;
+}
+
+.text-frakce {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+/* Platba */
+
+.pay {
+    width: 70%;
+    float: left;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.pay-aside {
+    margin-top: 30px;
+    padding: 30px;
+    width: 30%;
+    float: right;
+    border: 1px solid grey;
+}
+
+.text-pay {
+    width: 100%;
+}
+
+.imgprepaid {
+    height: 300px;
+    width: 200px;
+}
+
+.imgsub {
+    width: 400px;
+    height: 200px;
+}
+
+a {
+    color: white;
+}
+
+@media screen and (max-width: 720px) {
+    .text-l {
+        width: 100%;
+        float: none;
+    }
+    .text-r {
+        width: 100%;
+        float: none;
+    }
+    .image-r {
+        width: 100%;
+        float: none;
+    }
+    .image-l {
+        width: 100%;
+        float: none;
+        padding-left: 0px;
+    }
+    .datadisk-aside {
+        width: 100%;
+    }
+    main {
+        width: 100%;
+    }
+    .pay-aside {
+        width: 100%;
+    }
+    .pay {
+        width: 100%;
+    }
+    .text-l {
+        width: 100%;
+        float: none;
+    }
+    .text-r {
+        width: 100%;
+        float: none;
+    }
+    .imgr {
+        width: 100%;
+        float: none;
+        margin-right: 0px;
+    }
+    .imgl {
+        width: 100%;
+        float: none;
+        margin-left: 0px;
+    }
+    .text {
+        width: 100%;
+    }
+    .horde {
+        float: none;
+        width: 100%;
+    }
+    .text2 {
+        width: 100%;
+    }
+    .ali {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media print {
+    * {
+        color: black;
+        background-color: white;
+    }
+    header {
+        display: none;
+    }
+    .datadisk-aside {
+        display: none;
+    }
+    .datadisk-main {
+        width: 100%;
+    }
+    .text-l .text-r {
+        padding: 0px;
+    }
+    .datadisk-head {
+        border-bottom: none;
+    }
+    .datadisk {
+        border-bottom: none;
+    }
+    .back {
+        display: none;
+    }
+    .head-faction {
+        border-bottom: none;
+        padding: 0px;
+    }
+    .frakce {
+        border-bottom: none;
+    }
+    .frakce2 {
+        border-bottom: none;
+    }
+    .text {
+        padding: 10px;
+    }
+    .text2 {
+        padding: 10px;
+    }
+}
