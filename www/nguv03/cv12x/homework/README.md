@@ -3,7 +3,7 @@
 Vytvořte aplikaci, která bude umět zobrazit informace o uživatelích na GitHubu. Použijte **jQuery** pro manupulaci s DOM a AJAX. 
 
 ### Jak to funguje
-Aplikace nejprve vyzve uživatele k **zadání** uživatelského jména **GitHub uživatele**. Po každém submitnutí pošle **GET požadavek** na **GitHub API** a v případě nalezení uživatele zobrazí jeho informace v HTML (podle obrázku dole). V případě nenalezení uživatele aplikace vypíše příslušnou hlášku do HTML stránky. 
+Aplikace nejprve vyzve uživatele k **zadání** uživatelského jména **GitHub uživatele**. Po každém submitnutí asynchronním způsobem (tj. bez reloadu stránky) pošle **GET požadavek** na **GitHub API** a v případě nalezení uživatele zobrazí jeho informace v HTML (podle obrázku dole). V případě nenalezení uživatele aplikace vypíše příslušnou hlášku do HTML stránky. 
 
 Po zobrazení základních informací aplikace pošle další **GET požadavek** na GitHub API a načte **seznam repozitářů** vyhledaného uživatele a zobrazí je na stránce pod uživatelem.
 
