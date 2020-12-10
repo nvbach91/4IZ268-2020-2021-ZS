@@ -11,6 +11,11 @@ const ensureDirectoryExistence = (filePath) => {
     fs.mkdirSync(dirname);
 };
 const urls = [
+'https://eso.vse.cz/~pfej00/sp1/index.html',
+'https://eso.vse.cz/~pfej00/sp1/home/index.html',
+'https://eso.vse.cz/~pfej00/sp1/galery/index.html',
+'https://eso.vse.cz/~pfej00/sp1/projects/index.html',
+'https://eso.vse.cz/~pfej00/sp1/css/stylesheet.css',
     // 'https://eso.vse.cz/~seip00/sp1/index.html',
     // 'https://eso.vse.cz/~seip00/sp1/pc/index.html',
     // 'https://eso.vse.cz/~seip00/sp1/ntb/index.html',
