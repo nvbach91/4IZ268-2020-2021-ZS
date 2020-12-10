@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+
+}
+.card {
+    flex: 0 0 calc(100%/6 - 1.2rem);
+    padding: 1rem;
+    color: transparent;
+    background-color: #01cdc7;
+    box-shadow: 3px 4px 5px rgba(0,0,0, .1);
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    margin: .6rem;
+    text-align: center;
+    transition: all .3s;
+    transform: rotateY(180deg);
+
+}
+.card.clicked {
+    transform: rotateY(360deg);
+    background-color: #01cdc7;
+    color: #ffffff;
+}
+.card:hover {
+    box-shadow: 0px 0px 10px 8px rgba(255, 153, 162, 1);
+}
+.card.guessed {
+    background-color: royalblue;
+}
+.card.guessed:hover {
+    box-shadow: none;
+}
