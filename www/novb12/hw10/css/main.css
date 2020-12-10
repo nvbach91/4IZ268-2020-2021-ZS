@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.card {
+    background-image: url(https://live.staticflickr.com/2506/3899151934_12452ff679_b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: transparent;
+    font-size: 20px;
+    border: 20px solid rgb(10, 104, 30);
+    border-radius: 5%;
+    margin: 0.6%;
+    width: 15%;
+    height: 10%;
+    padding: 50px;
+    align-items: center;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.card:hover {
+    border-color: rgb(8, 43, 1);
+}
+
+.card:active {
+    transform: scale(.9);
+    transition: transform .2s;
+}
+
+.card.turned {
+    background: rgb(8, 43, 1);
+    border: 20px solid rgb(10, 104, 30);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
