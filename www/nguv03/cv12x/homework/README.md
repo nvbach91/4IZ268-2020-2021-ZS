@@ -35,10 +35,18 @@ const url = `${baseApiUrl}/users/${searchValue}?client_id=${CLIENT_ID}&client_se
 
 const userProfileContainer = $('#user-profile')
 
-$.getJSON(url).done(function(user) {
+const renderUser = (user) => {
+    // ...
+};
+
+const fetchRepositories = (userLogin) => {
+    // ...
+};
+
+$.getJSON(url).done((user) => {
     renderUser(user);
     fetchRepositories(user.login);
-}).fail(function() {
+}).fail(() => {
     userProfileContainer.empty().append('<p>User not found</p>');
 });
 ```
