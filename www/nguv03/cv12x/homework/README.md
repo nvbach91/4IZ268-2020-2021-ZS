@@ -27,19 +27,19 @@ Abyste mohli libovolně používat **GitHub API**, je potřeba si zaregistrovat 
 const CLIENT_ID = '...';     // client_id získáte po registraci OAuth účtu
 const CLIENT_SECRET = '...'; // client_secret získáte po registraci OAuth účtu
 const baseApiUrl = 'https://api.github.com';
-// sestavujeme URL, který obsahuje parametry client_id a client_secret
+// sestavujeme URL, který obsahuje parametry CLIENT_ID a CLIENT_SECRET
 // každý parametr se určuje v podobě klíč=hodnota, parametry se oddělují ampersandem, 
 // na začátek přidáme otazník
 // např. ?client_id=abcdef&client_secret=fedcba
-const url = `${baseApiUrl}/users/${searchValue}?client_id=${client_id}&client_secret=${client_secret}`;
+const url = `${baseApiUrl}/users/${searchValue}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
 
-const userProfile = $('#user-profile')
+const userProfileContainer = $('#user-profile')
 
 $.getJSON(url).done(function(user) {
     renderUser(user);
     fetchRepositories(user.login);
 }).fail(function() {
-    userProfile.html('<p>User not found</p>');
+    userProfileContainer.empty().append('<p>User not found</p>');
 });
 ```
 Můžete použít výchozí kód uvedený na začátku této stránky
