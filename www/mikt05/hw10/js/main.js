@@ -88,4 +88,4 @@ cities.forEach((city) => {
     const newCard = addCard(city);
     newCards.push(newCard);
 });
-field.append(...newCards);
+gameField.append(...newCards);
