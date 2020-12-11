@@ -1,6 +1,6 @@
 //vytvoření konstant skrz id
-let gameField = document.querySelector('#game-field');
-let points = document.querySelector('#points');
+const gameField = document.querySelector('#game-field');
+const points = document.querySelector('#points');
 
 //definice karet měst, duplikace a náhodné zamíchání
 let cities = ['Praha', 'Trutnov', 'Brno', 'Ostrava', 'Plzeň',
@@ -50,7 +50,7 @@ let flippingCards = (card) => {
             //pokud počet obrácených karet je rovna počtu karet, vypíše se vítězná hláška
             if (flippedCards === cities.length) {
                 setTimeout(function () {
-                    alert(`Vaše skóre je ${amountOfPoints}, dobrá práce! Stránku můžete aktualizovat a vyzkoušet znova`);
+                    alert(`Vaše skóre je ${amountOfPoints}, dobrá práce! Stránku můžete aktualizovat a vyzkoušet si hru znova`);
                 }, 500);
             }
         }
@@ -83,10 +83,9 @@ let addCard = (cityName) => {
 }
 //pro každé město v seznamu měst se provedou pokyny níže v kódu.
 //pro město na vstupu se vytvoří nová karta, která je vložena do array
-//propojení dvou arrayu
-let newCards = [];
+const newCards = [];
 cities.forEach((city) => {
     const newCard = addCard(city);
     newCards.push(newCard);
-    cities.concat(cities);
 });
+field.append(...newCards);
