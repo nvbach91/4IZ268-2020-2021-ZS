@@ -1,0 +1,371 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070707;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.menu-item a,
+.menu-item i {
+    margin: 5px;
+}
+
+head,
+.coffees,
+.main,
+footer {
+    background-color: white;
+}
+
+footer {
+    padding: 50px 0 0 0;
+    text-align: center;
+}
+
+.logo-picture {
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 0 0 50%;
+}
+
+.header,
+.menu,
+.munu-items {
+    display: flex;
+}
+
+.header {
+    flex-direction: column;
+}
+
+.menu {
+    justify-content: center;
+}
+
+.munu-items {
+    flex-direction: row;
+}
+
+nav ul li {
+    margin: 15px;
+    display: inline;
+}
+
+nav ul li,
+nav a {
+    color: white;
+}
+
+.menu-item,
+.active {
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    border: 10px solid #070707;
+    border-radius: 50px;
+    padding: 5px 10px 5px 10px;
+}
+
+.menu-item {
+    background-color: rgb(253, 102, 2);
+}
+
+.menu-item:hover {
+    background: rgb(138, 57, 20);
+}
+
+.active {
+    background-color: rgb(253, 7, 7);
+}
+
+.coffee,
+.coffees,
+.coffee-machine {
+    text-align: center;
+}
+
+.text-coffee-mach,
+.text-coffee {
+    margin-left: 50px;
+    margin-right: auto;
+    text-align: left
+}
+
+.text-coffee h3,
+.text-coffee-mach h3 {
+    text-align: center;
+}
+
+.test {
+    text-align: center;
+}
+
+.coffee,
+.coffee-machine {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100%/4);
+    border: 5px solid #070707;
+}
+
+.coffees {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.texts .text {
+    text-align: justify;
+    padding: 0 500px 0 500px;
+}
+
+.texts {
+    padding: 50px;
+}
+
+a.coffee-link {
+    color: #fff;
+    /* цвет текста */
+    text-decoration: none;
+    /* убирать подчёркивание у ссылок */
+    user-select: none;
+    /* убирать выделение текста */
+    background: rgb(212, 75, 56);
+    /* фон кнопки */
+    padding: .7em 1.5em;
+    /* отступ от текста */
+    outline: none;
+    /* убирать контур в Mozilla */
+    margin: 30%;
+}
+
+a.coffee-link:hover {
+    background: rgb(232, 95, 76);
+}
+
+
+/* при наведении курсора мышки */
+
+a.coffee-link:active {
+    background: rgb(152, 15, 0);
+}
+
+
+/* при нажатии */
+
+
+/*kontakt*/
+
+.information,
+.form {
+    padding: 10px 20px;
+    width: 1020px;
+    border-radius: 7px;
+    background-color: rgb(232, 95, 76);
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.information {
+    text-align: center;
+}
+
+.form {
+    text-align: left;
+    margin: 10px auto 10px auto;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+iframe {
+    width: 600px;
+    height: 500px;
+    border: none;
+    border-radius: 2px;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+button {
+    background-color: rgb(152, 15, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    border: 1px solid black;
+}
+
+
+/*/kontakt*/
+
+.title {
+    justify-content: center;
+}
+
+.title,
+.mapouter {
+    text-align: center;
+}
+
+.bigboard,
+.bigboard2 {
+    margin: 7px 7px 7px 7px;
+    /* Отступы вокруг картинки */
+}
+
+.bigboard {
+    float: left;
+    /* Выравнивание по левому краю */
+}
+
+.bigboard2 {
+    float: right;
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+    .layout .menu .menu-item {
+        display: none;
+    }
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        display: none;
+    }
+    .form {
+        display: none;
+    }
+    .mapouter,
+    img {
+        display: none
+    }
+    .texts .text {
+        text-align: left;
+        padding: 0 0 0 0;
+    }
+    .coffee,
+    .coffee-machine {
+        border: 0 solid #070707;
+        width: calc(100%/3);
+    }
+    .header {
+        height: 0;
+    }
+    .information {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .texts .text {
+        text-align: left;
+        padding: 0 0 0 0;
+    }
+    .bigboard,
+    .bigboard2 {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .bigboard,
+    .bigboard2 {
+        width: 22%;
+    }
+    .coffee,
+    .coffee-machine {
+        width: calc(100%/3);
+    }
+    .information,
+    .form {
+        width: 500px;
+        padding: 0 10px 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .menu-item,
+    .active {
+        width: 180px;
+        height: 60px;
+        border-radius: 20px;
+    }
+    .menu-item a,
+    .menu-item i {
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .menu-item {
+        width: 140px;
+        height: 70px;
+        font-size: 15px;
+    }
+    nav ul li {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .information,
+    .form {
+        width: 400px;
+    }
+    iframe {
+        width: 350px;
+        height: 250px;
+    }
+    .coffee,
+    .coffee-machine {
+        width: calc(100%/2);
+    }
+    .menu-item {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .bigboard,
+    .bigboard2 {
+        display: none;
+    }
+    .menu-item {
+        width: 80px;
+        font-size: 12px;
+    }
+    .foto {
+        width: 80%;
+    }
+    .text-coffee-mach,
+    .text-coffee {
+        font-size: 15px;
+    }
+    a.coffee-link {
+        margin: 15%;
+    }
+}

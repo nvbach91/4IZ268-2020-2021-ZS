@@ -1,0 +1,166 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+html,body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Intro */
+.intro {
+    max-height: 100vh; 
+    overflow: hidden;
+    position: relative;
+}
+.intro:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0 ,0, .7);
+    position: absolute;
+    z-index:2;
+}
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 3;
+}
+.intro__title {
+    margin: 0;
+
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+}
+.header__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.video{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+}
+.video__media {
+
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.form-area {
+    margin:30px auto;
+    max-width: 450px;
+    padding: 10px 50px 10px 30px ;
+    background: #fafafa;
+}
+.form-area h1{
+    text-align: center;
+    font-family: bignoodletitling;
+    font-size: 2rem;
+    color: #242424;
+}
+.form-area .single-form{
+    position: relative;
+    margin-bottom: 30px;
+}
+.form-area .single-form input,
+.form-area .single-form textarea {
+    width: 100%;
+    padding: 10px;
+}
+.form-area .single-form input:focus + label,
+.form-area .single-form input:valid + label,
+.form-area .single-form textarea:focus + label,
+.form-area .single-form input:valid + label{
+color: #00b2b0;
+font-size: .9rem;
+font-weight: bold;
+top: -10px;
+}
+
+.form-area .single-form textarea {
+    height: 120px;
+}
+.form-area label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #777;
+    font-size: .9rem;
+    background: #fff;
+    transition: .5s;
+}
+.form-area a {
+    text-decoration: none;
+    background: #242424;
+    color: #ccc7af;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    font-family: bignoodletitling;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+
+
+/* Intro */
+
+.section {
+    height: 30%;
+    background-color: #242424;
+
+}
+
+
+
+@font-face {
+    font-family: "bignoodletitling"; 
+    src: url("../big_noodle_titling.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+
+@media (max-width: 770px) {
+    /* Intro */
+    .intro {
+        min-height: 650px;
+    }
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
+    /* Menu */
+    .menu {
+        display: none;
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+    }
+    .menu_link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+}

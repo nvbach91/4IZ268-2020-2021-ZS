@@ -1,0 +1,195 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+    font-family: 'Merriweather', serif;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    background: url("../img/whale2.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+}
+
+.line__after {
+    display: block;
+    background: linear-gradient(to bottom, #2f282f, #fff);
+    width: 100%;
+    height: 70px;
+}
+
+.intro__inner {
+    width: 100%;
+    text-align: center;
+}
+
+.intro__title {
+    color: #fff;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-top: 80px;
+    font-family: bignoodletitling;
+    letter-spacing: 7px;
+} 
+/* Intro */
+
+/* Us */
+.us {
+    padding:30px 15px;
+    display: flex;
+	background-color:#fff; 
+	width: 100%;
+}
+/* Us - left column */
+.us .mainColumn {
+    width: 100%;
+    overflow: auto;
+}
+.us .mainColumn .bigArticle{
+    width: 80%;
+    background-color: #f6f6f6;
+    padding: 1%;
+}
+.us .mainColumn .bigArticle img, .us .mainColumn .article img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.us .mainColumn .article iframe {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+}
+.us .mainColumn .bigArticle h2, .us .mainColumn .article h2{
+    font-family: bignoodletitling;
+    font-weight: normal;
+    font-size: 1.4em;
+    color: #3f3838;
+}
+.us .mainColumn .bigArticle p, .us .mainColumn .article p{
+    width: 100%;
+}
+.us .mainColumn .article {
+    width: 40%;
+    background-color: #f6f6f6;
+    padding: 1%;
+    float:left;
+    margin-top: 20px;
+}
+
+/* Us */
+
+/* Team */
+.team{
+	min-height: 100vh;
+    padding:60px 15px;
+    display: flex;
+	background-color:#fff; 
+	width: 100%;
+}
+.team h2{
+	font-family:  bignoodletitling;
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-transform: uppercase;
+	color:#000000;
+	margin:0;
+	padding-bottom:60px;
+	text-align: center;
+}
+.team .card{
+    width:25%;
+	float: left;
+	padding:0px 15px;
+}
+.team .card .box {
+    height: 450px;
+	padding:15px;
+	background-color: #2d3035;
+	border-radius:5px;
+	transition: margin 1s ease,box-shadow 1s ease;
+}
+.team .card .box:hover{
+	margin-top:-15px;
+	box-shadow:0px 0px 40px black;
+}
+.team .card .box img{
+	width:150px;
+	display: block;
+	margin:10px auto;
+	border-radius:50%;
+
+}
+
+.team .card .box h4{
+	font-size: 20px;
+	margin:20px 0px 10px;
+	color:#10b9a3;
+	text-align: center;
+	font-weight: 700;
+}
+
+.team .card .box p{
+	color:#b9b9b9;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: center;
+	padding:0px 20px;
+}
+/* Team */
+
+@font-face {
+    font-family: "bignoodletitling"; 
+    src: url("../big_noodle_titling.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+
+
+@media (max-width: 770px) {
+    /* Intro */
+    .intro {
+        min-height: 650px;
+    }
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
+    /* Menu */
+    .menu {
+        display: none;
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+    }
+    .menu_link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+}
+
+        
+    
+        

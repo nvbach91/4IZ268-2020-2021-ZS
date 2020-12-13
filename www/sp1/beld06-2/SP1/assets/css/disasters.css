@@ -1,0 +1,236 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Intro */
+.intro {
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    background: url("../img/whale.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 3;
+}
+.intro__title {
+    margin: 0;
+
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+}
+.header__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.video{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+}
+.video__media {
+
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+
+/* Works */
+.disasters {
+    display: flex;
+}
+
+.disasters__col {
+    flex: 1 1 0;
+}
+
+.disasters__item {
+    position: relative;
+
+    background: linear-gradient(to bottom, rgb(1, 30, 53) , rgb(0, 255, 213));
+}
+
+.disasters__item:hover .disasters__image {
+    opacity: .1;
+}
+
+.disasters__item:hover .disasters__info {
+    opacity: 1;
+}
+
+.disasters__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    transition: opacity .2s linear;
+}
+
+.disasters__info {
+    width: 100%;
+    padding: 0 15px;
+
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
+    transform: translate3d(0, -50%, 0);
+    transition: opacity .2s linear;
+}
+
+.disasters__title {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+.us__header {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    padding-bottom: 30px;
+
+    text-align: center;
+} 
+.us__header iframe {
+    width: 100%;
+    height: 60vh;
+}
+
+.us__suptitle {
+font-family: bignoodletitling;
+letter-spacing: 5px;
+margin-top: 50px;
+font-size: 40px;
+color: #333;
+}
+
+.us__title {
+    margin-top: 30px;
+    font-size: 30px;
+    color: #333;
+    text-transform: uppercase;
+    font-family: bignoodletitling;
+    letter-spacing: 6px;
+}
+
+.us__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 30px auto;
+
+    background-color: #242424;
+}
+
+
+/* Reviews */
+.dis_stories {
+    position: relative;
+}
+
+.dis_stories__item {
+    min-height: 300px;
+    padding-left: 255px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.dis_stories__item:after{
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    height: 2px;
+    margin-right: 10px;
+
+    background-color: #005e75;
+}
+.dis_stories__image {
+    display: block;
+    width: 210px;
+    height: 210px;
+
+    border: 6px solid #95e1d3;
+    border-radius: 30%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.dis_stories__text {
+    margin-bottom: 15px;
+
+    font-size: 24px;
+    font-weight: 300;
+    color: rgb(100, 93, 93);
+}
+
+@font-face {
+    font-family: "bignoodletitling"; 
+    src: url("../big_noodle_titling.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+ } 
+ @media (max-width: 770px) {
+   /* Intro */
+    .intro {
+        min-height: 650px;
+    }
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
+    /* Menu */
+    .menu {
+        display: none;
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+    }
+    .menu_link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+}
+    
