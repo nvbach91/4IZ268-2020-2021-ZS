@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 const bluebird = require('bluebird');
 const ensureDirectoryExistence = (filePath) => {
-    var dirname = path.dirname(filePath);
+    const dirname = path.dirname(filePath);
     if (fs.existsSync(dirname)) {
         return true;
     }
@@ -11,13 +11,21 @@ const ensureDirectoryExistence = (filePath) => {
     fs.mkdirSync(dirname);
 };
 const urls = [
-'https://eso.vse.cz/~bora13/sp1/index.html',
-'https://eso.vse.cz/~bora13/sp1/aboutme.html',
-'https://eso.vse.cz/~bora13/sp1/pricing.html',
-'https://eso.vse.cz/~bora13/sp1/contact.html',
-'https://eso.vse.cz/~bora13/sp1/nutrition.html',
-'https://eso.vse.cz/~bora13/sp1/training.html',
-'https://eso.vse.cz/~bora13/sp1/assets/styles.css',
+    'https://eso.vse.cz/~kozo01/sp1/homepage/',
+    'https://eso.vse.cz/~kozo01/sp1/about/',
+    'https://eso.vse.cz/~kozo01/sp1/services/',
+    'https://eso.vse.cz/~kozo01/sp1/team/',
+    'https://eso.vse.cz/~kozo01/sp1/contact/',
+    'https://eso.vse.cz/~kozo01/sp1/assets/css/style.css',
+
+// 'https://eso.vse.cz/~bora13/sp1/index.html',
+// 'https://eso.vse.cz/~bora13/sp1/aboutme.html',
+// 'https://eso.vse.cz/~bora13/sp1/pricing.html',
+// 'https://eso.vse.cz/~bora13/sp1/contact.html',
+// 'https://eso.vse.cz/~bora13/sp1/nutrition.html',
+// 'https://eso.vse.cz/~bora13/sp1/training.html',
+// 'https://eso.vse.cz/~bora13/sp1/assets/styles.css',
+
     // 'https://eso.vse.cz/~ayur00/sp01/home/',
     // 'https://eso.vse.cz/~ayur00/sp01/seznam-jazyku/',
     // 'https://eso.vse.cz/~ayur00/sp01/seznam-ucitelu/',
