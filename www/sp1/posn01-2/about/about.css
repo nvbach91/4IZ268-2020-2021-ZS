@@ -1,0 +1,159 @@
+
+*{
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+h1{
+    text-align: center;
+    font-size: 50px;
+    padding:20px;
+}
+
+h3{
+  padding:10px;
+}
+h6{
+  font-size: 30px !important;
+  text-align: center;
+}
+.main{
+  height:1000px;
+  max-width: 1280px;
+}
+#row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main > div {
+    margin: auto;
+    max-width: 1280px;
+  }
+.topnav {
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav a:hover {
+    background-color: rgb(245, 235, 235);
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #aa928f;
+    color: white;
+  }
+#leftside{
+  float:left;
+  width:40%;
+  padding-right:30px;
+}
+#rightside{
+  float:right;
+  width:60%;
+}
+
+.info{
+  margin-top:30px;
+}
+
+#uppercolumn {   
+  width:100%
+}
+
+.img_me {
+  width: 100%;
+  padding: 20px;
+  height:100%;
+  opacity:0.8;
+}
+.img_me:hover{
+  opacity:1;
+}
+
+.card {
+  padding: 20px;
+}
+
+.parallax {
+  background-image: url(../img/nejhezcilisticka.jpg);
+  min-height: 700px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+}
+
+#footer {
+  text-align: center;
+  background: rgb(184, 134, 125);
+  margin-top: 100px;
+}
+.favicons{
+  padding:20px;
+  font-size: 30px;
+}
+.fa:hover{
+  opacity:0.6;
+}
+a:visited,
+a:active,
+a:hover,
+a{
+  color:black;
+}
+
+@media screen and (max-width: 800px) {
+  #leftcolumn, #rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  #lefside, #rightside {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+@media print{
+  body{
+      background: initial;
+  }
+  .layout {
+      min-height: 0;
+  }
+  header {
+      display:none;
+  }
+  .nav-container{
+    display:none;
+  }
+  .parallax{
+    display:none;
+  }
+  h1{
+    font-size: 20px;
+  }
+  footer { 
+    display: none; 
+  }
+}

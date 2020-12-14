@@ -1,0 +1,21 @@
+
+  h1{
+    padding-left: 5%;
+  }
+  
+  .column1 a, .column2 a {
+    text-decoration: none;
+  }
+
+  .column1 , .column2  {
+    flex-basis: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;
+  }
+
+
+
+
+
+

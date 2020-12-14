@@ -11,6 +11,68 @@ const ensureDirectoryExistence = (filePath) => {
     fs.mkdirSync(dirname);
 };
 const urls = [
+'https://eso.vse.cz/~bora13/sp1/index.html',
+'https://eso.vse.cz/~bora13/sp1/aboutme.html',
+'https://eso.vse.cz/~bora13/sp1/pricing.html',
+'https://eso.vse.cz/~bora13/sp1/contact.html',
+'https://eso.vse.cz/~bora13/sp1/nutrition.html',
+'https://eso.vse.cz/~bora13/sp1/training.html',
+'https://eso.vse.cz/~bora13/sp1/assets/styles.css',
+    // 'https://eso.vse.cz/~ayur00/sp01/home/',
+    // 'https://eso.vse.cz/~ayur00/sp01/seznam-jazyku/',
+    // 'https://eso.vse.cz/~ayur00/sp01/seznam-ucitelu/',
+    // 'https://eso.vse.cz/~ayur00/sp01/about-us/',
+    // 'https://eso.vse.cz/~ayur00/sp01/about-founder/',
+    // 'https://eso.vse.cz/~ayur00/sp01/assets/css/style.css',
+
+
+// 'https://eso.vse.cz/~klep03/sp1/',
+// 'https://eso.vse.cz/~klep03/sp1/novinky/',
+// 'https://eso.vse.cz/~klep03/sp1/akce/',
+// 'https://eso.vse.cz/~klep03/sp1/o_nas/',
+// 'https://eso.vse.cz/~klep03/sp1/kontakty/',
+// 'http://eso.vse.cz/~klep03/sp1/css/main.css',
+// 'http://eso.vse.cz/~klep03/sp1/css/print.css',
+
+// 'https://eso.vse.cz/~ngut37/sp1/',
+// 'https://eso.vse.cz/~ngut37/sp1/services/',
+// 'https://eso.vse.cz/~ngut37/sp1/gallery/',
+// 'https://eso.vse.cz/~ngut37/sp1/about/',
+// 'https://eso.vse.cz/~ngut37/sp1/contacts/',
+// 'https://eso.vse.cz/~ngut37/sp1/assets/css/main.css',
+
+// 'https://eso.vse.cz/~posn01/SP1/mainpage/index.html',
+// 'https://eso.vse.cz/~posn01/SP1/about/index.html',
+// 'https://eso.vse.cz/~posn01/SP1/recipes/index.html',
+// 'https://eso.vse.cz/~posn01/SP1/blog/index.html',
+// 'https://eso.vse.cz/~posn01/SP1/galerie/index.html',
+// 'https://eso.vse.cz/~posn01/SP1/mainpage/mainpage.css',
+// 'https://eso.vse.cz/~posn01/SP1/about/about.css',
+// 'https://eso.vse.cz/~posn01/SP1/recipes/recipes.css',
+// 'https://eso.vse.cz/~posn01/SP1/blog/blog.css',
+// 'https://eso.vse.cz/~posn01/SP1/galerie/galerie.css',
+
+// 'https://eso.vse.cz/~kyvt00/sp1/kontakt/',
+// 'https://eso.vse.cz/~kyvt00/sp1/kariera/',
+// 'https://eso.vse.cz/~kyvt00/sp1/akce/',
+// 'https://eso.vse.cz/~kyvt00/sp1/vyzkum/',
+// 'https://eso.vse.cz/~kyvt00/sp1/oNas/',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/Header-Footer.css',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/index.css',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/vyzkum.css',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/kariera.css',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/akce.css',
+// 'https://eso.vse.cz/~kyvt00/sp1/css/kontakt.css',
+
+// 'https://eso.vse.cz/~mala12/sp1/main-page/',
+// 'https://eso.vse.cz/~mala12/sp1/rules/',
+// 'https://eso.vse.cz/~mala12/sp1/characters/',
+// 'https://eso.vse.cz/~mala12/sp1/dungeon-master/',
+// 'https://eso.vse.cz/~mala12/sp1/race/',
+// 'https://eso.vse.cz/~mala12/sp1/skills/',
+// 'https://eso.vse.cz/~mala12/sp1/profession/',
+// 'https://eso.vse.cz/~mala12/sp1/materials/',
+// 'https://eso.vse.cz/~mala12/sp1/dragon-lair-online/',
 
 // 'https://eso.vse.cz/~tuma02/sp1/',
 // 'https://eso.vse.cz/~tuma02/sp1/prodej_kavy/',
@@ -19,15 +81,15 @@ const urls = [
 // 'https://eso.vse.cz/~tuma02/sp1/servis/',
 // 'https://eso.vse.cz/~tuma02/sp1/assets/css/main.css',
 
-'https://eso.vse.cz/~kozo01/sp1/homepage/',
-'https://eso.vse.cz/~kozo01/sp1/about/about.html',
-'https://eso.vse.cz/~kozo01/sp1/service/service.html',
-'https://eso.vse.cz/~kozo01/sp1/team/team.html',
-'https://eso.vse.cz/~kozo01/sp1/contact/contact.html',
-'https://eso.vse.cz/~kozo01/sp1/css/style.css',
-'https://eso.vse.cz/~kozo01/sp1/css/rtl.css',
-'https://eso.vse.cz/~kozo01/sp1/css/responsive.css',
-'https://eso.vse.cz/~kozo01/sp1/js/main.js',
+// 'https://eso.vse.cz/~kozo01/sp1/homepage/',
+// 'https://eso.vse.cz/~kozo01/sp1/about/about.html',
+// 'https://eso.vse.cz/~kozo01/sp1/service/service.html',
+// 'https://eso.vse.cz/~kozo01/sp1/team/team.html',
+// 'https://eso.vse.cz/~kozo01/sp1/contact/contact.html',
+// 'https://eso.vse.cz/~kozo01/sp1/css/style.css',
+// 'https://eso.vse.cz/~kozo01/sp1/css/rtl.css',
+// 'https://eso.vse.cz/~kozo01/sp1/css/responsive.css',
+// 'https://eso.vse.cz/~kozo01/sp1/js/main.js',
 
 // 'https://eso.vse.cz/~kasm13/sp1/uvod/',
 // 'https://eso.vse.cz/~kasm13/sp1/covid19/',
@@ -796,7 +858,7 @@ bluebird.each(urls, (url) => {
         const parts = url.split('/');
         const xname = parts[3].replace('~', '');
         const file = parts.slice(5).join('/');
-        const filePath = `./${xname}/${file.includes('.') ? file : `${file}index.html`}`;
+        const filePath = `./${xname}/${file.includes('.') ? file : `${file}/index.html`}`;
         // console.log(filePath);
         ensureDirectoryExistence(filePath);
         fs.writeFileSync(filePath, resp.data);

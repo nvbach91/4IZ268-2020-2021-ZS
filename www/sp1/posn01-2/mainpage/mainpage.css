@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+h1{
+  padding:25px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 15px;
+  color:white;
+  font-size: 40px;
+}
+h3{
+  padding:10px;
+}
+h6{
+  font-size: 30px !important;
+  text-align: center;
+}
+.topnav {
+  background-color: white;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: rgb(245, 235, 235);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #aa928f;
+  color: white;
+}
+
+header {
+  width: 100vw;
+  height: 95vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/nejhezcilisticka.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  width: 500px;
+  text-align: center;
+}
+
+#photography {
+  font-size: 60px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  margin-bottom: 20px;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: white;
+  font-size: 18px;
+}
+
+header button {
+  border: 2px solid white;
+  color: white;
+  font-family: 'Roboto', Segoe UI, calibri, Helvetica, serif;
+  padding: 10px;
+  font-size: 18px;
+  width: 160px;
+  border-radius: 500px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+header button:hover, button:active {
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 676px) {
+  .description {
+    width: 95%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  #photography {
+    font-size: 45px;
+  }
+  
+  header p {
+    font-size: 15px;
+    width: 85%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  header button {
+    font-size: 16px;
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #photography {
+    font-size: 35px;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+}
+@media print{
+  .topnav{
+    display:none;
+  }
+  .main-header{
+    margin-top:0;
+    padding:0;
+    border:0;
+  }
+}

@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+  }
+ 
+  h3{
+    padding:10px;
+  }
+  h6{
+    font-size: 30px !important;
+    text-align: center;
+  }
+  .nadpis{
+    visibility: hidden;
+  }
+.topnav {
+  background-color: white;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: rgb(245, 235, 235);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #aa928f;
+  color: white;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 6px;
+}
+.column {
+  -ms-flex: calc(100%/3); 
+  flex: calc(100%/3);
+  max-width: calc(100%/3);
+  padding: 0 6px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+.footer {
+  text-align: center;
+  background: rgb(184, 134, 125);
+  margin-top: 100px;
+}
+.favicons{
+  padding:20px;
+  font-size: 30px;
+}
+.fa:hover{
+  opacity:0.6;
+}
+a:visited,
+a:active,
+a{
+  color:black;
+}
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}

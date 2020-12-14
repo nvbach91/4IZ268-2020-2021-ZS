@@ -1,0 +1,34 @@
+  .column1, .column3{
+    flex-basis: 50%;
+    padding-left: 5%;
+    padding-right: 2.5%;
+    text-align: left;
+  }
+    .column2, .column4  {
+    flex-basis: 50%;
+    padding-right: 2.5%;
+    padding-top: 2%;
+  }
+
+  .column2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .column4 iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+	
+  .column3 a {
+	text-decoration: none;
+  }	
+
+  a[href^="mail"]::before {
+    content: "🖂 ";
+  }
+
+  a[href^="tel"]::before {
+    content: "☎ ";
+  }

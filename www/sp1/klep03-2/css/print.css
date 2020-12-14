@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    height: 595px;
+    width: 842px;
+}
+
+.body-content {
+    max-width: 1200px;
+    min-height: fit-content;
+    margin: auto;
+    display: flex;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.page-heading {
+    margin: auto 10% auto 11%;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+header {
+    height: 120px;
+    display: flex;
+}
+
+aside {
+    display: none;
+}
+
+main {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.music-video {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    padding: 1%;
+}
+
+.text-container {
+    margin: auto 10px;
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-bottom: 10px;
+}
+
+.video {
+    max-height: 100%;
+}
+
+.polozka-popisek {
+    padding: 6px 0px 8px 5px;
+}
+
+.ikona {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.akce {
+    width: 100%;
+    display: flex;
+}
+
+.akce-picture {
+    width: 25%;
+    margin-top: 12px;
+}
+
+.akce-text {
+    margin: auto;
+    text-align: center;
+}
+
+.prispevek {
+    display: flex;
+}
+
+.prispevek-video {
+    width: 60%;
+    margin-left: 10%;
+}
+
+.odkazy-song {
+    margin: auto auto auto 0px;
+}
+
+.uvodni-fotka {
+    max-width: 30%;
+}
+
+.clen-kapely {
+    max-width: 100%;
+    display: flex;
+}
+
+.clen-kapely-fotka {
+    max-width: 25%;
+    margin-top: 10px;
+}
+
+.clen-kapely-text {
+    text-align: center;
+    margin: auto;
+}
+
+.clen-kapely-popis {
+    margin: auto;
+}
+
+.polozka-odkaz {
+    display: flex;
+    margin: auto 10px;
+}
+
+.youtube-iframe {
+    width: 30%;
+}
+
+.youtube-iframe-homepage {
+    width: 200px;
+    height: 200px;
+}
+
+footer {
+    min-height: 200px;
+    display: flex;
+}
+
+.footer-refs {
+    display: block;
+    width: 450px;
+    margin-left: 2%;
+}
+
+.footer-ref {
+    display: flex;
+    width: 70%;
+    height: 33.33%;
+}
+
+.footer-ref-logo {
+    height: 40px;
+    margin: auto 0px;
+}
+
+.footer-ref-title {
+    margin: auto 10px;
+}
+
+.copyright {
+    margin: auto 10px auto auto;
+}

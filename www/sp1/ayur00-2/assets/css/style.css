@@ -1,0 +1,319 @@
+body{
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/*Container*/
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/*Header*/
+.header {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+
+
+}
+
+/*navigation*/
+.nav {
+    display: flex;
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    margin-left: 50px;
+    color: #796767;
+    text-decoration: none;
+    opacity: 0.70;
+}
+
+.nav__link:first-child{
+    margin-left: 0;
+}
+
+.nav__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.nav .current {
+    color: #000000;
+    opacity: 1;
+}
+
+/*intro*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 78px;
+    margin-top: 150px;
+   
+    height: 515px;
+    width: 1000px;
+  
+
+}
+
+.intro__inner img {
+    display: block;
+
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    font-size: 65px;
+    line-height: 1;
+    color: black;
+    text-transform: uppercase;    
+}
+
+.intro__second{
+    font-size: 23px;
+    color: black;
+    line-height: 1.3;
+
+}
+
+/*secondbox*/
+.secondbox {
+    display: flex;
+    margin: 0;
+}
+
+.secondbox__items {
+    width: 50%;
+    text-align: left;
+    padding: 75px 20px;
+}
+
+.secondbox__title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.secondbox__text {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+/*Footer*/
+.footer {
+    padding: 15px 0;
+    background-color: #3a3e64;
+}
+
+.footer__wards {
+    font-size: 25px;
+    text-align: center;
+
+}
+
+/*mainbox*/
+.mainbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 78px;
+    margin-top: 150px;
+   
+  height: 575px;
+  width: 1375px;
+
+  background: #515369
+
+}
+
+.mainbox__title {
+    font-size: 50px;
+    text-align: center;
+
+}
+
+/*jazyky*/
+.jazyky {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+
+.jazyky__item {
+    width: 33.33333%;
+    text-align: center;
+    margin: 35px 0;
+
+    padding: 0 34px;
+}
+
+.jazyky__img {
+    margin-bottom: 20px;
+}
+
+.jazyky__title {
+    font-size: 16px;
+    color: black;
+   
+    margin-bottom: 13px;
+}
+
+.jazyky__text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #212529;
+
+}
+
+/*mainpart*/
+.mainpart {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 78px;
+    margin-top: 150px;
+   
+  height: 575px;
+  width: 1375px;
+
+  background: #515369
+  url("../image/teacher2.jpg");
+}
+
+.mainpart__title {
+    font-size: 45px;
+    text-align: center;
+}
+
+/*ucitele*/
+.ucitele {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 100px;
+}
+
+.ucitele__item{
+    width: 45%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 20px;
+}
+
+.ucitele__item:hover .ucitele__content {
+    opacity: 1;
+} 
+
+.ucitele__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.ucitele__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(228, 117, 117, 0.85);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity .3s linear;
+}
+
+.ucitele__title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.ucitele__text {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+/*prvnibox*/
+.prvnibox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 270px;
+    margin-top: 150px;
+   
+  height: 620px;
+  width: 1000px;
+
+  background: #515369
+  url("../image/aboutus5.jpg");
+}
+
+/*founder*/
+.founder {
+    display: flex;
+    margin-top: 150px;
+}
+
+.founder__items {
+    width: 40%;
+    text-align: left;
+    padding: 75px 20px;
+}
+
+.founder__title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.founder__text {
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+}
+

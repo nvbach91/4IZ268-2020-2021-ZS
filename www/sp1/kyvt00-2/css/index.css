@@ -1,0 +1,17 @@
+  .column1 {
+    flex-basis: 75%;
+    padding-left: 6%;
+    padding-right: 5%;
+    text-align: left;
+  }
+  
+  .column2 {
+    flex-basis: 25%;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+  }
+
+
+
+
+
