@@ -1,0 +1,452 @@
+* { 
+    box-sizing: border-box; 
+  }
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    text-align: justify;
+    font-size: small;
+  }
+  body { 
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
+    color: black;
+    display: flex;
+    padding: 15px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  p {
+    font-family: 'Roboto', sans-serif;
+  }
+  ul {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul {
+    float: left;
+  }
+  .active {
+    background-color: rgb(190, 78, 162);
+  }
+  li {
+    position: relative;
+    padding: 0px;
+  }
+  li a {
+    display: block;
+    padding: 20px 10px;
+    background-color:rgb(211, 137, 194);
+    color: white;
+    margin-right: 0px;
+    text-decoration: none;
+    white-space: nowrap;
+  } 
+  li ul {
+    display: none;
+    position: absolute;  
+  } 
+  li:hover > ul {
+    display: block;
+  }  
+  .lvl1 {
+    top: 0;
+    left: 100%;
+  } 
+  li:hover > a {
+    background-color: rgb(190, 78, 162);
+    color: white;
+  }
+  li a, header, article, footer, div, img {
+    border-radius: 10px;
+    border: 3px solid white;
+  }
+  .layout{
+    width: 100%;
+  }
+  header {
+    background-image: url("https://cdn.shopify.com/s/files/1/0409/7320/5669/articles/Krissy-Cela-Header-Desktop_455x300@2x.jpg?v=1592236585");
+    background-color: rgb(133, 42, 133);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 162px 10px;
+  }
+  header h1 {
+    text-align: center;
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    color: rgb(211, 137, 194);
+    font-size: 100px;
+  }
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  article {
+    background-color: rgb(243, 212, 236);
+    padding: 150px 0;
+    text-align: center;
+  }
+  footer {
+    text-align: center;
+    width: 100%;
+    padding: 1px 10;
+    background-color: rgb(243, 212, 236);
+    display: flexbox;
+    flex-wrap: wrap;
+  }
+  /*homepage*/
+  .info1 {
+    width: 100%;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 140% ;
+    background-color: rgb(243, 212, 236);
+  }
+  .info2-image {
+    width: 70%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0409/7320/5669/articles/Krissy-Floor-Workout_455x300@2x.jpg?v=1596018839");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .info2-image:hover {
+    opacity: 0.8;
+  }
+  .info2 {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    font-size: 29px ;
+    background-color: rgb(211, 137, 194);
+  }
+  .quote {
+    width: 100%;
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+    background-color: rgb(243, 212, 236);
+  }
+  .info3 {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(211, 137, 194);
+  }
+  .info3-image {
+    width: 70%;
+    background-image: url("https://mk0healthista7wl964d.kinstacdn.com/wp-content/uploads/2020/01/krissy-cela-gym.jpg");
+    background-color: rgb(133, 42, 133);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .info3-image:hover {
+    opacity: 0.8;
+  }
+  /*About me*/
+  .who-am-i {
+    background-color: rgb(243, 212, 236);
+    width: 100%;
+    padding: 20px 20px;
+    text-align: justify;
+    font-size: 130% ;
+  }
+  .my-story-image {
+    width: 45%;
+    background-image: url("https://celebslifereel.com/wp-content/uploads/2019/02/Krissy-Cela-photo-courtesy.jpg");
+    background-color: rgb(243, 212, 236);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .my-story-image:hover {
+    opacity: 0.8;
+  }
+  .my-story {
+    width: 55%;
+    background-color: rgb(211, 137, 194);
+    padding: 10px 20px;
+    text-align: justify;
+    font-size: 120% ;
+  }
+  .facts{
+    width: calc(100% / 3);
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 110% ;
+  }
+  .facts:hover {
+    opacity: 0.8;
+  }
+  .oner-active {
+    width: 60%;
+    background-color: rgb(211, 137, 194);
+    padding: 30px 20px;
+    text-align: justify;
+    font-size: 120% ;
+  }
+  .oner-active-image {
+    width: 40%;
+    background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/120038034_148729093586970_2393834978257195920_o.jpg?_nc_cat=111&ccb=2&_nc_sid=9267fe&_nc_ohc=h0PSoFXDgvwAX8Qc06T&_nc_ht=scontent-frx5-1.xx&oh=0e7c132ed45285d07ec4b8403e79f9f8&oe=5FE123CA");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .oner-active-image:hover {
+    opacity: 0.8;
+  }
+  /*Pricing*/
+  table {
+    width: 100%; 
+    margin: 10px auto 10px auto; 
+    border-collapse:collapse; 
+    background-color:transparent;
+    font-size:20px;
+    color:black;
+  }
+  table tr td {
+    padding:5px 3px 5px 3px;
+  }
+  .price-list {
+    background-color: rgb(243, 212, 236);
+    width: 100%;
+    padding: 20px 20px;
+    text-align: justify;
+    font-size: 130% ;
+  }
+  .p-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .p-image1 {
+    width: calc(100% / 3);
+    background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44038378_292250518051416_3354361529666371584_o.jpg?_nc_cat=111&ccb=2&_nc_sid=09cbfe&_nc_ohc=P0Kh62CP35UAX_gGo7H&_nc_ht=scontent-frx5-1.xx&oh=28ca83d207be9dcce293a0279d391903&oe=5FDF9258");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .p-image2 {
+    width: calc(100% / 3);
+    background-image: url("https://images.milled.com/2020-03-01/Tkyl8lMci1tDsf7x/jXguyaisLZMl.jpg");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .p-image3 {
+    width: calc(100% / 3);
+    background-image: url("https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/52708367_344233659519768_1482229094006390784_n.jpg?_nc_cat=103&ccb=2&_nc_sid=8bfeb9&_nc_ohc=SPkq-ozKH0cAX_WLTFK&_nc_ht=scontent-frt3-2.xx&oh=d3fe6dc92f3e5e86d69902e34a0f0819&oe=5FE16602");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .p-image:hover {
+    opacity: 0.8;
+  }
+  /*Contact*/
+  .contact-boxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact-box {
+    width: calc(100% / 3);
+    font-size: 120%;
+    background-color: rgb(243, 212, 236);
+    padding: 70px 0;
+    text-align: center;
+  }
+  .contact-box:hover {
+    opacity: 0.8;
+  }
+  /*Nutrition*/
+  .n-tips {
+    background-color:  rgb(243, 212, 236);
+    width: 100%;
+    padding: 20px 20px;
+    text-align: justify;
+    font-size: 130% ;
+  }
+  .n-tip1-image {
+    width: 45%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/0733/7032/t/3/assets/pf-d1eed6bf--hydration-tips-HT.jpg?v=1581683123");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .n-tip1-image:hover {
+    opacity: 0.8;
+  }
+  .n-tip1 {
+    width: 55%;
+    background-color: rgb(211, 137, 194);
+    padding: 10px 20px;
+    text-align: justify;
+    font-size: 120% ;
+  }
+  /*Training*/
+  .t-tips {
+    background-color: rgb(243, 212, 236);
+    width: 100%;
+    padding: 20px 20px;
+    text-align: justify;
+    font-size: 130% ;
+  }
+  .t-tip1-image {
+    width: 45%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/0733/7032/articles/skipping_compressed.jpg?v=1597065637");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .t-tip1-image:hover {
+    opacity: 0.8;
+  }
+  .t-tip1 {
+    width: 55%;
+    background-color: rgb(211, 137, 194);
+    padding: 10px 20px;
+    text-align: justify;
+    font-size: 120% ;
+  }
+  .t-tip2 {
+    width: 60%;
+    background-color: rgb(211, 137, 194);
+    padding: 30px 20px;
+    text-align: justify;
+    font-size: 120% ;
+  }
+  .t-tip2-image {
+    width: 40%;
+    background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/121368969_160934402366439_4427419257177948338_o.jpg?_nc_cat=105&ccb=2&_nc_sid=9267fe&_nc_ohc=qs_36SUVsakAX9LKQHO&_nc_ht=scontent-frx5-1.xx&oh=e5f9e3cda51d3b3da473ba6c3ff3dc59&oe=5FDEAA20");
+    background-color: rgb(133, 42, 133);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 210px 10px;
+  }
+  .t-tip2-image:hover {
+    opacity: 0.8;
+  }
+  @media screen and (max-width: 1280px) {
+    header {
+      max-width:100%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    main  {
+      width: 100%;
+    }
+    header h1 {
+      font-size: 70px;
+      top: 15%;
+      left: 85%;
+    }
+    p {
+      font-size: 15px;
+    }
+    table {
+      font-size: 20px;
+    }
+  } 
+  @media screen and (max-width: 850px) {
+    main  {
+      width: 100%;
+    }
+    header h1 {
+      font-size: 55px;
+      top: 15%;
+      left: 85%;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 15px;
+  }    
+  @media screen and (max-width: 720px) {
+    header  {
+      padding:102px;
+    }
+    header h1 {
+      font-size: 40px;
+    }
+    nav a {
+      padding:10px;
+      font-size: 12px;
+    }
+    p {
+      font-size: 12px;
+    }
+    table {
+      font-size: 10px;
+    }
+    h2 {
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    main  {
+      width: 100%;
+    }
+    nav ul {
+      float: left;
+      position: fixed;
+      width: 100%;
+    }
+    .layout {
+      margin-left: 0;
+      position: fixed;
+      top: 215px;
+    }
+    nav a {
+      text-align: center;
+      float: none;
+      width: auto;
+      font-size: 10px;
+    }
+    header {
+      top:10%;
+      font-size: 30px;
+      padding-bottom: 25%;
+    }
+    header h1 {
+      font-size: 30px;
+      top: 3%;
+    }
+    h2 {
+      font-size: 20px;  
+    }
+    h4 {
+      font-size: 15px;  
+    }
+    p {
+      font-size: 8px;
+    }
+    table {
+      font-size: 5px;
+    }
+  }
+}
