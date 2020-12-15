@@ -1,3 +1,5 @@
+```js
+
 // the cache version gets updated every time there is a new deployment
 const CACHE_VERSION = '1.0.980';
 const DYNAMIC_CACHE = `dynamic-${CACHE_VERSION}`;
@@ -151,3 +153,4 @@ self.addEventListener('fetch', (e) => {
   })();
   e.respondWith(response);
 });
+```
