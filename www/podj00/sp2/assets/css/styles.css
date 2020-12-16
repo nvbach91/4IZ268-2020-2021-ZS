@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: black;
+}
+
+.loadData {
+    text-align: center;
+    margin-top: 150px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    text-align: center;
+}
+
+
+header h1 {
+        float: right;
+        height: 80px;
+        color:white;
+        padding: 25px;
+}
+
+button{
+    padding:0.3em 1.2em;
+    margin-top: 5px;
+    border: white;
+    border-radius:2em;
+    color:#FFFFFF;
+    background-color: #f14ebd;
+    outline:none;
+}
+button:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
+input[type=button]{
+    padding:0.3em 1.2em;
+    margin-top: 5px;
+    border: white;
+    border-radius:2em;
+    color:#FFFFFF;
+    background-color: #f14ebd;
+    outline:none;
+}
+
+input[type=button]:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.covid {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.row {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+ }
+
+ .row p {
+    text-align: center;
+}
+
+footer {
+    border-top: black solid 1px;
+    text-align: center;
+}
+
+input {
+    margin-right: 10px;
+}
+
+
+/*MODAL*/
