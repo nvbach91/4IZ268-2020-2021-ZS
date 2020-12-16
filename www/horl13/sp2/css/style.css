@@ -1,0 +1,15 @@
+body {margin: 0;}
+button {-webkit-appearance: none; background: #EFEFEF; border: 2px solid #555555; padding: 5px 10px; border-radius: 10px; outline: none !important;}
+.thread-content {padding: 10px; background: #F5F7F7; margin-bottom: 15px; cursor: pointer;}
+.thread-content button {margin: 5px;}
+.loading {position: relative;}
+.loading:before {content: ""; position: fixed; z-index: 98;top: 0; bottom: 0; left: 0; right: 0; background: #00000050;}
+.loading:after {content: ""; position: fixed; z-index: 99; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 16px solid #f3f3f3; border-top: 16px solid #3498db; border-radius: 50%; width: 120px; height: 120px; animation: spin 2s linear infinite;}
+
+.modal {position: fixed; top: 30px; left: calc(50% - 250px); width: 500px;}
+.modal-content {padding: 15px;}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
