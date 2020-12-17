@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    border: 5px solid rgb(34, 30, 30);
+    padding: 25px;
+    margin: 2%;
+}
+
+.web-logo {
+    width: 8%;
+    margin-right: 2%;
+    float: left;
+}
+
+.web-page-name {
+    width: 92%;
+    color: rgb(34, 30, 30);
+    float: right;
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: 2.5%;
+}
+
+main {
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 1%;
+}
+
+article {
+    border: 1px solid black;
+    margin: 0.5%;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer a {
+    color: white;
+}
+
+article form {
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+article form input {
+    border: 0.5 solid black;
+    border-radius: 0;
+    padding: 1%;
+    padding: 1%;
+    width: 30%;
+    font-size: 20px;
+}
+
+article button {
+    background-color: black;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+}
+
+article button:hover {
+    background-color: rgb(20, 119, 158);
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+}
+
+i {
+    margin-left: 15px;
+}
