@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #596b61;
+    padding: 50px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.form-row {
+    width: 41%;
+    padding: 30px;
+    float: left;
+    margin-top: 50px;
+}
+
+.similiar-bands {
+    width: 59%;
+    float: right;
+    margin-top: 50px;
+    padding: 42px;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 35px 85px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 35px 85px;
+    cursor: pointer;
+    background-color: #3b644f;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: rgb(46, 93, 95);
+}
+
+.playlist {
+    float: left;
+    margin-top: 50px;
+    margin-left: 30px;
+}

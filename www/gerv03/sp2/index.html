@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <title>Playlist generator</title>
+</head>
+
+<body>
+    <header>
+        <h1> Create your playlist faster than ever before!</h1>
+        <h2> Just add name of your favourite band or artist to the form bellow and we will pick three of their most
+            listened songs.</h2>
+    </header>
+    <main>
+
+        <form id="artist-form">
+            <div class="form-row">
+                <input id="artist-name" placeholder="enter band or artist name">
+                <button id="add-button">Add to playlist</button>
+            </div>
+        </form>
+
+        <div class="similiar-bands">
+            <h2> fans also like:</h2>
+        </div>
+
+        <div class="playlist">
+            <h2> Your playlist:</h2>
+        </div>
+    </main>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
