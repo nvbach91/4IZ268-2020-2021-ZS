@@ -1,3 +1,16 @@
+- register serviceWorker
+```js
+if (navigator.serviceWorker) {
+    $.get('/serviceWorker.js').done((data) => {
+        navigator.serviceWorker.register('/serviceWorker.js').then((reg) => {
+            console.log('serviceWorker registered with scope', reg.scope);
+        }).catch((err) => {
+            console.log('serviceWorker registration failed:', err);
+        });
+    });
+}
+```
+- serviceWorker.js
 ```js
 
 // the cache version gets updated every time there is a new deployment
