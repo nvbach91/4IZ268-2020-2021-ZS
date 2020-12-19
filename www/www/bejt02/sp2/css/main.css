@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Cindensed';
+    background-color: white;
+}
+
+header {
+    float: center;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    background-color:black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px ;
+}
+
+.abc {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    float: center;
+    text-align: center;
+    color: black;
+}
+
+.abc button{
+    font-size: 20px;
+    width: 100/26;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.abc button:hover {
+    cursor:pointer;
+}
+
+footer {
+    float: center;
+    background-color: white;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    border-top: 5px solid black;
+    position: fixed;
+    bottom: 0;
+}
