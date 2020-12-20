@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Michal Mrkus">
+    <meta name="keywords" conetnt="instagram, ig, post, posts, hastag, #hashtag">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" size="16x16"
+        href="./assets/images/favicons/instagram+logo+label+logo+icon-1320184017777688375_32.png">
+    <title>IG #posts</title>
+</head>
+
+<body>
+    <header>
+        <h1>Instagram posts by #hashtag</h1>
+    </header>
+    <main>
+        <div>
+            <form id="post-search-form">
+                <input name="hashtag-input" placeholder="Type a hashtag" required>
+                <button id="button-search">Search</button>
+            </form>
+        </div>
+        <div>
+            <h2>Searched posts</h2>
+            <button id="button-clear">Clear</button>
+            <ul id="posts-list"></ul>
+        </div>
+    </main>
+        <footer>
+            <hr>
+            <p>© 2020 Michal Mrkus</p>
+        </footer>
+        <script src="./assets/js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</body>
+
+</html>
