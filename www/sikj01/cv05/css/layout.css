@@ -1,0 +1,24 @@
+header{
+    background-color: rebeccapurple;
+    padding: 10px;
+}
+.container{
+
+}
+aside{
+    background-color: red;
+    float: left;
+    padding: 20px;
+    width: 30%;
+}
+main{
+    background-color: royalblue;
+    float: right;
+    padding: 20px;
+    width: 70%;
+}
+footer{
+    padding: 10px;
+    background-color: skyblue;
+    clear: both;
+}

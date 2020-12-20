@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    background:#5CDB95;
+    text-align:center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #05386B;
+  }
+h1{
+    color: #EDF5E1;
+    text-transform:uppercase;
+}
+.button{
+    color: #05386B;
+    padding:10px 20px;
+    font-size:12px;
+    text-decoration:none;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+table{
+    width: 100%;
+}
