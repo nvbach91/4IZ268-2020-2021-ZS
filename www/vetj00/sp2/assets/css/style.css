@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo-and-nav {
+    display: flex;
+    height: 100px;
+    font-size: 32px;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+}
+
+.logo-and-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo span {
+    background: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    background-position: right;
+    width: 270px;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:first-child {
+    margin-right: 30px;
+}
+
+.active {
+    border-bottom: 2px solid #81FF46;
+    padding-bottom: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+form input {
+    border: 2px solid black;
+}
+
+form label {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.tick-a-media label {
+    font-size: 16px;
+    font-weight: unset;
+}
+
+.tick-a-media {
+    display: flex;
+    flex-direction: column;
+}
+
+.share-and-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background-color: #5282FF;
+    color: white;
+    cursor: pointer;
+}
+
+.article-heading {
+    height: 30px;
+}
+
+.article-content {
+    height: 400px;
+    border: 2px solid black;
+}
+
+.article-enclosure {
+    height: 30px;
+    padding: 2px 2px;
+}
+
+
+/*Style for articles*/
+
+section {
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+}
+
+section img {
+    width: 40%;
+}
+
+.heading-and-content h2 {
+    margin: 0;
+}

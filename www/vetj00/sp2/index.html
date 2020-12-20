@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="articels, sharing, social media">
+    <meta name="description" content="Javascript app for creating articles and posting them on social media">
+    <meta name="author" content="Jan Větrovský">
+    <title>Create new | Article creator</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="#">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="logo-and-nav">
+        <a class="logo" href="./"><span>articleCreator</span></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="./articles/">Articles</a>
+                </li>
+                <li>
+                    <a class="active" href="./index.html">Create new</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <form id="article-form">
+            <label>Heading</label>
+            <input class="article-heading" type="text">
+            <label>Text</label>
+            <textarea class="article-content"></textarea>
+            <label>Enclosure</label>
+            <input class="article-enclosure" type="file">
+            <label>Share on</label>
+            <div class="share-and-button">
+                <div class="tick-a-media">
+                    <div class="tick-choice">
+                        <input type="checkbox" id="facebook">
+                        <label for="facebook">Facebook</label>
+                    </div>
+                    <div class="tick-choice">
+                        <input type="checkbox" id="instagram">
+                        <label for="instagram">Instagram</label>
+                    </div>
+                </div>
+                <button id="post-button">Post</button>
+            </div>
+        </form>
+    </main>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
