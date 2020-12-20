@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jiří Šindela">
+    <meta name="keywords" content="Jiří Šindela, map, plan">
+    <title>Plán trasy</title>
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="page-name">Plánovač trasy</div>
+    </header>
+    <main>
+        <div class="text">Tento web slouží pro vizualizaci trasy mezi vámy zadanými body.</div>
+        <form id="points">
+            <div class="start-div">Start:</div>
+            <input id="start">
+            <div class="end-div">Cíl:</div>
+            <input id="end">
+            <button type="button">Vykreslit</button>
+        </form>
+        <div id="mapa" class="map smap"></div>
+        <div class="info">
+            <div class="length">Celková délka tasy v metrech:</div>
+            <div class="time">Celkový čas trasy ve vtečinách:</div>
+            <div class="up">Celké soupání:</div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2020 - Jiří Šindela</p>
+    </footer>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load()</script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

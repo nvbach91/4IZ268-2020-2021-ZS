@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-name {
+    font-size: 60px;
+    font-style: bold;
+    width: 100%;
+}
+
+.text {
+    font-size: 30px;
+    width: 100%;
+}
+
+button {
+    width: 80%;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.start-div .end-div {
+    width: 20%;
+    box-sizing: border-box;
+    float: left;
+    font-size: 20px;
+}
+
+.map {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+}
+
+.info {
+    margin: auto;
+    width: 60%;
+    border: 2px solid gray;
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+}
