@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Movie List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/main.css" />
+    <link rel="icon" type="img/png" href="logo.png" />
+</head>
+
+<body>
+    <header>
+        <h1>My Movie List</h1>
+    </header>
+    <hr>
+    <main>
+        <p>Create your pearsonal movie list by adding movies</p>
+        <p>From now on you won't have problems with picking a movie to watch </p>
+        <form id="movie-form">
+            <div class="form-row">
+                <!--label>Movie title: </label-->
+                <input id="movie-title" placeholder="Movie title">
+                <button id="add-button">Add to list</button>
+            </div>
+        </form>
+        <hr />
+        <h3 id="selected-movie">&nbsp;</h3>
+        <hr />
+        <ul id="movie-list">
+        </ul>
+
+    </main>
+    <footer>2020 &copy;Maryia Tomchanka</footer>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
