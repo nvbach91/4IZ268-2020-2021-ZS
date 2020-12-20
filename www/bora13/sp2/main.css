@@ -1,0 +1,25 @@
+* 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+button {
+    border: 1px solid transparent;
+    height: 42px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgb(167, 22, 22);
+    color: white;
+}
+button:hover {
+    background-color: rgb(112, 13, 13);
+}
+h2{
+    font-size: small;
+}
+input {
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    background-color: rgb(250, 244, 244);
+}
+
