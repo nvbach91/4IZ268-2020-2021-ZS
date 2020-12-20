@@ -1,0 +1,25 @@
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    color: blue;
+}
+
+p {
+    font-style: oblique;
+}
+
+.product {
+    color: purple;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}
+.product, button {
+    font-family: monospace;
+}
