@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: rgb(248, 204, 204);
+}
+
+.logo-picture {
+    width: 100px;
+    height: 100px;
+}
+
+.larger-font,
+.third {
+    font-size: 25px;
+}
+
+.table-layout,
+.search-records,
+.information,
+.recept {
+    border-radius: 15px;
+    background-color: rgb(194, 35, 70);
+    color: white;
+    margin: 0 150px 0 150px;
+}
+
+.table2,
+.table1,
+tr,
+th {
+    border: 1px solid black;
+}
+
+.table1,
+.table2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(14, 180, 152);
+}
+
+.table2 {
+    width: 75%;
+}
+
+tr,
+th {
+    background-color: rgb(194, 35, 70);
+}
+
+h2,
+p,
+.search-records,
+.information {
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+}
+
+h1 {
+    margin: 30px 20px 20px 20px;
+}
+
+h2 {
+    padding: 10px 0 0 0;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+.btn {
+    padding: 10px 15px 10px 15px;
+    margin: 0 50px 0 50px;
+    border-radius: 50px;
+}
