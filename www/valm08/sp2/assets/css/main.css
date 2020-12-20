@@ -1,0 +1,25 @@
+body {
+    margin: auto;
+    background-color: blanchedalmond;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 65ch;
+}
+
+body h1 {
+    text-align: center;
+}
+
+#input-field {
+    width: 100%;
+}
+
+#output-div {
+    border: black 2px solid;
+    text-align: left;
+}
+
+#output-div h4 {
+    text-align: center;
+}
