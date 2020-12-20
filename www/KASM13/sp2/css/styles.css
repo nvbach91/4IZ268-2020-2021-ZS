@@ -1,0 +1,56 @@
+.app {
+    margin: auto;
+    margin-top: 20px;
+    width: 40%;
+    border: 3px solid rgb(29,161,242);
+    padding: 10px;
+    border-radius: 10px;
+    background-color:rgba(29, 160, 242, 0.219);
+}
+header {
+    background-color: rgb(29,161,242);
+    top: 0;
+    position: sticky;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    font-size: 35px;
+
+}
+
+.search {
+    text-align: center;
+    border-bottom: 3px solid rgb(0, 174, 255);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-top: 3px;
+    justify-content: center;
+}
+
+.item {
+    width: 45%;
+    text-align: center;
+}
+.item2 {
+    width: 45%;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 174, 255);
+}
