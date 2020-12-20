@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+.logo-picture {
+    width: 100px;
+}
+
+#search-record,
+#information {
+    border-radius: 15px;
+    background-color: rgb(49, 130, 155);
+    color: white;
+    margin: 0 150px 0 150px;
+}
+
+h2,
+p,
+#search-record,
+#information {
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+}
+
+h1 {
+    margin: 30px 20px 20px 20px;
+}
+
+h2 {
+    padding: 10px 0 0 0;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+.btn {
+    padding: 10px 15px 10px 15px;
+    margin: 0 50px 0 50px;
+    border-radius: 50px;
+}

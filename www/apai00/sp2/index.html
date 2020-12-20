@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywprds" content="Football statistic">
+    <meta name="description" content="Application for football statistic">
+    <meta name="author" content="apai00">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Football statictic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="attachment/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="app-layout">
+        <header>
+            <img class="logo-picture" src="./attachment/picture/logo.png" alt="logo">
+            <h1>FOOTBALL STATISTIC</h1>
+            <img class="logo-picture" src="./attachment/picture/logo.png" alt="logo">
+        </header>
+        <main>
+            <form id="search-record">
+                <h2>Search match</h2>
+                <p>Search match Statistics by club name</p>
+                <input name="team-name-input" type="search" placeholder="club name" class="search-input">
+                <button class="button-search">Search match</button>
+                <ul id="records-list">
+
+                </ul>
+            </form>
+
+            <br>
+
+            <div id="information">
+                <h2>Record information</h2>
+                <br>
+                <ul id="information-list"></ul>
+                <div class="buttons">
+                    <button class="btn button-top">Back to top</button>
+                    <button class="btn button-clear">Clear</button>
+                    <button class="btn button-download">Download</button>
+                </div>
+            </div>
+
+            <br>
+
+
+            <!--ul id="records-list">
+              <li>
+                    <div class="match-id">id</div>
+                    <div class="information-link">link</div>
+              </li>
+            </ul>
+            <br>
+            <ul id="information-list">
+                <li>
+                    <div class="team-name">team name</div>
+                    <div class="City">City</div>
+                    <div class="Date">Date</div>
+                    <div class="Score">score</div>
+                </li>
+            </ul-->
+
+        </main>
+        <footer>
+            <p>Copyright &copy; 2020 Ivan Apatenko</p>
+        </footer>
+        <script src="./attachment/js/main.js"></script>
+    </div>
+</body>
+
+</html>
