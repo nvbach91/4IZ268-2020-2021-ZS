@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #00293C;
+}
+
+header {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 64px;
+    color: #00293C;
+    border-bottom: 2px solid #F62A00;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+header h2 {
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    color: #1E656D;
+    font-size: 32px;
+}
+
+.header-filters {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid  #F62A00;
+    border-radius: 5px;
+    max-width: 860px;
+    margin: 0 auto;
+    background-color: ivory;
+    padding-bottom: 25px;
+}
+
+.header-filter {
+    width: 50%;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.header-filter p {
+    font-size: 20px;
+}
+
+input {
+    border: none;
+    height: 25px;
+    background-color:#1E656D;
+    color: white;
+    width: 75%;
+    font-size: 14px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255, 0.700);
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+
+select {
+    border: none;
+    height: 25px;
+    background-color:#1E656D;
+    color: white;
+    width: 75%;
+    font-size: 14px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+select:focus {
+    border: 2px solid black;
+}
+
+button {
+    background-color: #F62A00;
+    color: ivory;
+    border: none;
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    border: none;
+    background-color: #f60000;
+}
+
+.header-filter:nth-child(4) {
+    padding-top: 35px;
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+    max-width: 1280px;
+}
+
+.detailed-filters {
+    width: 30%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.articles-container {
+    width: 70%;
+}
+
+.detailed-finding-options {
+    border: 2px solid  #F62A00;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: ivory;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.dropdown-button {
+    width: 80%;
+    text-align: center;
+    margin: 15px;
+}
+
+.hiden-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hiden-button button {
+    width: 80%;
+}
+
+.detailed-finding-option {
+    margin-bottom: 25px;
+}
+
+.detailed-finding-option:nth-child(6) {
+    margin-bottom: 0px;
+}
+
+.detailed-finding-option p {
+    margin-bottom: 5px;
+}
+
+.back-to-top a {
+    background-color: #F62A00;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    transition: background-color 0.2s linear;
+    justify-items: end;
+    margin: 25px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+}
+
+/*
+TO DO:
+-> nastylovat část pro zobrazení článků
+-> nastylovat footer
+(-> změna barevné kombinace??)
+-> nastylovat část pro počasí
+*/

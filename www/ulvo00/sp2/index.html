@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplikace vytvořená pro projekt do školy, vyhledávající články přes News API.">
+    <meta name="author" content="Ondřej Ulvr">
+    <meta name="keywords" content="Articles, finding, weather, filters">
+    <title>Articles finder</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+    <!--TO DO -> favicons-->
+</head>
+
+<body>
+    <header>
+        <h1>Articles finder</h1>
+        <h2>Search for top articles</h2>
+        <div class="header-filters">
+            <div class="header-filter">
+                <p>Choode category:</p>
+                <select name="header-category-selector" id="header-category">
+                    <option value="">All categories</option>
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="general">General</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                </select>
+            </div>
+            <div class="header-filter">
+                <p>Choode country:</p>
+                <select name="header-country-selector" id="header-country">
+                    <option value="">All countries</option>
+                    <option value="ae">United Arab Emirates</option>
+                    <option value="ar">Argentina</option>
+                    <option value="at">Austria</option>
+                    <option value="au">Australia</option>
+                    <option value="be">Belgium</option>
+                    <option value="bg">Bulgaria</option>
+                    <option value="br">Brazil</option>
+                    <option value="ca">Canada</option>
+                    <option value="ch">Switzerland</option>
+                    <option value="cn">China</option>
+                    <option value="co">Colombia</option>
+                    <option value="cu">Cuba</option>
+                    <option value="cz">Czechia</option>
+                    <option value="de">Germany</option>
+                    <option value="eg">Egypt</option>
+                    <option value="fr">France</option>
+                    <option value="gb">United Kingdom</option>
+                    <option value="gr">Greece</option>
+                    <option value="hk">Hong Kong</option>
+                    <option value="hu">Hungary</option>
+                    <option value="id">Indonesia</option>
+                    <option value="ie">Ireland</option>
+                    <option value="il">Israel</option>
+                    <option value="in">India</option>
+                    <option value="it">Italy</option>
+                    <option value="jp">Japan</option>
+                    <option value="kr">Korea</option>
+                    <option value="lt">Lithuania</option>
+                    <option value="lv">Latvia</option>
+                    <option value="ma">Morocco</option>
+                    <option value="mx">Mexico</option>
+                    <option value="my">Malaysia</option>
+                    <option value="ng">Nigeria</option>
+                    <option value="nl">Netherlands</option>
+                    <option value="no">Norway</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="ph">Philippine</option>
+                    <option value="pl">Poland</option>
+                    <option value="pt">Portugal</option>
+                    <option value="ro">Romania</option>
+                    <option value="rs">Serbia</option>
+                    <option value="ru">Russian Federation</option>
+                    <option value="sa">Saudi Arabia</option>
+                    <option value="se">Sweden</option>
+                    <option value="sg">Singapore</option>
+                    <option value="si">Slovenia</option>
+                    <option value="sk">Slovakia</option>
+                    <option value="th">Thailand</option>
+                    <option value="tr">Turkey</option>
+                    <option value="tw">Taiwan</option>
+                    <option value="ua">Ukraine</option>
+                    <option value="us">United States of America</option>
+                    <option value="ve">Venezuela</option>
+                    <option value="za">South Africa</option>
+                </select>
+            </div>
+            <div class="header-filter">
+                <p>Search for key words:</p>
+                <input type="text" placeholder="Type here..." id="header-key-words">
+            </div>
+            <div class="header-filter">
+                <button id="search-top-articles">Search</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="detailed-filters">
+            <button id="filter-menu-title" class="dropdown-button">Search in all articles in more detail ▼</button>
+            <div id="filter-menu">
+                <div class="detailed-finding-options">
+                    <div class="detailed-finding-option">
+                        <p>Search by key words</p>
+                        <input type="text" placeholder="Type here..." id="key-words">
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Date from</p>
+                        <input type="text" id="date-from" placeholder="Click to pick date" />
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Date to</p>
+                        <input type="text" id="date-to" placeholder="Click to pick date" />
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Search by source</p>
+                        <input type="text" placeholder="Type here..." id="source">
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Search by language</p>
+                        <select name="language-selector" id="language">
+                            <option value="">Default</option>
+                            <option value="ar">Arabic</option>
+                            <option value="de">German</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="he">Hebrew</option>
+                            <option value="it">Italian</option>
+                            <option value="nl">Dutch</option>
+                            <option value="no">Norwegian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="ru">Russian</option>
+                            <option value="se">Northern Sami</option>
+                            <option value="zh">Chinese</option>
+                        </select>
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Sort by</p>
+                        <select name="sorting-selector" id="sorting">
+                            <option value="relevancy">Relevance</option>
+                            <option value="popularity">Popularity</option>
+                            <option value="publishedAt">Published at</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="hiden-button"><button id="search-all-articles">Search</button></div>
+            </div>
+            <div>Weather container</div>
+        </div>
+        <div class="articles-container">
+            <div>XYZ articles found</div>
+            <div>
+                <ul id="articles">
+                    <li>
+                        <div class="article-photo">PHOTO URL</div>
+                        <div class="article-text">
+                            <div class="article-titile">Article title</div>
+                            <div class="article-date">26.3.2020</div>
+                            <div class="article-author">Ondrej Ulvr</div>
+                            <div class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Accusamus quidem repellendus ducimus velit officia ut assumenda laboriosam excepturi!
+                                Earum, ut!</div>
+                            <div class="article-link">www.seznam.cz</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>Pages</div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">&copy; 2020 Ondřej Ulvr (tento web vznikl v rámci školního projektu)</div>
+        <div class="back-to-top"><a href="#"><i class="fa fa-angle-double-up"></i></a></div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
