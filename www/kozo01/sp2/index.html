@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load()</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="text-muted text-center my-4">Search Weather</h1>
+                <form class="change-location my-4 text-center text-muted">
+                    <label for="city">Enter a city for weather information</label>
+                    <input type="text" name="city" class="from-control d-block w-100 p-2">
+                </form>
+                <div class="card shadow-lg rounded d-none">
+                    <img src="https://via.placeholder.com/400x300" class="time card-img-top">
+                    <div class="icon bg-light mx-auto text-center">
+                        <img src="" alt="">
+                    </div>
+                    <div class="text-muted text-uppercase text-center details">
+                        <h5 class="my-3">City name</h5>
+                        <div class="my-3">Weather condition</div>
+                        <div class="display-4 my-4">
+                            <span>temp</span>
+                            <span>&deg;C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="maps" id="mapa" style="width:600px; height:400px;">
+                </div>
+                <h3 class="text-muted my-4">Weather for the week:</h3>
+                <div class="text-muted text-uppercase listed">
+                    <table class="table shadow-lg" style="border-radius: 15px;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Monday</th>
+                                <th scope="col">Tuesday</th>
+                                <th scope="col">Wednesday</th>
+                                <th scope="col">Thursday</th>
+                                <th scope="col">Friday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>+1</td>
+                                <td>+2</td>
+                                <td>+3</td>
+                                <td>+4</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-secondary">CLOUDY</span></td>
+                                <td><span class="badge badge-primary">LIGHT FOG</span></td>
+                                <td><span class="badge badge-info">CLOUDY</span></td>
+                                <td><span class="badge badge-warning">SUNNY</span></td>
+                                <td><span class="badge badge-info">CLOUDY</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <h1 class="text-muted text-center my-4">Favorite city</h1>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Kiev</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">+19</h6>
+                            <a href="#" class="badge badge-success">Choose</a>
+                            <a href="#" class="badge badge-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">LOS ANGELES</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">+25</h6>
+                            <a href="#" class="badge badge-success">Choose</a>
+                            <a href="#" class="badge badge-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">MOSCOW</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">-1.1</h6>
+                            <a href="#" class="badge badge-success">Choose</a>
+                            <a href="#" class="badge badge-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/weather.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+
+</html>
