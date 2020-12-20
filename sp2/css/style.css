@@ -1,0 +1,23 @@
+body {
+    background: #eeedec;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.maps {
+    margin-top: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+}
