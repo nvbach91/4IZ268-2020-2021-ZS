@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/oauth.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="335042291556-a4kjdevtnr5konjcp7nih5argfejh5e2.apps.googleusercontent.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,100"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Shift Planner</h1>
+      <p>You have to be signed in in order to plan your shifts!</p>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </main>
+  </body>
+</html>
