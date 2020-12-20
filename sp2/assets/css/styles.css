@@ -1,0 +1,62 @@
+* {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient(to right top, #00115b, #860366, #d63852, #860366, #00115b) fixed;
+    color: white;
+}
+.headclass {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    height: 50px;
+    margin-left: 15px;
+}
+.nba-form-section {
+    height: auto;
+    margin-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: left;
+    padding: 25px;
+    background-color: black;
+    border-radius: 15px;
+    
+}
+#nba-name-form {
+    margin-top: 10px;
+}
+#search-button {
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    border:none;
+    border-radius: 10px;
+}
+.input-form {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+h3 {
+    margin-top: 10px;
+}
+.footer {
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    padding-top: 5px;
+    color: darkgrey;
+    background-color: black;
+
+}
