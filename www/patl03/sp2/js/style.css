@@ -1,0 +1,137 @@
+body
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: gray;
+}
+.col
+{
+    float: left;
+}
+input[type="button"]
+{
+    margin-left: 10px;
+}
+input[type="text"]
+{
+    width: 100%;
+}
+.page-wrap
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: calc(75vh * 1.77);
+    min-height: 100vh;
+    background-color: white;
+    height: 75vh;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.scale-keep
+{
+    
+    display: flex;
+}
+.row
+{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.no-spacing
+{
+    justify-content: left;
+}
+.vid
+{
+    flex-direction: column;
+}
+.row.eq
+{
+    height: 95%;
+}
+.row.em
+{
+    height: 5%;
+}
+.col
+{
+    width: 100%;
+    overflow: auto;
+}
+.col.videoinput
+{
+    border: 1px violet solid;
+    flex-grow: 3;
+    overflow: initial;
+}
+.col.btn
+{
+    flex-grow: 1;
+    border: 1px blue solid;
+    overflow: initial;
+}
+.col.eq-1
+{
+    width: calc((100% / 50) * 12);
+}
+.col.eq-2
+{
+    width: calc((100% / 50) * 26);
+}
+.col.eq-3
+{
+    width: calc((100% / 50) * 12);
+    background-color: rgb(92, 92, 92);
+}
+.half
+{
+    height: 50%;
+}
+.fourth
+{
+    height: 25%;
+}
+.three-fourths
+{
+    background-color: beige;
+    height: 75%;
+}
+.vid-img
+{
+    width: 160px;
+    height: 90px;
+    background-color: gray;
+    margin: auto;
+    clear: both;
+    float: left;
+}
+img
+{
+    max-width: 160px;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    float: left;
+}
+p
+{
+    position: relative;
+    text-align: left;
+    clear: both;
+    float: left;
+}
+.gap-vert
+{
+    margin-top: 5px;
+}
+img.stats
+{
+    margin-left: 10px;
+    margin-top: 5px;
+}
