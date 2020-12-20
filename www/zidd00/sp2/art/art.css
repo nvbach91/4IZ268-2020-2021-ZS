@@ -1,0 +1,44 @@
+.art-container {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: -10px;
+}
+
+.art {
+    width: 50%;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.art-picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.artfull-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.artfull-picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 800px) {
+    .art {
+        width: calc(100% / 3);
+    }
+}
+
+/* Tisk */
+@media print { 
+    .artfull-container {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
