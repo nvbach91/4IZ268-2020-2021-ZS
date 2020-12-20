@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Stránka s kurzy měn">
+    <meta name="keywords" content="Kurzy, směnárna">
+    <meta name="author" content="To Hoang Viet">
+    <title>Kurzy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16">
+
+</head>
+
+<body>
+    <div class="body">
+
+        <header class="main-head">
+            <span class="logo">Kurzy</span>
+        </header>
+        <main>
+            <article class="main-body">
+                <h1>Vítejte na stránce Kurzy</h1>
+                <p>
+                    Na této stránce si můžete uložit oblíbené kurzy a rychle vypočítat hodnotu jednotlivých měn.
+                </p>
+            </article>
+
+
+            <h2>Oblíbené kurzy</h2>
+            <div class="favourites">
+                <div class="convertor-header">
+                    <h3>Vyberte počáteční měnu</h3>
+                    <select id="favouriteCurrency" class="favourite-select">
+                        <option value="CZK">Czech Crown</option>
+                        <option value="EUR">Euro</option>
+                    <option value="USD">United States Dollar</option>
+                </select>
+                </div>
+                <div class="favouriteAdd">
+                    <h3>Vyberte druhou měnu</h3>
+                    <select id="favouriteCurrencyAdd" class="favourite-select">
+                        <option value="CZK">Czech Crown</option>
+                        <option value="EUR">Euro</option>
+                        <option value="USD">United States Dollar</option>
+                    </select>
+                    <button type="button" id="addFavourite" class="favourite-button">Přidat</button>
+                </div>
+            </div>
+            <div class="favouriteTable">
+                <table id="tableOfCurrency" class="favourite-table">
+                    <tr>
+                        <td>1</td>
+                        <td>Hodnota</td>
+                        <td>2. Vybraná měna</td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>Euro</td>
+                        <td>26.15</td>
+                        <td>Czech Crown</td>
+                        <td><button>Odebrat</button></td>
+                    </tr>
+                    <tr>
+                        <td>Euro</td>
+                        <td>1,23</td>
+                        <td>United States Dollar</td>
+                        <td><button>Odebrat</button></td>
+                    </tr>
+                    <tr>
+                        <td>United States Dollar</td>
+                        <td>21,33 </td>
+                        <td>Czech Crown</td>
+                        <td><button>Odebrat</button></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+
+            <h2>Výpočet hodnoty měn</h2>
+            <div class="convertor">
+                <div class="convertor-header">
+                </div>
+                <div class="convertor-from">
+
+                    <h3>Vyberte měnu a zadejte počáteční hodnotu</h3><br>
+
+
+                    <select name="currencyFrom" id="currencyFrom" class="convertor-select">
+                        <option value="CZK">Czech Crown</option>
+                        <option value="EUR">Euro</option>
+                    <option value="USD">United States Dollar</option>
+                    </select>
+                    <br>
+                    <input type="number" id="fromCurrency" name="amount" class="convertor-input" />
+                </div>
+
+                <div class="convertor-to">
+
+                    <h3>Vyberte na jakou měnu chcete hodnotu přepočítat</h3><br>
+
+
+                    <select name="currencyTo" id="currencyTo" class="convertor-select">
+                        <option value="CZK">Czech Crown</option>
+                        <option value="EUR">Euro</option>
+                    <option value="USD">United States Dollar</option>
+                    </select>
+                    <br>
+                    <img class="equals" src="images/equals.png" alt="equals">
+                    <input type="number" id="toCurrency" name="amount" class="convertor-output" disabled />
+                </div>
+
+
+            </div>
+
+        </main>
+        <footer class="footer">
+            <div class="copyright"> &copy; 2020 To Hoang Viet(tento web je in progress)</div>
+        </footer>
+    </div>
+
+
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
