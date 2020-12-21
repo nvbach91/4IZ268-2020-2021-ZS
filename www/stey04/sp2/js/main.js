@@ -33,10 +33,10 @@ const moveISS = (lat, long) => {
 };
 
 const updateISS = () => {
-    $.ajax('http://api.open-notify.org/iss-now.json')
+    $.ajax('https://api.wheretheiss.at/v1/satellites/25544')
         .done(s => {
-            let lat = s.iss_position.latitude;
-            let long = s.iss_position.longitude;
+            let lat = s.latitude;
+            let long = s.longitude;
             moveISS(lat, long);
         })
         .fail(e => console.log('error', e));
