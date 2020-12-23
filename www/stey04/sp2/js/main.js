@@ -62,5 +62,35 @@ const getPeopleInSpace = () => {
         });
 };
 
+const createISSPassTimes = (s) => {
+    //console.log(s.response);
+    const data = s.response;
+    const datesContainer = $('#passes');
+    const date = $('<div></div>');
+    const dates = [];
+    for (let i = 0, l = data.length; i < l; i++) {
+        const m = (data[i].duration / 60).toFixed(2);
+        const d = Date(data[i].risetime);
+        const duration = $(`<p>Duration: ${m} min</p>`);
+        const rise = $(`<p>Date: ${d}</p>`);
+        date.append(duration, rise);
+        dates.push(date);
+    }
+    datesContainer.append(dates);
+};
+
+const updateLocation = (lat, long) => {
+    // Trying to get jsonp to avoid CORS problems
+    $.getScript({
+        url: `http://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${long}&callback=createISSPassTimes`,
+    });
+};
+
+const getIssPassTimesForLocation = () => {
+    navigator.geolocation.getCurrentPosition((s) => updateLocation(s.coords.latitude, s.coords.longitude), (e) => alert('Failed to get location!'));
+};
+
+
 updateISS();
 getPeopleInSpace();
+getIssPassTimesForLocation();
