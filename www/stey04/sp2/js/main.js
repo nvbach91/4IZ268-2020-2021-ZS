@@ -40,8 +40,27 @@ const updateISS = () => {
             moveISS(lat, long);
         })
         .fail(e => console.log('error', e));
-    // update ISS position every 8 seconds
-    setTimeout(updateISS, 8000);
+    setTimeout(updateISS, 8000);            // update ISS position every 8 seconds
+};
+
+
+const createPeopleInSpace = (s) => {
+    const peopleContainer = $('#people');
+    let names = [];
+    for (let i = 0, l = s.people.length; i < l; i++) {
+        const name = s.people[i].name;
+        names.push($(`<li>${name}</li>`));
+    }
+    const namesContainer = $('<ul></ul>').append(names);
+    peopleContainer.append(namesContainer);
+};
+
+const getPeopleInSpace = () => {
+    $.ajax('http://api.open-notify.org/astros.json')
+        .done(s => {
+            createPeopleInSpace(s);
+        });
 };
 
 updateISS();
+getPeopleInSpace();
