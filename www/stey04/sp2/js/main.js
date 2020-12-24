@@ -71,7 +71,7 @@ const createISSPassTimes = (s) => {
         const d = new Date(data[i].risetime * 1000);
         const date = $(`<div>
                 <p>Duration: ${m} min</p>
-                <p>Date: ${d.toLocaleDateString()}</p>
+                <p>Date: ${d.toLocaleString()}</p>
             </div>`);
         dates.push(date);
     }
