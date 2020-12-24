@@ -3,3 +3,13 @@
     max-width: 800px;
     min-width: 500px;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+div.passtime {
+    background-color: yellowgreen;
+    margin: 15px;
+}
