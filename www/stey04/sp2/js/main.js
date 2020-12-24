@@ -69,7 +69,7 @@ const createISSPassTimes = (s) => {
     for (let i = 0, l = data.length; i < l; i++) {
         const m = (data[i].duration / 60).toFixed(2);
         const d = new Date(data[i].risetime * 1000);
-        const date = $(`<div>
+        const date = $(`<div class="passtime">
                 <p>Duration: ${m} min</p>
                 <p>Date: ${d.toLocaleString()}</p>
             </div>`);
