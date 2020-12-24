@@ -65,14 +65,14 @@ const getPeopleInSpace = () => {
 const createISSPassTimes = (s) => {
     const data = s.response;
     const datesContainer = $('#passes');
-    const date = $('<div></div>');
     const dates = [];
     for (let i = 0, l = data.length; i < l; i++) {
         const m = (data[i].duration / 60).toFixed(2);
         const d = new Date(data[i].risetime * 1000);
-        const duration = $(`<p>Duration: ${m} min</p>`);
-        const rise = $(`<p>Date: ${d.toLocaleDateString()}</p>`);
-        date.append(duration, rise);
+        const date = $(`<div>
+                <p>Duration: ${m} min</p>
+                <p>Date: ${d.toLocaleDateString()}</p>
+            </div>`);
         dates.push(date);
     }
     datesContainer.append(dates);
