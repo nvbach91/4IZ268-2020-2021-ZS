@@ -6,40 +6,65 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+h2 {
+    border-bottom: 2px solid gray;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    /*
+    max-width: 700px;
+    align-items: center;
+    */
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    /*
+    flex-direction: column;
+    align-items: center;
+    */
+}
+
 #mapid {
-    height: 512px;
+    height: 384px;
     width: 768px;
+    border-radius: 10px;
+    align-self: center;
     /*
     max-width: 768px;
     min-width: 512px;
     */
 }
 
-.item {
-    flex: 1;
-}
-
-section#map {
-        width: 100%;
-        /* justify-content: center; */
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
+#map {
+    /* 
+    width: 768px;
+    justify-content: center; 
     align-items: center;
+    */
+    display: flex;
+    flex-flow: column;
 }
 
-.info {
+#info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     /*
+    width: 768px;
     width: 100%;
     */
+}
+
+.item {
+    flex: 1;
+    border: 10px solid transparent;
+    min-width: 334px;
 }
 
 div.passtime {
