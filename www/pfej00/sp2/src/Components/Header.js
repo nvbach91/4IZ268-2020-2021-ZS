@@ -10,19 +10,26 @@ class Header extends Component {
   render() {
     return (
         <header>
-          <h1>Investing app</h1>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/stocks">Stocks</Link>
-            </li>
-            <li>
-              <Link to="/crypto">Crypto</Link>
-            </li>
-          </ul>
-          <hr></hr>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-primary" id="element">
+            <Link className="navbar-brand" to="/">Investing app</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          
+            <div className="collapse navbar-collapse" id="navbarColor01">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  <Link to="/" className="nav-link">Home</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/stocks">Stocks</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/crypto">Crypto</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </header>
     );
   }
