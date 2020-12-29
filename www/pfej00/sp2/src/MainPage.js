@@ -9,13 +9,14 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Stocks from "./Components/Stocks";
 import Crypto from "./Components/Crypto";
+import './Styles/index.css';
  
 class MainPage extends Component {
   render() {
     return (
         <Router>
           <Header/>
-          <main>
+          <main className="container">
             <section id="content">
               <Switch>
                 <Route exact path="/">
@@ -31,7 +32,7 @@ class MainPage extends Component {
             </section>
           </main>
           <footer>
-            <p>&copy; 2020 Jan Pfeiffer</p>
+            <small>&copy; Copyright 2020, Jan Pfeiffer</small>
           </footer>
         </Router>
     );
