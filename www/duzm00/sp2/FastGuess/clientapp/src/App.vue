@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav class="menu">
+      <a href="/score" v-bind:class="{ active: $route.path == '/score' }"
+        >Scoreboard</a
+      >
+      <a href="/game" v-bind:class="{ active: $route.path == '/game' }"
+        >New game</a
+      >
+      <a href="/" v-bind:class="{ active: $route.path == '/' }">Rules</a>
+    </nav>
+    <router-view class="app" />
   </div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  justify-items: baseline;
+  align-items: baseline;
+}
+.app {
+  width: 50%;
+  align-items: center;
+  align-self: center;
+}
+.active {
+  background-color: black;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.loading {
+  text-align: center;
 }
 </style>
