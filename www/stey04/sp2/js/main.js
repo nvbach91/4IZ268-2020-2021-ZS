@@ -1,6 +1,6 @@
 const mapboxURL = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
 const attribution = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
 const dark = L.tileLayer(mapboxURL, {
     maxZoom: 18,
@@ -75,26 +75,36 @@ const updateISS = () => {
 
 
 const createPeopleInSpace = (s) => {
-    const peopleContainer = $('#people');
     let names = [];
     for (let i = 0, l = s.people.length; i < l; i++) {
         const name = s.people[i].name;
         names.push($(`<li>${name}</li>`));
     }
     const namesContainer = $('<ul></ul>').append(names);
-    peopleContainer.append(namesContainer);
+    crewContainer.append(namesContainer);
 };
 
 const getPeopleInSpace = () => {
     $.ajax('http://api.open-notify.org/astros.json')
-        .done(s => {
-            createPeopleInSpace(s);
-        });
+        .done(s => createPeopleInSpace(s)).then(() => spinner.detach());
 };
+
+const makeSpinner = () => {
+    return $(`<div class="loadingio-spinner-radio-vt9tc1ouupc">
+                <div class="ldio-eet66rbatu7">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>`);
+};
+
+const addSpinnerTo = (container, spinner) => {
+    container.append(spinner);
+}
 
 const createISSPassTimes = (s) => {
     const data = s.response;
-    const datesContainer = $('#passes');
     const dates = [];
     for (let i = 0, l = data.length; i < l; i++) {
         const m = (data[i].duration / 60).toFixed(2);
@@ -112,13 +122,26 @@ const updateLocation = (lat, long) => {
     // Trying to get jsonp to avoid CORS problems
     $.getScript({
         url: `http://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${long}&callback=createISSPassTimes`,
-    });
+    }).then(() => spinner.detach());
 };
 
 const getIssPassTimesForLocation = () => {
-    navigator.geolocation.getCurrentPosition((s) => updateLocation(s.coords.latitude, s.coords.longitude), (e) => alert('Failed to get location!'));
+    navigator.geolocation.getCurrentPosition(
+        (s) => {
+            updateLocation(s.coords.latitude, s.coords.longitude)
+        },
+        (e) => {
+            alert('Failed to get location!')
+        }
+    );
 };
 
+const datesContainer = $('#passes');
+const crewContainer = $('#people');
+const spinner = makeSpinner();
+
+addSpinnerTo(datesContainer, spinner);
+addSpinnerTo(crewContainer, spinner);
 
 updateISS();
 getPeopleInSpace();
