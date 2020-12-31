@@ -86,7 +86,7 @@ const createPeopleInSpace = (s) => {
 
 const getPeopleInSpace = () => {
     $.ajax('http://api.open-notify.org/astros.json')
-        .done(s => createPeopleInSpace(s)).then(() => spinner.detach());
+        .done(s => createPeopleInSpace(s)).then(() => sp2.detach());
 };
 
 const makeSpinner = () => {
@@ -122,7 +122,7 @@ const updateLocation = (lat, long) => {
     // Trying to get jsonp to avoid CORS problems
     $.getScript({
         url: `http://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${long}&callback=createISSPassTimes`,
-    }).then(() => spinner.detach());
+    }).then(() => sp1.detach());
 };
 
 const getIssPassTimesForLocation = () => {
@@ -138,10 +138,11 @@ const getIssPassTimesForLocation = () => {
 
 const datesContainer = $('#passes');
 const crewContainer = $('#people');
-const spinner = makeSpinner();
+const sp1 = makeSpinner();
+const sp2 = makeSpinner();
 
-addSpinnerTo(datesContainer, spinner);
-addSpinnerTo(crewContainer, spinner);
+addSpinnerTo(datesContainer, sp1);
+addSpinnerTo(crewContainer, sp2);
 
 updateISS();
 getPeopleInSpace();
