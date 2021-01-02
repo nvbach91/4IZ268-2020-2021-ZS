@@ -4,54 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="./styles.css">
+    <title>Dota 2 Statistics</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Dota 2 Statistics">
+    <meta name="author" content="Lukáš Vávra" />
+    <meta name="keywords" content="dota2, dota 2, statistics, match, player, id" />
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./images/dota-2.png" rel="icon" type="image/x-icon" />
+    <link href="./images/dota-2.png" rel="icon" type="image/png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/countUp.min.js" type="module"></script><!--Doesn't work when importing it through cdnjs-->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
     <script src="./js/main.js" type="module"></script>
 </head>
 
 <body>
+    <header>
+        <div>
+            <img src="./images/dota_logo.png" alt="dotalogo">
+            <h1>Statistics</h1>
+        </div>
+    </header>
     <div class="app-container">
-        <header>
-            <div class="row">
-                <div class="logo">
-                    <img src="./images/dota_logo.png" alt="dotalogo">
-                </div>
-                <div class="center-headline">
-                    <h1>Dota 2 Statistics</h1>
-                </div>
-            </div>
-        </header>
         <div class="content">
+            <div class="intro">
+                Find statistics about Dota 2 matches and players! Just fill in match or player ID and hit search. If you
+                don't know how to find match or player ID,
+                click on hint icon.
+            </div>
             <div class="search-match text-center">
-                <h2> Search match</h2>
-                <p>Search match Statistics by match ID</p>
-                <input type="search" placeholder="match ID" class="search-input">
-                <button class="help-dialog"><i class="fa fa-question"></i></button>
+                <h2> Match statistics</h2>
+                <p>Search match statistics by match ID
+                    <button class="help-dialog" id="match-help"><i class="fa fa-question fa-lg"></i></button>
+                </p>
+                <input type="search" placeholder="match ID (10 digits)" class="search-input red-input"
+                    id="searchMatchInput" maxlength="10">
                 <button id="getMatch" class="search-button">Search match</button>
-                <div id="match"></div>
+                <button id="clearMatch" class="clear-button" disabled>Clear</button>
+                <div id="match" class="match-statistics"></div>
             </div>
             <div class="search-player text-center">
-                <h2> Search player</h2>
-                <p>Search match Statistics by match ID</p>
-                <input type="search" placeholder="player ID" class="search-input">
-                <button class="help-dialog"><i class="fa fa-question"></i></button>
-                <button id="getPlayer" class="search-button">Search player</button>
-                <div id="avatar"></div>
-            </div>
-            <div class="show-match text-center">
-                Show match
-            </div>
-            <div class="show-player text-center">
-                Show player
+                <h2> Player statistics</h2>
+                <p>Search player statistics by steam32 ID
+                    <button class="help-dialog" id="player-help"><i class="fa fa-question fa-lg"></i></button>
+                </p>
+                <input type="search" placeholder="player steam32 ID" class="search-input blue-input"
+                    id="searchPlayerInput" maxlength="9">
+                <button id="getPlayer" class="search-button-player">Search player</button>
+                <button id="addFavorites" class="favorites-button" disabled>Add to favorites</button>
+                <select name="Favorite players" id="players-select-box">
+                    <option id="favPlayer" value="" selected disabled>Favorite players</option>
+                </select>
+                <button id="clearPlayer" class="clear-button-player" disabled>Clear</button>
+                <div id="player-info" class="player-information"></div>
+                <div id="player-stats" class="player-statistics"></div>
             </div>
 
         </div>
@@ -60,10 +72,31 @@
         </div>
     </div>
 
+    <!--Help dialogs boxes-->
+    <div id="match-dialog-div" class="display-none">
+        You can find match ID in the match overview in the bottom left corner in game or you can log in into
+        dotabuff.com and find it in your matches.
+    </div>
+    <div id="player-dialog-div" class="display-none">
+        You need to use steam32 ID (9 digits). There are several ways how to get steam32 ID. These instructions are how
+        to get for example your steam32 ID:
 
-    <button id="getWL">Get wins/loses</button>
-    <div id="wins"></div>
+        1.Go to store.steampowered.com and log into your account.
 
+        2.Go to your profile.
+
+        3.Copy the URL link. It will look like this, with numbers instead of the X:
+        https://steamcommunity.com/profiles/765XXXXXXXXXXXXX
+
+        4.Go to steamid.xyz and paste the copied URL link into the search input and send it.
+
+        5.Now you should see your Steam32 ID. Copy it, go back to the Dota2 Statistics website and paste it into the
+        match ID search input and hit "Search match".
+    </div>
+    <footer>
+        <p>Created by <a href="http://lukasvavra.wz.cz">Lukáš Vávra</a> as a semester project within the subject 4IZ268
+            web technology.</p>
+    </footer>
 </body>
 
 </html>
