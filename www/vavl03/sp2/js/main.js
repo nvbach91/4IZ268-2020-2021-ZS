@@ -231,7 +231,7 @@ $(document).ready(() => {
   // get match statistics from API     
   const searchMatch = (matchID) => {
     loader.appendTo(matchStatsContainer); // adding css loader first
-    $.get(`https://api.opendota.com/api/matches/${matchID}`)
+    $.get(`https://api.opendota.com/api/matches/${matchID}`) // test IDs: 5699757365, 5682280389
       .done((response) => {
         console.log(response);
         const direScore = document.createElement('p');
@@ -339,7 +339,7 @@ $(document).ready(() => {
       .always(() => {
         loader.detach();
       });
-    $.get(`https://api.opendota.com/api/players/${playerID}/wl`) // test id: 131284339
+    $.get(`https://api.opendota.com/api/players/${playerID}/wl`) 
       .done((response) => {
         if (response.win + response.lose !== 0) { // check if player has even played any games
           const games = document.createElement('p');
@@ -358,7 +358,7 @@ $(document).ready(() => {
 
           /* for counting how many games has player played as dire team, i need to deduct total games played from radiant games played,
            the API doesn't return dire games played, so i need to calculate it myself*/
-          $.get(`https://api.opendota.com/api/players/${playerID}/matches?is_radiant`) // test id: 131284339
+          $.get(`https://api.opendota.com/api/players/${playerID}/matches?is_radiant`) 
             .done((response) => {
               const radiantGames = document.createElement('p');
               const direGames = document.createElement('p');
@@ -389,7 +389,7 @@ $(document).ready(() => {
       .always(() => {
         loader.detach();
       })
-    $.get(`https://api.opendota.com/api/players/${playerID}/counts`) // test id: 131284339
+    $.get(`https://api.opendota.com/api/players/${playerID}/counts`) 
       .done((response) => {
         try { // for error handling 
           const gamesAbandoned = document.createElement('p');
