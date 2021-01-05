@@ -23,21 +23,32 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px 10px;
+    padding: 40px 20px 10px;
 }
 
 header input {
-    width: 100%;
-    max-width: 300px;
+    width: 270px;
     padding: 15px 15px;
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 15px;
     border-bottom: 3px solid rgba(0, 0, 0, 0.7);
     font-size: 20px;
     font-weight: 400;
-    /*transition: 0.2s ease-out;*/
+}
+
+button {
+    margin-left: 2px;
+    width: 50px;
+    height: 56px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 header input:focus {
@@ -59,38 +70,96 @@ main {
     text-shadow: 3px 2px rgba(0, 0, 0, 0.6);
     margin: 10px;
 }
-.searched-place .date{
+
+.searched-place .date {
     color: white;
     font-size: 20px;
     font-weight: 500;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
 }
-.current .temp{
+
+.current .temp {
     color: white;
     font-size: 90px;
     font-weight: 900;
-    margin: 30px 0px;
+    margin-top: 40px;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.6);
 }
-.current .temp span{
+
+.current .temp span {
     font-weight: 500;
 }
+
 .city-icon {
-    margin-top: 10px;
     width: 100px;
     height: 100px;
 }
-.current .weather{
+
+.current .weather {
     color: white;
     font-size: 30px;
     font-style: italic;
     font-weight: 500;
     margin-bottom: 20px;
     text-shadow: 1px 2px rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
 }
-.current .feel{
+
+.current .feel, .saved-cities {
     color: white;
     font-size: 20px;
     font-weight: 500;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.saved-cities {
+    align-self: center;
+    margin-top: 50px;
+    width: 550px;
+    font-size: 18px;
+}
+
+.saved-cities .saved {
+    width: 420px;
+    position: relative;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: left;
+    float: left;
+    padding: 0 0 0;
+}
+p {
+    margin-top: 4px;
+    border-bottom: solid 3px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+
+}
+.saved-cities .buttons{
+    width: 130px;
+    margin-top: 20px;
+    float: right;
+}
+.buttons button{
+    height: 21.5px;
+    width: 59px;
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+/*Úprava výstupu google places API*/
+
+.pac-container {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pac-item, .pac-item-query {
+    font-size: 18px;
+}
+
+.pac-icon {
+    display: none;
 }
