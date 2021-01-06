@@ -1,17 +1,10 @@
 <template>
   <div>
-    <h1>Submit your score</h1>
-    <hr />
-    <form
-      @submit.prevent="submitScore"
-      class="new_score_form"
-    >
+    <h2>Submit your score</h2>
+    <hr/>
+    <form @submit.prevent="submitScore" class="new_score_form">
       <label>Nickname</label>
-      <input
-        required
-        type="text"
-        v-model="nickname"
-      />
+      <input required type="text" v-model="nickname" />
       <button type="submit">Submit</button>
     </form>
   </div>

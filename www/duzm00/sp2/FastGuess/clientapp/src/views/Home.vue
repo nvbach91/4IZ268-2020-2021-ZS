@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome to Fast Guess</h1>
+    <h2>Welcome to Fast Guess</h2>
     <hr />
     <p>Fast guess is a game with fast questions and even faster answers</p>
     <p>
