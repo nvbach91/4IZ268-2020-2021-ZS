@@ -1,1 +1,195 @@
-/*in development*/
+header {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(48, 47, 47, 0.75);
+    border-radius: 5px;
+    color: white;
+    margin: 10px 0;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+footer {
+    width: 100%;
+    margin-top: 5px;
+    background-color: rgba(48, 47, 47, 0.75);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+footer div {
+    text-align: center;
+    color: white;
+}
+
+main {
+    width: 68%;
+    background-color: rgba(48, 47, 47, 0.75);
+    border-radius: 5px;
+    color: white;
+    padding-left: 20px;
+}
+
+aside {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    margin-left: auto;
+    width: 29%;
+    background-color: rgba(48, 47, 47, 0.75);
+    border-radius: 5px;
+    color: white;
+}
+
+aside h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.name, .date {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    width: 49%;
+}
+
+#outputName, #outputDate {
+    padding: 25px;
+}
+
+.last{
+    display: flex; 
+    width: 100%;
+}
+
+#last {
+    display: flex;
+    flex-wrap: wrap;
+    width: 74%;
+    text-align: right;
+}
+
+#buttons{
+    display: flex;
+    flex-wrap: wrap;    
+    width: 25%;
+    margin: auto 0;
+}
+
+#saveButton{
+    margin-right: 15px;
+}
+
+.bottom{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.savedNames{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+}
+
+.bottom div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.bottom div img{
+    height: auto;
+    width: 25px;
+    margin-left: 15px;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#findName:hover, #findDate:hover, #month:hover, .bottom div img:hover, #day:hover, #saveButton:hover {
+    cursor: pointer;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+@media (max-width: 1024px){
+    main {
+        width: 100%;
+    }
+
+    aside{
+        width: 100%;
+        margin-top: 10px;
+    }
+}
