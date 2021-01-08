@@ -7,7 +7,7 @@
         v-for="answer in picture.answers"
         v-bind:key="answer.answerText"
         v-bind:answer="answer"
-        v-on:answer-selected="$emit('answer-selected', answer.answerText)"
+        v-on:answer-selected="$emit('answer-selected', answer)"
       />
     </div>
   </div>
@@ -25,9 +25,19 @@ export default {
   components: {
     Answer,
   },
+  created() {
+    window.addEventListener("keyup", (event) => {
+      if (event.key === "x") {
+        this.$emit("answer-selected", this.picture.answers[0]);
+      } else if (event.key === "c") {
+        this.$emit("answer-selected", this.picture.answers[1]);
+      } else if (event.key === "v") {
+        this.$emit("answer-selected", this.picture.answers[2]);
+      }
+    });
+  },
 };
 </script>
-
 
 <style>
 .picture {

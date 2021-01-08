@@ -11,18 +11,22 @@ export default new Router({
     mode: 'history',
     routes: [
         {
+            name: "home",
             path: "/",
             component: Home
         },
         {
+            name: "game",
             path: "/game",
             component: Game
         },
         {
+            name: "score",
             path: "/score",
             component: ScoreBoard
         },
         {
+            name: "scoreNew",
             path: "/score/new",
             component: ScoreBoardNew
         }

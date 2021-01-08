@@ -1,6 +1,6 @@
 <template>
   <div>
-     <button type="submit" v-on:click="$emit('answer-selected', answer.answerText)">{{answer.answerText}}</button>
+     <button type="submit" v-on:click="$emit('answer-selected', answer)">{{answer.answerText}}</button>
   </div>
 </template>
 

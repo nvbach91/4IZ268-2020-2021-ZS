@@ -23,29 +23,37 @@ namespace FastGuess.Controllers
         [HttpPost]
         public IActionResult AddScore(ScoreRecord scoreBoard)
         {
-            using (var database = new DatabaseContext())
+
+            var totalScore = 0;
+
+            foreach (var item in scoreBoard.Answers.UserAnswersIds)
             {
-                var totalScore = 0;
-
-                foreach (var item in scoreBoard.Answers.UserAnswersIds)
+                var q = PictureMetaDb.Pictures.First(a => a.Id == item.QuestionId);
+                var answer = q.Answers.FirstOrDefault(a => a.AnswerText == item.Answer);
+                if (answer != null && answer.IsCorrect)
                 {
-                    var q = PictureMetaDb.Pictures.First(a => a.Id == item.QuestionId);
-                    var answer = q.Answers.FirstOrDefault(a => a.AnswerText == item.Answer);
-                    if (answer != null && answer.IsCorrect)
-                    {
-                        totalScore += (10000 / (int)item.msElapsed);
-                    }
+                    totalScore += (10000 / (int)item.msElapsed);
                 }
+            }
 
+            try
+            {
                 var score = new ScoreBoard()
                 {
+                    Id = new Guid(scoreBoard.Id),
                     Nickname = scoreBoard.Nickname,
                     Score = totalScore
                 };
 
-                database.ScoreBoard.Add(score);
-                database.SaveChanges();
+
+                this.database.ScoreBoard.Add(score);
+                this.database.SaveChanges();
             }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+
 
             return Ok();
         }

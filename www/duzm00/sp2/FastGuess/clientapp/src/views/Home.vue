@@ -8,9 +8,12 @@
       from. Total score is based on answer correctnes and how fast the answer is
       given.
     </p>
+    <p>
+      To answer each question even faster you can use <code>X</code>, <code>C</code> and <code>V</code> keys on your keyboard.
+    </p>
     <div class="begin">
       <h3>Let's begin :)</h3>
-      <a href="/game">New game</a>
+      <router-link :to="{path:'game'}">New game</router-link>
     </div>
   </div>
 </template>
@@ -18,4 +21,6 @@
 .begin {
   text-align: center;
 }
+
+
 </style>
