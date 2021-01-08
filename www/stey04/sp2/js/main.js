@@ -68,13 +68,13 @@ $(document).ready(() => {
             .done(s => {
                 let lat = s.latitude;
                 let long = s.longitude;
-                //saveToLocalStorage([lat, long]);
+                let t = s.timestamp;
                 moveISS(lat, long);
+                saveToLocalStorage(t, lat, long);
             })
             .fail(e => console.log('error', e));
         setTimeout(updateISS, 8000);            // update ISS position every 8 seconds
     };
-
 
     const createPeopleInSpace = (s) => {
         let names = [];
@@ -138,29 +138,45 @@ $(document).ready(() => {
         );
     };
 
-    const saveToLocalStorage = (item) => {
-        //let pos = window.localStorage.getItem('iss_times');
-        /*
-            if (pos) {
-                pos.push(item);
-            } else {
-                let pos = [];
-                pos.push(item);
-            }
-            */
-        let pos = [];
-        pos.push(item);
-        console.log(pos)
-        window.localStorage.setItem('iss_times', pos);
+    const saveToLocalStorage = (time, lat, long) => {
+        let p = getFromLocalStorage();
+        p[time] = { lat, long }
+        p = JSON.stringify(p);
+        try {
+            window.localStorage.setItem(KEY, p);
+        } catch (e) {
+            //setItem() may throw an exception if the storage is full
+            console.log(e);
+            return false;
+        }
+        return true;
+    };
+
+    const getFromLocalStorage = () => {
+        const item = window.localStorage.getItem(KEY);
+        return item ? JSON.parse(item) : {};
+    };
+
+    const createCircle = (lat, long) => {
+        return L.circle([lat, long], {
+            color: 'red',
+            radius: 1,
+        });
+    };
+
+    const markPosition = (map, lat, long) => {
+        createCircle(lat, long).addTo(map);
+    };
+
+    const showOldPositions = () => {
+        const pos = getFromLocalStorage();
+        Object.keys(pos).forEach(k => {
+            const c = pos[k];
+            markPosition(map, c.lat, c.long);
+        });
     }
 
-    const showOldPositions = (key = 'iss_times') => {
-        // upate map with an old positions
-        let pos = window.localStorage.getItem(key);
-        console.log(pos.split(','))
-        L.marker(pos.split(',')).addTo(map);
-    }
-
+    const KEY = 'ISS';
     const datesContainer = $('#passes');
     const crewContainer = $('#people');
     const sp1 = makeSpinner();
@@ -171,6 +187,6 @@ $(document).ready(() => {
 
     updateISS();
     showOldPositions();
-    //getPeopleInSpace();
-    //getIssPassTimesForLocation();
+    getPeopleInSpace();
+    getIssPassTimesForLocation();
 });
