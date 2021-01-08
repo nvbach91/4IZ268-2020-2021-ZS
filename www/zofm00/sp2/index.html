@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="2. Semestralni prace pro potreby predmetu 4IZ268">
+    <meta name="keywords" content="HTML, CSS, JavaScript, jsapp, svatky">
+    <meta name="author" content="Martin Zof">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svátky v ČR</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <h1>Svátky v české republice</h1>
+        <p id="today"></p>
+    </header>
+    <main>
+        <h4>Zadejte jméno nebo datum do příslušné kolonky</h4>
+        <div class="find">
+            <div class="descriptionName">Jméno</div>
+            <form>
+                <input id="name" type="text">
+            </form>
+            <button id="findName">Vyhledat</button>
+            <div id="outputName"></div>
+            <div class="descriptionDate">Datum</div>
+            <select id="month">
+                <option value="none">Vyberte měsíc</option>
+                <option value="jan">Leden</option>
+                <option value="feb">Únor</option>
+                <option value="mar">Březen</option>
+                <option value="apr">Duben</option>
+                <option value="may">Květen</option>
+                <option value="jun">Červen</option>
+                <option value="jul">Červenec</option>
+                <option value="aug">Srpen</option>
+                <option value="sep">Září</option>
+                <option value="oct">Říjen</option>
+                <option value="nov">Listopad</option>
+                <option value="dec">Prosinec</option>
+            </select>
+            <select id="day"></select>
+
+            <button id="findDate">Vyhledat</button>
+            <div id="outputDate"></div>
+
+        </div>
+        <div class="last">
+            <p id="last"></p>
+            <div id="buttons">
+                <button id="saveButton">Uložit</button>
+            </div>
+        </div>
+
+        <h4>Má uložená jména</h4>
+        <div class="bottom">
+        </div>
+
+
+    </main>
+    <aside>
+        <h3>Oblíbená jména</h3>
+        <div class="name">
+            <p>Marie</p>
+            <p>Jiří</p>
+            <p>Jan</p>
+            <p>Jana</p>
+            <p>Petr</p>
+            <p>Pavel</p>
+            <p>Jaroslav</p>
+            <p>Martin</p>
+            <p>Tomáš</p>
+            <p>Miroslav</p>
+        </div>
+        <div class="date">
+            <p>12.9.</p>
+            <p>24.4.</p>
+            <p>24.6.</p>
+            <p>24.5.</p>
+            <p>22.2.</p>
+            <p>29.6.</p>
+            <p>27.4.</p>
+            <p>11.11.</p>
+            <p>7.3.</p>
+            <p>6.3.</p>
+        </div>
+    </aside>
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <footer>
+        <div>Semestrální práce pro potřeby 4IZ268, Autor: Martin Zof, 2021</div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
