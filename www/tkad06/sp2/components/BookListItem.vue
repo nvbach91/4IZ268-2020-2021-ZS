@@ -62,6 +62,7 @@
           <a
             :href="volumeInfo.canonicalVolumeLink"
             target="_blank"
+            title="See book in Google store"
             class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-2 text-sm text-secondary border border-transparent rounded-bl-lg hover:text-primary transition-colors duration-150"
           >
             <!-- Heroicon name: eye -->
@@ -71,6 +72,7 @@
         <div class="-ml-px w-0 flex-1 flex">
           <a
             href="#"
+            title="Open actions"
             class="relative w-0 flex-1 inline-flex items-center justify-center py-2 text-sm text-secondary border border-transparent rounded-br-lg hover:text-primary transition-colors duration-150"
             @click.prevent="dropdownOpen = !dropdownOpen"
           >

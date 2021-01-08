@@ -46,6 +46,7 @@
                 id="user-menu"
                 class="bg-white rounded-full flex text-sm outline-none focus:outline-none border-2 border-transparent hover:border-primary transition-all duration-150"
                 aria-haspopup="true"
+                title="Open profile menu"
               >
                 <span class="sr-only">Open user menu</span>
                 <img
@@ -70,6 +71,7 @@
                   :key="i.label"
                   href="#"
                   class="block px-4 py-2 text-sm rounded-md text-secondary hover:bg-secondary-light hover:bg-opacity-50 transition-all duration-150"
+                  :class="i.label === 'Sign Out' ? 'g_id_signout' : ''"
                   role="menuitem"
                   @click.prevent="i.onClick"
                 >
