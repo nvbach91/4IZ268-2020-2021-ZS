@@ -29,22 +29,30 @@
   </head>
   <body class="text-center">
     <div class="container">
+      <nav>
         <div class="row">
-            <div class="col-7 d-flex justify-content-end">
-                <h1>My library</h1>
-            </div>
+          <div class="col-7 d-flex justify-content-end">
+            <h1>My library</h1>
+          </div>
         </div>
         <div class="row mt-3 mb-3">
-            <div class="col-5">
+          <div class="col-5">
+            <div class="row">
+              <button type="button" class="btn btn-danger" id="clear">
+                Clear My List
+              </button>
             </div>
-            <div class="col-2 d-flex justify-content-center">
-                <div class="row">
-                    <button type="button" class="btn btn-primary" onclick="relocate()">Add book</button>
-                </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <div class="row">
+              <button type="button" class="btn btn-primary" id="relocate">
+                Add book
+              </button>
             </div>
+          </div>
         </div>
-
-      <div class="row">
+      </nav>
+      <section class="row">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -56,49 +64,7 @@
               <th scope="col">Delete book</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Harry Potter and the Philosopher's Stone</td>
-              <td>J. K. Rowling</td>
-              <td>1997</td>
-              <td>1234567890</td>
-              <td>
-                <div class="rating">
-                  <input type="radio" name="rating" value="5" id="5" /><label
-                    for="5"
-                    >☆</label
-                  >
-                  <input type="radio" name="rating" value="4" id="4" /><label
-                    for="4"
-                    >☆</label
-                  >
-                  <input type="radio" name="rating" value="3" id="3" /><label
-                    for="3"
-                    >☆</label
-                  >
-                  <input type="radio" name="rating" value="2" id="2" /><label
-                    for="2"
-                    >☆</label
-                  >
-                  <input type="radio" name="rating" value="1" id="1" /><label
-                    for="1"
-                    >☆</label
-                  >
-                </div>
-              </td>
-              <td>
-                <!-- Button trigger modal -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="tableContent"></tbody>
         </table>
         <!-- Modal -->
         <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
@@ -130,6 +96,7 @@
                   type="button"
                   class="btn btn-danger"
                   data-dismiss="modal"
+                  id="modalButtonRemove"
                 >
                   Delete
                 </button>
@@ -137,13 +104,8 @@
             </div>
           </div>
         </div>
-        <script>
-            function relocate()
-            {
-                 location.href = "search/";
-            } 
-        </script>
-      </div>
+      </section>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
