@@ -77,6 +77,7 @@ module.exports = {
   },
   variants: {
     animation: ['responsive', 'motion-safe', 'motion-reduce'],
+    opacity: ['disabled', 'responsive', 'hover'],
   },
   plugins: [require('@tailwindcss/forms')],
   purge: {

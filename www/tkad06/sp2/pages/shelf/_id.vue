@@ -29,8 +29,8 @@
 export default {
   layout: 'app',
   async asyncData({ params: { id }, $api, store }) {
-    const { totalItems, items } = await $api.getBookshelfVolumes(id)
     store.commit('currentBookshelfId', id)
+    const { totalItems, items } = await $api.getBookshelfVolumes(id)
     return {
       books: items || [],
       totalItems: totalItems || 0,

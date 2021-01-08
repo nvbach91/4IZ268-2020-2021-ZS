@@ -80,7 +80,7 @@
                   <ul class="relative bg-white rounded-md -space-y-px">
                     <label
                       class="w-full block text-left p-2 font-light text-secondary opacity-50 uppercase text-sm"
-                      >Private</label
+                      >Public</label
                     >
                     <li v-for="b in addablePublicBookshelves" :key="b.id">
                       <div
@@ -91,12 +91,16 @@
                             v-model="selectedBookshelves"
                             name="pricing_plan"
                             type="checkbox"
-                            class="h-5 w-5 text-primary cursor-pointer border border-primary-light rounded-sm outline-none focus:outline-none"
+                            class="h-5 w-5 text-primary cursor-pointer border border-primary-light rounded-sm outline-none focus:outline-none disabled:opacity-50"
                             :aria-describedby="`bookshelf ${b.title}`"
                             :value="b.id"
+                            :disabled="currentBookshelf === b.id"
                           />
                           <span
                             class="ml-3 font-medium text-secondary text-base"
+                            :class="{
+                              'text-opacity-50': currentBookshelf === b.id,
+                            }"
                           >
                             {{ b.title }}
                           </span>
@@ -108,7 +112,7 @@
                     <label
                       class="w-full block text-left p-2 font-light text-secondary opacity-50 uppercase text-sm"
                     >
-                      Public
+                      Private
                     </label>
                     <li v-for="b in addablePrivateBookshelves" :key="b.id">
                       <div
@@ -176,6 +180,12 @@ export default {
         .filter((s) => s.access === 'PUBLIC')
         .sort((first, second) => first.id - second.id)
     },
+    currentBookshelf() {
+      return this.$store.state.currentBookshelfId
+    },
+  },
+  mounted() {
+    this.selectedBookshelves.push(this.currentBookshelf)
   },
   methods: {
     addSelected() {
