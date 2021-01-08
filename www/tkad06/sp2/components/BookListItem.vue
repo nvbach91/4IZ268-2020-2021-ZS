@@ -4,15 +4,22 @@
   >
     <!-- BOOK PREVIEW INFO -->
     <div class="flex-1 flex flex-col px-2 py-3 relative">
-      <img
-        class="w-24 h-32 flex-shrink-0 mx-auto bg-secondary-light rounded-md object-cover"
-        :src="
-          volumeInfo.imageLinks
-            ? volumeInfo.imageLinks.thumbnail
-            : 'http://books.google.com/books/content?id=Pk23CwAAAEAJ&printsec=frontcover&img=1&zoom=1&uvs=3&source=gbs_api'
-        "
-        :alt="volumeInfo.title"
-      />
+      <a
+        class="w-24 h-32 flex-shrink-0 mx-auto bg-secondary-light rounded-md transform hover:-translate-y-1 hover:shadow-lg transition-all duration-150"
+        :href="volumeInfo.canonicalVolumeLink"
+        target="_blank"
+        title="See in Google store"
+      >
+        <img
+          class="w-full h-full object-cover"
+          :src="
+            volumeInfo.imageLinks
+              ? volumeInfo.imageLinks.thumbnail
+              : 'http://books.google.com/books/content?id=Pk23CwAAAEAJ&printsec=frontcover&img=1&zoom=1&uvs=3&source=gbs_api'
+          "
+          :alt="volumeInfo.title"
+        />
+      </a>
       <h3 class="mt-3 text-secondary text-sm font-medium">
         {{ volumeInfo.title }}
       </h3>
@@ -23,8 +30,9 @@
             v-for="authorName in volumeInfo.authors"
             :key="authorName"
             class="p-1"
-            >{{ authorName }}</span
           >
+            {{ authorName }}
+          </span>
         </dd>
         <dt class="sr-only">Category</dt>
         <dd class="mt-1 flex flex-wrap justify-center">
@@ -62,7 +70,7 @@
           <a
             :href="volumeInfo.canonicalVolumeLink"
             target="_blank"
-            title="See book in Google store"
+            title="See in Google store"
             class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-2 text-sm text-secondary border border-transparent rounded-bl-lg hover:text-primary transition-colors duration-150"
           >
             <!-- Heroicon name: eye -->
@@ -171,3 +179,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+</style>
