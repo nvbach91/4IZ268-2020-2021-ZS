@@ -12,7 +12,37 @@ days['oct'] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '1
 days['nov'] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'];
 days['dec'] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
 
-function ChangeDays() {
+const holidays = {
+    "0101": " je Nový rok a Den obnovy samostatného českého státu.",
+    "0601": " mají svátek Tři králové.",
+    "0105": " je svátek práce.",
+    "0805": " je Den vítězství.",
+    "0507": " je Den slovanských věrozvěstů Cyrila a Metoděje.",
+    "0607": " je Den upálení mistra Jana Husa.",
+    "2809": " je Den české státnosti a svátek má Václav.",
+    "2810": " je Den vzniku samostatného československého státu.",
+    "1711": " je Den boje za svobodu a demokracii.",
+    "2412": " je Štědrý den a svátek má Adam a Eva.",
+    "2512": " je 1. svátek vánoční",
+    "2612": " je 2. svátek vánoční",
+}
+
+const monthNumbers = {
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "may": 5,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
+}
+
+$('#month').on('click', function () {
     var monthList = document.getElementById('month');
     var dayList = document.getElementById('day');
     var selMonth = monthList.options[monthList.selectedIndex].value;
@@ -28,139 +58,99 @@ function ChangeDays() {
             dayList.options.add(newDay);
         }
     }
-}
+});
 
-function HoverBin(bin) {
+function hoverBin(bin) {
     bin.setAttribute('src', 'images/bin_open.png');
 }
 
-function UnhoverBin(bin) {
+function unhoverBin(bin) {
     bin.setAttribute('src', 'images/bin_closed.png');
 }
 
-function LoadSavedNames() {
-    const name1 = $('#saved1');
-    const name2 = $('#saved2');
-    const name3 = $('#saved3');
+function printSavedNames() {
 
-    name1.text(localStorage.getItem("name1"));
-    name2.text(localStorage.getItem("name2"));
-    name3.text(localStorage.getItem("name3"));
+    var savedNames;
+
+    if (localStorage.getItem("savedNames")) {
+        savedNames = JSON.parse(localStorage.getItem("savedNames"));
+    }
+
+    else {
+        savedNames = new Array();
+        localStorage.setItem("savedNames", JSON.stringify(savedNames));
+    }
+
+    savedNames = JSON.parse(localStorage.getItem("savedNames"));
+    $('.bottom').empty();
+    var i;
+    for (i = 0; i <= savedNames.length; i++) {
+
+        if (savedNames[i] != undefined) {
+
+            var stringToPrint = $('<p id="nameParagraph' + i + '"></p>').text(savedNames[i]);
+            var binImage = $('<img id="bin' + i + '" class="bin" src="images/bin_closed.png" alt="bin" width=129 onclick="deleteSavedName(this)" onmouseout="unhoverBin(this)" onmouseover="hoverBin(this)">')
+
+
+            $('.bottom').append(stringToPrint);
+            $('.bottom').append(binImage);
+
+        }
+    }
 }
 
-function DeleteBin1() {
-    DeleteLocalStorage("name1");
-    $('#name1').hide();
-    LoadSavedNames();
-    localStorage.setItem("bin1", "0");
+function deleteSavedName(paragraph) {
+    var string = paragraph.id;
+
+    savedNames = JSON.parse(localStorage.getItem("savedNames"));
+    var i;
+    for (i = 0; i <= savedNames.length; i++) {
+        if (i == string.charAt(string.length - 1)) {
+            savedNames[i] = undefined;
+            localStorage.setItem("savedNames", JSON.stringify(savedNames));
+            printSavedNames();
+            break;
+        }
+    }
 }
 
-function DeleteBin2() {
-    DeleteLocalStorage("name2");
-    $('#name2').hide();
-    LoadSavedNames();
-    localStorage.setItem("bin2", "0");
-}
-
-function DeleteBin3() {
-    DeleteLocalStorage("name3");
-    $('#name3').hide();
-    LoadSavedNames();
-    localStorage.setItem("bin3", "0");
-}
-
-function DeleteLocalStorage(name) {
-    localStorage.removeItem(name);
-}
-
-function LoadSavedSearch() {
+function loadSavedSearch() {
     var last = $('#last');
     last.text(localStorage.getItem("LastSearch"));
 }
 
-function BinShow() {
-    if (localStorage.getItem("bin1") != 1) {
-        DeleteBin1();
-    }
-
-    if (localStorage.getItem("bin2") != 1) {
-        DeleteBin2();
-    }
-
-    if (localStorage.getItem("bin3") != 1) {
-        DeleteBin3();
-    }
-}
 
 $(document).ready(() => {
 
     const loader = $('.loader-wrapper');
-    var lastChange;
-    BinShow();
 
-    LoadSavedNames();
+    printSavedNames();
 
-    LoadSavedSearch();
-
-
+    loadSavedSearch();
 
     $.ajax({
         method: 'GET',
-        url: 'https://svatky.adresa.info/txt',
+        url: 'https://svatky.adresa.info/json',
         success: (resp) => {
             try {
-                var replyField = resp.split(";");
+                var replyJson = JSON.parse(JSON.stringify(resp));
                 var today = $('#today');
-                if (replyField[0] === '0101') {
-                    today.text('Dnes je Nový rok a Den obnovy samostatného českého státu.');
+                if (holidays[replyJson[0].date] != undefined) {
+                    today.text('Dnes' + holidays[replyJson[0].date])
                 }
-                else if (replyField[0] === '0601') {
-                    today.text('Dnes mají svátek Tři králové.');
-                }
-                else if (replyField[0] === '0105') {
-                    today.text('Dnes je svátek práce.');
-                }
-                else if (replyField[0] === '0805') {
-                    today.text('Dnes je Den vítězství.');
-                }
-                else if (replyField[0] === '0507') {
-                    today.text('Dnes je Den slovanských věrozvěstů Cyrila a Metoděje.');
-                }
-                else if (replyField[0] === '0607') {
-                    today.text('Dnes Den upálení mistra Jana Husa.');
-                }
-                else if (replyField[0] === '2809') {
-                    today.text('Dnes je Den české státnosti a svátek má Václav.');
-                }
-                else if (replyField[0] === '2810') {
-                    today.text('Dnes je Den vzniku samostatného československého státu.');
-                }
-                else if (replyField[0] === '1711') {
-                    today.text('Dnes je Den boje za svobodu a demokracii.');
-                }
-                else if (replyField[0] === '2412') {
-                    today.text('Dnes je Štědrý den a svátek má Adam a Eva.');
-                }
-                else if (replyField[0] === '2512') {
-                    today.text('Dnes je 1. svátek vánoční');
-                }
-                else if (replyField[0] === '0601') {
-                    today.text('Dnes je 2. svátek vánoční');
-                }
-                else if (replyField.length === 2) {
-                    today.text('Dnes má svátek ' + replyField[1].substring(0, replyField[1].length - 1) + '.');
+                else if (replyJson.length === 1) {
+                    today.text('Dnes má svátek ' + replyJson[0].name + '.');
                 }
                 else {
-                    today.text('Dnes má svátek ' + replyField[1].substring(0, replyField[1].length - 5) + ' a ' + replyField[2].substring(0, replyField[2].length - 1) + '.');
+                    today.text('Dnes má svátek ' + replyJson[0].name + ' a ' + replyJson[1].name + '.');
                 }
-
             } catch (e) {
                 console.error(e)
             }
         },
         error: (error) => { console.log(error); }
     })
-    LoaderHide();
+    loaderHide();
 
     var nameToSave;
     var dateToSave;
@@ -175,24 +165,23 @@ $(document).ready(() => {
         }
         else {
             loader.fadeIn();
+            var capitalizedInputName = inputName.charAt(0).toUpperCase() + inputName.slice(1); //Změna prvního písmene na velké
+
             $.ajax({//připojení API, vyhledávání
                 method: 'GET',
-                url: 'https://svatky.adresa.info/txt?name=' + inputName,
+                url: 'https://svatky.adresa.info/json?name=' + capitalizedInputName,
                 success: (resp) => {
                     try {
-
-
-                        if (resp.length === 0) {
+                        var replyJson = JSON.parse(JSON.stringify(resp));
+                        if (replyJson.length === 0) {
                             window.alert('Toto jméno se bohužel v seznamu nevyskytuje.');
                         } else {
-                            respField = resp.split(";");
-                            var dayPrint = respField[0].toString().substring(0, 2);
-                            var monthPrint = respField[0].toString().substring(2, 5);
-                            $('#outputName').text(inputName + ' má svátek ' + dayPrint + '.' + monthPrint + '.');
-                            SavingSearch('Naposledy hledáno: ' + inputName + ' - ' + dayPrint + '.' + monthPrint + '.');
-                            nameToSave = inputName;
+                            var dayPrint = replyJson[0].date.substring(0, 2);
+                            var monthPrint = replyJson[0].date.substring(2, 5);
+                            $('#outputName').text(capitalizedInputName + ' má svátek ' + dayPrint + '.' + monthPrint + '.');
+                            savingSearch('Naposledy hledáno: ' + capitalizedInputName + ' - ' + dayPrint + '.' + monthPrint + '.');
+                            nameToSave = capitalizedInputName;
                             dateToSave = dayPrint + '.' + monthPrint + '.';
-
                         }
                     } catch (e) {
                         console.error(e)
@@ -201,98 +190,61 @@ $(document).ready(() => {
 
                 },
                 error: (error) => { console.log(error); },
-                complete: LoaderHide()
+                complete: loaderHide()
 
             })
 
         }
     });
 
-    function SavingSearch(toSave) {
+    function savingSearch(toSave) {
         var last = $('#last');
         localStorage.removeItem("LastSearch");
         localStorage.setItem("LastSearch", toSave);
         last.text(toSave);
     }
 
-    function LoaderHide() {
+    function loaderHide() {
         loader.fadeOut();
     }
 
-    function SaveName(name, date) {
-        const name1 = $('#saved1');
-        const name2 = $('#saved2');
-        const name3 = $('#saved3');
-        var currentSave1 = localStorage.getItem("name1");
-        var currentSave2 = localStorage.getItem("name2");
-        var currentSave3 = localStorage.getItem("name3");
+    function saveName(name, date) {
 
+        var savedNames = JSON.parse(localStorage.getItem("savedNames"));
 
+        var stringName = name + ' - ' + date;
 
-        if (!currentSave1) {
-            localStorage.setItem("name1", name + ' - ' + date);
-            lastChange = 1;
-            name1.text(localStorage.getItem("name1"));
-            localStorage.setItem("bin1", "1");
-            $('#name1').show();
+        var i;
+        for (i = 0; i <= savedNames.length; i++) {
+
+            if (savedNames[i] == stringName) {
+                console.log('Can not be saved. Reason: Name is already saved.')
+                break;
+            }
+
+            if (savedNames[i] == undefined) {
+                savedNames[i] = stringName;
+                break;
+
+            }
+
         }
-
-        else if (!currentSave2) {
-            localStorage.setItem("name2", name + ' - ' + date);
-            lastChange = 1;
-            name2.text(localStorage.getItem("name2"));
-            localStorage.setItem("bin2", "1");
-            $('#name2').show();
-        }
-
-        else if (!currentSave3) {
-            localStorage.setItem("name3", name + ' - ' + date);
-            lastChange = 1;
-            name3.text(localStorage.getItem("name3"));
-            localStorage.setItem("bin3", "1");
-            $('#name3').show();
-        }
-
-        else if (lastChange == 3) {
-            localStorage.removeItem("name1");
-            localStorage.setItem("name1", name + ' - ' + date);
-            lastChange = 1;
-            name1.text(localStorage.getItem("name1"));
-            localStorage.setItem("bin1", "1");
-            $('#name1').show();
-        }
-
-        else if (lastChange == 1) {
-            localStorage.removeItem("name2");
-            localStorage.setItem("name2", name + ' - ' + date);
-            lastChange = 2;
-            name2.text(localStorage.getItem("name2"));
-            localStorage.setItem("bin2", "1");
-            $('#name2').show();
-        }
-
-        else if (lastChange == 2) {
-            localStorage.removeItem("name3");
-            localStorage.setItem("name3", name + ' - ' + date);
-            lastChange = 3;
-            name3.text(localStorage.getItem("name3"));
-            localStorage.setItem("bin3", "1");
-            $('#name3').show();
-        }
-
+        localStorage.setItem("savedNames", JSON.stringify(savedNames));
     }
 
-
     $('#saveButton').click(function () {
-        if (nameToSave.length == 0) {
+        if (nameToSave == undefined) {
+            window.alert('Je třeba jméno nejdříve vyhledat!');
+        }
+        else if (nameToSave.length == 0) {
 
         }
         else {
-            SaveName(nameToSave, dateToSave);
-            nameToSave="";
+            saveName(nameToSave, dateToSave);
+            nameToSave = "";
+            printSavedNames();
         }
     });
-
 
     $('#findDate').click(function () {
         var monthList = document.getElementById('month');
@@ -309,56 +261,8 @@ $(document).ready(() => {
 
         loader.fadeIn();
 
-        switch (selMonth) {
-            case "jan": {
-                monthNo = 1;
-                break;
-            }
-            case "feb": {
-                monthNo = 2;
-                break;
-            }
-            case "mar": {
-                monthNo = 3;
-                break;
-            }
-            case "apr": {
-                monthNo = 4;
-                break;
-            }
-            case "may": {
-                monthNo = 5;
-                break;
-            }
-            case "jun": {
-                monthNo = 6;
-                break;
-            }
-            case "jul": {
-                monthNo = 7;
-                break;
-            }
-            case "aug": {
-                monthNo = 8;
-                break;
-            }
-            case "sep": {
-                monthNo = 9;
-                break;
-            }
-            case "oct": {
-                monthNo = 10;
-                break;
-            }
-            case "nov": {
-                monthNo = 11;
-                break;
-            }
-            case "dec": {
-                monthNo = 12;
-                break;
-            }
-        }
+        monthNo = monthNumbers[selMonth];
+
         selDay++;
 
         var daySearch;
@@ -379,80 +283,25 @@ $(document).ready(() => {
 
         var outputDate = $('#outputDate');
 
-        if (monthNo === 1 && selDay === 1) {
-            outputDate.text(selDay + '.' + monthNo + '. je Nový rok a Den obnovy samostatného českého státu.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Nový rok a Den obnovy samostatného českého státu.');
-            LoaderHide();
-        }
-        else if (monthNo === 1 && selDay === 6) {
-            outputDate.text(selDay + '.' + monthNo + '. mají svátek Tři králové.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Tři králové.');
-            LoaderHide();
-        }
-        else if (monthNo === 5 && selDay === 1) {
-            outputDate.text(selDay + '.' + monthNo + '. je svátek práce.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - svátek práce.');
-            LoaderHide();
-        }
-        else if (monthNo === 5 && selDay === 8) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den vítězství.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den vítězství.');
-            LoaderHide();
-        }
-        else if (monthNo === 7 && selDay === 5) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den slovanských věrozvěstů Cyrila a Metoděje.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den slovanských věrozvěstů Cyrila a Metoděje.');
-            LoaderHide();
-        }
-        else if (monthNo === 7 && selDay === 6) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den upálení mistra Jana Husa.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den upálení mistra Jana Husa.');
-            LoaderHide();
-        }
-        else if (monthNo === 9 && selDay === 28) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den české státnosti a svátek má Václav.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den české státnosti a svátek má Václav.');
-            LoaderHide();
-        }
-        else if (monthNo === 10 && selDay === 28) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den vzniku samostatného československého státu.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den vzniku samostatného československého státu.');
-            LoaderHide();
-        }
-        else if (monthNo === 11 && selDay === 17) {
-            outputDate.text(selDay + '.' + monthNo + '. je Den boje za svobodu a demokracii.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Den boje za svobodu a demokracii.');
-            LoaderHide();
-        }
-        else if (monthNo === 12 && selDay === 24) {
-            outputDate.text(selDay + '.' + monthNo + '. je Štědrý den a svátek má Adam a Eva.');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - Štědrý den a svátek má Adam a Eva.');
-            LoaderHide();
-        }
-        else if (monthNo === 12 && selDay === 25) {
-            outputDate.text(selDay + '.' + monthNo + '. je 1. svátek vánoční');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - 1. svátek vánoční.');
-            LoaderHide();
-        }
-        else if (monthNo === 12 && selDay === 26) {
-            outputDate.text(selDay + '.' + monthNo + '. je 2. svátek vánoční');
-            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - 2. svátek vánoční.');
-            LoaderHide();
+        if (holidays[daySearch + monthSearch] != undefined) {
+            outputDate.text(selDay + '.' + monthNo + holidays[daySearch + monthSearch]);
+            savingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + holidays[daySearch + monthSearch]);
+            loaderHide();
         }
         else {
             $.ajax({
                 method: 'GET',
-                url: 'https://svatky.adresa.info/txt?date=' + daySearch + monthSearch,
+                url: 'https://svatky.adresa.info/json?date=' + daySearch + monthSearch,
                 success: (resp) => {
                     try {
-                        respField = resp.split(";");
-                        if (respField.length === 2) {
-                            outputDate.text(selDay + '.' + monthNo + '. má svátek ' + respField[1].substring(0, respField[1].length - 1) + '.');
-                            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - ' + respField[1].substring(0, respField[1].length - 1) + '.');
+                        var replyJson = JSON.parse(JSON.stringify(resp));
+                        if (replyJson.length === 1) {
+                            outputDate.text(selDay + '.' + monthNo + '. má svátek ' + replyJson[0].name + '.');
+                            savingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - ' + replyJson[0].name + '.');
                         }
                         else {
-                            outputDate.text(selDay + '.' + monthNo + '. má svátek ' + respField[1].substring(0, respField[1].length - 5) + ' a ' + respField[2].substring(0, respField[2].length - 1) + '.');
-                            SavingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - ' + respField[1].substring(0, respField[1].length - 5) + ' a ' + respField[2].substring(0, respField[2].length - 1) + '.');
+                            outputDate.text(selDay + '.' + monthNo + '. má svátek ' + replyJson[0].name + ' a ' + replyJson[1].name + '.');
+                            savingSearch('Naposledy hledáno: ' + selDay + '.' + monthNo + '. - ' + replyJson[0].name + ' a ' + replyJson[1].name + '.');
                         }
 
                     } catch (e) {
@@ -460,9 +309,11 @@ $(document).ready(() => {
                     }
                 },
                 error: (error) => { console.log(error); },
-                complete: LoaderHide()
+                complete: loaderHide()
             })
         }
     });
+
+
 
 });

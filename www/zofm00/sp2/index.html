@@ -19,13 +19,15 @@
     </header>
     <main>
         <h4>Zadejte jméno nebo datum do příslušné kolonky</h4>
-        <div class=find>
+        <div class="find">
             <div class="descriptionName">Jméno</div>
-            <input id="name" type="text">
+            <form>
+                <input id="name" type="text">
+            </form>
             <button id="findName">Vyhledat</button>
             <div id="outputName"></div>
             <div class="descriptionDate">Datum</div>
-            <select id="month" onchange="ChangeDays()">
+            <select id="month">
                 <option value="none">Vyberte měsíc</option>
                 <option value="jan">Leden</option>
                 <option value="feb">Únor</option>
@@ -41,6 +43,7 @@
                 <option value="dec">Prosinec</option>
             </select>
             <select id="day"></select>
+
             <button id="findDate">Vyhledat</button>
             <div id="outputDate"></div>
 
@@ -51,25 +54,9 @@
                 <button id="saveButton">Uložit</button>
             </div>
         </div>
-            
 
+        <h4>Má uložená jména</h4>
         <div class="bottom">
-                <h4>Má uložená jména</h4>
-            <div id="name1">
-                <p id="saved1"></p>
-                <img id="bin1" src="images/bin_closed.png" alt="bin" width=129 onclick="DeleteBin1()"
-                    onmouseout="UnhoverBin(this)" onmouseover="HoverBin(this)">
-            </div>
-            <div id="name2">
-                <p id="saved2"></p>
-                <img id="bin2" src="images/bin_closed.png" alt="bin" width=129 onclick="DeleteBin2()"
-                    onmouseout="UnhoverBin(this)" onmouseover="HoverBin(this)">
-            </div>
-            <div id="name3">
-                <p id="saved3"></p>
-                <img id="bin3" src="images/bin_closed.png" alt="bin" width=129 onclick="DeleteBin3()"
-                    onmouseout="UnhoverBin(this)" onmouseover="HoverBin(this)">
-            </div>
         </div>
 
 
@@ -110,7 +97,7 @@
         <div>Semestrální práce pro potřeby 4IZ268, Autor: Martin Zof, 2021</div>
     </footer>
 
-    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

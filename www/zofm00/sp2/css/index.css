@@ -67,8 +67,8 @@ aside h3 {
     padding: 25px;
 }
 
-.last{
-    display: flex; 
+.last {
+    display: flex;
     width: 100%;
 }
 
@@ -79,40 +79,29 @@ aside h3 {
     text-align: right;
 }
 
-#buttons{
+#buttons {
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     width: 25%;
     margin: auto 0;
 }
 
-#saveButton{
+#saveButton {
     margin-right: 15px;
 }
 
-.bottom{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.savedNames{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 50%;
-}
-
-.bottom div{
+.bottom {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
-.bottom div img{
+.bin {
     height: auto;
     width: 25px;
     margin-left: 15px;
+    margin-right: auto;
+    padding: 5px 0;
 }
 
 .loader-wrapper {
@@ -127,7 +116,7 @@ aside h3 {
     align-items: center;
 }
 
-#findName:hover, #findDate:hover, #month:hover, .bottom div img:hover, #day:hover, #saveButton:hover {
+#findName:hover, #findDate:hover, #month:hover, .bin:hover, #day:hover, #saveButton:hover {
     cursor: pointer;
 }
 
@@ -183,12 +172,12 @@ aside h3 {
         height: 0%;
     }
 }
-@media (max-width: 1024px){
+
+@media (max-width: 1024px) {
     main {
         width: 100%;
     }
-
-    aside{
+    aside {
         width: 100%;
         margin-top: 10px;
     }
