@@ -12,8 +12,11 @@ $(document).ready(() => {
   const clearFavouritesButton = $("#clear-favourites");
   const showFavouritesButton = $("#show-favourites");
   const searchResults = $("#search-results");
+  const pdfPreviewButton = $("#pdf-preview");
   //const removeFavouriteButton = $("#remove-favourite");
   const openSearchUrl = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=";
+  //const pdfBaseUrl = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/api/rest_v1/page/pdf/"
+  const pdfBaseUrl = "https://en.wikipedia.org/api/rest_v1/page/pdf/"
 
 
   //based on https://javascript.info/localstorage
@@ -30,13 +33,35 @@ $(document).ready(() => {
     console.log(text);
   };
 
+
   renderFavourites();
+
+
+  pdfPreviewButton.click(function () {
+    let input = inputField.val();
+    input = input.trim();
+    input = input.replace(" ", "_");
+    $.ajax({
+      url: pdfBaseUrl + `${input}/a4`,
+      xhrFields: { responseType: 'blob' },
+    })
+      .done((resp) => {
+        const blob = new Blob([resp], { type: 'application/pdf', title: `${input}` });
+        const objectUrl = URL.createObjectURL(blob);
+        let frame = document.getElementById("pdf-iframe");
+        frame.style.display = "block";
+        frame.src = `${objectUrl}`;
+        frame.contentWindow.location = `${objectUrl}`;
+        frame.contentWindow.open(`${objectUrl}`);
+      });
+  });
 
 
   function spaceToUnderscore(text) {
     text = text.replace(" ", "_");
     return text;
   }
+
 
   inputField.keyup(function (e) {
     if (e.key === "Enter") {
@@ -51,10 +76,10 @@ $(document).ready(() => {
           let items = [];
           for (let i = 0; i < response[1].length; i++) {
             let item = $(`<li> ${response[1][i]} </li>`);
-            item.click(function() {
+            item.click(function () {
               let articleName = $(this).text();
               inputField.val(articleName);
-              mobilePdfButton.click();
+              desktopPdfButton.click();
             });
             items.push(item);
 

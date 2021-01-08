@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="valm08">
-    <title>Stupid Wikimedia API application</title>
+    <title>A bit smarter Wikimedia API application</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,13 +12,20 @@
 </head>
 <body>
     <main>
-        <h1>Stupid Wikimedia API application</h1>
-        <img src="assets/img/logo.png" alt="W shaped logo" width="100" id="logo">
-        <p>This page sends request to <a href="https://www.mediawiki.org/wiki/Wikimedia_REST_API">Wikimedia API</a>. 
-            Only english Wikipedia is supported</p>
-        <p>Usage: to get a PDF file use an article name Only A4 is supported. To cite the article use full URL of the article. 
-            Text will be displayed in the output box. Only citation for Zotero and BibTeX are supported.
-        </p>
+        <div id="main-div">
+            <iframe id="pdf-iframe"
+                title="PDF preview"
+                width="300"
+                height="400">
+            </iframe>
+            <h1>A bit smarter Wikimedia API application</h1>
+            <img src="assets/img/logo.png" alt="W shaped logo" width="100" id="logo">
+            <p>This page sends request to <a href="https://www.mediawiki.org/wiki/Wikimedia_REST_API">Wikimedia API</a>. 
+                Only english Wikipedia is supported</p>
+            <p>Usage: to get a PDF file use an article name Only A4 is supported. To cite the article use full URL of the article. 
+                Text will be displayed in the output box. Only citation for Zotero and BibTeX are supported.
+            </p>
+        </div>
         <input id="input-field" type="text" name="Input field" placeholder="Enter a URL or an article name.">
         <div class="buttons">
             <button id="desktop-pdf">Get PDF for desktops</button>
@@ -29,6 +36,7 @@
             <!--button id="remove-favourite">Remove from favourites</button-->
             <button id="clear-favourites">Clear favourites</button>
             <button id="show-favourites">Show favourites</button>
+            <button id="pdf-preview">Preview PDF</button>
         </div>
         <div id="output-div">
             <h4>Output text</h4>
