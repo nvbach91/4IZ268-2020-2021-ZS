@@ -105,39 +105,6 @@ $(document).ready(() => {
         container.append(spinner);
     }
 
-    const createISSPassTimes = (s) => {
-        const data = s.response;
-        const dates = [];
-        for (let i = 0, l = data.length; i < l; i++) {
-            const m = (data[i].duration / 60).toFixed(2);
-            const d = new Date(data[i].risetime * 1000);
-            const date = $(`<div class="passtime">
-                <p>Duration: ${m} min</p>
-                <p>Date: ${d.toLocaleString()}</p>
-            </div>`);
-            dates.push(date);
-        }
-        datesContainer.append(dates);
-    };
-
-    const updateLocation = (lat, long) => {
-        // Trying to get jsonp to avoid CORS problems
-        $.getScript({
-            url: `http://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${long}&callback=createISSPassTimes`,
-        }).then(() => sp1.detach());
-    };
-
-    const getIssPassTimesForLocation = () => {
-        navigator.geolocation.getCurrentPosition(
-            (s) => {
-                updateLocation(s.coords.latitude, s.coords.longitude)
-            },
-            (e) => {
-                alert('Failed to get location!')
-            }
-        );
-    };
-
     const saveToLocalStorage = (time, lat, long) => {
         let p = getFromLocalStorage();
         p[time] = { lat, long }
@@ -177,16 +144,13 @@ $(document).ready(() => {
     }
 
     const KEY = 'ISS';
-    const datesContainer = $('#passes');
     const crewContainer = $('#people');
     const sp1 = makeSpinner();
     const sp2 = makeSpinner();
 
-    addSpinnerTo(datesContainer, sp1);
     addSpinnerTo(crewContainer, sp2);
 
     updateISS();
     showOldPositions();
     getPeopleInSpace();
-    getIssPassTimesForLocation();
 });
