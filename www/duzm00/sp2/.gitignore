@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/FastGuess/bin/Debug/netcoreapp3.1
+/FastGuess/obj
+/FastGuess/bin/Release/netcoreapp3.1
+/FastGuess/Properties/PublishProfiles
+/FastGuess/FastGuess.csproj.user
+/.vs/FastGuess
