@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
 
+  //https://en.wikipedia.org/w/api.php?action=opensearch&search=water
   const desktopPdfButton = $("#desktop-pdf");
   const mobilePdfButton = $("#mobile-pdf");
   const inputField = $("#input-field");
@@ -10,35 +11,72 @@ $(document).ready(() => {
   const favouriteButton = $("#favourite");
   const clearFavouritesButton = $("#clear-favourites");
   const showFavouritesButton = $("#show-favourites");
+  const searchResults = $("#search-results");
   //const removeFavouriteButton = $("#remove-favourite");
+  const openSearchUrl = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=";
+
 
   //based on https://javascript.info/localstorage
   function renderFavourites() {
-    for(let i=0; i<localStorage.length; i++) {
-    let key = localStorage.key(i);
-    $(outputField).append(`${localStorage.getItem(key)} <br>`);
+    let text = "";
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      text += localStorage.getItem(key) + "<br>";
+      console.log(text);
+
     };
+    //$(outputField).append(`${localStorage.getItem(key)}<br>`);
+    outputField.html(text);
+    console.log(text);
   };
 
   renderFavourites();
 
 
-  function spaceToUnderscore (text) {
+  function spaceToUnderscore(text) {
     text = text.replace(" ", "_");
     return text;
   }
 
-  
+  inputField.keyup(function (e) {
+    if (e.key === "Enter") {
+      let input = inputField.val();
+      $.ajax({
+        method: 'GET',
+        dataType: "json",
+        url: openSearchUrl + `${input}`,
+        success: (resp) => {
+          let response = resp;
+          //const response = JSON.parse(`["Dragon",["Dragon","Dragon Ball","Dragon Ball Z","Dragon Quest","Dragon (Dungeons & Dragons)","Dragonfly","Dragon Quest: The Adventure of Dai","Dragon Ball Super","Dragon Ball GT","Dragonball Evolution"],["","","","","","","","","",""],["https://en.wikipedia.org/wiki/Dragon","https://en.wikipedia.org/wiki/Dragon_Ball","https://en.wikipedia.org/wiki/Dragon_Ball_Z","https://en.wikipedia.org/wiki/Dragon_Quest","https://en.wikipedia.org/wiki/Dragon_(Dungeons_%26_Dragons)","https://en.wikipedia.org/wiki/Dragonfly","https://en.wikipedia.org/wiki/Dragon_Quest:_The_Adventure_of_Dai","https://en.wikipedia.org/wiki/Dragon_Ball_Super","https://en.wikipedia.org/wiki/Dragon_Ball_GT","https://en.wikipedia.org/wiki/Dragonball_Evolution"]]`);
+          let items = [];
+          for (let i = 0; i < response[1].length; i++) {
+            let item = $(`<li> ${response[1][i]} </li>`);
+            item.click(function() {
+              let articleName = $(this).text();
+              inputField.val(articleName);
+              mobilePdfButton.click();
+            });
+            items.push(item);
+
+          }
+          searchResults.append(items);
+        },
+        error: (error) => { $(outputField).text("Error. Please check the URL."); },
+      });
+    }
+  });
+
+
   //from https://stackoverflow.com/questions/1066452/easiest-way-to-open-a-download-window-without-navigating-away-from-the-page
-  function downloadFile(filePath){
-    let link=document.createElement('a');
+  function downloadFile(filePath) {
+    let link = document.createElement('a');
     link.href = filePath;
     link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
     link.click();
   }
 
 
-  $(mobilePdfButton).click(function(){
+  mobilePdfButton.click(function () {
     let input = inputField.val();
     input = input.trim();
     input = spaceToUnderscore(input);
@@ -46,7 +84,7 @@ $(document).ready(() => {
   });
 
 
-  $(desktopPdfButton).click(function(){
+  desktopPdfButton.click(function () {
     let input = inputField.val();
     input = input.trim();
     input = spaceToUnderscore(input);
@@ -54,7 +92,7 @@ $(document).ready(() => {
   });
 
 
-  $(zoteroButton).click(function(){
+  zoteroButton.click(function () {
     let input = inputField.val();
     input = input.trim();
     input = encodeURIComponent(input);
@@ -66,12 +104,12 @@ $(document).ready(() => {
         text = JSON.stringify(resp);
         $(outputField).text(text);
       },
-      error: (error) => {$(outputField).text("Error. Please check the URL.");},
+      error: (error) => { $(outputField).text("Error. Please check the URL."); },
     });
   });
 
 
-  $(bibtexButton).click(function(){
+  bibtexButton.click(function () {
     let input = inputField.val();
     input = input.trim();
     input = encodeURIComponent(input);
@@ -82,32 +120,32 @@ $(document).ready(() => {
         text = resp;
         $(outputField).text(text);
       },
-      error: (error) => {$(outputField).text("Error. Please check the URL.");},
+      error: (error) => { $(outputField).text("Error. Please check the URL."); },
     });
   });
 
 
-  $(favouriteButton).click(function(){
-    for(let i=0; i<localStorage.length; i++) {
+  favouriteButton.click(function () {
+    for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
       if (localStorage.getItem(key) === inputField.val()) {
         alert("This already is in your list of favourites.");
         return;
       };
-      };
-    localStorage.setItem(localStorage.length,inputField.val());
+    };
+    localStorage.setItem(localStorage.length, inputField.val());
     $(outputField).text("");
     renderFavourites();
   });
 
 
-  $(clearFavouritesButton).click(function(){
+  clearFavouritesButton.click(function () {
     localStorage.clear();
     $(outputField).text("");
     renderFavourites();
   });
 
-  $(showFavouritesButton).click(function(){
+  showFavouritesButton.click(function () {
     $(outputField).text("");
     renderFavourites();
   });
@@ -128,15 +166,14 @@ $(document).ready(() => {
     renderFavourites();
   });*/
 
-
-  //based on https://stackoverflow.com/questions/1964839/how-can-i-create-a-please-wait-loading-animation-using-jquery
-  $(document).on({
-    ajaxStart: function(){
-      $(outputField).text("");
-      $(outputField).text("Please wait. This may take up to 10 seconds.");
-    }
-  });
-
+  /*
+    //based on https://stackoverflow.com/questions/1964839/how-can-i-create-a-please-wait-loading-animation-using-jquery
+    $(document).on({
+      ajaxStart: function () {
+        outputField.text("Please wait. This may take up to 10 seconds.");
+      }
+    });
   
+  */
 });
 
