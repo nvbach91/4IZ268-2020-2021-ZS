@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head class="head">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Pavel Seidl, seip00, weather, weather now, počasí">
+    <meta name="author" content="Pavel Seidl">
     <title>Weather Right Now</title>
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Epilogue" rel="stylesheet">
 </head>
 
-<body class="body">
+<body>
 
     <div class="wrapper">
         <header>
@@ -28,7 +30,7 @@
             <div class="current">
                 <div class="temp">?<span>°C</span></div>
                 <div class="icon">
-                    <img src="icons/unknown.png" alt="Weather Icon">
+                    <img src="icons/unknown.png" height="128" alt="Weather Icon">
                 </div>
                 <div class="weather">?</div>
                 <div class="feel">Pocitová teplota:</div>
@@ -41,16 +43,16 @@
             </div>
         </main>
     </div>
-
     <script>
         function activatePlacesSearch() {
             var input = document.querySelector('.search');
             var autocomplete = new google.maps.places.Autocomplete(input);
         };
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbxXNiBQwzsBJURP-RNABKgdpiDI5ziCg&libraries=places&callback=activatePlacesSearch">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbxXNiBQwzsBJURP-RNABKgdpiDI5ziCg&libraries=places&callback=activatePlacesSearch">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/cs.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

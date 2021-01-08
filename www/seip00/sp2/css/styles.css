@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-width: 450px;
 }
 
 .wrapper {
@@ -115,12 +116,12 @@ main {
 .saved-cities {
     align-self: center;
     margin-top: 50px;
-    width: 550px;
+    width: 450px;
     font-size: 18px;
 }
 
 .saved-cities .saved {
-    width: 420px;
+    width: 320px;
     position: relative;
     margin-top: 20px;
     text-decoration: none;
@@ -140,13 +141,20 @@ p {
     float: right;
 }
 .buttons button{
-    height: 21.5px;
+    height: 22px;
     width: 59px;
     margin-top: 2px;
     font-size: 15px;
     font-weight: 700;
     background-color: rgba(255, 255, 255, 0.9);
     border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+button:hover{
+    cursor: pointer;
+}
+header button:active, .buttons button:active{
+    background-color: rgba(223, 223, 223, 0.8);
+    transform: translateY(2px);
 }
 
 /*Úprava výstupu google places API*/
