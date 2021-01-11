@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     top: 0;
@@ -17,6 +17,11 @@ header {
 .loadData {
     text-align: center;
     margin-top: 150px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
 h1 {
@@ -74,18 +79,20 @@ input[type=button]:hover{
 }
 
 .row {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: black;
     color: white;
  }
 
- .row p {
+.row p {
     text-align: center;
 }
 
 footer {
+    bottom: 0;
     border-top: black solid 1px;
+    position: fixed;
     text-align: center;
 }
 
@@ -93,5 +100,133 @@ input {
     margin-right: 10px;
 }
 
+.countryWrapper {
+  position: relative;
+}
 
-/*MODAL*/
+.countryWrapper > canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events:none;
+  text-align: center;
+}
+
+.oneCountry {
+  width: 1280px;
+}
+
+.allCountries {
+  width: 1280px;
+}
+
+
+/*LOADER*/
+
+.hidden{
+    display:none;
+}
+
+.ajax_loader{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+.ajax_loader i{
+    position:absolute;    
+    left:50%;
+    top:50%;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #060a0f;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #060a0f;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+
+/*datepicker*/
+.ui-widget-content {
+  border:  none !important;
+}
+
+/*scrollbar*/
+div::-webkit-scrollbar {
+  width: 1em;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f14ebd;
+}
+
+div::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+div::-webkit-scrollbar-track {
+  background: #c1c1c1; 
+}
+
+
+
