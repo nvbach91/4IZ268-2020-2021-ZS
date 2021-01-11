@@ -376,7 +376,7 @@ $(document).ready(() => {
     }
 
     const resetValidity = (input) => {
-        if(input.css('border-color') == 'rgb(255, 0, 0)'){
+        if (input.css('border-color') == 'rgb(255, 0, 0)') {
             input.css({ 'border-color': '' });
         }
     };
