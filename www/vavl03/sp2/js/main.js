@@ -233,7 +233,6 @@ $(document).ready(() => {
     loader.appendTo(matchStatsContainer); // adding css loader first
     $.get(`https://api.opendota.com/api/matches/${matchID}`) // test IDs: 5699757365, 5682280389
       .done((response) => {
-        console.log(response);
         const direScore = document.createElement('p');
         const radiantScore = document.createElement('p');
         const matchDuration = document.createElement('p');
@@ -241,6 +240,9 @@ $(document).ready(() => {
         const skillBracket = document.createElement('p');
         const humanPlayers = document.createElement('p');
         const gameMode = document.createElement('p');
+
+        direScore.style.color = "#e43011";
+        radiantScore.style.color = "green";
 
         direScore.id = 'dire';
         radiantScore.id = 'radiant';
@@ -346,6 +348,10 @@ $(document).ready(() => {
           const wins = document.createElement('p');
           const losses = document.createElement('p');
           const totalGames = response.win + response.lose;
+          /* applying style here and not in css, because when searching for player for the 1st time,
+           css in not always applied the right way(beacuse it's dynamically created element)*/
+          wins.style.color = "green"; 
+          losses.style.color = "red";
 
           games.id = 'games';
           wins.id = 'wins';

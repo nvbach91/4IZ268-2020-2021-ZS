@@ -192,14 +192,6 @@ header h1 {
   font-size: 18px;
 }
 
-.match-statistics p:nth-child(1) {
-  color: #e43011;
-}
-
-.match-statistics p:nth-child(2) {
-  color: green;
-}
-
 footer {
   text-align: center;
   color: white;
@@ -225,7 +217,6 @@ footer p a {
 
 .search-player {
   border-top: 1px solid #1880a7;
-  /*height: 900px*/
 }
 
 .search-player h2 {
@@ -246,14 +237,6 @@ footer p a {
 
 .player-statistics {
   font-size: 18px;
-}
-
-.player-statistics p:nth-child(2) {
-  color: green;
-}
-
-.player-statistics p:nth-child(3) {
-  color: #e43011;
 }
 
 .favorites-button {
