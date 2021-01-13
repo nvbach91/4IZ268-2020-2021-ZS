@@ -1,5 +1,5 @@
 // Document has been loaded
-$( document ).ready(function() {
+$(document ).ready(function() {
     // Helper Function to Extract Access Token for URL
    const getUrlParameter = (sParam) => {
      let sPageURL = window.location.search.substring(1),////substring will take everything after the https link and split the #/&
@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
 
  //get categories of music from spotify API
- $ajax({
+ $.ajax({
     url: 'https://api.spotify.com/v1/browse/categories',
     dataType: "json",
     type: 'GET',
@@ -46,13 +46,43 @@ $( document ).ready(function() {
      let genres =[];
 
      for (let genres of data.categories.items) {
-       //console.log(genres.id)
+     //  console.log(genres.id)
        let id = genres.id;
        var option = new Option(id);
 
        $("#select-genre").append(option); //id = add data to select box
      }
     }
- })
+ });
 
-})
+
+ //when one of the options in dropbox would be chosen
+ $("#select-genre").change(function(){
+    let genreName = ($(this).val()); //get value of selected option
+    let genreIndex = ($(this).prop('selectedIndex')); //get index of selected option
+
+    console.log(genreName);
+    console.log(genreIndex);
+
+    let playlists =[];
+
+    $.ajax({
+        url: `https://api.spotify.com/v1/browse/categories/${genreName}/playlists`,
+        type: 'GET',
+        headers: {
+            'Authorization' : 'Bearer ' + accessToken
+        },
+        success: function(data) {
+
+          for (let playlists of data.playlists.items) {
+
+            console.log(playlists.id);
+            let name = playlists.name;
+            var option = new Option(name);
+
+            $("#select-playlist").append(option);
+          }
+         }
+        })
+ });
+});
