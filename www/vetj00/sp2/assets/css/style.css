@@ -53,10 +53,6 @@ form {
     margin: 30px auto;
 }
 
-form input {
-    border: 2px solid black;
-}
-
 form label {
     font-size: 24px;
     margin: 10px 0;
@@ -71,6 +67,7 @@ form label {
 .tick-a-media {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .share-and-button {
@@ -80,6 +77,7 @@ form label {
 
 button {
     width: 100px;
+    height: 35px;
     font-size: 16px;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
@@ -89,8 +87,13 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #1155ff;
+}
+
 .article-heading {
     height: 30px;
+    border: 1px solid #d1d1d1;
 }
 
 .article-content {
@@ -99,8 +102,49 @@ button {
 }
 
 .article-enclosure {
+    display: none;
+}
+
+.enclosure-container {
+    display: flex;
+    border: 1px solid #d1d1d1;
+    justify-content: flex-end;
+}
+
+.preview {
+    width: 100%;
+    display: flex;
+    margin: 5px 0 4px 0;
+}
+
+.preview img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 10px;
+}
+
+.file-upload-button {
+    outline: none;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #000;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-left: 1px solid #d1d1d1;
+    height: 100%;
+    min-height: 35px;
+}
+
+.file-upload-button:hover {
+    background-color: #d1d1d1;
+}
+
+.delete-button {
     height: 30px;
-    padding: 2px 2px;
+    width: 30px;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 20px;
 }
 
 
@@ -112,10 +156,150 @@ section {
     display: flex;
 }
 
+.heading-and-content {
+    width: 60%;
+}
+
 section img {
-    width: 40%;
+    max-width: 40%;
+    height: unset;
 }
 
 .heading-and-content h2 {
     margin: 0;
+}
+
+.heading-link {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+}
+
+.heading-link:hover {
+    text-decoration: underline;
+}
+
+.heading-alert,
+.content-alert,
+.enclosure-alert {
+    color: #ff6666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    background-image: url(../images/information-button-red.svg);
+    background-size: 17px;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    text-indent: 22px;
+    margin: 0 0 10px 0;
+}
+
+.hide-alert {
+    display: none;
+}
+
+.content-link {
+    /*text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;*/
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    -moz-webkit-box-orient: vertical;
+    margin-right: 15px;
+    max-height: 200px;
+}
+
+.content-link img {
+    display: none;
+}
+
+.sec-enclosure,
+.third-enclosure {
+    display: none;
+}
+
+
+/*Style for full articles*/
+
+.full-main {
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.full-content {
+    grid-column: 1/2;
+    align-self: flex-start;
+}
+
+.full-heading {
+    font-size: 32px;
+    grid-column: 1/2;
+}
+
+.full-enclosure {
+    max-width: 100%;
+    grid-column: 2/3;
+    display: flex;
+}
+
+
+/*Style for facebook posting*/
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid black;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: black transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    text-align: center;
+    margin: auto;
 }
