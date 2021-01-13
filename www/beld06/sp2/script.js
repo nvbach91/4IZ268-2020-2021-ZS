@@ -1,4 +1,5 @@
 // Document has been loaded
+
 $(document ).ready(function() {
     // Helper Function to Extract Access Token for URL
    const getUrlParameter = (sParam) => {
@@ -48,26 +49,33 @@ $(document ).ready(function() {
      for (let genres of data.categories.items) {
      //  console.log(genres.id)
        let id = genres.id;
-       var option = new Option(id);
+       let name = genres.name;
+       var optionId = new Option(id);
+       var optionName = new Option(name);
 
-       $("#select-genre").append(option); //id = add data to select box
-     }
+       $("#select-genre-id").append(optionId); //id = add data to select box
+       $("#select-genre-name").append(optionName); //name = add data to select box
+
+    }
     }
  });
 
-
  //when one of the options in dropbox would be chosen
- $("#select-genre").change(function(){
+ $("#select-genre-name").change(function(){
     let genreName = ($(this).val()); //get value of selected option
     let genreIndex = ($(this).prop('selectedIndex')); //get index of selected option
 
     console.log(genreName);
     console.log(genreIndex);
 
+    document.getElementById("select-genre-id").selectedIndex=genreIndex;
+    let getId =($("#select-genre-id").val());
+    console.log(getId);
+
     let playlists =[];
 
     $.ajax({
-        url: `https://api.spotify.com/v1/browse/categories/${genreName}/playlists`,
+        url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists`,
         type: 'GET',
         headers: {
             'Authorization' : 'Bearer ' + accessToken
@@ -76,11 +84,14 @@ $(document ).ready(function() {
 
           for (let playlists of data.playlists.items) {
 
-            console.log(playlists.id);
             let name = playlists.name;
-            var option = new Option(name);
+            let id = playlists.id;
+            var optionName = new Option(name);
+            var optionId = new Option(id);
 
-            $("#select-playlist").append(option);
+            $("#select-playlist-id").append(optionId);
+            $("#select-playlist-name").append(optionName);
+
           }
          }
         })
