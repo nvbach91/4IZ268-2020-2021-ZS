@@ -32,4 +32,27 @@ $( document ).ready(function() {
    window.location.replace(redirect);
  }
 
+
+ //get categories of music from spotify API
+ $ajax({
+    url: 'https://api.spotify.com/v1/browse/categories',
+    dataType: "json",
+    type: 'GET',
+    headers: {
+        'Authorization' : 'Bearer ' + accessToken
+    },
+    success: function(data) {
+
+     let genres =[];
+
+     for (let genres of data.categories.items) {
+       //console.log(genres.id)
+       let id = genres.id;
+       var option = new Option(id);
+
+       $("#select-genre").append(option); //id = add data to select box
+     }
+    }
+ })
+
 })
