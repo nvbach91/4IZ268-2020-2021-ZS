@@ -96,4 +96,42 @@ $(document ).ready(function() {
          }
         })
  });
+
+ $("#select-playlist-name").change(function(){
+    let playName = ($(this).val());  //get name of selected option from the select dropdown with Name
+    let playIndex = ($(this).prop('selectedIndex')); //get index of selected option from the select dropdown with Name
+    console.log(playName);
+    console.log(playIndex);
+
+    document.getElementById("select-playlist-id").selectedIndex=playIndex;
+    let NameId = ($("#select-playlist-id").val());
+    console.log(playName);
+
+    $.ajax({
+        url: `https://api.spotify.com/v1/playlists/${NameId}/tracks?offset=0&limit=6`,
+        type: 'GET',
+        headers: {
+            'Authorization' : 'Bearer ' + accessToken
+        },
+        success: function(data) {
+          // Load our songs from Spotify into our page
+          console.log(data);
+          let num_of_tracks = data.items.length;
+          console.log(num_of_tracks);
+          let count = 0;
+          // Max number of songs is 12
+          while(count < num_of_tracks){
+            // Extract the id of the FIRST song from the data object
+            let id = data.items[count].track.id;
+            // Constructing two different iframes to embed the song
+            let src_str = `https://open.spotify.com/embed/track/${id}`;
+            let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
+            let parent_div = $('#song_'+ count);
+            parent_div.html(iframe);
+            count++;
+          }
+        }
+      }); // End of Spotify ajax call
+    });
+
 });
