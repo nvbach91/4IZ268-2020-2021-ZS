@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PROJEKTY - Petr Potměšil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&family=Krona+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>The počasí app</h1>
+    </div>
+
+    <div class="input-section">
+        <input class="input-box" type="text" value="Prague">
+        <button class="input-button" type="button">Search</button>
+
+    </div>
+
+    <div class="whisper" id="whisper"></div>
+
+    <div class="information-section" id="information-section">
+        <div id="city" class="city"></div>
+        <div id="temp" class="loader"></div>
+        <div id="info" class="loader"></div>
+        <button class="favourite-button" type="button">Add to favourites</button>
+    </div>
+    <div class="favourite-section" id="favourite-section">
+    </div>
+    <div class="footer">
+        <p>Semestrální projekt SP2 z předmětu 4IZ268</p>
+        <p>Petr Potměšil, potp04</p>
+        <p>ZS 2020/2021</p>
+    </div>
+    <script src="js/data_cities.js"></script>
+    <script src="js/main.js"></script>
+</body>
