@@ -1,0 +1,169 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4545759,
+                50.0778542
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Bezobalu Radhošťská",
+             "storeid": "01",
+             "place_id": "ChIJab5OXa6TC0cR7mnr169h5kM",
+             "phone": "223 558 711",
+             "formatted_address": "Radhošťská 2278/1, Vinohrady, 130 00 Praha-Praha 3, Czechia",
+             "opening_hours": {
+                "open_now": true,
+                "weekday_text": [
+                   "Monday: 8:00 AM – 8:00 PM",
+                   "Tuesday: 8:00 AM – 8:00 PM",
+                   "Wednesday: 8:00 AM – 8:00 PM",
+                   "Thursday: 8:00 AM – 8:00 PM",
+                   "Friday: 8:00 AM – 8:00 PM",
+                   "Saturday: 10:00 AM – 6:00 PM",
+                   "Sunday: Closed"
+                ]
+             }
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.405101,
+                50.098153
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Bezobalu - Hradčanská",
+             "storeid": "02",
+             "place_id": "ChIJgyIitCCVC0cR5yuHF1GqkRc",
+             "phone": "222 956 462",
+             "formatted_address": "Pod kaštany 182/5, 160 00 Praha 6-Dejvice"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.432200,
+                50.098499
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Liška Mazaná",
+             "storeid": "02",
+             "place_id": "ChIJ5doe-W6VC0cRrq82rytnVdg",
+             "phone": "607 726 676",
+             "formatted_address": "Veverkova 10, Holešovice, 170 00 Praha-Praha 7, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4545101,
+                50.1242625
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "KOHOUTEK ve dvoře - bezobalový obchod",
+             "storeid": "03",
+             "place_id": "ChIJf0Q_UVXrC0cRTGJdEEwUhaI",
+             "phone": "+739 616 530",
+             "formatted_address": "Klapkova 1035/28, Kobylisy, 182 00 Dvůr-Praha 8, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4900615,
+                50.1007541
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Bout - bezobalový obchod s potravinami i drogerií",
+             "storeid": "04",
+             "place_id": "ChIJxUI5qEGVC0cRrWhA4uCZ-5g",
+             "phone": "+702 462 643",
+             "formatted_address": "Nitranská 918/14, Vinohrady, 130 00 Praha-Praha 3, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4242803,
+                50.0651271
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Nebaleno - Eco cleaners and natural cosmetics",
+             "storeid": "06",
+             "place_id": "ChIJwZusio-VC0cRib9-zqSd_ZM",
+             "phone": "778 068 631",
+             "formatted_address": "Jaromírova 495/16, 128 00 Praha 2-Nusle, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4390368,
+                50.0919669
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Bezobalu Karlín",
+             "storeid": "07",
+             "place_id": "ChIJfRC4Si-VC0cRN1Xj_G6CKJ8",
+             "phone": "221 778 470",
+             "formatted_address": "Sokolovská 351/25, Karlín, 186 00 Praha-Praha 8, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4444056,
+                50.0637708
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Bezobalový koloniál Jelen",
+             "storeid": "08",
+             "place_id": "ChIJd77VEEOVC0cRuC9rRdkWAI4",
+             "phone": "720 311 093",
+             "formatted_address": "Mečislavova 225, 140 00 Praha 4-Nusle, Czechia"
+          }
+       },
+       {
+          "geometry": {
+             "type": "Point",
+             "coordinates": [
+                14.4324856,
+                50.103172
+             ]
+          },
+          "type": "Feature",
+          "properties": {
+             "name": "Naber si - bez obalu",
+             "storeid": "09",
+             "place_id": "ChIJHSUOKcWVC0cRWuBybhNjgpM",
+             "formatted_address": "Dukelských Hrdinů 909/50, 170 00 Praha 7-Holešovice, Czechia"
+          }
+       }
+    ]
+ }
