@@ -1,44 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8" />
+        <meta name="description" content="That is a web, that uses Spotify API" />
+        <meta name="author" content="Daria Beliavskaia" />
+        <meta name="keywords" content="Spotify, music, playlists, tracks, genre" />
+        <link href="style.css" rel="stylesheet">
         <title>Spotify API for 4IZ268</title>
     </head>
 
     <body>
-        <div class="container" id="dropdown-list">
+        <!--Header-->
+        <header class="header">
+            <div class="container-header">
+                <h1 class="header__title">Spotify Search Music</h1>
+            </div>
+        </header>
+        <div class="container-dl" id="dropdown-list">
             <div class="genre-container">
                 <lable for="Genre" class="label-cont">Genres: </lable>
-                <select name="genre_selected1_NAME" id="select-genre-name" class="form-cont">
+                <select name="genre_selected1_NAME" id="select-genre-name">
                     <option>Select</option>
                 </select>
-                <select name="genre_selected_ID" id="select-genre-id" class="form-cont">
+                <select name="genre_selected_ID"  id="select-genre-id">
                     <option>Select</option>
                 </select>
                 </div>
             <div class="playlist-container">
-                <lable for="Playlist" class="playlist-cont">Playlists: </lable>
-                <select name="" id="select-playlist-name" class="form-cont">
+                <lable for="Playlist" class="label-cont">Playlists: </lable>
+                <select name="" id="select-playlist-name">
                     <option>Select</option>
                 </select>
-                <select name="" id="select-playlist-id" class="form-cont">
+                <select name="" id="select-playlist-id">
                     <option>Select</option>
                 </select>      
             </div>
         </div>
 
-        <div class="container" id="song">
+        <div class="container" id="song-list">
             <div class="row">
-                <div id="song_0"></div>
-                <div id="song_1"></div>
+                <div id="song_0" class="col"></div>
+                <div id="song_1"  class="col"></div>
+                <div id="song_2"  class="col"></div>
             </div>
             <div class="row">
-                <div id="song_2"></div>
-                <div id="song_3"></div>
-            </div>
-            <div class="row">
-                <div id="song_4"></div>
-                <div id="song_5"></div>
+                <div id="song_3"  class="col"></div>
+                <div id="song_4"  class="col"></div>
+                <div id="song_5"  class="col"></div>
             </div>
         </div>
 

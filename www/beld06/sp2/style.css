@@ -1,0 +1,113 @@
+body {
+  background: #f7f6ff;
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label-cont {
+  font-size: 20px;
+  width: 250px;
+  height:50px;
+  display: block;
+}
+.container-dl{
+  position: absolute;
+  top: 40%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+}
+
+select {
+  /* reset */
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#select-genre-name, #select-playlist-name{
+    background: #7d78a0;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+}
+#select-genre-id, #select-playlist-id{
+  visibility: hidden;
+}
+
+select#select-genre-name,#select-playlist-name {
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgb(72, 72, 110) 50%),
+    linear-gradient(135deg, rgb(72, 72, 110) 50%, transparent 50%),
+    linear-gradient(to right, rgb(141, 141, 218), rgb(141, 141, 218));
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select#select-genre-name:focus,#select-playlist-name:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, rgb(168, 167, 167), rgb(168, 167, 167));
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+#song-list {
+  position: absolute;
+  top: 70%; left: 20%;
+}
+
+#song.row {
+  flex: 1 1 0;
+}
+#song_ {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+/* Songs more round */
+iframe {
+  border-radius: 30px;
+}
+
+/* Spotify results fall Into the Same Row */
+.col {
+  display: inline-block !important;
+}
