@@ -102,6 +102,23 @@ $(document ).ready(function() {
     $("#select-playlist-id").empty();
     $("#select-playlist-name").empty();
 
+    var x = document.getElementById('select-playlist-name');
+    var x1 = document.getElementById('select-playlist-id');
+
+    var opt = document.createElement('option');
+    var opt1 = document.createElement('option');
+
+    opt.appendChild(document.createTextNode('Select...'));
+    opt1.appendChild(document.createTextNode('Select...'));
+
+    opt.value = "option value";
+    opt1.value = "option value";
+
+    x.appendChild(opt);  
+    x1.appendChild(opt1);
+
+
+
 
     $.ajax({
         url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists?country=US&limit=7&offset=2`,
@@ -118,6 +135,8 @@ $(document ).ready(function() {
             var optionName = new Option(name);
             var optionId = new Option(id);
 
+
+            
             $("#select-playlist-id").append(optionId);
             $("#select-playlist-name").append(optionName);
 
