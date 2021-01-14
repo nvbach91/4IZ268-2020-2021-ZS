@@ -24,7 +24,7 @@ $(document ).ready(function() {
  let client_id = '8a3fc434228a4e47b03301a1292ec357';
 
  //add redirect encoded uri, that will redirect application on eso.vse.cz sever
- let redirect_uri = 'https%3A%2F%2Feso.vse.cz%2F%7Ebeld06%2F4IZ268%2FSP2';
+ let redirect_uri = 'https%3A%2F%2Feso.vse.cz%2F%7Ebeld06%2F4IZ268%2FSP2%2Fpublic';
  // *************** END *************************
 
  const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
