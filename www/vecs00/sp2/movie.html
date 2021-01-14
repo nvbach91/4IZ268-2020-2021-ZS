@@ -18,25 +18,10 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="text-center">Databáze filmů a seriálů</h1>
-                <h4 class="text-center">v anglickém jazyce</h4>
-
-                <form id="searchForm">
-                    <input type="text" class="form-control" id="searchText"
-                        placeholder="Zadejte hledaný výraz">
-                </form>
-                <div class="spinner"> 
-                    <i class="fa fa-circle-o-notch fa-spin loading hide" ></i>
-                </div>
-                
-            </div>
-        </div>
+       <h1 class="text-center">Další informace</h1>
 
         <div class="container">
-            <div id="movies" class="movies">
-            </div>
+            <div id="movie"></div>
         </div>
         <div class="clear"></div>
         <footer class="text-center"> &copy; Šárka Večerníková</footer>
@@ -51,5 +36,8 @@
         <script src="js/main.js"></script>
         <!--ajax-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
+        <script>
+            getMovie();
+        </script>
     </body>
 </html>
