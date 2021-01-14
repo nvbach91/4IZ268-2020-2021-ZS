@@ -33,6 +33,25 @@ $(document ).ready(function() {
    window.location.replace(redirect);
  }
 
+ jQuery(function($){
+    $(document).ajaxSend(function() {
+      $("#overlay").fadeIn(300);　
+    });
+          
+    $('#button').click(function(){
+      $.ajax({
+        type: 'GET',
+        success: function(data){
+          console.log(data);
+        }
+      }).done(function() {
+        setTimeout(function(){
+          $("#overlay").fadeOut(300);
+        },500);
+      });
+    });	
+  });
+
 
  //get categories of music from spotify API
  $.ajax({
@@ -61,7 +80,13 @@ $(document ).ready(function() {
  });
 
  //when one of the options in dropbox would be chosen
+ jQuery(function($){
+    $(document).ajaxSend(function() {
+      $("#overlay").fadeIn(300);　
+    });
+
  $("#select-genre-name").change(function(){
+    
     let genreName = ($(this).val()); //get value of selected option
     let genreIndex = ($(this).prop('selectedIndex')); //get index of selected option
 
@@ -74,8 +99,12 @@ $(document ).ready(function() {
 
     let playlists =[];
 
+    $("#select-playlist-id").empty();
+    $("#select-playlist-name").empty();
+
+
     $.ajax({
-        url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists`,
+        url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists?country=US&limit=7&offset=2`,
         type: 'GET',
         headers: {
             'Authorization' : 'Bearer ' + accessToken
@@ -94,9 +123,18 @@ $(document ).ready(function() {
 
           }
          }
-        })
- });
+        }).done(function() {
+            setTimeout(function(){
+              $("#overlay").fadeOut(300);
+            },500);
+        });
+    });	
+  });
 
+  jQuery(function($){
+    $(document).ajaxSend(function() {
+      $("#overlay").fadeIn(300);　
+    });
  $("#select-playlist-name").change(function(){
     let playName = ($(this).val());  //get name of selected option from the select dropdown with Name
     let playIndex = ($(this).prop('selectedIndex')); //get index of selected option from the select dropdown with Name
@@ -131,7 +169,11 @@ $(document ).ready(function() {
             count++;
           }
         }
-      }); // End of Spotify ajax call
-    });
-
+      }).done(function() {
+        setTimeout(function(){
+          $("#overlay").fadeOut(300);
+        },500);
+      });
+  });
+});
 });

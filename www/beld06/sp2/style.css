@@ -5,21 +5,20 @@ body {
 }
 
 .header{
+  padding-bottom: 20px;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.label-cont {
+.text {
   font-size: 20px;
-  width: 250px;
-  height:50px;
   display: block;
 }
 .container-dl{
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 54%;
   transform: translate(-50%, -50%);
 }
@@ -45,6 +44,7 @@ select {
     box-shadow: 0 5px 25px rgba(0,0,0,.5);
 }
 #select-genre-id, #select-playlist-id{
+  display: block;
   visibility: hidden;
 }
 
@@ -84,7 +84,7 @@ select#select-genre-name:focus,#select-playlist-name:focus {
 
 #song-list {
   position: absolute;
-  top: 70%; left: 20%;
+  top: 70%; left: 25%;
 }
 
 #song.row {
@@ -110,4 +110,44 @@ iframe {
 /* Spotify results fall Into the Same Row */
 .col {
   display: inline-block !important;
+}
+
+#button{
+  display:block;
+  margin:20px auto;
+  padding:10px 30px;
+  background-color:#eee;
+  border:solid #ccc 1px;
+  cursor: pointer;
+}
+#overlay{	
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height:100%;
+  display: none;
+  background: rgba(0,0,0,0.6);
+}
+.cv-spinner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px #ddd solid;
+  border-top: 4px #2e93e6 solid;
+  border-radius: 50%;
+  animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+.is-hide{
+  display:none;
 }

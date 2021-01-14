@@ -18,7 +18,7 @@
         </header>
         <div class="container-dl" id="dropdown-list">
             <div class="genre-container">
-                <lable for="Genre" class="label-cont">Genres: </lable>
+                <h2 class="text">Genres: </h2>
                 <select name="genre_selected1_NAME" id="select-genre-name">
                     <option>Select</option>
                 </select>
@@ -27,11 +27,11 @@
                 </select>
                 </div>
             <div class="playlist-container">
-                <lable for="Playlist" class="label-cont">Playlists: </lable>
-                <select name="" id="select-playlist-name">
+                <h2 class="text">Playlists: </h2>
+                <select name="playlist_selected_NAME" id="select-playlist-name">
                     <option>Select</option>
                 </select>
-                <select name="" id="select-playlist-id">
+                <select name="playlist_selected_ID" id="select-playlist-id">
                     <option>Select</option>
                 </select>      
             </div>
@@ -50,7 +50,13 @@
             </div>
         </div>
 
+        <div id="overlay">
+            <div class="cv-spinner">
+                <span class="spinner"></span>
+            </div>
+        </div>
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="script.js" charset="utf-8"></script>
+     <script src="script.js"></script>
     </body>
 </html>
