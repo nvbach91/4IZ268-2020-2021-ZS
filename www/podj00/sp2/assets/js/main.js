@@ -6,6 +6,11 @@ $(document).ready(() => {
     const removeOne = $('#removeOne');
     const loadButton = $('#load');
     const selectButton = $('#select');
+    const favouriteButton = $('#favourite');
+    const selectbox = $('#countriesSelect');
+    const country = $('#country');
+    const dateTo = $('#to');
+    const dateFrom = $('#from');
     $('#from').datepicker({
         dateFormat: 'yy-mm-dd',
         firstDay: '1',
@@ -31,22 +36,21 @@ $(document).ready(() => {
     let mockedResponse = {};
     let mockedOneCountry = {};
 
-    $('input[type="checkbox"]').on('change', (e) => {
-        //only 1 input (clicked one) can be checked
-        $('input[type="checkbox"]').not(e.currentTarget).prop('checked', false);
-        //cannot uncheck - at least one has to be checked
-        $(e.currentTarget).prop('checked', true);
+    $('input[type="radio"]').on('change', (e) => {
+        //only 1 radio can be checked
+        $('input[type="radio"]').not(e.currentTarget).prop('checked', false);
     });
 
     ////////
     //ACTIONS
     ////////
+
     loadButton.click(() => {
         const section = $('#allCountries');
         let loader = $('<div class="loader">Loading...</div>');
         section.append(loader);
         if (section.children().length > 1) {
-            section.children('canvas').remove()
+            section.children('canvas').remove();
         }
         return getAllCases();
         /*MOCK CALL
@@ -58,17 +62,14 @@ $(document).ready(() => {
     })
 
     selectButton.click((e) => {
-        const country = $('#country');
+        e.preventDefault();
         let countryValue = country.val();
         let upperCaseCountry = countryValue.charAt(0).toUpperCase() + countryValue.slice(1);
         let confirmed = $('#confirmed').is(':checked');
         let mortality = $('#mortality').is(':checked');
         let cured = $('#cured').is(':checked');
-        const dateTo = $('#to');
-        const dateFrom = $('#from');
         let dateFromVal = dateFrom.val();
         let dateToVal = dateTo.val();
-
 
         if (!checkForm(upperCaseCountry, confirmed, mortality, cured, dateFromVal, dateToVal)) {
             if (!countryValue) {
@@ -88,10 +89,12 @@ $(document).ready(() => {
             }
 
             return alertify.alert('Nejsou vyplněna všechna povinná pole').setting({
-                'label': 'Potvrdit'
+                'label': 'Potvrdit',
+                'title': 'Vyplňte formulář'
             }).show();
         }
 
+        selectButton.attr('disabled', true);
         resetValidity(country);
         resetValidity(dateFrom);
         resetValidity(dateTo);
@@ -100,6 +103,9 @@ $(document).ready(() => {
         section.append(loader);
         if (section.children().length > 1) {
             section.children('canvas').remove();
+        }
+        if (selectbox.find(':selected').text() != 'Vyberte hodnotu') {
+            upperCaseCountry = selectbox.find(':selected').text();
         }
         return getCountryData(upperCaseCountry, confirmed, mortality, cured);
         /* MOCK call
@@ -142,9 +148,6 @@ $(document).ready(() => {
     })
 
     removeOne.click(() => {
-        const country = $('#country');
-        const dateTo = $('#to');
-        const dateFrom = $('#from');
         country.val('');
         $('#confirmed').prop('checked', true);
         $('#mortality').prop('checked', false);
@@ -177,13 +180,13 @@ $(document).ready(() => {
         const section = $('#allCountries');
         $.ajax({
             type: 'GET',
-            url: proxyUrl + targetUrl,
+            url: targetUrl,
             dataType: 'json'
         }).done(response => {
             let newCanvas = $('<canvas id="one-country" width="3000" height="600"></canvas>');
             section.append(newCanvas);
             section.children('div').remove();
-            section.css({ 'overflow-x': 'scroll' })
+            section.css({ 'overflow-x': 'scroll' });
             return createChartAllCountries(newCanvas, response);
         }).fail((err) => {
             console.log(err);
@@ -198,20 +201,22 @@ $(document).ready(() => {
         const targetUrl = 'https://covid-api.mmediagroup.fr/v1/history?country=' + upperCaseCountry + '&status=' + getStatus(confirmed, mortality, cured);
         $.ajax({
             type: 'GET',
-            url: proxyUrl + targetUrl,
+            url: targetUrl,
             dataType: 'json'
         }).done(response => {
             let newCanvas = $('<canvas id="one-country" width="3000" height="600"></canvas>');
             if (section.children().length > 1) {
                 section.children('canvas').remove();
             }
+            selectButton.attr('disabled', false);
             section.append(newCanvas);
             section.children('div').remove();
-            section.css({ 'overflow-x': 'scroll' })
+            section.css({ 'overflow-x': 'scroll' });
             return createChartOneCountry(newCanvas, response.All);
         }).fail((err) => {
             console.log(err);
-            section.children('div').remove()
+            selectButton.attr('disabled', false);
+            section.children('div').remove();
             return alertify.error('Pro zemi ' + upperCaseCountry + ' se nepovedlo najít výsledky: ' + err.statusText);
         })
     }
@@ -292,7 +297,7 @@ $(document).ready(() => {
         const keysToElements = Object.keys(response);
         keysToElements.forEach(key => {
             if (key !== 'Global') {
-                labels.push(key)
+                labels.push(key);
             }
         })
         return labels;
@@ -304,15 +309,15 @@ $(document).ready(() => {
         keysToElements.forEach(key => {
             if (key !== 'Global') {
                 const particularCountry = response[key];
-                data.push(particularCountry.All.confirmed)
+                data.push(particularCountry.All.confirmed);
             }
         })
         return data;
     }
 
     const getDataByDate = (response) => {
-        const dateToVal = $('#to').val();
-        const dateFromVal = $('#from').val();
+        const dateToVal = dateTo.val();
+        const dateFromVal = dateFrom.val();
         const data = [];
         const numberOfDays = dateToVal - dateFromVal;
         console.log(numberOfDays);
@@ -320,10 +325,10 @@ $(document).ready(() => {
         keysToElements.forEach(key => {
             if (dateToVal && dateFromVal) {
                 if ((dateFromVal <= key) && (key <= dateToVal)) {
-                    data.push(response.dates[key])
+                    data.push(response.dates[key]);
                 }
             } else {
-                data.push(response.dates[key])
+                data.push(response.dates[key]);
             }
         })
         return orderTime(data);
@@ -333,8 +338,8 @@ $(document).ready(() => {
     const getDateLabels = (response) => {
         const data = [];
         const keysToElements = Object.keys(response.dates);
-        const dateToVal = $('#to').val();
-        const dateFromVal = $('#from').val();
+        const dateToVal = dateTo.val();
+        const dateFromVal = dateFrom.val();
         keysToElements.forEach(key => {
             if (dateToVal && dateFromVal) {
                 if ((dateFromVal <= key) && (key <= dateToVal)) {
@@ -349,9 +354,9 @@ $(document).ready(() => {
     const orderTime = (dates) => {
         return dates.sort((a, b) => {
             if (a > b) {
-                return 1
+                return 1;
             } else if (a < b) {
-                return -1
+                return -1;
             } else {
                 return 0;
             }
@@ -365,13 +370,13 @@ $(document).ready(() => {
 
     const getStatus = (confirmed, mortality, cured) => {
         if (confirmed) {
-            return 'Confirmed'
+            return 'Confirmed';
         }
         if (mortality) {
-            return 'Deaths'
+            return 'Deaths';
         }
         if (cured) {
-            return 'Recovered'
+            return 'Recovered';
         }
     }
 
@@ -380,4 +385,59 @@ $(document).ready(() => {
             input.css({ 'border-color': '' });
         }
     };
+
+
+    //SELECTBOX
+    const loadDataForSelectBox = (country) => {
+        if (country) {
+            $.getJSON("/~podj00/sp2/assets/js/mockedResponse.json", (data) => {
+                mockedResponse = data;
+                const keysToElements = Object.keys(mockedResponse);
+                keysToElements.forEach(option => {
+                    if (option !== 'Global') {
+                        country.append($('<option/>', {
+                            value: option,
+                            text: option
+                        }));
+                    }
+                })
+            })
+        }
+    }
+    loadDataForSelectBox(country);
+
+    /////////////////////////////LOCALSTORAGE////////////////////////////
+    localStorage.clear();
+    const getAllFavourites = () => {
+        selectbox.children().remove().end().append('<option selected value="defaultValue">Vyberte hodnotu</option>');
+        const countries = { ...localStorage };
+        const keysToElements = Object.keys(countries);
+        keysToElements.forEach(key => {
+            selectbox.append($('<option/>', {
+                value: key,
+                text: key
+            }));
+        })
+    }
+
+    const addNewFavouriteCountry = (name) => {
+        localStorage.setItem(name, name);
+        getAllFavourites();
+    }
+
+    favouriteButton.click((e) => {
+        e.preventDefault();
+        const value = country.val();
+        if (localStorage.getItem(value) === null) {
+            return addNewFavouriteCountry(value);
+        } else {
+            return alertify.alert('Země je již v oblíbených').setting({
+                'label': 'Potvrdit',
+                'title': 'Stejná země'
+            }).show();
+        }
+    })
+
 });
+
+

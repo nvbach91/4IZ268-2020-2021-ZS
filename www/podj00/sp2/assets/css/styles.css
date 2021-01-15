@@ -57,19 +57,10 @@ button:hover{
     cursor: pointer;
 }
 
-input[type=button]{
-    padding:0.3em 1.2em;
-    margin-top: 5px;
-    border: white;
-    border-radius:2em;
-    color:#FFFFFF;
-    background-color: #f14ebd;
-    outline:none;
-}
-
-input[type=button]:hover{
-    opacity: 70%;
-    cursor: pointer;
+button:disabled{
+  background-color: grey;
+  cursor: auto;
+  opacity: 100%;
 }
 
 .covid {
@@ -226,6 +217,20 @@ div::-webkit-scrollbar:vertical {
 
 div::-webkit-scrollbar-track {
   background: #c1c1c1; 
+}
+
+select{ 
+  height:22px;
+}
+
+.favouriteSection{
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.favouriteButton{
+  margin-left: 20px;
+  background-color: black;
 }
 
 

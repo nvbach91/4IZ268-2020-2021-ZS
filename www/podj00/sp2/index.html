@@ -41,22 +41,31 @@
             </div>
         </div>
         <div class="form">
-            <div class="row">
+            <div class="row" id="row">
                 <p>
                     Zobrazit detail země
                 </p>
             </div>
-            <form>
-                <input placeholder="Vyberte zemi!" type="text" id="country" name="fname">
+            <div class="favouriteSection" id="favouriteSection">
+                <p class="favouriteText">
+                    Oblíbené:
+                </p>
+                <select id="countriesSelect" name="countriesSelect">
+                    <option>Vyberte hodnotu</option>
+                </select>
+            </div>
+            <form autocomplete="off">
+                <select id="country" name="fname"></select>
                 <label for="confirmed">Nakažení</label>
-                <input type="checkbox" checked id="confirmed" name="confirmed" value="confirmed">
+                <input type="radio" checked id="confirmed" name="confirmed" value="confirmed">
                 <label for="mortality">Mrtví</label>
-                <input type="checkbox" id="mortality" name="mortality" value="mortality">
+                <input type="radio" id="mortality" name="mortality" value="mortality">
                 <label for="cured">Vyléčení</label>
-                <input type="checkbox" id="cured" name="cured" value="cured">
+                <input type="radio" id="cured" name="cured" value="cured">
                 <strong>Od </strong><input placeholder="rrrr-mm-dd" id="from" type="text">
                 <strong>Do </strong><input placeholder="rrrr-mm-dd" id="to" type="text"><br>
-                <input id="select" type="button" value="Zobrazit">
+                <button id="select">Zobrazit</button>
+                <button id="favourite">Přidat do oblíbených</button>
                 <button id="removeOne"><i class="fa fa-refresh"></i></button>
             </form>
         </div>
