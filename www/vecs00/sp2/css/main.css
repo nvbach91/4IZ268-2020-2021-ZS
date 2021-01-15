@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+.clear {
+    clear: both;
+}
+body {
+    max-width: 1081px;
+    margin: 0 auto;
+}
+footer
+{
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top:#222 solid 1px;
+}
+.form-control {
+    border: solid rgb(176, 202, 202) 1px;
+    width: 100%;
+}
+#searchForm{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+form{
+    display: flex;
+}
+/*main*/
+.movie-card{
+   float: left;
+   width: 30%;
+   margin: 10px;
+   display: flex;
+   flex-direction: column;
+}
+.movie-card-button{border: #060606 solid 8px; border-radius: 15px;}
+
+.card-content{
+    justify-content: center;
+    text-align: center;
+    
+}
+.card-content img{
+    padding: 10px;
+    
+}
+
+
+/*favorite*/
+.favorites{
+    display: none;
+}
+.movie-info{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+.movie-info-content{
+    display: flex;
+    width: 100%;
+}
+.movie-info-content img{
+    height: auto;
+    vertical-align: center;
+    margin: 50px;
+    float: left;
+}
+.movie-info-content ul{
+    float: right;
+    width: 80%;
+    margin: 50px;
+}
+.movie-info h2{
+    margin-left: 50px;
+}
+
+.list-group-item:hover {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #222;
+    border: 1px solid #282828
+}
+/* detail*/
+.movie-detail{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.movie-detail-img{
+    width: 250px;
+    vertical-align: center;
+    margin: 25px;
+}
+.movie-detail-content{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.movie-detail-content ul {
+    width: 80%;
+}
+.movie-detail-description {
+    margin-left: 25px;;
+}
+.movie-detail-description p {
+    font-size: 18px;
+}
+.movie-card-button:focus{
+    border: #060606 solid 8px; border-radius: 15px
+    ;
+}
+
+/*Loading*/
+.spinner
+{
+    margin: 0 auto;
+    display: table;
+    margin-top: 20px;
+    
+}
+.loading {font-size: 50px;}
+.hide {
+    display: none;
+}
+
+@media(min-width:960px) {
+    #movies img, #movie img {
+        width: 90%;
+    }
+    #movies .movie-card .card-content {
+        height: 420px;
+    }
+    #movies .movie-card img {
+        height: 350px;
+    }
+}
