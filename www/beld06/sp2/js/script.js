@@ -1,109 +1,117 @@
 // Document has been loaded
 
-$(document ).ready(function() {
-    // Helper Function to Extract Access Token for URL
-   const getUrlParameter = (sParam) => {
-     let sPageURL = window.location.search.substring(1),////substring will take everything after the https link and split the #/&
-         sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
-         sParameterName,
-         i;
-     let split_str = window.location.href.length > 0 ? window.location.href.split('#') : [];
-     sURLVariables = split_str != undefined && split_str.length > 1 && split_str[1].length > 0 ? split_str[1].split('&') : [];
-     for (i = 0; i < sURLVariables.length; i++) {
-         sParameterName = sURLVariables[i].split('=');
-         if (sParameterName[0] === sParam) {
-             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-         }
-     }
+$(document).ready(function () {
+  // Helper Function to Extract Access Token for URL
+  const getUrlParameter = (sParam) => {
+    let sPageURL = window.location.search.substring(1),////substring will take everything after the https link and split the #/&
+      sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
+      sParameterName,
+      i;
+    let split_str = window.location.href.length > 0 ? window.location.href.split('#') : [];
+    sURLVariables = split_str != undefined && split_str.length > 1 && split_str[1].length > 0 ? split_str[1].split('&') : [];
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+      }
+    }
 
- };
- // Get Access Token
- const accessToken = getUrlParameter('access_token');
+  };
 
-//add ID from my account on Spotify API for developers
- let client_id = '8a3fc434228a4e47b03301a1292ec357';
+  // Get Access Token
+  const accessToken = getUrlParameter('access_token');
 
- //add redirect encoded uri, that will redirect application on eso.vse.cz sever
- let redirect_uri = 'https%3A%2F%2Feso.vse.cz%2F%7Ebeld06%2F4IZ268%2FSP2%2Fpublic';
- // *************** END *************************
+  //add ID from my account on Spotify API for developers
+  let client_id = '8a3fc434228a4e47b03301a1292ec357';
 
- const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
- // Don't authorize if i have an access token already
- if(accessToken == null || accessToken == "" || accessToken == undefined){
-   window.location.replace(redirect);
- }
+  //add redirect encoded uri, that will redirect application on eso.vse.cz sever
+  let redirect_uri = encodeURIComponent('https://eso.vse.cz/~beld06/4IZ268/SP2/public')
+  // *************** END *************************
 
- jQuery(function($){
-    $(document).ajaxSend(function() {
-      $("#overlay").fadeIn(300);　
-    });
-          
-    $('#button').click(function(){
-      $.ajax({
-        type: 'GET',
-        success: function(data){
-          console.log(data);
-        }
-      }).done(function() {
-        setTimeout(function(){
-          $("#overlay").fadeOut(300);
-        },500);
-      });
-    });	
-  });
+  const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
+  // Don't authorize if i have an access token already
+  if (accessToken == null || accessToken == "" || accessToken == undefined) {
+    window.location.replace(redirect);
+  }
 
 
- //get categories of music from spotify API
- $.ajax({
+  //get data from localstorage and create iFrames for tracks
+  if (localStorage.length == 0) {
+
+    console.log(localStorage);
+  } else {
+    console.log(localStorage);
+    getLocalSt();
+  }
+
+  function getLocalSt() {
+    var values = [],
+      keys = Object.keys(localStorage);
+    i = keys.length;
+    while (i--) {
+      values.push(localStorage.getItem(keys[i]));
+    }
+    var cislo = 0;
+    for (let value of values) {
+      var src_str = `https://open.spotify.com/embed/track/${value}`;
+      var iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
+      var parent_div = $('#song_' + cislo);
+      parent_div.html(iframe);
+      cislo++;
+    }
+  }
+
+  //disable "Select..."
+  const selectionOptions = $("option");
+  selectionOptions[0].disabled = true;
+
+  //get categories of music from spotify API
+  $.ajax({
     url: 'https://api.spotify.com/v1/browse/categories',
     dataType: "json",
     type: 'GET',
     headers: {
-        'Authorization' : 'Bearer ' + accessToken
+      'Authorization': 'Bearer ' + accessToken
     },
-    success: function(data) {
+    success: function (data) {
 
-     let genres =[];
+      var domUpdatesId = [];
+      var domUpdatesName = [];
 
-     for (let genres of data.categories.items) {
-     //  console.log(genres.id)
-       let id = genres.id;
-       let name = genres.name;
-       var optionId = new Option(id);
-       var optionName = new Option(name);
+      for (let genres of data.categories.items) {
+        //  console.log(genres.id)
+        let id = genres.id;
+        let name = genres.name;
+        var optionId = new Option(id);
+        var optionName = new Option(name);
 
-       $("#select-genre-id").append(optionId); //id = add data to select box
-       $("#select-genre-name").append(optionName); //name = add data to select box
-
+        domUpdatesId.push(optionId);
+        domUpdatesName.push(optionName);
+      }
+      $("#select-genre-id").append(domUpdatesId); //id = add data to select box
+      $("#select-genre-name").append(domUpdatesName); //name = add data to select box
     }
-    }
- });
+  });
 
- //when one of the options in dropbox would be chosen
- jQuery(function($){
-    $(document).ajaxSend(function() {
-      $("#overlay").fadeIn(300);　
-    });
+  //when one of the options in dropbox would be chosen
 
- $("#select-genre-name").change(function(){
-    
-    let genreName = ($(this).val()); //get value of selected option
+
+  $("#select-genre-name").change(function () {
+
     let genreIndex = ($(this).prop('selectedIndex')); //get index of selected option
 
-    console.log(genreName);
-    console.log(genreIndex);
-
     document.getElementById("select-genre-id").selectedIndex=genreIndex;
-    let getId =($("#select-genre-id").val());
+    let getId = ($("#select-genre-id").val());
     console.log(getId);
 
-    let playlists =[];
+    function emptyDropdowns() {
+      $("#select-playlist-id").empty();
+      $("#select-playlist-name").empty();
+    }
+    emptyDropdowns();
 
-    $("#select-playlist-id").empty();
-    $("#select-playlist-name").empty();
-
-    var x = document.getElementById('select-playlist-name');
-    var x1 = document.getElementById('select-playlist-id');
+    var getSelectName = $('#select-playlist-name')[0];
+    var getSelectId = $('#select-playlist-id')[0];
 
     var opt = document.createElement('option');
     var opt1 = document.createElement('option');
@@ -114,85 +122,95 @@ $(document ).ready(function() {
     opt.value = "option value";
     opt1.value = "option value";
 
-    x.appendChild(opt);  
-    x1.appendChild(opt1);
+    getSelectName.appendChild(opt);
+    getSelectId.appendChild(opt1);
 
+    //disable "Select..."
+    var selectionOptions = $("option");
+    selectionOptions[0].disabled = true;
 
-
-
+    $(document).ajaxSend(function () {
+      $("#overlay").fadeIn(300);
+    });
     $.ajax({
-        url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists?country=US&limit=7&offset=2`,
-        type: 'GET',
-        headers: {
-            'Authorization' : 'Bearer ' + accessToken
-        },
-        success: function(data) {
+      url: `https://api.spotify.com/v1/browse/categories/${getId}/playlists?country=US&limit=10&offset=0`,
+      type: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken
+      },
+      success: function (data) {
 
-          for (let playlists of data.playlists.items) {
+        var updateDomId = [];
+        var updateDomName = [];
+        for (let playlists of data.playlists.items) {
 
-            let name = playlists.name;
-            let id = playlists.id;
-            var optionName = new Option(name);
-            var optionId = new Option(id);
+          let name = playlists.name;
+          let id = playlists.id;
+          var optionName = new Option(name);
+          var optionId = new Option(id);
 
-
-            
-            $("#select-playlist-id").append(optionId);
-            $("#select-playlist-name").append(optionName);
-
-          }
-         }
-        }).done(function() {
-            setTimeout(function(){
-              $("#overlay").fadeOut(300);
-            },500);
-        });
-    });	
+          updateDomId.push(optionId);
+          updateDomName.push(optionName);
+        }
+        $("#select-playlist-id").append(updateDomId);
+        $("#select-playlist-name").append(updateDomName);
+      }
+    }).done(function () {
+      $("#overlay").fadeOut(300);
+    });
   });
 
-  jQuery(function($){
-    $(document).ajaxSend(function() {
-      $("#overlay").fadeIn(300);　
-    });
- $("#select-playlist-name").change(function(){
-    let playName = ($(this).val());  //get name of selected option from the select dropdown with Name
+  var count = 0;
+
+  $("#select-playlist-name").change(function () {
+
     let playIndex = ($(this).prop('selectedIndex')); //get index of selected option from the select dropdown with Name
-    console.log(playName);
-    console.log(playIndex);
 
-    document.getElementById("select-playlist-id").selectedIndex=playIndex;
+    $("#select-playlist-id")[0].selectedIndex = playIndex;
     let NameId = ($("#select-playlist-id").val());
-    console.log(playName);
 
+    $(document).ajaxSend(function () {
+      $("#overlay").fadeIn(300);
+    });
     $.ajax({
-        url: `https://api.spotify.com/v1/playlists/${NameId}/tracks?offset=0&limit=6`,
-        type: 'GET',
-        headers: {
-            'Authorization' : 'Bearer ' + accessToken
-        },
-        success: function(data) {
-          // Load our songs from Spotify into our page
-          console.log(data);
-          let num_of_tracks = data.items.length;
-          console.log(num_of_tracks);
-          let count = 0;
-          // Max number of songs is 12
-          while(count < num_of_tracks){
+      url: `https://api.spotify.com/v1/playlists/${NameId}/tracks?offset=0&limit=20`,
+      type: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken
+      },
+      success: function (data) {
+        // Load our songs from Spotify into our page
+        const nTracks = data.items.length;
+
+
+        if (localStorage.length == 0) {
+          getSongs();
+        } else {
+          localStorage.clear();
+          count = 0;
+          getSongs();
+        }
+
+        function getSongs() {
+
+          while (count < nTracks) {
             // Extract the id of the FIRST song from the data object
-            let id = data.items[count].track.id;
+            var id = data.items[count].track.id;
             // Constructing two different iframes to embed the song
-            let src_str = `https://open.spotify.com/embed/track/${id}`;
-            let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
-            let parent_div = $('#song_'+ count);
+            var src_str = `https://open.spotify.com/embed/track/${id}`;
+            var iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
+            var parent_div = $('#song_' + count);
             parent_div.html(iframe);
+            localStorage.setItem(count, id);
             count++;
           }
         }
-      }).done(function() {
-        setTimeout(function(){
-          $("#overlay").fadeOut(300);
-        },500);
-      });
+
+        console.log(localStorage);
+      }
+    }).done(function () {
+      $("#overlay").fadeOut(300);
+    });
   });
-});
+
 });

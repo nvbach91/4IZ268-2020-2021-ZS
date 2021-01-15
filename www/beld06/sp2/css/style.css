@@ -7,9 +7,8 @@ body {
 .header{
   padding-bottom: 20px;
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 5%;
 }
 
 .text {
@@ -18,9 +17,8 @@ body {
 }
 .container-dl{
   position: absolute;
-  top: 45%;
-  left: 54%;
-  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 5%;
 }
 
 select {
@@ -84,7 +82,7 @@ select#select-genre-name:focus,#select-playlist-name:focus {
 
 #song-list {
   position: absolute;
-  top: 70%; left: 25%;
+  top: 20%; left: 40%;
 }
 
 #song.row {
@@ -105,6 +103,8 @@ select#select-genre-name:focus,#select-playlist-name:focus {
 /* Songs more round */
 iframe {
   border-radius: 30px;
+  width:400px;
+  height:200px;
 }
 
 /* Spotify results fall Into the Same Row */
