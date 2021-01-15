@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="articels, sharing, social media">
+    <meta name="description" content="Javascript app for creating articles and posting them on social media">
+    <meta name="author" content="Jan Větrovský">
+    <title>Create new | Article creator</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="#">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <div class="logo-and-nav">
+        <a class="logo" href="./"><span>articleCreator</span></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="articles-anchor">Articles</a>
+                </li>
+                <li>
+                    <a class="active" id="new-article-anchor" href="./">Create new</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <form id="article-form">
+            <label class="heading-label">Heading</label>
+            <input class="article-heading" type="text" name="article-heading">
+            <label class="content-label">Text</label>
+            <textarea name="textarea-content" class="article-content"></textarea>
+            <label class="enclosure-label">Enclosure</label>
+            <div class="enclosure-container">
+                <div class="preview"></div>
+                <div class="enclosure-button-container">
+                    <input class="article-enclosure" type="file" accept="image/*" multiple>
+                    <button class='file-upload-button'>Upload</button>
+                </div>
+            </div>
+            <label>Share on</label>
+            <div class="share-and-button">
+                <div class="tick-a-media">
+                    <div class="tick-choice">
+                        <input type="checkbox" id="facebook">
+                        <label for="facebook">Facebook</label>
+                    </div>
+                    <!--<div class="tick-choice">
+                        <input type="checkbox" id="instagram">
+                        <label for="instagram">Instagram</label>
+                    </div>-->
+                </div>
+                <button id="post-button">Post</button>
+            </div>
+        </form>
+    </main>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
