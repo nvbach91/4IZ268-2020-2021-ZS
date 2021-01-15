@@ -44,8 +44,8 @@
                     </div>
                     <form method="post" action="https://gmail.googleapis.com/gmail/v1/users/me/messages/send" class="new-message-form">
                         <input type="email" name="to" class="form-control mt-2" placeholder="Komu" required>
-                        <input type="text" name="subject" class="form-control mt-2" placeholder="Předmět">
-                        <textarea name="text" class="form-control mt-2" placeholder="Text"></textarea>
+                        <input type="text" name="subject" class="form-control mt-2" placeholder="Předmět" required>
+                        <textarea name="text" class="form-control mt-2" placeholder="Text" required></textarea>
                         <div class="row justify-content-end">
                             <div class="col-auto">
                                 <button type="submit" class="mt-2">Odeslat</button>
