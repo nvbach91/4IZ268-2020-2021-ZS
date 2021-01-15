@@ -1,0 +1,76 @@
+/* Screen width variables */
+$screen_xs: 375px;
+$screen_sm: 576px;
+$screen_md: 768px;
+$screen_lg: 992px;
+$screen_xl: 1200px;
+$screen_xxl: 1600px;
+
+/* Media queries - min-width */
+@mixin media_sm() {
+  @media only screen and (min-width: $screen_sm) {
+    @content;
+  }
+}
+
+@mixin media_md() {
+  @media only screen and (min-width: $screen_md) {
+    @content;
+  }
+}
+
+@mixin media_lg() {
+  @media only screen and (min-width: $screen_lg) {
+    @content;
+  }
+}
+
+@mixin media_xl() {
+  @media only screen and (min-width: $screen_xl) {
+    @content;
+  }
+}
+
+@mixin media_xxl() {
+  @media only screen and (min-width: $screen_xxl) {
+    @content;
+  }
+}
+
+/* Try not to use media max-width, keep the mobile-first approach */
+
+@mixin media_max_xs() {
+  @media only screen and (max-width: $screen_xs) {
+    @content;
+  }
+}
+
+@mixin media_max_sm() {
+  @media only screen and (max-width: $screen_sm) {
+    @content;
+  }
+}
+
+@mixin media_max_md() {
+  @media only screen and (max-width: $screen_md) {
+    @content;
+  }
+}
+
+@mixin media_max_lg() {
+  @media only screen and (max-width: $screen_lg) {
+    @content;
+  }
+}
+
+@mixin media_max_xl() {
+  @media only screen and (max-width: $screen_xl) {
+    @content;
+  }
+}
+
+@mixin media_print() {
+  @media print {
+    @content;
+  }
+}

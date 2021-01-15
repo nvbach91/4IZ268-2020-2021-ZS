@@ -1,0 +1,183 @@
+@import '../../styles/media';
+@import '../../styles/colors';
+
+.addFormWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 100px 0 0;
+
+    width: 80%;
+
+    @include media_md {
+      width: 65%;
+    }
+    
+    img {
+      width: 100%;
+    }
+    
+    .formWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+
+      background-color: $light_gray;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px $dimmed_gray;
+
+      @include media_md {
+        flex-direction: row;
+        width: 100%;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+        @include media_md {
+          width: 80%;
+          margin-right: 5%;
+        }
+  
+    
+        label {
+          align-self: flex-start;
+          margin: 20px 0 2px;
+        }
+    
+        input {
+          margin: 0;
+          padding: 0 25px;
+          height: 35px;
+          width: 100%;
+
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          outline: none;
+
+          box-sizing: border-box;
+        }
+
+        .urlPreview {
+          margin-top: 20px;
+
+          font-size: 22px;
+          color: $azure_radiance;
+        }
+    
+        .submitButton {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          
+          width: 220px;
+          height: 60px;
+          border: 1px solid $aluminum_foil;
+          border-radius: 16px;
+          
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+
+          background-color: $white;
+
+          transition: 250ms;
+          &:hover {
+            color: $white;
+            background-color: $success;
+            border: 1px solid $success;
+          }
+        }
+      }
+
+      .namespacesWrapper {
+        display: none;
+        
+        @include media_md {
+          display: flex;
+          flex-direction: column;
+          width: 30%;
+        }
+
+        .namespace {
+          margin: 5px 0;
+
+          border-bottom: 1px $fiord solid;
+          
+          color: $fiord;
+          font-size: 18px;
+          cursor: pointer;
+          
+          &:hover {
+            color: $mariner;
+            border-bottom: 1px $mariner solid;
+          }
+        }
+
+        .clear {
+          margin-top: 30px;
+          align-self: flex-end;
+
+          font-size: 18px;
+          font-weight: bold;
+
+          transition: 250ms;
+          &:hover {
+            color: $error;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 60px;
+
+  .status__none {
+    font-size: 20px;
+    color: $black;
+  }
+  .status__success {
+    font-size: 20px;
+    color: $success;
+  }
+  .status__error {
+    font-size: 20px;
+    color: $error;
+  }
+
+  .url {
+    margin-top: 15px;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: underline;
+
+    a {
+      color: $mariner;
+      text-decoration: none !important;
+    }
+  }
+}

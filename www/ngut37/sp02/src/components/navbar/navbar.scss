@@ -1,0 +1,42 @@
+@import '../../styles/media';
+@import '../../styles/colors';
+
+.headerWrapper {
+  height: 8vh;
+  margin: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 17px;
+
+  @include media_md {
+    margin: 3px 50px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  
+  a {
+    color: $black;
+    text-decoration: none;
+    transition-duration: 300ms;
+
+    &:hover {
+      color: $mariner;
+    }
+  }
+
+  .logo {
+    width: 230px;
+    margin-right: 5px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  & nav {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
