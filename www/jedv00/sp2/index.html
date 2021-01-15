@@ -25,86 +25,119 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>My library</title>
   </head>
   <body class="text-center">
-    <div class="container">
-      <nav>
-        <div class="row">
-          <div class="col-7 d-flex justify-content-end">
-            <h1>My library</h1>
+    <div class="container" id="content">
+      
+    </div>
+    <!-- DELETE Modal -->
+    <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Do you really want to delete this book?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+              id="modalButtonRemove"
+            >
+              Delete
+            </button>
           </div>
         </div>
-        <div class="row mt-3 mb-3">
-          <div class="col-5">
-            <div class="row">
-              <button type="button" class="btn btn-danger" id="clear">
-                Clear My List
-              </button>
-            </div>
+      </div>
+    </div>
+    <!-- ADD Modal -->
+    <div class="modal" id="addModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="col-2 d-flex justify-content-center">
-            <div class="row">
-              <button type="button" class="btn btn-primary" id="relocate">
-                Add book
-              </button>
-            </div>
+          <div class="modal-body">
+            <p>Do you really want to add this book?</p>
           </div>
-        </div>
-      </nav>
-      <section class="row">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Published Date</th>
-              <th scope="col">ISBN</th>
-              <th scope="col">My evaluation</th>
-              <th scope="col">Delete book</th>
-            </tr>
-          </thead>
-          <tbody id="tableContent"></tbody>
-        </table>
-        <!-- Modal -->
-        <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Delete</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Do you really want to delete this book?</p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-dismiss="modal"
-                  id="modalButtonRemove"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-dismiss="modal"
+              id="modalButtonAdd"
+            >
+              Add
+            </button>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Preview</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="contentModal">
+            
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./js/script.js"></script>
   </body>
