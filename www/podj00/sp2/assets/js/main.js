@@ -407,7 +407,6 @@ $(document).ready(() => {
     loadDataForSelectBox(country);
 
     /////////////////////////////LOCALSTORAGE////////////////////////////
-    localStorage.clear();
     const getAllFavourites = () => {
         selectbox.children().remove().end().append('<option selected value="defaultValue">Vyberte hodnotu</option>');
         const countries = { ...localStorage };
@@ -419,6 +418,8 @@ $(document).ready(() => {
             }));
         })
     }
+
+    getAllFavourites();
 
     const addNewFavouriteCountry = (name) => {
         localStorage.setItem(name, name);
