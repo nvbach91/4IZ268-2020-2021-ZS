@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href='img/favicon.png' rel='icon' type='image/x-icon' />
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/main.css" rel="stylesheet">
@@ -13,31 +14,28 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbra-brand" href="index.html">Vyhledávání</a> |
-                    <a class="navbra-brand" href="favorites.html">Oblíbené filmy</a>
+                    <!-- <a class="navbra-brand" href="index.html">Vyhledávání</a> |
+                    <a class="navbra-brand" href="favorites.html">Oblíbené filmy</a>-->
+                    <button class="favorites-button btn btn-primary
+                        movie-card-button">Oblíbené</button>
+                    <button class="btn btn-primary movie-card-button
+                        back-search-button">
+                        Zpět na vyhledávání</button>
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="text-center">Databáze filmů a seriálů</h1>
-                <h4 class="text-center">v anglickém jazyce</h4>
+        <div id="change">
 
-                <form id="searchForm">
-                    <input type="text" class="form-control" id="searchText"
-                        placeholder="Zadejte hledaný výraz">
-                </form>
-                <div class="spinner"> 
-                    <i class="fa fa-circle-o-notch fa-spin loading hide" ></i>
-                </div>
-                
-            </div>
         </div>
 
         <div class="container">
-            <div id="movies" class="movies">
-            </div>
+            <div id="movie"></div>
         </div>
+
+        <div class="favorites" id="favorite">
+        </div>
+
+
         <div class="clear"></div>
         <footer class="text-center"> &copy; Šárka Večerníková</footer>
         <!-- jQuery-->
@@ -47,9 +45,12 @@
         </script>
         <!--axios cdn-->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!--ajax-->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
+        <!--bootstrap CDN-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!--můj skript-->
         <script src="js/main.js"></script>
-        <!--ajax-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
     </body>
 </html>

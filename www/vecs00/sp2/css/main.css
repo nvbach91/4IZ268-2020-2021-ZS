@@ -34,7 +34,7 @@ form{
    display: flex;
    flex-direction: column;
 }
-.movie-card-button{border: black solid 8px; border-radius: 15px;}
+.movie-card-button{border: #060606 solid 8px; border-radius: 15px;}
 
 .card-content{
     justify-content: center;
@@ -48,7 +48,9 @@ form{
 
 
 /*favorite*/
-
+.favorites{
+    display: none;
+}
 .movie-info{
     float: left;
     display: flex;
@@ -111,7 +113,7 @@ form{
     font-size: 18px;
 }
 .movie-card-button:focus{
-    border: black solid 8px; border-radius: 15px
+    border: #060606 solid 8px; border-radius: 15px
     ;
 }
 
