@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="That is a web, that uses Spotify API" />
+        <meta name="author" content="Daria Beliavskaia" />
+        <meta name="keywords" content="Spotify, music, playlists, tracks, genre" />
+        <link href="./css/style.css" rel="stylesheet">
+        <link href="./img/moon.ico" rel="shortcut icon" type="image/x-icon" />
+        <title>Spotify API for 4IZ268</title>
+    </head>
+
+    <body>
+        <!--Header-->
+        <header class="header">
+            <div class="container-header">
+                <h1 class="header__title">Spotify Search Music</h1>
+            </div>
+        </header>
+        <div class="container-dl" id="dropdown-list">
+            <div class="genre-container">
+                <h2 class="text">Genres: </h2>
+                <select name="genre_selected1_NAME" id="select-genre-name">
+                    <option>Select...</option>
+                </select>
+                <select name="genre_selected_ID"  id="select-genre-id">
+                    <option>Select...</option>
+                </select>
+                </div>
+            <div class="playlist-container">
+                <h2 class="text">Playlists: </h2>
+                <select name="playlist_selected_NAME" id="select-playlist-name">
+                    <option>Select...</option>
+                </select>
+                <select name="playlist_selected_ID" id="select-playlist-id">
+                    <option>Select...</option>
+                </select>      
+            </div>
+        </div>
+
+        <div class="container" id="song-list">
+            <div class="row">
+                <div id="song_0" class="col"></div>
+                <div id="song_1"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_2"  class="col"></div>
+                <div id="song_3"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_4"  class="col"></div>
+                <div id="song_5"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_6"  class="col"></div>
+                <div id="song_7"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_8"  class="col"></div>
+                <div id="song_9"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_10"  class="col"></div>
+                <div id="song_11"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_12"  class="col"></div>
+                <div id="song_13"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_14"  class="col"></div>
+                <div id="song_15"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_16"  class="col"></div>
+                <div id="song_17"  class="col"></div>
+            </div>
+            <div class="row">
+                <div id="song_18"  class="col"></div>
+                <div id="song_19"  class="col"></div>
+            </div>
+        </div>
+
+        <div id="overlay">
+            <div class="cv-spinner">
+                <span class="spinner"></span>
+            </div>
+        </div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="./js/script.js"></script>
+    </body>
+</html>
