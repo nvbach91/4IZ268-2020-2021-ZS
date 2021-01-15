@@ -6,73 +6,75 @@ $(document).ready(() => {
   let numberOfMatches = 0; //for counting number of displayed matches on the screen
   let numberOfPlayers = 0; // --||-- players
   const loader = $('<div class="lds-facebook"><div></div><div></div><div></div></div>'); // css loader definiton
-  const matchStatsContainer = document.getElementById('match');
-  const playerInfoContainer = document.getElementById('player-info');
-  const playerStatsContainer = document.getElementById('player-stats');
-  const getPlayer = document.getElementById('getPlayer');
-  const addFavorites = document.getElementById('addFavorites');
+  const matchStatsContainer = document.querySelector('#match');
+  const playerInfoContainer = document.querySelector('#player-info');
+  const playerStatsContainer = document.querySelector('#player-stats');
+  const getPlayer = document.querySelector('#getPlayer');
+  const addFavorites = document.querySelector('#addFavorites');
   let favoritePlayerName = ''; // for saving player to favorites
   let favoritePlayerID = null;
   const winnerTeam = document.createElement('p');
-  const clearMatch = document.getElementById('clearMatch');
-  const clearPlayer = document.getElementById('clearPlayer');
-  const playersSelectBox = document.getElementById('players-select-box');
+  const clearMatch = document.querySelector('#clearMatch');
+  const clearPlayer = document.querySelector('#clearPlayer');
+  const playersSelectBox = document.querySelector('#players-select-box');
+  const matchSearchInput = document.querySelector('#searchMatchInput');
+  const playerSearchInput = document.querySelector('#searchPlayerInput');
   const optionsDireKills = {
     prefix: 'Dire score: ',
     suffix: 'kills',
     duration: 3
-  }
+  };
   const optionsRadiantKills = {
     prefix: 'Radiant score: ',
     suffix: 'kills',
     duration: 3
-  }
+  };
   const optionsHumanPlayers = {
     prefix: 'Human players in game: ',
     duration: 3
-  }
+  };
   const optionsSoloRank = {
     prefix: 'Solo rank: ',
     suffix: 'mmr',
     duration: 3,
     separator: '',
-  }
+  };
   const optionsPartyRank = {
     prefix: 'Party rank: ',
     suffix: 'mmr',
     duration: 3,
     separator: '',
-  }
+  };
   const optionsPlayerWins = {
     prefix: 'Wins: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const optionsPlayerLosses = {
     prefix: 'Losses: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const optionsPlayerGames = {
     prefix: 'Total games: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const optionsRadiantGames = {
     prefix: 'Games as Radiant: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const optionsDireGames = {
     prefix: 'Games as Dire: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const optionsAbandoned = {
     prefix: 'Games abandoned: ',
     duration: 3,
     separator: ' ',
-  }
+  };
   const secondsToHms = (d) => {
     d = Number(d);
     const h = Math.floor(d / 3600); //hours
@@ -100,7 +102,7 @@ $(document).ready(() => {
     }
   }
   // Skill bracket assigned by Valve (Normal, High, Very High)
-  const whichSkillBracket = (skill) => {
+  const getSkillBracketName = (skill) => {
     switch (skill) {
       case 1:
         return 'Normal';
@@ -112,7 +114,7 @@ $(document).ready(() => {
   }
   /* Integer corresponding to game mode played. List of constants can be found here:
    https://github.com/odota/dotaconstants/blob/master/json/game_mode.json*/
-  const whichGameMode = (gameMode) => {
+  const getGameModeName = (gameMode) => {
     switch (gameMode) {
       case 0:
         return 'Unknown';
@@ -170,31 +172,10 @@ $(document).ready(() => {
     return plus ? 'Yes' : 'No';
   }
   /*-----------------------------Input filtering --------------------------*/
-  // filters input values, used to allow only numbers in input
-  const setInputFilter = (textbox, inputFilter) => {
-    ['input', 'keydown', 'keyup', 'mousedown', 'mouseup', 'select', 'contextmenu', 'drop'].forEach(function (event) {
-      textbox.addEventListener(event, function () {
-        if (inputFilter(this.value)) {
-          this.oldValue = this.value;
-          this.oldSelectionStart = this.selectionStart;
-          this.oldSelectionEnd = this.selectionEnd;
-        } else if (this.hasOwnProperty('oldValue')) {
-          this.value = this.oldValue;
-          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-        } else {
-          this.value = '';
-        }
-      });
-    });
-  }
-  const matchSearchInput = document.getElementById('searchMatchInput');
-  const playerSearchInput = document.getElementById('searchPlayerInput');
-  setInputFilter(matchSearchInput, function (value) { // allow only numbers in match ID input
-    return /^-?\d*$/.test(value);
+  $(document).on('input', '.search-input', function () {
+    this.value = this.value.replace(/\D/g, '');
   });
-  setInputFilter(playerSearchInput, function (value) { // allow only numbers in player ID input
-    return /^-?\d*$/.test(value);
-  });
+
   // on enter press start searching for match
   $('.red-input').keyup(function (e) {
     if (e.keyCode === 13) {
@@ -249,9 +230,9 @@ $(document).ready(() => {
         matchDuration.innerText = `Match duration: ${secondsToHms(response.duration)}`;
         winnerTeam.innerText = `Winner team: ${whoWon(response.radiant_win)}`;
         firstBlood.innerText = `First blood time: ${secondsToHms(response.first_blood_time)}`;
-        skillBracket.innerText = `Skill bracket: ${whichSkillBracket(response.skill)}`;
+        skillBracket.innerText = `Skill bracket: ${getSkillBracketName(response.skill)}`;
         humanPlayers.id = 'humans';
-        gameMode.innerText = `Game mode: ${whichGameMode(response.game_mode)}`;
+        gameMode.innerText = `Game mode: ${getGameModeName(response.game_mode)}`;
 
         matchStatsContainer.append(direScore, radiantScore, matchDuration, winnerTeam, firstBlood, skillBracket, humanPlayers,
           gameMode);
@@ -295,7 +276,7 @@ $(document).ready(() => {
   /*---------------------------- Get and display player ----------------------------*/
   const searchPlayer = (playerID) => {
     loader.appendTo(playerInfoContainer); // adding css loader first
-    $.get(`https://api.opendota.com/api/players/${playerID}`) // test id: 131284339
+    $.get(`https://api.opendota.com/api/players/${playerID}`) // test id: 131284339, 131284333
       .done((response) => {
         /* API returns null values even if the player doesn't exists, it doesn't return Not found(404), so i check
          if player profile exists first */
@@ -315,6 +296,7 @@ $(document).ready(() => {
           playerName.id = 'playerName';
           steamProfile.innerText = 'Go to steam profile';
           steamProfile.href = response.profile.profileurl;
+          steamProfile.target = '_blank';
           soloRank.id = 'solo';
           partyRank.id = 'party';
           country.innerText = `Country: ${response.profile.loccountrycode}`;
@@ -341,7 +323,7 @@ $(document).ready(() => {
       .always(() => {
         loader.detach();
       });
-    $.get(`https://api.opendota.com/api/players/${playerID}/wl`) 
+    $.get(`https://api.opendota.com/api/players/${playerID}/wl`)
       .done((response) => {
         if (response.win + response.lose !== 0) { // check if player has even played any games
           const games = document.createElement('p');
@@ -350,7 +332,7 @@ $(document).ready(() => {
           const totalGames = response.win + response.lose;
           /* applying style here and not in css, because when searching for player for the 1st time,
            css in not always applied the right way(beacuse it's dynamically created element)*/
-          wins.style.color = "green"; 
+          wins.style.color = "green";
           losses.style.color = "red";
 
           games.id = 'games';
@@ -364,7 +346,7 @@ $(document).ready(() => {
 
           /* for counting how many games has player played as dire team, i need to deduct total games played from radiant games played,
            the API doesn't return dire games played, so i need to calculate it myself*/
-          $.get(`https://api.opendota.com/api/players/${playerID}/matches?is_radiant`) 
+          $.get(`https://api.opendota.com/api/players/${playerID}/matches?is_radiant`)
             .done((response) => {
               const radiantGames = document.createElement('p');
               const direGames = document.createElement('p');
@@ -395,7 +377,7 @@ $(document).ready(() => {
       .always(() => {
         loader.detach();
       })
-    $.get(`https://api.opendota.com/api/players/${playerID}/counts`) 
+    $.get(`https://api.opendota.com/api/players/${playerID}/counts`)
       .done((response) => {
         try { // for error handling 
           const gamesAbandoned = document.createElement('p');
@@ -453,6 +435,17 @@ $(document).ready(() => {
   });
 
   /*-------------------------------- Favorite players -----------------------------------*/
+  // load favorite players saved in local storage
+  const items = { ...localStorage };
+  const loadFavorites = () => {
+    for (const [key] of Object.entries(items)) {
+      const option = document.createElement('option');
+      option.innerText = key;
+      playersSelectBox.add(option);
+    };
+  }
+  loadFavorites();
+
   // function to add favorite player to select-box as option and to localStorage
   const addToFavorites = (playerName, playerID) => {
     const newPlayer = document.createElement('option');
