@@ -14,7 +14,12 @@ export type Link = {
 }
 
 export type LinkWithID = Link & {
-    _id: string;
+  _id: string;
+}
+
+export type PathLink = {
+  path: string;
+  name: string;
 }
 
 export const fetchLinks = async (credentials: Credentials) => {
@@ -30,6 +35,15 @@ export const fetchLinks = async (credentials: Credentials) => {
 export const createLink = async (params: AddLinkParamsType) => {
   try {
     const response = await axios.post(`${config.apiUrl}/links`, params);
+    return response;
+  } catch (e) {
+    return e.response;
+  }
+}
+
+export const checkLinkConflict = async (params: PathLink) => {
+  try {
+    const response = await axios.post(`${config.apiUrl}/links/check`, params);
     return response;
   } catch (e) {
     return e.response;

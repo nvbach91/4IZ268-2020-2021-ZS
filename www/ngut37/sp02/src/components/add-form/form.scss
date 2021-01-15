@@ -14,6 +14,13 @@
     justify-content: space-between;
     align-items: center;
 
+    margin: 100px 0 0;
+
+    width: 80%;
+
+    @include media_md {
+      width: 65%;
+    }
     
     img {
       width: 100%;
@@ -63,6 +70,13 @@
 
           box-sizing: border-box;
         }
+
+        .urlPreview {
+          margin-top: 20px;
+
+          font-size: 22px;
+          color: $azure_radiance;
+        }
     
         .submitButton {
           display: flex;
@@ -104,10 +118,15 @@
           margin: 5px 0;
 
           border-bottom: 1px $fiord solid;
-
+          
           color: $fiord;
           font-size: 18px;
           cursor: pointer;
+          
+          &:hover {
+            color: $mariner;
+            border-bottom: 1px $mariner solid;
+          }
         }
 
         .clear {
@@ -154,6 +173,7 @@
     margin-top: 15px;
     font-size: 26px;
     font-weight: bold;
+    text-decoration: underline;
 
     a {
       color: $mariner;

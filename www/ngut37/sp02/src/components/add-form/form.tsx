@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 
-import { createLink, AddLinkParamsType } from "../../server/api";
+import { createLink, AddLinkParamsType, checkLinkConflict } from "../../server/api";
+import { config } from "../../server/config";
 
 import { statusCodesMap } from "../../utils";
 
@@ -15,10 +16,23 @@ export const AddForm = () => {
   })
   const [createdUrl, setCreatedUrl] = useState<string | undefined>(undefined);
   const [status, setStatus] = useState<number | undefined>(undefined);
+  const [conflict, setConflict] = useState<number | undefined>(undefined);
   const [savedCredentials, setSavedCredentials] = useState(JSON.parse(localStorage.getItem('credentials') || '{}'));
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setConflict(undefined);
     setInfo({ ...info, [e.target.name]: e.target.value })
+  }, [info]);
+
+  const checkConflict = useCallback(async (e: React.FocusEvent<HTMLInputElement>) => {
+    try {
+      const response = await checkLinkConflict({ path: info.path, name: info.name });
+      if (response) {
+        setConflict(response.status);
+      }
+    } catch (e) {
+      console.warn(e.message);
+    }
   }, [info]);
 
   const handleSubmit = useCallback(async (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -55,10 +69,17 @@ export const AddForm = () => {
       ))
   }, [savedCredentials, info])
 
+  const urlPreview = useMemo(() => {
+    let content = `${config.apiUrl}/${info.path}/${info.name}`
+
+    if (conflict === 409) content = 'This link already exists!'
+
+    return (<span className="urlPreview">{content}</span>)
+  }, [info, conflict])
+
   return (
     <div className="addFormWrapper">
       <div className="formContainer">
-        <img src="https://techjobsni.co.uk/wp-content/uploads/2020/02/6421040.png" alt="network" />
         <div className="formWrapper">
           <form>
             <label htmlFor="path">Your path</label>
@@ -66,9 +87,10 @@ export const AddForm = () => {
             <label htmlFor="password">Password</label>
             <input name="password" type="password" onChange={handleChange} value={info.password} />
             <label htmlFor="name">Name</label>
-            <input name="name" onChange={handleChange} value={info.name} />
+            <input name="name" onChange={handleChange} onBlur={checkConflict} value={info.name} />
             <label htmlFor="url">URL</label>
             <input name="url" onChange={handleChange} value={info.url} />
+            {urlPreview}
             <div className="submitButton" onClick={handleSubmit}>Create link</div>
           </form>
           <div className="namespacesWrapper">

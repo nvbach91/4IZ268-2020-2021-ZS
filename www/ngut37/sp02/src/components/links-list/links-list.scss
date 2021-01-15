@@ -19,7 +19,7 @@
     align-items: center;
 
     width: 80%;
-    margin-bottom: 30px;
+    margin: 100px 0 30px;
 
     background-color: $light_gray;
     padding: 30px;
@@ -27,7 +27,7 @@
     box-shadow: 0 0 15px $dimmed_gray;
 
     @include media_md {
-      width: 40%;
+      width: 50%;
     }
 
     label {
