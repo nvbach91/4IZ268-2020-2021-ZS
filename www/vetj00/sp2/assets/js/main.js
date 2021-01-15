@@ -9,6 +9,8 @@ $(document).ready(() => {
     const enclosureLabel = $('.enclosure-label');
     const preview = $('.preview');
     const removePreview = $(`<img class="delete-button" title="remove images" width="30" src="./assets/images/delete.png" alt="delete-preview-button">`);
+    const articlesAnchor = $('.articles-anchor');
+    const newArticleAnchor = $('#new-article-anchor');
     let enclosureFiles;
     let headingAlert = $(`<p> </p>`);
     let contentAlert = $(`<p> </p>`);
@@ -72,16 +74,17 @@ $(document).ready(() => {
         if (enclosureFiles.length > 0) {
             preview.after(removePreview);
             const filesCounter = enclosureFiles.length;
-            for (i = 0; i < filesCounter; i++) {
-                let imagePrev = '';
+            const arr = [];
+            for (let i = 0; i < filesCounter; i++) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                    //$($.parseHTML('<img>')).attr({ src: event.target.result, class: 'preview-images' }).appendTo(preview);
-                    imagePrev += `<img class="preview-images" src="${event.target.result}" alt="preview-image">`;
-                    preview.html(imagePrev);
+                    const imagePrev = $($.parseHTML('<img>')).attr({ src: event.target.result, class: 'preview-images' }).appendTo(preview);
+                    //imagePrev += `<img class="preview-images" src="${event.target.result}" alt="preview-image">`;
+                    arr.push(imagePrev);
                 };
                 reader.readAsDataURL(enclosureFiles[i]);
             };
+            preview.append(...arr);
         } else {
             $('.preview-images').remove();
         };
@@ -118,20 +121,24 @@ $(document).ready(() => {
             },
             function(response) {
                 loader.remove();
-                loader = $(`<div class="loading">Posted on <a href="https://www.facebook.com/SP2-4iz268-100387761998951/photos/a.100791501958577/${response.id}" target="_blank">this link</a><br>Let's also take a look at your article at <a href="https://eso.vse.cz/~vetj00/sp2/articles/">articles feed</a></div>`);
+                renderArticles();
+                loader = $(`<div class="loading">Posted on <a href="https://www.facebook.com/SP2-4iz268-100387761998951/photos/a.100791501958577/${response.id}" target="_blank">this link</a><br>Let's also take a look at your article at articles feed bellow</div>`);
                 main.append(loader);
+                setTimeout(function() {
+                    loader.detach();
+                }, 4000);
             });
     };
 
     const array = [];
 
-    function uploadFile() {
+    async function uploadFile() {
         if (validateForm()) {
             loader.remove();
             loader = $(`<div class="loader"><div class="lds-ring"><div></div><div></div><div></div><div></div></div><p>Posting...</p></div>`);
             main.append(loader);
             console.log(enclosureFiles);
-            for (i = 0; i < enclosureFiles.length; i++) {
+            for (let i = 0; i < enclosureFiles.length; i++) {
                 const enclosureFileName = enclosureFiles[i].name;
                 const storageRef = firebase.storage().ref('/uploadedFiles/' + enclosureFileName);
                 const uploadTask = storageRef.put(enclosureFiles[i]);
@@ -156,6 +163,13 @@ $(document).ready(() => {
             };
         };
     };
+
+    articlesAnchor.on('click', (e) => {
+        e.preventDefault();
+        renderArticles();
+        newArticleAnchor.removeClass();
+        articlesAnchor.addClass('active');
+    });
 
     function databasePush() {
         if (validateForm()) {
@@ -184,19 +198,22 @@ $(document).ready(() => {
                 }
                 if (!checkbox.is(':checked')) {
                     loader.remove();
-                    loader = $(`<div class="loading">Let's take a look at your article at <a href="https://eso.vse.cz/~vetj00/sp2/articles/">articles feed</a></div>`);
+                    renderArticles();
+                    loader = $(`<div class="loading">You've successfully posted an article</div>`);
                     main.append(loader);
+                    setTimeout(function() {
+                        loader.detach();
+                    }, 2000);
                 } else {
                     setTimeout(function() {
                         postToFeed(array[0]);
                     }, 2000);
                 };
-            }, 1000);
+            }, 2000);
         };
     };
 
-
-    submitButton.on('click', (e) => {
+    submitButton.on('click', async(e) => {
         e.preventDefault();
         uploadFile();
         $.when(uploadFile).then(databasePush);
@@ -270,4 +287,84 @@ $(document).ready(() => {
             return true;
         };
     };
+
+
+    function renderArticles() {
+        main.children().detach();
+
+        function getData() {
+            firebase.database().ref('Article').once('value', function(snapshot) {
+                const array = [];
+                snapshot.forEach(function(childSnapshot) {
+                    let childKey = childSnapshot.key;
+                    let childData = childSnapshot.val();
+                    const headingSource = childData['heading'];
+                    const contentSource = childData['content'];
+                    const enclosureSource = childData['enclosure'];
+                    const secEnclosureSource = childData['secEnclosure'];
+                    const thirdEnclosureSource = childData['thirdEnclosure'];
+                    const section = $(`<section></section>`);
+                    const headingAndContent = $(`<div class="heading-and-content"></div>`);
+                    const heading = $(`<a href="#" class="heading-link">${headingSource}</a>`);
+                    const content = $(`<div class="content-link">${contentSource}</div>`);
+                    const enclosure = $(`<img src="${enclosureSource}" alt="image" class="enclosure-link">`);
+                    const secEnclosure = $(`<span class="sec-enclosure">${secEnclosureSource}</span>`);
+                    const thirdEnclosure = $(`<span class="third-enclosure">${thirdEnclosureSource}</span>`);
+                    headingAndContent.append(heading, content);
+                    array.unshift(section.append(headingAndContent, enclosure, secEnclosure, thirdEnclosure));
+                });
+                const section = $(`<div class="huh"></div>`);
+                section.append(...array);
+                main.append(section);
+            });
+        };
+        getData();
+    };
+
+    window.addEventListener('popstate', e => {
+        renderArticles();
+    });
+
+    $(this).click(function(e) {
+        if (e.target.getAttribute('class') === 'heading-link') {
+            const url = new URL(window.location);
+            url.searchParams.set('articles', e.target.innerText);
+            window.history.pushState({}, '', url);
+            let articleCount = 0;
+            e.preventDefault();
+            const clickedHeadingText = $(e.target).text();
+            const headingLinkArray = $('.heading-link');
+            const contentLinkArray = $('.content-link');
+            const enclosureLinkArray = $('.enclosure-link');
+            const secEnclosureLinkArray = $('.sec-enclosure');
+            const thirdEnclosureLinkArray = $('.third-enclosure');
+
+            for (let i = 0; i < headingLinkArray.length; i++) {
+                if (clickedHeadingText === headingLinkArray.get(i).innerText) {
+                    articleCount = i;
+                };
+            };
+            const headingLink = headingLinkArray.get(articleCount);
+            const contentLink = contentLinkArray.get(articleCount);
+            const enclosureLink = enclosureLinkArray.get(articleCount).getAttribute('src');
+            const secEnclosureLink = secEnclosureLinkArray.get(articleCount).innerText;
+            const thirdEnclosureLink = thirdEnclosureLinkArray.get(articleCount).innerText;
+
+            main.children().detach();
+            const section = $(`<section class="full-main"></section>`);
+            const heading = $(`<h2 class="full-heading"></h2>`).text(headingLink.innerText);
+            const content = $(`<p class="full-content"></p>`).html(contentLink);
+            const enclosure = $(`<img alt="image" class="full-enclosure">`).attr("src", enclosureLink);
+            section.append(heading, content, enclosure);
+            if (secEnclosureLink !== 'undefined') {
+                const secEnclosure = $(`<img alt="image" class="full-enclosure">`).attr("src", secEnclosureLink);
+                section.append(secEnclosure);
+            };
+            if (thirdEnclosureLink !== 'undefined') {
+                const thirdEnclosure = $(`<img alt="image" class="full-enclosure">`).attr("src", thirdEnclosureLink);
+                section.append(thirdEnclosure);
+            };
+            main.append(section);
+        };
+    });
 });
