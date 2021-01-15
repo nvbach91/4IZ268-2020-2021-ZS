@@ -12,29 +12,29 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyLe5yzxPbZq-rA0N6ca8fLO_u4LBxx9g&callback=initMap&libraries=&v=weekly"
+        defer></script>
 </head>
 
 <body>
     <div class="header">
         <h1>The počasí app</h1>
     </div>
-
     <div class="input-section">
         <input class="input-box" type="text" value="Prague">
         <button class="input-button" type="button">Search</button>
 
     </div>
-
     <div class="whisper" id="whisper"></div>
-
     <div class="information-section" id="information-section">
         <div id="city" class="city"></div>
         <div id="temp" class="loader"></div>
         <div id="info" class="loader"></div>
         <button class="favourite-button" type="button">Add to favourites</button>
     </div>
-    <div class="favourite-section" id="favourite-section">
-    </div>
+    <div class="favourite-section" id="favourite-section"></div>
+    <div id="map"></div>
     <div class="footer">
         <p>Semestrální projekt SP2 z předmětu 4IZ268</p>
         <p>Petr Potměšil, potp04</p>
