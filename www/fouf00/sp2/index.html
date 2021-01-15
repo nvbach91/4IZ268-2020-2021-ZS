@@ -34,16 +34,26 @@
                 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 ">
                     <input class="form-control form-control-sm mr-3 w-75 " type="text" placeholder="Search"
                         aria-label="Search" id="food-input">
-                    <button class="btn btn-secondary fa fa-search " type="button" id="search-button"></button>
+                    <button class="btn btn-secondary fa fa-search " type="submit" id="search-button"></button>
                 </form>
 
                 <div class="album py-5 ">
                     <div class="container">
                         <h2>Results</h2>
+                        <div class="d-flex justify-content-between">
+                            <div class="card-body sort-buttons d-none">
+                                <button type="button" id="sort-score" class="btn btn-secondary">Sort by
+                                    Health score</button>
+                                <button type="button" id="sort-time" class="btn btn-secondary">Sort by
+                                    Time</button>
+                                <button type="button" id="random" class="btn btn-secondary">Random</button>
+                            </div>
+                        </div>
                         <div class="row food-list">
-                            <div class="text-center w-100 py-5">
+                            <div class="text-center w-100 py-0">
                                 <p>Use the search bar to find your next meal</p>
                             </div>
+
 
                         </div>
 
