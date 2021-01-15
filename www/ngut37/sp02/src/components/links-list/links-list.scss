@@ -21,6 +21,11 @@
     width: 80%;
     margin-bottom: 30px;
 
+    background-color: $light_gray;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px $dimmed_gray;
+
     @include media_md {
       width: 40%;
     }
@@ -32,9 +37,15 @@
 
     input {
       margin: 0;
-      padding: 0;
-      height: 22px;
+      padding: 0 25px;
+      height: 35px;
       width: 100%;
+
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+
+      box-sizing: border-box;
     }
 
     .submitButton {
@@ -46,11 +57,21 @@
       
       width: 220px;
       height: 60px;
-      border: 1px solid $black;
+      border: 1px solid $aluminum_foil;
       border-radius: 16px;
 
       text-align: center;
       font-size: 20px;
+      font-weight: bold;
+
+      background-color: $white;
+
+      transition: 250ms;
+      &:hover {
+        color: $white;
+        background-color: $mariner;
+        border: 1px solid $mariner;
+      }
     }
   }
 

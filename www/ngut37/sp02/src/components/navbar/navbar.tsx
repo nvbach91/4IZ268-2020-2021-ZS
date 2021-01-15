@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './navbar.scss';
 
@@ -7,9 +8,9 @@ export const Navbar = () => {
     <div className="headerWrapper">
       <span className="logo"><a href="./">Shortify</a></span>
       <nav>
-        <a href="./">Create link</a>
-        <a href="./list">Find your path</a>
-        <a href="./about">About Shortify</a>
+        <Link to="./" >Create links</Link>
+        <Link to="./list" >Find your path</Link>
+        <Link to="./about" >About Shortify</Link>
       </nav>
     </div>
   )
