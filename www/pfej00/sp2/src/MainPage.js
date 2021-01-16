@@ -8,16 +8,17 @@ import {
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Stocks from "./Components/Stocks";
-import Crypto from "./Components/Crypto";
-import './Styles/index.css';
+import Cryptos from "./Components/Cryptos";
  
 class MainPage extends Component {
   render() {
+    const year = new Date().getFullYear(); //Aktuální rok pro Copyright :)
     return (
         <Router>
           <Header/>
           <main className="container">
             <section id="content">
+              <br></br>
               <Switch>
                 <Route exact path="/">
                   <Home />
@@ -26,13 +27,13 @@ class MainPage extends Component {
                   <Stocks />
                 </Route>
                 <Route path="/crypto">
-                  <Crypto />
+                  <Cryptos />
                 </Route>
               </Switch>
             </section>
           </main>
           <footer>
-            <small>&copy; Copyright 2020, Jan Pfeiffer</small>
+            <small>&copy; Copyright {year}, Jan Pfeiffer</small>
           </footer>
         </Router>
     );

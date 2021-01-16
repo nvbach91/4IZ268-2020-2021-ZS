@@ -5,20 +5,21 @@ import { Line } from 'react-chartjs-2';
 import { CircleLoading } from 'react-loadingg';
 import DataError from "./DataError";
 
-class Crypto extends Component {
+class Stock extends Component {
     constructor(props) {
       super(props);
-      this.getactualCryptoPrice = this.getactualCryptoPrice.bind(this);   
+      this.getActualPrice = this.getActualPrice.bind(this);   
       this.transformData = this.transformData.bind(this); 
       this.changeGraph = this.changeGraph.bind(this);
-      const cryptoFromStorage = localStorage.getItem('crypto');
+      const stockFromStorage = localStorage.getItem('stock');
       this.state = {
-          crypto: cryptoFromStorage.split(","),
+          stock: stockFromStorage.split(","),
           loading: true,
           error: null,
+          todayPrices: [],
           dailyPrices: [],
           monthlyPrices: [],
-          actualCryptoPrice: 0,
+          actualPrice: 0,
           graphDataX: [],
           graphDataY: []
       }; 
@@ -26,94 +27,87 @@ class Crypto extends Component {
 
     async componentDidMount() {
         const querys = [
-            "function=DIGITAL_CURRENCY_DAILY",
-            "function=DIGITAL_CURRENCY_MONTHLY"
+            "interval=5min&function=TIME_SERIES_INTRADAY",
+            "function=TIME_SERIES_DAILY",
+            "function=TIME_SERIES_MONTHLY"
         ];
         
         for (let index = 0; index < querys.length; index++) {
-          try {
-              let response = await fetch("https://alpha-vantage.p.rapidapi.com/query?" + querys[index] + "&symbol=" + this.state.crypto[1] + "&market=USD&datatype=json&output_size=compact", {
-                  "method": "GET",
-                  "headers": {
-                    "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
-                    "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
-                  }
-              });
-              if (!response.ok) {
-                  this.setState({error: "WS is broken or there is too many requests. Wait please one minute and then reload page."});
-              }
-              else {
-                  let json = await response.json();
-                  if (index==0) {
-                      this.setState({dailyPrices: json});
-                      //console.log(this.state.dailyPrices);                    
-                  } else if(index==1) {
-                      this.setState({monthlyPrices: json});
-                      //console.log(this.state.monthlyPrices);  
-                  }
-              }
-          } catch (error) {
-              alert('Error occured while getting data ' + error);
-              this.setState({error: error});
-          }                    
+            try {
+                let response = await fetch("https://alpha-vantage.p.rapidapi.com/query?" + querys[index] + "&symbol=" + this.state.stock[0] + "&datatype=json&output_size=compact", {
+                    "method": "GET",
+                    "headers": {
+                      "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
+                      "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
+                    }
+                });
+                if (!response.ok) {
+                    this.setState({error: "WS is broken or there is too many requests. Wait please one minute and then reload page."});
+                }
+                else {
+                    let json = await response.json();
+                    if (index==0) {
+                        this.setState({todayPrices: json});                    
+                    } else if(index==1) {
+                        this.setState({dailyPrices: json});  
+                    } else {
+                        this.setState({monthlyPrices: json});; 
+                    }
+                }
+            } catch (error) {
+                alert('Error occured while getting data ' + error);
+                this.setState({error: error});
+            }                    
         }
-      
         if (this.state.error == null) {
             try {
-                const actualCryptoPriceResponse = await fetch("https://alpha-vantage.p.rapidapi.com/query?&from_currency=" + this.state.crypto[1] + "&function=CURRENCY_EXCHANGE_RATE&to_currency=USD", {
-                  "method": "GET",
-                  "headers": {
-                    "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
-                    "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
-                  }
-                });
-                if (!actualCryptoPriceResponse.ok) {
-                  this.setState({error: "WS is broken or there is too many requests. Wait please one minute and then reload page."});
-                }
-                const actualCryptoPrice = await actualCryptoPriceResponse.json();
-                this.setState({actualCryptoPrice: this.getactualCryptoPrice(actualCryptoPrice)});            
+                const actualPriceResponse = await fetch("https://financialmodelingprep.com/api/v3/quote-short/" + this.state.stock[0] + "?apikey=4146f9d659748bf4ea23fea71f0722f6");
+                const actualPrice = await actualPriceResponse.json();
+                this.setState({actualPrice: this.getActualPrice(actualPrice)});            
             } catch (error) {
                 alert('Error occured while getting data ' + error);
                 this.setState({error: error});
             }
     
             this.setState({loading: false});
-            this.changeGraph(); //Nastavení defultních hodnot do grafu
-        }        
+            this.changeGraph();
+        }
     }
 
     //Vrátí poslední cenu z dneška
-    getactualCryptoPrice(json) {
-        json = Object.values(json);
+    getActualPrice(json) {
+        //json = [json];
+        console.log(Object.values(json[0]));
         json = Object.values(json[0]);
-        console.log(json[8]);
-        const priceToReturn = json[8];
-        return priceToReturn;
+        return json[1];
     }
 
     //Změní data grafu na základě vyrenderování nebo stisknutí tlačítka
     changeGraph(key) {
-        
         let json = [];
         switch (key) {
+            case "daily":
+                json = [this.state.dailyPrices];;
+                json = Object.values(json[0]);
+                json = json[1];
+                this.transformData(json);
+                break;
 
             case "monthly":
-                json = Object.values(this.state.monthlyPrices);  
-                console.log(json[1]);
-                this.transformData(json[1]);             
+                json = [this.state.monthlyPrices];
+                json = json[0]['Monthly Time Series'];
+                this.transformData(json);             
                 break;
         
             default:
-                json = Object.values(this.state.dailyPrices);
-                console.log(json[1]);
-                this.transformData(json[1]);
+                json = [this.state.todayPrices];
+                json = json[0]['Time Series (5min)'];
+                this.transformData(json);
                 break;
         }
-        
     }
 
     transformData(objects) {
-      
         let labels = [];
         let closedPrices = [];
 
@@ -124,7 +118,6 @@ class Crypto extends Component {
         }
         this.setState({graphDataX: labels});
         this.setState({graphDataY: closedPrices});
-    
     }
 
     render() {
@@ -133,6 +126,9 @@ class Crypto extends Component {
         } else if (this.state.loading) {
             return <CircleLoading />;
         } else {
+            let stockName = this.state.stock[1].split(' ')[0];
+            stockName = stockName.toLowerCase();
+            const stockLogoUrl = "//logo.clearbit.com/" + stockName + ".com";
         
             const data = canvas => {
                 var ctx = canvas.getContext("2d");
@@ -174,12 +170,22 @@ class Crypto extends Component {
                         <div class="col">
                             <div className="container rounded p-3 my-3 bg-dark text-white">
                                 <div className="row">
-                                    <div class="col">
-                                        <h3 className="text-left">{this.state.crypto[0]} - {this.state.crypto[1]}</h3>
+                                    <div class="col-sm-1">
+                                        <img id="stock-logo" src={stockLogoUrl}></img>
                                     </div>
                                     <div class="col">
-                                        <h3 className="font-weight-bold text-right">{this.state.actualCryptoPrice} $</h3>
+                                        <h3 className="text-left">{this.state.stock[0]}</h3>
                                     </div>
+                                    <div class="col">
+                                        <h3 className="font-weight-bold text-right">{this.state.actualPrice} $</h3>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <ul>
+                                        <li>{this.state.stock[1]}</li>
+                                        <li>{this.state.stock[2]}</li>
+                                        <li>Market open: {this.state.stock[3]} - {this.state.stock[4]}</li>
+                                    </ul>
                                 </div>
                                 <div className="row">
                                     <Line data={data} options={options}/>
@@ -187,7 +193,8 @@ class Crypto extends Component {
                                 <div className="row">
                                     <div className="col"></div>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph()}>Daily</button>
+                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph()}>Last records</button>
+                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph("daily")}>Daily</button>
                                         <button type="button" class="btn btn-primary" onClick={() => this.changeGraph("monthly")}>Monthly</button>
                                     </div>
                                     <div class="col-sm-1"></div>
@@ -195,12 +202,12 @@ class Crypto extends Component {
                             </div>
                         </div>
                         <div class="col-sm-1">
-                            <button type="button" className="btn btn-danger" onClick={() => this.props.onClearCrypto()}><FontAwesomeIcon icon={faTrash} /></button>
+                            <button type="button" className="btn btn-danger" onClick={() => this.props.onClear()}><FontAwesomeIcon icon={faTrash} /></button>
                         </div>
                     </div>
                 </div>
-            );
+            )
         }      
     }
 }
-export default Crypto;  
+export default Stock;  
