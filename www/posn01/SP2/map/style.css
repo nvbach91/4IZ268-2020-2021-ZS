@@ -1,90 +1,169 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1{
+  font-weight: lighter;
+}
+.name {
+  text-align: center;
+  padding: 20px;
+  font-size: 60px;
+}
+
+.adress {
+  max-width: 1280px;
+  margin: auto;
+  border-color: none;
+}
+
+#map {
+  height: 500px;
+  max-width: 1280px;
+  margin: auto;
+}
+
+#menu {
+  background-color: white;
+  padding: 20px;
+  padding-left: 0 !important;
+}
+
+#menu a {
+  color: black;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#menu a:hover {
+  background-color: rgb(245, 235, 235);
+  color: black;
+}
+
+#menu a.active {
+  background-color: #aa928f;
+  color: white;
+}
+
+.custom-map-control-button {
+  background-color: #ffffff;
+}
+
+.loader, .loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 50em auto;
+  font-size: 10px;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-  .name{
-    text-align: center;
-    padding: 20px;
-    font-size: 60px;
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  .adress{
-    max-width: 1280px;
-    margin: auto;
-    border-color: none;
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-  #map {
-    height: 500px;
-    max-width: 1280px;
-    margin: auto;
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  #menu {
-    background-color: white;
-    padding: 20px;
-    padding-left: 0 !important;
-  }
-  #menu a {
-    color: black;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  #menu a:hover {
-    background-color: rgb(245, 235, 235);
-    color: black;
-  }
-  #menu a.active {
-    background-color: #aa928f;
-    color: white;
-  }
-  .custom-map-control-button{
-    background-color: #ffffff;
-  }
-  .loader,
-  .loader:after {
-    border-radius: 50%;
-    width: 10em;
-    height: 10em;
-  }
-  .loader {            
-    margin: 50em auto;
-    font-size: 10px;
-    text-indent: -9999em;
-    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-    border-left: 1.1em solid #ffffff;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation: load8 1.1s infinite linear;
-    animation: load8 1.1s infinite linear;
-  }
-  @-webkit-keyframes load8 {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes load8 {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  #loadingDiv {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color:rgb(232, 224, 221);
-  }
-  
+}
+
+#loadingDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(232, 224, 221);
+}
+
+#locations-map {
+  display: block;
+  height: 500px;
+}
+
+.infoBox {
+  max-width: 300px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.infoBox img {
+  border: 1px solid yellow;
+}
+
+button, input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover, input[type="button"]:hover, button:focus, input[type="button"]:focus {
+  color: #333;
+  border-color: rgb(218, 210, 186);
+  background-color: rgb(218, 210, 186);
+  outline: 0;
+}
+
+ul {
+  list-style: circle inside;
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 400px) {}
+
+@media (min-width: 550px) {}
+
+@media (min-width: 750px) {}
+
+@media (min-width: 1000px) {}
+
+@media (min-width: 1200px) {}

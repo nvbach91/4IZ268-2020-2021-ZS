@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <title>Bezobalová mapa</title>
@@ -8,30 +8,26 @@
     <meta name="keywords" content="zero waste map">
     <meta name="author" content="Nikola Pospisilova">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="skeleton.css">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
 </head>
-
-
 
 <body>
     <nav id="menu">
-        <a class="active" href="index.html">Mapa</a>
         <a href="../mainpage/index.html">Domů</a>
+        <a class="active" href="index.html">Mapa</a>
     </nav>
+
     <main>
         <h1 class="name">BEZOBALOVÁ MAPA</h1>
 
         <nav class="adress">
             <input id="autocomplete" placeholder="vložte adresu" type="text"></input>
         </nav>
+        <div id="container">
+            <ul id></ul>
+        </div>
         <div id="map"></div>
     </main>
 
@@ -45,8 +41,8 @@
         src="https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyCtk9HDEtvG_FPhSt8dfVSE3IVEnQgF7HU"
         defer>
         </script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+</body>
 </html>
