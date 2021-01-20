@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+    ></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="./js/main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Shift Planner</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Shift Planner</h1>
+      </div>
+      <div id="loading">
+        <img src="img/loading.gif" alt="Loading..." width="288" />
+      </div>
+      <div class="to-load">
+        <div class="sign-in">
+          <div class="center">
+            <p id="login-warning">You have to be signed in to use this app!</p>
+            <button id="sign-in-or-out-button">
+              Sign in with Google Account
+            </button>
+            <button
+              id="revoke-access-button"
+              style="display: none; margin-left: 25px"
+            >
+              Revoke access
+            </button>
+            <div id="form">
+              <label for="employees">Employee name:</label>
+              <select name="employees" id="employees">
+                <option value="Milan">Milan</option>
+                <option value="Tomáš">Tomáš</option>
+                <option value="Vojtěch">Vojtěch</option>
+              </select>
+              <label for="date">Date:</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                min="2021-02-01"
+                max="2021-02-28"
+                value="2021-02-01"
+              />
+              <br />
+              <label for="allday">All day</label>
+              <input
+                type="radio"
+                id="allday"
+                name="time-radio"
+                value="allday"
+                checked
+              />
+              <label for="specific-time">Specific time(s)</label>
+              <input
+                type="radio"
+                id="specific-time"
+                name="time-radio"
+                value="specific-time"
+              />
+              <select name="time" id="time" multiple disabled>
+                <option value="8:30">8:30</option>
+                <option value="9:00">9:00</option>
+                <option value="9:30">9:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+              </select>
+              <br />
+              <button type="button" id="schedule">Schedule Shift</button>
+            </div>
+          </div>
+        </div>
+        <div class="planner">
+          <img src="img/loading.gif" alt="Loading..." width="500" />
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1Y2Bvmysv6gdX958EJohAKXxUa5eEc80p-i4QKs7Zhak/htmlembed/sheet?gid=662909996&range=A2:Y32"
+            width="390"
+            height="670"
+            id="gsheet"
+          ></iframe>
+          <br />
+          <div id="sumOfHours">
+            <h3>Sum of hours:</h3>
+            <table>
+              <tr>
+                <th id="employee1-name">Milan</th>
+                <th id="employee2-name">Tomáš</th>
+                <th id="employee3-name">Vojtěch</th>
+              </tr>
+              <tr>
+                <td id="milan-hours"></td>
+                <td id="tomas-hours"></td>
+                <td id="vojtech-hours"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+body {
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+  background-color: #e9ecf2;
+}
+
+header {
+  margin: 0 auto;
+}
+
+h1 {
+  padding-top: 25px;
+  text-align: center;
+  color: white;
+}
+
+.header {
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(24, 149, 255, 1) 0%,
+    rgba(36, 211, 251, 1) 100%
+  );
+  padding: 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0px 1px 11px 6px rgba(217, 217, 217, 1);
+}
+
+.sign-in {
+  max-width: 400px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#sign-in-or-out-button {
+  margin-bottom: 50px;
+}
+.planner {
+  display: block;
+  position: relative;
+}
+
+.planner * {
+  margin-top: 10px;
+}
+
+#gsheet {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#form {
+  width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+#form * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#loading {
+  display: block;
+  opacity: 1.2;
+  background-color: #fff;
+  text-align: center;
+}
+
+.to-load {
+  display: none;
+}
+
+.planner img {
+  display: none;
+  margin-left: 260px;
+}
+
+#employee1-name {
+  background-color: #c27ba0;
+}
+#employee2-name {
+  background-color: #6aa84f;
+}
+#employee3-name {
+  background-color: #46bdc6;
+}
+
+h3 {
+  text-align: center;
+}
+
+table {
+  width: 100px;
+  margin: 0 auto;
+  border-spacing: 0px;
+  margin-bottom: 10px;
+}
+
+table td,
+table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+table td {
+  text-align: center;
+}
+
+#time {
+  margin-bottom: -30px;
+}
+
+@media only screen and (min-width: 1px) {
+  #gsheet {
+    width: 390px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #gsheet {
+    width: 600px;
+  }
+  .planner {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #gsheet {
+    width: 1016px;
+  }
+  .planner {
+    margin: 0 50px;
+  }
+}
