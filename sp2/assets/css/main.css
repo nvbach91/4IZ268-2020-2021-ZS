@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+button, .read-more {
+    color: white;
+    background-color: rgba(69, 201, 37, 0.815);
+    position: relative;
+    display: block;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: -1px;
+}
+
+h4 {
+    margin-bottom: -8px;
+    margin-top: -5px;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(252, 248, 248);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin-right: 10px;
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-input {
+    width: 80%;
+    padding: .5em 1em;
+    border: 2px green solid;
+}
+
+.clear {
+    float: none;
+}
+
+.search-bar input {
+    padding: 12px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#add-more {
+    width: 30%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 1px black;
+    background-color: rgb(214, 245, 202);
+    width: 280px;
+    height: 330px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.food-img {
+    border: 2px rgba(29, 87, 14, 0.815) solid;
+    width: 160px;
+}
+
+.read-more {
+    flex-direction: column;
+    padding: 5px;
+    text-decoration: none;
+    border: 1.5px solid black;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.read-more:hover, button:hover {
+    cursor: pointer;
+    background-color: green;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.filters-box {
+    background-color: rgba(103, 201, 84, 0.849);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cal {
+    width: 20%;
+}
+
+.loader {
+    border: 16px solid #979797;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    background-color: rgba(255, 255, 255, 0.589);
+    margin-right: 50%;
+    padding: 10px;
+}
+
+.banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/background-img.jpg);
+    padding: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-bottom: 2px solid black;
+}
+
+footer {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(0, 0, 0, 0.267);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#scroll-btn{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(37, 94, 216); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }  
+
+  #scroll-btn:hover{
+      background-color: rgb(32, 32, 243);
+  }
