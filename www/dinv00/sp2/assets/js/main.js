@@ -8,8 +8,6 @@ app_key=ccaae9e03961a7202ed70438e0261d28&
 */
 
 $(document).ready(function () {
-  $("#add-more").hide();
-  $("#loader").hide();
 
   $(document).ajaxStart(function () {
     $("#loader").show();
@@ -21,13 +19,17 @@ $(document).ready(function () {
 
   $("#search").on("click", function () {
     removeOld();
+    clearFilters();
     buildQuery();
     putTogether();
     sendRequest();
+    $('h4').hide(1000)
+
   });
 
   $("#add-more").on("click", function () {
     addMore();
+    
   });
 
   var query = "";
@@ -62,9 +64,7 @@ $(document).ready(function () {
 
       if (this.checked) {
         healthFilter += "&health=" + healthQuery;
-      } else {
-        healthFilter = "";
-      }
+      } 
     });
 
     $(".diet input").each(function () {
@@ -72,10 +72,11 @@ $(document).ready(function () {
 
       if (this.checked) {
         dietFilter += "&diet=" + dietQuery;
-      } else {
-        dietFilter = "";
-      }
+      } 
     });
+
+    console.log(healthFilter);
+    console.log(dietFilter)
 
     caloriesBot = $("#calBot").val().trim();
 
@@ -84,6 +85,14 @@ $(document).ready(function () {
     calories = "&calories=" + caloriesBot + "-" + caloriesTop;
   }
 
+  function clearFilters(){
+   healthFilter = "";
+   dietFilter = "";
+   caloriesBot = "";
+   caloriesTop = "";
+   calories = "";
+  }
+  
   function putTogether() {
     url = "";
     url = "https://api.edamam.com/search?q=";
@@ -125,7 +134,7 @@ $(document).ready(function () {
         nothingDiv.append(nothingFound);
         $(".search-results").append(nothingDiv);
       } else {
-        $("#add-more").delay(1000).slideDown(500);
+        $("#add-more").delay(1000).slideDown(300);
 
         for (var i in data.hits) {
           var hits = data.hits[i];
@@ -229,4 +238,7 @@ $(document).ready(function () {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   })
     
+
+
+
 });
