@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+}
+
+.logo-picture {
+    width: 100px;
+}
+
+#search-record,
+#information {
+    border-radius: 15px;
+    background-color: rgb(49, 130, 155);
+    color: white;
+    margin: 0 150px 0 150px;
+    border: 1px solid black;
+}
+
+h2,
+p,
+#search-record,
+#information {
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+}
+
+h1 {
+    margin: 30px 20px 20px 20px;
+}
+
+h2 {
+    padding: 10px 0 0 0;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+.btn,
+.link {
+    background-color: white;
+    padding: 10px 15px 10px 15px;
+    margin: 0 50px 0 50px;
+    border-radius: 50px;
+    border: none;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.teams {
+    display: flex;
+    justify-content: center;
+    margin-left: 75px;
+}
+
+#teamA,
+#teamB {
+    margin: 5px 10px 5px 10px;
+    padding: 0 10px 0 10px;
+}
+
+#team-record {
+    list-style-type: none;
+    margin: 10px 200px 0 200px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(93, 184, 214);
+}
+
+.btn-more {
+    margin-left: auto;
+    border-radius: 50px;
+}
+
+#button-download {
+    font-size: 10px;
+}
+
+
+/* spinner */
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*tooltip*/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    /*dots under the hoverable text */
+    cursor: pointer;
+}
+
+
+/* Tooltip text */
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text*/
+    position: absolute;
+    z-index: 1;
+}
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.info-team-list {
+    padding: 0 0 0 0;
+}
+
+
+/**media*/
+
+@media screen and (max-width: 1280px) {
+    .btn,
+    .link {
+        padding: 5px 10px 5px 10px;
+        margin: 10px 25px 10px 25px;
+    }
+    #information {
+        margin: 0 0 0 0;
+    }
+    #team-record {
+        margin: 10px 10px 0 0;
+    }
+}
+
+@media print {
+    * {
+        font-size: 12px;
+    }
+    #information {
+        margin: 0 0 0 0;
+    }
+    #team-record {
+        margin: 10px 10px 0 0;
+    }
+    button,
+    a,
+    .tooltip,
+    .logo-picture {
+        display: none;
+    }
+}
