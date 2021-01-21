@@ -1,0 +1,140 @@
+#todays-info {
+    display: none;
+}
+
+#todays-stats-col {
+    display: none;
+}
+
+#forecast-row-title {
+    display: none;
+}
+
+#forecast-row {
+    display: none;
+}
+
+/* override weather-icons css */
+.wi {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+#cloud-icon {
+    margin-right: 4px;
+}
+
+#search-bar-group {
+    width: 40%;
+}
+
+#toast-invalid-search {
+    top: 2.5rem;
+}
+
+.toast {
+    position: absolute;
+    width: 200px;
+    left: 0;
+    height: auto;
+    max-width: none;
+}
+
+#app-body {
+    margin-top: 160px;
+    margin-bottom: 10px;
+}
+
+#dropdown-pins {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    width: auto;
+}
+
+#remove-pin-btn {
+    display: none;
+}
+
+#toast-max-pins {
+    top: 2.5rem;
+}
+
+#todays-date {
+    color: gray;
+}
+
+#city-name {
+    font-weight: bold;
+}
+
+#todays-weather,
+.forecast-weather-icon {
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#forecast-row-title {
+    margin-top: 36px;
+}
+
+.col-forecast {
+    width: 20%;
+    float: left;
+}
+
+.forecast-temperature {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+    #search-bar-group {
+        width: 60%;
+    }
+
+    #app-body {
+        margin-top: 154px;
+    }
+
+    #forecast-row-title {
+        margin-top: 24px;
+    }
+
+    .col-forecast {
+        width: 221px;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #search-bar-group {
+        width: 100%;
+    }
+
+    #app-body {
+        margin-top: 148px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #todays-stats {
+        border: none;
+    }
+
+    #todays-stats .card-body {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 312px) {
+    #app-body {
+        margin-top: 174px;
+    }
+
+    #dropdown-pins {
+        position: static;
+    }
+}
