@@ -1,1 +1,144 @@
-/*This must be here because otherwise it won't upload any of my following files, funny...*/
+body {
+    font-family: sans-serif;
+    background-color: rgba(105, 90, 205, 0.24);
+}
+
+main, .search, .tabs {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.content {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 1rem;
+    border-radius: 0.5%;
+    padding: 2rem;
+    background-color: whitesmoke;
+    border-top: solid 0.5rem rgb(146, 134, 218);
+    border-top-left-radius: 0;
+}
+
+.grid-item {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.grid-item:hover .gif {
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.grid-item:hover .buttons {
+    display: inline-block;
+    opacity: 1;
+}
+
+.grid {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 68px;
+}
+
+.homepage {
+    text-decoration: none;
+}
+
+.search input {
+    border: solid #CCCCCC 0.5px;
+    border-radius: 0%;
+    width: 85%;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: large;
+}
+
+.search button {
+    display: inline-block;
+    padding: 0.2em 1.45em;
+    border: 0.15em solid #CCCCCC;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 400;
+    color: #000000;
+    background-color: #CCCCCC;
+    text-align: center;
+    position: relative;
+    width: 10%;
+    height: 3rem;
+    padding: 0;
+    font-size: large;
+}
+
+.search button:hover {
+    background-color: rgba(105, 90, 205, 0.637);
+    border: 0.15em solid rgba(105, 90, 205, 0.267);
+    color: white;
+}
+
+.search {
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs button {
+    border: solid 1px #CCCCCC;
+    border-bottom: none;
+    height: 2rem;
+    width: 15%;
+    margin-right: 0.5rem;
+    font-size: large;
+}
+
+.tabs button:hover {
+    background-color: rgba(105, 90, 205, 0.637);
+    border: 1px solid rgba(105, 90, 205, 0.267);
+    border-bottom: none;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+.active-button {
+    background-color: rgba(105, 90, 205, 0.637);
+    border: 1px solid rgba(105, 90, 205, 0.267);
+    border-bottom: none;
+    color: white;
+}
+
+button, input {
+    outline: none;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.detail-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.detail-buttons button {
+    margin-bottom: 2rem;
+}

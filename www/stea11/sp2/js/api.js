@@ -6,6 +6,12 @@ function getTrending(callback) {
   });
 }
 
+function getTrendingOffset(offset, callback) {
+  return $.getJSON(`http://api.giphy.com/v1/gifs/trending?api_key=${KEY}&offset=${offset}`).done((resp) => {
+    callback(resp.data);
+  });
+}
+
 function getSearch(search, callback) {
   return $.getJSON(`http://api.giphy.com/v1/gifs/search?api_key=${KEY}&q=${search}`).done((resp) => {
     callback(resp.data);
