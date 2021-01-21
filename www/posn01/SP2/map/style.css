@@ -2,25 +2,15 @@
   box-sizing: border-box;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h1{
+
+h1 {
   font-weight: lighter;
 }
+
 .name {
   text-align: center;
-  padding: 20px;
   font-size: 60px;
-}
-
-.adress {
-  max-width: 1280px;
-  margin: auto;
-  border-color: none;
-}
-
-#map {
-  height: 500px;
-  max-width: 1280px;
-  margin: auto;
+  padding-bottom: 40px;
 }
 
 #menu {
@@ -45,6 +35,84 @@ h1{
 #menu a.active {
   background-color: #aa928f;
   color: white;
+}
+
+button, input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover, input[type="button"]:hover, button:focus, input[type="button"]:focus {
+  color: #333;
+  border-color: rgb(218, 210, 186);
+  background-color: rgb(218, 210, 186);
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+main {
+  max-width: 1280px;
+  margin: auto;
+  height: 600px;
+}
+
+input {
+  font-size: 15px;
+  height: 5%;
+}
+
+input[type="text" i] {
+  padding: 3px;
+}
+
+#container {
+  width: 30%;
+  float: left;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+#container02 {
+  width: 70%;
+  float: right;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+#map {
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+#store-list {
+  margin: auto;
+  padding-top: 20px;
+  margin-right: 30px;
+  height: 95%;
 }
 
 .custom-map-control-button {
@@ -119,51 +187,34 @@ h1{
   border: 1px solid yellow;
 }
 
-button, input[type="button"] {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #555;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
-  cursor: pointer;
-  box-sizing: border-box;
+@media only screen and (max-width: 600px) {
+  #container {
+    float: none;
+    width: 100%;
+  }
+  #container02 {
+    float: none;
+    width: 100%;
+  }
+  .name {
+    font-size: 30px;
+  }
+  main {
+    height: 400px;
+  }
 }
 
-button:hover, input[type="button"]:hover, button:focus, input[type="button"]:focus {
-  color: #333;
-  border-color: rgb(218, 210, 186);
-  background-color: rgb(218, 210, 186);
-  outline: 0;
+@media (max-width: 768px) {
+  .store {
+    font-size: 15px;
+  }
+  .name {
+    font-size: 40px;
+  }
+  main {
+    height: 500px;
+  }
+  .store {
+    font-size: 15px;
+  }
 }
-
-ul {
-  list-style: circle inside;
-  margin: 1.5rem 0 1.5rem 3rem;
-  font-size: 90%;
-  padding-left: 0;
-  margin-top: 0;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 400px) {}
-
-@media (min-width: 550px) {}
-
-@media (min-width: 750px) {}
-
-@media (min-width: 1000px) {}
-
-@media (min-width: 1200px) {}

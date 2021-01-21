@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <div id="loadingDiv">
+        <div class="loader"></div>
+    </div>
     <nav id="menu">
         <a href="../mainpage/index.html">Domů</a>
         <a class="active" href="index.html">Mapa</a>
@@ -21,14 +24,12 @@
 
     <main>
         <h1 class="name">BEZOBALOVÁ MAPA</h1>
-
-        <nav class="adress">
-            <input id="autocomplete" placeholder="vložte adresu" type="text"></input>
-        </nav>
         <div id="container">
-            <ul id></ul>
+            <input id="autocomplete" placeholder="vložte adresu" type="text"></input>
         </div>
-        <div id="map"></div>
+        <div id=container02>
+            <div id="map"></div>
+        </div>
     </main>
 
 
@@ -45,4 +46,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </body>
+
 </html>

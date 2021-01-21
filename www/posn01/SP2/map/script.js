@@ -6,12 +6,17 @@ function initMap() {
   });
 
   map.data.loadGeoJson('stores.json');
-  const storeList = $('<ul id=store-list">');
+
+  const storeList = $('<ul id="store-list">');
   $.getJSON('https://eso.vse.cz/~posn01/SP2/map/stores.json').done((stores) => {
     console.log(stores);
 
     const storesHtml = stores.features.map((feature) => {
-      return $(`<li class= "store">${feature.properties.name}<ul class = store-details><li class = store-phone>${feature.properties.phone}</li></ul></li>`).click(() => {
+      return $(`<li class= "store"><strong>${feature.properties.name}</strong>
+                  <ul class = store-details>
+                    <li class = store-phone>${feature.properties.phone}</li>
+                  </ul>
+                </li>`).click(() => {
         var lng = feature.geometry.coordinates[0];
         var lat = feature.geometry.coordinates[1];
         var latLng = new google.maps.LatLng(lat, lng);
@@ -20,8 +25,9 @@ function initMap() {
       });
     });
     storeList.append(storesHtml);
-    $('#autocomplete').after(storeList);
+    $('#container').append(storeList);
   });
+
   const infoWindow = new google.maps.InfoWindow();
   // Show the information for a store when its marker is clicked.
   map.data.addListener('click', (event) => {
@@ -31,7 +37,7 @@ function initMap() {
     const position = event.feature.getGeometry().get();
     const content = `
         <h2>${name}</h2>
-        <p><b>Adresa:</b> ${address}<br/><b>Kontakt:</b> ${phone}</p>
+        <p><strong>Adresa:</strong>${address}<strong></p><p>Kontakt:</strong>${phone}</p>
       `;
 
     infoWindow.setContent(content);
@@ -56,14 +62,15 @@ function initMap() {
 
   function addCustomerLocation() {
     // Get the place details from the autocomplete object.
-    var place = autocomplete.getPlace();
+    let place = autocomplete.getPlace();
 
-    // Add a marker to the map.
-    var marker = new google.maps.Marker({
-      map
+    const image =
+      "../favicon/party.png";
+    const marker = new google.maps.Marker({
+      map,
+      icon: image,
     });
 
-    marker.setLabel("C");
     marker.setPosition(place.geometry.location);
 
     // Zoom the map to the marker.
@@ -97,33 +104,26 @@ function initMap() {
         }
       );
     } else {
-      // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
-  });
-  locationButton.addEventListener("click", () => {
-
   });
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(
       browserHasGeolocation
-        ? "Error: Určení polohy selhalo. Prosím, aktualizujte stránku pro určení Vaší polohy-"
-        : "Error: Váš prohlížeč nepodporuje geolokaci."
+        ? 'Error: Určení polohy selhalo. Prosím, povolte určení Vaší polohy.'
+        : 'Error: Váš prohlížeč nepodporuje geolokaci.'
     );
     infoWindow.open(map);
   }
 
-  $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
-  $(window).on('load', function () {
-    setTimeout(removeLoader);
+  var Loader = document.createElement('loader')
+  $(document).ready(function () {
   });
-  function removeLoader() {
+  $(function removeLoader() {
     $("#loadingDiv").fadeOut(function () {
-      $("#loadingDiv").remove();
+      $("Loader").hide();
     });
-  }
-
+  });
 }
-
 
