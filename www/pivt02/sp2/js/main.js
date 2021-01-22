@@ -3,6 +3,7 @@ var isAuthorized;
 const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
 const spreadsheetId = "1Y2Bvmysv6gdX958EJohAKXxUa5eEc80p-i4QKs7Zhak";
 
+
 function handleClientLoad() {
   gapi.load("client:auth2", initClient);
 }
@@ -22,6 +23,8 @@ function initClient() {
       scope: SCOPE,
     })
     .then(function () {
+      const signInOutButton = $("#sign-in-or-out-button");
+      const revokeButton = $("#revoke-access-button");
       GoogleAuth = gapi.auth2.getAuthInstance();
 
       GoogleAuth.isSignedIn.listen(updateSigninStatus);
@@ -29,10 +32,10 @@ function initClient() {
       var user = GoogleAuth.currentUser.get();
       setSigninStatus();
 
-      $("#sign-in-or-out-button").click(function () {
+      signInOutButton.click(function () {
         handleAuthClick();
       });
-      $("#revoke-access-button").click(function () {
+      revokeButton.click(function () {
         revokeAccess();
       });
     });
@@ -54,29 +57,33 @@ function guestAcess() {
 }
 
 function setSigninStatus() {
+  const signInOutButton = $("#sign-in-or-out-button");
+  const loginWarning = $("#login-warning");
+  const revokeButton = $("#revoke-access-button");
+  const forms = $(".flexbox");
+  const main = $("main");
+  const planner = $(".planner");
+  const signIn = $(".sign-in");
   var user = GoogleAuth.currentUser.get();
   isAuthorized = user.hasGrantedScopes(SCOPE);
   if (isAuthorized) {
-    $("#sign-in-or-out-button").html("Sign out");
-    $("#revoke-access-button").css("display", "inline-block");
-    $("#auth-status").html(
-      "You are currently signed in and have granted " + "access to this app."
-    );
-    $("#login-warning").css("display", "none");
-    $(".planner").css("display", "inline-block");
-    $("#revoke-access-button").css("display", "none");
-    $(".sign-in").css("height", "200px");
-    $("main").css("max-width", "1100px");
-    $("#form").css("display", "block");
+    signInOutButton.html("Sign out");
+    revokeButton.css("display", "inline-block");
+    loginWarning.css("display", "none");
+    planner.css("display", "inline-block");
+    revokeButton.css("display", "none");
+    signIn.css("height", "200px");
+    main.css("max-width", "1100px");
+    forms.css("display", "flex");
     getSumOfHours();
   } else {
-    $("#form").css("display", "none");
-    $("main").css("max-width", "500px");
-    $(".sign-in").css("height", "200px");
-    $("#login-warning").css("display", "inline-block");
-    $(".planner").css("display", "none");
-    $("#sign-in-or-out-button").html("Sign in with Google Account");
-    $("#revoke-access-button").css("display", "none");
+    forms.css("display", "none");
+    main.css("max-width", "500px");
+    signIn.css("height", "200px");
+    loginWarning.css("display", "inline-block");
+    planner.css("display", "none");
+    signInOutButton.html("Sign in with Google Account");
+    revokeButton.css("display", "none");
   }
 }
 
@@ -95,26 +102,25 @@ function getSumOfHours() {
   var request = gapi.client.sheets.spreadsheets.values.get(params);
   request.then(
     function (response) {
-      console.log(response.result);
-      console.log(response.result.values[0]);
+      //console.log(response.result);
       insertSumOfHours(response.result.values[0]);
     },
     function (reason) {
-      console.error("error: " + reason.result.error.message);
+     // console.error("error: " + reason.result.error.message);
     }
   );
 }
 
 function insertSumOfHours(array) {
-  $("#milan-hours").text(array[0]);
-  console.log(array[0]);
-  $("#tomas-hours").text(array[1]);
-  console.log(array[1]);
-  $("#vojtech-hours").text(array[2]);
-  console.log(array[2]);
+  const milanHours = $("#milan-hours");
+  const tomasHours = $("#tomas-hours");
+  const vojtechHours = $("#vojtech-hours");
+  milanHours.text(array[0]);
+  vojtechHours.text(array[1]);
+  tomasHours.text(array[2]);
 }
 
-function getRowNumber() {
+function getRowNumber(dateId) {
   var dates = [
     "01.02.2021",
     "02.02.2021",
@@ -145,22 +151,22 @@ function getRowNumber() {
     "27.02.2021",
     "28.02.2021",
   ];
-  var index = dates.indexOf(parseDate());
+  var index = dates.indexOf(parseDate(dateId));
   return (index + 4).toString();
 }
 
 function writeAllDayToSpreadsheet() {
+  const employees = $("#employees");
   var sheetParams = {
     spreadsheetId: spreadsheetId,
   };
   var range;
   var breakValues;
-  var employeeLetter = $("#employees").val().charAt(0);
+  var employeeLetter = employees.val().charAt(0);
   var dataValues = (employeeLetter + ("," + employeeLetter).repeat(19)).split(
     ","
   );
-  console.log(dataValues);
-  if (isWeekend()) {
+  if (isWeekend("#date")) {
     breakValues = [
       [
         "BREAK",
@@ -175,17 +181,17 @@ function writeAllDayToSpreadsheet() {
         "BREAK",
       ],
     ];
-    range = "P" + getRowNumber() + ":Y" + getRowNumber();
+    range = "P" + getRowNumber("#date") + ":Y" + getRowNumber("#date");
   } else {
     breakValues = [["BREAK"]];
-    range = "P" + getRowNumber();
+    range = "P" + getRowNumber("#date");
   }
   var batchUpdateValuesRequestBody = {
     valueInputOption: "USER_ENTERED",
     data: [
       {
         majorDimension: "ROWS",
-        range: "F" + getRowNumber() + ":Y" + getRowNumber(),
+        range: "F" + getRowNumber("#date") + ":Y" + getRowNumber("#date"),
         values: [dataValues],
       },
       {
@@ -201,16 +207,54 @@ function writeAllDayToSpreadsheet() {
   );
   request.then(
     function (response) {
-      console.log(response.result);
+      //console.log(response.result);
     },
     function (reason) {
-      console.error("error: " + reason.result.error.message);
+      //console.error("error: " + reason.result.error.message);
     }
   );
 }
 
 function writeSpecificTimeToSpreadsheet() {
   Array.from(document.querySelector("#time").options).forEach(function (
+  //Array.from($('#time option').forEach(function (
+    option_element
+  ) {
+    const employees = $("#employees");
+    let isOptionSelected = option_element.selected;
+    if (isOptionSelected) {
+      var sheetParams = {
+        spreadsheetId: spreadsheetId,
+      };
+      var dataValues = [employees.val().charAt(0)];
+      var batchUpdateValuesRequestBody = {
+        valueInputOption: "USER_ENTERED",
+        data: [
+          {
+            majorDimension: "ROWS",
+            range: option_element.value + getRowNumber("#date"),
+            values: [dataValues],
+          },
+        ],
+      };
+      var request = gapi.client.sheets.spreadsheets.values.batchUpdate(
+        sheetParams,
+        batchUpdateValuesRequestBody
+      );
+      request.then(
+        function (response) {
+          //console.log(response.result);
+        },
+        function (reason) {
+         // console.error("error: " + reason.result.error.message);
+        }
+      );
+    }
+  });
+}
+
+function clearSpreadsheet(){
+  Array.from(document.querySelector("#clear-time").options).forEach(function (
     option_element
   ) {
     let isOptionSelected = option_element.selected;
@@ -218,13 +262,13 @@ function writeSpecificTimeToSpreadsheet() {
       var sheetParams = {
         spreadsheetId: spreadsheetId,
       };
-      var dataValues = [$("#employees").val().charAt(0)];
+      var dataValues =[""];
       var batchUpdateValuesRequestBody = {
         valueInputOption: "USER_ENTERED",
         data: [
           {
             majorDimension: "ROWS",
-            range: option_element.value + getRowNumber(),
+            range: option_element.value + getRowNumber("#date-clear"),
             values: [dataValues],
           },
         ],
@@ -245,45 +289,24 @@ function writeSpecificTimeToSpreadsheet() {
   });
 }
 
-function parseDate() {
-  var datum = moment(document.getElementById("date").value);
+function parseDate(dateId) {
+  var date = moment($(dateId).val());
   moment.locale();
-  datum = datum.lang("cs").format("L");
-  return datum.toString();
+  date= date.lang("cs").format("L");
+  return date.toString();
 }
 
-function isWeekend() {
-  var date = new Date(document.getElementById("date").value);
+function isWeekend(dateId) {
+  var date = new Date($(dateId).val());
   return date.getDay() === 6 || date.getDay() === 0;
 }
 
-$(document).ready(function () {
-  $(document).on("click", "#specific-time", function () {
-    if ($("#specific-time").is(":checked")) {
-      $("#time").removeAttr("disabled");
-    }
-  });
-
-  $(document).on("click", "#allday", function () {
-    if ($("#allday").is(":checked")) {
-      $("#time").attr("disabled", "");
-    }
-  });
-
-  $("#date").change(function () {
-    var arrayOfTimes = Array.from(document.querySelector("#time").options);
-    if (isWeekend()) {
+function disableWeekendTimes(dateSelector, timeSelector){
+    var arrayOfTimes = Array.from(document.querySelector(timeSelector).options);
+    if (isWeekend(dateSelector)) {
       arrayOfTimes.forEach(function (option_element) {
         if (
-          option_element.value === "Q" ||
-          option_element.value === "R" ||
-          option_element.value === "S" ||
-          option_element.value === "T" ||
-          option_element.value === "U" ||
-          option_element.value === "V" ||
-          option_element.value === "W" ||
-          option_element.value === "X" ||
-          option_element.value === "Y"
+         ["Q","R","S","T","U","V","W","X","Y"].includes(option_element.value)
         ) {
           $(option_element).attr("disabled", "");
         }
@@ -293,6 +316,62 @@ $(document).ready(function () {
         $(option_element).removeAttr("disabled");
       });
     }
+}
+
+function reloadSpreadsheet(){
+  const spreadsheet = $("#gsheet");
+  const loading = $(".planner img");
+  const bottomTable = $("#sumOfHours");
+    spreadsheet.css("display", "hide");
+    spreadsheet.css("width", "0px");
+    spreadsheet.css("height", "0px");
+    loading.css("display", "block");
+    bottomTable.css("display", "none");
+    setTimeout(function () {
+      spreadsheet.attr("src", spreadsheet.attr("src"));
+      getSumOfHours();
+    }, 500);
+    setTimeout(function () {
+      loading.css("display", "none");
+      spreadsheet.css("display", "block");
+      spreadsheet.css("width", "");
+      spreadsheet.css("height", "670px");
+      spreadsheet.css("display", "block");
+    }, 1000);
+}
+
+$(document).ready(function () {
+  const date = $("#date");
+  const dateClear = $("#date-clear");
+  const loading = $("#loading");
+  const toLoad = $(".to-load");
+  const time = $("#time");
+  const allDay = $("#allday")
+  $(document).on("click", "#specific-time", function () {
+    if ($("#specific-time").is(":checked")) {
+      time.removeAttr("disabled");
+    }
+  });
+
+  $(document).on("click", "#allday", function () {
+    if (allDay.is(":checked")) {
+     time.attr("disabled", "");
+    }
+  });
+
+  dateClear.change(function(){
+    console.log();
+    disableWeekendTimes("#date-clear", "#clear-time");
+  })
+
+
+  date.change(function () {
+    disableWeekendTimes("#date", "#time");
+  });
+
+  $(document).on("click", "#clear", function () {
+    clearSpreadsheet();
+    reloadSpreadsheet();
   });
 
   $(document).on("click", "#schedule", function () {
@@ -301,28 +380,14 @@ $(document).ready(function () {
     } else {
       writeSpecificTimeToSpreadsheet();
     }
-    $("#gsheet").css("display", "hide");
-    $("#gsheet").css("width", "0px");
-    $("#gsheet").css("height", "0px");
-    $(".planner img").css("display", "block");
-    $("#sumOfHours").css("display", "none");
-    setTimeout(function () {
-      $("#gsheet").attr("src", $("#gsheet").attr("src"));
-      getSumOfHours();
-    }, 500);
-    setTimeout(function () {
-      $(".planner img").css("display", "none");
-      $("#gsheet").css("display", "block");
-      $("#gsheet").css("width", "");
-      $("#gsheet").css("height", "670px");
-      $("#sumOfHours").css("display", "block");
-    }, 1000);
+    reloadSpreadsheet();
   });
 
   $(window).load(function () {
     setTimeout(function () {
-      $("#loading").hide();
-      $(".to-load").css("display", "block");
+      loading.hide();
+      toLoad.css("display", "block");
     }, 400);
   });
 });
+

@@ -124,6 +124,26 @@ table td {
   text-align: center;
 }
 
+.flexbox{
+  display: flex;
+  flex-direction: row;
+}
+
+#clear-form{
+  margin-top: -15px;
+  margin-left: 40px;
+  text-align: center;
+  width: 200px;
+}
+
+#clear-form *{
+  margin-bottom: 10px;
+}
+
+#clear-time {
+  margin-bottom: -30px;
+}
+
 #time {
   margin-bottom: -30px;
 }

@@ -47,6 +47,7 @@
             >
               Revoke access
             </button>
+            <div class="flexbox">
             <div id="form">
               <label for="employees">Employee name:</label>
               <select name="employees" id="employees">
@@ -80,29 +81,63 @@
                 value="specific-time"
               />
               <select name="time" id="time" multiple disabled>
-                <option value="8:30">8:30</option>
-                <option value="9:00">9:00</option>
-                <option value="9:30">9:30</option>
-                <option value="10:00">10:00</option>
-                <option value="10:30">10:30</option>
-                <option value="11:00">11:00</option>
-                <option value="11:30">11:30</option>
-                <option value="12:00">12:00</option>
-                <option value="12:30">12:30</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="14:30">14:30</option>
-                <option value="15:00">15:00</option>
-                <option value="15:30">15:30</option>
-                <option value="16:00">16:00</option>
-                <option value="16:30">16:30</option>
-                <option value="17:00">17:00</option>
-                <option value="17:30">17:30</option>
-                <option value="18:00">18:00</option>
+                <option value="F" selected>8:30</option>
+                <option value="G">9:00</option>
+                <option value="H">9:30</option>
+                <option value="I">10:00</option>
+                <option value="J">10:30</option>
+                <option value="K">11:00</option>
+                <option value="L">11:30</option>
+                <option value="M">12:00</option>
+                <option value="N">12:30</option>
+                <option value="O">13:00</option>
+                <option value="Q">14:00</option>
+                <option value="R">14:30</option>
+                <option value="S">15:00</option>
+                <option value="T">15:30</option>
+                <option value="U">16:00</option>
+                <option value="V">16:30</option>
+                <option value="W">17:00</option>
+                <option value="X">17:30</option>
+                <option value="Y">18:00</option>
               </select>
               <br />
               <button type="button" id="schedule">Schedule Shift</button>
             </div>
+            <div id="clear-form">
+              <h4>Clear values:</h4>
+              <input
+                type="date"
+                id="date-clear"
+                name="date-clear"
+                min="2021-02-01"
+                max="2021-02-28"
+                value="2021-02-01"
+              />
+              <select name="clear-time" id="clear-time" multiple >
+                <option value="F" selected>8:30</option>
+                <option value="G">9:00</option>
+                <option value="H">9:30</option>
+                <option value="I">10:00</option>
+                <option value="J">10:30</option>
+                <option value="K">11:00</option>
+                <option value="L">11:30</option>
+                <option value="M">12:00</option>
+                <option value="N">12:30</option>
+                <option value="O">13:00</option>
+                <option value="Q">14:00</option>
+                <option value="R">14:30</option>
+                <option value="S">15:00</option>
+                <option value="T">15:30</option>
+                <option value="U">16:00</option>
+                <option value="V">16:30</option>
+                <option value="W">17:00</option>
+                <option value="X">17:30</option>
+                <option value="Y">18:00</option>
+              </select>
+              <button type="button" id="clear">Clear</button>
+            </div>
+          </div>
           </div>
         </div>
         <div class="planner">
