@@ -1,0 +1,50 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    margin: 0;
+}
+.app-container{
+    display: grid;
+}
+header{
+    background-color: #010101;
+}
+header img{
+    width: 300px;
+}
+.row{
+    margin-bottom:2px;
+    width:100%;
+    text-align:center;
+}
+.center-headline{
+    width: 100%;
+    position: absolute;
+   top: 10px
+}
+.center-headline h1{
+    margin-top: 0px;
+    color: white;
+}
+.logo{
+    position:relative;
+    float:left;
+}
+.text-center{
+    text-align: center;
+}
+.content{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 40px;
+    background-color: #1e1f23;
+    color: white;
+}
+.search-button{
+    display: block;
+    margin: 0 auto;
+}
+.search-input{
+    margin-bottom: 20px;
+}

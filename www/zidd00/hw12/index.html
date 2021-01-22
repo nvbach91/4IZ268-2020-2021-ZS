@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git the hub</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <h1>Git the hub</h1>
+        GitHub users explorer.
+        <div class="user-input">
+            <div class="user-input-hint">Enter an existing GitHub username to show information about a user:</div>
+            <input class="user-input-username" id="username" placeholder="Username">
+            <button class="user-input-button" id="search">Search</button>
+        </div>
+        <div class="user-info" id="info-box"></div>
+        <h3 class="user-repo-heading" id="repo-heading">Repos:</h3>
+        <div class="user-repo" id="repo-box"></div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

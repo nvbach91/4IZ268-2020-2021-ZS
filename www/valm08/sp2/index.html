@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="valm08">
+    <title>A bit smarter Wikimedia API application</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main>
+        <div id="main-div">
+            <iframe id="pdf-iframe"
+                title="PDF preview"
+                width="300"
+                height="400">
+            </iframe>
+            <h1>A bit smarter Wikimedia API application</h1>
+            <img src="assets/img/logo.png" alt="W shaped logo" width="100" id="logo">
+            <p>This page sends request to <a href="https://www.mediawiki.org/wiki/Wikimedia_REST_API">Wikimedia API</a>. 
+                Only english Wikipedia is supported</p>
+            <p>Usage: to get a PDF file use an article name Only A4 is supported. To cite the article use full URL of the article. 
+                Text will be displayed in the output box. Only citation for Zotero and BibTeX are supported.
+            </p>
+        </div>
+        <input id="input-field" type="text" name="Input field" placeholder="Enter a URL or an article name.">
+        <div class="buttons">
+            <button id="desktop-pdf">Get PDF for desktops</button>
+            <button id="mobile-pdf">Get PDF for phones</button>
+            <button id="zotero">Get citation for Zotero</button>
+            <button id="bibtex">Get citation for BibTeX</button>
+            <button id="favourite">Add to favourites</button>
+            <!--button id="remove-favourite">Remove from favourites</button-->
+            <button id="clear-favourites">Clear favourites</button>
+            <button id="show-favourites">Show favourites</button>
+            <button id="pdf-preview">Preview PDF</button>
+        </div>
+        <div id="output-div">
+            <h4>Output text</h4>
+            <ul id="search-results"></ul>
+            <p id="output-field"></p>
+        </div>
+    </main>
+    <footer>
+        &copy; author 2020-2021
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js" integrity="sha512-y3o0Z5TJF1UsKjs/jS2CDkeHN538bWsftxO9nctODL5W40nyXIbs0Pgyu7//icrQY9m6475gLaVr39i/uh/nLA==" crossorigin="anonymous"></script-->
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

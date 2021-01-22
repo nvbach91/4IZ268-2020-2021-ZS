@@ -1,0 +1,34 @@
+@import '../../../styles/media';
+@import '../../../styles/colors';
+
+.listTableWrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+
+  .listItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  
+    width: 100%;
+    height: 50px;
+    padding: 5px 0;
+  
+    border-bottom: 1px solid $black;
+
+    @include media_md {
+      width: 60%;
+      flex-direction: row;
+    }
+
+    a {
+      text-decoration: none;
+      color: $mariner;
+    }
+  }
+}
+

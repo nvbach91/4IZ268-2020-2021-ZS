@@ -1,0 +1,19 @@
+@import '../../styles/colors';
+
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 3vh;
+  margin: 75px 0 5px;
+  
+  font-size: 17px;
+  color: $biscay;
+  
+  a {
+    color: $biscay;
+    text-decoration: none;
+  }
+}

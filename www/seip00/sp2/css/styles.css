@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Epilogue";
+    background-image: url("../images/city_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 450px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 10px;
+}
+
+header input {
+    width: 270px;
+    padding: 15px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+button {
+    margin-left: 2px;
+    width: 50px;
+    height: 56px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+header input:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    padding: 30px 25px 40px;
+    text-align: center;
+}
+
+.searched-place .city {
+    color: white;
+    font-size: 45px;
+    font-weight: 500;
+    text-shadow: 3px 2px rgba(0, 0, 0, 0.6);
+    margin: 10px;
+}
+
+.searched-place .date {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.current .temp {
+    color: white;
+    font-size: 90px;
+    font-weight: 900;
+    margin-top: 40px;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.6);
+}
+
+.current .temp span {
+    font-weight: 500;
+}
+
+.city-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current .weather {
+    color: white;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+}
+
+.current .feel, .saved-cities {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.saved-cities {
+    align-self: center;
+    margin-top: 50px;
+    width: 450px;
+    font-size: 18px;
+}
+
+.saved-cities .saved {
+    width: 320px;
+    position: relative;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: left;
+    float: left;
+    padding: 0 0 0;
+}
+p {
+    margin-top: 4px;
+    border-bottom: solid 3px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+
+}
+.saved-cities .buttons{
+    width: 130px;
+    margin-top: 20px;
+    float: right;
+}
+.buttons button{
+    height: 22px;
+    width: 59px;
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+button:hover{
+    cursor: pointer;
+}
+header button:active, .buttons button:active{
+    background-color: rgba(223, 223, 223, 0.8);
+    transform: translateY(2px);
+}
+
+/*Úprava výstupu google places API*/
+
+.pac-container {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pac-item, .pac-item-query {
+    font-size: 18px;
+}
+
+.pac-icon {
+    display: none;
+}
