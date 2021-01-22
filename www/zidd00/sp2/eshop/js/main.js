@@ -5,6 +5,9 @@ App.loading = false;
 App.verifyingEmail = false;
 App.currentPage = `products`;
 
+App.cartProductsAll = new Array;
+console.log("len: " + App.cartProductsAll.length);
+
 //kdyz se zmeni historie
 window.onpopstate = (event) => {
     try {
@@ -118,7 +121,9 @@ App.renderEshop = () => {
                         productFileName: data[i].file_image,
                         productKey: key,
                     }
-                    window.localStorage.setItem(key, JSON.stringify(cartProduct));
+                    
+                    App.cartProductsAll.push(cartProduct);
+                    window.localStorage.setItem(`cartProducts`, JSON.stringify(App.cartProductsAll));
                     App.refreshCartBalance();
 
                     swal({
@@ -147,14 +152,11 @@ App.renderEshop = () => {
 };
 
 App.refreshCartBalance = () => {
-    let totalPrice = 0;
-    for (let i in window.localStorage) {
-        if (window.localStorage.hasOwnProperty(i)) {
-            const cartProduct = JSON.parse(window.localStorage[i]);
-            totalPrice += cartProduct.productPrice;
-        }
-    }
     const cartText = $(`#cart-balance`);
+    let totalPrice = 0;
+    for (let i = 0; i < App.cartProductsAll.length; i++) {
+        totalPrice += App.cartProductsAll[i].productPrice;
+    }
     cartText.text(`Nákupní košík (${totalPrice} CZK)`);
 };
 
@@ -178,7 +180,7 @@ App.renderCart = () => {
     </div>`);
     eshopCartButtonPay.click(() => {
 
-        if (window.localStorage.length == 0) {
+        if (App.cartProductsAll.length == 0) {
             swal({
                 title: `Košík je prázdný`,
                 text: `Nejdříve vyberte produkty, které chcete koupit!`,
@@ -205,26 +207,23 @@ App.renderCart = () => {
 
     const productsCart = [];
     let productsInCart = 0;
-    for (let i in window.localStorage) {
-        if (window.localStorage.hasOwnProperty(i)) {
-            productsInCart++;
-            const cartProduct = JSON.parse(window.localStorage[i]);
-            const newProduct = $(`
-            <div class="merch">
-                <img src="img/${cartProduct.productFileName}" alt="Zboži" class="merch-picture">
-                <div class="merch-name">
-                    ${cartProduct.productName}
-                </div>
-                <div class="merch-price">
-                    ${cartProduct.productPrice} CZK
-                </div>
-                <div class="merch-buy" id="remove-button${cartProduct.productKey}">
-                    Odebrat
-                </div>
+    for (let i = 0; i < App.cartProductsAll.length; i++) {
+        productsInCart++;
+        const newProduct = $(`
+        <div class="merch">
+            <img src="img/${App.cartProductsAll[i].productFileName}" alt="Zboži" class="merch-picture">
+            <div class="merch-name">
+                ${App.cartProductsAll[i].productName}
             </div>
-            `);
-            productsCart.push(newProduct);
-        }
+            <div class="merch-price">
+                ${App.cartProductsAll[i].productPrice} CZK
+            </div>
+            <div class="merch-buy" id="remove-button${App.cartProductsAll[i].productKey}">
+                Odebrat
+            </div>
+        </div>
+        `);
+        productsCart.push(newProduct);
     }
     const eshopMerchContainer = $(`<div class="merch-container"></div>`);
     eshopMerchContainer.append(productsCart);
@@ -233,16 +232,14 @@ App.renderCart = () => {
     App.eshopContainer.append(eshopMerchSection);
 
     //click event listener pro všechny předtím vytvořené buttony
-    for (let i in window.localStorage) {
-        if (window.localStorage.hasOwnProperty(i)) {
-            const cartProduct = JSON.parse(window.localStorage[i]);
-            const removeButton = $(`#remove-button${cartProduct.productKey}`);
-            removeButton.click(() => {
-                removeButton.parent().remove();
-                window.localStorage.removeItem(cartProduct.productKey);
-                if (eshopMerchContainer.children().length == 0) eshopMerchSection.append(`<div class="eshop-error-message">Váš košík je prázdný.</div>`);
-            });
-        }
+    for (let i = 0; i < App.cartProductsAll.length; i++) {
+        const removeButton = $(`#remove-button${App.cartProductsAll[i].productKey}`);
+        removeButton.click(() => {
+            removeButton.parent().remove();
+            App.cartProductsAll.splice(i, 1);
+            window.localStorage.setItem(`cartProducts`, JSON.stringify(App.cartProductsAll));
+            if (eshopMerchContainer.children().length == 0) eshopMerchSection.append(`<div class="eshop-error-message">Váš košík je prázdný.</div>`);
+        });
     }
 
     if (productsInCart == 0) eshopMerchSection.append(`<div class="eshop-error-message">Váš košík je prázdný.</div>`);
@@ -255,7 +252,7 @@ App.renderForm = () => {
 
     App.currentPage = `form`;
     App.eshopContainer.empty();
-    if (window.localStorage.length == 0) {
+    if (App.cartProductsAll.length == 0) {
 
         const eshopFormButtonBack = $(`
         <div class="cart-heading-button-back">
@@ -432,24 +429,15 @@ App.renderForm = () => {
         const inputPhone = $(`#input-phone`);
         const inputPayment = $(`#input-payment`);
 
-        const errorName = $(`#error-name`);
-        errorName.hide();
-        const errorCompany = $(`#error-company`);
-        errorCompany.hide();
-        const errorStreet = $(`#error-street`);
-        errorStreet.hide();
-        const errorTown = $(`#error-town`);
-        errorTown.hide();
-        const errorZipCode = $(`#error-zipcode`);
-        errorZipCode.hide();
-        const errorIC = $(`#error-ic`);
-        errorIC.hide();
-        const errorDIC = $(`#error-dic`);
-        errorDIC.hide();
-        const errorEmail = $(`#error-email`);
-        errorEmail.hide();
-        const errorPhone = $(`#error-phone`);
-        errorPhone.hide();
+        const errorName = $(`#error-name`).hide();
+        const errorCompany = $(`#error-company`).hide();
+        const errorStreet = $(`#error-street`).hide();
+        const errorTown = $(`#error-town`).hide();
+        const errorZipCode = $(`#error-zipcode`).hide();
+        const errorIC = $(`#error-ic`).hide();
+        const errorDIC = $(`#error-dic`).hide();
+        const errorEmail = $(`#error-email`).hide();
+        const errorPhone = $(`#error-phone`).hide();
 
         eshopFormButtonBuy.click(() => {
 
@@ -480,7 +468,7 @@ App.renderForm = () => {
                     valid = false;
                 }
                 //ulice a cislo, povinne
-                regex = new RegExp(`^[a-zA-ZěščřžýáíéĚŠČŘŽÝÁÍÉ]+ \\d+$`);
+                regex = new RegExp(`^[a-zA-ZěščřžýáíéĚŠČŘŽÝÁÍÉ]+( \\d+(\\/\\d+)?)?$`);
                 if (inputStreet.val().length == 0) {
                     errorStreet.text(`Tento atribut je povinný!`);
                     errorStreet.show();
@@ -591,7 +579,7 @@ App.renderConfirmation = (name, company, street, town, zipcode, ic, dic, email, 
     App.currentPage = `confirmation`;
     App.eshopContainer.empty();
 
-    if (window.localStorage.length == 0) {
+    if (App.cartProductsAll.length == 0) {
         App.eshopContainer.append(`<div class="merch-section">
             <div class="cart-heading">
                 <h2>Chyba</h2>
@@ -611,15 +599,12 @@ App.renderConfirmation = (name, company, street, town, zipcode, ic, dic, email, 
 
         //poslat data o objednavce do kolekce 'order'
         let jsonItems = [];
-        for (let i in window.localStorage) {
-            if (window.localStorage.hasOwnProperty(i)) {
+        for (let i = 0; i < App.cartProductsAll.length; i++) {
 
-                const cartProduct = JSON.parse(window.localStorage[i]);
-                let item = {};
-                item[`name`] = cartProduct.productName;
-                item[`price`] = cartProduct.productPrice;
-                jsonItems.push(item);
-            }
+            let item = {};
+            item[`name`] = App.cartProductsAll[i].productName;
+            item[`price`] = App.cartProductsAll[i].productPrice;
+            jsonItems.push(item);
         }
 
         let jsonData = { "name": name, "company": company, "street": street, "town": town, "zipcode": zipcode, "ic": ic, "dic": dic, "email": email, "phone": phone, "payment": payment };
@@ -667,7 +652,9 @@ App.renderConfirmation = (name, company, street, town, zipcode, ic, dic, email, 
                     </div>`);
                 }
 
-                window.localStorage.clear();
+                while (App.cartProductsAll.length) {
+                    App.cartProductsAll.pop();
+                }
             }).fail(() => {
 
                 if (App.currentPage == `confirmation`) {
@@ -711,5 +698,7 @@ App.updateHistory = (url) => {
 };
 
 $(document).ready(() => {
+    
+    if(localStorage.getItem('cartProducts') != null) App.cartProductsAll = JSON.parse(localStorage.getItem('cartProducts'));
     App.renderEshop();
 });
