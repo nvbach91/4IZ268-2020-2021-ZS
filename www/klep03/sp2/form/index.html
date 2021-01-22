@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lead Form</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="container-main" class="container-main">
+        <div class="container-form-heading center-align">
+            <p class="container-form-heading-text center-align">Nechte nám na sebe kontakt!</p>
+        </div>
+        <div class="container-form-content center-align">
+            <div class="container-form-content-column">
+                <div class="form-row">
+                    <p class="label-text">Jméno: </p>
+                    <textarea id="first-name" class="single-line"></textarea>
+                </div>
+                <div class="form-row">
+                    <p class="label-text">Příjmení: </p>
+                    <textarea id="surname" class="single-line"></textarea>
+                </div>
+                <div class="form-row">
+                    <p class="label-text">E-mail: </p>
+                    <textarea id="email" class="single-line"></textarea>
+                </div>
+                <div class="form-row">
+                    <p class="label-text">Telefon: </p>
+                    <textarea id="phone" class="single-line"></textarea>
+                </div>
+                <div class="form-row">
+                    <p class="label-text">Které naše produky používáte? </p>
+                    <textarea id="fieldForNote" class="multi-line"></textarea>
+                </div>
+            </div>
+            <div id="rightSide" class="container-form-content-column">
+                <div class="form-row">
+                    <p class="label-text">Preferovaná metoda kontaktování: </p>
+                    <div class="form-row inline">
+                        <div class="max-width">
+                            <input type="radio" id="contact-method-phone" name="contact-type" value="Telefonicky"
+                                checked>
+                            <label for="Telefonicky">Telefonicky</label>
+                        </div>
+
+                        <div class="max-width">
+                            <input type="radio" id="contact-method-email" name="contact-type" value="E-mailem">
+                            <label for="E-mailem">E-mailem</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="choose-time" class="form-row inline dny-v-tydnu-container">
+                    <div class="max-width">
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="monday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Pondělí</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="tuesday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Úterý</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="wednesday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Středa</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="thursday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Čtvrtek</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="friday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Pátek</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="saturday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Sobota</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="sunday" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Neděle</p>
+                        </div>
+                    </div>
+                    <div class="center-align choose-daytime">
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="morning" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Dopoledne</p>
+                        </div>
+                        <div class="form-row inline dny-v-tydnu">
+                            <input id="afternoon" type="checkbox" class="checkbox-align">
+                            <p class="label-text">Odpoledne</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row inline">
+                    <input id="agreeWithTerms" type="checkbox" class="checkbox-align">
+                    <p class="label-text">Souhlasím se zpracováním osobních údajů.</p>
+                </div>
+                <div class="form-row inline">
+                    <input id="sendAds" type="checkbox" class="checkbox-align">
+                    <p class="label-text">Chci se přihlásit k odběru newsletteru. </p>
+                </div>
+                <div class="form-row inline center-align send-button-container">
+                    <button id="sendButton" class="send-button">Odeslat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/form.js"></script>
+</body>
+
+</html>

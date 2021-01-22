@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    /*  background-color: aqua;*/
+    margin: 0px;
+}
+
+.topContainer {
+    height: 100vh;
+    min-height: 420px;
+    min-width: 760px;
+}
+
+header {
+    background-color: rgb(159, 160, 195);
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    padding: auto;
+    margin: 0px;
+    cursor: default;
+}
+
+.midArea {
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+}
+
+aside {
+    background-color: rgb(174, 217, 224);
+    width: 18%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+main {
+    background-color: rgba(188, 248, 236);
+    width: 64%;
+    height: 100%;
+    padding: 2%;
+    overflow: scroll;
+}
+
+footer {
+    background-color: rgb(159, 160, 195);
+    width: 100%;
+    height: 10%;
+    display: none;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.area {
+    resize: none;
+    height: 25px;
+    margin: 5px 0 10px 0;
+}
+
+.areaTO {
+    width: 200px;
+}
+
+.areaSubject {
+    width: 400px;
+}
+
+.areaEmail {
+    width: 100%;
+    height: 40%;
+}
+
+.menuItem {
+    margin: 20px;
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: rgba(188, 248, 236);
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.menuItem:hover {
+    animation-name: itemIsHovered;
+    animation-duration: 0.5s;
+    background-color: rgb(209, 245, 238);
+    cursor: pointer;
+}
+
+.menuItem:active {
+    background-color: rgb(196, 240, 231);
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 20px 0;
+    border: rgba(0, 0, 0, 0.041);
+    border-style: groove;
+    border-width: 2px;
+}
+
+@keyframes itemIsHovered {
+    from {
+        background-color: rgba(188, 248, 236);
+        ;
+    }
+    to {
+        background-color: rgb(209, 245, 238);
+    }
+}
+
+.contactContainer:hover {
+    animation-name: itemIsHovered;
+    animation-duration: 0.5s;
+    background-color: rgb(209, 245, 238);
+}
+
+.idNumber {
+    padding: 20px;
+    padding-left: 5px;
+}
+
+.block {
+    padding: 3px;
+}
+
+.blockLine {
+    margin-bottom: 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.rightMenuItem {
+    margin: 8px;
+    /*background-color: rgba(188, 248, 236);*/
+    padding: 3px;
+    min-width: 150px;
+    display: flex;
+    justify-content: start;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.rightMenuItem:hover {
+    animation-name: enlargeText;
+    animation-duration: 0.2s;
+    font-size: 120%;
+}
+
+@keyframes enlargeText {
+    from {}
+    to {
+        font-size: 120%;
+    }
+}
+
+.rightMenuItemText {
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.rightItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+}
+
+.row {
+    display: flex;
+}
+
+.note {
+    margin-top: 20px;
+    background-color: rgb(174, 217, 224);
+    padding: 15px;
+}
+
+.label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.clientInfo {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.178);
+    padding: 5px;
+}
+
+.noteHeader {
+    margin-top: 20px;
+}
+
+.contactHeading {
+    font-size: 120%;
+    margin: 20px 0 20px 0;
+}
+
+.hide {
+    display: none;
+}
+
+.loader {
+    border: 5px solid rgba(188, 248, 236);
+    border-top: 5px solid #3498db;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 1s linear infinite;
+}
+
+/* Safari */
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
