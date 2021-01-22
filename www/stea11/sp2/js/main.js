@@ -78,6 +78,7 @@ function main() {
   }
 
   function showSearchResults(keyword) {
+    $('#autocomplete').empty();
     window.history.pushState(null, null, '?search=' + keyword);
     gifResultsContainer.empty().append(loader);
     $('#get-trending').toggleClass('active-button', false);
