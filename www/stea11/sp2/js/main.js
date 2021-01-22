@@ -23,6 +23,7 @@ function main() {
         div.click(() => {
           e.target.value = option.name;
           $('#autocomplete').empty();
+          showSearchResults(e.target.value);
         });
         autocomplete.append(div);
       }
