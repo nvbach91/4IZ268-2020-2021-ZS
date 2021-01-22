@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+    ></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="./js/main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Shift Planner</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Shift Planner</h1>
+      </div>
+      <div id="loading">
+        <img src="img/loading.gif" alt="Loading..." width="288" />
+      </div>
+      <div class="to-load">
+        <div class="sign-in">
+          <div class="center">
+            <p id="login-warning">You have to be signed in to use this app!</p>
+            <button id="sign-in-or-out-button">
+              Sign in with Google Account
+            </button>
+            <button
+              id="revoke-access-button"
+              style="display: none; margin-left: 25px"
+            >
+              Revoke access
+            </button>
+            <div class="flexbox">
+            <div id="form">
+              <label for="employees">Employee name:</label>
+              <select name="employees" id="employees">
+                <option value="Milan">Milan</option>
+                <option value="Tomáš">Tomáš</option>
+                <option value="Vojtěch">Vojtěch</option>
+              </select>
+              <label for="date">Date:</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                min="2021-02-01"
+                max="2021-02-28"
+                value="2021-02-01"
+              />
+              <br />
+              <label for="allday">All day</label>
+              <input
+                type="radio"
+                id="allday"
+                name="time-radio"
+                value="allday"
+                checked
+              />
+              <label for="specific-time">Specific time(s)</label>
+              <input
+                type="radio"
+                id="specific-time"
+                name="time-radio"
+                value="specific-time"
+              />
+              <select name="time" id="time" multiple disabled>
+                <option value="F" selected>8:30</option>
+                <option value="G">9:00</option>
+                <option value="H">9:30</option>
+                <option value="I">10:00</option>
+                <option value="J">10:30</option>
+                <option value="K">11:00</option>
+                <option value="L">11:30</option>
+                <option value="M">12:00</option>
+                <option value="N">12:30</option>
+                <option value="O">13:00</option>
+                <option value="Q">14:00</option>
+                <option value="R">14:30</option>
+                <option value="S">15:00</option>
+                <option value="T">15:30</option>
+                <option value="U">16:00</option>
+                <option value="V">16:30</option>
+                <option value="W">17:00</option>
+                <option value="X">17:30</option>
+                <option value="Y">18:00</option>
+              </select>
+              <br />
+              <button type="button" id="schedule">Schedule Shift</button>
+            </div>
+            <div id="clear-form">
+              <h4>Clear values:</h4>
+              <input
+                type="date"
+                id="date-clear"
+                name="date-clear"
+                min="2021-02-01"
+                max="2021-02-28"
+                value="2021-02-01"
+              />
+              <select name="clear-time" id="clear-time" multiple >
+                <option value="F" selected>8:30</option>
+                <option value="G">9:00</option>
+                <option value="H">9:30</option>
+                <option value="I">10:00</option>
+                <option value="J">10:30</option>
+                <option value="K">11:00</option>
+                <option value="L">11:30</option>
+                <option value="M">12:00</option>
+                <option value="N">12:30</option>
+                <option value="O">13:00</option>
+                <option value="Q">14:00</option>
+                <option value="R">14:30</option>
+                <option value="S">15:00</option>
+                <option value="T">15:30</option>
+                <option value="U">16:00</option>
+                <option value="V">16:30</option>
+                <option value="W">17:00</option>
+                <option value="X">17:30</option>
+                <option value="Y">18:00</option>
+              </select>
+              <button type="button" id="clear">Clear</button>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="planner">
+          <img src="img/loading.gif" alt="Loading..." width="500" />
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1Y2Bvmysv6gdX958EJohAKXxUa5eEc80p-i4QKs7Zhak/htmlembed/sheet?gid=662909996&range=A2:Y32"
+            width="390"
+            height="670"
+            id="gsheet"
+          ></iframe>
+          <br />
+          <div id="sumOfHours">
+            <h3>Sum of hours:</h3>
+            <table>
+              <tr>
+                <th id="employee1-name">Milan</th>
+                <th id="employee2-name">Tomáš</th>
+                <th id="employee3-name">Vojtěch</th>
+              </tr>
+              <tr>
+                <td id="milan-hours"></td>
+                <td id="tomas-hours"></td>
+                <td id="vojtech-hours"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
