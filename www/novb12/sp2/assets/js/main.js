@@ -1,85 +1,160 @@
-// NAČÍTÁNÍ Z LOCAL STORAGE
-function loadWatchlist() {
-  document.getElementById('movie-list').innerHTML = localStorage.getItem('mySavedMovies');
-  console.log('%cLoading was successful', 'color: green');
-};
-
-// ULOŽENÍ DO LOCAL STORAGE
-function saveWatchlist() {
-  localStorage.setItem('mySavedMovies', document.getElementById('movie-list').innerHTML);
-  console.log('%cAdding or removing from local storage was successful', 'color: green');
-};
-
-// ZISK POČTU FILMŮ/SERIÁLŮ V LOCAL STORAGE
-function countSavedMovies() {
-  document.getElementById('movie-count').innerHTML = 'Movies to watch: ' + document.getElementsByClassName('must-see-movie').length;
-};
-
-// UPOZORNĚNÍ
-function showWarning(text) {
-  var err = document.getElementById('warnings');
-  err.innerText = text;
-  err.setAttribute('class', 'warning');
-  setTimeout(() => {
-    err.innerText = '';
-  }, 1000);
-};
-
-function showPositiveResponse(text) {
-  var response = document.getElementById('warnings');
-  response.innerText = text;
-  response.setAttribute('class', 'positive-response');
-  setTimeout(() => {
-    response.innerText = '';
-  }, 1000);
-};
+// STÁLE PRACUJE S LOCAL STORAGE JAKO HTML - NEŠLO MI UDĚLAT PO ČÁSTECH NAPŘ. PŘES ID (KÓDY JSOU ZAKOMENTOVANÉ, NĚKTERÉ SMAZANÉ)
+// TLAČÍTKO PŘIDÁVÁNÍ V SEZNAMU JE NEFUNKČNÍ, AVŠAK PŘI PŘIDÁNÍ JSEM ALESPOŇ ZACHOVALA AJAX, KTERÝ PŘIDÁ PRVNÍ (NEJRELEVANTNĚJŠÍ FILM ZE VŠECH)
 
 $(document).ready(function () {
+  const movieForm = $('#form'); //celý formulář vyplňovaný uživatelem
+  const movieInput = $('#movie-input'); //název filmu, který uživatel píše do okna a potvrzuje ho tlačítkem
+
+  const addingMovieList = document.querySelector('#movie-list'); //seznam filmů ke shlédnutí
+  const warningsBox = document.querySelector('#warnings'); // box kam se propisuje upozornění při přidávání
+  const movieCountingBox = document.querySelector('#movie-count'); // box kam se zapisuje počet uložených
+  const greetingBox = document.querySelector('#greeting-box'); // box kde se vypisuje pozdrav
+
+  // NAČÍTÁNÍ Z LOCAL STORAGE -> FUNKČNÍ PRO AJAX, NEFUNKČNÍ PRO NOVÝ VÝBĚR PŘES JSON
+  loadWatchlist = () => {
+    addingMovieList.innerHTML = localStorage.getItem('mySavedMovies');
+    console.log('%cLoading was successful', 'color: green');
+  };
+
+  // ULOŽENÍ DO LOCAL STORAGE -> FUNKČNÍ PRO AJAX, NEFUNKČNÍ PRO NOVÝ VÝBĚR PŘES JSON
+  saveWatchlist = () => {
+    localStorage.setItem('mySavedMovies', addingMovieList.innerHTML);
+    console.log('%cAdding or removing from local storage was successful', 'color: green');
+  };
+
+  // ZISK POČTU FILMŮ/SERIÁLŮ V LOCAL STORAGE
+  countSavedMovies = () => {
+    movieCountingBox.innerHTML = 'Movies to watch: ' + document.getElementsByClassName('must-see-movie').length;
+  };
+
+  // DVA TYPY UPOZORNĚNÍ
+  showWarning = (text) => {
+    var err = warningsBox;
+    err.innerText = text;
+    err.setAttribute('class', 'warning');
+    setTimeout(() => {
+      err.innerText = '';
+    }, 1000);
+  };
+
+  showPositiveResponse = (text) => {
+    var response = warningsBox;
+    response.innerText = text;
+    response.setAttribute('class', 'positive-response');
+    setTimeout(() => {
+      response.innerText = '';
+    }, 1000);
+  };
 
   loadWatchlist();
   countSavedMovies();
 
   //OMDb API -> http://www.omdbapi.com/ (odkud čerpám data o filmech)
   const apikey = '6ffee1f0' //unikátní API key
-  const url = 'http://www.omdbapi.com/?apikey=' + apikey //URL přes kterou lze provádět vyhledávání
-
-  const movieForm = $('#form'); //celý formulář vyplňovaný uživatelem
-  const addingMovieList = document.querySelector('#movie-list'); //seznam filmů ke shlédnutí
-  const movieInput = $('#movie-input'); //název filmu, který uživatel píše do okna a potvrzuje ho tlačítkem
+  const url = 'http://www.omdbapi.com/?apikey=' + `${apikey}` //URL přes kterou lze provádět vyhledávání
 
   // POZDRAV PRO UŽIVATELE (závislý na denní době)
-  var sentence = ', I hope you have something to watch and you will enjoy your free time! If you want to have some inspiration click on the watch guide below...';
+  const sentence = ', I hope you have something to watch and you will enjoy your free time! If you want to have some inspiration click on the watch guide below...';
   var time = new Date().getHours();
   if (time < 12) {
-    greeting = 'Good morning' + sentence;
+    const greetingSentence = 'Good morning';
+    greeting = greetingSentence + sentence;
   } else if (time < 19) {
-    greeting = 'Good afternoon' + sentence;
+    const greetingSentence = 'Good afternoon';
+    greeting = greetingSentence + sentence;
   } else {
-    greeting = 'Good evening' + sentence;
+    const greetingSentence = 'Good evening';
+    greeting = greetingSentence + sentence;
   }
-  document.getElementById('greeting-box').innerText = greeting;
+  greetingBox.innerText = greeting;
 
+  clearBox = (elementID) => {
+    document.getElementById(elementID).innerHTML = '';
+  }
 
   movieForm.submit(function (e) {
     e.preventDefault();
 
     const movie = movieInput.val().trim(); //.trim() zbaví input prázdných míst - jediné omezení u vstupu (víceslovné filmy by se při několikanásobném vstupu nepovedly -> nepočítáme tedy s ním)
 
+    $("#movies-container").empty();
 
+    /** POKUS O VYTVÁŘENÍ PŘES UPRAVENOU LOCAL STORAGE (SAMOTNÁ LOCAL STORAGE BY SE MUSELA TAKÉ PŘEPRACOVAT)
+     *     $.getJSON(
+        'http://www.omdbapi.com/?apikey=6ffee1f0&s=' + movieInput.val()).done(
+        (resp) => {
+          const movies = resp.Search;
+          const moviesHtml = [];
+          movies.forEach(movie => {
+            const html = $(`
+               <div class='movie'>
+                  <p>${movie.Title}</p>
+                  <img src='${movie.Poster}' alt=''>
+                  <button>Add to watch list</button>
+                </div>
+            `).find('adding-button').click(() => {
+                let allMovies = localStorage.getItem('mySavedMovies');
+                allMovies.push(movie.imdbID);
+                localStorage.setItem('mySavedMovies', allMovies);
+                      
+            });
+            moviesHtml.push(html);
+          });
+          $('#movies-container').append(moviesHtml);
+
+        });
+
+        //VYKRESLENÍ allMovies.forEach((movie.imdbID) =>
+
+        // DELETE FUNKCE, KTERÁ BY ŠLA NEJSPÍŠE ZAIMPLEMENTOVAT K DELETE BUTTONU
+          let allMovies2 = localStorage.getItem('mySavedMovies');
+          allMovies2.remove(movie.imdbID);
+          localStorage.setItem('', allMovies2);
+     */
+
+    /* ČÁSTEČNĚ FUNKČNÍ - NELZE PŘIDAT */
+    $.getJSON('http://www.omdbapi.com/?apikey=6ffee1f0&s=' + movieInput.val()).done((resp) => {
+
+      const movies = resp.Search;
+      console.log(resp.Search); //nalezené filmy
+      const moviesHtml = [];
+      movies.forEach(movie => {
+        const html = $(`
+          <div class="movie">
+            <p class="title">${movie.Title}</p>
+            <img class="adding-poster" src="${movie.Poster}" alt="${movie.Title} poster">
+            <button class="adding-button" onclick="add('${movie.imdbID}')">Add to watch list</button>
+          </div>
+        `);
+        // ČÁST KTERÁ BY BRALA BUTTON ODEBRÁNA - NEPRACOVALA SPRÁVNĚ
+        /**  
+         * add = (() => {
+          let allMovies = localStorage.getItem('mySavedMovies');
+                allMovies.push(movie.imdbID);
+                localStorage.setItem('mySavedMovies', allMovies);
+        }
+        */
+        moviesHtml.push(html);
+      });
+      $('#movies-container').append(moviesHtml);
+    });
+
+
+    // VARIANTA FUNKČNÍ - NICMÉNĚ VYCHÁZÍ ROVNOU Z INPUTU A NE Z POZDĚJŠÍHO VÝBĚRU UŽIVATELE
     $.ajax({
       method: 'GET',
       url: url + '&t=' + movie,
       success: function (data) {
-        //console.log(data); -> není třeba to zobrazovat na konzoli (důležité info je vykresleno do webu)
+        console.log(data); //-> není třeba to zobrazovat na konzoli (důležité info je vykresleno do webu)
 
         //Pokud data existují v API (tzn. nemají hodnotu undefined)
-        if (data.Title != undefined) {
+        if ((data.Title) != undefined) {
 
           //Pokud už není v seznamu, tak se provede přidání do seznamu
-          if (document.getElementById('added-' + data.Title) === null) {
+          if (document.getElementById('added-' + data.imdbID) === null) {
             var li = document.createElement('li'); //každý film má vytvořený svůj vlastní div s informacemi
             li.setAttribute('class', 'must-see-movie'); //div.setAttribute(' ',' ');
-            li.setAttribute('id', 'added-' + data.Title);
+            li.setAttribute('id', 'added-' + data.imdbID);
 
             var movieHeading = document.createElement('div'); //Hlavička boxu filmu/seriálu
             movieHeading.setAttribute('class', 'movie-heading');
@@ -104,7 +179,7 @@ $(document).ready(function () {
 
             var buttonDeleteMovie = document.createElement('button'); //Div s tlačítkem na odebrání filmu/seriálu ze seznamu
             buttonDeleteMovie.innerText = 'Delete';
-            buttonDeleteMovie.setAttribute('onclick', "document.querySelector('#movie-list').removeChild(document.getElementById('added-" + data.Title + "'));saveWatchlist();countSavedMovies();showPositiveResponse('Sucessfully removed!')"); // odebrání
+            buttonDeleteMovie.setAttribute('onclick', "document.querySelector('#movie-list').removeChild(document.getElementById('added-" + data.imdbID + "'));saveWatchlist();countSavedMovies();showPositiveResponse('Successfully removed!')"); // odebrání
             buttonDeleteMovie.setAttribute('class', 'delete-button');
             movieHeading.appendChild(buttonDeleteMovie);
             addingMovieList.appendChild(li);
@@ -146,17 +221,17 @@ $(document).ready(function () {
 
             var img = document.createElement('img'); //Div s plakátem filmu/seriálu
             img.src = data.Poster;
-            img.alt = 'Movie poster';
+            img.alt = `${data.Title} Poster`;
             moviePoster.appendChild(img);
             addingMovieList.appendChild(li);
 
             saveWatchlist();
             countSavedMovies();
-            showPositiveResponse('Sucessfully added!');
+            showPositiveResponse('The first one from this searching was successfully added!');
           } else {
-            // Ošetření duplicity
+            // Ošetření duplicity (dvou totožných filmů)
             console.log('%cTrying to add some duplicity', 'color: red');
-            showWarning('You added this before!');
+            showWarning('You have this in your list!');
           }
         } else {
           // Ošetření u vkládání nesmyslných názvů, které se nenacházejí v API
@@ -167,3 +242,6 @@ $(document).ready(function () {
     });
   });
 });
+
+
+

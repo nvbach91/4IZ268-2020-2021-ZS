@@ -22,6 +22,70 @@ main {
     margin-right: 10%;
 }
 
+/*ZOBRAZENÍ*/
+.title {
+    font-size: 15px;
+    color: rgb(7, 7, 49);
+    font-weight: bold;
+}
+
+.adding-poster {
+    width: 200px;
+    height: 300px;
+    margin-right: 60%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.adding-button{
+    display: inline;
+    background-color: rgb(12, 38, 78);
+    color:white;
+    border: none;
+    text-align: center;
+    padding: 14px 40px;
+    cursor: pointer;
+    width:200px;
+}
+.adding-button:hover{
+    background-color:rgb(50, 107, 114);
+}
+
+.movies-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:10%;
+}
+
+.movie{
+    margin: 10px 0 0 2%;
+    width: 19%;
+}
+
+/*NAVIGACE*/
+nav ul{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav ul li {
+    list-style-type:none;
+}
+
+nav ul li button {
+    display: inline;
+    background-color: rgb(12, 63, 78);
+    color:white;
+    border: none;
+    margin-right: 20%;
+    text-align: center;
+    padding: 14px 40px;
+    cursor: pointer;
+}
+
+nav ul li button:hover{
+    background-color:rgb(45, 172, 189);
+}
+
 /*NADPISY*/
 
 h1 {
@@ -394,3 +458,6 @@ footer a {
         height: 22px;
     }
 }
+
+
+

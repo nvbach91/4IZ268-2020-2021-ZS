@@ -23,20 +23,28 @@
 <body>
     <header>List of movies and series<i class="fas fa-film"></i></header>
     <main>
+        <nav>
+            <ul>
+            <li><button id="watchlist-page-button" onclick="document.getElementById('searching-box').setAttribute('style', '');document.getElementById('full-watchlist').setAttribute('style', 'display: none;'); document.getElementById('movies-container').setAttribute('style', '');"><i class="fas fa-search"></i><br>Searching</button></li>
+                <li><button id="searching-page-button" onclick="document.getElementById('searching-box').setAttribute('style', 'display: none;');document.getElementById('full-watchlist').setAttribute('style', ''); document.getElementById('movies-container').setAttribute('style', 'display: none;');"><i class="fas fa-eye"></i><br>Watchlist</button></li>  
+            </ul>
+        </nav>
         <h1>My watchlist</h1>
         <div id="greeting-box" class="greeting-box"></div>
         <div class="watch-guide"><a href="https://www.imdb.com/what-to-watch/" target="_blank">Inspiration by Internet
                 Movie Database <i class="fab fa-imdb"></i></a></div>
-        <div class="box">
+        <div class="box" id="searching-box">
             <h2>Search & save</h2>
             <form id="form" autocomplete="on">
                 <input class="movie-name-input" type="text" placeholder="Title of movie or series" id="movie-input"
                     title="You must type something here!" required>
-                <button id="save-button">Save<i class="fas fa-check"></i></button>
+                <button id="save-button">Search<i class="fas fa-check"></i></button>
             </form>
             <div id="warnings"></div>
         </div>
-        <div class="watch-list">
+        <div class="movies-container" id="movies-container"></div>
+        <!--VIDITELNÉ PO KLIKU NA NAVIGACI-->
+        <div class="watch-list" id="full-watchlist" style="display: none;">
             <h2>My movies and series</h2>
             <div class="movies-counting" id="movie-count"></div>
             <ul id="movie-list">
@@ -59,6 +67,7 @@
                             <div>Released: 19 Dec 1997</div>
                             <div>Director: James Cameron</div>
                             <div>Actors: Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates</div>
+                            <div>Plot: A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.</div>
                         </div>
                     <div class="movie-poster">
                         <img src="https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg" alt="Movie poster">
