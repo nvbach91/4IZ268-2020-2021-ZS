@@ -78,7 +78,7 @@ function main() {
   }
 
   function showSearchResults(keyword) {
-    window.history.pushState(null, null, '?search');
+    window.history.pushState(null, null, '?search=' + keyword);
     gifResultsContainer.empty().append(loader);
     $('#get-trending').toggleClass('active-button', false);
     $('#get-favourites').toggleClass('active-button', false);
@@ -266,6 +266,10 @@ function main() {
     }
     if (document.location.search === '?favourites') {
       showFavourites();
+    }
+    if (document.location.search.startsWith('?search=')) {
+      const keyword = window.location.search.replace('?search=', '');
+      showSearchResults(keyword);
     }
   };
 
