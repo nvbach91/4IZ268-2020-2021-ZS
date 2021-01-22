@@ -52,9 +52,9 @@ h1 {
     font-size: 68px;
 }
 
-.homepage {
+/*.homepage {
     text-decoration: none;
-}
+}*/
 
 .search input {
     border: solid #CCCCCC 0.5px;
@@ -89,9 +89,28 @@ h1 {
 }
 
 .search {
+    position: relative;
     margin: 0.5rem auto;
     display: flex;
     justify-content: space-between;
+}
+
+#autocomplete {
+    position: absolute;
+    top: 50px;
+    background-color: whitesmoke;
+    z-index: 10;
+    border: solid 1px #CCCCCC
+}
+
+.autocomplete-item {
+    padding: 0.5rem 1rem;
+    font-size: large;
+}
+
+.autocomplete-item:hover{
+    background-color: rgba(105, 90, 205, 0.637);
+    color:white;
 }
 
 .tabs button {
