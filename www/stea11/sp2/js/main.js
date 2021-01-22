@@ -135,7 +135,7 @@ function main() {
     const gifDetail = $(`
 <h2>${alt}</h2>
 <div class="detail">
-<img class="gif-item gif-detail" src=${src} alt"${alt}"/>
+<img class="gif-item gif-detail" src="${src}" alt"${alt}"/>
 <div class="detail-buttons">
 <button class="add-to-favorites"><i class="fa fa-heart" style="color: ${
       isFavorite(gif) ? 'red' : 'black'
