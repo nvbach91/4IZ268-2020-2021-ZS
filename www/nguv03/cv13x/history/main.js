@@ -23,7 +23,7 @@ $(document).ready(() => {
         }
     });
 
-    $(window).on('popstate', function (event) {
+    $(window).on('popstate', (event) => {
         const pageNumber = location.hash.replace('#page', '');
         renderPage(pageNumber);
     });
