@@ -278,6 +278,9 @@ function main() {
     showTrending();
   } else if (window.location.search === '?favourites') {
     showFavourites();
+  } else if (document.location.search.startsWith('?search=')) {
+    const keyword = window.location.search.replace('?search=', '');
+    showSearchResults(keyword);
   }
 }
 
