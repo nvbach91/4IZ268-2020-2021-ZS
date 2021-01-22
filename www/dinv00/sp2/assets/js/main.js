@@ -9,12 +9,15 @@ app_key=ccaae9e03961a7202ed70438e0261d28&
 
 $(document).ready(function () {
 
+  var loader = $('#loader')
+  var addMoreBtn = $('#add-more')
+  
   $(document).ajaxStart(function () {
-    $("#loader").show();
-    $("#add-more").hide();
+    loader.show();
+    addMoreBtn.hide();
   });
   $(document).ajaxComplete(function () {
-    $("#loader").hide();
+    loader.hide();
   });
 
   $("#search").on("click", function () {
@@ -23,13 +26,11 @@ $(document).ready(function () {
     buildQuery();
     putTogether();
     sendRequest();
-    $('h4').hide(1000)
-
+    $("h4").hide(1000);
   });
 
   $("#add-more").on("click", function () {
     addMore();
-    
   });
 
   var query = "";
@@ -45,6 +46,8 @@ $(document).ready(function () {
   var calories = "";
 
   var url = "";
+
+  var count = 0;
 
   function buildQuery() {
     // <============= QUERY BUILD =============>
@@ -64,7 +67,7 @@ $(document).ready(function () {
 
       if (this.checked) {
         healthFilter += "&health=" + healthQuery;
-      } 
+      }
     });
 
     $(".diet input").each(function () {
@@ -72,11 +75,11 @@ $(document).ready(function () {
 
       if (this.checked) {
         dietFilter += "&diet=" + dietQuery;
-      } 
+      }
     });
 
     console.log(healthFilter);
-    console.log(dietFilter)
+    console.log(dietFilter);
 
     caloriesBot = $("#calBot").val().trim();
 
@@ -85,14 +88,16 @@ $(document).ready(function () {
     calories = "&calories=" + caloriesBot + "-" + caloriesTop;
   }
 
-  function clearFilters(){
-   healthFilter = "";
-   dietFilter = "";
-   caloriesBot = "";
-   caloriesTop = "";
-   calories = "";
+  function clearFilters() {
+    from = 0;
+    to = 6;
+    healthFilter = "";
+    dietFilter = "";
+    caloriesBot = "";
+    caloriesTop = "";
+    calories = "";
   }
-  
+
   function putTogether() {
     url = "";
     url = "https://api.edamam.com/search?q=";
@@ -125,6 +130,8 @@ $(document).ready(function () {
   function sendRequest() {
     $.getJSON(url, function (data) {
       console.log(data.hits);
+      count = data.count;
+      console.log(count);
 
       if (data.count == 0) {
         var nothingFound = $("<h4>").text(
@@ -159,7 +166,7 @@ $(document).ready(function () {
             .addClass("read-more")
             .text("Read More");
 
-          // <============= RECIPE SAVING =============>
+          // <============= INGREDIENTS VIEW  =============>
 
           var selectedRecipe = {};
 
@@ -167,7 +174,7 @@ $(document).ready(function () {
             .attr("type", "button")
             .attr("value", recipe.uri)
             .addClass("read-more")
-            .text("Save Ingredients")
+            .text("Ingredients")
             .click(function () {
               for (var i in data.hits) {
                 var hits = data.hits[i];
@@ -191,20 +198,74 @@ $(document).ready(function () {
 
               console.log(output);
 
-              var blob = new Blob([output], {
-                type: "text/plain;charset=utf-8",
+              alertify.alert(selectedRecipe.name, output, function () {
+                alertify.success("Ok");
               });
-              saveAs(blob, selectedRecipe.name + "-ingredient list" + ".txt");
             });
 
-          divControls.append(readBtn, saveBtn);
+          var favoriteBtn = $("<button>")
+            .attr("type", "button")
+            .attr("value", recipe.uri)
+            .addClass("read-more")
+            .html("&#9734")
+            .click(function () {
+              for (var i in data.hits) {
+                var hits = data.hits[i];
+                var recipe = hits.recipe;
+                if (recipe.uri === this.value) {
+                  selectedRecipe = {
+                    name: recipe.label,
+                    url: recipe.url,
+                  };
+                  //console.log(selectedRecipe.url);
+                }
+              }
+
+              if (!localStorage.favoriteRecipes) {
+                var favoriteRecipes = [];
+                localStorage.setItem("favoriteRecipes",JSON.stringify(favoriteRecipes)
+                );
+              }
+
+              currentfavoriteRecipes = localStorage.getItem("favoriteRecipes");
+              //currentfavoriteRecipes.push(selectedRecipe);
+
+
+              var currentfavoriteRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
+/*
+              console.log(currentfavoriteRecipes.length);
+              if ((currentfavoriteRecipes.length = 0)) {
+                currentfavoriteRecipes.push(selectedRecipe);
+              }
+*/
+            var isDuplicate = false;
+
+              for (var i in currentfavoriteRecipes) {
+                if (selectedRecipe.url == currentfavoriteRecipes[i].url) {
+                  isDuplicate = true;
+                }
+              }
+              console.log(isDuplicate);
+
+              if (!isDuplicate ) {
+                currentfavoriteRecipes.push(selectedRecipe);
+                console.log(selectedRecipe);
+              }
+
+
+              localStorage.setItem(
+                "favoriteRecipes",
+                JSON.stringify(currentfavoriteRecipes)
+              );
+            });
+
+          divControls.append(readBtn, saveBtn, favoriteBtn);
           divResult.append(recipeName, recipeSource, recipeImg, divControls);
           $(".search-results").append(divResult);
         }
       }
     });
   }
-
   function removeOld() {
     $(".search-results").empty();
   }
@@ -212,8 +273,22 @@ $(document).ready(function () {
   function addMore() {
     from += 7;
     to += 7;
-    putTogether();
-    sendRequest();
+    if (from > count - 1) {
+      $("#add-more").hide();
+    } else if (from == count - 1) {
+      to = from + 1;
+      putTogether();
+      sendRequest();
+      $("#add-more").hide();
+    } else if (to >= count) {
+      to = count;
+      putTogether();
+      sendRequest();
+      $("#add-more").hide();
+    } else {
+      putTogether();
+      sendRequest();
+    }
   }
 
   mybutton = document.getElementById("scroll-btn");
@@ -234,11 +309,7 @@ $(document).ready(function () {
     }
   }
 
-  $('#scroll-btn').on('click', function(){
+  $("#scroll-btn").on("click", function () {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  })
-    
-
-
-
+  });
 });
