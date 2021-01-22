@@ -1,0 +1,344 @@
+.merch-section {
+    background-color: rgba(255,255,255,0.8);
+    
+    padding-top: 1px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.merch-container {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right: -10px;
+}
+
+.merch {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.merch-picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.merch-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.merch-price {
+    text-align: center;
+}
+
+.merch-buy {
+    background-color: rgb(212, 103, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.merch-buy:hover {
+    cursor: pointer;
+    background-color: rgb(183, 0, 255);
+    color:white;
+}
+
+/* Kosik */
+.cart {
+    background-color: rgba(16, 192, 0, 0.9);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cart-icon {
+    width: 35px;
+}
+
+.cart-text {
+    display: flex;
+}
+
+.cart-button {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.cart-button:hover {
+    background-color: rgba(255, 255, 255, 1.0);
+    color: rgba(16, 192, 0, 1.0);
+    cursor: pointer;
+}
+
+.cart-heading {
+    display:flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: -15px;
+}
+
+.cart-heading-buttons {
+    display:flex;
+}
+
+.cart-heading-button-pay {
+    background-color: rgb(212, 103, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.cart-heading-button-pay:hover {
+    cursor: pointer;
+    background-color: rgb(183, 0, 255);
+    color:white;
+}
+
+.cart-heading-button-back {
+    background-color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.cart-heading-button-back:hover {
+    cursor: pointer;
+    background-color: rgb(105, 105, 105);
+    color:white;
+}
+
+/* Fakturacni udaje */
+
+.form-container {
+    margin-top: 10px;
+}
+
+form {
+    width: 350px;
+    margin: 0 auto 0 auto;
+}
+
+.form-detail {
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+.form-detail-text {
+    margin-right: 7px;
+    display:flex;
+}
+
+.form-input {
+    width: 150px;
+    height: 30px;
+    margin-right: 50px;
+}
+
+.form-detail-star {
+    color: red;
+    width: 12px;
+    text-align: right;
+}
+
+.form-detail-star-hidden {
+    color: transparent;
+    width: 12px;
+    text-align: right;
+}
+
+.form-button-buy {
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+    background-color: rgb(212, 103, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.form-button-buy:hover {
+    cursor: pointer;
+    background-color: rgb(183, 0, 255);
+    color:white;
+}
+
+.form-button-back {
+    margin: 0 auto 0 auto;
+    margin-top: 10px;
+    width: 100px;
+    text-align: center;
+    background-color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.form-button-back:hover {
+    cursor: pointer;
+    background-color: rgb(105, 105, 105);
+    color:white;
+}
+
+.form-error {
+    display:flex;
+    width: 250px;
+    margin-left: auto;
+    align-items: flex-start;
+    color: red;
+    margin-top: 10px;
+}
+
+.payment-done {
+    display:flex;
+    flex-direction: column;
+    font-size: 24px;
+    text-align: center;
+}
+
+.payment-done-icon {
+    font-size: 128px;
+    color: rgb(183, 0, 255);
+}
+
+.payment-done-text {
+    margin-top: 15px;
+}
+
+.eshop-error-message {
+    margin-top: 15px;
+}
+
+/* Nacitani */
+.lds-container {
+    width: 90px;
+    margin: 0 auto 0 auto;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid rgb(183, 0, 255);
+    border-color:rgb(183, 0, 255) transparent rgb(183, 0, 255) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+/* Varovna zprava */
+.warning-message {
+    background-color: rgb(183, 0, 255);
+    text-shadow: 0;
+    border-radius: 0;
+}
+
+.warning-message:not([disabled]):hover{
+    background-color: rgb(212, 103, 255);
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Vetsi obrazovka */
+@media screen and (min-width: 800px) {
+    .merch {
+        width: calc(100% / 3);
+    }
+
+    form {
+        width: 400px;
+    }
+
+    .form-input {
+        width: 250px;
+        margin-right: 0;
+    }
+}
+
+/* Tisk */
+@media print { 
+    .merch {
+        width: 20%;
+    }
+
+    .merch-section {
+        page-break-after: auto;
+        page-break-inside: avoid;
+        margin: 0;
+    }
+
+    .merch-container {
+        margin: 0;
+    }
+
+    .merch-buy {
+        display: none;
+    }
+}
