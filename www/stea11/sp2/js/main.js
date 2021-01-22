@@ -260,6 +260,15 @@ function main() {
     return favourites[gif.id];
   }
 
+  window.onpopstate = function (event) {
+    if (document.location.search === '?trending') {
+      showTrending();
+    }
+    if (document.location.search === '?favourites') {
+      showFavourites();
+    }
+  };
+
   if (window.location.search === '?trending' || window.location.search === '') {
     showTrending();
   } else if (window.location.search === '?favourites') {
