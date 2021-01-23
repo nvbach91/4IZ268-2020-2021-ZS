@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bezobalová mapa</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="This website is about zero waste stores">
+    <meta name="keywords" content="zero waste map">
+    <meta name="author" content="Nikola Pospisilova">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="loadingDiv">
+        <div class="loader"></div>
+    </div>
+    <nav id="menu">
+        <a href="../mainpage/index.html">Domů</a>
+        <a class="active" href="index.html">Mapa</a>
+    </nav>
+
+    <main>
+        <h1 class="name">BEZOBALOVÁ MAPA</h1>
+        <div id="container">
+            <input id="autocomplete" placeholder="vložte adresu" type="text"></input>
+        </div>
+        <div id=container02>
+            <div id="map"></div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtk9HDEtvG_FPhSt8dfVSE3IVEnQgF7HU&callback=initMap&libraries=places&v=weekly"
+        defer>
+        </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyCtk9HDEtvG_FPhSt8dfVSE3IVEnQgF7HU"
+        defer>
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</body>
+
+</html>

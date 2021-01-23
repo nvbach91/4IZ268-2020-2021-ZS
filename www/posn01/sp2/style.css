@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    max-width: 1280px;
+    margin:auto;
+  }
+  .name{
+    text-align: center;
+    padding: 20px;
+    font-size: 60px;
+  }
+  #autocomplete{
+    margin-bottom:20px;
+  }
+  #map {
+      height: 500px;
+    }

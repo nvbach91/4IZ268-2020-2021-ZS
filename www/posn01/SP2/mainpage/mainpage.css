@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    padding: 25px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 15px;
+    color: white;
+    font-size: 40px;
+  }
+  
+  #menu {
+    background-color: white;
+    padding: 20px;
+    padding-left: 0 !important;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  #menu a {
+    color: black;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #menu a:hover {
+    background-color: rgb(245, 235, 235);
+    color: black;
+  }
+  
+  #menu a.active {
+    background-color: #aa928f;
+    color: white;
+  }
+  
+  main {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("img/zero_waste.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .description {
+    width: 500px;
+    text-align: center;
+  }
+  
+  .author {
+    font-size: 60px;
+    letter-spacing: 0.5px;
+  }
+  
+  main p {
+    margin-bottom: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    color: white;
+  }
+  
+  
+  .button {
+    border: 2px solid white;
+    color: white;
+    padding: 15px;
+    width: 160px;
+    border-radius: 500px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  a:link {
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  @media screen and (max-width: 676px) {
+    .description {
+      width: 95%;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 601px) {
+    .author {
+      font-size: 45px;
+    }
+    main p {
+      font-size: 15px;
+      width: 85%;
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    .button {
+      text-decoration: none;
+      font-size: 10px;
+      width: 120px;
+    }
+  }
+  
+  @media screen and (max-width: 460px) {
+    .author {
+      font-size: 35px;
+    }
+    main h1 {
+      font-size: 28px;
+    }
+  }
+  
+  @media print {
+    #menu {
+      display: none;
+    }
+  }
