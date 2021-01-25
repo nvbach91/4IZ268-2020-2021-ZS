@@ -2,65 +2,191 @@
     box-sizing: border-box;
 }
 
-body {
+body, html {
+    height: 100%;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f2f2f2;
+    width: 100%;
 }
 
-header {
-    background-color: #596b61;
-    padding: 50px;
+p {
+    font-size: 20px;
+}
+
+.banner-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2014/06/04/17/53/piano-362251_1280.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-text {
+    font-size: 30px;
     text-align: center;
-    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-h1 {
-    font-size: 70px;
+.container-search {
+    margin: 0 auto;
+    background-color: rgb(175, 175, 175);
+    padding: 60px;
 }
 
-h2 {
-    font-size: 25px;
+.container-results {
+    margin: 0 auto;
+    background-color: rgb(116, 116, 116);
+    padding: 64px;
+}
+
+.container-playlist {
+    margin: 0 auto;
+    background-color: rgb(175, 175, 175);
+    padding: 64px;
+    font-size: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.column-25 {
+    float: left;
+    width: 25%;
+    padding: 20px;
+    background-color: rgb(175, 175, 175);
+}
+
+.column-75 {
+    float: right;
+    width: 75%;
+    padding: 20px;
+    background-color: rgb(175, 175, 175);
+}
+
+.column-results {
+    width: 100%;
+    padding: 40px;
+    background-color: rgb(105, 104, 104);
+}
+
+.column-playlist {
+    width: 100%;
+    padding: 40px;
+    background-color: rgb(175, 175, 175);
 }
 
 .form-row {
-    width: 41%;
-    padding: 30px;
-    float: left;
-    margin-top: 50px;
-}
-
-.similiar-bands {
-    width: 59%;
-    float: right;
-    margin-top: 50px;
-    padding: 42px;
+    padding: 20px 0;
+    background-color: rgb(129, 120, 120);
+    display: inline-block;
 }
 
 input {
-    border: 1px solid black;
-    border-radius: 12px;
-    padding: 35px 85px;
+    height: 60px;
+    padding: 0 16px;
     font-size: 20px;
-    color: black;
-    text-align: center;
 }
 
 button {
-    border: 1px solid black;
-    border-radius: 12px;
-    padding: 35px 85px;
-    cursor: pointer;
-    background-color: #3b644f;
-    color: rgb(255, 255, 255);
     font-size: 20px;
+    height: 60px;
+    padding: 0 16px;
+    cursor: pointer;
+    background-color: rgb(80, 60, 60);
+    color: white;
 }
 
 button:hover {
-    background-color: rgb(46, 93, 95);
+    background-color: rgb(141, 98, 98);
 }
 
-.playlist {
-    float: left;
-    margin-top: 50px;
-    margin-left: 30px;
+.error {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    padding: 40px;
+    font-size: 34px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.artist-stats {
+    display: inline-block;
+    background-image: rgb(51, 48, 48);
+    margin: 10px;
+    max-width: 200px;
+    word-break: break-all;
+    font-size: 20px;
+}
+
+.delete-button {
+    height: 60px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgb(80, 60, 60);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: rgb(141, 98, 98);
+}
+
+.related-p {
+    display: inline-block;
+    margin-left: 2%;
+    border: solid 1px black;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.playlist-heading {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loader {
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgb(185, 0, 0);
+    border-top: 5px solid rgb(253, 253, 253);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .banner-text {
+        font-size: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .related-p {
+        margin-left: 25%;
+    }
 }
