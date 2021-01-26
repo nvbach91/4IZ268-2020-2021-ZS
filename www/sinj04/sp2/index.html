@@ -10,35 +10,55 @@
     <link rel="stylesheet" href="styles/index.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.ico">
 </head>
 
 <body>
     <header>
-        <div class="page-name">Plánovač trasy</div>
+        <div class="page-name">
+            <h1>Plánovač trasy</h1>
+        </div>
     </header>
     <main>
-        <div class="text">Tento web slouží pro vizualizaci trasy mezi vámy zadanými body.</div>
-        <form id="points">
-            <div class="start-div">Start:</div>
-            <input id="start">
-            <div class="end-div">Cíl:</div>
-            <input id="end">
-            <button type="button">Vykreslit</button>
-        </form>
-        <div id="mapa" class="map smap"></div>
+        <div class="text">Tento web slouží pro vizualizaci trasy mezi vámi zadanými body.</div>
+        <div class="basic">
+            <form id="points">
+                <div>
+                    <div class="div">Start:</div>
+                    <input type="text" id="start">
+                </div>
+                <div>
+                    <div class="div">Cíl:</div>
+                    <input type="text" id="end">
+                </div>
+                <button type="button">Vykreslit</button>
+            </form>
+            <div class="error"></div>
+        </div>
+        <div class="map-wrapp">
+            <div id="mapa" class="map smap"></div>
+        </div>
         <div class="info">
-            <div class="length">Celková délka tasy v metrech:</div>
-            <div class="time">Celkový čas trasy ve vtečinách:</div>
-            <div class="up">Celké soupání:</div>
+            <!-- <div class="length">Celková délka trasy v metrech:</div>
+            <div class="lenght-data"></div>
+            <div class="time">Celkový čas trasy ve vteřinách:</div>
+            <div class="time-data"></div>
+            <div class="up">Celkové stoupání:</div>
+            <div class="up-data"></div>-->
         </div>
     </main>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
     <footer>
-        <p>&copy; 2020 - Jiří Šindela</p>
+        <p>&copy; 2021 - Jiří Šindela</p>
     </footer>
-    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://api.mapy.cz/loader.js"></script>
     <script>Loader.load()</script>
     <script src="js/index.js"></script>
+
 </body>
+
 
 </html>
