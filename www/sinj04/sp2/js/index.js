@@ -88,7 +88,6 @@ $(document).ready(() => {
 
         var sync = new SMap.Control.Sync({ bottomSpace: 100 });
         mapa.addControl(sync);
-        console.log("2");
 
         var find = function (route) {
 
@@ -99,7 +98,6 @@ $(document).ready(() => {
             var coords = route.getResults().geometry;
             // když se nepodaří udělat trasa
             if (coords == undefined) {
-                console.log("3");
                 hideLoader();
                 errorHtml.empty();
                 errorHtml.append($('<div></div>').text('Nepodařila se načíst trasa. Upřesněte zadané body.'));
@@ -110,7 +108,6 @@ $(document).ready(() => {
                 mapa.setCenterZoom(center[0], center[1]);
                 var geometry = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
                 layer.addGeometry(geometry);
-                console.log("6");
                 let results = route.getResults();
                 let length = Math.trunc(results.length / 1000);
                 let time = Math.trunc(results.time / 60);
@@ -124,10 +121,10 @@ $(document).ready(() => {
                 hideLoader();
             }
         }
-        console.log("4");
+
         var route = new SMap.Route(coords, find);
 
-        console.log("5");
+
 
     }
 
