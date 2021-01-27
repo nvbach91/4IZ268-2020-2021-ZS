@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dinh Van Chien">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" integrity="sha512-JnjG+Wt53GspUQXQhc+c4j8SBERsgJAoHeehagKHlxQN+MtCCmFDghX9/AcbkkNRZptyZU4zC8utK59M5L45Iw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" integrity="sha512-IXuoq1aFd2wXs4NqGskwX2Vb+I8UJ+tGJEu/Dc0zwLNKeQ7CW3Sr6v0yU3z5OQWe3eScVIkER4J9L7byrgR/fA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Recipe Search</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <h1>Recipe Search</h1>
+    </div>
+
+    <div class="app">
+
+        <div class="search">
+
+
+            <div class="search-bar">
+
+                <input type="text" name="q" id="search-text" class="search-input" placeholder="Type here">
+
+                <button type="submit" class="search-btn" id="search"> Search </button>
+            </div>
+
+
+            <h2>Results</h2>
+            <div class="search-results">
+                <!--
+                <div class="result">
+                    <h4>food</h4>
+                    <img class="food-img" src="" alt="">
+                    <a href="" target=_blank class="read-more">Read more</a>
+                    <button type='button' class="read-more">Save<button>
+                </div>
+            
+            -->
+
+            </div>
+            <button type="submit" class="search-btn" id="add-more">More Results</button>
+            <div class="loader" id="loader"></div>
+
+        </div>
+
+
+        <div class="filters">
+            <div class="filters-box">
+                <h2>Filters</h2>
+                <h3>Diet Filters</h3>
+                <div class="diet">
+                    <input type="checkbox" value="balanced" id="balanced"> Balanced<br/>
+                    <input type="checkbox" value="high-protein	" id="protein"> High-Protein<br/>
+                    <input type="checkbox" value="low-fat" id="fat"> Low-Fat <br/>
+                    <input type="checkbox" value="low-carb" id="carb"> Low-Carb<br/>
+
+                </div>
+                <h3>Health Filters</h3>
+                <div class="health">
+                    <input type="checkbox" value="sugar-conscious" id="sugar"> Sugar-Conscious<br/>
+                    <input type="checkbox" value="peanut-free" id="peanut"> Peanut-Free<br/>
+                    <input type="checkbox" value="tree-nut-free" id="treenut"> Tree-nut-Free <br/>
+                    <input type="checkbox" value="alcohol-free" id="alcohol"> Alcohol-Free<br/>
+                    <input type="checkbox" value="vegan" id="vegan"> Vegan<br/>
+                    <input type="checkbox" value="vegetarian" id="vegetarian"> Vegetarian<br/>
+                </div>
+
+                <h3>Calories</h3>
+                <div class=calories>
+                    MIN - MAX <br/>
+                    <input class=cal type="number" min="0" id="calBot"> -
+                    <input class=cal type="number" min="0" id="calTop">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-btn" >Top</button>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/test.js"></script>
+    <script src="assets/js/FileSaver.js"></script>
+
+
+    <footer>
+        Dinh Van Chien - 4IZ268 &copy; ZS 2020/2021
+    </footer>
+    <div id="edamam-badge" data-color="white"></div>
+</body>
+
+</html>
