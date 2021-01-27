@@ -37,43 +37,6 @@ export default {
         });
     },
 
-    //city_from and city_to requires city name
-    async getGroundRoutes(city_from, city_to, date_from, date_to, max_stopovers, stopover_from) {
-        let routeService = this;
-        return apiClient.get('/flights', {
-            params: {
-                fly_from: await this.getCityId(city_from),
-                fly_to: await this.getCityId(city_to),
-                date_from: this.reformatDate(date_from),
-                date_to: this.reformatDate(date_to),
-                v: 3,
-                vehicle_type: "train,bus",
-                partner: partner,
-                limit: limitOfResults,
-                max_stopovers: max_stopovers,
-                stopover_from: stopover_from + ":00"
-            }
-        }).then(function (response) {
-            return routeService.getRoutes(response);
-        }).catch(function (error) {
-            console.log(error);
-        });
-    },
-
-    //requires city name or IATA code
-    async getCityId(city) {
-        return apiClient.get('/locations', {
-            params: {
-                term: city,
-                locations_type: "station, bus_station"
-            }
-        }).then(function (response) {
-            return response.data.locations[0].id;
-        }).catch(function (error) {
-            console.log(error);
-        });
-    },
-
     //requires date in format from input type=date
     reformatDate(date) {
         return date.toString().slice(8,10) + '/' + date.toString().slice(5,7) + '/' + date.toString().slice(0,4)
@@ -150,25 +113,4 @@ export default {
         }
         return routes
     },
-
-    //returns duration of walking in minutes
-    getWalkDuration(lat1, lon1, lat2, lon2) {
-        return (this.getDistance(lat1, lon1, lat2, lon2) / 3.8) * 60
-    },
-
-    //returns distance in kilometres
-    getDistance(latitudeFrom, longitudeFrom, latitudeTo, longitudeTo) {
-        if (latitudeFrom === latitudeTo && longitudeFrom === longitudeTo)
-            return 0;
-        else {
-            let radlat1 = Math.PI * latitudeFrom / 180;
-            let radlat2 = Math.PI * latitudeTo / 180;
-            let theta = longitudeFrom - longitudeTo;
-            let radtheta = Math.PI * theta / 180;
-            let dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-            if (dist > 1)
-                dist = 1;
-            return (Math.acos(dist) * 180 / Math.PI) * 60 * 1.1515 * 1.609344;
-        }
-    }
 }

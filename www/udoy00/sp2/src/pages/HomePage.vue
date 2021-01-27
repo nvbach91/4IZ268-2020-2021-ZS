@@ -1,8 +1,10 @@
-<template>
+<template class="body">
     <div>
-        <h1>Home page</h1>
-        <ItineraryForm/>
-        <Map/>
+        <h1 class="text-center">Trip Generator</h1>
+        <div class="flex-container">
+            <ItineraryForm/>
+            <Map/>
+        </div>
     </div>
 </template>
 
@@ -19,5 +21,15 @@
 </script>
 
 <style scoped>
+
+    .flex-container {
+        margin: 0 auto;
+        max-width: 1280px;
+        display: flex;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
 
 </style>
