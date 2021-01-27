@@ -1,0 +1,60 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*header*/
+.headfirst {
+    padding-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*main_section*/
+.main_section {
+    height: auto;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    padding: 25px;
+    background-color: rgb(194, 32, 32);
+
+}
+#nba_stats {
+    margin-top: 10;
+}
+#find_button {
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    border:none;
+    border-radius: 10px;
+}
+.input_form {
+    height: 30px;
+    width: 350px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+/*Footer*/
+.footer {
+    margin-top: 30%;
+    padding: 15px 0;
+    background-color: #3a3e64;
+}
+
+.footer__wards {
+    font-size: 25px;
+    text-align: center;
+}

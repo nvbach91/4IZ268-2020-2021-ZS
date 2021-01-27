@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="That is a web, that uses NBA API" />
+    <meta name="author" content="Rasul Ayupov" />
+    <meta name="keywords" content="NBA,stats,players" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+    <title>NBA stats</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="headfirst">
+            <h1>NBA Stats App</h1>
+        </div>
+
+    </header>
+
+    <!-- mainbox -->
+    <main>
+        <section class="main_section">
+            <h2>find stats</h2>
+            <form id="nba_stats">
+                <input class="input_form" name="nba_stats_input" placeholder="Write stats you need" required>
+                <button id="find_button">Find<i class="fas fa-check"></i></button>
+            </form>
+            <div>
+                <ul id="name-result"></ul>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <h1 class="footer__wards">Copyright &copy; 2020 Ayupov Rasul</h1>
+        </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
