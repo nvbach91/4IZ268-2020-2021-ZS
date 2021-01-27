@@ -1,0 +1,463 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(30, 32, 51);
+    color: white;
+    padding: 25px;
+    margin: 2%;
+    font-size: 38px;
+}
+
+main {
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*ZOBRAZENÍ*/
+
+.title {
+    font-size: 15px;
+    color: rgb(7, 7, 49);
+    font-weight: bold;
+}
+
+.adding-poster {
+    width: 200px;
+    height: 300px;
+    margin-right: 60%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.adding-button {
+    display: inline;
+    background-color: rgb(12, 38, 78);
+    color: white;
+    border: none;
+    text-align: center;
+    padding: 14px 40px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.adding-button:hover {
+    background-color: rgb(50, 107, 114);
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+}
+
+.movie {
+    margin: 10px 0 0 2%;
+    width: 19%;
+}
+
+/*NAVIGACE*/
+
+nav ul {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li button {
+    display: inline;
+    background-color: rgb(12, 63, 78);
+    color: white;
+    border: none;
+    margin-right: 20%;
+    text-align: center;
+    padding: 14px 40px;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    background-color: rgb(45, 172, 189);
+}
+
+/*NADPISY*/
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 1%;
+}
+
+/*INSPIRACE PRO UŽIVATELE*/
+
+.watch-guide {
+    background-color: rgb(71, 11, 21);
+    padding: 5px;
+    margin: 2%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+    width: 24%;
+    cursor: pointer;
+}
+
+.watch-guide a {
+    color: white;
+    text-decoration: dashed;
+}
+
+.watch-guide:hover {
+    background-color: rgb(90, 12, 25);
+}
+
+/*BOX S FORMULÁŘEM*/
+
+.box {
+    border: 0.5px solid black;
+    margin-top: 2%;
+}
+
+.box form {
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.box form input {
+    border: 0.5 solid black;
+    border-radius: 0;
+    padding: 1%;
+    padding: 1%;
+    width: 30%;
+    font-size: 20px;
+}
+
+.box button {
+    background-color: black;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background-color: rgb(223, 235, 243);
+    color: rgb(20, 22, 36);
+    padding: 1%;
+    font-size: 20px;
+}
+
+/*IKONY*/
+
+i {
+    margin-left: 15px;
+    align-self: center;
+}
+
+/*BOX S FILMEM/SERIÁLEM*/
+
+.must-see-movie {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+    border: 0.1px solid rgb(49, 132, 199);
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-title {
+    color: rgb(15, 49, 80);
+    font-weight: bold;
+    margin-left: 2%;
+    width: 92%;
+    padding: 1%;
+    font-size: 26px;
+}
+
+.movie-adding-information-box {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 3%;
+}
+
+.movie-heading {
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-button {
+    width: 8%;
+    background-color: black;
+    color: white;
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: rgb(223, 235, 243);
+    color: rgb(20, 22, 36);
+}
+
+.movie-info {
+    width: 80%;
+}
+
+.movie-poster {
+    width: 20%;
+    text-align: right;
+}
+
+.movie-poster img {
+    width: 100px;
+    height: 150px;
+    margin-right: 60%;
+    margin-bottom: 12%;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.movies-counting {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*PATIČKA*/
+
+footer {
+    background-color: rgb(20, 22, 36);
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+footer a {
+    color: white;
+}
+
+/*ODPOVĚDI*/
+
+.positive-response {
+    background-color: rgb(84, 177, 115);
+    color: white;
+    font-weight: bold;
+    width: 20%;
+    text-align: center;
+    height: 5%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.warning {
+    background-color: rgb(143, 38, 64);
+    color: white;
+    font-weight: bold;
+    width: 20%;
+    text-align: center;
+    height: 5%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+/*LOADER*/
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(170, 29, 52);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(170, 29, 52) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*TISK*/
+
+@media print {
+    body {
+        font-family: "Times New Roman", Times, serif;
+    }
+    header {
+        background-color: white;
+        color: black;
+        padding: 5px;
+        margin-left: 0;
+        font-size: 20px;
+    }
+    main {
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        display: none;
+    }
+    .watch-guide {
+        display: none;
+    }
+    .box {
+        display: none;
+    }
+    i {
+        display: none;
+    }
+    /*BOX S FILMEM/SERIÁLEM*/
+    .must-see-movie {
+        margin: 0;
+        margin-bottom: 1.5%;
+        box-shadow: none;
+        border: none;
+    }
+    .movie-title {
+        color: black;
+        font-weight: bold;
+        margin-left: 0.2%;
+        padding: 0.2%;
+        font-size: 15px;
+    }
+    .movie-adding-information-box {
+        font-size: 12px;
+        margin-left: 0;
+    }
+    .delete-button {
+        display: none;
+    }
+    .movie-info {
+        width: 80%;
+    }
+    .movie-poster {
+        display: none;
+    }
+    .movies-counting {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    /*PATIČKA*/
+    footer {
+        display: none;
+    }
+    .greeting-box {
+        display: none;
+    }
+}
+
+/*ROZLIŠENÍ*/
+
+@media screen and (max-width: 870px) {
+    header {
+        font-size: 30px;
+        padding: 5px;
+        margin: 0;
+    }
+    main {
+        padding: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    .watch-guide {
+        width: 80%;
+    }
+    .must-see-movie {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .movie-title {
+        width: 80%;
+        font-size: 24px;
+    }
+    .movie-adding-information-box {
+        font-size: 16px;
+    }
+    .delete-button {
+        width: 20%;
+    }
+    .movie-info {
+        width: 100%;
+    }
+    .movie-poster {
+        display: none;
+    }
+    .positive-response {
+        width: 80%;
+    }
+    .warning {
+        width: 80%;
+    }
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+    }
+    .lds-ring div {
+        width: 22px;
+        height: 22px;
+    }
+}
