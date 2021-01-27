@@ -2,53 +2,47 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto Cindensed';
-    background-color: white;
-}
-
 header {
-    float: center;
     color: white;
     font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    background-color:black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px ;
+    margin-bottom: 20px;
+    min-height: 10vh;
+}
+header h1{
+    margin: auto;
 }
 
-.abc {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    float: center;
-    text-align: center;
-    color: black;
+#content{
+    min-height: 80vh;
 }
-
-.abc button{
-    font-size: 20px;
-    width: 100/26;
-    text-decoration: none;
-    box-shadow: none;
-}
-
-.abc button:hover {
-    cursor:pointer;
+.container{
+    margin-bottom: 20px;
 }
 
 footer {
-    float: center;
+    min-height: 10vh;
     background-color: white;
     font-size: 15px;
     color: black;
-    text-align: center;
-    text-decoration: none;
+}
+footer p{
+    margin: auto;
+}
+
+.drink-image{
+    max-width: 100%;
+}
+
+.btn.btn-secondary{
+    padding: 6px 10px !important
+}
+
+.list-group{
     width: 100%;
-    border-top: 5px solid black;
-    position: fixed;
-    bottom: 0;
+}
+
+.buttons-row{
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
