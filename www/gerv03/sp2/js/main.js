@@ -1,17 +1,20 @@
-/// document has to be loaded
+/// Document has to be loaded
 $(document).ready(async () => {
 
-    //definition of used elements
+    // Definition of used elements
     const artistInput = $('#artist-input');
     const artistList = $('#artist-list');
     const similiarArtistList = $('#similiar-artist-list');
     const playlist = $('#playlist');
     const artistForm = $('#artist-form');
+    const createButton = $('#create-button');
+    const playlistStatus = $('#playlist-status');
 
-    //definition of helping array
+    // Definition of helping array
     let existingArtists = [];
+    let existingSongsIds = [];
 
-    // definition of error messages
+    // Definition of error messages
     const errorExist = $('<p class="error"> The artist is already in the list! </p>');
     const errorMessageExist = () => {
         artistForm.append(errorExist);
@@ -27,12 +30,18 @@ $(document).ready(async () => {
         artistForm.append(errorNonexistent);
     }
 
-    const errorNoSong = $('<p class="error"> Searched artist does not have any songs! </p>');
+    const errorNoSong = $('<p class="error"> Searched artist does not have at least 3 songs! </p>');
     const errorMessageNoSong = () => {
         artistForm.append(errorNoSong);
     }
 
-    /// extract access token for url
+    // Definition of success messages
+    const success = $('<p class="error"> Your playlist was successfully created! </p>');
+    const successMessage = () => {
+        playlistStatus.html(success);
+    }
+
+    /// Get access token from URL
     const getUrlParameter = (sParam) => {
         let sPageURL = window.location.search.substring(1),
             sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
@@ -48,21 +57,22 @@ $(document).ready(async () => {
         }
     };
 
-    // client credentials and base urls
+    // Client credentials and base URLs
     const accessToken = getUrlParameter('access_token');
     let client_id = '5a3d6aa8e1a94b61ae9a5c3352fca55e';
+    const scope = encodeURIComponent('playlist-modify-private');
     let redirect_uri = encodeURIComponent('https://eso.vse.cz/~gerv03/sp2'); // http://127.0.0.1:5500 
-    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
+    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}&scope=${scope}`;
     const spotifyBaseUrl = 'https://api.spotify.com/v1/';
     const mapsBaseUrl = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
     const artistPhotoUrl = 'https://leadersinsport.com/wp-content/uploads/2017/06/Spotify-logo-300x227.jpg';
 
-    // If we have access token alredy page will not authorize again
+    // If we already have the access token, page will not require authorization again
     if (accessToken == null || accessToken == '' || accessToken == undefined) {
         window.location.replace(redirect);
     }
 
-    // using geolocation browser api to get user's latitude and longitude 
+    // Using geolocation browser API to get user's latitude and longitude 
     const getCoords = async () => {
         try {
             const position = await new Promise((resolve, reject) => {
@@ -73,7 +83,7 @@ $(document).ready(async () => {
                 lat: position.coords.latitude,
             };
         }
-        // if user denies geolocation it will use default coordinates (US, Washington D.C.)
+        // If user denies geolocation app will use default coordinates (US, Washington D.C.)
         catch {
             return {
                 long: '-120.740135',
@@ -84,9 +94,8 @@ $(document).ready(async () => {
     const coords = await getCoords();
     latitude = coords.lat;
     longitude = coords.long;
-    console.log(latitude, longitude);
 
-    // using nominatim openstreetmap api to get ISO 3166-1 alpha-2 country code of a user based on his location (required to get top tracks)
+    // Using Nominatim Openstreetmap API to get ISO 3166-1 alpha-2 country code of the user based on his location (required to get top tracks)
     const getCountryCode = async () => {
 
         let newIso = await $.ajax({
@@ -99,14 +108,17 @@ $(document).ready(async () => {
     const countryCode = await getCountryCode();
     console.log(countryCode);
 
-    // user clicked the button 
+    // User clicked on the 'Add to playlist' button
     artistForm.submit(async (e) => {
         e.preventDefault();
-        // take user's input and encode it
+        // Encode the input
         let inputSearchQuery = artistInput.val();
         let searchQuery = encodeURI(inputSearchQuery);
 
-        // append loader on the page
+        // Selete 'success' message after user start adding new artists
+        success.remove();
+
+        // Show loader on the page
         const loader = $('<div id="loader"></div>');
         artistList.append(loader);
         loader.show();
@@ -129,7 +141,7 @@ $(document).ready(async () => {
         }
         const artist = await getArtist();
 
-        // check if artist with searched name exists
+        // Check if the artist with searched name exists
         if (typeof artist.artists.items[0] === "undefined") {
             errorMessageNonexistent();
             return false;
@@ -167,7 +179,7 @@ $(document).ready(async () => {
         }
         const relatedArtists = await getRelatedArtists();
 
-        // Check if artist have profile picture (Marek Eben)
+        // Check if the artist have any profile picture (example: Marek Eben)
         const checkPicUrl = () => {
 
             if (typeof artist.artists.items[0].images[0] === "undefined") {
@@ -180,28 +192,28 @@ $(document).ready(async () => {
         const imageUrl = checkPicUrl();
         const newArtistName = artist.artists.items[0].name;
 
-        // check if artist already exists
+        // Check if the artist already exists
         if (existingArtists.includes(newArtistName)) {
             errorMessageExist();
             return false;
         }
         errorExist.remove();
 
-        // check if there are not more than 10 artists
+        // Check if there are not more than 10 artists
         if (existingArtists.length >= 10) {
             errorMessageFull();
             return false;
         }
         errorFull.remove();
 
-        // Check if artist have any songs (proGram)
-        if (typeof topTracks.tracks[0] === "undefined") {
+        // Check if the artist have at least 3 songs (example: proGram)
+        if (typeof topTracks.tracks[0] === "undefined" || typeof topTracks.tracks[1] === "undefined" || typeof topTracks.tracks[3] === "undefined") {
             errorMessageNoSong();
             return false;
         }
         errorNoSong.remove();
 
-        // add new artist to the helping array
+        // Add new artist to the helping array 
         existingArtists.push(newArtistName);
         console.log(existingArtists);
 
@@ -223,6 +235,13 @@ $(document).ready(async () => {
         const secondSong = topTracks.tracks[1].name;
         const thirdSong = topTracks.tracks[2].name;
 
+        const firstSongId = topTracks.tracks[0].id;
+        const secondSongId = topTracks.tracks[1].id;
+        const thirdSongId = topTracks.tracks[2].id;
+
+        // Add songs IDs to the helping array
+        existingSongsIds.push('spotify:track:' + firstSongId, 'spotify:track:' + secondSongId, 'spotify:track:' + thirdSongId);
+
         const songWrapper = $('<div><div>');
         const firstSongName = $(`<p> ${firstSong} </p>`);
         const secondSongName = $(`<p> ${secondSong} </p>`);
@@ -233,13 +252,13 @@ $(document).ready(async () => {
         songWrapper.append(secondSongName);
         songWrapper.append(thirdSongName);
 
-        // replace related artists with new related artists
+        // Replace the old related artists with new related artists
         similiarArtistList.replaceWith(similiarArtistList.html(relatedArtists));
 
-        // Check if artist have any related artists (Three tall man)
+        // Check if the artist have any related artists (example: Three tall man)
         const checkRelatedArtists = () => {
 
-            if (typeof relatedArtists.artists[0] === "undefined") {
+            if (typeof relatedArtists.artists[0] === "undefined" || typeof relatedArtists.artists[1] === "undefined" || typeof relatedArtists.artists[2] === "undefined") {
                 const relatedArray = [];
                 const firstRelated = '', secondRelated = '', thirdRelated = '';
                 relatedArray.push(firstRelated, secondRelated, thirdRelated);
@@ -256,28 +275,79 @@ $(document).ready(async () => {
         }
         const relatedNames = checkRelatedArtists();
 
-        const firstRelated = relatedNames[0];
-        const secondRelated = relatedNames[1];
-        const thirdRelated = relatedNames[2];
-
         const relatedWrapper = $('<div><div>');
-        const firstRelatedName = $(`<p class="related-p"> ${firstRelated} </p>`);
-        const secondRelatedName = $(`<p class="related-p"> ${secondRelated} </p>`);
-        const thirdRelatedName = $(`<p class="related-p"> ${thirdRelated} </p>`);
+        const firstRelatedName = $(`<p class="related-p"> ${relatedNames[0]} </p>`);
+        const secondRelatedName = $(`<p class="related-p"> ${relatedNames[1]} </p>`);
+        const thirdRelatedName = $(`<p class="related-p"> ${relatedNames[2]} </p>`);
 
         similiarArtistList.append(relatedWrapper);
         relatedWrapper.append(firstRelatedName);
         relatedWrapper.append(secondRelatedName);
         relatedWrapper.append(thirdRelatedName);
 
-        // delete artist, songs and related artists
+        // Delete artist, artist's songs, related artists + names and IDs from arrays
         deleteArtist.click(() => {
             artistWrapper.remove();
             songWrapper.remove();
             relatedWrapper.remove();
-            const index = existingArtists.indexOf(newArtistName);
-            existingArtists.splice(index, 1);
+            const indexName = existingArtists.indexOf(newArtistName);
+            existingArtists.splice(indexName, 1);
+            const indexId = existingSongsIds.indexOf('spotify:track:' + firstSongId);
+            existingSongsIds.splice(indexId, 3);
         });
+    });
+
+    // User clicked on the 'Create playlist' button
+    createButton.click(async (e) => {
+        e.preventDefault();
+
+        const getUserId = async () => {
+            try {
+                let user = await $.ajax({
+                    url: `${spotifyBaseUrl}me`,
+                    type: 'GET',
+                    datatype: 'json',
+                    headers: { 'Authorization': 'Bearer ' + accessToken }
+                });
+                return user.id;
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const userId = await getUserId();
+
+        const createPlaylist = async () => {
+            try {
+                let playlist = await $.ajax({
+                    url: `${spotifyBaseUrl}users/${userId}/playlists`,
+                    type: 'POST',
+                    datatype: 'json',
+                    data: "{\"name\":\"Generated playlist\",\"description\":\"By gerv03 :-)\",\"public\":false}",
+                    contentType: 'application/json',
+                    headers: { 'Authorization': 'Bearer ' + accessToken },
+                });
+                return playlist.id;
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const playlistId = await createPlaylist();
+
+        const addSongs = async () => {
+            try {
+                let song = await $.ajax({
+                    url: `${spotifyBaseUrl}playlists/${playlistId}/tracks?uris=${existingSongsIds}`,
+                    type: 'POST',
+                    headers: { 'Authorization': 'Bearer ' + accessToken }
+                });
+                successMessage();
+                return song;
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const created = await addSongs();
+        console.log(created);
     });
 });
 
