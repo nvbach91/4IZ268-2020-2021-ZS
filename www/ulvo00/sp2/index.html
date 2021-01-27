@@ -23,6 +23,7 @@
     <header>
         <h1>Articles finder</h1>
         <h2>Search for top articles</h2>
+        <h5>Returning top 20 articles matching selected filters.</h5>
         <div class="header-filters">
             <div class="header-filter">
                 <p>Choode category:</p>
@@ -98,7 +99,7 @@
                 </select>
             </div>
             <div class="header-filter">
-                <p>Search for key words:</p>
+                <p>Search for key word:</p>
                 <input type="text" placeholder="Type here..." id="header-key-words">
             </div>
             <div class="header-filter">
@@ -126,11 +127,14 @@
                     <div class="detailed-finding-option">
                         <p>Search by source</p>
                         <input type="text" placeholder="Type here..." id="source">
+                        <p class="sources-hint">All available sources <a
+                                href="https://eso.vse.cz/~ulvo00/sp2/sources/sources_filter/index.htm"
+                                target="_blank"><b>here</b></a>. <br>In filter please use ID values!</p>
                     </div>
                     <div class="detailed-finding-option">
                         <p>Search by language</p>
                         <select name="language-selector" id="language">
-                            <option value="">Default</option>
+                            <option value="">All languages</option>
                             <option value="ar">Arabic</option>
                             <option value="de">German</option>
                             <option value="en">English</option>
@@ -150,42 +154,46 @@
                         <p>Sort by</p>
                         <select name="sorting-selector" id="sorting">
                             <option value="relevancy">Relevance</option>
-                            <option value="popularity">Popularity</option>
                             <option value="publishedAt">Published at</option>
+                            <option value="popularity">Popularity</option>
+                        </select>
+                    </div>
+                    <div class="detailed-finding-option">
+                        <p>Maximal number <br> of articles on page</p>
+                        <select name="paging-selector" id="page-size">
+                            <option value="20">20</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
                         </select>
                     </div>
                 </div>
                 <div class="hiden-button"><button id="search-all-articles">Search</button></div>
             </div>
-            <div>Weather container</div>
+            <div class="weather-container" id="weather">
+                
+            </div>
         </div>
         <div class="articles-container">
-            <div>XYZ articles found</div>
-            <div>
+            <div class="articles-count" id="count"></div>
+            <div class="articles-place">
+                <div class="loader-place" id="loader">
+                </div>
                 <ul id="articles">
-                    <li>
-                        <div class="article-photo">PHOTO URL</div>
-                        <div class="article-text">
-                            <div class="article-titile">Article title</div>
-                            <div class="article-date">26.3.2020</div>
-                            <div class="article-author">Ondrej Ulvr</div>
-                            <div class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Accusamus quidem repellendus ducimus velit officia ut assumenda laboriosam excepturi!
-                                Earum, ut!</div>
-                            <div class="article-link">www.seznam.cz</div>
-                        </div>
-                    </li>
+                    <li>No articles found yet. Please choose filters and search for some.</li>
                 </ul>
             </div>
-            <div>Pages</div>
         </div>
     </main>
     <footer>
-        <div class="copyright">&copy; 2020 Ondřej Ulvr (tento web vznikl v rámci školního projektu)</div>
+        <div class="copyright">&copy; 2021 Ondřej Ulvr (tento web vznikl v rámci školního projektu)</div>
         <div class="back-to-top"><a href="#"><i class="fa fa-angle-double-up"></i></a></div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="./js/main.js"></script>
 </body>
 
