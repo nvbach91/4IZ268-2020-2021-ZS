@@ -1,0 +1,16 @@
+{
+  "name": "sp2",
+  "version": "1.0.0",
+  "description": "semester_project",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
