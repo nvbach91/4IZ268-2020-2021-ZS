@@ -48,12 +48,11 @@ function breedElement(breeds) {
 }
 
 var myBreed = [];
+
 function myFunction(breed_id) {
   var id = breed_id;
   console.log(id);
-  var bosta = breedSaved;
-  console.log(bosta);
-
+  
 
   $.ajax({
     url: "https://api.thedogapi.com/v1/images/search?breed_id=" + id, success: function (result) {
@@ -122,13 +121,6 @@ searchButton.onclick = function (event) {
 
 
 
-function breedSaved() {
-
-  return JSON.parse(window.localStorage.getItem("favourite-breeds") || []);
-
-
-
-}
 
 
 function getFavouriteBreed() {
