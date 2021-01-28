@@ -1,5 +1,5 @@
-let CLIENT_ID = '229134980334-36rls6m814gec30agm6pimtgbhci6atu.apps.googleusercontent.com';
-let API_KEY = 'AIzaSyDFJVn1UiMDuAFFQpnIp2m8NzKar5qJvbw';
+let CLIENT_ID = '531583878789-0tqe058tsfbsud6tnggkb8l18euajokf.apps.googleusercontent.com';
+let API_KEY = 'AIzaSyBC32OMrxpDCjAqWW3ryEC7UrlHRx1eYj8';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 let DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
