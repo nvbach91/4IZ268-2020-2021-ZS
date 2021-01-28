@@ -17,13 +17,13 @@ body {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: 128px;
     margin: 8px;
-    border: 8px solid rgb(224, 9, 9);
+    border: 16px solid rgb(34, 56, 255);
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: rgb(224, 9, 9) transparent transparent transparent;
+    border-color: rgb(34, 56, 255) transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {
@@ -51,10 +51,7 @@ body {
     font-weight: bold;
 }
 
-.favorites {
-    background-color:rgba(209, 148, 73, 0.7);
-}
-
 h2 {
     text-align: center;
 }
+

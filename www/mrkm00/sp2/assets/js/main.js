@@ -2,14 +2,13 @@ $(document).ready(() => {
 
     const url = 'https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=';
     const form = $('#form');
-    const completeForm = $('#complete-form');
     const list = $('#list');
     const clubInput = $('#club-input');
     const clearListButton = $('#clear-data');
     const listFavorites = $('#list-favorites');
     const favorite = [];
     const loader = $(`
-    <div class="lds-ring">
+    <div class="lds-ring"> 
         <div></div>
         <div></div>
         <div></div>
@@ -44,20 +43,20 @@ $(document).ready(() => {
         $.getJSON(completeUrl).done((resp) => {
             console.log(resp);
             if (resp['teams'] === null) {
-                const nothingFound = $(`<div class="nothing-found">No club was found</div>`)
+                const nothingFound = $(`<div class="nothing-found text-center">No club was found</div>`)
                 teams.push(nothingFound);
             }
             else {
                 resp['teams'].forEach((i) => {
                     const newElement = $(`
-                    <div class="col-sm-6">
-                        <div class="team">
+                    <div class="ml-3 mt-4 mb-4 col-sm-6 card container">
+                        <div class="team card-body">
                             <img class="logo" alt="Club logo" src="${i.strTeamBadge}" width="150" height="150">
-                            <div class="name">${i.strTeam}</div>
+                            <div class="name card-title">${i.strTeam}</div>
                             <div class="sport">Sport: ${i.strSport}</div>
                             <div class="country">Country: ${i.strCountry}</div>
                             <div class="established">Established: ${i.intFormedYear}</div>
-                            <button id="add-club" class="add-club">Add to favorites</button>
+                            <button id="add-club" class="add-club btn btn-success">Add to favorites</button>
                         </div>
                     </div>
                 `);
@@ -111,14 +110,14 @@ $(document).ready(() => {
 
     const addFavoriteTeam = (chosenData) => {
         const newElement = $(`
-                    <div class="col-sm-12">
-                        <div class="team">
+                    <div class="mt-4 mb-4 col-sm-12 card container">
+                        <div class="team card-body">
                             <img class="logo" alt="Club logo" src="${chosenData.chosenLogo}" width="150" height="150">
-                            <div class="name">${chosenData.chosenName}</div>
+                            <div class="name card-title">${chosenData.chosenName}</div>
                             <div class="sport">${chosenData.chosenSport}</div>
                             <div class="country">${chosenData.chosenCountry}</div>
                             <div class="established">${chosenData.chosenEstablished}</div>
-                            <button class="remove-club">Remove club</button>
+                            <button class="remove-club btn btn-danger">Remove club</button>
                         </div>
                     </div>
                 `);
@@ -126,7 +125,7 @@ $(document).ready(() => {
     }
 
     listFavorites.on("click", ".remove-club", function () {
-        const removedClub = $(this).closest(".team");
+        const removedClub = $(this).closest(".container");
         const removedLogo = removedClub.find(".logo").attr("src");
         var index = 0;
 
