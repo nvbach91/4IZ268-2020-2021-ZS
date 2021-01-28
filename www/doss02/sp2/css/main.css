@@ -28,7 +28,7 @@ footer {
     background: rgb(92, 41, 0);
     border-radius: 10px;
     padding: 20px;
-    position: static;
+    position: absolute bottom;
     bottom: 0;
     width: 100%;
     margin-top: 20px;
@@ -37,23 +37,86 @@ footer {
 
 .menu {
     display: flex;
+    
 }
 
 .menu button {
-    padding: 60px 90px 60px 90px;
+    padding: 30px 60px 30px 60px;
     background-color:rgb(131, 90, 2);
     outline: none;
     font-size: large;
     border-radius: 20px;
     border: none;
-    font-size: 28px;
+    font-size: 20px;
+
+    
 }
 
-.menu button:hover{
+.menu-item{
+    margin: 5px;
+    
+}
+#input_name {
+    height: 50px;
+    width: 470px;
+    font-size: large;
+
+}
+.menu button, .breeds-information button:hover{
     cursor: pointer;
     
 }
 
-.menu button:active {
+.menu button:active, .breeds-information button:active {
     background-color: rgba(158, 75, 8, 0.801);
+}
+
+.breeds-information {
+    border:solid 5px rgb(92, 41, 0);
+    width: 500px;
+    text-align: center;
+    border-radius: 20px;
+    
+}
+.breeds-information img {
+    width: 480px;
+    border-radius: 20px;
+    padding-top:  2px ;
+    
+}
+.breeds-information h4 {
+    font-size: 40px;
+}
+
+.breeds-information button {
+    background-color:rgb(131, 90, 2);
+    outline: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    margin: 5px;
+}
+
+#search {
+    display: flex;
+}
+
+.favourite {
+    text-align: center;
+    border: solid 5px rgb(92, 41, 0);
+    border-radius: 20px;
+    margin: 5px;
+    padding: 2px;
+    
+
+}
+
+.favourite img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 35px;
 }

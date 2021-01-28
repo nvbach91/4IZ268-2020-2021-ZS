@@ -10,57 +10,43 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" sizes="180x180" href="./img/favicon.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body>
     <header>
-        <h1>Najdi si svého dokonalého čtyřnohého přítele!</h1>
+        <h1>Find your four-legged soul mate!</h1>
     </header>
 
     <main>
         <div class="menu">
-            <button class="menu-item">Vyhledej!</button>
-            <button class="menu-item">Obrázky</button>
-            <button class="menu-item">Oblíbené</button>
+
+
+
+            <form class="menu-item" id="breed-search-form">
+                <input id="input_name" placeholder="Název rasy, plemene" required>
+                <button id="search-button">Vyhledat</button>
+            </form>
+
+            <button class="menu-item" id="favourite-button" onclick="getFavouriteBreed()">Favourite</button>
         </div>
-        <!-- ZOBRAZENÍ PO KLIKNUTÍ NA VYHLEDEJ!-->
-            <div id="search">
-                <div>
-                    <h2>Vyhledávání</h2>
-                        <form id="breed-search-form">
-                            <input id="input_name" placeholder="Název rasy, plemene" required>
-                            <button id="add-button">Vyhledat</button>
-                        </form>
-                </div>
-                <div>
-                    <h2>Výsledky vyhledávání:</h2>
-                    <ul id="breed-list"></ul>
-                </div>
+
+        <div id="search">
+
+            <div class="box" id="breeds-searchable">
+
             </div>
-    
+            <div class="box" id="breed-list">
 
-
-        <!--ZOBRAZENÍ PO KLIKNUTÍ NA OBRÁZKY
-            <div id="images">
-                <h2>Vyhledávání</h2>
-                <form id="breed-image-form">
-                    <input placeholder="Název rasy, plemene" required>
-                    <button>Vyhledat</button>
-                </form>
-            /div>
-            <div>
-                <h2>Výsledky vyhledávání:</h2>
-                <ul id="breed-image-list"></ul>
-            </div> 
-        -->
-
-        <!-- ZOBRAZIT PO KLIKNUTÍ NA OBLÍBENÉ
-            <div id="favourite">
-                <h2>Oblíbené</h2>
-                <ul id="favourite-list-image"></ul>
             </div>
-        -->
+        </div>
+
+
+
+
 
 
 
@@ -70,6 +56,8 @@
     <footer>
         &copy; 2020 Štěpánka Dostálková
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./javaskript/main.js"></script>
 </body>
 
