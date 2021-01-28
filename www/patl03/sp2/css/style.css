@@ -36,6 +36,10 @@ input[type="text"]
     
     display: flex;
 }
+svg
+{
+    width: 100%;
+}
 .row
 {
     display: flex;
@@ -50,6 +54,7 @@ input[type="text"]
 .vid
 {
     flex-direction: column;
+    border-bottom: 1px blue;
 }
 .row.eq
 {
@@ -66,14 +71,12 @@ input[type="text"]
 }
 .col.videoinput
 {
-    border: 1px violet solid;
     flex-grow: 3;
     overflow: initial;
 }
 .col.btn
 {
     flex-grow: 1;
-    border: 1px blue solid;
     overflow: initial;
 }
 .col.eq-1

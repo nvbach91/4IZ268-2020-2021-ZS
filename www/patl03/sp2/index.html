@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="CZ">
+<html lang="CS">
 
 <head>
-    <title>YouTide (WIP)</title>
+    <title>YouTide</title>
+    <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,61 +16,36 @@
             <div class="page-wrap">
                 <div class="row em">
                     <div class="col videoinput">
-                        <input type="text" name="" id="">
+                        <input type="text" id="vidinput">
                     </div>
                     <div class="col btn">
-                        <input type="button" value="Najít video">
+                        <input type="button" value="Najít video" id="vidbtn">
                     </div>
                 </div>
                 <div class="row eq">
                     <div class="col eq-1">
                         <h2>Nalezená videa</h2>
-                        <div class="col">
-                            <div class="row gap-vert vid">
-
-                                <img src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg" alt="A">
-                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
-                            </div>
-                            <div class="row gap-vert vid">
-
-                                <img src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg" alt="A">
-                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
-                            </div>
-                            <div class="row gap-vert vid">
-
-                                <img src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg" alt="A">
-                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
-                            </div>
-                            <div class="row gap-vert vid">
-
-                                <img src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg" alt="A">
-                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
-                            </div>
-                            <div class="row gap-vert vid">
-
-                                <img src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg" alt="A">
-                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
-                            </div>
+                        <div class="col" id="videolist">
                         </div>
                     </div>
                     <div class="col eq-2">
                         <div class="row fourth">
                             <div class="col">
                                 <div class="row no-spacing">
-                                <img class="stats" src="https://www.stargate-game.cz/design/img/jednotky/j41.jpg"
-                                    alt="A">
+                                <img id="selectedvideo" class="stats" src="img/index.png"
+                                    alt="video">
                                     <ul>
-                                        <li id="Views">Views: 2,500,00</li>
-                                        <li id="KC">Kill count: 257</li>
+                                        <li id="views">Views: 0</li>
+                                        <li id="kc">Kill count: 0</li>
                                     </ul>
                                 </div>
                                 <div class="row">
-                                    <h2 id="videoTitle">Kevin Sauce</h2>
+                                    <h2 id="videotitle"></h2>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="row three-fourths">
+                        <div id="canvas" class="row three-fourths">
                         </div>
                     </div>
                     <div class="col eq-3">
@@ -79,6 +56,6 @@
         </div>
     </main>
 </body>
-<script src="js/main.js"></script>
+
 
 </html>
