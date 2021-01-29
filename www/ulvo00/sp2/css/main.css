@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #00293C;
+}
+
+header {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 25px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 64px;
+    color: #00293C;
+    border-bottom: 2px solid #F62A00;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+header h2 {
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    color: #1E656D;
+    font-size: 32px;
+}
+
+header h5 {
+    text-align: center;
+    margin: 0;
+    color: #F62A00;
+}
+
+.header-filters {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #F62A00;
+    border-radius: 5px;
+    max-width: 860px;
+    margin: 0 auto;
+    background-color: ivory;
+    padding-bottom: 35px;
+    margin-bottom: 25px;
+}
+
+.header-filter {
+    width: 50%;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.header-filter p {
+    font-size: 20px;
+}
+
+input {
+    border: none;
+    height: 25px;
+    background-color: #1E656D;
+    color: white;
+    width: 75%;
+    font-size: 14px;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255, 0.700);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+select {
+    border: none;
+    height: 25px;
+    background-color: #1E656D;
+    color: white;
+    width: 75%;
+    font-size: 14px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+select:focus {
+    border: 2px solid black;
+}
+
+button {
+    background-color: #F62A00;
+    color: ivory;
+    border: none;
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    border: none;
+    background-color: #f60000;
+}
+
+.header-filter:nth-child(4) {
+    padding-top: 35px;
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+    max-width: 1280px;
+}
+
+.detailed-filters {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: solid 2px #f60000;
+    text-align: center;
+}
+
+.articles-container {
+    width: 70%;
+    padding-left: 10px;
+}
+
+.detailed-finding-options {
+    border: 2px solid #F62A00;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: ivory;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.dropdown-button {
+    width: 80%;
+    text-align: center;
+    margin: 15px;
+}
+
+.hiden-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hiden-button button {
+    width: 80%;
+}
+
+.detailed-finding-option {
+    margin-bottom: 25px;
+}
+
+.detailed-finding-option:nth-child(6) {
+    margin-bottom: 0px;
+}
+
+.detailed-finding-option p {
+    margin-bottom: 5px;
+}
+
+.sources-hint {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 0px;
+}
+
+.weather-container {
+    border: 2px solid #F62A00;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: ivory;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.weather-container p {
+    color: #ffffff;
+    visibility: hidden;
+}
+
+.current-weather-place {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.current-weather-temperature {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #F62A00;
+}
+
+.articles-count {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: grey;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    margin-right: 10px;
+    border: solid 1px #1E656D;
+    padding: 10px;
+    display: flex;
+}
+
+.article-photo {
+    width: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+}
+
+.article-photo img {
+    width: 100%;
+}
+
+.article-text {
+    width: 70%;
+}
+
+.article-text mark {
+    background: #f629009d;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.article-title mark {
+    background: #f629009d;
+}
+
+.article-date {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.article-author {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.article-description {
+    padding-top: 5px;
+}
+
+.pages {
+    text-align: center;
+    margin-top: 25px;
+}
+
+footer {
+    height: 80px;
+    background-color: gray;
+    margin-top: 50px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 25px
+}
+
+.back-to-top a {
+    background-color: #F62A00;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    transition: background-color 0.2s linear;
+    justify-items: end;
+    margin: 25px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+}
+
+.spinner {
+    margin: 0 auto;
+    width: 100px;
+    height: 80px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.spinner>div {
+    background-color: #F62A00;
+    height: 100%;
+    width: 12px;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.loader-place p {
+    color: #ffffff;
+    visibility: hidden;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+
+@keyframes sk-stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}
+
+/*
+TO DO:
+-> dostylovat část pro zobrazení článků
+-> nastylovat footer
+(-> změna barevné kombinace??)
+-> nastylovat část pro počasí
+*/
