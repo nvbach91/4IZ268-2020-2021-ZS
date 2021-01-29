@@ -3,7 +3,7 @@
     max-width: 900px;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
-    
+
 }
 
 header {
@@ -16,7 +16,8 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-h1{
+
+h1 {
     background-color: rgba(255, 255, 255, 0.637);
     padding: 60px;
     border-radius: 10px;
@@ -37,59 +38,66 @@ footer {
 
 .menu {
     display: flex;
-    
+
 }
 
-.menu button {
+.menuButton {
     padding: 30px 60px 30px 60px;
-    background-color:rgb(131, 90, 2);
+    background-color: rgb(131, 90, 2);
     outline: none;
     font-size: large;
     border-radius: 20px;
     border: none;
     font-size: 20px;
 
-    
+
 }
 
-.menu-item{
+#menu-item {
     margin: 5px;
-    
+
 }
+
 #input_name {
     height: 50px;
     width: 470px;
     font-size: large;
 
 }
-.menu button, .breeds-information button:hover{
+
+#menu button,
+.breeds-information button:hover {
     cursor: pointer;
-    
+
 }
 
-.menu button:active, .breeds-information button:active {
+#menu button:active,
+.breeds-information button:active {
     background-color: rgba(158, 75, 8, 0.801);
 }
 
-.breeds-information {
-    border:solid 5px rgb(92, 41, 0);
+.breed-information {
+    list-style-type: none;
+    border: solid 5px rgb(92, 41, 0);
     width: 500px;
     text-align: center;
     border-radius: 20px;
-    
+
 }
-.breeds-information img {
+
+.breed-information img {
     width: 480px;
     border-radius: 20px;
-    padding-top:  2px ;
-    
+    padding-top: 2px;
+
 }
-.breeds-information h4 {
+
+.breed-information h4 {
     font-size: 40px;
 }
 
-.breeds-information button {
-    background-color:rgb(131, 90, 2);
+.breed-information button {
+    background-color: rgb(131, 90, 2);
     outline: none;
     padding: 10px 20px 10px 20px;
     border-radius: 20px;
@@ -108,8 +116,20 @@ footer {
     border-radius: 20px;
     margin: 5px;
     padding: 2px;
-    
+    display: flex;
+    flex-direction: column;
 
+
+}
+
+.favourite button {
+    background-color: rgb(131, 90, 2);
+    outline: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+    margin: 5px;
 }
 
 .favourite img {
