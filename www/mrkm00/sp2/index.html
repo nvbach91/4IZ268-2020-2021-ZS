@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Michal Mrkus">
+    <meta name="keywords" conetnt="instagram, ig, post, posts, hastag, #hashtag">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" size="16x16" href="./assets/images/favicons/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Sport clubs</title>
+</head>
+
+<body>
+    <header>
+        <div class="pb-5 pt-5 text-center" style="margin-bottom:10">
+            <h1>Sport clubs app</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="form" class="row justify-content-md-center">
+                <input id="club-input" class="m-1 form-control" placeholder="Type name of club"  required>
+                <button type="load-data" id="load-data" class="m-1 load-data btn btn-primary col col-lg-1">Find club!</button>
+            </form>
+            <div class="row justify-content-md-center">
+                <button id="clear-data" class="m-1 btn btn-secondary col col-lg-1">Clear</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 favorites">
+                <h2>Favorites</h2>
+                <div id="list-favorites"></div>
+            </div>
+            <div class="col-sm-8 searched">
+                <h2>Searched clubs</h2>
+                <div id="list"></div>
+            </div>
+        </div>
+    </main>
+        <footer>
+            <hr>
+            <div class="text-center p-3 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Michal Mrkus
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
