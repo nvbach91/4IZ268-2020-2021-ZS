@@ -22,7 +22,7 @@ function App() {
   const [toFavCurrency, setToFavCurrency] = useState()
   const [favExchangeRate, setFavExchangeRate] = useState()
 
-  let [favourite, setFavourite] = useState(() => {
+  let [favourite, setFavourite] = useState([], () => {
     const localData = localStorage.getItem('favourite');
     return localStorage ? JSON.parse(localData) : [];
   });
