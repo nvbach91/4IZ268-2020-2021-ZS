@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    function ageConfirm() {
+       confirm("Potvrzuji, že jsem starší 18 let.")
+    };
+    ageConfirm();
+
     function getFavorites(){
         $("#content").html(
             `
@@ -88,11 +93,11 @@ $(document).ready(function(){
                             <span class="sr-only">Loading...</span>
                         </div>
                     </div>`
-        $("#images").html(src)
+        $("#images").html(src);
 
         src =`<div class="row row-cols-3 row-cols-xs-1">`
 
-        $.ajax({url: "https://thecocktaildb.com/api/json/v1/1/search.php?f="+letter, success: function(result){
+        $.ajax({url: `https://thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`, success: function(result){
             if(result.drinks){
                 $.each(result.drinks, function (i, drink) {
                     src +=
@@ -182,7 +187,7 @@ $(document).ready(function(){
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img class="drink-image" src="${drink.strDrinkThumb}" alt="...">
+                                <img class="drink-image" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
