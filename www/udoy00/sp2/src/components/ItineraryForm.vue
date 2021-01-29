@@ -5,7 +5,7 @@
                      @dismiss-count-down="countDownChanged" class="alert-success">{{alert.notification}}
             </b-alert>
             <b-alert :show="alertDanger.dismissCountDown" fade variant="danger"
-                     @dismiss-count-down="countDownChangedDanger" class="alert-danger multi-line pre-formatted">{{alertDanger.notification}}
+                     @dismiss-count-down="countDownChangedDanger" class="alert-danger multi-line">{{alertDanger.notification}}
             </b-alert>
             <div class='row'>
                 <div class='form-group col-6'>
@@ -52,27 +52,44 @@
                 <div class='form-group col-4'><b-button @click="search"  class="btn btn-success btn-block">Find routes</b-button></div>
             </div>
 
+            <div v-if="selectedRouteId">
+
+            </div>
+
             <div style="margin-bottom: -20px;" v-for="route in this.routes" :key="route.id">
+                <div class="trip-detail" v-if="selectedRouteId === route.id">
+                    <h5>Trip detail:</h5>
+                    <span>
+                        Total trip duration: {{getDuration(route.fromDate, route.toDate)}}
+                    </span>
+                    <div v-for="transfer in route.transfers">
+                        <span>
+                            {{`Transfer ${transfer.id + 1}: `}}
+                            <img :src=airlineLink+transfer.airline class="airline" />
+                             duration: {{getDuration(transfer.dateFrom, transfer.dateTo)}}
+                        </span>
+                    </div>
+                </div>
                 <input :id="route.id" v-on:click="selectRoute(route.id)" class="radio" type="radio" :value="route.id" v-model="selectedRouteId">
                 <label :for="route.id" class="route">
                     <div>
                         <div>
-                            {{'From: ' + new Date(route.fromDate * 1000).toLocaleDateString() + ' ' + new Date(route.fromDate * 1000).toLocaleTimeString() + ' ' + route.fromPlace}}
+                            {{`From: ${new Date(route.fromDate * 1000).toLocaleDateString()}  ${new Date(route.fromDate * 1000).toLocaleTimeString()} ${route.fromPlace}`}}
                         </div>
                         <div class="transfers" v-if="route.transfers.length > 1">
                             <span>Transfers:</span>
                             <div>
                                 <div style="margin-bottom: 10px" v-for="transfer in route.transfers" :key="transfer.id">
                                     <div v-if="transfer.type === 'flight'">
-                                        {{'From: ' + new Date(transfer.dateFrom * 1000).toLocaleDateString() + ' ' + new Date(transfer.dateFrom * 1000).toLocaleTimeString() + ' ' + transfer.cityFrom}}
+                                        {{`From: ${new Date(transfer.dateFrom * 1000).toLocaleDateString()} ${new Date(transfer.dateFrom * 1000).toLocaleTimeString()} ${transfer.cityFrom}`}}
                                         <br/>
-                                        {{'To: ' + new Date(transfer.dateTo * 1000).toLocaleDateString() + ' ' + new Date(transfer.dateTo * 1000).toLocaleTimeString() + ' ' + transfer.cityTo}}
+                                        {{`To: ${new Date(transfer.dateTo * 1000).toLocaleDateString()} ${new Date(transfer.dateTo * 1000).toLocaleTimeString()} ${transfer.cityTo}`}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            {{'To: ' + new Date(route.toDate * 1000).toLocaleDateString() + ' ' + new Date(route.toDate * 1000).toLocaleTimeString() + ' ' + route.toPlace}}
+                            {{`To: ${new Date(route.toDate * 1000).toLocaleDateString()} ${new Date(route.toDate * 1000).toLocaleTimeString()} ${route.toPlace}`}}
                         </div>
                     </div>
                 </label><br/>
@@ -130,6 +147,7 @@
                         }
                     }
                 },
+                airlineLink: 'https://daisycon.io/images/airline/?width=300&height=100&iata=',
             }
         },
 
@@ -286,7 +304,20 @@
 
             scrollToTop() {
                 window.scrollTo(0,0);
-            }
+            },
+
+            getDuration(dateFrom, dateTo) {
+                let hours = Math.floor((new Date(dateTo) - new Date(dateFrom)) / (60*60));
+                let minutes = Math.floor((new Date(dateTo) - new Date(dateFrom)) / (60)) - (hours * 60);
+                if (hours !== 0 && minutes !== 0)
+                    return hours + " h " + minutes + " min";
+                else if (hours !== 0)
+                    return hours + " h ";
+                else if (minutes === 0)
+                    return "";
+                else
+                    return minutes + " min";
+            },
 
         },
     }
@@ -307,6 +338,8 @@
 
     input[type=radio]:checked + label{
         background: #b3ffb3;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
     }
 
     input[type=datetime-local]{
@@ -321,14 +354,46 @@
         margin-right: 3px;
     }
 
-    .pre-formatted {
-        white-space: pre;
-    }
-
     .wrapper {
         margin-right: 30px;
         padding: 20px;
         background: cornsilk;
+        max-height: 700px;
+        overflow: scroll;
+        overflow-x: hidden
+    }
+
+    .airline {
+        max-width: 100px;
+        border-radius: 10px;
+        padding: 3px;
+        background: ivory;
+        margin-bottom: 3px;
+    }
+
+    .trip-detail {
+        background: #b3ffb3;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding: 10px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 
 </style>
