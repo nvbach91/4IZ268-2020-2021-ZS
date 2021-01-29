@@ -9,7 +9,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     text-align: center;
-    background-image: url(/img/background.jpg);
+    background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -41,7 +41,6 @@ h1 {
 }
 
 button {
-    width: 20%;
     font-size: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -51,17 +50,43 @@ button {
     font: inherit;
 }
 
+.buttonSave {
+    float: left;
+    width: 25%;
+}
+
 button:hover {
     background-color: grey;
     color: white;
 }
 
+#points {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    float: left;
+}
+
+/*#points div {
+    display: flex;
+    flex-direction: column;
+}*/
+
+ul {
+    color: black;
+}
+
 input {
     border-radius: 5px;
     border-color: black;
-    width: 40%;
+    width: 100%;
     padding: 3px;
 }
+
+/*.smap-suggest {
+    
+}*/
 
 .div {
     display: inline-flex;
@@ -73,19 +98,18 @@ input {
 .map {
     margin: auto;
     /* větší mapa má problémy s načítáním*/
-    width: 80%;
+    width: 70%;
     padding: 20px;
     text-align: center;
+    float: right;
 }
 
 .info {
     font-size: 18px;
-    margin: auto;
-    width: 80%;
+    width: 25%;
     border: 1px solid grey;
-    margin-top: 10px;
     text-align: center;
-    padding-left: 10px;
+    float: left;
 }
 
 .loader-wrapper {
@@ -135,4 +159,28 @@ input {
 
 .map-wrapp {
     opacity: 0.8;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.route {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    float: left;
+}
+
+.loadButton {
+    width: 30%;
+}
+
+.deleteButton {
+    width: 30%;
 }
