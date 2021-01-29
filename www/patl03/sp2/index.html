@@ -15,12 +15,14 @@
         <div class="scale-keep">
             <div class="page-wrap">
                 <div class="row em">
-                    <div class="col videoinput">
-                        <input type="text" id="vidinput">
-                    </div>
-                    <div class="col btn">
-                        <input type="button" value="Najít video" id="vidbtn">
-                    </div>
+                    <form id="videoform">
+                        <div class="col videoinput">
+                            <input type="text" id="vidinput">
+                        </div>
+                        <div class="col btn">
+                            <input type="submit" value="Najít video">
+                        </div>
+                    </form>
                 </div>
                 <div class="row eq">
                     <div class="col eq-1">
@@ -32,8 +34,7 @@
                         <div class="row fourth">
                             <div class="col">
                                 <div class="row no-spacing">
-                                <img id="selectedvideo" class="stats" src="img/index.png"
-                                    alt="video">
+                                    <img id="selectedvideo" class="stats" src="img/index.png" alt="video">
                                     <ul>
                                         <li id="views">Views: 0</li>
                                         <li id="kc">Kill count: 0</li>

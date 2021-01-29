@@ -1,16 +1,26 @@
 $(document).ready(function () {
-    sessionStorage.setItem('killcount', 0);
-    sessionStorage.setItem('views', 0)
     const KEY = 'AIzaSyBYsMg1uqRGt8WR0vPCV7orNaNAH-j4lHU';
     const BASE_DATA_API = 'https://youtube.googleapis.com/youtube/v3/search';
     const BASE_ANALYTICS_API = 'https://www.googleapis.com/youtube/v3/videos';
     const params = '&part=snippet&type=video&maxResults=25';
-
-    let draw = null;
-    let timers = [];
+    const videoForm = $('#videoform');
+    const videolist = $('#videolist');
+    const views = $('#views')
+    const canvas = $('#canvas');
+    const selectedVideo = $('#selectedvideo');
+    const videoTitle = $('#videotitle');
+    const vidInput = $('#vidinput');
+    const kc = $('#kc');
+    const timers = [];
 
     const URL_DATA = `${BASE_DATA_API}?key=${KEY}`;
     const URL_ANALYTICS = `${BASE_ANALYTICS_API}?key=${KEY}`;
+
+    let draw = null;
+    let killcount = 0;
+    let viewCount = 0;
+
+
 
     draw = SVG().addTo('#canvas');
     line = draw.line(0, 0, 100, 0).move(50, 50);
@@ -22,10 +32,10 @@ $(document).ready(function () {
     timers.push(setInterval(getMousePosition, 50));
     timers.push(setInterval(spawnEnemies, 50));
 
-    var mousePos;
+    let mousePos;
 
     function handleMouseMove(event) {
-        var eventDoc, doc, body;
+        let eventDoc, doc, body;
 
         event = event || window.event;
 
@@ -49,30 +59,27 @@ $(document).ready(function () {
     }
 
     function getMousePosition() {
-        var pos = mousePos;
+        let pos = mousePos;
         if (!pos) {
         }
         else {
-            let elpos = getPos($('#canvas')[0]);
+            let elpos = getPos(canvas[0]);
             line.attr({ x2: pos.x - elpos.x, y2: pos.y - elpos.y })
         }
     }
 
     function getPos(el) {
-        for (var lx = 0, ly = 0;
+        for (lx = 0, ly = 0;
             el != null;
             lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
         return { x: lx, y: ly };
     }
 
     function spawnEnemies() {
-        let killcount = parseInt(sessionStorage.getItem('killcount'));
-        if(killcount >= parseInt(sessionStorage.getItem('views')))
-        {
+        if (killcount >= viewCount) {
             clearInterval(timers[1]);
-            if(killcount !== 0)
-            {
-            $('#kc').text('Porazili jste všechny diváky. Vyhráli jste!')
+            if (killcount !== 0) {
+                kc.html('Porazili jste všechny diváky. Vyhráli jste!')
             }
             return;
         }
@@ -89,35 +96,32 @@ $(document).ready(function () {
             if (element.x() <= 0) { xvec = 0 }
             if (element.y() <= 0) { yvec = 0 }
             element.dmove(-2 * xvec, -2 * yvec)
-            if(element.x() < 100 && element.y() < 100)
-            {
+            if (element.x() < 100 && element.y() < 100) {
                 clearInterval(timers[1]);
-                $('#kc').text('Divák se dostal až k vám! Prohráli jste.')
+                kc.html('Divák se dostal až k vám! Prohráli jste.')
             }
         })
     }
 
     function fire() {
-        var pos = mousePos;
+        let pos = mousePos;
         SVG.find('.enemy').forEach(function (element) {
-            let elpos = getPos($('#canvas')[0]);
-            console.log('X: ' + element.x() + ' | X mouse:' + (pos.x - elpos.x));
-            console.log(element.x < pos.x - elpos.x);
-            console.log(element.x() + 100 > (pos.x - elpos.x));
+            let elpos = getPos(canvas[0]);
             if (element.x() < pos.x - elpos.x && element.x() + 100 > pos.x - elpos.x) {
                 if (element.y() < pos.y - elpos.y && element.y() + 100 > pos.y - elpos.y) {
                     element.remove();
-                    sessionStorage.setItem('killcount', parseInt(sessionStorage.getItem('killcount')) + 1)
-                    $('#kc').text(`Kill count: ${numberWithCommas(parseInt(sessionStorage.getItem('killcount')))}`);
+                    killcount += 1;
+                    kc.html(`Kill count: ${killcount}`);
                 }
             }
         })
     }
-    $('#canvas')[0].onmousedown = fire;
+    canvas[0].onmousedown = fire;
 
 
     function sendRequest(searchText) {
-        $('#videolist').html('<img src=img/loading.svg>')
+
+        videolist.html('<img src="img/loading.svg" alt="loading">');
         $.ajax({
             dataType: 'json',
             method: 'GET',
@@ -134,24 +138,25 @@ $(document).ready(function () {
             items.push([val.snippet.title, val.snippet.thumbnails.default.url, val.id.videoId]);
         });
         let videosToAdd = '';
-        $('#videolist').html('')
+        videolist.html('')
         $.each(items, function (index, val) {
             videosToAdd += (`
-        <a class='link' id='${items[index][2]}'>
-        <div class='row gap-vert vid' > 
-            <img src='${items[index][1]}' alt='${items[index][0]}'>
+        <a class="link" id="${items[index][2]}">
+        <div class="row gap-vert vid" > 
+            <img src="${items[index][1]}" alt="${items[index][0]}">
             <h3>${items[index][0]}</h3>
         </div>
         </a>`)
             $(`body`).on('click', `#${items[index][2]}`, function () { prepGame(`${JSON.stringify(items[index])}`); });
         })
-        $('#videolist').append(jQuery.parseHTML(videosToAdd));
+        videolist.append(jQuery.parseHTML(videosToAdd));
 
     }
     function prepGame(item) {
         item = JSON.parse(item);
         clearInterval(timers[1]);
-        sessionStorage.setItem('killcount',0);
+        killcount = 0;
+        kc.html("Kill count: 0");
 
         $.ajax({
             dataType: 'json',
@@ -159,16 +164,19 @@ $(document).ready(function () {
             url: `${BASE_ANALYTICS_API}?part=statistics&id=${item[2]}&key=${KEY}`,
         })
             .done((resp) => {
-                $('#views').text('Views: ' + numberWithCommas(resp.items[0].statistics.viewCount));
-                sessionStorage.setItem('views', resp.items[0].statistics.viewCount)
-                $('#selectedvideo').attr('src', item[1]);
-                $('#videotitle').text(item[0]);
+                views.html('Views: ' + numberWithCommas(resp.items[0].statistics.viewCount));
+                viewCount = resp.items[0].statistics.viewCount;
+                selectedVideo.attr('src', item[1]);
+                videoTitle.html(item[0]);
 
                 timers[1] = setInterval(spawnEnemies, 50);
             })
             .fail((resp) => { showRes(resp) })
     }
-    $('body').on('click', '#vidbtn', function () { sendRequest($('#vidinput').val()); });
+    videoForm.submit((e) => {
+        e.preventDefault();
+        sendRequest(vidInput.val());
+    });
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
