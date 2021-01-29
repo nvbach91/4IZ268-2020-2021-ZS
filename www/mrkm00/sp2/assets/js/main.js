@@ -16,9 +16,9 @@ $(document).ready(() => {
     </div>
     `);
 
-    $(document).ready(function () {
+    $(function () {
         if (localStorage.getItem("myFavorites") !== null) {
-            teamsInStorage = [];
+            const teamsInStorage = [];
             const storage = JSON.parse(localStorage.getItem("myFavorites"));
             storage.forEach((i) => {
                 const favoriteTeam = addFavoriteTeam(i);
@@ -49,7 +49,7 @@ $(document).ready(() => {
             else {
                 resp['teams'].forEach((i) => {
                     const newElement = $(`
-                    <div class="ml-3 mt-4 mb-4 col-sm-6 card container">
+                    <div data-id="${i.idTeam}" class="ml-3 mt-4 mb-4 col-sm-6 card container">
                         <div class="team card-body">
                             <img class="logo" alt="Club logo" src="${i.strTeamBadge}" width="150" height="150">
                             <div class="name card-title">${i.strTeam}</div>
@@ -76,36 +76,38 @@ $(document).ready(() => {
     list.on("click", ".add-club", function () {
 
         const chosen = $(this).closest(".team").clone();
+        const idTeam = chosen.data("id");
         const logo = chosen.find(".logo").attr("src");
         const name = chosen.find(".name").text();
         const sport = chosen.find(".sport").text();
         const country = chosen.find(".country").text();
         const established = chosen.find(".established").text();
+
         const chosenData = {
+            chosenId: idTeam,
             chosenLogo: logo,
             chosenName: name,
             chosenSport: sport,
             chosenCountry: country,
             chosenEstablished: established
         };
-        const favoriteHTML = addFavoriteTeam(chosenData);
-        /*
-                let serilazedChosenData = JSON.stringify(chosenData);
-        
-                localStorage.setItem("myFavorites", serilazedChosenData);
-                
-                let deserilazedChosenData = JSON.parse(localStorage.getItem("myFavorites"));
-        
-                console.log(deserilazedChosenData);
-        
-                const newElement = addFavoriteTeam(chosenData);
-                listFavorites.append(newElement);
-        */
 
-        favorite.push(chosenData);
-        listFavorites.append(favoriteHTML);
-        localStorage.setItem("myFavorites", JSON.stringify(favorite));
-        console.log(favorite);
+        var isFavorite = false;
+
+        favorite.forEach((i) => {
+            if (i["chosenLogo"] == chosenData.chosenLogo) {
+                isFavorite = true;
+                alert("This club is already your favorite!");
+            }
+        });
+
+        if (isFavorite === false) {
+            favorite.push(chosenData);
+            console.log(favorite);
+            const favoriteHTML = addFavoriteTeam(chosenData);
+            listFavorites.append(favoriteHTML);
+            localStorage.setItem("myFavorites", JSON.stringify(favorite));
+        }
     });
 
     const addFavoriteTeam = (chosenData) => {
