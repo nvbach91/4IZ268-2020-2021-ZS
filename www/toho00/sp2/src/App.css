@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: thistle;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 10px;
+    font-size: 80px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.body {
+    text-align: center;
+    border-radius: 2px;
+    border: solid 3px black;
+    width: 80%;
+    padding: auto;
+    margin: auto;
+    margin-top: 20px;
+    background-color: wheat;
+}
+
+.main-body {
+    font-size: 25px;
+    text-align: center;
+}
+
+.favourites,
+.favouriteTable,
+.convertor {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.favouriteAdd,
+.convertor-to {
+    margin-left: 80px;
+}
+
+table,
+tr {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    width: 50%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    bottom: 0;
+}
+
+.copyright {
+    padding: 25px 10px;
+    text-align: left;
+}
+
+.convertor-input,
+.convertor-output {
+    box-sizing: border-box;
+    position: relative;
+    height: 40px;
+    padding-left: 20px;
+    background: white;
+    border-width: 0px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.favorite-currency-add {
+    /* padding: 30px; */
+    padding-left: 20px;
+    margin-top: 8%;
+}
+
+.convertor-select,
+.favourite-select {
+    border-radius: 5px;
+    margin-top: 14px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.favourite-button {
+    border-radius: 5px;
+    margin-top: 14px;
+    margin-left: 60px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.equal {
+    display: block;
+    width: 100px;
+    height: 60px;
+    margin-left: 50px;
+}
+
+.input {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 5px;
+    width: 200px;
+    font-size: large;
+}
+
+select {
+    margin-left: 20px;
+    font-size: large;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 3px;
+}
