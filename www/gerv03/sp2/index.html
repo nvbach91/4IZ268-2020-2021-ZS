@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <meta name="title" content="Playlist generator">
+    <meta name="description" content="App that allows you to create your own playlist.">
+    <meta name="keywords" content="playlist, playlist generator, spotify, similiar bands">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="Václav Géryk">
+    <meta name="copyright" content="Copyright owner">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Playlist generator</title>
+</head>
+
+<body>
+    <header class="banner-image">
+        <div class="banner-text">
+            <h1>Create your playlist faster than ever before!</h1>
+            <h4>Just add name of your favourite band or artist to the form bellow and we will pick three of their most
+                listened songs for you - depending on your location!</h4>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-search">
+            <div class="row">
+                <div class="column-75">
+                    <div id="similiar-artist-list">
+
+                    </div>
+                </div>
+                <div class="column-25">
+                    <form id="artist-form">
+                        <div class="form-row">
+                            <input id="artist-input" type="search" placeholder="Artist name" size="8" required>
+                            <button type="submit">Add to playlist</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-results">
+            <div class="row">
+                <div class="column-results">
+                    <div id="artist-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-playlist">
+            <div class="row">
+                <div class="column-playlist">
+                    <div id="playlist">
+                        <p id="playlist-status"> </p>
+                        <button id="create-button" type="button"> Create playlist </button>
+                        <p class="playlist-heading"> Your playlist: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer> created by Václav Géryk </footer>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- main script -->
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
