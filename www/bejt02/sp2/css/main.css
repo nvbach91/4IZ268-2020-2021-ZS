@@ -19,6 +19,10 @@ header h1{
     margin-bottom: 20px;
 }
 
+.active{
+    background-color: black!important;
+}
+
 footer {
     min-height: 10vh;
     background-color: white;

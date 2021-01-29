@@ -30,37 +30,20 @@ $(document).ready(function(){
     }
 
     function getMain(){
+        var letters=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+        var buttons = letters.map(createButtons)
+        
+        function createButtons(letter) {
+            return `<button class="btn btn-secondary">${letter}</button>`
+        }
+        
         $("#content").html(
             `
             <div class="container">
                 <div class="row">
-                    <div class="col-11">
-                        <button class="btn btn-secondary">A</button>
-                        <button class="btn btn-secondary">B</button>
-                        <button class="btn btn-secondary">C</button>
-                        <button class="btn btn-secondary">D</button>
-                        <button class="btn btn-secondary">E</button>
-                        <button class="btn btn-secondary">F</button>
-                        <button class="btn btn-secondary">G</button>
-                        <button class="btn btn-secondary">H</button>
-                        <button class="btn btn-secondary">I</button>
-                        <button class="btn btn-secondary">J</button>
-                        <button class="btn btn-secondary">K</button>
-                        <button class="btn btn-secondary">L</button>
-                        <button class="btn btn-secondary">M</button>
-                        <button class="btn btn-secondary">N</button>
-                        <button class="btn btn-secondary">O</button>
-                        <button class="btn btn-secondary">P</button>
-                        <button class="btn btn-secondary">Q</button>
-                        <button class="btn btn-secondary">R</button>
-                        <button class="btn btn-secondary">S</button>
-                        <button class="btn btn-secondary">T</button>
-                        <button class="btn btn-secondary">U</button>
-                        <button class="btn btn-secondary">V</button>
-                        <button class="btn btn-secondary">W</button>
-                        <button class="btn btn-secondary">X</button>
-                        <button class="btn btn-secondary">Y</button>
-                        <button class="btn btn-secondary">Z</button>
+                    <div class="col-11">${buttons.join(" ")}
                     </div>
                     <div class="col-1" style="text-align: right">
                         <a class="btn btn-primary" id="changePage">💛</a>
@@ -76,6 +59,8 @@ $(document).ready(function(){
             getFavorites()
         });
         $("button").click(function(){
+            $(".btn").removeClass("active")
+            $(this).addClass("active")
             window.localStorage.setItem("startDrink",$(this).text());
             getDrinks()
         })
@@ -116,12 +101,12 @@ $(document).ready(function(){
                             </div> 
                             <div class="row no-gutters">
                                 <ul class="list-group list-group-flush">`
-                                    for (let index = 0; index < 16; index++) {
-                                        var ingredient = `strIngredient`+index
-                                        var measure = `strMeasure`+index
-                                        if(drink[ingredient]){
-                                            src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure]? ": " + drink[measure]:""}</li>`
-                                        }
+                                    var i = 1  
+                                    while (drink[`strIngredient${i}`] != null) {
+                                        var ingredient = `strIngredient${i}`
+                                        var measure =`strMeasure${i}`
+                                        src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure]? ": " + drink[measure]:""}</li>`
+                                        i++;
                                     }
                     src +=`</ul></div>`
 
@@ -198,12 +183,12 @@ $(document).ready(function(){
                         </div> 
                         <div class="row no-gutters">
                             <ul class="list-group list-group-flush">`
-                                for (let index = 0; index < 16; index++) {
-                                    var ingredient = `strIngredient`+index
-                                    var measure = `strMeasure`+index
-                                    if(drink[ingredient]){
-                                        src += `<li class="list-group-item">${drink[ingredient]}${drink[measure]? ": " +drink[measure]:""}</li>`
-                                    }
+                                var i = 1  
+                                while (drink[`strIngredient${i}`] != null) {
+                                    var ingredient = `strIngredient${i}`
+                                    var measure =`strMeasure${i}`
+                                    src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure]? ": " + drink[measure]:""}</li>`
+                                    i++;
                                 }
                 src +=`</ul></div>`
                 src +=` <div class="row buttons-row">
@@ -229,10 +214,14 @@ $(document).ready(function(){
             getFavorites();
         })
     };
-
-
+    
     function getLocal() {
-        return JSON.parse(window.localStorage.getItem("drinks")) || [];
+        try {
+            return JSON.parse(window.localStorage.getItem("drinks")) || [];
+        } 
+        catch(e){
+            return [];
+        }
     }
 
     function setLocal(drinks) {
