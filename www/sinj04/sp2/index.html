@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jiří Šindela">
+    <meta name="keywords" content="Jiří Šindela, map, plan">
+    <title>Plán trasy</title>
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="page-name">
+            <h1>Plánovač trasy</h1>
+        </div>
+    </header>
+    <main>
+        <div class="text">Tento web slouží pro vizualizaci trasy mezi vámi zadanými body.</div>
+        <div class="basic">
+            <div class="error"></div>
+            <form id="points">
+                <div class="div">Start:</div>
+                <div>
+                    <input type="text" id="start">
+                </div>
+                <div class="div">Cíl:</div>
+                <div>
+                    <input type="text" id="end">
+                </div>
+                <button type="button" id="buttonPrint">Vykreslit</button>
+            </form>
+
+        </div>
+        <div class="map-wrapp">
+            <div id="mapa" class="map smap"></div>
+        </div>
+        <div class="info"></div>
+        <button type="button" id="buttonSave" class="buttonSave">Uložit</button>
+        <div class="route">Uložené trasy:
+            <div id="savedData"></div>
+        </div>
+    </main>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <footer>
+        <p>&copy; 2021 - Jiří Šindela</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <!--<script>Loader.load()</script>-->
+    <script src="js/index.js"></script>
+
+</body>
+
+
+</html>
