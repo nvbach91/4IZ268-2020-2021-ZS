@@ -39,8 +39,10 @@ $(document).ready(() => {
     const topHeadlinesUrl = 'https://newsapi.org/v2/top-headlines?';
 
     const keyWords = $('#key-words');
-    let dateFrom = $('#date-from');
-    let dateTo = $('#date-to');
+    //let dateFrom = $('#date-from');
+    const dateFrom = $('#date-from'); //oprava
+    //let dateTo = $('#date-to');
+    const dateTo = $('#date-to'); //oprava
     const source = $('#source');
     const language = $('#language');
     const sorting = $('#sorting');
@@ -48,17 +50,9 @@ $(document).ready(() => {
     const searchAllArticles = $('#search-all-articles');
     const everythingUrl = 'https://newsapi.org/v2/everything?';
 
-    $(() => {
-        dateFrom.datepicker();
-    });
-
-    $(() => {
-        dateTo.datepicker();
-    });
-
-    $(document).ready(() => {
-        filterMenu.hide();
-    });
+    dateFrom.datepicker(); //oprava
+    dateTo.datepicker(); //oprava
+    filterMenu.hide(); //oprava
 
     filterMenuTitle.click(() => {
         filterMenu.toggle("blind");
@@ -66,25 +60,25 @@ $(document).ready(() => {
 
     const accentsTidy = (s) => {
         let r = s.toLowerCase();
-        r = r.replace(new RegExp('\\s', 'g'), ' AND ');
-        r = r.replace(new RegExp('[àáâãäå]', 'g'), 'a');
-        r = r.replace(new RegExp('æ', 'g'), 'ae');
-        r = r.replace(new RegExp('[çč]', 'g'), 'c');
-        r = r.replace(new RegExp('ď', 'g'), 'd');
-        r = r.replace(new RegExp('[èéêë]', 'g'), 'e');
-        r = r.replace(new RegExp('[ìíîï]', 'g'), 'i');
-        r = r.replace(new RegExp('ľ', 'g'), 'l');
-        r = r.replace(new RegExp('[ñň]', 'g'), 'n');
-        r = r.replace(new RegExp('[řŕ]', 'g'), 'r');
-        r = r.replace(new RegExp('[šś]', 'g'), 's');
-        r = r.replace(new RegExp('ť', 'g'), 't');
-        r = r.replace(new RegExp('[òóôõö]', 'g'), 'o');
-        r = r.replace(new RegExp('œ', 'g'), 'oe');
-        r = r.replace(new RegExp('[ùúûü]', 'g'), 'u');
-        r = r.replace(new RegExp('[ýÿ]', 'g'), 'y');
-        r = r.replace(new RegExp('[žź]', 'g'), 'z');
+        r = r.replace(/\\s/g, ' AND ');
+        r = r.replace(/[àáâãäå]/g, 'a');
+        r = r.replace(/æ/g, 'ae');
+        r = r.replace(/[çč]/g, 'c');
+        r = r.replace(/ď/g, 'd');
+        r = r.replace(/[èéêë]/g, 'e');
+        r = r.replace(/[ìíîï]/g, 'i');
+        r = r.replace(/ľ/g, 'l');
+        r = r.replace(/[ñň]/g, 'n');
+        r = r.replace(/[řŕ]/g, 'r');
+        r = r.replace(/[šś]/g, 's');
+        r = r.replace(/ť/g, 't');
+        r = r.replace(/[òóôõö]/g, 'o');
+        r = r.replace(/œ/g, 'oe');
+        r = r.replace(/[ùúûü]/g, 'u');
+        r = r.replace(/[ýÿ]/g, 'y');
+        r = r.replace(/[žź]/g, 'z');
         return r;
-    };
+    }; //opraven zapis regularnich vyrazu
 
 
     searchTopArticles.click(() => {
@@ -147,20 +141,28 @@ $(document).ready(() => {
                     if (authorName == null || authorName == '') {
                         authorName = 'Unknown author'
                     };
+
                     let returnedDate = new Date(item.publishedAt);
                     let returnedDescription = item.description;
                     if (returnedDescription == null || returnedDescription == '') {
                         returnedDescription = 'No description available.'
                     };
+                    let headerKeyWordsValueCapitalized = headerKeyWordsValue.replace(/^\w/, (c) => c.toUpperCase());
+                    returnedDescription = returnedDescription.replaceAll(headerKeyWordsValueCapitalized, `<mark>${headerKeyWordsValueCapitalized}</mark>`);
+                    returnedDescription = returnedDescription.replaceAll(headerKeyWordsValue, `<mark>${headerKeyWordsValue}</mark>`);
 
-                    const newElement = $(`
+                    let returnedTitle = item.title;
+                    returnedTitle = returnedTitle.replaceAll(headerKeyWordsValueCapitalized, `<mark>${headerKeyWordsValueCapitalized}</mark>`);
+                    returnedTitle = returnedTitle.replaceAll(headerKeyWordsValue, `<mark>${headerKeyWordsValue}</mark>`);
+
+                    let newElement = $(`
                 <li>
                     <div class="article-photo">
                         <img src="${item.urlToImage}"
                             alt="${item.title}">
                     </div>
                         <div class="article-text">
-                            <div class="article-title">${item.title}</div>
+                            <div class="article-title">${returnedTitle}</div>
                             <div class="article-date">${returnedDate}</div>
                             <div class="article-author">${authorName}</div>
                             <div class="article-description">${returnedDescription}</div>
@@ -273,6 +275,15 @@ $(document).ready(() => {
                     if (returnedDescription == null || returnedDescription == '') {
                         returnedDescription = 'No description available.'
                     };
+                    
+                    let keyWordsHighlight = keyWords.val();
+                    keyWordsHighlight = keyWordsHighlight.trim().replace(/\s+/g, " ");
+                    keyWordsHighlight = keyWordsHighlight.split(" ");
+                    let returnedTitle = item.title;
+                    keyWordsHighlight.forEach((word) => {
+                        returnedDescription = returnedDescription.replaceAll(word, `<mark>${word}</mark>`);
+                        returnedTitle = returnedTitle.replaceAll(word, `<mark>${word}</mark>`);
+                    })
                     const newElement = $(`
                     <li>
                         <div class="article-photo">
@@ -280,7 +291,7 @@ $(document).ready(() => {
                                 alt="${item.title}">
                         </div>
                             <div class="article-text">
-                                <div class="article-title">${item.title}</div>
+                                <div class="article-title">${returnedTitle}</div>
                                 <div class="article-date">${returnedDate}</div>
                                 <div class="article-author">${authorName}</div>
                                 <div class="article-description">${returnedDescription}</div>
@@ -357,9 +368,9 @@ $(document).ready(() => {
                 };
                 let returnedDate = new Date(item.publishedAt);
                 let returnedDescription = item.description;
-                    if (returnedDescription == null || returnedDescription == '') {
-                        returnedDescription = 'No description available.'
-                    };
+                if (returnedDescription == null || returnedDescription == '') {
+                    returnedDescription = 'No description available.'
+                };
                 const newElement = $(`
                 <li>
                     <div class="article-photo">

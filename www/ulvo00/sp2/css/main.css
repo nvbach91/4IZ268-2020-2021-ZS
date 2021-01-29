@@ -243,9 +243,17 @@ li {
     width: 70%;
 }
 
+.article-text mark {
+    background: #f629009d;
+}
+
 .article-title {
     font-weight: bold;
     font-size: 18px;
+}
+
+.article-title mark {
+    background: #f629009d;
 }
 
 .article-date {
