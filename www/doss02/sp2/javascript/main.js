@@ -107,17 +107,34 @@ $(document).ready(() => {
       <div class="box-title">
         <h2>Favourite:</h2>
       </div>`;
-
+    const dogs = [];
     breed2.map((breed) => {
       $(breed).each(function () {
-        output += `
+        const dog = $(`
           <div class="favourite">
             <h3> ${breed.name} </h3>
             <img src="https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg" alt="breed ${breed.name}"> 
-          </div>`;
+            <button data-id="${breed.id}">Remove</button>
+          </div>`);
+        const removeButton = dog.find("button").click(() => {
+          
+          const id = removeButton.data("id");
+          const favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
+
+          for (let i = 0; i < favoriteBreeds.length; i++) {
+            const favoriteBreed =favoriteBreeds[i];
+            if (favoriteBreed.id == id) {
+              favoriteBreeds.splice(i, 1);
+              break;
+            }
+          }
+          localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
+          
+          dog.remove();
+        });
+        dogs.push(dog);
       })
-    })
-    output += `</div>`;
-    $('#breed-list').html(output);
+    });
+    $('#breed-list').append(output).append(dogs);
   }
-})
+}) 
