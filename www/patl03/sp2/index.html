@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="CS">
+
+<head>
+    <title>YouTide</title>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="scale-keep">
+            <div class="page-wrap">
+                <div class="row em">
+                    <form id="videoform">
+                        <div class="col videoinput">
+                            <input type="text" id="vidinput">
+                        </div>
+                        <div class="col btn">
+                            <input type="submit" value="Najít video">
+                        </div>
+                    </form>
+                </div>
+                <div class="row eq">
+                    <div class="col eq-1">
+                        <h2>Nalezená videa</h2>
+                        <div class="col" id="videolist">
+                        </div>
+                    </div>
+                    <div class="col eq-2">
+                        <div class="row fourth">
+                            <div class="col">
+                                <div class="row no-spacing">
+                                    <img id="selectedvideo" class="stats" src="img/index.png" alt="video">
+                                    <ul>
+                                        <li id="views">Views: 0</li>
+                                        <li id="kc">Kill count: 0</li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <h2 id="videotitle"></h2>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="canvas" class="row three-fourths">
+                        </div>
+                    </div>
+                    <div class="col eq-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+</html>
