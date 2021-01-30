@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/~toho00/sp2/static/css/main.12ad2bf6.chunk.css",
+    "main.js": "/~toho00/sp2/static/js/main.e2336310.chunk.js",
+    "main.js.map": "/~toho00/sp2/static/js/main.e2336310.chunk.js.map",
+    "runtime-main.js": "/~toho00/sp2/static/js/runtime-main.792d5802.js",
+    "runtime-main.js.map": "/~toho00/sp2/static/js/runtime-main.792d5802.js.map",
+    "static/css/2.b9715c71.chunk.css": "/~toho00/sp2/static/css/2.b9715c71.chunk.css",
+    "static/js/2.94b10e46.chunk.js": "/~toho00/sp2/static/js/2.94b10e46.chunk.js",
+    "static/js/2.94b10e46.chunk.js.map": "/~toho00/sp2/static/js/2.94b10e46.chunk.js.map",
+    "static/js/3.1e73a4b0.chunk.js": "/~toho00/sp2/static/js/3.1e73a4b0.chunk.js",
+    "static/js/3.1e73a4b0.chunk.js.map": "/~toho00/sp2/static/js/3.1e73a4b0.chunk.js.map",
+    "index.html": "/~toho00/sp2/index.html",
+    "static/css/2.b9715c71.chunk.css.map": "/~toho00/sp2/static/css/2.b9715c71.chunk.css.map",
+    "static/css/main.12ad2bf6.chunk.css.map": "/~toho00/sp2/static/css/main.12ad2bf6.chunk.css.map",
+    "static/js/2.94b10e46.chunk.js.LICENSE.txt": "/~toho00/sp2/static/js/2.94b10e46.chunk.js.LICENSE.txt",
+    "static/media/equals.4546a346.png": "/~toho00/sp2/static/media/equals.4546a346.png",
+    "static/media/exchange.5246d295.png": "/~toho00/sp2/static/media/exchange.5246d295.png",
+    "static/media/index.css": "/~toho00/sp2/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.792d5802.js",
+    "static/css/2.b9715c71.chunk.css",
+    "static/js/2.94b10e46.chunk.js",
+    "static/css/main.12ad2bf6.chunk.css",
+    "static/js/main.e2336310.chunk.js"
+  ]
+}
