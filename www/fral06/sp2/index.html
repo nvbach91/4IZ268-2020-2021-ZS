@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="cs">
+<head>
+  <meta charset="utf-8">
+  <title>Flight prices</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="src/css/normalize.css">
+  <link rel="stylesheet" href="src/css/main.css">
+  <script src="dist/main.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="heading--primary">FlightScanner</h1>
+  </header>
+  <main class="wrapper">
+    <div class="search-mask">
+      <form class="form">
+        <div class="form__group">
+          <label class="form__control" for="outbound">Odkud</label>
+          <input type="text" autocomplete="off" id="outbound" class="form__control form__control__input" placeholder="Misto odletu">
+        </div>
+        <div class="form__group">
+          <label class="form__control" for="inbound">Kam</label>
+          <input type="text" autocomplete="off" id="inbound" class="form__control form__control__input" placeholder="Misto priletu">
+        </div>
+        <div class="form__group">
+          <label class="form__control" for="dateFrom">Odlet</label>
+          <input type="date" id="dateFrom" class="form__control form__control__input" placeholder="Odlet">
+        </div>
+        <div class="form__group">
+          <label class="form__control" for="dateTo">Přílet</label>
+          <input type="date" id="dateTo" class="form__control form__control__input" placeholder="Prilet">
+        </div>
+        <button class="form__button btn" id="searchBtn" type="button">Vyhledat lety</button>
+      </form>
+    </div>
+    <div id="searchResults" class="search-results">
+    </div>
+  </main>
+</body>
+
+</html>
