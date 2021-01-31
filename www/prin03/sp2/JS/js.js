@@ -1,104 +1,136 @@
 $(function(){
-	var saveData;
-	var pH=$('.savedCur p').html();
-	var wasChange=false;
+	const $key='6fc892aab7ec41f0b37bebfea17df91f';
+	var curValue;
+	var curName;
+	var D;
+	var letToSave;
+	const Table=$('.forTable table');
+	if(localStorage.getItem('selected')){
+		var o=localStorage.getItem('selected');
+		$('.leftBlock select option').eq(o).attr('selected',true);
+		selectCur($('.leftBlock select'));
+	}
 	$('.leftBlock select').change(function(){
-		var i=$(this).find('option:selected').index();
-		if(i>0){
-			$('.ExchangeRates').fadeIn();
-			$('.ExchangeRates span').html('');
-			$('.ExchangeRates span').html(getCur($(this).val()));
-			$('.savedCur p').html(pH+' ('+$(this).val()+')');
-			$.ajax({
-				url: 'getAPI.php',
-				type: 'get',
-				data: {checkCur:$(this).val()},
-				beforeSend: function(){
-					$('.savedCur p').addClass('ajax-load_2');	
-					$('#graph').addClass('loadGraph');	
-				},
-				success: function(d){					
-					if(d!=-1){
-						if(d.indexOf('~')!=-1){
-							d=d.split('~',2);
-							$('#graph').html(d[0]);
-							d=d[1];
-						}
-						else
-							$('#graph img').fadeOut();
-						$('.rightBlock .savedCur').show(333);
-						$('.rightBlock ul').html(d);
-					}
-					else {
-						$('.rightBlock .savedCur').fadeOut();
-						$('#graph img').fadeOut();
-					}
-					$('.savedCur p').removeClass('ajax-load_2');
-					$('#graph').removeClass('loadGraph');						
-				}
-			});
-			$('.rightBlock button').click(function(e){
-				e.stopImmediatePropagation();
-				save();				
-			})	
+		selectCur($(this));
+	});	
+	/*функция для обработки выбора валюты*/
+	function selectCur(Obj){
+		var i=Obj.find('option:selected').index();
+		if(i<1){
+			$('.rightBlock').fadeOut();
+			$('.ExchangeRates').fadeOut();
+			return false;
 		}
 		else{
-			$('.ExchangeRates').fadeOut();
-			$('.rightBlock button').fadeOut();
-			$('.rightBlock .savedCur').fadeOut();
-			$('#graph img').fadeOut();
+			$('.rightBlock').fadeIn();
+			$('.ExchangeRates').fadeIn();			
+			curName=Obj.val();
+			checkCur();
 		}
-		wasChange=true;
-	});
-		function getCur(Cur){
-			$.ajax({
-			url: 'getAPI.php',
+		$.ajax({
+			url: 'https://api.currencyfreaks.com/latest?apikey='+$key+'&format=xml&symbols='+curName,
 			type: 'get',
-			data: {currency:Cur},
+			dataType: 'xml',
 			beforeSend: function(){
 				$('.ExchangeRates span').addClass('ajax-load');
 				$('.rightBlock button').fadeOut();
 			},
 			success: function(d){
-				$('.ExchangeRates span').removeClass('ajax-load').html(d+' USD');
+				letToSave=true;
+				curValue=$(d).find('rates').children().html();
+				curValue=(1/curValue).toFixed(3);
+				D=$(d).find('date').html();
+				$('.ExchangeRates span').html(curValue).parent().fadeIn();
+				$('.ExchangeRates span').removeClass('ajax-load');				
 				$('.rightBlock button').fadeIn();
-				saveData={currency:Cur, curValue:d};
+				$('.rightBlock button').click(function(e){
+					e.stopImmediatePropagation();
+					if(letToSave)
+						saveCur();
+					else
+						alert('Už jste zaznamenal!');
+					letToSave=false;					
+				});				
+			},
+			error: function(jqXHR,textStatus,errorThrown){
+				if(jqXHR.status==404)
+					alert('Nepodařilo se získat data!');
 			}
-			});
-		}
-		function save(){
-			if(!wasChange){
-				alert('Уже сохранено!');
-				return false;
+		});
+		localStorage.setItem('selected',i);
+	}
+	/*фунция для сохранения значения*/
+	function saveCur(){	
+		var now = new Date();
+		var U=now.getTime();
+		var A=[];
+		var curObj={name:curName,val:curValue,date:D,uniq:U};
+		var isSavedCurrency=false;
+		if(localStorage.getItem('currrency')){
+			A=localStorage.getItem('currrency');
+			A=JSON.parse(A);
+			for(i=0;i<A.length;i++){
+				if(A[i]['name']==curName)
+					isSavedCurrency=true;
 			}
-			var B=$('.rightBlock button');
-			var H=B.html();
-			$.ajax({
-				url: 'getAPI.php',
-				type: 'post',
-				data: saveData,
-				beforeSend: function(){
-					B.html('Подождите...');
-					$('#graph').addClass('loadGraph');
-				},
-				success: function(d){
-					if(d==-1){
-						alert('Что-то не так при записи в файл...');
-						return false;
-					}
-					if(d.indexOf('~')!=-1){
-						d=d.split('~',2);
-						$('#graph').html(d[0]);
-						d=d[1];
-					}
-					$('.rightBlock .savedCur').show(333);
-					B.html(H);
-					$('.rightBlock ul').html(d);
-					wasChange=false;
-					$('#graph').removeClass('loadGraph');
-				}
-			});
 		}
+		A.push(curObj);
+		localStorage.setItem('currrency',JSON.stringify(A));
+		if(isSavedCurrency)
+			Table.find('tbody').append('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Удалить</span></td></tr>');
+		else
+			Table.find('tbody').html('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Удалить</span></td></tr>');
+		$('.forTable').fadeIn();
+		delCur(Table.find('span'));
+	}
 
+
+	function checkCur(){
+		if(localStorage.getItem('currrency')){
+			var Cur=localStorage.getItem('currrency');
+			Cur=JSON.parse(Cur);						//получили из строки массив объектов
+			var T='';	//тут будем хранить строки таблицы
+			for(i=0;i<Cur.length;i++){
+				if(Cur[i]['name']==curName)	//если в сохранениях есть выбранная валюта
+					T=T+'<tr><td>'+curName+'</td><td>'+Cur[i]['val']+'</td><td>'+Cur[i]['date']+'</td><td><span data="'+Cur[i]['uniq']+'" title="Smazat záznam">Smazat</span></td></tr>';
+			}
+			if(T){
+				Table.find('tbody').html(T);	//создали таблицу из сохранений для текущей валюты..
+				$('.forTable').fadeIn();		//..и показали её
+			}
+			else
+				$('.forTable').fadeOut();		//если для данной валюты сохранений нет - скроем таблицу
+		}
+		delCur(Table.find('span'));		//вызов обработки кликов на удаление
+	}
+
+
+
+	function delCur(Obj){
+		Obj.click(function(){
+			//var delName=$(this).closest('tr').find('td:first').html();	//není nutné
+			//alert($(this).closest('tr').index());
+			var delUniq=$(this).attr('data');
+			var Cur=localStorage.getItem('currrency');
+			Cur=JSON.parse(Cur);
+			for(i=0;i<Cur.length;i++){
+				if(Cur[i]['uniq']==delUniq)
+					Cur.splice(i,1);
+			}
+			localStorage.setItem('currrency',JSON.stringify(Cur));
+			$(this).closest('tr').remove();
+			if(Table.find('tbody').find('tr').size()<1)
+				$('.forTable').fadeOut();
+		});		
+	}
+	
+
+	//doubleclick v libovolném místě - pro test, není nutné
+	/*$('body').dblclick(function(){
+		localStorage.clear();
+	});
+	*/
+	
+	
 	
 });

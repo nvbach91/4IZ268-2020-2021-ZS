@@ -24,21 +24,23 @@ body {
 	background:#C3BB38;	height:350px; margin:90px 0 120px 0;
 }
 
-.leftBlock {float:left; width:400px;}
+.leftBlock {}
 .leftBlock select{line-height:30px; font-size:19px; margin:27px 0 0 40px; padding:10px; border-radius:5px;}
-.leftBlock .ExchangeRates {font-size:17px; margin:94px 0 0 40px; display:none;}
+.leftBlock .ExchangeRates {font-size:17px; margin:15px 0 0 330px; display:none;}
 .leftBlock .ExchangeRates span {padding:5px 25px 5px 5px;}
 .leftBlock .ajax-load {background:url(ajax-loader.gif) right no-repeat;}
-.rightBlock {float:right;}
-.rightBlock button {line-height:20px; font-size:19px; margin:27px 0 0 295px; padding:10px; border-radius:5px; outline:none; cursor:pointer;
+.rightBlock {}
+.rightBlock button {line-height:20px; font-size:19px; margin:0 0 0 295px; padding:10px; border-radius:5px; outline:none; cursor:pointer;
 	background:#EBEBEB; color:#B94761; display:none; position:absolute; left:48%;}
-.rightBlock .savedCur {width:500px; text-align:center; margin:95px 38px 0 0; height:224px; display:none;}
+.rightBlock .savedCur {text-align:center; margin:35px 0 0 0; width:600px; }
+.rightBlock .savedCur thead tr{background:#E5E5E5; line-height:41px;}
+.rightBlock .savedCur tr{background:#fff; line-height:41px;}
+.rightBlock .savedCur span{cursor:pointer; color:#b00;}
 .rightBlock li {background:#fff; display:block; padding:15px 0 11px 0; border-bottom:1px solid #aaa;}
 .rightBlock .ajax-load_2 {background:#E5E5E5 url(ajax-loader_2.gif) 82% 60% no-repeat !important;}
-.rightBlock .savedCur {overflow-y:auto;}
-.rightBlock .savedCur p {background:#E5E5E5; font-size:18px; font-weight:bold;  padding:15px 0 11px 0; }
-
-/* Middle
+.rightBlock .savedCur {}
+.forTable {display:none; height:245px; overflow-y:auto; width:620px;}
+/* Middle 
 -----------------------------------------------------------------------------*/
 .content {
 }
