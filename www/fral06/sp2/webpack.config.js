@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/js/main.js'),
+  entry: ['babel-polyfill', path.resolve(__dirname, './src/js/main.js')],
   module: {
     rules: [
       {
