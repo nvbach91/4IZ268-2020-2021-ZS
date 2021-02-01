@@ -77,9 +77,9 @@ $(function(){
 		A.push(curObj);
 		localStorage.setItem('currrency',JSON.stringify(A));
 		if(isSavedCurrency)
-			Table.find('tbody').append('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Удалить</span></td></tr>');
+			Table.find('tbody').append('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Smazat</span></td></tr>');
 		else
-			Table.find('tbody').html('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Удалить</span></td></tr>');
+			Table.find('tbody').html('<tr><td>'+curName+'</td><td>'+curValue+'</td><td>'+D+'</td><td><span data="'+U+'" title="Smazat záznam">Smazat</span></td></tr>');
 		$('.forTable').fadeIn();
 		delCur(Table.find('span'));
 	}
