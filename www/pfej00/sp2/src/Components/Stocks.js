@@ -76,7 +76,7 @@ class Stocks extends Component {
     for (let index = 0; index < this.state.stockOffer.length; index++) {
       let instrument = this.state.stockOffer[index];
       //let formulation = <li key={index}><a onClick = {(e) => {this.saveValueToStorage(e, index)}} >{instrument[1]} - {instrument[2]}</a></li>;
-      let formulation = <button type="button" className="list-group-item list-group-item-action" onClick = {(e) => {this.addToSaved(e, index)}} >{instrument[1]} - {instrument[2]}</button>;
+      let formulation = <button key={index} type="button" className="list-group-item list-group-item-action" onClick = {(e) => {this.addToSaved(e, index)}} >{instrument[1]} - {instrument[2]}</button>;
       instruments.push(formulation);
     }
     return instruments;
@@ -129,14 +129,14 @@ class Stocks extends Component {
         const stockLogoUrl = "//logo.clearbit.com/" + stockName + ".com";
 
 
-        let formulation = <div class="card bg-dark text-white mb-3 col-6">
-                            <div class="card-header">
+        let formulation = <div key={index} className="card bg-dark text-white mb-3 col-6">
+                            <div className="card-header">
                             <div className="row">
                               <img id="stock-logo" src={stockLogoUrl}></img>
                               <p>{savedStocks[index][0]} - {savedStocks[index][1]}</p>
                             </div>
                             </div>
-                            <div class="card-body">
+                            <div className="card-body">
                               <div className="row">
                                 <div className="col">
                                   <button type="button" className="btn btn-primary" onClick={(e) => {this.saveValueToStorage(e, index)}}>Detail</button>
@@ -158,7 +158,7 @@ class Stocks extends Component {
     let savedStocks = localStorage.getItem('stocks')
     savedStocks = JSON.parse(savedStocks);
 
-    localStorage.setItem('stock', savedStocks[index]);
+    localStorage.setItem('stock', JSON.stringify(savedStocks[index]));
     console.log(localStorage.getItem('stock'));
     this.setState({showGraph: true});
   }

@@ -29,13 +29,17 @@ class Crypto extends Component {
             "function=DIGITAL_CURRENCY_DAILY",
             "function=DIGITAL_CURRENCY_MONTHLY"
         ];
+        const keys = [
+            "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
+            "10e5563c3fmsh1d36f54e9bf4926p1c7c1bjsn73a7e24b8f06"
+        ];
         
         for (let index = 0; index < querys.length; index++) {
           try {
               let response = await fetch("https://alpha-vantage.p.rapidapi.com/query?" + querys[index] + "&symbol=" + this.state.crypto[1] + "&market=USD&datatype=json&output_size=compact", {
                   "method": "GET",
                   "headers": {
-                    "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
+                    "x-rapidapi-key": keys[index],
                     "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
                   }
               });
@@ -63,7 +67,7 @@ class Crypto extends Component {
                 const actualCryptoPriceResponse = await fetch("https://alpha-vantage.p.rapidapi.com/query?&from_currency=" + this.state.crypto[1] + "&function=CURRENCY_EXCHANGE_RATE&to_currency=USD", {
                   "method": "GET",
                   "headers": {
-                    "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
+                    "x-rapidapi-key": "758ab267b4msh2f1ec960692042fp115c33jsn47e83ebd35d1",
                     "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
                   }
                 });
@@ -171,13 +175,13 @@ class Crypto extends Component {
             return (
                 <div className="container">
                     <div className="row">
-                        <div class="col">
+                        <div className="col">
                             <div className="container rounded p-3 my-3 bg-dark text-white">
                                 <div className="row">
-                                    <div class="col">
+                                    <div className="col">
                                         <h3 className="text-left">{this.state.crypto[0]} - {this.state.crypto[1]}</h3>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <h3 className="font-weight-bold text-right">{this.state.actualCryptoPrice} $</h3>
                                     </div>
                                 </div>
@@ -186,15 +190,15 @@ class Crypto extends Component {
                                 </div>
                                 <div className="row">
                                     <div className="col"></div>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph()}>Daily</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph("monthly")}>Monthly</button>
+                                    <div className="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" className="btn btn-primary" onClick={() => this.changeGraph()}>Daily</button>
+                                        <button type="button" className="btn btn-primary" onClick={() => this.changeGraph("monthly")}>Monthly</button>
                                     </div>
-                                    <div class="col-sm-1"></div>
+                                    <div className="col-sm-1"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-1">
+                        <div className="col-sm-1">
                             <button type="button" className="btn btn-danger" onClick={() => this.props.onClearCrypto()}><FontAwesomeIcon icon={faTrash} /></button>
                         </div>
                     </div>

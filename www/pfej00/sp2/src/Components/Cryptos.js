@@ -27,9 +27,16 @@ class Cryptos extends Component {
   onChange(event) {
     event.preventDefault();    
     this.setState({ search: event.target.value });
+    /*
     const filteredCryptocurrencies = cryptoList.filter(crypto => {
             return crypto.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
     });
+    */
+
+    const filteredCryptocurrencies = cryptoList.filter(crypto => {
+        return crypto.name.toLowerCase().includes(this.state.search.toLowerCase());
+    });
+    
     this.setState({cryptoOffer: filteredCryptocurrencies});
   }
 
@@ -39,7 +46,7 @@ class Cryptos extends Component {
     for (let index = 0; index < array.length; index++) {
       let instrument = array[index];
       instrument = Object.values(instrument);
-      let formulation = <button type="button" className="list-group-item list-group-item-action" onClick = {(e) => {this.saveValueToStorage(e, index)}} >{instrument[0]}</button>;
+      let formulation = <button key={index} type="button" className="list-group-item list-group-item-action" onClick = {(e) => {this.saveValueToStorage(e, index)}} >{instrument[0]}</button>;
       instruments.push(formulation);
     }
     return instruments;

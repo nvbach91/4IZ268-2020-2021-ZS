@@ -11,9 +11,12 @@ class Stock extends Component {
       this.getActualPrice = this.getActualPrice.bind(this);   
       this.transformData = this.transformData.bind(this); 
       this.changeGraph = this.changeGraph.bind(this);
-      const stockFromStorage = localStorage.getItem('stock');
+      let stockFromStorage = localStorage.getItem('stock');
+      stockFromStorage = JSON.parse(stockFromStorage);
+      console.log(stockFromStorage[0]);
+
       this.state = {
-          stock: stockFromStorage.split(","),
+          stock: stockFromStorage,
           loading: true,
           error: null,
           todayPrices: [],
@@ -31,46 +34,56 @@ class Stock extends Component {
             "function=TIME_SERIES_DAILY",
             "function=TIME_SERIES_MONTHLY"
         ];
-        
-        for (let index = 0; index < querys.length; index++) {
-            try {
-                let response = await fetch("https://alpha-vantage.p.rapidapi.com/query?" + querys[index] + "&symbol=" + this.state.stock[0] + "&datatype=json&output_size=compact", {
-                    "method": "GET",
-                    "headers": {
-                      "x-rapidapi-key": "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
-                      "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
-                    }
-                });
-                if (!response.ok) {
-                    this.setState({error: "WS is broken or there is too many requests. Wait please one minute and then reload page."});
-                }
-                else {
-                    let json = await response.json();
-                    if (index==0) {
-                        this.setState({todayPrices: json});                    
-                    } else if(index==1) {
-                        this.setState({dailyPrices: json});  
-                    } else {
-                        this.setState({monthlyPrices: json});; 
-                    }
-                }
-            } catch (error) {
-                alert('Error occured while getting data ' + error);
-                this.setState({error: error});
-            }                    
+        const keys = [
+            "f233f136c3msha0abaf5baff99b8p1d1402jsnc0aa9a91d65c",
+            "10e5563c3fmsh1d36f54e9bf4926p1c7c1bjsn73a7e24b8f06",
+            "758ab267b4msh2f1ec960692042fp115c33jsn47e83ebd35d1"
+        ];
+        const stockSymbol = this.state.stock[0];
+        if (stockSymbol.indexOf('.') !== -1) {
+            this.setState({error: "This stock is unsupported due to its stock exchange"}); 
         }
-        if (this.state.error == null) {
-            try {
-                const actualPriceResponse = await fetch("https://financialmodelingprep.com/api/v3/quote-short/" + this.state.stock[0] + "?apikey=4146f9d659748bf4ea23fea71f0722f6");
-                const actualPrice = await actualPriceResponse.json();
-                this.setState({actualPrice: this.getActualPrice(actualPrice)});            
-            } catch (error) {
-                alert('Error occured while getting data ' + error);
-                this.setState({error: error});
+        else {
+            for (let index = 0; index < querys.length; index++) {
+                try {
+                    let response = await fetch("https://alpha-vantage.p.rapidapi.com/query?" + querys[index] + "&symbol=" + this.state.stock[0] + "&datatype=json&output_size=compact", {
+                        "method": "GET",
+                        "headers": {
+                        "x-rapidapi-key": keys[index],
+                        "x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
+                        }
+                    });
+                    if (!response.ok) {
+                        this.setState({error: "WS is broken or there is too many requests. Wait please one minute and then reload page."});
+                    }
+                    else {
+                        let json = await response.json();
+                        if (index==0) {
+                            this.setState({todayPrices: json});                    
+                        } else if(index==1) {
+                            this.setState({dailyPrices: json});  
+                        } else {
+                            this.setState({monthlyPrices: json});; 
+                        }
+                    }
+                } catch (error) {
+                    alert('Error occured while getting data ' + error);
+                    this.setState({error: error});
+                }                    
             }
-    
-            this.setState({loading: false});
-            this.changeGraph();
+            if (this.state.error == null) {
+                try {
+                    const actualPriceResponse = await fetch("https://financialmodelingprep.com/api/v3/quote-short/" + this.state.stock[0] + "?apikey=4146f9d659748bf4ea23fea71f0722f6");
+                    const actualPrice = await actualPriceResponse.json();
+                    this.setState({actualPrice: this.getActualPrice(actualPrice)});            
+                } catch (error) {
+                    alert('Error occured while getting data ' + error);
+                    this.setState({error: error});
+                }
+        
+                this.setState({loading: false});
+                this.changeGraph();
+            }
         }
     }
 
@@ -122,7 +135,16 @@ class Stock extends Component {
 
     render() {
         if(this.state.error != null) {
-            return <DataError errorMessage={this.state.error}/>;
+            return (
+                <div className="container">
+                    <div className="col">
+                        <DataError errorMessage={this.state.error}/>
+                    </div>
+                    <div className="col-sm-1">
+                        <button type="button" className="btn btn-danger" onClick={() => this.props.onClear()}><FontAwesomeIcon icon={faTrash} /></button>
+                    </div>
+                </div>
+                );
         } else if (this.state.loading) {
             return <CircleLoading />;
         } else {
@@ -167,16 +189,16 @@ class Stock extends Component {
             return (
                 <div className="container">
                     <div className="row">
-                        <div class="col">
+                        <div className="col">
                             <div className="container rounded p-3 my-3 bg-dark text-white">
                                 <div className="row">
-                                    <div class="col-sm-1">
+                                    <div className="col-sm-1">
                                         <img id="stock-logo" src={stockLogoUrl}></img>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <h3 className="text-left">{this.state.stock[0]}</h3>
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         <h3 className="font-weight-bold text-right">{this.state.actualPrice} $</h3>
                                     </div>
                                 </div>
@@ -192,16 +214,16 @@ class Stock extends Component {
                                 </div>
                                 <div className="row">
                                     <div className="col"></div>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph()}>Last records</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph("daily")}>Daily</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => this.changeGraph("monthly")}>Monthly</button>
+                                    <div className="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" className="btn btn-primary" onClick={() => this.changeGraph()}>Last records</button>
+                                        <button type="button" className="btn btn-primary" onClick={() => this.changeGraph("daily")}>Daily</button>
+                                        <button type="button" className="btn btn-primary" onClick={() => this.changeGraph("monthly")}>Monthly</button>
                                     </div>
-                                    <div class="col-sm-1"></div>
+                                    <div className="col-sm-1"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-1">
+                        <div className="col-sm-1">
                             <button type="button" className="btn btn-danger" onClick={() => this.props.onClear()}><FontAwesomeIcon icon={faTrash} /></button>
                         </div>
                     </div>
