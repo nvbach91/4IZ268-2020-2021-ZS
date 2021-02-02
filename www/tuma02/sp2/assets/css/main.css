@@ -1,169 +1,174 @@
-* {
-    box-sizing: border-box;
-}
-
-.body {
-    background-color: rgb(248, 204, 204);
-}
-
-.cocktail-picture{
-    width: 150px;
-    height: 150px;
-}
-.logo-picture {
-    width: 100px;
-    height: 100px;
-}
-
-.larger-font{
-    font-size: 25px;
-}
-
-.table-layout,
-.search-records,
-.information,
-.recept {
-    border-radius: 15px;
-    background-color: rgb(194, 35, 70);
-    color: white;
-    margin: 0 150px 0 150px;
-    
-}
-
-.table2,
-.measures-ingredients-table,
-tr,
-th {
-    border: 1px solid black;
-}
-
-
-
-.measures-ingredients-table,
-.table2 {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(167, 236, 5);
-}
-
-.table2 {
-    width: 75%;
-}
-
-tr,
-th {
-    background-color: rgb(194, 35, 70);
-}
-
-h2,
-p,
-.search-records,
-.information {
-    text-align: center;
-    padding: 0 0 10px 0;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    margin: 20px 20px 20px 20px;
-}
-
-h1 {
-    margin: 30px 20px 20px 20px;
-}
-
-h2 {
-    padding: 10px 0 0 0;
-}
-
-p {
-    margin: 0 0 0 0;
-}
-
-.btn {
-    padding: 10px 15px 10px 15px;
-    
-    border-radius: 50px;
-    justify-content: center;
-    margin-right: auto;
-    margin-left: auto;
-    
-}
-
-
-/*spinner setup*/
-.lds-hourglass {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
-  .lds-hourglass:after {
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
-    border: 32px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-hourglass 1.2s infinite;
-  }
-  @keyframes lds-hourglass {
-    0% {
-      transform: rotate(0);
-      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    * {
+        box-sizing: border-box;
+        text-align: center;
     }
-    50% {
-      transform: rotate(900deg);
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    100% {
-      transform: rotate(1800deg);
-    }
-  }
-  
-
-
-  /**/
-  .tooltip {
-    border-bottom: 1px dotted black;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-}
-
-
-.tooltip .tooltiptext {
     
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    visibility: hidden;
-    width: 200px;
-    background-color: rgba(236, 153, 29, 0.904);
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-@media screen and (max-width: 600px) {
-.measures-ingredients-table{
-    font-size: 10px;
-}
-}
-@media print {
-    .logo-picture,
-    .tooltip,
-    .cocktail-picture{
-        display: none;
+    .offer-picture {
+        width: 50px;
+        height: 50px;
     }
-
-}
+    
+    .found-picture {
+        width: 150px;
+        height: 150px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0 20px 0 20px;
+    }
+    
+    li {
+        display: flex;
+        margin: 5px 0 5px 0;
+        justify-content: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(194, 35, 70);
+    }
+    
+    .button-add,
+    .offer-picture {
+        margin: 0 10px 0 10px;
+    }
+    
+    button,
+    img {
+        border-radius: 5px;
+    }
+    
+    #offers {
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(194, 35, 70);
+        color: white;
+        margin: 0 250px 0 250px;
+    }
+    
+    .paragraf-drink {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .paragraf-drink-info {
+        /*margin: 21px 0 0 5px;*/
+        margin: 7px 0 5px 5px;
+    }
+    
+    h3 {
+        margin: 5px 0 5px 0;
+    }
+    
+    .logo-picture {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .favorites-button {
+        margin: 5px 0 5px 0;
+    }
+    
+    .recept,
+    .form-and-btn-favorite {
+        background-color: rgb(194, 35, 70);
+        color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    
+    .recept {
+        margin: 5px 250px 5px 250px;
+    }
+    
+    .form-and-btn-favorite {
+        margin: 8px 250px 5px 250px;
+    }
+    
+    .ingredients-table {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(167, 236, 5);
+    }
+    
+    tr,
+    th,
+    td {
+        background-color: rgb(194, 35, 70);
+    }
+    /*spinner setup*/
+    
+    .lds-hourglass {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .lds-hourglass:after {
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-hourglass 1.2s infinite;
+    }
+    
+    @keyframes lds-hourglass {
+        0% {
+            transform: rotate(0);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+            transform: rotate(900deg);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+            transform: rotate(1800deg);
+        }
+    }
+    
+    @media screen and (max-width: 800px) {
+        .recept {
+            margin: 5px 0 5px 0;
+        }
+        .form-and-btn-favorite,
+        #offers {
+            margin: 8px 50px 5px 50px;
+        }
+    }
+    
+    @media print {
+        .form-and-btn-favorite,
+        #search-result,
+        button,
+        .logo-picture {
+            display: none;
+        }
+        body {
+            background-color: white;
+        }
+        #cocktail-show {
+            border: none;
+        }
+        p,
+        h1,
+        h2,
+        h3,
+        table {
+            color: black;
+        }
+        table,
+        tr,
+        th {
+            border: 1px solid black;
+        }
+    }

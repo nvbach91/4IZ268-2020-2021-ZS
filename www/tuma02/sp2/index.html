@@ -10,8 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Barmen's friend</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,83 +19,52 @@
 </head>
 
 <body>
-    <div class="app-layout">
-        <header>
-            <img class="logo-picture" src="./assets/pictures/cocktail1.png" alt="logo">
-            <h1>Barman's friend</h1>
-            <img class="logo-picture" src="./assets/pictures/cocktail2.png" alt="logo">
-        </header>
-        <main>
-            <div class="search-records">
-                <form id="search-record">
-
-                    <h2>Search cocktail</h2>
-                    <p>Search cocktail recept by cocktail title</p>
-                    <input name="cocktail-input" type="search" placeholder="Cocktail title" class="search-input"
-                        required>
-                    <button class="button-search">Search cocktail</button>
-                    <div class="tooltip"> <i class="fa fa-share-square" aria-hidden="true"></i>
-
-                        <div class="tooltiptext" id="tooltip-all">
-
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <p id="cannot-find1"></p>
-
-                </form>
-            </div>
-
-            <br>
-            <div class="recept" id="cocktail-recept">
-                <div class="larger-font">
-                    <p id="cocktail-title"> Cocktail title:</p>
-                </div>
-                <p id="info">S</p>
-                <div class="larger-font">
-                    <p>Ingredients</p>
-                </div>
-            
-            <table class="measures-ingredients-table" id="measures-ingredients">
-            </table>
-            <br>
-            <p id="instruction" class="instruction-class">Instruction</p>
+    <div class="logo">
+        <img class="logo-picture" src="./assets/pictures/cocktail1.png" alt="logo">
+        <h1>Barman's friend</h1>
+        <img class="logo-picture" src="./assets/pictures/cocktail2.png" alt="logo">
+    </div>
+    <main>
+        <div class="form-and-btn-favorite">
+            <form id="search-cocktail">
+                <h2>Search cocktail</h2>
+                <p>Search cocktail recept by cocktail title</p>
+                <input name="cocktail-input" type="search" placeholder="Cocktail title" class="search-input" required>
+                <button class="button-search">Search cocktail</button>
+            </form>
+            <button class="favorites-button" id="favorite"><i class="fa fa-star" aria-hidden="true"></i> Favorites <i
+                    class="fa fa-star" aria-hidden="true"></i></button>
+            <div class="div-spinner"></div>
         </div>
-    
-
-
-
-
-    <div class="information">
-        <form id="search-ingredient">
-            <h2>Ingredients</h2>
-
-            <p>Search cocktail recept by ingredients title</p>
-            <input name="ingredient-input" type="search" placeholder="Ingredient title" class="search-input2" required>
-            <button class="button-search">Search cocktail</button>
-            <br>
-            <br>
-            <p id="cannot-find2"></p>
-        </form>
-    </div>
-
-    <br>
-    <div class="table-layout">
-        <table id="drinks" class="table2">
-
-        </table>
-
-    </div>
+        <div id="search-result">
+            <ul id="offers"></ul>
+        </div>
+        <div id="cocktail-show" class="recept">
+            <div id="main-info">
+            </div>
+            <table class="ingredients-table">
+                <thead>
+                    <tr id="ingr-titles">
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="measures">
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="instruction"></div>
+        </div>
 
 
     </main>
     <footer>
-        <p class="time"></p>
+        <p id="time"></p>
         <p>Copyright &copy; 2020 Andrii Tuma</p>
     </footer>
     <script src="./assets/js/main.js"></script>
-    </div>
+
 </body>
 
 </html>
