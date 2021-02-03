@@ -25,9 +25,13 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^5.0.1",
     "eslint": "^7.19.0",
     "parcel-bundler": "^1.12.4",
-    "webpack": "^5.11.0",
+    "webpack": "^5.20.1",
     "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "iso-country-currency": "^0.5.2"
   }
 }

@@ -1,24 +1,26 @@
 import ApiService from "./api-service";
+import Utilities from "./utilities";
 
 export default class SearchResults {
 
   constructor(hookId) {
-    this.hookId = hookId;
-    this.results = [];
+    this.resultsWrapper = Utilities.createElement('div', null, 'searchResults');
+    document.getElementById(hookId).append(this.resultsWrapper);
   }
 
   getResults(outbound, inbound, outDate, inDate) {
-    document.getElementById(this.hookId).textContent = '';
+    document.getElementById('searchResults').textContent = '';
     this.results = [];
     ApiService.getFlights(outbound, inbound, outDate, inDate).then(r => this.buildResults(r));
   }
 
   buildResults(results) {
     console.log(results);
-    if(results.Routes.length !== 0)  {
+    if (results.Routes.length !== 0) {
       this.carriers = new Map();
       this.quotes = new Map();
       this.places = new Map();
+      this.buildedResults = new Map();
       this.currency = results.Currencies[0];
       this.minPrice = results.Routes[0].Price;
       this.originPlace = results.Routes[0].OriginId;
@@ -28,6 +30,7 @@ export default class SearchResults {
         this.carriers.set(carrier.CarrierId, carrier.Name);
       }
       for (const quote of results.Quotes) {
+        quote.added = false;
         this.quotes.set(quote.QuoteId, quote);
       }
       for (const place of results.Places) {
@@ -38,6 +41,10 @@ export default class SearchResults {
       this.results = this.createQuotes(this.route)
     }
     this.render();
+  }
+
+  setAddFlightHanlder(handler) {
+    this.addFlightHanlder = handler;
   }
 
   createQuotes(route) {
@@ -51,134 +58,103 @@ export default class SearchResults {
     return slivers;
   }
 
-  createFlight(quoteId) {
-    const quote = this.quotes.get(quoteId);
-
-    const flightLegsElm = document.createElement('div');
-    flightLegsElm.classList.add('legs');
-
-    //Outbound Flight
-    const outboundFlight = quote.OutboundLeg;
-    const outboundElm = document.createElement('div');
-    outboundElm.classList.add('flight');
-
-    //carriers
-    const carrierElm = document.createElement('div');
-    carrierElm.classList.add('flight__carrier');
+  createCarriers(outboundFlight) {
+    const carrierElm = Utilities.createElement('div', ['flight__carrier']);
     const carriers = [];
     for (const carrier of outboundFlight.CarrierIds) {
       carriers.push(this.carriers.get(carrier));
     }
     carrierElm.textContent = carriers.join(", ");
+    return carrierElm;
+  }
 
-    // flight__departure
-    const departureElm = document.createElement('div');
-    departureElm.classList.add('flight__departure');
-    const departureTimeElm = document.createElement('span');
-    departureTimeElm.classList.add('flight__time');
-    departureTimeElm.textContent = '11:50' // fake values, API doesn't provide this data
-    const departurePlaceElm = document.createElement('span');
-    departurePlaceElm.classList.add('flight__place');
-    departurePlaceElm.textContent = this.places.get(outboundFlight.OriginId).IataCode;
+  createLegPlace(placeId) {
+    const departureElm = Utilities.createElement('div', ['flight__departure']);
+    const departureTimeElm = Utilities.createElement('span', ['flight__time'], null, '11:50');
+    const departurePlaceElm = Utilities.createElement('span', ['flight__place']);
+    departurePlaceElm.textContent = this.places.get(placeId).IataCode;
     departureElm.append(departureTimeElm, departurePlaceElm);
+    return departureElm;
+  }
 
-    // flight__info
-    const infoElm = document.createElement('div');
-    infoElm.classList.add('flight__info');
-    const connectionElm = document.createElement('div');
-    connectionElm.classList.add('flight__connection');
-    connectionElm.textContent = quote.Direct ? 'Přímý let' : 'Let s přestupem';
+  createInfo(direct) {
+    const infoElm = Utilities.createElement('div', ['flight__info']);
+    const connectionElm = Utilities.createElement('div', ['flight__connection']);
+    connectionElm.textContent = direct ? 'Přímý let' : 'Let s přestupem';
     infoElm.append(connectionElm);
+    return infoElm
+  }
 
-    // flight__arival
-    const arivalElm = document.createElement('div');
-    arivalElm.classList.add('flight__departure');
-    const arivalTimeElm = document.createElement('span');
-    arivalTimeElm.classList.add('flight__time');
-    arivalTimeElm.textContent = '11:50' // fake values, API doesn't provide this data
-    const arivalPlaceElm = document.createElement('span');
-    arivalPlaceElm.classList.add('flight__place');
-    arivalPlaceElm.textContent = this.places.get(outboundFlight.OriginId).IataCode;
-    arivalElm.append(arivalTimeElm, arivalPlaceElm);
+  createLeg(leg, direct) {
+    const outboundElm = Utilities.createElement('div', ['flight']);
+    //carriers
+    const carrierElm = this.createCarriers(leg);
+    // flight__departure
+    const departureElm = this.createLegPlace(leg.OriginId);
+    // flight__info
+    const infoElm = this.createInfo(direct);
+    // flight__arrival
+    const arivalElm = this.createLegPlace(leg.DestinationId);
 
     outboundElm.append(carrierElm, departureElm, infoElm, arivalElm);
-    flightLegsElm.append(outboundElm);
 
+    return outboundElm;
+  }
+
+  createFlight(quoteId) {
+    const quote = this.quotes.get(quoteId);
+    const flight = {
+      direct: quote.Direct,
+      originPlace: this.originPlace,
+      destinationPlace: this.destinationPlace,
+      price: quote.MinPrice,
+      currency: this.currency.Symbol,
+      departureDate: quote.OutboundLeg.DepartureDate,
+      arrivalDate: quote.InboundLeg.DepartureDate,
+      id: quoteId,
+      created: quote.QuoteDateTime
+    }
+    this.buildedResults.set(flight.id, flight);
+    const flightLegsElm = Utilities.createElement('div', ['legs']);
+    //Outbound Leg
+    const outboundElm = this.createLeg(quote.OutboundLeg, quote.Direct);
+    flightLegsElm.append(outboundElm);
     //Inbound Flight
     const inboundFlight = quote.InboundLeg;
     if (inboundFlight) {
-      const inboundElm = document.createElement('div');
-      inboundElm.classList.add('flight');
-
-      //carriers
-      const carrierElm = document.createElement('div');
-      carrierElm.classList.add('flight__carrier');
-      const carriers = [];
-      for (const carrier of inboundFlight.CarrierIds) {
-        carriers.push(this.carriers.get(carrier));
-      }
-      carrierElm.textContent = carriers.join(", ");
-
-      // flight__departure
-      const departureElm = document.createElement('div');
-      departureElm.classList.add('flight__departure');
-      const timeElm = document.createElement('span');
-      timeElm.classList.add('flight__time');
-      timeElm.textContent = '11:50' // fake values, API doesn't provide this data
-      const placeElm = document.createElement('span');
-      placeElm.classList.add('flight__place');
-      placeElm.textContent = this.places.get(inboundFlight.OriginId).IataCode;
-      departureElm.append(timeElm, placeElm);
-
-      // flight__info
-      const infoElm = document.createElement('div');
-      infoElm.classList.add('flight__info');
-      const connectionElm = document.createElement('div');
-      connectionElm.classList.add('flight__connection');
-      connectionElm.textContent = quote.Direct ? 'Přímý let' : 'Let s přestupem';
-      infoElm.append(connectionElm);
-
-      // flight__arival
-      const arivalElm = document.createElement('div');
-      arivalElm.classList.add('flight__departure');
-      const arivalTimeElm = document.createElement('span');
-      arivalTimeElm.classList.add('flight__time');
-      arivalTimeElm.textContent = '11:50' // fake values, API doesn't provide this data
-      const arivalPlaceElm = document.createElement('span');
-      arivalPlaceElm.classList.add('flight__place');
-      arivalPlaceElm.textContent = this.places.get(inboundFlight.OriginId).IataCode;
-      arivalElm.append(arivalTimeElm, arivalPlaceElm);
-
-      inboundElm.append(carrierElm, departureElm, infoElm, arivalElm);
+      const inboundElm = this.createLeg(inboundFlight, quote.Direct);
       flightLegsElm.append(inboundElm);
     }
     return flightLegsElm;
   }
 
   createPrice(quoteId) {
+    const quote = this.quotes.get(quoteId)
     const priceElm = document.createElement('div');
     priceElm.classList.add('price');
     const priceValueElm = document.createElement('div');
     priceValueElm.classList.add('price__value');
-    priceValueElm.textContent = `${this.quotes.get(quoteId).MinPrice} ${this.currency.Symbol}`;
+    priceValueElm.textContent = `${quote.MinPrice} ${this.currency.Symbol}`;
 
     const buttonElm = document.createElement('button');
-    buttonElm.addEventListener('click', this.handleAddFlight.bind(this));
+    buttonElm.addEventListener('click', this.handleAddFlight.bind(this, quoteId));
     buttonElm.textContent = 'Vybrat';
-    buttonElm.classList.add('price__btn', 'btn');
+    buttonElm.classList.add('btn-success', 'btn');
 
     priceElm.append(priceValueElm, buttonElm);
     return priceElm;
   }
 
-  handleAddFlight() {
-    let storedFlights = JSON.parse(localStorage.getItem("flights"));
-    if(storedFlights == null) {
-      storedFlights = [];
+  handleAddFlight(quoteId, event) {
+    if (!event.target.classList.contains('btn-info')) {
+      if (this.addFlightHanlder(this.buildedResults.get(quoteId))) {
+        event.target.classList.add('btn-info');
+        event.target.textContent = 'Přidáno';
+      } else {
+        event.target.classList.add('btn-warning');
+        event.target.textContent = 'Již přidáno';
+      }
     }
-    storedFlights.push(
-      {"originPlace": this.originPlace, "destinationPlace": this.destinationPlace, "price": this.minPrice})
-    localStorage.setItem("flights", JSON.stringify(storedFlights));
   }
 
   createHeader() {
@@ -189,10 +165,11 @@ export default class SearchResults {
   }
 
   render() {
-    if(this.results.length == 0) {
-      document.getElementById(this.hookId).textContent = 'Zadne vysledky pro dane datum';
-      return ;
+    if (this.results.length == 0) {
+      const infoText = Utilities.createElement('div', ['no-results'], null, 'Žádné výsledky pro dané datum');
+      this.resultsWrapper.append(infoText)
+      return;
     }
-    document.getElementById(this.hookId).append(this.createHeader(), ...this.results);
+    this.resultsWrapper.append(this.createHeader(), ...this.results);
   }
 }
