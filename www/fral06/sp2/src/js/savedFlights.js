@@ -20,6 +20,8 @@ export default class SavedFlights {
       for (const flight of this.flights) {
         this.createFlight(flight);
       }
+    }else {
+      this.flights = [];
     }
   }
 
@@ -48,6 +50,8 @@ export default class SavedFlights {
   }
 
   checkFlights(newflight) {
+    if(this.flights.length == 0)
+      return true;
     for (const flight of this.flights) {
       if (flight.originPlace === newflight.originPlace &&
         flight.destinationPlace == newflight.destinationPlace &&
