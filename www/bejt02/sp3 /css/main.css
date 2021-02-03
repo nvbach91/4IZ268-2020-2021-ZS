@@ -1,0 +1,42 @@
+header {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    min-height: 10vh;
+}
+
+header h1{
+    margin: auto;
+}
+
+#content{
+    min-height: 80vh;
+}
+
+footer {
+    min-height: 10vh;
+    background-color: white;
+    font-size: 15px;
+    color: black;
+}
+footer p{
+    margin: auto;
+}
+
+.drink-image{
+    max-width: 100%;
+}
+
+.btn.btn-secondary{
+    padding: 6px 10px !important
+}
+
+.list-group{
+    width: 100%;
+}
+
+.buttons-row{
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
