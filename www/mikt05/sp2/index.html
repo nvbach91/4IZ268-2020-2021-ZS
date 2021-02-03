@@ -32,9 +32,16 @@
                 <input class="input-nba-form" name="nba-name-input" placeholder="Write down player's lastname" required>
                 <button id="search-button">Search<i class="fas fa-check"></i></button>
             </form>
-            <div>
-                <h3>Players with last name</h3>
-                <ul id="name-result"></ul>
+            <div class="mainContainer">
+                <div class="leftS">
+                    <h3 id="headingLastName"></h3>
+                    <ul id="name-result"></ul>
+                    <ul id="stats-result"></ul>
+                </div>
+                <div class="favourite">
+                    <h3>Your Fav Players</h3>
+                    <ul id="favourite-players"></ul>
+                </div>
             </div>
         </section>
     </main>

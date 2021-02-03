@@ -14,6 +14,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+#name-result, #favourite-players {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
 .logo {
     height: 50px;
     margin-left: 15px;
@@ -24,14 +29,42 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     text-align: left;
-    padding: 25px;
+    padding: 5%;
     background-color: black;
     border-radius: 15px;
+}
+.input-nba-form {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+}
+.mainContainer {
+    display: flex;
+}
+.leftS {
+    width: 70%;
+}
+.favourite {
+    width: 30%;
+}
+#nba-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
     
 }
-#nba-name-form {
-    margin-top: 10px;
+ul > img {
+    width: 110px;
+    height: 130px;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    margin-bottom: 5px;
+    margin-top: -15px;
 }
+#nba-name-form {
+    margin-top: 5px;
+}
+
 #search-button {
     margin-left: 10px;
     height: 30px;
@@ -40,13 +73,37 @@ body {
     border-radius: 10px;
 }
 .input-form {
-    height: 30px;
+    height: 50px;
     width: 200px;
     border-radius: 10px;
     text-align: center;
 }
 h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-decoration: overline;
+}
+.buttonTop {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    height: 20px;
+    width: 110px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.buttonDelete {
     margin-top: 10px;
+    background-color: rgb(159, 224, 224);
+    border: none;
+    border-radius: 5px;
+}
+button:hover {
+    cursor: pointer;
+    background-color:aliceblue;
 }
 .footer {
     position: fixed;
@@ -58,13 +115,4 @@ h3 {
     padding-top: 5px;
     color: darkgrey;
     background-color: black;
-}
-.loader {
-    border: 5px solid crimson;
-    border-top: 5px solid #ccc;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
 }
