@@ -6,13 +6,12 @@ const movieInput = document.querySelector('#movie-input');
 const searchResultsColumn = document.querySelector('#search-results');
 const myListColumn = document.querySelector('#my-list');
 const resetButton = document.querySelector('#reset-search-button');
-
+const counterElement = document.querySelector('#counter-element');
 
 function handleError(error) {
     console.error('Error: ', error);
 
 }
-
 
 function movieElement(movies) {
 
@@ -44,6 +43,7 @@ function movieElement(movies) {
 }
 
 function createMovieContainer(movies) {
+
     const columnTitle = document.createElement('div');
     columnTitle.classList = 'column-title';
     const title = `<h2>Search results</h2>
@@ -63,8 +63,6 @@ function createMovieContainer(movies) {
 
 
 function renderSearchMovies(data) {
-    //data.results
-
 
     searchResultsColumn.innerHTML = '';
     const movies = data.results;
@@ -72,9 +70,7 @@ function renderSearchMovies(data) {
     searchResultsColumn.appendChild(movieContainer);
     console.log('Data:', data);
 
-
 }
-
 
 function createMyList(data, movieId) {
 
@@ -95,12 +91,12 @@ function createMyList(data, movieId) {
 
 
 searchButton.onclick = function (event) {
+
     event.preventDefault();
     const movieInputValue = movieInput.value;
     searchMovie(movieInputValue);
-
     movieInput.value = '';
-    console.log(movieInputValue);
+
 
 
 }
@@ -120,6 +116,7 @@ document.onclick = function (event) {
             .then((data) => {
 
                 createMyList(data, movieId);
+                counter();
 
             })
             .catch((error) => {
@@ -132,13 +129,17 @@ document.onclick = function (event) {
         const listElement = event.target.parentElement;
         listElement.remove();
         console.log('Movie is deleted');
+        counter();
     }
 
 }
 
 function counter() {
     var count = myListColumn.getElementsByClassName('list-element');
-    console.log('YOU have ', count, 'films in your list');
+    // console.log('YOU have ', count, 'films in your list');
+    number = count.length;
+    counterElement.innerHTML = 'Movies in your list: ' + number;
+    return number;
 
 }
 
