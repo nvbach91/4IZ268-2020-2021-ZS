@@ -1,0 +1,98 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*header*/
+.headfirst {
+    padding-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-dl{
+    position: absolute;
+    top: 25%;
+    left: 37%;
+  }
+  
+  select {
+    /* reset */
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  #select-team-name, #select-player-name{
+      background: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 400px;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.5);
+  }
+   #select-team-id, #select-player-id{
+    display: block;
+    visibility: hidden;
+  }
+   
+  select#select-team-name, #select-player-name{
+    background-image:
+      linear-gradient(45deg, transparent 50%, rgb(72, 72, 110) 50%),
+      linear-gradient(135deg, rgb(72, 72, 110) 50%, transparent 50%),
+      linear-gradient(to right, rgb(141, 141, 218), rgb(141, 141, 218));
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select#select-team-name:focus, #select-player-name:focus{
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      linear-gradient(to right, rgb(168, 167, 167), rgb(168, 167, 167));
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+    border-color: grey;
+    outline: 0;
+  }
+
+/*Footer*/
+.footer {
+    margin-top: 30%;
+    padding: 15px 0;
+    background-color: #3a3e64;
+}
+
+.footer__wards {
+    font-size: 25px;
+    text-align: center;
+}
