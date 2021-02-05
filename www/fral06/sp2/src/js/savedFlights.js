@@ -15,12 +15,17 @@ export default class SavedFlights {
   }
 
   loadData() {
-    this.flights = JSON.parse(localStorage.getItem("saved-flights"));
-    if (this.flights != null) {
-      for (const flight of this.flights) {
-        this.createFlight(flight);
+    try {
+      this.flights = JSON.parse(localStorage.getItem("saved-flights"));
+      if (this.flights != null) {
+        for (const flight of this.flights) {
+          this.createFlight(flight);
+        }
+      }else {
+        this.flights = [];
       }
-    }else {
+    } catch (e) {
+      localStorage.removeItem("saved-flights");
       this.flights = [];
     }
   }

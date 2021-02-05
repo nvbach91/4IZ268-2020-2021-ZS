@@ -1,6 +1,7 @@
 import Autocomplete from "./autocomplete";
 import Utilities from "./utilities";
 
+
 export default class SearchMask {
 
   constructor(hookId) {
@@ -29,6 +30,15 @@ export default class SearchMask {
   setResultsHandler(handler) {
     this.resultsHandler = handler;
   }
+
+  departureLocationHandler(location) {
+    this.outbound.setValue(location);
+  }
+
+  arrivalLocationHandler(location) {
+    this.inbound.setValue(location);
+  }
+
 
   handleClick(e) {
     console.log(this.dateFromElm.value, this.dateToElm.value);
@@ -95,4 +105,5 @@ export default class SearchMask {
     formElm.append(this.outbound.render(), this.inbound.render(), this.dateFrom, this.dateTo, this.button);
     document.querySelector(`#${this.hookId}`).append(searchMaskElm);
   }
+
 }

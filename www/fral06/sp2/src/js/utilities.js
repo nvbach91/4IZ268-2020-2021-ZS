@@ -23,9 +23,13 @@ export default class Utilities {
     const groupElm = Utilities.createElement('div', ['form__group']);
     const inputElm = Utilities.createElement('input', inputClasses, inputId);
     inputElm.type = inputType;
-    const labelElm = Utilities.createElement('label', labelClass, null, labelText);
-    labelElm.htmlFor = inputId;
-    groupElm.append(labelElm, inputElm);
+    if(labelText != null) {
+      const labelElm = Utilities.createElement('label', labelClass, null, labelText);
+      labelElm.htmlFor = inputId;
+      groupElm.append(labelElm, inputElm);
+    }
+
+    groupElm.append(inputElm);
     return groupElm;
   }
 

@@ -196,4 +196,28 @@ body {
   font-size: 1.8rem;
 }
 
+.saved-locations {
+  margin-bottom: 4rem;
+  align-items: center;
+}
+.saved-locations__form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+
+.list-group-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+
+}
+.list-group-item .btn:not(:last-child) {
+  margin-right: .8rem;
+}
+
+
 
