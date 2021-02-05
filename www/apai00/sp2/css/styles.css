@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#div-name-and-favorite {
+    justify-content: center;
+    display: flex;
+}
+
+h3 {
+    margin: 10px 15px 10px 15px;
+    font-size: 30px;
+}
+
+#add-to-favorite {
+    margin: 10px 5px 10px 5px;
+}
+
+.paragraf-actualy-team {
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin: 15px 0 10px 0;
+    padding: 5px 5px 0 5px;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px 200px 0 200px;
+    background-color: rgb(93, 184, 214);
+}
+
+li {
+    display: flex;
+    justify-content: center;
+}
+
+.div-info {
+    margin: 1px 5px 1px 50px;
+    width: 600px;
+    background-color: rgb(107, 174, 197);
+}
+
+.div-more {
+    margin: 1px 50px 1px 0;
+    text-align: center;
+}
+
+.btn-more-information {
+    border-radius: 5px;
+}
+
+#favorite-teams {
+    background-color: rgb(107, 174, 197);
+    margin: 10px 200px 5px 200px;
+}
+
+#container-favorite-teams {
+    background-color: rgb(93, 184, 214);
+    margin: 10px 200px 0 200px;
+}
+
+.favorite {
+    margin: -5px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.remove-from-favorite {
+    margin: 15px 0 15px 5px;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 250px;
+}
+
+ul,
+.div-info,
+#favorite-teams,
+#container-favorite-teams {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+
+/* spinner */
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: black;
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*/spinner*/
+
+@media screen and (max-width: 800px) {
+    * {
+        font-size: 12px;
+    }
+    .logo {
+        height: 150px;
+    }
+    #favorite-teams {
+        margin: 0 10px 0 10px;
+    }
+    h1,
+    h2,
+    h3 {
+        font-size: 16px;
+    }
+    .div-info {
+        width: 290px;
+    }
+    ul,
+    #container-favorite-teams {
+        margin: 10px 5px 0 5px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .information-list {
+        width: 500px;
+    }
+    .div-info {
+        width: 300px;
+    }
+    .teamA {
+        width: 100px;
+        margin: 0 0 0 5px;
+    }
+    .teamB {
+        width: 100px;
+        margin: 0 5px 0 0;
+    }
+    .score {
+        margin: 0 5px 0 5px;
+        width: 50px;
+    }
+}
+
+@media print {
+    * {
+        font-size: 12px;
+    }
+    #container-favorite-teams,
+    #team-select,
+    h1,
+    h2,
+    button {
+        display: none;
+    }
+    .information-list {
+        border: none;
+        margin: 10px 10px 0 10px;
+    }
+    body {
+        background-color: white;
+    }
+}
+
+.teams-more-info {
+    display: flex;
+}
+
+.teamA {
+    width: 500px;
+    text-align: left;
+    margin: 0 0 0 5px;
+}
+
+.teamB {
+    width: 500px;
+    text-align: right;
+    margin: 0 5px 0 0;
+}
+
+.score {
+    margin: 0 50px 0 50px;
+    width: 100px;
+}
+
+.marked {
+    color: red;
+}
