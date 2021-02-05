@@ -1,0 +1,55 @@
+body{
+  background-color: #0B0C10;
+  color: #C5C6C7
+  
+}
+.container{
+  font-family: roboto;
+}
+h1{
+  padding: 20px;
+  margin-bottom: 5px;
+  color: #66FCF1;
+  text-align: left;
+  text-transform: uppercase;
+      
+}
+
+h2{
+  color: #66FCF1
+}
+
+thead{
+    background-color: #1F2833;
+    color: #66FCF1;
+}
+
+button{
+  background-color: #66FCF1;
+  padding: 15px;
+  
+}
+
+.btnM{
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.btnW{
+  margin-top: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+
+}
+
+.display-block{
+  display: block !important;
+}
+
+.display-none{
+  display: none !important;
+}
+
+.modal-content{
+  background-color: #0B0C10;
+}
