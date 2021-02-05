@@ -14,6 +14,8 @@ $(document).ready(() => {
     const spinner = $(`<div class="lds-hourglass"></div>`);
     const divSpinner = $('.div-spinner');
 
+
+
     let foundCocktails = [];
     let foundCocktail;
     const timeFormat = moment().format('LLLL');
@@ -45,11 +47,13 @@ $(document).ready(() => {
                 const url = urlById + id;
                 $.getJSON(url).done((resp) => {
                     foundCocktail = resp;
-                    makeCocktail();
+                    //makeCocktail();
+                    makeAllert();
                 })
 
             });
             element.find('button').click(() => {
+
                 const cockTailName = element.find('p').text();
                 delete localStorageData[cockTailName];
                 localStorage.setItem('favoriteCocktails', JSON.stringify(localStorageData));
@@ -57,8 +61,10 @@ $(document).ready(() => {
 
             });
             elements.push(element);
+
         });
         offersShow.append(elements);
+
     });
 
     searchCocktail.submit((e) => {
@@ -113,7 +119,8 @@ $(document).ready(() => {
                 $.getJSON(url).done((resp) => {
                     console.log(resp);
                     foundCocktail = resp;
-                    makeCocktail();
+                    // makeCocktail();
+                    makeAllert();
                 })
 
             }
@@ -126,6 +133,7 @@ $(document).ready(() => {
                 const image = this.attributes[2].value;
                 const id = this.attributes[3].value;
                 addCToFavorites(title, image, id);
+                $(this).parent().remove();
             }
 
         }
@@ -140,7 +148,7 @@ $(document).ready(() => {
         }
 
         var favorites = JSON.parse(localStorage.getItem('favoriteCocktails'));
-
+        console.log(favorites);
         if (favorites.title == null) {
 
             var drinkObj = {
@@ -153,70 +161,66 @@ $(document).ready(() => {
 
             localStorage.setItem('favoriteCocktails', JSON.stringify(favorites));
         }
+        console.log(localStorage);
 
     }
 
-    function makeCocktail() {
-        emptyResult();
-        result.toggle();
-        togleIndikator = 0;
-        if (receptTogle == 0) {
-            cocktailShow.toggle();
-            receptTogle = 1;
-        }
-
-        const drink = foundCocktail.drinks[0];
-        var cocktailForm = [];
-        const title = $(`<h2>${drink.strDrink}</h2>`);
-        const image = $(`<img alt="image" class="found-picture" src="${drink.strDrinkThumb}">`);
-        const category = $(`<div class="paragraf-drink"><h3>Category:</h3> <p class="paragraf-drink-info">${drink.strCategory}</p></div>`);
-        const alcoholic = $(`<div class="paragraf-drink"><h3>Alcoholic:</h3><p class="paragraf-drink-info">${drink.strAlcoholic}</p></div>`);
-        const glass = $(`<div class="paragraf-drink"><h3>Glass: </h3><p class="paragraf-drink-info">${drink.strGlass}</p></div>`);
-        const ingr = $(`<h3>Ingredients</h3>`);
-
-        cocktailForm.push(title, image, category, alcoholic, glass, ingr);
-        receptMain.append(cocktailForm);
-        const ingredients = [];
-        ingredients.push([drink.strIngredient1], [drink.strIngredient2], [drink.strIngredient3], [drink.strIngredient4], [drink.strIngredient5], [drink.strIngredient6]);
-        var indikator = 0;
-        cocktailForm = [];
 
 
-        for (let i = 0; i < ingredients.length; i++) {
-            if (ingredients[i] != "") {
-                const ingredient = $(`<th>${ingredients[i]}</th>`);
-                cocktailForm.push(ingredient);
-                indikator++;
-            }
-        }
-        tableTitles.append(cocktailForm);
-        cocktailForm = [];
-        const measures = [];
-        measures.push(drink.strMeasure1, drink.strMeasure2, drink.strMeasure3,
-            drink.strMeasure4, drink.strMeasure5, drink.strMeasure6);
-        for (b = 0; b < measures.length; b++) {
-            if (measures[b] != "" && measures[b] != null) {
-                const measure = $(`<th>${measures[b]}</th>`);
-                cocktailForm.push(measure);
-
-            } else {
-                if (indikator >= b + 1) {
-                    const measure = $(`<th> On your taste </th>`);
-                    cocktailForm.push(measure);
-                }
-            }
-        }
-        tableMeasures.append(cocktailForm);
-        const instruction = $(`<h3>Instruction</h3><p>${drink.strInstructions}</p>`);
-        receptInstruction.append(instruction);
-
-
-    }
 
     function emptyResult() {
         receptMain.empty();
         tableTitles.empty();
         tableMeasures.empty();
         receptInstruction.empty();
+    }
+
+    function makeAllert() {
+        const drink = foundCocktail.drinks[0];
+        //var message = '<h2> drink.strDrink </h2>' + '\n\n ' + drink.strDrinkThumb + '\n\n ' + drink.strCategory + '\n\n ' + drink.strAlcoholic;
+        const title = `<h2>${drink.strDrink}</h2>`;
+        const image = `<img alt="image" class="found-picture" src="${drink.strDrinkThumb}">`;
+        const category = `<div class="paragraf-drink"><h3>Category:</h3> <p class="paragraf-drink-info">${drink.strCategory}</p></div>`;
+        const alcoholic = `<div class="paragraf-drink"><h3>Alcoholic:</h3><p class="paragraf-drink-info">${drink.strAlcoholic}</p></div>`;
+        const glass = `<div class="paragraf-drink"><h3>Glass: </h3><p class="paragraf-drink-info">${drink.strGlass}</p></div>`;
+        const ingr = `<h3>Ingredients</h3>`;
+        var table = `<table class="ingredients-table"><thead><tr id="ingr-titles">`;
+
+        const ingredients = [];
+        ingredients.push([drink.strIngredient1], [drink.strIngredient2], [drink.strIngredient3], [drink.strIngredient4], [drink.strIngredient5], [drink.strIngredient6]);
+        var indikator = 0;
+
+
+        for (let i = 0; i < ingredients.length; i++) {
+            if (ingredients[i] != "") {
+                const ingredient = `<th>${ingredients[i]}</th>`;
+                table = table + ingredient;
+                indikator++;
+            }
+        }
+
+        table = table + `</tr></thead><tbody><tr id="measures">`;
+        const measures = [];
+        measures.push(drink.strMeasure1, drink.strMeasure2, drink.strMeasure3,
+            drink.strMeasure4, drink.strMeasure5, drink.strMeasure6);
+        for (b = 0; b < measures.length; b++) {
+            if (measures[b] != "" && measures[b] != null) {
+                const measure = `<th>${measures[b]}</th>`;
+                table = table + measure;
+
+            } else {
+                if (indikator >= b + 1) {
+                    const measure = `<th> On your taste </th>`;
+                    table = table + measure;
+                }
+            }
+        }
+        table = table + `</tr></tbody></table>`;
+        const instruction = `<h3>Instruction</h3><p>${drink.strInstructions}</p>`;
+        var message = title + image + category + alcoholic + glass + ingr + table + instruction;
+
+        alertify.alert(message, function() {
+
+        });
     }
 })
