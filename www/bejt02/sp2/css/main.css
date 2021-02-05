@@ -1,26 +1,16 @@
-* {
-    box-sizing: border-box;
-}
-
 header {
     color: white;
     font-size: 20px;
     margin-bottom: 20px;
     min-height: 10vh;
 }
+
 header h1{
     margin: auto;
 }
 
 #content{
     min-height: 80vh;
-}
-.container{
-    margin-bottom: 20px;
-}
-
-.active{
-    background-color: black!important;
 }
 
 footer {
@@ -49,4 +39,9 @@ footer p{
     margin: 10px;
     align-items: center;
     justify-content: center;
+}
+
+.card-text{
+    height: 100px;
+    overflow-y: scroll;
 }

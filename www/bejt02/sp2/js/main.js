@@ -1,12 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    const content = $('#content');
+    var images;
 
-    function ageConfirm() {
-       confirm("Potvrzuji, že jsem starší 18 let.")
-    };
-    ageConfirm();
-
-    function getFavorites(){
-        $("#content").html(
+    function getFavorites() {
+        content.html(
             `
             <div class="container">
                 <div class="row">
@@ -16,159 +13,188 @@ $(document).ready(function(){
                         <button type="button" class="btn btn-primary" id="changePage">🔍</button>
                     </div>
                 </div>
-            </div>
-            <div id="images">
+                <div id="images">
                 
+                </div>
             </div>
+           
             `
-        )
-        getFavoritesDrinks()
+        );
+
+        images = $("#images");
+
+        getFavoritesDrinks();
 
         $("#changePage").click(function () {
             getMain()
         });
     }
 
-    function getMain(){
-        var letters=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    function getMain() {
 
-        var buttons = letters.map(createButtons)
-        
-        function createButtons(letter) {
-            return `<button class="btn btn-secondary">${letter}</button>`
-        }
-        
-        $("#content").html(
+        content.html(
             `
-            <div class="container">
-                <div class="row">
-                    <div class="col-11">${buttons.join(" ")}
-                    </div>
-                    <div class="col-1" style="text-align: right">
-                        <a class="btn btn-primary" id="changePage">💛</a>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-11">
+                    <form  class="form-inline searchForm">
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Drink:</div>
+                            </div>
+                            <input type="text" id="searchBox" placeholder="Vyhledej nápoj"><br>
+                        </div>
+                        <button type="submit" class="btn btn-success">Vyhledat</button>
+                    </form>
+                </div>
+                <div class="col-1" style="text-align: right">
+                    <a class="btn btn-primary" id="changePage">💛</a>
                 </div>
             </div>
             <div id="images">
-                
             </div>
-            `
-        )
+        </div>
+        `
+        );
+
+        var searchBox =  $("#searchBox");
+
+        images = $("#images");
+
         $("#changePage").click(function () {
             getFavorites()
         });
-        $("button").click(function(){
-            $(".btn").removeClass("active")
-            $(this).addClass("active")
-            window.localStorage.setItem("startDrink",$(this).text());
-            getDrinks()
-        })
-      
+
+        var search = getLocal("search") 
+        if (search) {
+            getDrinks(search)
+            searchBox.val(search) 
+        }
+
+        $(".searchForm").on('submit', function (e) {
+            e.preventDefault();
+            var searchTerm = searchBox.val();
+            window.localStorage.setItem("search", JSON.stringify(searchTerm));
+            getDrinks(searchTerm)
+        });
     }
 
     getMain()
 
-    function getDrinks(){
-        $("#images").empty();
-        var letter =window.localStorage.getItem("startDrink");
-        
+    function getDrinks(searchTerm) {
         var src = `<div class="container"  style="text-align:center">
-                        <div class="spinner-border">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                    </div>`
-        $("#images").html(src);
+        <div class="spinner-border">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>`
+        images.html(src);
 
-        src =`<div class="row row-cols-3 row-cols-xs-1">`
+        var apiAddress = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+        src = `<div class="row row-cols-3 row-cols-xs-1">`
+        $.ajax({
+            url: apiAddress + searchTerm,
+        }).done(function (data) {
+            if (data.drinks === null) {
+                images.empty();
 
-        $.ajax({url: `https://thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`, success: function(result){
-            if(result.drinks){
-                $.each(result.drinks, function (i, drink) {
+                images.append(` <div class="col-12" style="text-align:center">
+                            Na této stránce nejsou žádné drinky 😢
+                        </div>`);
+            } else {
+                images.empty();
+                $.each(data.drinks, function (i, drink) {
                     src +=
-                    `<div class="col mb-4"> 
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img class="drink-image" src="${drink.strDrinkThumb}" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${drink.strDrink}</h5>
-                                        <p class="card-text">${drink.strInstructions}</p>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="row no-gutters">
-                                <ul class="list-group list-group-flush">`
-                                    var i = 1  
-                                    while (drink[`strIngredient${i}`] != null) {
-                                        var ingredient = `strIngredient${i}`
-                                        var measure =`strMeasure${i}`
-                                        src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure]? ": " + drink[measure]:""}</li>`
-                                        i++;
-                                    }
-                    src +=`</ul></div>`
+                        `<div class="col mb-4"> 
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img class="drink-image" src="${drink.strDrinkThumb}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${drink.strDrink}</h5>
+                            <p class="card-text">${drink.strInstructions}</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row no-gutters">
+                    <ul class="list-group list-group-flush">`
+                    var i = 1
+                    while (drink[`strIngredient${i}`] != null) {
+                        var ingredient = `strIngredient${i}`
+                        var measure = `strMeasure${i}`
+                        src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure] ? ": " + drink[measure] : ""}</li>`
+                        i++;
+                    }
+                    src += `</ul></div>`
 
-                    var myDrinks = getLocal()
-                    buttonClass = "addDrink"
-                    buttonName = "Add"
-                    buttonStyleClass = "btn-primary"
+                    var myDrinks = getLocal("drinks")
+
+                    var buttonType = "add"
+                    var buttonName = "Add"
+                    var buttonStyleClass = "btn-primary"
 
                     $.each(myDrinks, function (f, fDrink) {
-                        if (fDrink.idDrink == drink.idDrink) {
-                            buttonClass = "deleteDrink"
+                        if (fDrink?.idDrink == drink.idDrink) {
+                            buttonType = "delete"
                             buttonName = "Delete"
                             buttonStyleClass = "btn-danger"
                         }
                     })
 
-                    src +=` <div class="row buttons-row">
-                                <div class="col-4">
-                                    <button type="button" class="btn ${buttonStyleClass} ${buttonClass}" data-id="${drink.idDrink}">${buttonName}</a>
-                                </div>
-                            </div>`
-                    src +=`</div></div>`
+                    src += ` <div class="row buttons-row">
+            <div class="col-4">
+                <button type="button" class="toggle btn ${buttonStyleClass}" data-type="${buttonType}" data-id="${drink.idDrink}">${buttonName}</a>
+            </div>
+        </div>`
+                    src += `</div></div>`
+
                 })
-                
-            }
-            else{
-                src += ` <div class="col-12" style="text-align:center">
-                            Na této stránce nejsou žádné drinky 😢
-                        </div>`
+
             }
 
-            src +=`</div>`
-            $("#images").html(src)
+            src += `</div>`
+            images.html(src);
 
-            $(".addDrink").click(function(){
+            $(".toggle").click(function () {
+                var type = $(this).attr("data-type");
                 var id = $(this).attr("data-id");
-                $.ajax({url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="+id, success: function(result){
-                    var myDrinks = getLocal()
-                    console.log(result)
-                    myDrinks.push(result.drinks[0])
-                    setLocal(myDrinks)
-                    getDrinks()
-                }})
-            })
+                $(this).toggleClass("btn-danger btn-primary")
 
-            $(".deleteDrink").click(function(){
-                var id = $(this).attr("data-id");
-                deleteLocal(id)
-                getDrinks();
-            })
-        }});
-        
-        
-    };
+                if (type === "add") {
+                    $(this).text("Delete")
+                    $(this).attr("data-type", "delete")
 
-    function getFavoritesDrinks(){
-        var myDrinks = getLocal();
-        var src =`<div class="row row-cols-3 row-cols-xs-1">`
-        if(myDrinks.length>0){
-            $.each(myDrinks, function (i, drink) {
+                    $.ajax({
+                        url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id, success: function (result) {
+                            var myDrinks = getLocal("drinks")
+                            myDrinks[id] = result.drinks[0]
+                            setLocal(myDrinks)
+                        }
+                    })
+                }
+                else {
+                    deleteLocal(id)
+                    $(this).attr("data-type", "add")
+                    $(this).text("Add")
+                }
+
+            })
+        });
+    }
+
+    function getFavoritesDrinks() {
+        var myDrinks = getLocal("drinks");
+        var listArray = Object.keys(myDrinks);
+        var src = `<div class="row row-cols-3 row-cols-xs-1">`
+
+        var count = 0
+
+        $.each(listArray, function (i, key) {
+            var drink = myDrinks[key]
+            if (drink != null) {
                 src +=
-                `<div class="col mb-4"> 
+                    `<div class="col mb-4" id="${drink.idDrink}"> 
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters">
                             <div class="col-md-4">
@@ -177,49 +203,58 @@ $(document).ready(function(){
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">${drink.strDrink}</h5>
-                                    <p class="card-text">${drink.strInstructions}</p>
+                                    <div class="drink-text">
+                                        <p class="card-text">${drink.strInstructions}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div> 
                         <div class="row no-gutters">
                             <ul class="list-group list-group-flush">`
-                                var i = 1  
-                                while (drink[`strIngredient${i}`] != null) {
-                                    var ingredient = `strIngredient${i}`
-                                    var measure =`strMeasure${i}`
-                                    src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure]? ": " + drink[measure]:""}</li>`
-                                    i++;
-                                }
-                src +=`</ul></div>`
-                src +=` <div class="row buttons-row">
+                var i = 1
+                while (drink[`strIngredient${i}`] != null) {
+                    var ingredient = `strIngredient${i}`
+                    var measure = `strMeasure${i}`
+                    src += `<li class="list-group-item">${drink[ingredient]} ${drink[measure] ? ": " + drink[measure] : ""}</li>`
+                    i++;
+                }
+                src += `</ul></div>`
+                src += ` <div class="row buttons-row">
                             <div class="col-4">
                                 <button type="button" class="btn btn-primary deleteDrink" data-id="${drink.idDrink}">Delete</a>
                             </div>
                         </div>`
-                src +=`</div></div>`
-            })
-            
-        }
-        else{
-            src += `<div class="col-12" style="text-align:center">
-                        Zatím nemáš v oblíbených žádné drinky 😢
-                    </div>`
-        }
-        src +=`</div>`
-        $("#images").html(src)
+                src += `</div></div>`
 
-        $(".deleteDrink").click(function(){
+                count++
+            }
+            else {
+                return;
+            }
+        })
+
+        if (count === 0) {
+            src += `<div class="col-12" style="text-align:center">
+                    Zatím nemáš v oblíbených žádné drinky 😢
+                </div>`
+        }
+
+        src += `</div>`
+
+        images.html(src);
+
+        $(".deleteDrink").click(function () {
             var id = $(this).attr("data-id");
             deleteLocal(id)
-            getFavorites();
+            $(this).parents(".card").remove()
         })
     };
-    
-    function getLocal() {
+
+    function getLocal(type) {
         try {
-            return JSON.parse(window.localStorage.getItem("drinks")) || [];
-        } 
-        catch(e){
+            return JSON.parse(window.localStorage.getItem(type)) || [];
+        }
+        catch (e) {
             return [];
         }
     }
@@ -229,16 +264,9 @@ $(document).ready(function(){
     }
 
     function deleteLocal(id) {
-        var myDrinks = getLocal();
-        $.each(myDrinks, function (i, value) {
-            console.log(myDrinks[i])
-            console.log(value.idDrink)
-            console.log(value.idDrink === id)
-            if (value.idDrink === id) {
-                myDrinks.splice(i, 1);
-                return false;
-            }
-        })
+        var myDrinks = getLocal("drinks");
+        delete myDrinks[id];
         setLocal(myDrinks);
     }
+
 });
