@@ -26,11 +26,12 @@ body {
 .container-small {
     border-bottom: double;  
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtm1R-EHscLKBb1MmliKQKObMVvWA5XA-zpw&usqp=CAU");
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
     opacity: 0.8;
+    height:fit-content;
+    width: 100%;
 }
+
 #delete-movie, #myFavorites, #save-button {
     margin:15px ; 
     color: #fff;
@@ -117,14 +118,19 @@ aside {
 }
 #favorites {
     width: 25%;
-    display: none;
     margin: 10px;
+    overflow: auto;
+    max-height: 100vh;
+    flex-wrap: wrap;
+    display: flex;
 }
 .box-container {
     width: 100%;
     float: none;
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
+    max-height: 100vh;
 }
 #movies{
     padding: 15px;
@@ -133,8 +139,9 @@ aside {
     width: 50%;
     float: none;
     display: flex;
-    display: none;
     margin: 10px;
+    overflow: auto;
+    max-height: 100vh;
 }
 @media (min-width:960px) {
 #movies .col-md-3 .well {
