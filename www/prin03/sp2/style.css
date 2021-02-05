@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	background:#460E56;
+	font: 12px/18px Arial, sans-serif;
+	width: 100%;
+}
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#graph {background:#fff; width:666px; height:375px; border-radius:5px; margin:0 auto; text-align:center;}
+.loadGraph {background:#fff url(ajax-loader_3.gif) center top no-repeat !important;}
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+	background:#C3BB38;	height:350px; margin:90px 0 120px 0;
+}
+
+.leftBlock {}
+.leftBlock select{line-height:30px; font-size:19px; margin:27px 0 0 40px; padding:10px; border-radius:5px;}
+.leftBlock .ExchangeRates {font-size:17px; margin:15px 0 0 330px; display:none;}
+.leftBlock .ExchangeRates span {padding:5px 25px 5px 5px;}
+.leftBlock .ajax-load {background:url(ajax-loader.gif) right no-repeat;}
+.rightBlock {}
+.rightBlock button {line-height:20px; font-size:19px; margin:0 0 0 295px; padding:10px; border-radius:5px; outline:none; cursor:pointer;
+	background:#EBEBEB; color:#B94761; display:none; position:absolute; left:48%;}
+.rightBlock .savedCur {text-align:center; margin:35px 0 0 0; width:600px; }
+.rightBlock .savedCur thead tr{background:#E5E5E5; line-height:41px;}
+.rightBlock .savedCur tr{background:#fff; line-height:41px;}
+.rightBlock .savedCur span{cursor:pointer; color:#b00;}
+.rightBlock li {background:#fff; display:block; padding:15px 0 11px 0; border-bottom:1px solid #aaa;}
+.rightBlock .ajax-load_2 {background:#E5E5E5 url(ajax-loader_2.gif) 82% 60% no-repeat !important;}
+.rightBlock .savedCur {}
+.forTable {display:none; height:245px; overflow-y:auto; width:620px;}
+/* Middle 
+-----------------------------------------------------------------------------*/
+.content {
+}
+

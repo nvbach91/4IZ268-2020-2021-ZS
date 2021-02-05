@@ -1,107 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Aplikace</title>
+	<meta charset="utf-8" />
+	<meta name='robots' content='noindex,nofollow' />
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title>API</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+	<script type='text/javascript' src='JS/jquery-1.7.1.min.js'></script>	
+	<script type='text/javascript' src='JS/js.js'></script>
 </head>
+
 <body>
-<div class="dropdown">
-    <h1>Vyberte měnu</h1>
-    <span>▼</span>
-    <div class="dropdownlist">
-        <a>AED - UAE Dirham</a>
-        <a>AMD - Armenian DRM</a>
-        <a>ARS - Argentine Peso</a>
-        <a>AUD - Australian Dollar</a>
-        <a>AWG - Aruban Florin</a>
-        <a>AZN - Azerbaijani Manat</a>
-        <a>BAM - Bosnia & Herzogovina Convertible Mark</a>
-        <a>BDT - Bangladeshi Taka</a>
-        <a>BGN - Bulgarian Lev</a>
-        <a>BHD - Bahraini Dinar</a>
-        <a>BMD - Bermudan Dollar</a>
-        <a>BOB - Bolivian Bolivano</a>
-        <a>BRL - Brazilian Real</a>
-        <a>BYN - Belarusian Ruble</a>
-        <a>BZD - Belize Dollar</a>
-        <a>CAD - Canadian Dollar</a>
-        <a>CHF - Swiss Franc</a>
-        <a>CLP - Chilean Peso</a>
-        <a>CNY - Chinese Yuan</a>
-        <a>COP - Colombia Peso</a>
-        <a>CRC - Costa Rican Colon</a>
-        <a>CUC - Cuban Convertible Peso</a>
-        <a>CZK - Czech Koruna</a>
-        <a>DKK - Danish Krone</a>
-        <a>DKK - Estonian Kroon</a>
-        <a>EGP - Egyptian Pound</a>
-        <a>EUR - Euro</a>
-        <a>GBP - Great Britain Pound Sterling</a>
-        <a>GEL - Georgian Lari</a>
-        <a>HKD - Hong Kong Dollar</a>
-        <a>HRK - Croatian Kuna</a>
-        <a>HTG - Haitian Gourd</a>
-        <a>HUF - Hungarian Forint</a>
-        <a>IDR - Indonesian Rupiah</a>
-        <a>ILS - Israeli Shekel</a>
-        <a>INR - Indian Rupee</a>
-        <a>IQD - Iraqi Dinar</a>
-        <a>IRR - Iranian Real</a>
-        <a>ISK - Icelandic Krona</a>
-        <a>JMD - Jamaican Dollar</a>
-        <a>JPY - Japanese Yen</a>
-        <a>KGS - Kyrgystani Som</a>
-        <a>KHR - Cambodian Riel</a>
-        <a>KRW - South Korean Won</a>
-        <a>KZT - Khazakstani Tenge</a>
-        <a>KWD - Kuwaiti Dinar</a>
-        <a>LAK - Laotian Kip</a>
-        <a>LBP - Lebanese Pound</a>
-        <a>LKR - Sri Lankan Rupee</a>
-        <a>MAD - Moroccan Dirham</a>
-        <a>MDL - Moldovan Leu</a>
-        <a>MKD - Macedonian Dinar</a>
-        <a>MMK - Myanmar Kyat</a>
-        <a>MOP - Macau Pataca</a>
-        <a>MXN - Mexican Peso</a>
-        <a>MYR - Malaysian Ringgit</a>
-        <a>NGN - Nigerian Naira</a>
-        <a>NOK - Norwegian Krone</a>
-        <a>NPR - Nepalese Rupee</a>
-        <a>NZD - New Zealand Dollar</a>
-        <a>OMR - Omani Real</a>
-        <a>PEN - Peruvian Sol</a>
-        <a>PHP - Philippine Piso</a>
-        <a>PKR - Pakistani Rupee</a>
-        <a>PLN - Polish Zloty</a>
-        <a>PGK - Papua New Guinean Kina</a>
-        <a>PYG - Paraguayan Guarani</a>
-        <a>QAR - Qatari Rial</a>
-        <a>RON - Romanian Leu</a>
-        <a>RSD - Serbian Dinar</a>
-        <a>RUB - Russian Ruble</a>
-        <a>SAR - Saudi Riyal</a>
-        <a>SEK - Swedish Krona</a>
-        <a>SGD - Singapore Dollar</a>
-        <a>SYP - Syrian Pound</a>
-        <a>THB - Thai Baht</a>
-        <a>TJS - Tajikistan Somoni</a>
-        <a>TMT - Turkmenistan Minat</a>
-        <a>TND - Tunisian Dinar</a>
-        <a>TRY - Turkish Lira</a>
-        <a>TWD - Taiwanese New Dollar</a>
-        <a>UAH - Ukrainian Hryvnia</a>
-        <a>USD - United States Dollar</a>
-        <a>UYU - Uruguayan Peso</a>
-        <a>UZS - Uzbekistani Som</a>
-        <a>VEF - Venezuelan Bolivar</a>
-        <a>VND - Vietnamese Dong</a>
-        <a>XAF - Central African Franc</a>
-        <a>XCD - East Caribbean Dollar</a>
-        <a>ZAR - South African Rand</a>
-    </div>
-</div>
+
+<div class="wrapper">
+
+	<header class="header">
+		<div class='leftBlock'>
+			<select>
+				<option>Vyberte měnu</option>
+				<option value='EUR'>Euro</option>
+				<option value='CZK'>Česká koruna</option>
+				<option value='GBP'>Libra šterlinků</option>
+				<option value='RUB'>Ruský Rubl</option>
+				<option value='CNY'>Činský juan</option>
+				<option value='KWD'>Kuvajtský dinár</option>
+				<option value='JPY'>Japonský jen</option>
+				<option value='NOK'>Norská koruna</option>
+				<option value='PLN'>Polský zlotý</option>
+				<option value='KZT'>Kazašské tenge</option>
+				<option value='ALL'>Albanský lek</option>
+				<option value='BYN'>Běloruský rubl</option>
+				<option value='BAM'>Bosenská marka</option>
+				<option value='BGN'>Bulharský lev</option>
+				<option value='DKK'>Dánská koruna</option>
+				<option value='HRK'>Horvatská koruna</option>
+				<option value='ISK'>Islandská koruna</option>
+				<option value='TRY'>Turecká lira</option>
+				<option value='CHF'>Švýcarský frank</option>
+				<option value='HUF'>Maďarský forint</option>
+				<option value='MKD'>Makednoský denár</option>
+				<option value='MDL'>Moldavské leu</option>
+				<option value='RON'>Rumunské leu</option>
+				<option value='RSD'>Srbský dinár</option>
+				<option value='SEK'>Švédská koruna</option>
+				<option value='UAH'>Ukrajinská hřivna</option>
+				<option value='BRL'>Brazilský real</option>
+			</select>
+			<div class='ExchangeRates'>Aktuální kurs na burze: <span></span></div>
+		</div>
+		<div class='rightBlock'>
+			<button>Udělat záznam</button>
+			<div class='forTable'><table class="savedCur"><thead><tr><td><strong>Měna</strong></td><td><strong>Cena (USD)</strong></td><td>Datum</td><td>Smazat</td></tr></thead><tbody></tbody></table></div>
+		</div>
+	</header><!-- .header-->
+
+
+
+</div><!-- .wrapper -->
 </body>
 </html>
