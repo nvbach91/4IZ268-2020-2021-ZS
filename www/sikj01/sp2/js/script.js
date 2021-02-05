@@ -1,19 +1,19 @@
 $(document).ready(() => {
-    console.log("funguju");
-    var moviesGenres = {}
-
+    const main = $("#main");
+    var moviesGenres = {};
+    var baseUrl = "https://api.themoviedb.org/3/search/movie?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US";
     $.ajax({
         url: `https://api.themoviedb.org/3/genre/movie/list?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
         success: function (result) {
-                result.genres.forEach(element => {
-                    moviesGenres[element.id]=element.name;
-                })
-            }
-        });
+            result.genres.forEach(element => {
+                moviesGenres[element.id] = element.name;
+            })
+        }
+    });
 
     // RENDER WATCHLIST
     function renderWatchlistPage() {
-        $("#main").html(`
+        main.html(`
             <nav>
                 <div class="row">
                     <div class="col-2 d-flex justify-content-end">
@@ -53,7 +53,7 @@ $(document).ready(() => {
     }
     // Render SearchPage
     function renderSearchPage() {
-        $("#main").html(`
+        main.html(`
             <nav>
                 <div class="row">
                     <div class="col-10 d-flex text-left">
@@ -66,16 +66,16 @@ $(document).ready(() => {
                     </div>
                 </div>
                 <div class="row>
-                    <div class="col d-flex justify-content-end">
-                        <div class="input-group mb-3">
-                            <input type="text" id="searchInput" />
-                            <div class="input-group-prepend">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="searchInput""></textarea>
+                            <div class="form-group-prepend">
                                 <button class="button" type="button" id="search">
                                     Search
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </nav>
             <section class="row">
@@ -93,17 +93,17 @@ $(document).ready(() => {
                 </table>
             </section>`)
         // button to move to Watchlist
-        
+
         $("#moveToWatchlist").click(function () {
             renderWatchlistPage()
         });
 
         // button detail
-        
+
         $("#modalDetail").click(function () {
             setDetail()
         })
-        
+
         // search button
 
         $("#search").click(function () {
@@ -120,15 +120,15 @@ $(document).ready(() => {
     function getMovies(searchQuery) {
         var src =
             `<tr> <td colspan="5">
-        <div class="spinner-grow" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        </td></tr> `;
+                <div class="spinner-grow" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </td></tr> `;
         $("#tableContent").html(src);
 
         if (searchQuery.length > 0) {
             $.ajax({
-                url: `https://api.themoviedb.org/3/search/movie?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US&query=${searchQuery}&page=1&include_adult=false`,
+                url: baseUrl + `&query=${searchQuery}&page=1&include_adult=false`,
                 success: function (result) {
                     console.log(result)
 
@@ -158,7 +158,7 @@ $(document).ready(() => {
 
                     $(".addButton").click(function () {
                         var movie_id = $(this).attr("data-id");
-                        var toWatch = getWatchlistItems()
+                        var toWatch = getWatchlistItems();
                         toWatch.push(movie_id)
                         window.localStorage.setItem("Watchlist", JSON.stringify(toWatch));
                         $(this).attr('disabled', true);
@@ -173,13 +173,18 @@ $(document).ready(() => {
     }
 
     function getWatchlistItems() {
-        return JSON.parse(window.localStorage.getItem("Watchlist")) || [];
+        try {
+            return JSON.parse(window.localStorage.getItem("Watchlist")) || [];
+        }
+        catch(e){
+            return [];
+        }
     }
 
     // getting genres from genres_ids
     function getMovieGenre(ids) {
         var results = [];
-        $.each(ids, function (i,key) {
+        $.each(ids, function (i, key) {
             results.push(moviesGenres[key])
         })
 
@@ -190,10 +195,10 @@ $(document).ready(() => {
     function getWatchlist() {
         var src =
             `<tr> <td colspan="5">
-        <div class="spinner-grow" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-        </td></tr> `;
+                <div class="spinner-grow" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </td></tr> `;
         $("#tableContent").html(src);
 
         var toWatch = getWatchlistItems()
@@ -207,8 +212,8 @@ $(document).ready(() => {
                     success: function (result) {
                         console.log(result)
                         var genre_ids = []
-                        result.genres.map(function(key,index){
-                            console.log(key,index)
+                        result.genres.map(function (key, index) {
+                            console.log(key, index)
                             genre_ids.push(key.id)
                         })
                         var genre = getMovieGenre(genre_ids)
