@@ -87,7 +87,7 @@ $(document).ready(() => {
             if (!teams.includes(matchesArray[i].team1) || !teams.includes(matchesArray[i].team2)) {
                 teams.push(matchesArray[i].team1 || matchesArray[i].team2);
 
-                const optionTeams = $(`<option id="team-list${i}" class="team-list">${matchesArray[i].team1 || matchesArray[i].team2}</option>`);
+                const optionTeams = $(`<option id="team-list${i}" class="team-list" value="${matchesArray[i].team1 || matchesArray[i].team2}">${matchesArray[i].team1 || matchesArray[i].team2}</option>`);
                 teamsArray.push(optionTeams);
             }
         }
@@ -98,49 +98,53 @@ $(document).ready(() => {
 
     function main(selectedTeam) {
 
-        if (selectedTeam != "---------------") {
-            teamInformationContainer.empty();
-            informationList.empty();
-            var teamPlusBtn = [];
-            var teamInfoArray = [];
-            const replaceSpaceInTeamName = selectedTeam.split(" ").join("&");
-            //spinner
-            spinnerContainer.append(loader);
 
-            const urlImg = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${replaceSpaceInTeamName}`;
-            $.getJSON(urlImg).done((respo) => {
-                teamLogo.empty();
-                var teamInfoArrayImg = [];
+        teamInformationContainer.empty();
+        informationList.empty();
+        var teamPlusBtn = [];
+        var teamInfoArray = [];
+        const replaceSpavceInTeamName = selectedTeam.split(" FC");
+        const splitTeamFromFC = replaceSpavceInTeamName[0];
+        //spinner
+        spinnerContainer.append(loader);
 
-                var imgArrayAllJSON;
-                imgArrayAllJSON = respo.teams[0].strTeamBadge;
-                var arrayJSONIMG = [];
-                arrayJSONIMG.push(imgArrayAllJSON);
-                const teamImg = $(`<img src="${arrayJSONIMG}" class="logo" alt="team-logo"></img>`);
-                teamInfoArrayImg.push(teamImg);
-                teamLogo.append(teamInfoArrayImg);
-            }).fail(() => {
-                console.error("error");
-            }).always(() => {
-                console.log('Request is completed');
-                loader.detach();
-            });
-            const informationLabel = $(`<div id="div-name-and-favorite"><h3 id="name">${selectedTeam}</h3><button id="add-to-favorite">+</button></div>`);
+        const urlImg = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${splitTeamFromFC}`;
+        $.getJSON(urlImg).done((respo) => {
+            teamLogo.empty();
+            var teamInfoArrayImg = [];
 
-            teamPlusBtn.push(informationLabel);
-            teamInformationContainer.append(teamPlusBtn);
+            var imgArrayAllJSON;
+            imgArrayAllJSON = respo.teams[0].strTeamBadge;
+            var arrayJSONIMG = [];
+            arrayJSONIMG.push(imgArrayAllJSON);
+            const teamImg = $(`<img src="${arrayJSONIMG}" class="logo" alt="team-logo"></img>`);
+            teamInfoArrayImg.push(teamImg);
+            teamLogo.append(teamInfoArrayImg);
+        }).fail(() => {
+            console.error("error");
+        }).always(() => {
+            console.log('Request is completed');
+            loader.detach();
+        });
+        const informationLabel = $(`<div id="div-name-and-favorite"><h3 id="name">${selectedTeam}</h3><button id="add-to-favorite">+</button></div>`);
 
-            var num = 0;
-            for (let i = 0; i < team1.length; i++) {
+        teamPlusBtn.push(informationLabel);
+        teamInformationContainer.append(teamPlusBtn);
 
-                if (selectedTeam == team1[i] || selectedTeam == team2[i]) {
+
+
+
+        var num = 0;
+        for (let i = 0; i < team1.length; i++) {
+
+            if (selectedTeam == team1[i] || selectedTeam == team2[i]) {
+                if (selectedTeam === team1[i]) {
                     const information = $(`<li>
             <div class="div-info">
-                <div>${team1[i]} ---vs--- ${team2[i]} </div>
+                <div class="teams-more-info"><div class="teamA marked" value="${team1[i]}">${team1[i]}</div><div class="score">${score1[i]} : ${score2[i]}</div><div class="teamB" value="${team2[i]}">${team2[i]}</div></div>
                     <div class="information${num} information">
                     <div>date: ${date[i]}</div>
                     <div>round: ${round[i]}</div>
-                    <div>score: ${score1[i]} : ${score2[i]}</div>
                 </div>
             </div>
             <div class="div-more">
@@ -150,15 +154,35 @@ $(document).ready(() => {
                     num++;
                     teamInfoArray.push(information);
                 }
-            }
 
-            informationList.append(teamInfoArray);
-            $(".information").toggle();
-        }
-        if (selectedTeam == "---------------") {
+                if (selectedTeam === team2[i]) {
+                    const information = $(`<li>
+                <div class="div-info">
+                    <div class="teams-more-info"><div class="teamA" value="${team1[i]}">${team1[i]}</div><div class="score">${score1[i]} : ${score2[i]}</div><div class="teamB marked" value="${team2[i]}">${team2[i]}</div></div>
+                        <div class="information${num} information">
+                        <div>date: ${date[i]}</div>
+                        <div>round: ${round[i]}</div>
+                    </div>
+                </div>
+                <div class="div-more">
+                    <button div-id="information${num}" class="btn-more-information">...</button>
+                </div>
+                </li>`);
+                    num++;
+                    teamInfoArray.push(information);
+                }
+
+            }
+        } //<div>score: ${score1[i]} : ${score2[i]}</div>
+
+        informationList.append(teamInfoArray);
+        $(".information").toggle();
+
+        if (selectedTeam == "CHOOSE TEAM") {
             teamInformationContainer.empty();
             informationList.empty();
             teamLogo.empty();
+            loader.detach();
         }
     }
 
@@ -186,7 +210,7 @@ $(document).ready(() => {
         //else
         var favoriteArray = [];
         for (let i = 0; i < localTeams.length; i++) {
-            const favoriteStructure = $(`<div class="favorite${[i]} favorite"><p title="${localTeams[i]}" class="paragraf-actualy-team">${localTeams[i]}</p><button id="remove-from-favorite${[i]}" title="${localTeams[i]}" div-id="favorite${[i]}" class="remove-from-favorite">X</button></div>`);
+            const favoriteStructure = $(`<div class="favorite${[i]} favorite"><div title="${localTeams[i]}" class="paragraf-actualy-team">${localTeams[i]}</div><button id="remove-from-favorite${[i]}" title="${localTeams[i]}" div-id="favorite${[i]}" class="remove-from-favorite">X</button></div>`);
             favoriteArray.push(favoriteStructure);
         }
         favoriteTeamsContainer.append(favoriteArray);
@@ -212,7 +236,7 @@ $(document).ready(() => {
             //structure of appended teams
             var favoriteArray = [];
             var num = localTeams.length - 1;
-            const favoriteStructure = $(`<div class="favorite${num} favorite"><p title="${actualyTeams}" class="paragraf-actualy-team">${actualyTeams}</p><button id="remove-from-favorite${num}" title="${actualyTeams}" div-id="favorite${num}" class="remove-from-favorite">X</button></div>`);
+            const favoriteStructure = $(`<div class="favorite${num} favorite"><div title="${actualyTeams}" class="paragraf-actualy-team">${actualyTeams}</div><button id="remove-from-favorite${num}" title="${actualyTeams}" div-id="favorite${num}" class="remove-from-favorite">X</button></div>`);
             num = num + 1;
             favoriteArray.push(favoriteStructure);
             favoriteTeamsContainer.append(favoriteArray);

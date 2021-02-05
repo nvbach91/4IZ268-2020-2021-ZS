@@ -17,6 +17,15 @@ h3 {
     margin: 10px 5px 10px 5px;
 }
 
+.paragraf-actualy-team {
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin: 15px 0 10px 0;
+    padding: 5px 5px 0 5px;
+    color: white;
+    cursor: pointer;
+}
+
 ul {
     list-style-type: none;
     margin: 10px 200px 0 200px;
@@ -30,7 +39,7 @@ li {
 
 .div-info {
     margin: 1px 5px 1px 50px;
-    width: 500px;
+    width: 600px;
     background-color: rgb(107, 174, 197);
 }
 
@@ -201,6 +210,34 @@ ul,
     h3 {
         font-size: 16px;
     }
+    .div-info {
+        width: 290px;
+    }
+    ul,
+    #container-favorite-teams {
+        margin: 10px 5px 0 5px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .information-list {
+        width: 500px;
+    }
+    .div-info {
+        width: 300px;
+    }
+    .teamA {
+        width: 100px;
+        margin: 0 0 0 5px;
+    }
+    .teamB {
+        width: 100px;
+        margin: 0 5px 0 0;
+    }
+    .score {
+        margin: 0 5px 0 5px;
+        width: 50px;
+    }
 }
 
 @media print {
@@ -221,4 +258,29 @@ ul,
     body {
         background-color: white;
     }
+}
+
+.teams-more-info {
+    display: flex;
+}
+
+.teamA {
+    width: 500px;
+    text-align: left;
+    margin: 0 0 0 5px;
+}
+
+.teamB {
+    width: 500px;
+    text-align: right;
+    margin: 0 5px 0 0;
+}
+
+.score {
+    margin: 0 50px 0 50px;
+    width: 100px;
+}
+
+.marked {
+    color: red;
 }
