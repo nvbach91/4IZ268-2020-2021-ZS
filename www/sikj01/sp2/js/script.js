@@ -1,9 +1,12 @@
 $(document).ready(() => {
     const main = $("#main");
+    var tableContent;
     var moviesGenres = {};
-    var baseUrl = "https://api.themoviedb.org/3/search/movie?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US";
+    var baseSearchUrl = "https://api.themoviedb.org/3/search/movie?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US";
+    var baseGenreUrl = "https://api.themoviedb.org/3/genre/movie/list?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US";
+    var baseMovieUrl = "https://api.themoviedb.org/3/movie/";
     $.ajax({
-        url: `https://api.themoviedb.org/3/genre/movie/list?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
+        url: baseGenreUrl,
         success: function (result) {
             result.genres.forEach(element => {
                 moviesGenres[element.id] = element.name;
@@ -44,6 +47,8 @@ $(document).ready(() => {
                     <tbody id="tableContent"></tbody>
                 </table>
             </section>`)
+        tableContent = $("#tableContent");
+
         getWatchlist()
         // button to move to SearchPage
         $("#moveToSearch").click(function () {
@@ -68,9 +73,9 @@ $(document).ready(() => {
                 <div class="row>
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control" id="searchInput""></textarea>
+                            <input class="form-control" id="searchInput"></input>
                             <div class="form-group-prepend">
-                                <button class="button" type="button" id="search">
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" id="search">
                                     Search
                                 </button>
                             </div>
@@ -92,6 +97,9 @@ $(document).ready(() => {
                     <tbody id="tableContent"></tbody>
                 </table>
             </section>`)
+
+        tableContent = $("#tableContent");
+
         // button to move to Watchlist
 
         $("#moveToWatchlist").click(function () {
@@ -124,19 +132,27 @@ $(document).ready(() => {
                     <span class="sr-only">Loading...</span>
                 </div>
             </td></tr> `;
-        $("#tableContent").html(src);
+        tableContent.html(src);
 
         if (searchQuery.length > 0) {
             $.ajax({
-                url: baseUrl + `&query=${searchQuery}&page=1&include_adult=false`,
+                url: baseSearchUrl + `&query=${searchQuery}&page=1&include_adult=false`,
                 success: function (result) {
-                    console.log(result)
+                    console.log(result);
 
                     var movies = result.results
+                    var savedMovies = getWatchlistItems();
                     src = "";
 
                     $.each(movies, function (index, value) {
-
+                        var buttonDisabled = ""
+                        $.each(savedMovies, function (j, mVal) {
+                            console.log(value.id, mVal);
+                            if (mVal == value.id) {
+                                buttonDisabled = "disabled"
+                            }
+                        })
+                        console.log(value.id, buttonDisabled);
                         var genre = getMovieGenre(value.genre_ids)
                         console.log(genre)
                         src +=
@@ -149,11 +165,11 @@ $(document).ready(() => {
                             <button type="button" class="btn btn-primary exampleModalButton" data-toggle="modal"  data-target="#exampleModal" data-id="${value.id}">
                             Detail
                             </button>
-                          <button type="button" class="btn btn-success addButton"  data-id="${value.id}">Add</button>
+                          <button type="button" class="btn btn-success addButton" ${buttonDisabled}  data-id="${value.id}">Add</button>
                           </td>
                         </td></tr>`;
                     })
-                    $("#tableContent").html(src);
+                    tableContent.html(src);
                     setModal()
 
                     $(".addButton").click(function () {
@@ -168,7 +184,7 @@ $(document).ready(() => {
 
             })
         } else {
-            $("#tableContent").html(`<tr><td colspan="7">Search for movie</td></tr>`);
+            tableContent.html(`<tr><td colspan="7">Search for movie</td></tr>`);
         }
     }
 
@@ -176,7 +192,7 @@ $(document).ready(() => {
         try {
             return JSON.parse(window.localStorage.getItem("Watchlist")) || [];
         }
-        catch(e){
+        catch (e) {
             return [];
         }
     }
@@ -192,6 +208,7 @@ $(document).ready(() => {
     }
 
     // getWatchlist
+
     function getWatchlist() {
         var src =
             `<tr> <td colspan="5">
@@ -199,7 +216,7 @@ $(document).ready(() => {
                     <span class="sr-only">Loading...</span>
                 </div>
             </td></tr> `;
-        $("#tableContent").html(src);
+        tableContent.html(src);
 
         var toWatch = getWatchlistItems()
 
@@ -208,7 +225,7 @@ $(document).ready(() => {
                 console.log(toWatch[index])
                 src = ""
                 $.ajax({
-                    url: `https://api.themoviedb.org/3/movie/${toWatch[index]}?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
+                    url: baseMovieUrl + `${toWatch[index]}?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
                     success: function (result) {
                         console.log(result)
                         var genre_ids = []
@@ -228,7 +245,7 @@ $(document).ready(() => {
                         </tr>`;
 
                         if ((index + 1) == toWatch.length) {
-                            $("#tableContent").html(src);
+                            tableContent.html(src);
                             $(".deleteButton").click(function () {
                                 var movie_id = $(this).attr("data-id");
                                 deleteMovie(movie_id)
@@ -239,7 +256,7 @@ $(document).ready(() => {
             }
 
         } else {
-            $("#tableContent").html(`<tr><td colspan="7">Add movies</td></tr>`);
+            tableContent.html(`<tr><td colspan="7">Add movies</td></tr>`);
         }
     }
     // deleteMovie
@@ -254,6 +271,8 @@ $(document).ready(() => {
         })
     }
     //setModal Detail
+    const modalBody = $("#modalBody");
+    const exampleModalLabel = $("#exampleModalLabel");
     function setModal() {
 
         $(".exampleModalButton").click(function () {
@@ -261,7 +280,7 @@ $(document).ready(() => {
             console.log(movie_id);
             var src = ""
             $.ajax({
-                url: `https://api.themoviedb.org/3/movie/${movie_id}?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
+                url: baseMovieUrl + `${movie_id}?api_key=a0c2b64a6fafee6976844c7c2cf29a7a&language=en-US`,
                 success: function (result) {
                     var src = `<div>
                         <h2>${result.title}</h2>
@@ -269,8 +288,8 @@ $(document).ready(() => {
                         <p>${result.overview}</p>
                     </div>`
 
-                    $("#modalBody").html(src);
-                    $("#exampleModalLabel").html(result.title)
+                    modalBody.html(src);
+                    exampleModalLabel.html(result.title)
                 }
             })
 
