@@ -11,12 +11,28 @@ class Cryptos extends Component {
     this.onChange = this.onChange.bind(this);
     this.renderCryptoOffer = this.renderCryptoOffer.bind(this);
     this.saveValueToStorage = this.saveValueToStorage.bind(this);
-    this.state = {
+    let cryptoFromStorage = [];
+    let state = {
       showCryptoGraph: localStorage.getItem('crypto') ? true : false,
       cryptoOffer: [],
       search: "",
       error: null
-    }; // Koukne se jestli je v local storage parametr a když jo, tak nastaví na true a jinak false
+    };
+
+    try {
+      if (state.showCryptoGraph) {
+        cryptoFromStorage = localStorage.getItem('crypto');
+        cryptoFromStorage = JSON.parse(cryptoFromStorage);
+        //state.stockFromStorage = stockFromStorage;   
+        console.log(cryptoFromStorage);     
+      }
+    } catch (error) {
+      localStorage.removeItem('crypto');
+      console.log(error);
+      state.showCryptoGraph = false;
+    }
+
+    this.state = state; // Koukne se jestli je v local storage parametr a když jo, tak nastaví na true a jinak false
   }
 
   clearCrypto() {
@@ -55,7 +71,7 @@ class Cryptos extends Component {
   saveValueToStorage(event, index) {
       console.log(Object.values(this.state.cryptoOffer[index]));
       const instrument = Object.values(this.state.cryptoOffer[index]);
-      localStorage.setItem('crypto', instrument);;
+      localStorage.setItem('crypto', JSON.stringify(instrument));;
       this.setState({showCryptoGraph: true});
   }
 

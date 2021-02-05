@@ -7,25 +7,35 @@ import DataError from "./DataError";
 
 class Stock extends Component {
     constructor(props) {
-      super(props);
-      this.getActualPrice = this.getActualPrice.bind(this);   
-      this.transformData = this.transformData.bind(this); 
-      this.changeGraph = this.changeGraph.bind(this);
-      let stockFromStorage = localStorage.getItem('stock');
-      stockFromStorage = JSON.parse(stockFromStorage);
-      console.log(stockFromStorage[0]);
+        super(props);
+        this.getActualPrice = this.getActualPrice.bind(this);   
+        this.transformData = this.transformData.bind(this); 
+        this.changeGraph = this.changeGraph.bind(this);
+        let stockFromStorage = [];
 
-      this.state = {
-          stock: stockFromStorage,
-          loading: true,
-          error: null,
-          todayPrices: [],
-          dailyPrices: [],
-          monthlyPrices: [],
-          actualPrice: 0,
-          graphDataX: [],
-          graphDataY: []
-      }; 
+        let state = {
+            stock: stockFromStorage,
+            loading: true,
+            error: null,
+            todayPrices: [],
+            dailyPrices: [],
+            monthlyPrices: [],
+            actualPrice: 0,
+            graphDataX: [],
+            graphDataY: []
+        }; 
+        try {
+            if (localStorage.getItem('stock')) {
+                stockFromStorage = localStorage.getItem('stock');
+                stockFromStorage = JSON.parse(stockFromStorage);
+                state.stock = stockFromStorage;             
+            }
+        } catch (error) {
+            this.props.onClear();
+            state.error = error; 
+        }
+
+        this.state = state;
     }
 
     async componentDidMount() {
@@ -58,9 +68,9 @@ class Stock extends Component {
                     }
                     else {
                         let json = await response.json();
-                        if (index==0) {
+                        if (index===0) {
                             this.setState({todayPrices: json});                    
-                        } else if(index==1) {
+                        } else if(index===1) {
                             this.setState({dailyPrices: json});  
                         } else {
                             this.setState({monthlyPrices: json});; 
@@ -193,7 +203,7 @@ class Stock extends Component {
                             <div className="container rounded p-3 my-3 bg-dark text-white">
                                 <div className="row">
                                     <div className="col-sm-1">
-                                        <img id="stock-logo" src={stockLogoUrl}></img>
+                                        <img id="stock-logo" src={stockLogoUrl} alt={stockName}></img>
                                     </div>
                                     <div className="col">
                                         <h3 className="text-left">{this.state.stock[0]}</h3>

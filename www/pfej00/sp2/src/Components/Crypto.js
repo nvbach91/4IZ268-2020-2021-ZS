@@ -7,21 +7,34 @@ import DataError from "./DataError";
 
 class Crypto extends Component {
     constructor(props) {
-      super(props);
-      this.getactualCryptoPrice = this.getactualCryptoPrice.bind(this);   
-      this.transformData = this.transformData.bind(this); 
-      this.changeGraph = this.changeGraph.bind(this);
-      const cryptoFromStorage = localStorage.getItem('crypto');
-      this.state = {
-          crypto: cryptoFromStorage.split(","),
-          loading: true,
-          error: null,
-          dailyPrices: [],
-          monthlyPrices: [],
-          actualCryptoPrice: 0,
-          graphDataX: [],
-          graphDataY: []
-      }; 
+        super(props);
+        this.getactualCryptoPrice = this.getactualCryptoPrice.bind(this);   
+        this.transformData = this.transformData.bind(this); 
+        this.changeGraph = this.changeGraph.bind(this);
+        let cryptoFromStorage = [];
+        let state = {
+            crypto: [],
+            loading: true,
+            error: null,
+            dailyPrices: [],
+            monthlyPrices: [],
+            actualCryptoPrice: 0,
+            graphDataX: [],
+            graphDataY: []
+        }; 
+
+        try {
+            if (localStorage.getItem('crypto')) {
+                cryptoFromStorage = localStorage.getItem('crypto');
+                cryptoFromStorage = JSON.parse(cryptoFromStorage);
+                state.crypto = cryptoFromStorage;             
+            }
+        } catch (error) {
+            this.props.onClearCrypto();
+            state.error = error; 
+        }
+
+        this.state = state;
     }
 
     async componentDidMount() {
@@ -48,10 +61,10 @@ class Crypto extends Component {
               }
               else {
                   let json = await response.json();
-                  if (index==0) {
+                  if (index===0) {
                       this.setState({dailyPrices: json});
                       //console.log(this.state.dailyPrices);                    
-                  } else if(index==1) {
+                  } else if(index===1) {
                       this.setState({monthlyPrices: json});
                       //console.log(this.state.monthlyPrices);  
                   }

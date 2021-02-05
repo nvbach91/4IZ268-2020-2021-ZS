@@ -6,5 +6,5 @@ import './Styles/index.css';
 
 ReactDOM.render(
   <MainPage/>, 
-  document.getElementById("main")
+  document.getElementById("root")
 );
