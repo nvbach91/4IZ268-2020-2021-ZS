@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-appearance: none;
     -moz-appearance: none;
   }
-  #select-team-name, #select-player-name{
+  #select-team-name{
       background: #ffffff;
       color: rgb(0, 0, 0);
       padding: 10px;
@@ -46,12 +46,9 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 20px;
       box-shadow: 0 5px 25px rgba(0,0,0,.5);
   }
-   #select-team-id, #select-player-id{
-    display: block;
-    visibility: hidden;
-  }
+
    
-  select#select-team-name, #select-player-name{
+  select#select-team-name{
     background-image:
       linear-gradient(45deg, transparent 50%, rgb(72, 72, 110) 50%),
       linear-gradient(135deg, rgb(72, 72, 110) 50%, transparent 50%),
@@ -67,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
   }
   
-  select#select-team-name:focus, #select-player-name:focus{
+  select#select-team-name:focus{
     background-image:
       linear-gradient(45deg, white 50%, transparent 50%),
       linear-gradient(135deg, transparent 50%, white 50%),
@@ -85,14 +82,26 @@ h1, h2, h3, h4, h5, h6 {
     outline: 0;
   }
 
+  /*table-class*/
+.table-class{
+ width: 400px;
+ border: 1px solid #000;
+ margin-top: 18%;
+ margin-left: 37%;
+}
+
+th{
+  text-align: left;
+}
+
 /*Footer*/
-.footer {
+ .footer {
     margin-top: 30%;
     padding: 15px 0;
-    background-color: #3a3e64;
+    background-color: #485aff;
 }
 
 .footer__wards {
     font-size: 25px;
     text-align: center;
-}
+} 

@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="description" content="That is a web, that uses NBA API" />
     <meta name="author" content="Rasul Ayupov" />
-    <meta name="keywords" content="NBA,stats,players" />
+    <meta name="keywords" content="NBA,stats,conference,division" />
 
+    <!--favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
     <link href="./css/style.css" rel="stylesheet">
-    <title>NBA stats</title>
+    <title>NBA Teams info</title>
 </head>
 
 <body>
@@ -23,7 +33,7 @@
 
     </header>
 
-   <!--dropdownlist1-->
+    <!--dropdownlist1-->
 
     <div class="container-dl" id="dropdown-list">
         <div class="teamm-container">
@@ -31,29 +41,57 @@
             <select name="team_selected1_NAME" id="select-team-name">
                 <option>Select...</option>
             </select>
-            <select name="team_selected_ID" id="select-team-id">
-                <option>Select...</option>
-            </select>
-        </div>
-
-            <!--dropdownlist2-->
-
-        <div class="player-container">
-            <h2 class="text">Players: </h2>
-            <select name="player_selected_NAME" id="select-player-name">
-                <option>Select...</option>
-            </select>
-            <select name="player_selected_ID" id="select-player-id">
-                <option>Select...</option>
-            </select>      
         </div>
     </div>
+
+    <!--block for teams-->
+
+    <table class="table-class">
+
+        <tr>
+            <th>Team:</th>
+            <td id="team-name"></td>
+        </tr>
+
+        <tr>
+            <th>Abbreviation:</th>
+            <td id="team-abbreviation"></td>
+        </tr>
+
+        <tr>
+            <th>Conference:</th>
+            <td id="team-conference"></td>
+        </tr>
+
+        <tr>
+            <th>Division:</th>
+            <td id="team-division"></td>
+        </tr>
+
+        <tr>
+            <th>Full name:</th>
+            <td id="team-full-name"></td>
+        </tr>
+
+        <tr>
+            <th>City:</th>
+            <td id="team-city"></td>
+        </tr>
+
+        <tr>
+            <th>Id:</th>
+            <td id="team-id"></td>
+        </tr>
+
+
+
+    </table>
 
 
 
     <!--Footer-->
     <footer class="footer">
-        <div class="container">
+        <div class="container-footer">
             <h1 class="footer__wards">Copyright &copy; 2020 Ayupov Rasul</h1>
         </div>
     </footer>
