@@ -94,6 +94,22 @@ th{
   text-align: left;
 }
 
+
+ /*table-localstorage*/
+ .list-box {
+  width: 400px;
+  border: 1px solid #000;
+  margin-top: 0%;
+  margin-left: 70%;
+ }
+
+ /*spinner*/
+#loadingDiv {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+}
+
 /*Footer*/
  .footer {
     margin-top: 30%;
